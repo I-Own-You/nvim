@@ -154,6 +154,8 @@ return packer.startup(function(use)
         'phaazon/hop.nvim',
         branch = 'v2', -- optional but strongly recommended
     }
+
+    use 'lewis6991/gitsigns.nvim'
     if PACKER_BOOTSSTRAP then
         require("packer").sync()
     end
