@@ -16,6 +16,7 @@ null_ls.setup({
 		--formatting.stylua,
         formatting.isort,
         formatting.autoflake.with({ extra_args = { "--remove-all-unused-imports" } }),
+		formatting.stylua,
         -- formatting.autopep8,
     },
 })
