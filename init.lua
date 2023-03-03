@@ -51,9 +51,6 @@ require "user.luasnip-config"
 -- require "user.custom_imports"
 
 
-vim.api.nvim_set_keymap('n', '<Space>ii', 'yiw:lua require("custom_imports").centered_window()<CR>', { noremap = true, silent = true })
-
-
 -- require "user.dashboard"
 
 -- vim.api.nvim_command("autocmd VimEnter * Dashboard")

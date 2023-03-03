@@ -108,6 +108,7 @@ keymap('v', '>', '>gv', opts)
 
 keymap('v', 'p', '"_dP', opts)
 keymap('n', '<leader>ip', ':normal! gg0"0P<CR><C-o>', opts)
+vim.api.nvim_set_keymap('n', '<Space>ii', 'yiw:lua require("custom_imports").centered_window()<CR>', { noremap = true, silent = true })
 
 keymap('n', '<A-j>', ':m .+1<CR>==', opts)
 keymap('n', '<A-k>', ':m .-2<CR>==', opts)
