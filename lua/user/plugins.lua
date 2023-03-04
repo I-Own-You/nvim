@@ -155,6 +155,8 @@ return packer.startup(function(use)
         branch = 'v2', -- optional but strongly recommended
     }
 
+    use 'tpope/vim-fugitive'
+
     use 'lewis6991/gitsigns.nvim'
     if PACKER_BOOTSSTRAP then
         require("packer").sync()
