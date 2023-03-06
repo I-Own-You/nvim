@@ -146,13 +146,13 @@ keymap('n', '<leader>o', ':SymbolsOutline<cr>', opts)
 
 keymap('n', '<leader>nb', ':enew<cr>', opts)
 
-keymap('n', '<C-d>', '10j', opts)
-keymap('n', '<C-u>', '10k', opts)
+keymap('n', '<C-d>', '15j', opts)
+keymap('n', '<C-u>', '15k', opts)
 
 vim.keymap.set('n', '<leader>/', function() require("Comment.api").toggle.linewise.current() end, opts)
 keymap('v', '<leader>/', "<ESC><cmd>lua require('Comment.api').toggle.linewise(vim.fn.visualmode())<CR>", opts)
 
-vim.keymap.set('n', '<leader>b', function() require('reach').buffers(options_buff) end, {})
+vim.keymap.set('n', '<leader>bb', function() require('reach').buffers(options_buff) end, {})
 vim.keymap.set('n', '<leader>m', function() require('reach').marks(options_marks) end, {})
 vim.keymap.set('n', '<leader>t', function() require('reach').tabpages(options_tabs) end, {})
 vim.keymap.set('n', '<leader>rc', function() require('reach').colorschemes(options_cscheme) end, {})
@@ -168,10 +168,10 @@ keymap("n", "<leader>sd", ":DeleteSession<CR>", opts)
 keymap("n", "<leader>hw", ":HopWord<CR>", opts)
 
 -- git section
-keymap("n", "<leader>ghn", ":Gitsigns next_hunk<cr>",  opts)
-keymap("n", "<leader>ghp", ":Gitsigns next_hunk<cr>",  opts)
-keymap("n", "<leader>gbl", ":Gitsigns blame_line<cr>",  opts)
-keymap("n", "<leader>ghs", ":Gitsigns preview_hunk<cr>",  opts)
+keymap("n", "<leader>nn", ":Gitsigns next_hunk<cr>",  opts)
+keymap("n", "<leader>pp", ":Gitsigns next_hunk<cr>",  opts)
+keymap("n", "<leader>bl", ":Gitsigns blame_line<cr>",  opts)
+keymap("n", "<leader>ph", ":Gitsigns preview_hunk<cr>",  opts)
 
 -- STAGE THIS
 -- map({ "n", "<F4>", ":lua require('dapui').toggle()<CR>" })
