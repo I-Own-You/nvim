@@ -171,9 +171,9 @@ keymap("n", "<leader>hw", ":HopWord<CR>", opts)
 keymap("n", "<leader>ghn", ":Gitsigns next_hunk<cr>",  opts)
 keymap("n", "<leader>ghp", ":Gitsigns next_hunk<cr>",  opts)
 keymap("n", "<leader>gbl", ":Gitsigns blame_line<cr>",  opts)
--- keymap("n", "<leader>ghs", ":Gitsigns preview_hunk<cr>",  opts)
+keymap("n", "<leader>ghs", ":Gitsigns preview_hunk<cr>",  opts)
 
--- fdfsd
+-- STAGE THIS
 -- map({ "n", "<F4>", ":lua require('dapui').toggle()<CR>" })
 -- map({ "n", "<F5>", ":lua require('dap').toggle_breakpoint()<CR>" })
 -- map({ "n", "<F9>", ":lua require('dap').continue()<CR>" })
