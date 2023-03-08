@@ -15,7 +15,7 @@ local rep = require('luasnip.extras').rep
 local snippets, autosnippets = {}, {}
 
 local dbdj = s(
-    { trig = 'dbdj_', regTrig = true, hidden = true},
+    { trig = 'djdb_', regTrig = true, hidden = true},
     fmt(
         [[
         DATABASES = {}
