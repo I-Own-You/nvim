@@ -9,6 +9,45 @@ local function fileExists(path)
   return ok, err
 end
 
+function better_import()
+    local imported = vim.fn.getreg('') --copy content that you yy from nvim
+
+    -- Get the buffer ID of the current buffer
+    local current_buf = vim.api.nvim_get_current_buf()
+
+    -- Get the path of the file associated with the buffer
+    local buf_name = vim.api.nvim_buf_get_name(current_buf)
+
+    for line_num = 1, vim.api.nvim_buf_line_count(current_buf) do
+        -- Get the current line
+        local line = vim.api.nvim_buf_get_lines(current_buf, line_num - 1, line_num, false)[1]
+
+        -- Check if the line starts with "form", "import", or a space
+        if string.match(line, "^from") or string.match(line, "^import") or string.match(line, "^%s*$") then
+            if string.match(line, "^from") then
+                local line_from_imported = {}
+                local original_line = {}
+
+                for word in imported:gmatch("%S+") do
+                    table.insert(line_from_imported, word)
+                end
+                for word in line:gmatch("%S+") do
+                    table.insert(original_line, word)
+                end
+
+                if line_from_imported[2] == original_line[2] then
+                    vim.api.nvim_buf_set_lines(current_buf, line_num - 1, line_num, false, {line .. ", " .. line_from_imported[4]})
+                    break
+                end
+            end
+        else
+            vim.api.nvim_command("execute 'normal! gg0\"0P<CR><C-o>'")
+            -- Abort if the line does not match any of the conditions
+            break
+        end
+    end
+end
+
 
 function filter(buf, word)
     local contents = {}
@@ -163,7 +202,8 @@ function M.centered_window()
 
   -- Set key mapping for filtering
     vim.api.nvim_buf_set_keymap(buf, 'n', 'f', string.format(':lua filter(%d, vim.fn.input("Word to import: "))<CR>', buf), { noremap = true })
-    vim.api.nvim_buf_set_keymap(buf, 'n', '<CR>', string.format('yy:q<cr>:normal! gg0"0P<CR><C-o>', buf), { noremap = true})
+    -- vim.api.nvim_buf_set_keymap(buf, 'n', '<CR>', string.format('yy:q<cr>:normal! gg0"0P<CR><C-o>', buf), { noremap = true})
+    vim.api.nvim_buf_set_keymap(buf, 'n', '<CR>', string.format('yy:q<cr>:lua better_import()<cr>', buf), { noremap = true})
 
 
     vim.api.nvim_feedkeys("jk", "n", true)
