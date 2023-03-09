@@ -68,7 +68,7 @@ function filter(buf, word)
         djangorest = "",
         -- add more name-value pairs here
     }
-.
+
     vim.ui.select({
         'player_market',
         'django',
