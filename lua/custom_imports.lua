@@ -63,14 +63,16 @@ function filter(buf, word)
 
     local names = {
         player_market = "/home/mkc/Documents/projects/home/player_market/project_auto_imports.txt",
+        python_std_lib = "/home/mkc/.config/nvim/py_stdlib.txt",
         django = "/home/mkc/.config/nvim/django_imports.txt",
         djangorest = "",
         -- add more name-value pairs here
     }
-
+.
     vim.ui.select({
         'player_market',
         'django',
+        'python_std_lib'
     }, {
         prompt = '',
         format_item = function(item)
@@ -83,13 +85,16 @@ function filter(buf, word)
             elseif choice == 'django' then
                 path = names[choice]
                 vim.o.expandtab = true
+            elseif choice == 'python_std_lib' then
+                path = names[choice]
+                vim.o.expandtab = true
             else
                 vim.o.expandtab = false
             end
         end)
 
     -- if string.find(path, 'project_auto_imports.txt') then
-    if fileExists(path) and not string.find(path, '.config/nvim')  then
+    if fileExists(path) and string.find(path, 'project_auto_imports')  then
         os.execute("rm " .. path)
         os.execute("python3.11 " .. auim_script .. " " .. path)
     end
@@ -148,12 +153,14 @@ function M.centered_window()
         player_market = "/home/mkc/Documents/projects/home/player_market/project_auto_imports.txt",
         django = "/home/mkc/.config/nvim/django_imports.txt",
         djangorest = "",
+        python_std_lib = "/home/mkc/.config/nvim/py_stdlib.txt",
         -- add more name-value pairs here
     }
 
     vim.ui.select({
         'player_market',
         'django',
+        'python_std_lib',
     }, {
         prompt = '',
         format_item = function(item)
@@ -166,13 +173,16 @@ function M.centered_window()
             elseif choice == 'django' then
                 path = names[choice]
                 vim.o.expandtab = true
+            elseif choice == 'python_std_lib' then
+                path = names[choice]
+                vim.o.expandtab = true
             else
                 vim.o.expandtab = false
             end
         end)
 
     -- if string.find(path, 'project_auto_imports.txt') then
-    if fileExists(path) and not string.find(path, '.config/nvim')  then
+    if fileExists(path) and string.find(path, 'project_auto_imports')  then
         os.execute("rm " .. path)
         os.execute("python3.11 " .. auim_script .. " " .. path)
     end
