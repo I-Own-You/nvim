@@ -20,6 +20,8 @@ vim.g.python_highlight_func_calls = 1
 
 require "plugins.colorscheme"
 require "plugins.plugins"
+require "user.options"
+require "user.keymaps"
 require "plugins.colorizer"
 require "plugins.cmp"
 require "plugins.lsp"
@@ -46,8 +48,6 @@ require "plugins.nvim-dap-virtual-text"
 require "plugins.multiple-session"
 require "plugins.hop"
 require "plugins.luasnip-config"
-require "user.options"
-require "user.keymaps"
 
 
 -- require "plugins.dashboard"
