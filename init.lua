@@ -35,7 +35,7 @@ require "plugins.bufferline"
 require "plugins.toggleterm"
 require "plugins.lualine"
 require "plugins.symbols-outline"
-require "plugins.lsp-signature"
+-- require "plugins.lsp-signature"
 require "plugins.colorful-winsep"
 require "plugins.wilder"
 require "plugins.indent_blankline"
@@ -48,7 +48,7 @@ require "plugins.nvim-dap-virtual-text"
 require "plugins.multiple-session"
 require "plugins.hop"
 require "plugins.luasnip-config"
-
+require "plugins.true-zen"
 
 -- require "plugins.dashboard"
 
