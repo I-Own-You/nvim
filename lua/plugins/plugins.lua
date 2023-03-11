@@ -158,6 +158,8 @@ return packer.startup(function(use)
     use 'tpope/vim-fugitive'
 
     use 'lewis6991/gitsigns.nvim'
+    use 'Pocco81/true-zen.nvim'
+    use 'rbong/vim-flog'
     if PACKER_BOOTSSTRAP then
         require("packer").sync()
     end

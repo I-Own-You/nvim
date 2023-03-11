@@ -145,7 +145,7 @@ keymap('n', '<leader>bdo', ':%bd|e#|bd#<CR>|\'\"', { noremap = true, silent = tr
 keymap("n", "<leader><leader>", "<cmd>Telescope live_grep<cr>", opts)
 keymap("n", "<leader>ff", "<cmd>Telescope find_files<cr>", opts)
 keymap("n", "<leader>fa", "<cmd>Telescope find_files follow=true no_ignore=true hidden=true <cr>", opts)
-keymap("n", "<leader>fb", "<cmd>Telescope buffers <cr>", opts)
+-- keymap("n", "<leader>fb", "<cmd>Telescope buffers <cr>", opts)
 keymap("n", "<leader>tu", "<cmd>Telescope undo <cr>", opts)
 keymap("n", "<leader>ft", "<cmd>Telescope help_tags <cr>", opts)
 keymap("n", "<leader>fo", "<cmd>Telescope oldfiles <cr>", opts)
@@ -157,7 +157,11 @@ keymap("n", "<leader>gc", "<cmd>Telescope git_commits <cr>", opts)
 keymap("n", "<leader>gst", "<cmd>Telescope git_status <cr>", opts)
 keymap("n", "<leader>gbc", "<cmd>Telescope git_bcommits <cr>", opts)
 
--- keymap("n", "<leader>f", ":FZF<cr>", opts)
+keymap("n", "<leader>fg", ":Flog ", opts)
+keymap("n", "<leader>fb", ":Floggit ", opts)
+keymap("n", "<leader>fs", ":Flogsplit ", opts)
+
+-- keymap("n", "<leader>ff", ":FZF<cr>", opts)
 
 keymap('n', '<leader>q', ':Bdelete<cr>', opts)
 
