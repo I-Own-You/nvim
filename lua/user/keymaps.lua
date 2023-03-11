@@ -90,6 +90,8 @@ keymap('n', '<C-k>', '<C-w>k', opts)
 keymap('n', '<C-l>', '<C-w>l', opts)
 
 keymap('n', '<C-c>', ":%y<CR>", opts)
+keymap('n', '<C-a>', "ggVG", opts)
+keymap('n', '<C-x>', ":%d<CR>", opts)
 
 keymap('n', '<leader>e', ':NvimTreeToggle<cr>', opts)
 
@@ -123,6 +125,23 @@ keymap('n', '<leader>hh', ':split<CR>', opts)
 keymap("n", "<C-[>", "[m", opts)
 keymap("n", "<C-]>", "]m", opts)
 
+keymap("n", "<leader>tw", ":set invwrap<CR>:set wrap?<CR>", opts)
+keymap("n", "!", ":!", { noremap = true })
+keymap("n", "+", "<C-a>", opts)
+keymap("n", "-", "<C-x>", opts)
+
+keymap("n", ",.", "'.", opts) -- go to last edited location
+
+keymap("n", "<leader>nh", ":nohlsearch<CR>", opts)
+
+keymap("n", "<leader>bo", ":only<CR>", opts)
+keymap("n", "<leader>bda", ":%bdelete<CR>", opts)
+keymap('n', '<leader>bdo', ':%bd|e#|bd#<CR>', { noremap = true, silent = true })
+
+-- Open/close quickfix window faster
+-- keymap("n", ",qc", ":cclose<CR>", opts)
+-- keymap("n", ",qo", ":copen<CR>", opts)
+
 keymap("n", "<leader><leader>", "<cmd>Telescope live_grep<cr>", opts)
 keymap("n", "<leader>ff", "<cmd>Telescope find_files<cr>", opts)
 keymap("n", "<leader>fa", "<cmd>Telescope find_files follow=true no_ignore=true hidden=true <cr>", opts)
@@ -154,7 +173,7 @@ keymap('v', '<leader>/', "<ESC><cmd>lua require('Comment.api').toggle.linewise(v
 
 vim.keymap.set('n', '<leader>bb', function() require('reach').buffers(options_buff) end, {})
 vim.keymap.set('n', '<leader>m', function() require('reach').marks(options_marks) end, {})
-vim.keymap.set('n', '<leader>t', function() require('reach').tabpages(options_tabs) end, {})
+vim.keymap.set('n', '<leader>tt', function() require('reach').tabpages(options_tabs) end, {})
 vim.keymap.set('n', '<leader>rc', function() require('reach').colorschemes(options_cscheme) end, {})
 
 -- sessions
