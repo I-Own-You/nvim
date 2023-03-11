@@ -89,9 +89,6 @@ keymap('n', '<C-j>', '<C-w>j', opts)
 keymap('n', '<C-k>', '<C-w>k', opts)
 keymap('n', '<C-l>', '<C-w>l', opts)
 
-keymap('n', '<C-c>', ":%y<CR>", opts)
-keymap('n', '<C-a>', "ggVG", opts)
-keymap('n', '<C-x>', ":%d<CR>", opts)
 
 keymap('n', '<leader>e', ':NvimTreeToggle<cr>', opts)
 
@@ -127,8 +124,16 @@ keymap("n", "<C-]>", "]m", opts)
 
 keymap("n", "<leader>tw", ":set invwrap<CR>:set wrap?<CR>", opts)
 keymap("n", "!", ":!", { noremap = true })
-keymap("n", "+", "<C-a>", opts)
-keymap("n", "-", "<C-x>", opts)
+
+-- dont forget to map <space>j in the plugin that splits {} and etc
+
+keymap("n", "+", "<C-a>", { noremap = true, silent = true })
+keymap("n", "-", "<C-x>", { noremap = true, silent = true })
+
+keymap('n', '<C-c>', ":%y<CR>", opts)
+keymap('n', '<C-a>', "ggVG", opts)
+keymap('n', '<C-x>', ":%d<CR>", opts)
+
 
 keymap("n", ",.", "'.", opts) -- go to last edited location
 
