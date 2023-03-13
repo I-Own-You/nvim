@@ -198,9 +198,19 @@ keymap("n", "<leader>hw", ":HopWord<CR>", opts)
 
 -- git section
 keymap("n", "<leader>nn", ":Gitsigns next_hunk<cr>",  opts)
-keymap("n", "<leader>pp", ":Gitsigns next_hunk<cr>",  opts)
+keymap("n", "<leader>pp", ":Gitsigns prev_hunk<cr>",  opts)
 keymap("n", "<leader>bl", ":Gitsigns blame_line<cr>",  opts)
 keymap("n", "<leader>ph", ":Gitsigns preview_hunk<cr>",  opts)
+keymap("n", "<leader>pih", ":Gitsigns preview_hunk_inline<cr>",  opts)
+keymap("n", "<leader>sh", ":Gitsigns stage_hunk<cr>",  opts)
+keymap("n", "<leader>sb", ":Gitsigns stage_buffer<cr>",  opts)
+keymap("n", "<leader>ush", ":Gitsigns undo_stage_hunk<cr>",  opts)
+keymap("n", "<leader>rbb", ":Gitsigns reset_buffer<cr>",  opts)
+keymap("n", "<leader>rbi", ":Gitsigns reset_buffer_index<cr>",  opts)
+keymap("n", "<leader>rh", ":Gitsigns reset_hunk<cr>",  opts)
+keymap("n", "<leader>gsw", ":Gitsigns show ",  opts)
+keymap("n", "<leader>gcb", ":Gitsigns change_base ",  opts)
+keymap("n", "<leader>gid", ":Gitsigns diffthis ",  opts)
 
 -- STAGE THIS
 -- map({ "n", "<F4>", ":lua require('dapui').toggle()<CR>" })
