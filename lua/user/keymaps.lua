@@ -157,15 +157,11 @@ keymap("n", "<leader>ft", "<cmd>Telescope help_tags <cr>", opts)
 keymap("n", "<leader>fo", "<cmd>Telescope oldfiles <cr>", opts)
 keymap("n", "<leader>fk", "<cmd>Telescope keymaps <cr>", opts)
 keymap("n", "<leader>gsh", "<cmd>Telescope git_stash <cr>", opts)
-keymap("n", "<leader>gb", "<cmd>Telescope git_branches <cr>", opts)
+keymap("n", "<leader>tgb", "<cmd>Telescope git_branches <cr>", opts)
 keymap("n", "<leader>gf", "<cmd>Telescope git_files <cr>", opts)
-keymap("n", "<leader>gc", "<cmd>Telescope git_commits <cr>", opts)
+keymap("n", "<leader>tgc", "<cmd>Telescope git_commits <cr>", opts)
 keymap("n", "<leader>gst", "<cmd>Telescope git_status <cr>", opts)
 keymap("n", "<leader>gbc", "<cmd>Telescope git_bcommits <cr>", opts)
-
-keymap("n", "<leader>fg", ":Flog ", opts)
-keymap("n", "<leader>fb", ":Floggit ", opts)
-keymap("n", "<leader>fs", ":Flogsplit ", opts)
 
 -- keymap("n", "<leader>ff", ":FZF<cr>", opts)
 
