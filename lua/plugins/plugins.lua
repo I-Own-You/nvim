@@ -159,6 +159,7 @@ return packer.startup(function(use)
     use 'Pocco81/true-zen.nvim'
     use 'rbong/vim-flog'
     use 'jay-babu/mason-nvim-dap.nvim'
+    use 'LunarVim/horizon.nvim'
     if PACKER_BOOTSSTRAP then
         require("packer").sync()
     end

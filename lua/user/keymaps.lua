@@ -229,6 +229,7 @@ keymap("n", "<Leader>dii", ":lua require('dapui').toggle()<CR>", opts)
 -- keymap("n", "<Leader>sv", ":lua require('dap.ui.widgets').hover()<CR>", opts)
 keymap("n", "<Leader>sv", ":lua local widgets=require('dap.ui.widgets');widgets.centered_float(widgets.scopes)<CR>", opts)
 
+keymap("n", "<Leader>xo", ":lua require('open_file_path').OpenCurrentFolder()<CR>", opts)
 
 -- za - toggle fold
 -- zf(line numbers)j|k - fold up or down

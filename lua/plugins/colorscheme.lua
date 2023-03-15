@@ -1,4 +1,5 @@
-local colorscheme = 'gatekeeper'
+-- local colorscheme = 'gatekeeper'
+local colorscheme = 'horizon'
 
 local status_ok, ok = pcall(vim.cmd, 'colorscheme ' .. colorscheme)
 if not status_ok then
@@ -6,4 +7,4 @@ if not status_ok then
 
 
 -- setup must be called before loading
-vim.cmd("colorscheme gatekeeper") end
+vim.cmd("colorscheme " .. colorscheme) end
