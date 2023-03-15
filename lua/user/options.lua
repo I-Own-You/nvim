@@ -25,7 +25,7 @@ local options = {
 	number = true,
 	relativenumber = true,
 	numberwidth = 4,
-	signcolumn = "yes",
+	-- signcolumn = "yes",
 	wrap = true,
 	linebreak = true,
 	scrolloff = 5,
@@ -35,3 +35,4 @@ for k, v in pairs(options) do
 end
 
 vim.api.nvim_command('set whichwrap+=<,>,h,l,[,]')
+-- vim.o.signcolumn = "yes:3"

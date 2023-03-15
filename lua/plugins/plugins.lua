@@ -148,8 +148,6 @@ return packer.startup(function(use)
     use { 'junegunn/fzf.vim' }
     use { "debugloop/telescope-undo.nvim" }
     use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
-    use 'vim-python/python-syntax'
-    use 'wookayin/semshi'
     use {
         'phaazon/hop.nvim',
         branch = 'v2', -- optional but strongly recommended
@@ -160,6 +158,7 @@ return packer.startup(function(use)
     use 'lewis6991/gitsigns.nvim'
     use 'Pocco81/true-zen.nvim'
     use 'rbong/vim-flog'
+    use 'jay-babu/mason-nvim-dap.nvim'
     if PACKER_BOOTSSTRAP then
         require("packer").sync()
     end

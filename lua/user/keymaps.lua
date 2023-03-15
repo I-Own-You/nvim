@@ -209,77 +209,25 @@ keymap("n", "<leader>gcb", ":Gitsigns change_base ",  opts)
 keymap("n", "<leader>gid", ":Gitsigns diffthis ",  opts)
 
 -- STAGE THIS
--- map({ "n", "<F4>", ":lua require('dapui').toggle()<CR>" })
--- map({ "n", "<F5>", ":lua require('dap').toggle_breakpoint()<CR>" })
--- map({ "n", "<F9>", ":lua require('dap').continue()<CR>" })
---
--- map({ "n", "<F1>", ":lua require('dap').step_over()<CR>" })
--- map({ "n", "<F2>", ":lua require('dap').step_into()<CR>" })
--- map({ "n", "<F3>", ":lua require('dap').step_out()<CR>" })
---
--- map({ "n", "<Leader>dsc", ":lua require('dap').continue()<CR>" })
--- map({ "n", "<Leader>dsv", ":lua require('dap').step_over()<CR>" })
--- map({ "n", "<Leader>dsi", ":lua require('dap').step_into()<CR>" })
--- map({ "n", "<Leader>dso", ":lua require('dap').step_out()<CR>" })
---
--- map({ "n", "<Leader>dhh", ":lua require('dap.ui.variables').hover()<CR>" })
--- map({ "v", "<Leader>dhv", ":lua require('dap.ui.variables').visual_hover()<CR>" })
---
--- map({ "n", "<Leader>duh", ":lua require('dap.ui.widgets').hover()<CR>" })
--- map({ "n", "<Leader>duf", ":lua local widgets=require('dap.ui.widgets');widgets.centered_float(widgets.scopes)<CR>" })
---
--- map({ "n", "<Leader>dro", ":lua require('dap').repl.open()<CR>" })
--- map({ "n", "<Leader>drl", ":lua require('dap').repl.run_last()<CR>" })
---
--- map({ "n", "<Leader>dbc", ":lua require('dap').set_breakpoint(vim.fn.input('Breakpoint condition: '))<CR>" })
--- map({ "n", "<Leader>dbm", ":lua require('dap').set_breakpoint({ nil, nil, vim.fn.input('Log point message: ') })<CR>" })
--- map({ "n", "<Leader>dbt", ":lua require('dap').toggle_breakpoint()<CR>" })
---
--- map({ "n", "<Leader>dc", ":lua require('dap.ui.variables').scopes()<CR>" })
--- map({ "n", "<Leader>di", ":lua require('dapui').toggle()<CR>" })
---
--- which_key.register({
--- 	d = {
--- 		name = "Debug",
--- 		s = {
--- 			name = "Step",
--- 			c = { "<cmd>lua require('dap').continue()<CR>", "Continue" },
--- 			v = { "<cmd>lua require('dap').step_over()<CR>", "Step Over" },
--- 			i = { "<cmd>lua require('dap').step_into()<CR>", "Step Into" },
--- 			o = { "<cmd>lua require('dap').step_out()<CR>", "Step Out" },
--- 		},
--- 		h = {
--- 			name = "Hover",
--- 			h = { "<cmd>lua require('dap.ui.variables').hover()<CR>", "Hover" },
--- 			v = { "<cmd>lua require('dap.ui.variables').visual_hover()<CR>", "Visual Hover" },
--- 		},
--- 		u = {
--- 			name = "UI",
--- 			h = { "<cmd>lua require('dap.ui.widgets').hover()<CR>", "Hover" },
--- 			f = { "local widgets=require('dap.ui.widgets');widgets.centered_float(widgets.scopes)<CR>", "Float" },
--- 		},
--- 		r = {
--- 			name = "Repl",
--- 			o = { "<cmd>lua require('dap').repl.open()<CR>", "Open" },
--- 			l = { "<cmd>lua require('dap').repl.run_last()<CR>", "Run Last" },
--- 		},
--- 		b = {
--- 			name = "Breakpoints",
--- 			c = {
--- 				"<cmd>lua require('dap').set_breakpoint(vim.fn.input('Breakpoint condition: '))<CR>",
--- 				"Breakpoint Condition",
--- 			},
--- 			m = {
--- 				"<cmd>lua require('dap').set_breakpoint({ nil, nil, vim.fn.input('Log point message: ') })<CR>",
--- 				"Log Point Message",
--- 			},
--- 			t = { "<cmd>lua require('dap').toggle_breakpoint()<CR>", "Create" },
--- 		},
--- 		c = { "<cmd>lua require('dap').scopes()<CR>", "Scopes" },
--- 		i = { "<cmd>lua require('dap').toggle()<CR>", "Toggle" },
--- 	},
--- }, { prefix = "<leader>" })
--- JOIN BLOCKS IS SPECIFIED IN SETTINGS ITSELF <space>j in ~/.local/share/nvim/site/pack/packer/start/
+keymap("n", "<leader>dru", ":lua require('dap').continue()<CR>", opts)
+keymap("n", "<C-n>", ":lua require('dap').step_into()<CR>", opts)
+keymap("n", "<Leader>dov", ":lua require('dap').step_over()<CR>", opts)
+keymap("n", "<Leader>dou", ":lua require('dap').step_out()<CR>", opts)
+keymap("n", "<Leader>dst", ":lua require('dap').terminate()<CR>", opts)
+keymap("n", "<Leader>drr", ":lua require('dap').run_last()<CR>", opts)
+
+
+keymap("n", "<Leader>dro", ":lua require('dap').repl.toggle()<CR>", opts)
+
+keymap("n", "<Leader>bpe", ":lua require('dap').set_breakpoint(vim.fn.input('Breakpoint condition: '))<CR>", opts)
+keymap("n", "<Leader>bpm", ":lua require('dap').set_breakpoint(nil, nil, vim.fn.input('Log point message: '))<CR>", opts)
+keymap("n", "<Leader>bpc", ":lua require('dap').clear_breakpoints()<CR>:lua require('debugger_signs_adjust').ontl()<CR>", opts)
+keymap("n", "<Leader>bpp", ":lua require('dap').toggle_breakpoint()<CR>:lua require('debugger_signs_adjust').offtl()<CR>", opts)
+
+keymap("n", "<Leader>dii", ":lua require('dapui').toggle()<CR>", opts)
+
+-- keymap("n", "<Leader>sv", ":lua require('dap.ui.widgets').hover()<CR>", opts)
+keymap("n", "<Leader>sv", ":lua local widgets=require('dap.ui.widgets');widgets.centered_float(widgets.scopes)<CR>", opts)
 
 
 -- za - toggle fold

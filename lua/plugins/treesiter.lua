@@ -9,7 +9,7 @@ configs.setup({
         -- disable = { "c", "ruby" },  -- optional, list of language that will be disabled
         -- [options]
     },
-    ensure_installed = maintained,
+    ensure_installed = "all",
     ignore_install = { "" }, -- List of parsers to ignore installing
     highlight = {
         enable = true, -- false will disable the whole extension
