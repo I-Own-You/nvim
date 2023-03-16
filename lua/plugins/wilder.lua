@@ -4,8 +4,8 @@ wilder.setup({
     modes = { ':', '/', '?' },
     next_key = '<Tab>',
     previous_key = '<S-Tab>',
-    accept_key = '<Down>', reject_key = '<Up>',
-    enable_cmdline_enter = 1 -- for auto show
+    accept_key = '', reject_key = '<C-k>',
+    enable_cmdline_enter = 0 -- for auto show
 })
 
 local gradient = {
@@ -50,9 +50,9 @@ local popupmenu_renderer = wilder.popupmenu_renderer(
 
 
 wilder.set_option('renderer', wilder.renderer_mux({
-  [':'] = popupmenu_renderer,
-  ['/'] = popupmenu_renderer,
-  ['?'] = popupmenu_renderer,
+    [':'] = popupmenu_renderer,
+    ['/'] = popupmenu_renderer,
+    ['?'] = popupmenu_renderer,
 }))
 
 wilder.set_option('pipeline', {
@@ -63,7 +63,7 @@ wilder.set_option('pipeline', {
       -- 0 turns off fuzzy matching
       -- 1 turns on fuzzy matching
       -- 2 partial fuzzy matching (match does not have to begin with the same first letter)
-      fuzzy = 1,
+      fuzzy = 2,
     }),
     wilder.python_search_pipeline({
       -- can be set to wilder#python_fuzzy_delimiter_pattern() for stricter fuzzy matching
