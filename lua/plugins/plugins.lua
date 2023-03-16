@@ -33,6 +33,7 @@ packer.init {
             return require("packer.util").float { border = "rounded" }
         end,
     },
+    max_jobs = 70,
 }
 
 return packer.startup(function(use)
@@ -40,8 +41,6 @@ return packer.startup(function(use)
 
     use 'nvim-lua/popup.nvim'
     use 'nvim-lua/plenary.nvim'
-    use 'olivercederborg/poimandres.nvim' --colorscheme
-    use 'ahmedabdulrahman/vim-aylin' --colorscheme
     use 'norcalli/nvim-colorizer.lua'
 
 
@@ -88,7 +87,6 @@ return packer.startup(function(use)
     use { 'simrat39/symbols-outline.nvim' }
 
     use { "ray-x/lsp_signature.nvim" }
-    use 'Mofiqul/dracula.nvim'
 
     use({
         "kylechui/nvim-surround",
@@ -159,7 +157,7 @@ return packer.startup(function(use)
     use 'Pocco81/true-zen.nvim'
     use 'rbong/vim-flog'
     use 'jay-babu/mason-nvim-dap.nvim'
-    use 'LunarVim/horizon.nvim'
+    use 'ntk148v/vim-horizon'
     if PACKER_BOOTSSTRAP then
         require("packer").sync()
     end

@@ -20,6 +20,7 @@ require "plugins.colorful-winsep"
 require "plugins.wilder"
 require "plugins.indent_blankline"
 require "plugins.todo-comments"
+
 require "plugins.treesj"
 require "plugins.numb"
 require "plugins.pretty-fold"
@@ -51,9 +52,7 @@ vim.fn.sign_define('DapLogPoint',            { text='', texthl='dap_log_point
 
 vim.g.show_lsp_signs = true
 
-
-
-
+vim.api.nvim_exec("autocmd BufWritePost * source ~/.config/nvim/lua/plugins/lualine.lua", false)
 
 -- require "plugins.dashboard"
 -- vim.api.nvim_command("autocmd VimEnter * Dashboard")

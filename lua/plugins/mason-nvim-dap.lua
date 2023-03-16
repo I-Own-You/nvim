@@ -103,17 +103,6 @@ dap.listeners.after['event_initialized']['me'] = function()
     end
     api.nvim_set_keymap(
         'n', 'K', '<Cmd>lua require("dap.ui.widgets").hover()<CR>', { silent = true })
-
-    local signs = {
-        { name = "DiagnosticSignError", text ="" },
-        { name = "DiagnosticSignWarn", text = "" },
-        { name = "DiagnosticSignHint", text = "" },
-        { name = "DiagnosticSignInfo", text = "" },
-    }
-
-    for _, sign in ipairs(signs) do
-        vim.fn.sign_define(sign.name, { texthl = sign.name, text = sign.text, numhl = "" })
-    end
 end
 
 dap.listeners.after['event_terminated']['me'] = function()
@@ -127,15 +116,4 @@ dap.listeners.after['event_terminated']['me'] = function()
         )
     end
     keymap_restore = {}
-
-    local signs = {
-        { name = "DiagnosticSignError", text = "" },
-        { name = "DiagnosticSignWarn", text = "" },
-        { name = "DiagnosticSignHint", text = "" },
-        { name = "DiagnosticSignInfo", text = "" },
-    }
-
-    for _, sign in ipairs(signs) do
-        vim.fn.sign_define(sign.name, { texthl = sign.name, text = sign.text, numhl = "" })
-    end
 end

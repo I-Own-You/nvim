@@ -231,6 +231,7 @@ keymap("n", "<Leader>sv", ":lua local widgets=require('dap.ui.widgets');widgets.
 
 keymap("n", "<Leader>xo", ":lua require('open_file_path').OpenCurrentFolder()<CR>", opts)
 
+-- keymap("n", ":w<CR>", ":w<CR>:so ~/.config/nvim/lua/plugins/lualine.lua<CR>", opts)
 -- za - toggle fold
 -- zf(line numbers)j|k - fold up or down
 -- zf/ - fold till the line where you type the string
