@@ -20,7 +20,7 @@ telescope.setup {
     prompt_prefix = "🔍",
     selection_caret = " ",
     path_display = { "absolute" },
-    sorting_strategy = "descending",
+    sorting_strategy = "ascending",
     selection_strategy = "reset",
 
     file_sorter = require("telescope.sorters").get_fuzzy_file,
@@ -99,11 +99,11 @@ telescope.setup {
     },
   },
   pickers = {
-        -- live_grep = {
-        --     additional_args = function(opts)
-        --         return {"--hidden"}
-        --     end
-        -- },
+        live_grep = {
+            additional_args = function(opts)
+                return {"--hidden"}
+            end
+        },
     -- Default configuration for builtin pickers goes here:
     -- picker_name = {
     --   picker_config_key = value,

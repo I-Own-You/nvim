@@ -52,8 +52,21 @@ vim.fn.sign_define('DapLogPoint',            { text='', texthl='dap_log_point
 
 vim.g.show_lsp_signs = true
 
+-- vim.g.fzf_preview_window = {'--preview', 'bat --style=numbers', '--color=always{}', 'ctrl-/'}
+vim.g.fzf_preview_window = { 'right,50%', 'ctrl-/' }
+vim.g.fzf_layout = {
+    up='~90%',
+    window= {
+        width= 0.8,
+        height= 0.8,
+        offset=0.5,
+        xoffset= 0.5,
+        highlight= 'Todo',
+        border= 'sharp',
+    },
+}
 vim.api.nvim_exec("autocmd BufWritePost * source ~/.config/nvim/lua/plugins/lualine.lua", false)
-
+vim.env.FZF_DEFAULT_COMMAND = "rg --files --hidden"
 -- require "plugins.dashboard"
 -- vim.api.nvim_command("autocmd VimEnter * Dashboard")
 

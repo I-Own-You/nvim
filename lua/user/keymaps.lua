@@ -148,9 +148,9 @@ keymap('n', '<leader>bdo', ':%bd|e#|bd#<CR>|\'\"', { noremap = true, silent = tr
 -- keymap("n", ",qc", ":cclose<CR>", opts)
 -- keymap("n", ",qo", ":copen<CR>", opts)
 
-keymap("n", "<leader><leader>", "<cmd>Telescope live_grep<cr>", opts)
-keymap("n", "<leader>ff", "<cmd>Telescope find_files<cr>", opts)
-keymap("n", "<leader>fa", "<cmd>Telescope find_files follow=true no_ignore=true hidden=true <cr>", opts)
+-- keymap("n", "<leader><leader>", "<cmd>Telescope live_grep<cr>", opts)
+-- keymap("n", "<leader>ff", "<cmd>Telescope find_files<cr>", opts)
+-- keymap("n", "<leader>fa", "<cmd>Telescope find_files follow=true no_ignore=true hidden=true <cr>", opts)
 -- keymap("n", "<leader>fb", "<cmd>Telescope buffers <cr>", opts)
 keymap("n", "<leader>tu", "<cmd>Telescope undo <cr>", opts)
 keymap("n", "<leader>ft", "<cmd>Telescope help_tags <cr>", opts)
@@ -160,10 +160,37 @@ keymap("n", "<leader>gsh", "<cmd>Telescope git_stash <cr>", opts)
 keymap("n", "<leader>tgb", "<cmd>Telescope git_branches <cr>", opts)
 keymap("n", "<leader>gf", "<cmd>Telescope git_files <cr>", opts)
 keymap("n", "<leader>tgc", "<cmd>Telescope git_commits <cr>", opts)
-keymap("n", "<leader>gst", "<cmd>Telescope git_status <cr>", opts)
-keymap("n", "<leader>gbc", "<cmd>Telescope git_bcommits <cr>", opts)
+-- keymap("n", "<leader>gst", "<cmd>Telescope git_status <cr>", opts)
+-- keymap("n", "<leader>gbc", "<cmd>Telescope git_bcommits <cr>", opts)
 
--- keymap("n", "<leader>ff", ":FZF<cr>", opts)
+-- flog vim
+keymap("n", "<leader>fg", ":Flog ", opts)
+keymap("n", "<leader>fb", ":Floggit ", opts)
+keymap("n", "<leader>fs", ":Flogsplit ", opts)
+
+-- FZF
+keymap("n", "<leader><leader>", ":Rg<CR>", opts)
+keymap("n", "<leader>ff", ":Files<CR>", opts)
+keymap("n", "<leader>fe", ":Locate ", opts)
+keymap('n', '<leader>bb', ":Buffers<CR>", opts)
+keymap('n', '<leader>ht', ":Helptags<CR>", opts)
+keymap('n', '<leader>hs', ":History/<CR>", opts)
+keymap('n', '<leader>hc', ":History:<CR>", opts)
+keymap('n', '<leader>ho', ":History<CR>", opts)
+keymap('n', '<leader>ll', ":Lines<CR>", opts)
+keymap('n', '<leader>lb', ":BLines<CR>", opts)
+keymap("n", "<leader>gst", ":GFiles?<CR>", opts)
+keymap("n", "<leader>gls", ":GFiles<CR>", opts)
+keymap("n", "<leader>gc", ":Commits<CR>", opts)
+keymap("n", "<leader>bc", ":BCommits<CR>", opts)
+-- :Maps
+-- :Commands
+-- :FileTypes
+-- :Mars
+-- :Windows
+-- :Tags
+-- :BTags
+-- keymap("n", "<leader>fz", ":FZF<cr>", opts)
 
 keymap('n', '<leader>q', ':Bdelete<cr>', opts)
 
@@ -177,8 +204,8 @@ keymap('n', '<C-u>', '15k', opts)
 vim.keymap.set('n', '<leader>/', function() require("Comment.api").toggle.linewise.current() end, opts)
 keymap('v', '<leader>/', "<ESC><cmd>lua require('Comment.api').toggle.linewise(vim.fn.visualmode())<CR>", opts)
 
-vim.keymap.set('n', '<leader>bb', function() require('reach').buffers(options_buff) end, {})
-vim.keymap.set('n', '<leader>m', function() require('reach').marks(options_marks) end, {})
+-- vim.keymap.set('n', '<leader>bb', function() require('reach').buffers(options_buff) end, {})
+-- vim.keymap.set('n', '<leader>m', function() require('reach').marks(options_marks) end, {})
 vim.keymap.set('n', '<leader>tt', function() require('reach').tabpages(options_tabs) end, {})
 vim.keymap.set('n', '<leader>rc', function() require('reach').colorschemes(options_cscheme) end, {})
 
@@ -205,7 +232,7 @@ keymap("n", "<leader>rbb", ":Gitsigns reset_buffer<cr>",  opts)
 keymap("n", "<leader>rbi", ":Gitsigns reset_buffer_index<cr>",  opts)
 keymap("n", "<leader>rh", ":Gitsigns reset_hunk<cr>",  opts)
 keymap("n", "<leader>gsw", ":Gitsigns show ",  opts)
-keymap("n", "<leader>gcb", ":Gitsigns change_base ",  opts)
+-- keymap("n", "<leader>gcb", ":Gitsigns change_base ",  opts)
 keymap("n", "<leader>gid", ":Gitsigns diffthis ",  opts)
 
 -- STAGE THIS
