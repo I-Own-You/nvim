@@ -181,8 +181,8 @@ keymap('n', '<leader>ll', ":Lines<CR>", opts)
 keymap('n', '<leader>lb', ":BLines<CR>", opts)
 keymap("n", "<leader>gst", ":GFiles?<CR>", opts)
 keymap("n", "<leader>gls", ":GFiles<CR>", opts)
-keymap("n", "<leader>gc", ":Commits<CR>", opts)
-keymap("n", "<leader>bc", ":BCommits<CR>", opts)
+keymap("n", "<leader>fgl", ":Commits<CR>", opts)
+keymap("n", "<leader>fgb", ":BCommits<CR>", opts)
 -- :Maps
 -- :Commands
 -- :FileTypes
