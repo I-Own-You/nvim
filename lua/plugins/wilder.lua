@@ -5,7 +5,7 @@ wilder.setup({
     next_key = '<Tab>',
     previous_key = '<S-Tab>',
     accept_key = '', reject_key = '<C-k>',
-    enable_cmdline_enter = 0 -- for auto show
+    enable_cmdline_enter = 1 -- for auto show
 })
 
 local gradient = {
@@ -26,7 +26,7 @@ local highlighters = {
 }
 local popupmenu_renderer = wilder.popupmenu_renderer(
   wilder.popupmenu_border_theme({
-    border = 'single',  -- 'single', 'double', 'rounded' or 'solid'
+    border = 'rounded',  -- 'single', 'double', 'rounded' or 'solid'
     empty_message = wilder.popupmenu_empty_message_with_spinner(),
     highlighter = wilder.highlighter_with_gradient(highlighters),
     left = {
