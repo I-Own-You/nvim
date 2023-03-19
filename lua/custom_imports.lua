@@ -1,3 +1,6 @@
+
+
+
 local M = {}
 
 local function fileExists(path)
@@ -18,6 +21,8 @@ function better_import()
     -- Get the path of the file associated with the buffer
     local buf_name = vim.api.nvim_buf_get_name(current_buf)
 
+    row_number = vim.api.nvim_eval('line(".")')
+    col_number = vim.api.nvim_eval('col(".")')
     for line_num = 1, vim.api.nvim_buf_line_count(current_buf) do
         -- Get the current line
         local line = vim.api.nvim_buf_get_lines(current_buf, line_num - 1, line_num, false)[1]
@@ -37,12 +42,14 @@ function better_import()
 
                 if line_from_imported[2] == original_line[2] then
                     vim.api.nvim_buf_set_lines(current_buf, line_num - 1, line_num, false, {line .. ", " .. line_from_imported[4]})
+                    vim.api.nvim_command("call cursor(" .. tostring(row_number) .. ", " .. tostring(col_number) .. ")")
                     break
                 end
             end
         else
-            vim.api.nvim_command("execute 'normal! gg0\"0P<CR><C-o>'")
-            -- Abort if the line does not match any of the conditions
+            vim.api.nvim_command("execute 'normal! gg0\"0P'")
+            -- vim.api.nvim_command(tostring(row_number))
+            vim.api.nvim_command("call cursor(" .. tostring(row_number+1) .. ", " .. tostring(col_number) .. ")")
             break
         end
     end
@@ -212,8 +219,7 @@ function M.centered_window()
 
   -- Set key mapping for filtering
     vim.api.nvim_buf_set_keymap(buf, 'n', 'f', string.format(':lua filter(%d, vim.fn.input("Word to import: "))<CR>', buf), { noremap = true })
-    -- vim.api.nvim_buf_set_keymap(buf, 'n', '<CR>', string.format('yy:q<cr>:normal! gg0"0P<CR><C-o>', buf), { noremap = true})
-    vim.api.nvim_buf_set_keymap(buf, 'n', '<CR>', string.format('yy:q<cr>:lua better_import()<cr>', buf), { noremap = true})
+    vim.api.nvim_buf_set_keymap(buf, 'n', '<CR>', string.format('yy:q<cr>:lua better_import()<CR>', buf), { noremap = true})
 
 
     vim.api.nvim_feedkeys("jk", "n", true)
