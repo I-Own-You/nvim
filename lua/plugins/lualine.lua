@@ -74,7 +74,8 @@ lualine.setup {
             {
                 'mode',
                 separator = {
-                    left = '',
+                    -- left = '',
+                    right = '',
                 },
                 right_padding = 2,
             }

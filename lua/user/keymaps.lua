@@ -167,6 +167,7 @@ keymap("n", "<leader>tgc", "<cmd>Telescope git_commits <cr>", opts)
 keymap("n", "<leader>fg", ":Flog ", opts)
 keymap("n", "<leader>fb", ":Floggit ", opts)
 keymap("n", "<leader>gc", ":Floggit commit -m \"\"<left>", opts)
+keymap("n", "<leader>gp", ":Floggit push<CR>", opts)
 keymap("n", "<leader>fs", ":Flogsplit ", opts)
 
 -- FZF
