@@ -65,8 +65,14 @@ vim.g.fzf_layout = {
         border= 'sharp',
     },
 }
+
 vim.api.nvim_exec("autocmd BufWritePost * source ~/.config/nvim/lua/plugins/lualine.lua", false)
 vim.env.FZF_DEFAULT_COMMAND = "rg --files --hidden"
+vim.cmd('command! -bang -nargs=* Rg call fzf#vim#grep(\'rg --hidden --column --line-number --no-heading --color=always --smart-case -- \' . shellescape(<q-args>), 1, fzf#vim#with_preview(), <bang>0)')
+
+
+
+
 -- require "plugins.dashboard"
 -- vim.api.nvim_command("autocmd VimEnter * Dashboard")
 
