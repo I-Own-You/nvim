@@ -164,7 +164,7 @@ keymap("n", "<leader>tgc", "<cmd>Telescope git_commits <cr>", opts)
 -- keymap("n", "<leader>gbc", "<cmd>Telescope git_bcommits <cr>", opts)
 
 -- flog vim
-keymap("n", "<leader>fg", ":Flog ", opts)
+keymap("n", "<leader>fgg", ":Flog ", opts)
 keymap("n", "<leader>fb", ":Floggit ", opts)
 keymap("n", "<leader>gc", ":Floggit commit -m \"\"<left>", opts)
 keymap("n", "<leader>gp", ":Floggit push<CR>", opts)
