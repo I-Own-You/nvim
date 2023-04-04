@@ -1,4 +1,3 @@
-require "plugins.colorscheme"
 require "plugins.plugins"
 require "user.options"
 require "user.keymaps"
@@ -20,7 +19,6 @@ require "plugins.colorful-winsep"
 require "plugins.wilder"
 require "plugins.indent_blankline"
 require "plugins.todo-comments"
-
 require "plugins.treesj"
 require "plugins.numb"
 require "plugins.pretty-fold"
@@ -32,6 +30,8 @@ require "plugins.luasnip-config"
 require "plugins.true-zen"
 require "plugins.mason-nvim-dap"
 require "plugins.nvim-dap-ui"
+require "plugins.lsp_lines"
+require "plugins.colorscheme"
 
 vim.cmd('highlight Search guifg=#F24211  guibg=#000000')
 vim.cmd('highlight IncSearch guifg=#F24211 guibg=#000000')
@@ -70,6 +70,9 @@ vim.api.nvim_exec("autocmd BufWritePost * source ~/.config/nvim/lua/plugins/lual
 vim.env.FZF_DEFAULT_COMMAND = "rg --files --hidden"
 vim.cmd('command! -bang -nargs=* Rg call fzf#vim#grep(\'rg --hidden --column --line-number --no-heading --color=always --smart-case -- \' . shellescape(<q-args>), 1, fzf#vim#with_preview(), <bang>0)')
 
+-- vim.diagnostic.config({ virtual_lines = false })
+-- vim.diagnostic.config({ virtual_lines = true })
+-- vim.diagnostic.config({ virtual_lines = { only_current_line = true } })
 
 
 

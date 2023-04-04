@@ -158,6 +158,8 @@ return packer.startup(function(use)
     use 'rbong/vim-flog'
     use 'jay-babu/mason-nvim-dap.nvim'
     use 'ntk148v/vim-horizon'
+    use({ "https://git.sr.ht/~whynothugo/lsp_lines.nvim" })
+    use 'folke/tokyonight.nvim'
     if PACKER_BOOTSSTRAP then
         require("packer").sync()
     end
