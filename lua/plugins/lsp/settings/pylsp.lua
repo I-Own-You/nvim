@@ -45,7 +45,7 @@ return {
                     perFileIgnores = {}, -- A pairing of filenames and violation codes that defines which violations to ignore in a particular file, for example: ["file_path.py:W305,W304"]). (array of string items)
                 },
                 pyflakes = { -- linter to detect various errors
-                    enabled = true, -- enable or disable plugin boolean
+                    enabled = false, -- enable or disable plugin boolean
                 },
                 pylint = { -- for code linting
                     enabled = false, -- enable or disable plugin boolean
