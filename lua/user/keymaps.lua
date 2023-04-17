@@ -185,6 +185,8 @@ keymap("n", "<leader>gst", ":GFiles?<CR>", opts)
 keymap("n", "<leader>gls", ":GFiles<CR>", opts)
 keymap("n", "<leader>fgl", ":Commits<CR>", opts)
 keymap("n", "<leader>fgb", ":BCommits<CR>", opts)
+keymap("n", "<leader>tt", ":Tags<CR>", opts)
+keymap("n", "<leader>tb", ":BTags<CR>", opts)
 -- :Maps
 -- :Commands
 -- :FileTypes
@@ -208,7 +210,7 @@ keymap('v', '<leader>/', "<ESC><cmd>lua require('Comment.api').toggle.linewise(v
 
 -- vim.keymap.set('n', '<leader>bb', function() require('reach').buffers(options_buff) end, {})
 -- vim.keymap.set('n', '<leader>m', function() require('reach').marks(options_marks) end, {})
-vim.keymap.set('n', '<leader>tt', function() require('reach').tabpages(options_tabs) end, {})
+-- vim.keymap.set('n', '<leader>tt', function() require('reach').tabpages(options_tabs) end, {})
 vim.keymap.set('n', '<leader>rc', function() require('reach').colorschemes(options_cscheme) end, {})
 
 -- sessions
