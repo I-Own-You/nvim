@@ -123,7 +123,7 @@ keymap('n', '<leader>vd', ':vert diffsplit ', opts)
 keymap("n", "<C-[>", "[m", opts)
 keymap("n", "<C-]>", "]m", opts)
 
-keymap("n", "<leader>tw", ":set invwrap<CR>:set wrap?<CR>", opts)
+keymap("n", "<leader>ww", ":set invwrap<CR>:set wrap?<CR>", opts)
 keymap("n", "!", ":!", { noremap = true })
 
 -- dont forget to map <space>j in the plugin that splits {} and etc
@@ -153,13 +153,13 @@ keymap('n', '<leader>bdo', ':%bd|e#|bd#<CR>|\'\"', { noremap = true, silent = tr
 -- keymap("n", "<leader>fa", "<cmd>Telescope find_files follow=true no_ignore=true hidden=true <cr>", opts)
 -- keymap("n", "<leader>fb", "<cmd>Telescope buffers <cr>", opts)
 keymap("n", "<leader>tu", "<cmd>Telescope undo <cr>", opts)
-keymap("n", "<leader>ft", "<cmd>Telescope help_tags <cr>", opts)
-keymap("n", "<leader>fo", "<cmd>Telescope oldfiles <cr>", opts)
-keymap("n", "<leader>fk", "<cmd>Telescope keymaps <cr>", opts)
-keymap("n", "<leader>gsh", "<cmd>Telescope git_stash <cr>", opts)
-keymap("n", "<leader>gbb", "<cmd>Telescope git_branches <cr>", opts)
-keymap("n", "<leader>gf", "<cmd>Telescope git_files <cr>", opts)
-keymap("n", "<leader>tgc", "<cmd>Telescope git_commits <cr>", opts)
+-- keymap("n", "<leader>ft", "<cmd>Telescope help_tags <cr>", opts)
+-- keymap("n", "<leader>fo", "<cmd>Telescope oldfiles <cr>", opts)
+-- keymap("n", "<leader>fk", "<cmd>Telescope keymaps <cr>", opts)
+-- keymap("n", "<leader>gsh", "<cmd>Telescope git_stash <cr>", opts)
+-- keymap("n", "<leader>gbb", "<cmd>Telescope git_branches <cr>", opts)
+-- keymap("n", "<leader>gf", "<cmd>Telescope git_files <cr>", opts)
+-- keymap("n", "<leader>tgc", "<cmd>Telescope git_commits <cr>", opts)
 -- keymap("n", "<leader>gst", "<cmd>Telescope git_status <cr>", opts)
 -- keymap("n", "<leader>gbc", "<cmd>Telescope git_bcommits <cr>", opts)
 
@@ -170,35 +170,95 @@ keymap("n", "<leader>gc", ":Floggit commit -m \"\"<left>", opts)
 keymap("n", "<leader>gp", ":Floggit push<CR>", opts)
 keymap("n", "<leader>fs", ":Flogsplit ", opts)
 
--- FZF
-keymap("n", "<leader><leader>", ":Rg<CR>", opts)
-keymap("n", "<leader>ff", ":Files<CR>", opts)
+-- FZF old
 keymap("n", "<leader>fe", ":Locate ", opts)
-keymap('n', '<leader>bb', ":Buffers<CR>", opts)
-keymap('n', '<leader>ht', ":Helptags<CR>", opts)
-keymap('n', '<leader>hs', ":History/<CR>", opts)
-keymap('n', '<leader>hc', ":History:<CR>", opts)
-keymap('n', '<leader>ho', ":History<CR>", opts)
-keymap('n', '<leader>ll', ":Lines<CR>", opts)
-keymap('n', '<leader>lb', ":BLines<CR>", opts)
-keymap("n", "<leader>gst", ":GFiles?<CR>", opts)
-keymap("n", "<leader>gls", ":GFiles<CR>", opts)
-keymap("n", "<leader>fgl", ":Commits<CR>", opts)
-keymap("n", "<leader>fgb", ":BCommits<CR>", opts)
-keymap("n", "<leader>tt", ":Tags<CR>", opts)
-keymap("n", "<leader>tb", ":BTags<CR>", opts)
--- :Maps
--- :Commands
--- :FileTypes
--- :Marks
--- :Windows
--- :Tags
--- :BTags
--- keymap("n", "<leader>fz", ":FZF<cr>", opts)
+-- FzfLua buffers and files
+keymap("n", "<leader>ff", ":FzfLua files<CR>", opts)
+keymap('n', '<leader>bb', ":FzfLua buffers<CR>", opts)
+keymap('n', '<leader>ho', ":FzfLua oldfiles<CR>", opts)
+keymap('n', '<leader>ll', ":FzfLua lines<CR>", opts)
+-- keymap('n', '<leader>lb', ":FzfLua blines<CR>", opts) used in search categore because of speed
+-- quickfix
+-- quickfix_stack
+-- loclist
+-- loclist_stack
+-- args
+-- tabs
+-- FzfLua git
+keymap("n", "<leader>gst", ":FzfLua git_status<CR>", opts)
+keymap("n", "<leader>gls", ":FzfLua git_files<CR>", opts)
+keymap("n", "<leader>fgl", ":FzfLua git_commits<CR>", opts)
+keymap("n", "<leader>fgb", ":FzfLua git_bcommits<CR>", opts)
+keymap("n", "<leader>gbb", ":FzfLua git_branches<CR>", opts)
+keymap("n", "<leader>gsh", ":FzfLua git_stash<CR>", opts)
+-- FzfLua lsp/diagnostics
+keymap("n", "gr", ":FzfLua lsp_references<CR>", opts)
+keymap("n", "gd", ":FzfLua lsp_definitions<CR>", opts)
+keymap("n", "gD", ":FzfLua lsp_declarations<CR>", opts)
+keymap("n", "<leader>D", ":FzfLua lsp_typedefs<CR>", opts)
+keymap("n", "gi", ":FzfLua lsp_implementations<CR>", opts)
+keymap("n", "<leader>oo", ":FzfLua lsp_document_symbols<CR>", opts)
+keymap("n", "<leader>ow", ":FzfLua lsp_workspace_symbols<CR>", opts)
+keymap("n", "<leader>ol", ":FzfLua lsp_live_workspace_symbols<CR>", opts)
+keymap("n", "<leader>ca", ":FzfLua lsp_code_actions<CR>", opts)
+keymap("n", "gR", ":FzfLua lsp_finder<CR>", opts)
+keymap('n', '<leader>lq', ":FzfLua lsp_document_diagnostics<CR>", opts)
+keymap('n', '<leader>lw', ":FzfLua lsp_workspace_diagnostics<CR>", opts)
+-- lsp_incoming_calls
+-- lsp_outgoing_calls
+-- FzfLua misc
+keymap('n', '<leader>bt', ":FzfLua builtin<CR>", opts)
+keymap('n', '<leader>ht', ":FzfLua help_tags<CR>", opts)
+keymap('n', '<leader>hc', ":FzfLua command_history<CR>", opts)
+keymap('n', '<leader>hs', ":FzfLua search_history<CR>", opts)
+keymap('n', '<leader>jj', ":FzfLua jumps<CR>", opts)
+keymap('n', '<leader>fk', ":FzfLua keymaps<CR>", opts)
+-- resume
+-- profiles
+-- man_pages
+-- colorschemes
+-- highlights
+-- commands
+-- marks
+-- jumps
+-- changes
+-- registers
+-- tagstack
+-- autocmds
+-- filetypes
+-- menus
+-- spell_suggest
+-- packadd
+-- FzfLua tags
+keymap('n', '<leader>tt', ":FzfLua tags<CR>", opts)
+keymap('n', '<leader>tb', ":FzfLua btags<CR>", opts)
+keymap('n', '<leader>tw', ":FzfLua tags_grep_cword<CR>", opts)
+keymap('n', '<leader>tl', ":FzfLua tags_live_grep<CR>", opts)
+-- tags_grep
+-- tags_grep_cWORD
+-- tags_grep_visual
+-- FzfLua search
+keymap("n", "<leader><leader>", ":FzfLua grep_project<CR>", opts)
+keymap("n", "<leader>gw", ":FzfLua grep_cword<CR>", opts)
+keymap('n', '<leader>lb', ":FzfLua lgrep_curbuf<CR>", opts)
+keymap('n', '<leader>tl', ":FzfLua tags_live_grep<CR>", opts)
+-- grep
+-- grep_last
+-- grep_cword
+-- grep_cWORD
+-- grep_visual
+-- lgrep_curbuf
+-- live_grep
+-- live_grep_resume
+-- live_grep_glob
+-- live_grep_native
+
+-- nvim-dap didnt add
+-- problems with lsp_workspace_symbols
 
 keymap('n', '<leader>q', ':Bdelete<cr>', opts)
 
-keymap('n', '<leader>o', ':SymbolsOutline<cr>', opts)
+-- keymap('n', '<leader>o', ':SymbolsOutline<cr>', opts)
 
 keymap('n', '<leader>nb', ':enew<cr>', opts)
 
