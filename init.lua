@@ -52,6 +52,7 @@ vim.fn.sign_define('DapLogPoint',            { text='', texthl='dap_log_point
 
 vim.g.show_lsp_signs = true
 
+-- ITS FOR OLD FZF, :FZF, NOT FOR FZF-LUA
 -- vim.g.fzf_preview_window = {'--preview', 'bat --style=numbers', '--color=always{}', 'ctrl-/'}
 vim.g.fzf_preview_window = { 'right,50%', 'ctrl-/' }
 vim.g.fzf_layout = {
