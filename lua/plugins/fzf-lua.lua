@@ -59,7 +59,7 @@ require'fzf-lua'.setup {
             flip_columns   = 120,             -- #cols to switch to horizontal on flex
             -- Only used with the builtin previewer:
             title          = true,            -- preview border title (file/buf)?
-            title_align    = "left",          -- left|center|right, title alignment
+            title_align    = "right",          -- left|center|right, title alignment
             scrollbar      = 'float',         -- `false` or string:'float|border'
             -- float:  in-window floating border
             -- border: in-border chars (see below)
@@ -379,8 +379,8 @@ icons = {
         -- otherwise auto-detect prioritizes `rg` over `grep`
         -- default options are controlled by 'rg|grep_opts'
         -- cmd            = "rg --vimgrep",
-        grep_opts         = "--binary-files=without-match --line-number --recursive --color=auto --perl-regexp",
-        rg_opts           = "--column --line-number --no-heading --color=always --smart-case --max-columns=4096",
+        grep_opts         = "--hidden --binary-files=without-match --line-number --recursive --color=auto --perl-regexp",
+        rg_opts           = "--hidden --column --line-number --no-heading --color=always --smart-case --max-columns=4096",
         -- set to 'true' to always parse globs in both 'grep' and 'live_grep'
         -- search strings will be split using the 'glob_separator' and translated
         -- to '--iglob=' arguments, requires 'rg'
