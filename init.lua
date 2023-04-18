@@ -32,6 +32,7 @@ require "plugins.mason-nvim-dap"
 require "plugins.nvim-dap-ui"
 require "plugins.lsp_lines"
 require "plugins.colorscheme"
+require "plugins.fzf-lua"
 
 vim.cmd('highlight Search guifg=#F24211  guibg=#000000')
 vim.cmd('highlight IncSearch guifg=#F24211 guibg=#000000')
