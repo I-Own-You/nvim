@@ -69,7 +69,7 @@ function filter(buf, word)
 
 
     local names = {
-        player_market = "/home/mkc/Documents/projects/home/player_market/project_auto_imports.txt",
+        player_market = "/home/mkc/Documents/personal_projects/andys_pizza/project_auto_imports.txt",
         python_std_lib = "/home/mkc/.config/nvim/py_stdlib.txt",
         django = "/home/mkc/.config/nvim/django_imports.txt",
         djangorest = "",
@@ -77,7 +77,7 @@ function filter(buf, word)
     }
 
     vim.ui.select({
-        'player_market',
+        'pers_proj',
         'django',
         'python_std_lib'
     }, {
@@ -86,7 +86,7 @@ function filter(buf, word)
             return  item
         end,
     }, function(choice)
-            if choice == 'player_market' then
+            if choice == 'pers_proj' then
                 path = names[choice]
                 vim.o.expandtab = true
             elseif choice == 'django' then
@@ -157,7 +157,7 @@ function M.centered_window()
     local contents = {}
     local auim_script = '/home/mkc/zsh_custom_scripts/create_django_auto_imports.py'
     local names = {
-        player_market = "/home/mkc/Documents/projects/home/player_market/project_auto_imports.txt",
+        player_market = "/home/mkc/Documents/personal_projects/andys_pizza/project_auto_imports.txt",
         django = "/home/mkc/.config/nvim/django_imports.txt",
         djangorest = "",
         python_std_lib = "/home/mkc/.config/nvim/py_stdlib.txt",
@@ -165,7 +165,7 @@ function M.centered_window()
     }
 
     vim.ui.select({
-        'player_market',
+        'pers_proj',
         'django',
         'python_std_lib',
     }, {
@@ -174,7 +174,7 @@ function M.centered_window()
             return  item
         end,
     }, function(choice)
-            if choice == 'player_market' then
+            if choice == 'pers_proj' then
                 path = names[choice]
                 vim.o.expandtab = true
             elseif choice == 'django' then

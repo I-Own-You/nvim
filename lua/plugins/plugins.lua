@@ -161,6 +161,7 @@ return packer.startup(function(use)
     use({ "https://git.sr.ht/~whynothugo/lsp_lines.nvim" })
     use 'folke/tokyonight.nvim'
     use { 'ibhagwan/fzf-lua' }
+    use 'windwp/nvim-ts-autotag'
     if PACKER_BOOTSSTRAP then
         require("packer").sync()
     end
