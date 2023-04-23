@@ -303,8 +303,10 @@ require'fzf-lua'.setup {
             --preview_pager = "delta --width=$FZF_PREVIEW_COLUMNS",
             actions = {
                 -- actions inherit from 'actions.files' and merge
-                ["right"]   = { actions.git_unstage, actions.resume },
-                ["left"]    = { actions.git_stage, actions.resume },
+                -- ["right"]   = { actions.git_unstage, actions.resume },
+                -- ["left"]    = { actions.git_stage, actions.resume },
+                ["alt-h"]   = { actions.git_unstage, actions.resume },
+                ["alt-l"]   = { actions.git_stage, actions.resume },
             },
         },
         commits = {
