@@ -88,6 +88,8 @@ keymap('n', '<C-h>', '<C-w>h', opts)
 keymap('n', '<C-j>', '<C-w>j', opts)
 keymap('n', '<C-k>', '<C-w>k', opts)
 keymap('n', '<C-l>', '<C-w>l', opts)
+keymap('t', '<leader><ESC>', '<C-\\><C-n>', opts)
+
 
 
 keymap('n', '<leader>e', ':NvimTreeToggle<cr>', opts)
@@ -256,7 +258,7 @@ keymap('n', '<leader>tl', ":FzfLua tags_live_grep<CR>", opts)
 -- nvim-dap didnt add
 -- problems with lsp_workspace_symbols
 
-keymap('n', '<leader>q', ':Bdelete<cr>', opts)
+keymap('n', '<leader>q', ':Bdelete!<cr>', opts)
 
 -- keymap('n', '<leader>o', ':SymbolsOutline<cr>', opts)
 
