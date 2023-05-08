@@ -323,7 +323,7 @@ keymap("n", "<Leader>dii", ":lua require('dapui').toggle()<CR>", opts)
 -- keymap("n", "<Leader>sv", ":lua require('dap.ui.widgets').hover()<CR>", opts)
 keymap("n", "<Leader>sv", ":lua local widgets=require('dap.ui.widgets');widgets.centered_float(widgets.scopes)<CR>", opts)
 
-keymap("n", "<Leader>xo", ":lua require('open_file_path').OpenCurrentFolder()<CR>", opts)
+keymap("n", "<Leader>xo", ":!dolphin %:p:h &<CR><CR>", opts)
 keymap("n", "<Leader>xt", ':let @+=expand("%:p:h")<CR>', opts)
 
 -- keymap("n", ":w<CR>", ":w<CR>:so ~/.config/nvim/lua/plugins/lualine.lua<CR>", opts)
