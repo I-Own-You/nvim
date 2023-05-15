@@ -244,7 +244,6 @@ keymap('n', '<leader>tl', ":FzfLua tags_live_grep<CR>", opts)
 keymap("n", "<leader><leader>", ":FzfLua grep_project<CR>", opts)
 keymap("n", "<leader>gw", ":FzfLua grep_cword<CR>", opts)
 keymap('n', '<leader>lb', ":FzfLua lgrep_curbuf<CR>", opts)
-keymap('n', '<leader>tl', ":FzfLua tags_live_grep<CR>", opts)
 -- grep
 -- grep_last
 -- grep_cword
