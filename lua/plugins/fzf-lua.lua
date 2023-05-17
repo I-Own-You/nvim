@@ -232,9 +232,12 @@ require'fzf-lua'.setup {
             -- will do nothing if `viu` isn't executable
             extensions      = {
                 -- neovim terminal only supports `viu` block output
-                ["png"]       = { "viu", "-b" },
+                ["png"]       = { "chafa" },
+                ["jpg"]       = { "chafa" },
                 ["svg"]       = { "chafa" },
-                ["jpg"]       = { "ueberzug" },
+                ["jpeg"]       = { "chafa" },
+                -- ["svg"]       = { "chafa" },
+                -- ["jpg"]       = { "ueberzug" },
             },
             -- if using `ueberzug` in the above extensions map
             -- set the default image scaler, possible scalers:
