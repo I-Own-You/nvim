@@ -28,6 +28,7 @@ local options = {
 	wrap = true,
 	linebreak = true,
 	scrolloff = 5,
+    foldmethod = "indent",
 }
 for k, v in pairs(options) do
 	vim.opt[k] = v
