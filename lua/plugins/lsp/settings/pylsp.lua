@@ -12,7 +12,7 @@ return {
                     exclude = {}, --  List of files or directories to exclude that match the patterns. (array of unique string items),
                     filename = {}, --When parsing directories, only check filenames matching these patterns.(array of unique string items)
                     select = nil, -- List of errors and warnings to enable., (array of unique string items)|nil
-                    ignore = {}, -- List of erros and warnings to ignore (array of unique string items)
+                    ignore = {"E501"}, -- List of erros and warnings to ignore (array of unique string items)
                     hangClosing = nil, --Hang closing bracket instead of matching indentation of opening bracket's line.(boolean)|nil
                     maxLineLength = 100, -- Maximum allowed line length for the entirety of this run. (integer)|nil
                     indentSize = nil, -- Set indentation spaces. (integer)|nil
