@@ -214,7 +214,6 @@ keymap('n', '<leader>bt', ":FzfLua builtin<CR>", opts)
 keymap('n', '<leader>ht', ":FzfLua help_tags<CR>", opts)
 keymap('n', '<leader>hc', ":FzfLua command_history<CR>", opts)
 keymap('n', '<leader>hs', ":FzfLua search_history<CR>", opts)
-keymap('n', '<leader>jj', ":FzfLua jumps<CR>", opts)
 keymap('n', '<leader>fk', ":FzfLua keymaps<CR>", opts)
 -- resume
 -- profiles
