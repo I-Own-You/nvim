@@ -88,7 +88,7 @@ keymap('n', '<C-h>', '<C-w>h', opts)
 keymap('n', '<C-j>', '<C-w>j', opts)
 keymap('n', '<C-k>', '<C-w>k', opts)
 keymap('n', '<C-l>', '<C-w>l', opts)
-keymap('n', '<leader>t', ':terminal<CR>', opts)
+keymap('n', '<leader>to', ':terminal<CR>', opts)
 keymap('t', '<leader><ESC>', '<C-\\><C-n>', opts)
 
 
