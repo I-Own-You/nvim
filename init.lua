@@ -33,6 +33,7 @@ require "plugins.lsp_lines"
 require "plugins.colorscheme"
 require "plugins.fzf-lua"
 require "plugins.nvim-ts-autotag"
+require "plugins.rnvimr"  -- its not a plugin, its a file with vim.g options for rnvimr plugin (ranger)
 
 vim.cmd('highlight Search guifg=#F24211  guibg=#000000')
 vim.cmd('highlight IncSearch guifg=#F24211 guibg=#000000')
@@ -68,7 +69,6 @@ vim.g.fzf_layout = {
     },
 }
 
-require "plugins.rnvimr"
 vim.api.nvim_exec("autocmd BufWritePost * source ~/.config/nvim/lua/plugins/lualine.lua", false)
 vim.api.nvim_exec("autocmd Filetype rnvimr tnoremap <buffer><nowait> j j", false)
 vim.api.nvim_exec("autocmd Filetype rnvimr tnoremap <buffer><nowait> k k", false)
