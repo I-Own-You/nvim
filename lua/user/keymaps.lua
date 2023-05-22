@@ -4,83 +4,6 @@ local term_opts = { silent = true }
 
 local keymap = vim.api.nvim_set_keymap
 
-local options_buff = {
-  handle = 'dynamic',              -- 'bufnr' or 'dynamic' or 'auto'
-  show_icons = true,
-  show_current = false,         -- Include current buffer in the list
-  show_modified = true,         -- Show buffer modified indicator
-  modified_icon = '⬤',          -- Character to use as modified indicator
-  grayout_current = true,       -- Wheter to gray out current buffer entry
-  force_delete = {},            -- List of filetypes / buftypes to use
-                                -- 'bdelete!' on, e.g. { 'terminal' }
-  filter = nil,                 -- Function taking bufnr as parameter,
-                                -- returning true or false
-  sort = nil,                   -- Comparator function (bufnr, bufnr) -> bool
-  terminal_char = '\\',         -- Character to use for terminal buffer handles
-                                -- when options.handle is 'dynamic'
-  grayout = true,               -- Gray out non matching entries
-
-  -- A list of characters to use as handles when options.handle == 'auto'
- auto_handles = require('reach.buffers.constant').auto_handles,
-  auto_exclude_handles = {},    -- A list of characters not to use as handles when
-                                -- options.handle == 'auto', e.g. { '8', '9', 'j', 'k' }
-  previous = {
-    enable = true,              -- Mark last used buffers with specified chars and colors
-    depth = 2,                  -- Maximum number of buffers to mark
-    chars = { '•' },            -- Characters to use as markers,
-                                -- last one is used when depth > #chars
-    groups = {                  -- Highlight groups for markers,
-      'String',                 -- last one is used when depth > #groups
-      'Comment',
-    },
-  },
-  -- A map of action to key that should be used to invoke it
-  actions = {
-    split = '-',
-    vertsplit = '|',
-    tabsplit = ']',
-    delete = '<Space>',
-    priority = '=',
-  },
-}
-
-local options_marks = {
-  filter = function(mark)
-    return mark:match('[a-zA-Z]') -- return true to disable
-  end,
-  -- A map of action to key that should be used to invoke it
-  actions = {
-    split = '-',
-    vertsplit = '|',
-    tabsplit = ']',
-    delete = '<Space>',
-  },
-}
-
-
-local options_tabs = {
-  show_icons = true,
-  show_current = false,
-  -- A map of action to key that should be used to invoke it
-  actions = {
-    delete = '<Space>',
-  },
-}
-
-local options_cscheme = {
-  filter = (function()
-    local default = {
-      'blue', 'darkblue', 'default', 'delek', 'desert', 'elflord', 'evening', 'industry', 'koehler',
-      'morning', 'murphy', 'pablo', 'peachpuff', 'ron', 'shine', 'slate', 'torte', 'zellner',
-    }
-
-    return function(name)
-      return not vim.tbl_contains(default, name) -- return true to disable
-
-    end
-  end)(),
-}
-
 vim.g.mapleader = ' '
 
 keymap('n', ';', ':', opts)
@@ -92,8 +15,7 @@ keymap('n', '<leader>to', ':terminal<CR>', opts)
 keymap('t', '<leader>tc', '<C-\\><C-n>', opts)
 
 
-
-keymap('n', '<leader>e', ':NvimTreeToggle<cr>', opts)
+keymap('n', '<leader>e', ':RnvimrToggle<cr>', opts)
 
 keymap('n', '<C-Up>', ':resize +2<CR>', opts)
 keymap('n', '<C-Down>', ':resize -2<CR>', opts)
@@ -133,6 +55,10 @@ keymap("n", "!", ":!", { noremap = true })
 
 keymap("n", "+", "<C-a>", { noremap = true, silent = true })
 keymap("n", "-", "<C-x>", { noremap = true, silent = true })
+keymap("v", "+", "<C-a>gv=gv", { noremap = true, silent = true })
+keymap("v", "-", "<C-x>gv=gv", { noremap = true, silent = true })
+keymap("x", "+", "<C-a>", { noremap = true, silent = true })
+keymap("x", "-", "<C-x>", { noremap = true, silent = true })
 
 keymap('n', '<C-c>', ":%y<CR>", opts)
 keymap('n', '<C-a>', "ggVG", opts)
@@ -268,11 +194,6 @@ keymap('n', '<C-u>', '15k', opts)
 
 vim.keymap.set('n', '<leader>/', function() require("Comment.api").toggle.linewise.current() end, opts)
 keymap('v', '<leader>/', "<ESC><cmd>lua require('Comment.api').toggle.linewise(vim.fn.visualmode())<CR>", opts)
-
--- vim.keymap.set('n', '<leader>bb', function() require('reach').buffers(options_buff) end, {})
--- vim.keymap.set('n', '<leader>m', function() require('reach').marks(options_marks) end, {})
--- vim.keymap.set('n', '<leader>tt', function() require('reach').tabpages(options_tabs) end, {})
-vim.keymap.set('n', '<leader>rc', function() require('reach').colorschemes(options_cscheme) end, {})
 
 -- sessions
 keymap("n", "<leader>ss", ":SaveSession<CR>", opts)

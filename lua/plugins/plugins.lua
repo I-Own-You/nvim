@@ -69,7 +69,7 @@ return packer.startup(function(use)
 	use({ "JoosepAlviste/nvim-ts-context-commentstring" })
 
 	use({ "kyazdani42/nvim-web-devicons" })
-	use({ "kyazdani42/nvim-tree.lua" })
+	-- use({ "kyazdani42/nvim-tree.lua" })
 
 	use({ "akinsho/bufferline.nvim" })
 	use({ "moll/vim-bbye" })
@@ -157,7 +157,6 @@ return packer.startup(function(use)
 	use("tpope/vim-fugitive")
 
 	use("lewis6991/gitsigns.nvim")
-	use("Pocco81/true-zen.nvim")
 	use("rbong/vim-flog")
 	use("jay-babu/mason-nvim-dap.nvim")
 	use("ntk148v/vim-horizon")
@@ -166,6 +165,8 @@ return packer.startup(function(use)
 	use({ "ibhagwan/fzf-lua" })
 	use("windwp/nvim-ts-autotag")
 	use({ "kelly-lin/ranger.nvim" })
+	use({ "shortcuts/no-neck-pain.nvim" })
+	use({ "kevinhwang91/rnvimr" })
 	if PACKER_BOOTSSTRAP then
 		require("packer").sync()
 	end

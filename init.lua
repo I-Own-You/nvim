@@ -27,7 +27,6 @@ require "plugins.nvim-dap-virtual-text"
 require "plugins.multiple-session"
 require "plugins.hop"
 require "plugins.luasnip-config"
-require "plugins.true-zen"
 require "plugins.mason-nvim-dap"
 require "plugins.nvim-dap-ui"
 require "plugins.lsp_lines"
@@ -52,7 +51,7 @@ vim.fn.sign_define('DapBreakpointRejected',  { text='', texthl='dap_breakpoin
 vim.fn.sign_define('DapStopped',             { text='', texthl='dap_stopped',  linehl='', numhl='' })
 vim.fn.sign_define('DapLogPoint',            { text='', texthl='dap_log_point', linehl='', numhl='' })
 
-vim.g.show_lsp_signs = true
+
 
 -- ITS FOR OLD FZF, :FZF, NOT FOR FZF-LUA
 -- vim.g.fzf_preview_window = {'--preview', 'bat --style=numbers', '--color=always{}', 'ctrl-/'}
@@ -69,7 +68,11 @@ vim.g.fzf_layout = {
     },
 }
 
+require "plugins.rnvimr"
 vim.api.nvim_exec("autocmd BufWritePost * source ~/.config/nvim/lua/plugins/lualine.lua", false)
+vim.api.nvim_exec("autocmd Filetype rnvimr tnoremap <buffer><nowait> j j", false)
+vim.api.nvim_exec("autocmd Filetype rnvimr tnoremap <buffer><nowait> k k", false)
+vim.api.nvim_exec("autocmd Filetype rnvimr tnoremap <buffer><nowait> <Space> <Space>", false)
 -- vim.env.FZF_DEFAULT_COMMAND = "rg --files --hidden" --its for old fzf
 -- vim.cmd('command! -bang -nargs=* Rg call fzf#vim#grep(\'rg --hidden --column --line-number --no-heading --color=always --smart-case -- \' . shellescape(<q-args>), 1, fzf#vim#with_preview(), <bang>0)') --its for old fzf
 --
