@@ -17,6 +17,8 @@ keymap('t', '<leader>tc', '<C-\\><C-n>', opts)
 
 keymap('n', '<leader>e', ':RnvimrToggle<cr>', opts)
 
+keymap('n', 'q', '<Nop>', opts)
+
 keymap('n', '<C-Up>', ':resize +2<CR>', opts)
 keymap('n', '<C-Down>', ':resize -2<CR>', opts)
 keymap('n', '<C-Left>', ':vertical resize +2<CR>', opts)
