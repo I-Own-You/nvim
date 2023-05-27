@@ -14,6 +14,7 @@ keymap('n', '<C-l>', '<C-w>l', opts)
 keymap('n', '<leader>to', ':terminal<CR>', opts)
 keymap('t', '<leader>tc', '<C-\\><C-n>', opts)
 
+keymap('n', '<leader>td', ':TodoTelescope<CR>', opts)
 
 keymap('n', '<leader>e', ':RnvimrToggle<cr>', opts)
 
