@@ -74,8 +74,6 @@ return packer.startup(function(use)
 	use({ "akinsho/bufferline.nvim" })
 	use({ "moll/vim-bbye" })
 
-	use({ "akinsho/toggleterm.nvim" })
-
 	use({
 		"nvim-lualine/lualine.nvim",
 		requires = { "kyazdani42/nvim-web-devicons", opt = true },
@@ -167,6 +165,14 @@ return packer.startup(function(use)
 	use({ "kelly-lin/ranger.nvim" })
 	use({ "shortcuts/no-neck-pain.nvim" })
 	use({ "kevinhwang91/rnvimr" })
+	use({
+        "Exafunction/codeium.vim",
+        config = function()
+            vim.keymap.set('i', '<A-i>', function () return vim.fn['codeium#Accept']() end, { expr = true })
+            vim.keymap.set('i', '<A-l>', function() return vim.fn['codeium#CycleCompletions'](1) end, { expr = true })
+            vim.keymap.set('i', '<A-h>', function() return vim.fn['codeium#CycleCompletions'](-1) end, { expr = true })
+        end
+    })
 	if PACKER_BOOTSSTRAP then
 		require("packer").sync()
 	end

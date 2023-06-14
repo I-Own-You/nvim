@@ -11,7 +11,6 @@ require "plugins.comment"
 require "plugins.gitsigns"
 require "plugins.nvim-tree"
 require "plugins.bufferline"
-require "plugins.toggleterm"
 require "plugins.lualine"
 -- require "plugins.symbols-outline"
 -- require "plugins.lsp-signature"
@@ -34,6 +33,7 @@ require "plugins.colorscheme"
 require "plugins.fzf-lua"
 require "plugins.nvim-ts-autotag"
 require "plugins.rnvimr"  -- its not a plugin, its a file with vim.g options for rnvimr plugin (ranger)
+require "plugins.codeium"  -- its not a plugin, its a file with vim.g options for rnvimr plugin (ranger)
 
 vim.cmd('highlight Search guifg=#F24211  guibg=#000000')
 vim.cmd('highlight IncSearch guifg=#F24211 guibg=#000000')
