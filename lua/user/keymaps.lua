@@ -198,13 +198,6 @@ keymap('n', '<C-u>', '15k', opts)
 vim.keymap.set('n', '<leader>/', function() require("Comment.api").toggle.linewise.current() end, opts)
 keymap('v', '<leader>/', "<ESC><cmd>lua require('Comment.api').toggle.linewise(vim.fn.visualmode())<CR>", opts)
 
--- sessions
-keymap("n", "<leader>ss", ":SaveSession<CR>", opts)
-keymap("n", "<leader>sr", ":RestoreSession<CR>", opts)
-keymap("n", "<leader>sa", ":EnableAutoSaveSession<CR>", opts)
-keymap("n", "<leader>sA", ":DisableAutoSaveSession<CR>", opts)
-keymap("n", "<leader>sd", ":DeleteSession<CR>", opts)
-
 
 keymap("n", "<leader>hw", ":HopWord<CR>", opts)
 

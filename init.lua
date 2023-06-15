@@ -23,7 +23,6 @@ require "plugins.numb"
 require "plugins.pretty-fold"
 require "plugins.reach"
 require "plugins.nvim-dap-virtual-text"
-require "plugins.multiple-session"
 require "plugins.hop"
 require "plugins.luasnip-config"
 require "plugins.mason-nvim-dap"
@@ -33,7 +32,8 @@ require "plugins.colorscheme"
 require "plugins.fzf-lua"
 require "plugins.nvim-ts-autotag"
 require "plugins.rnvimr"  -- its not a plugin, its a file with vim.g options for rnvimr plugin (ranger)
-require "plugins.codeium"  -- its not a plugin, its a file with vim.g options for rnvimr plugin (ranger)
+require "plugins.codeium"
+require "plugins.nvim-possession"
 
 vim.cmd('highlight Search guifg=#F24211  guibg=#000000')
 vim.cmd('highlight IncSearch guifg=#F24211 guibg=#000000')

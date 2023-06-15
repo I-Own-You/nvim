@@ -137,7 +137,6 @@ return packer.startup(function(use)
 	use({ "theHamsta/nvim-dap-virtual-text" })
 	use("folke/neodev.nvim")
 
-	use({ "niuiic/multiple-session.nvim" })
 	use({ "niuiic/niuiic-core.nvim" })
 
 	-- use {
@@ -166,13 +165,40 @@ return packer.startup(function(use)
 	use({ "shortcuts/no-neck-pain.nvim" })
 	use({ "kevinhwang91/rnvimr" })
 	use({
-        "Exafunction/codeium.vim",
-        config = function()
-            vim.keymap.set('i', '<A-i>', function () return vim.fn['codeium#Accept']() end, { expr = true })
-            vim.keymap.set('i', '<A-l>', function() return vim.fn['codeium#CycleCompletions'](1) end, { expr = true })
-            vim.keymap.set('i', '<A-h>', function() return vim.fn['codeium#CycleCompletions'](-1) end, { expr = true })
-        end
-    })
+		"Exafunction/codeium.vim",
+		config = function()
+			vim.keymap.set("i", "<A-i>", function()
+				return vim.fn["codeium#Accept"]()
+			end, { expr = true })
+			vim.keymap.set("i", "<A-l>", function()
+				return vim.fn["codeium#CycleCompletions"](1)
+			end, { expr = true })
+			vim.keymap.set("i", "<A-h>", function()
+				return vim.fn["codeium#CycleCompletions"](-1)
+			end, { expr = true })
+		end,
+	})
+	use({
+		"gennaro-tedesco/nvim-possession",
+		dependencies = {
+			"ibhagwan/fzf-lua",
+		},
+		config = function()
+			local possession = require("nvim-possession")
+			vim.keymap.set("n", "<leader>sl", function()
+				possession.list()
+			end)
+			vim.keymap.set("n", "<leader>ss", function()
+				possession.new()
+			end)
+			vim.keymap.set("n", "<leader>su", function()
+				possession.update()
+			end)
+			vim.keymap.set("n", "<leader>sd", function()
+				possession.delete()
+			end)
+		end,
+	})
 	if PACKER_BOOTSSTRAP then
 		require("packer").sync()
 	end
