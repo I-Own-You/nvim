@@ -81,7 +81,15 @@ lualine.setup {
             }
     },
     lualine_b = {'branch', 'diff', },
-    lualine_c = {'filename'},
+    lualine_c = {
+            {'filename'},
+            {
+                require("nvim-possession").status,
+                cond = function()
+                    return require("nvim-possession").status() ~= nil
+                end,
+            },
+        },
     lualine_x = { 'diagnostics', function() return vim.fn['codeium#GetStatusString']() end,'encoding', 'filetype' },
     lualine_y = {'progress'},
     lualine_z = {'location'}
