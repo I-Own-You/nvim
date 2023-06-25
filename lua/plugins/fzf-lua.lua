@@ -232,10 +232,10 @@ require'fzf-lua'.setup {
             -- will do nothing if `viu` isn't executable
             extensions      = {
                 -- neovim terminal only supports `viu` block output
-                ["png"]       = { "ueberzug", "--width=100px", "--height=100px" },
-                ["jpg"]       = { "ueberzug" },
-                ["svg"]       = { "ueberzug" },
-                ["jpeg"]       = { "ueberzug" },
+                ["png"]       = { "chafa" },
+                ["jpg"]       = { "chafa" },
+                ["svg"]       = { "chafa" },
+                ["jpeg"]       = { "chafa" },
                 -- ["svg"]       = { "chafa" },
                 -- ["jpg"]       = { "ueberzug" },
             },
