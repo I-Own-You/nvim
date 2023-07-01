@@ -100,7 +100,6 @@ return packer.startup(function(use)
 	-- use { 'dense-analysis/ale' }
 	use({ "nvim-zh/colorful-winsep.nvim" })
 	use({ "nacro90/numb.nvim" })
-	use({ "gelguy/wilder.nvim" })
 	use({ "lukas-reineke/indent-blankline.nvim" })
 
 	use({ "folke/todo-comments.nvim", requires = "nvim-lua/plenary.nvim" })
@@ -199,6 +198,7 @@ return packer.startup(function(use)
 			end)
 		end,
 	})
+	use({ "hrsh7th/cmp-cmdline" })
 	if PACKER_BOOTSSTRAP then
 		require("packer").sync()
 	end
