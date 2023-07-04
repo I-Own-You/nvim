@@ -28,7 +28,7 @@ local options = {
 	wrap = true,
 	linebreak = true,
 	scrolloff = 5,
-    sessionoptions = "buffers"
+    -- sessionoptions = "buffers"
 }
 for k, v in pairs(options) do
 	vim.opt[k] = v
