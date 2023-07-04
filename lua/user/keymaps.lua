@@ -76,6 +76,10 @@ keymap("n", "<leader>bo", ":only<CR>", opts)
 keymap("n", "<leader>bda", ":%bdelete<CR>", opts)
 keymap('n', '<leader>bdo', ':%bd|e#|bd#<CR>|\'\"', { noremap = true, silent = true })
 
+-- session keymaps
+keymap('n', '<leader>sl', ':Telescope possession list<CR>', { noremap = true, silent = true })
+keymap('n', '<leader>ss', ':PossessionSave ', { noremap = true, silent = true })
+
 -- Open/close quickfix window faster
 -- keymap("n", ",qc", ":cclose<CR>", opts)
 -- keymap("n", ",qo", ":copen<CR>", opts)

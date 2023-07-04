@@ -80,7 +80,6 @@ return packer.startup(function(use)
 	})
 
 	-- use { "tpope/vim-fugitive" }
-	use({ "simrat39/symbols-outline.nvim" })
 
 	use({ "ray-x/lsp_signature.nvim" })
 
@@ -98,7 +97,6 @@ return packer.startup(function(use)
 	--     ft = "python"
 	-- })
 	-- use { 'dense-analysis/ale' }
-	use({ "nvim-zh/colorful-winsep.nvim" })
 	use({ "nacro90/numb.nvim" })
 	use({ "lukas-reineke/indent-blankline.nvim" })
 
@@ -177,28 +175,11 @@ return packer.startup(function(use)
 			end, { expr = true })
 		end,
 	})
-	use({
-		"gennaro-tedesco/nvim-possession",
-		dependencies = {
-			"ibhagwan/fzf-lua",
-		},
-		config = function()
-			local possession = require("nvim-possession")
-			vim.keymap.set("n", "<leader>sl", function()
-				possession.list()
-			end)
-			vim.keymap.set("n", "<leader>ss", function()
-				possession.new()
-			end)
-			vim.keymap.set("n", "<leader>su", function()
-				possession.update()
-			end)
-			vim.keymap.set("n", "<leader>sd", function()
-				possession.delete()
-			end)
-		end,
-	})
 	use({ "hrsh7th/cmp-cmdline" })
+	use({
+		"jedrzejboczar/possession.nvim",
+		requires = { "nvim-lua/plenary.nvim" },
+	})
 	if PACKER_BOOTSSTRAP then
 		require("packer").sync()
 	end

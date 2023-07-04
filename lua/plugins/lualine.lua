@@ -49,6 +49,10 @@ local bubbles_theme = {
   },
 }
 
+local function session_name()
+    return 'session: ' .. require('possession.session').session_name or ''
+end
+
 lualine.setup {
   options = {
     icons_enabled = true,
@@ -81,15 +85,7 @@ lualine.setup {
             }
     },
     lualine_b = {'branch', 'diff', },
-    lualine_c = {
-            {'filename'},
-            {
-                require("nvim-possession").status,
-                cond = function()
-                    return require("nvim-possession").status() ~= nil
-                end,
-            },
-        },
+    lualine_c = {'filename', {session_name}},
     lualine_x = { 'diagnostics', function() return vim.fn['codeium#GetStatusString']() end,'encoding', 'filetype' },
     lualine_y = {'progress'},
     lualine_z = {'location'}
@@ -97,7 +93,7 @@ lualine.setup {
   inactive_sections = {
     lualine_a = {},
     lualine_b = {},
-    lualine_c = {'filename'},
+    lualine_c = {'filename', session_name},
     lualine_x = {'location'},
     lualine_y = {},
     lualine_z = {}
