@@ -52,7 +52,7 @@ require("possession").setup({
 		nvim_tree = true,
 		tabby = true,
 		dap = true,
-		delete_buffers = false,
+		delete_buffers = true,
         delete_hidden_buffers = false,
 	},
 	telescope = {
