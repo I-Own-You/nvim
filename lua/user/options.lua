@@ -8,6 +8,7 @@ local options = {
 	showtabline = 1,
 	smartcase = true,
 	smartindent = true,
+    ignorecase = true,
 	splitbelow = true,
 	splitright = true,
 	swapfile = false,
