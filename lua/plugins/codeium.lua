@@ -5,7 +5,7 @@ vim.g.codeium_disable_bindings = 1
 -- 	["typescript"] = true,
 -- }
 
--- vim.g.codeium_enabled = true
+vim.g.codeium_enabled = false
 -- vim.g.codeium_manual = false
 
 
