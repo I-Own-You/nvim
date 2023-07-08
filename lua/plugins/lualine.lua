@@ -56,7 +56,7 @@ end
 lualine.setup {
   options = {
     icons_enabled = true,
-    theme = bubbles_theme,
+    theme = nightfly,
     component_separators = { left = '', right = ''},
     -- section_separators = { left = '', right = ''},
     section_separators = { left = '', right = ''},
