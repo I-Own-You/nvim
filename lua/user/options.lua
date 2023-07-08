@@ -28,6 +28,7 @@ local options = {
 	numberwidth = 4,
 	wrap = true,
 	linebreak = true,
+    fillchars = "eob: "
 	-- scrolloff = 5,
     -- sessionoptions = "buffers"
 }
