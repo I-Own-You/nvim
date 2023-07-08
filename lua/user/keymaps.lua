@@ -29,6 +29,7 @@ keymap('n', '<TAB>', ':bnext<CR>', opts)
 keymap('n', '<S-TAB>', ':bprevious<CR>', opts)
 
 keymap('i', 'jk', '<ESC>', opts)
+keymap('i', 'jj', '<ESC>', opts)
 
 keymap('v', '<', '<gv', opts)
 keymap('v', '>', '>gv', opts)
@@ -67,7 +68,21 @@ keymap('n', '<C-c>', ":%y<CR>", opts)
 keymap('n', '<C-a>', "ggVG", opts)
 keymap('n', '<C-x>', ":%d<CR>", opts)
 
-vim.keymap.set("n", "<leader>k", function() require("treesitter-context").go_to_context() end, { silent = true })
+vim.keymap.set("n", "<leader>kk", function() require("treesitter-context").go_to_context() end, { silent = true })
+vim.keymap.set("n", "<leader>kl",
+    function()
+        local ok, start = require("indent_blankline.utils").get_current_context(
+            vim.g.indent_blankline_context_patterns,
+            vim.g.indent_blankline_use_treesitter_scope
+        )
+
+        if ok then
+            vim.api.nvim_win_set_cursor(vim.api.nvim_get_current_win(), { start, 0 })
+            vim.cmd [[normal! _]]
+        end
+    end,
+    opts
+)
 
 keymap("n", ",.", "'.", opts) -- go to last edited location
 

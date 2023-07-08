@@ -28,7 +28,7 @@ local options = {
 	numberwidth = 4,
 	wrap = true,
 	linebreak = true,
-	scrolloff = 5,
+	-- scrolloff = 5,
     -- sessionoptions = "buffers"
 }
 for k, v in pairs(options) do
