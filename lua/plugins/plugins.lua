@@ -36,50 +36,45 @@ packer.init({
 })
 
 return packer.startup(function(use)
-	use("wbthomason/packer.nvim")
+	use("wbthomason/packer.nvim") -- plugin manager
 
-	use("nvim-lua/popup.nvim")
-	use("nvim-lua/plenary.nvim")
-	use("norcalli/nvim-colorizer.lua")
+	use("NvChad/nvim-colorizer.lua") -- colorizer for colors
 
 	use({ "hrsh7th/nvim-cmp" }) -- The completion plugin
 	use({ "hrsh7th/cmp-buffer" }) -- buffer completions
 	use({ "hrsh7th/cmp-path" }) -- path completions
 	use({ "saadparwaiz1/cmp_luasnip" }) -- snippet completions
-	use({ "hrsh7th/cmp-nvim-lsp" })
-	use({ "hrsh7th/cmp-nvim-lua" })
+	use({ "hrsh7th/cmp-nvim-lsp" }) -- cmp stuff
+	use({ "hrsh7th/cmp-nvim-lua" }) -- cmp stuff
 
 	-- Snippets
-	use({ "L3MON4D3/LuaSnip", run = "make install_jsregexp" })
+	use({ "L3MON4D3/LuaSnip", run = "make install_jsregexp" }) -- snippets
 	use({ "rafamadriz/friendly-snippets" }) -- a bunch of snippets to use
 
 	use({ "neovim/nvim-lspconfig" }) -- enable LSP
-	use({ "williamboman/nvim-lsp-installer" })
-	use({ "jose-elias-alvarez/null-ls.nvim" })
+	use({ "williamboman/nvim-lsp-installer" }) -- lsp installer
+	use({ "jose-elias-alvarez/null-ls.nvim" }) -- utility to install packages liek mason
 	use({ "williamboman/mason.nvim" }) -- simple to use language server installer
-	use({ "williamboman/mason-lspconfig.nvim" })
+	use({ "williamboman/mason-lspconfig.nvim" }) -- mason helper
 
-	use({ "nvim-telescope/telescope.nvim" })
-	use({ "nvim-treesitter/nvim-treesitter" })
+	use({ "nvim-telescope/telescope.nvim" }) -- telescope
+	use({ "nvim-treesitter/nvim-treesitter" }) -- nvim treesitter
+	use({ "nvim-treesitter/nvim-treesitter-context" })
 
-	-- stopped here
 	use({ "windwp/nvim-autopairs" }) -- Autopairs, integrates with both cmp and treesitter
 
-	use({ "numToStr/Comment.nvim" })
-	use({ "JoosepAlviste/nvim-ts-context-commentstring" })
+	use({ "numToStr/Comment.nvim" }) -- comment utility
+	use({ "JoosepAlviste/nvim-ts-context-commentstring" }) -- for templates
 
-	use({ "kyazdani42/nvim-web-devicons" })
-	-- use({ "kyazdani42/nvim-tree.lua" })
+	use({ "kyazdani42/nvim-web-devicons" }) -- icons
 
-	use({ "akinsho/bufferline.nvim" })
-	use({ "moll/vim-bbye" })
+	-- use({ "akinsho/bufferline.nvim" })
+	use({ "moll/vim-bbye" }) -- buffer utility for close, etc.
 
 	use({
 		"nvim-lualine/lualine.nvim",
 		requires = { "kyazdani42/nvim-web-devicons", opt = true },
-	})
-
-	-- use { "tpope/vim-fugitive" }
+	}) -- status line
 
 	use({ "ray-x/lsp_signature.nvim" })
 
@@ -91,76 +86,47 @@ return packer.startup(function(use)
 				-- Configuration here, or leave empty to use defaults
 			})
 		end,
-	})
+	}) -- nvim key combinations for editing
 	-- use({
 	--     'python-rope/ropevim',
 	--     ft = "python"
 	-- })
 	-- use { 'dense-analysis/ale' }
-	use({ "nacro90/numb.nvim" })
-	use({ "lukas-reineke/indent-blankline.nvim" })
+	use({ "nacro90/numb.nvim" }) -- move focus to the center when searching a line from command mode
+	use({ "lukas-reineke/indent-blankline.nvim" }) -- indentation view
 
-	use({ "folke/todo-comments.nvim", requires = "nvim-lua/plenary.nvim" })
-	use({ "Wansmer/treesj", requires = { "nvim-treesitter" } })
+	use({ "folke/todo-comments.nvim", requires = "nvim-lua/plenary.nvim" }) -- mroe beautiful comments
+	use({ "Wansmer/treesj", requires = { "nvim-treesitter" } }) -- toggle ({[]}) in half
 
-	use({ "Vimjas/vim-python-pep8-indent" })
+	use({ "Vimjas/vim-python-pep8-indent" }) -- python indentation
 
-	use({ "anuvyklack/pretty-fold.nvim" })
-	use({
-		"utilyre/barbecue.nvim",
-		tag = "*",
-		requires = {
-			"SmiteshP/nvim-navic",
-			"nvim-tree/nvim-web-devicons", -- optional dependency
-		},
-		after = "nvim-web-devicons", -- keep this if you're using NvChad
-		config = function()
-			require("barbecue").setup()
-		end,
-	})
-	use("toppair/reach.nvim")
+	use({ "anuvyklack/pretty-fold.nvim" }) -- more beautiful fold view
 
-	use({ "andymass/vim-matchup" })
+	use({ "andymass/vim-matchup" }) -- vim match more character liek html tags, quotes, etc.
 
-	use({ "kevinhwang91/nvim-bqf" })
-	use({
-		"junegunn/fzf",
-		run = function()
-			vim.fn["fzf#install"]()
-		end,
-	})
+	use({ "kevinhwang91/nvim-bqf" }) -- more beautiful preview
 
-	use({ "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap" } })
-	use({ "theHamsta/nvim-dap-virtual-text" })
-	use("folke/neodev.nvim")
+	-- use({ "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap" } })
+	-- use({ "theHamsta/nvim-dap-virtual-text" })
+	-- use("jay-babu/mason-nvim-dap.nvim")
 
-	use({ "niuiic/niuiic-core.nvim" })
-
-	-- use {
-	--     'glepnir/dashboard-nvim',
-	-- }
-	use({ "notken12/base46-colors" })
-	use({ "junegunn/fzf.vim" })
-	use({ "debugloop/telescope-undo.nvim" })
-	use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" })
+	use({ "notken12/base46-colors" }) -- themes from nvchad
+	use({ "junegunn/fzf.vim" }) -- old fzf
+	use({ "debugloop/telescope-undo.nvim" }) -- telescope undo things
+	use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" }) -- make telescope faster
 	use({
 		"phaazon/hop.nvim",
 		branch = "v2", -- optional but strongly recommended
-	})
+	}) -- jump everywhere in the porject
 
+	use("lewis6991/gitsigns.nvim") -- git signs
+	use("rbong/vim-flog") -- git graph and functionality
 	use("tpope/vim-fugitive")
-
-	use("lewis6991/gitsigns.nvim")
-	use("rbong/vim-flog")
-	use("jay-babu/mason-nvim-dap.nvim")
-	use("ntk148v/vim-horizon")
-	use({ "https://git.sr.ht/~whynothugo/lsp_lines.nvim" })
-	use("folke/tokyonight.nvim")
-	use({ "ibhagwan/fzf-lua" })
-	use("windwp/nvim-ts-autotag")
-	use({ "kelly-lin/ranger.nvim" })
-	use({ "shortcuts/no-neck-pain.nvim" })
-	use({ "kevinhwang91/rnvimr" })
+	use({ "https://git.sr.ht/~whynothugo/lsp_lines.nvim" }) -- more beautiful lsp signs
+	use({ "ibhagwan/fzf-lua" }) -- fzf lua, the new fzf
+	use("windwp/nvim-ts-autotag") -- autotag for idk what
+	use({ "shortcuts/no-neck-pain.nvim" }) -- zen modes
+	use({ "kevinhwang91/rnvimr" }) -- file manager
 	use({
 		"Exafunction/codeium.vim",
 		config = function()
@@ -174,12 +140,12 @@ return packer.startup(function(use)
 				return vim.fn["codeium#CycleCompletions"](-1)
 			end, { expr = true })
 		end,
-	})
-	use({ "hrsh7th/cmp-cmdline" })
+	}) -- codeium like copilot
+	use({ "hrsh7th/cmp-cmdline" }) -- auto show hints form command/search mode
 	use({
 		"jedrzejboczar/possession.nvim",
 		requires = { "nvim-lua/plenary.nvim" },
-	})
+	}) -- session manager
 	if PACKER_BOOTSSTRAP then
 		require("packer").sync()
 	end

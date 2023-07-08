@@ -9,22 +9,19 @@ require "plugins.treesiter"
 require "plugins.autopairs"
 require "plugins.comment"
 require "plugins.gitsigns"
-require "plugins.nvim-tree"
-require "plugins.bufferline"
+-- require "plugins.bufferline"
 require "plugins.lualine"
--- require "plugins.lsp-signature"
--- require "plugins.wilder"
+require "plugins.lsp-signature"
 require "plugins.indent_blankline"
 require "plugins.todo-comments"
 require "plugins.treesj"
 require "plugins.numb"
 require "plugins.pretty-fold"
-require "plugins.reach"
-require "plugins.nvim-dap-virtual-text"
 require "plugins.hop"
 require "plugins.luasnip-config"
-require "plugins.mason-nvim-dap"
-require "plugins.nvim-dap-ui"
+-- require "plugins.nvim-dap-virtual-text"
+-- require "plugins.mason-nvim-dap"
+-- require "plugins.nvim-dap-ui"
 require "plugins.lsp_lines"
 require "plugins.colorscheme"
 require "plugins.fzf-lua"
@@ -33,10 +30,9 @@ require "plugins.rnvimr"  -- its not a plugin, its a file with vim.g options for
 require "plugins.codeium"
 require "plugins.session"
 
-vim.cmd('highlight Search guifg=#F24211  guibg=#000000')
-vim.cmd('highlight IncSearch guifg=#F24211 guibg=#000000')
-vim.cmd('highlight Substitute guifg=#F24211  guibg=#000000')
-
+-- vim.cmd('highlight Search guifg=#F24211  guibg=#000000')
+-- vim.cmd('highlight IncSearch guifg=#F24211 guibg=#000000')
+-- vim.cmd('highlight Substitute guifg=#F24211  guibg=#000000')
 
 vim.api.nvim_set_hl(0, "dap_breakpoint_red",   { fg = "#ff0011" })
 vim.api.nvim_set_hl(0, "dap_log_point",  { fg = "#31353f" })
