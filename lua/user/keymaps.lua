@@ -238,25 +238,25 @@ keymap("n", "<leader>gsw", ":Gitsigns show ",  opts)
 keymap("n", "<leader>gid", ":Gitsigns diffthis ",  opts)
 
 -- STAGE THIS
-keymap("n", "<leader>dru", ":lua require('dap').continue()<CR>", opts)
-keymap("n", "<C-n>", ":lua require('dap').step_into()<CR>", opts)
-keymap("n", "<Leader>dov", ":lua require('dap').step_over()<CR>", opts)
-keymap("n", "<Leader>dou", ":lua require('dap').step_out()<CR>", opts)
-keymap("n", "<Leader>dst", ":lua require('dap').terminate()<CR>", opts)
-keymap("n", "<Leader>drr", ":lua require('dap').run_last()<CR>", opts)
+-- keymap("n", "<leader>dru", ":lua require('dap').continue()<CR>", opts)
+-- keymap("n", "<C-n>", ":lua require('dap').step_into()<CR>", opts)
+-- keymap("n", "<Leader>dov", ":lua require('dap').step_over()<CR>", opts)
+-- keymap("n", "<Leader>dou", ":lua require('dap').step_out()<CR>", opts)
+-- keymap("n", "<Leader>dst", ":lua require('dap').terminate()<CR>", opts)
+-- keymap("n", "<Leader>drr", ":lua require('dap').run_last()<CR>", opts)
 
 
-keymap("n", "<Leader>dro", ":lua require('dap').repl.toggle()<CR>", opts)
+-- keymap("n", "<Leader>dro", ":lua require('dap').repl.toggle()<CR>", opts)
 
-keymap("n", "<Leader>bpe", ":lua require('dap').set_breakpoint(vim.fn.input('Breakpoint condition: '))<CR>", opts)
-keymap("n", "<Leader>bpm", ":lua require('dap').set_breakpoint(nil, nil, vim.fn.input('Log point message: '))<CR>", opts)
-keymap("n", "<Leader>bpc", ":lua require('dap').clear_breakpoints()<CR>:lua require('debugger_signs_adjust').ontl()<CR>", opts)
-keymap("n", "<Leader>bpp", ":lua require('dap').toggle_breakpoint()<CR>:lua require('debugger_signs_adjust').offtl()<CR>", opts)
+-- keymap("n", "<Leader>bpe", ":lua require('dap').set_breakpoint(vim.fn.input('Breakpoint condition: '))<CR>", opts)
+-- keymap("n", "<Leader>bpm", ":lua require('dap').set_breakpoint(nil, nil, vim.fn.input('Log point message: '))<CR>", opts)
+-- keymap("n", "<Leader>bpc", ":lua require('dap').clear_breakpoints()<CR>:lua require('debugger_signs_adjust').ontl()<CR>", opts)
+-- keymap("n", "<Leader>bpp", ":lua require('dap').toggle_breakpoint()<CR>:lua require('debugger_signs_adjust').offtl()<CR>", opts)
 
-keymap("n", "<Leader>dii", ":lua require('dapui').toggle()<CR>", opts)
+-- keymap("n", "<Leader>dii", ":lua require('dapui').toggle()<CR>", opts)
 
 -- keymap("n", "<Leader>sv", ":lua require('dap.ui.widgets').hover()<CR>", opts)
-keymap("n", "<Leader>sv", ":lua local widgets=require('dap.ui.widgets');widgets.centered_float(widgets.scopes)<CR>", opts)
+-- keymap("n", "<Leader>sv", ":lua local widgets=require('dap.ui.widgets');widgets.centered_float(widgets.scopes)<CR>", opts)
 
 keymap("n", "<Leader>xo", ":!dolphin %:p:h &<CR><CR>", opts)
 keymap("n", "<Leader>xt", ':let @+=expand("%:p:h")<CR>', opts)
