@@ -7,7 +7,7 @@ return {
             css = true,
             javascript = true
         },
-        provideFormatter = true
+        provideFormatter = false
     },
     settings = {},
     single_file_support = true
