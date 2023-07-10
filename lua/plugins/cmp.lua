@@ -153,7 +153,7 @@ cmp.setup {
 
   window = {
     completion = cmp.config.window.bordered({
-            scrollbar = false,
+            scrollbar = true,
             border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
             winhighlight = "Normal:CustomFloatCompletion,FloatBorder:CmpItemKindEnum,CursorLine:CursorLine,Search:None",
             -- side_padding = 0,

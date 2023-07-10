@@ -12,11 +12,12 @@ null_ls.setup({
 	debug = false,
 	sources = {
 		--formatting.prettier.with({ extra_args = { "--no-semi", "--single-quote", "--jsx-single-quote" } }),
-		formatting.black.with({ extra_args = { "--fast" } }),
-		--formatting.stylua,
+		-- formatting.ruff,
+		formatting.black.with({ extra_args = { "--line-length", "200", "--single-quote", "--fast" } }),
+		diagnostics.ruff.with({ extra_args = { "--ignore=E501" } }),
+		formatting.stylua,
 		formatting.isort,
 		formatting.autoflake.with({ extra_args = { "--remove-all-unused-imports" } }),
-		formatting.stylua,
 		formatting.rustywind.with({
 			filetypes = {
 				"javascript",

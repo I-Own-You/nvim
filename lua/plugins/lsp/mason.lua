@@ -7,11 +7,13 @@ local servers = {
 	-- "tsserver",
 	"pyright",
     "pylsp",
+    -- "pylyzer",
     "cssmodules_ls",
     "tailwindcss",
 	-- "bashls",
 	"jsonls",
 	-- "yamlls",
+    -- "ruff_lsp",
 }
 
 local settings = {
