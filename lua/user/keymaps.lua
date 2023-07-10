@@ -126,6 +126,7 @@ keymap("n", "<leader>fs", ":Flogsplit ", opts)
 keymap("n", "<leader>fe", ":Locate ", opts)
 -- FzfLua buffers and files
 keymap("n", "<leader>ff", ":FzfLua files<CR>", opts)
+keymap("n", "<leader>fa", ":lua require('fzf-lua').files({fd_opts = '--color=never --type f --hidden --follow --no-ignore'})<CR>", opts)
 keymap('n', '<leader>bb', ":FzfLua buffers<CR>", opts)
 keymap('n', '<leader>ho', ":FzfLua oldfiles<CR>", opts)
 keymap('n', '<leader>ll', ":FzfLua lines<CR>", opts)
@@ -190,6 +191,7 @@ keymap('n', '<leader>tl', ":FzfLua tags_live_grep<CR>", opts)
 -- tags_grep_visual
 -- FzfLua search
 keymap("n", "<leader><leader>", ":FzfLua grep_project<CR>", opts)
+keymap("n", "<leader>a", ":lua require('fzf-lua').grep_project({rg_opts = '--hidden --no-ignore --column --line-number --no-heading --color=always --smart-case --max-columns=4096'})<CR>", opts)
 keymap("n", "<leader>gw", ":FzfLua grep_cword<CR>", opts)
 keymap('n', '<leader>lb', ":FzfLua lgrep_curbuf<CR>", opts)
 -- grep
