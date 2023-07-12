@@ -96,6 +96,8 @@ keymap('n', '<leader>bdo', ':%bd|e#|bd#<CR>|\'\"', { noremap = true, silent = tr
 keymap('n', '<leader>sl', ':Telescope possession list<CR>', { noremap = true, silent = true })
 keymap('n', '<leader>ss', ':PossessionSave ', { noremap = true, silent = true })
 
+keymap('n', '<leader>ftd', ':set filetype=htmldjango<CR>', { noremap = true, silent = true })
+keymap('n', '<leader>fth', ':set filetype=html<CR>', { noremap = true, silent = true })
 -- Open/close quickfix window faster
 -- keymap("n", ",qc", ":cclose<CR>", opts)
 -- keymap("n", ",qo", ":copen<CR>", opts)
