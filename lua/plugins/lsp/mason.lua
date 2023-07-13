@@ -14,6 +14,8 @@ local servers = {
 	"jsonls",
 	-- "yamlls",
     -- "ruff_lsp",
+  "tsserver",
+  "eslint",
 }
 
 local settings = {
