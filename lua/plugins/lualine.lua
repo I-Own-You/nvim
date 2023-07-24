@@ -53,7 +53,7 @@ local function session_name()
     return 'session: ' .. require('possession.session').session_name or ''
 end
 
-lualine.setup {
+return {
   options = {
     icons_enabled = true,
     theme = nightfly,

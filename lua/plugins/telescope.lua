@@ -1,11 +1,5 @@
-local status_ok, telescope = pcall(require, "telescope")
-if not status_ok then
-  return
-end
-
 local actions = require "telescope.actions"
-
-telescope.setup {
+return {
   defaults = {
     vimgrep_arguments = {
         "rg",
@@ -147,6 +141,3 @@ telescope.setup {
         -- the default case_mode is "smart_case"
     }
 }
-require('telescope').load_extension('fzf')
-require("telescope").load_extension("undo")
-require('telescope').load_extension('possession')

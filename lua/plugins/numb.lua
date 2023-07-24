@@ -1,4 +1,4 @@
-require('numb').setup{
+return {
   -- show_numbers = true, -- Enable 'number' for the window while peeking
   -- show_cursorline = true, -- Enable 'cursorline' for the window while peeking
   -- hide_relativenumbers = true -- Enable turning off 'relativenumber' for the window while peeking

@@ -1,10 +1,10 @@
-require('nvim-ts-autotag').setup {
+return {
     filetypes = {
         'html', 'javascript', 'typescript', 'javascriptreact', 'typescriptreact', 'svelte', 'vue', 'tsx', 'jsx', 'rescript',
         'xml',
         'php',
         'markdown',
-        'astro', 'glimmer', 'handlebars', 'hbs'
+        'astro', 'glimmer', 'handlebars', 'hbs', 'djangohtml', 'htmldjango'
     },
     skip_tags = {
         'area', 'base', 'br', 'col', 'command', 'embed', 'hr', 'img', 'slot',

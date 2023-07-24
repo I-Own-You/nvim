@@ -1,4 +1,4 @@
-require("possession").setup({
+return {
 	silent = false,
 	load_silent = true,
 	debug = false,
@@ -66,4 +66,4 @@ require("possession").setup({
 			},
 		},
 	},
-})
+}

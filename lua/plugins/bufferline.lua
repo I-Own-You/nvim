@@ -1,8 +1,3 @@
-local status_ok, bufferline = pcall(require, "bufferline")
-if not status_ok then
-  return
-end
-
 -- vim.api.nvim_set_hl(0, "BufferLineFill", { fg = "", bg = "" })
 -- vim.api.nvim_set_hl(0, "BufferLineDuplicate", { fg = "", bg = "" })
 -- vim.api.nvim_set_hl(0, "BufferLineBackground", { fg = "", bg = "" })
@@ -30,7 +25,7 @@ end
 -- vim.api.nvim_set_hl(0, "BufferLineDiagnostic", { fg = , bg =  })
 -- vim.api.nvim_set_hl(0, "BufferLineDiagnosticSelected", { fg = , bg =  })
 
-bufferline.setup {
+return {
     options = {
         numbers = "none", -- | "ordinal" | "buffer_id" | "both" | function({ ordinal, id, lower, raise }): string,
         close_command = "Bdelete! %d", -- can be a string | function, see "Mouse actions"

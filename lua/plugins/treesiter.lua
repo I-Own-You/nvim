@@ -1,9 +1,4 @@
-local status_ok, configs = pcall(require, "nvim-treesitter.configs")
-if not status_ok then
-    return
-end
-
-configs.setup({
+return {
     matchup = {
         enable = true,              -- mandatory, false will disable the whole extension
         enable_quotes = true
@@ -27,4 +22,4 @@ configs.setup({
         enable = true,
         enable_autocmd = false,
     }
-})
+}

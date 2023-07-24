@@ -31,6 +31,8 @@ keymap('n', '<S-TAB>', ':bprevious<CR>', opts)
 keymap('i', 'jk', '<ESC>', opts)
 keymap('i', 'jj', '<ESC>', opts)
 
+keymap('n', '<leader>j', "<cmd>TSJToggle<cr>", opts)
+
 keymap('v', '<', '<gv', opts)
 keymap('v', '>', '>gv', opts)
 

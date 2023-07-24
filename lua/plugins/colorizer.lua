@@ -1,4 +1,4 @@
-require("colorizer").setup {
+return {
     filetypes = { "*" },
     user_default_options = {
         RGB = true, -- #RGB hex codes
