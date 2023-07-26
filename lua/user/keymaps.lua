@@ -6,7 +6,7 @@ local keymap = vim.api.nvim_set_keymap
 
 vim.g.mapleader = ' '
 
-keymap('n', ';', ':', opts)
+keymap('n', ';', ":", {noremap = true})
 keymap('n', '<C-h>', '<C-w>h', opts)
 keymap('n', '<C-j>', '<C-w>j', opts)
 keymap('n', '<C-k>', '<C-w>k', opts)
@@ -96,7 +96,7 @@ keymap('n', '<leader>bdo', ':%bd|e#|bd#<CR>|\'\"', { noremap = true, silent = tr
 
 -- session keymaps
 keymap('n', '<leader>sl', ':Telescope possession list<CR>', { noremap = true, silent = true })
-keymap('n', '<leader>ss', ':PossessionSave ', { noremap = true, silent = true })
+keymap('n', '<leader>ss', ':PossessionSave ', {noremap = true})
 
 keymap('n', '<leader>dj', ':set filetype=htmldjango<CR>', { noremap = true, silent = true })
 keymap('n', '<leader>dh', ':set filetype=html<CR>', { noremap = true, silent = true })
@@ -120,14 +120,12 @@ keymap("n", "<leader>tu", "<cmd>Telescope undo <cr>", opts)
 -- keymap("n", "<leader>gbc", "<cmd>Telescope git_bcommits <cr>", opts)
 
 -- flog vim
-keymap("n", "<leader>fgg", ":Flog ", opts)
-keymap("n", "<leader>fb", ":Floggit ", opts)
-keymap("n", "<leader>gc", ":Floggit commit -m \"\"<left>", opts)
+keymap("n", "<leader>fgg", ":Flog ", {noremap = true})
+keymap("n", "<leader>fb", ":Floggit ", {noremap = true})
+keymap("n", "<leader>gc", ":Floggit commit -m \"\"<left>", {noremap = true})
 keymap("n", "<leader>gp", ":Floggit push<CR>", opts)
-keymap("n", "<leader>fs", ":Flogsplit ", opts)
+keymap("n", "<leader>fs", ":Flogsplit ", {noremap = true})
 
--- FZF old
-keymap("n", "<leader>fe", ":Locate ", opts)
 -- FzfLua buffers and files
 keymap("n", "<leader>ff", ":FzfLua files<CR>", opts)
 keymap("n", "<leader>fa", ":lua require('fzf-lua').files({fd_opts = '--color=never --type f --hidden --follow --no-ignore'})<CR>", opts)
@@ -239,9 +237,9 @@ keymap("n", "<leader>ush", ":Gitsigns undo_stage_hunk<cr>",  opts)
 keymap("n", "<leader>rbb", ":Gitsigns reset_buffer<cr>",  opts)
 keymap("n", "<leader>rbi", ":Gitsigns reset_buffer_index<cr>",  opts)
 keymap("n", "<leader>rh", ":Gitsigns reset_hunk<cr>",  opts)
-keymap("n", "<leader>gsw", ":Gitsigns show ",  opts)
+keymap("n", "<leader>gsw", ":Gitsigns show ",  {noremap = true})
 -- keymap("n", "<leader>gcb", ":Gitsigns change_base ",  opts)
-keymap("n", "<leader>gid", ":Gitsigns diffthis ",  opts)
+keymap("n", "<leader>gid", ":Gitsigns diffthis ",  {noremap = true})
 
 -- STAGE THIS
 -- keymap("n", "<leader>dru", ":lua require('dap').continue()<CR>", opts)

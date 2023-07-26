@@ -19,7 +19,7 @@ require("lazy").setup({
     'notken12/base46-colors',
     lazy = false,
     priority = 1000,
-    config = function() vim.cmd([[colorscheme oxocarbon]]) end,
+    config = function() vim.cmd([[colorscheme gatekeeper]]) end,
   },
 	{
     "neovim/nvim-lspconfig",
