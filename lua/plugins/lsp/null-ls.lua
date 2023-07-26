@@ -13,7 +13,7 @@ null_ls.setup({
 	sources = {
 		--formatting.prettier.with({ extra_args = { "--no-semi", "--single-quote", "--jsx-single-quote" } }),
 		-- formatting.ruff,
-		formatting.black.with({ extra_args = { "--line-length", "200", "--single-quote", "--fast" } }),
+		formatting.black.with({ extra_args = { "--line-length", "200", "--skip-string-normalization", "--fast" } }),
 		diagnostics.ruff.with({ extra_args = { "--ignore=E501" } }),
 		formatting.stylua,
 		formatting.isort,
