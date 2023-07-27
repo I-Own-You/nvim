@@ -86,6 +86,12 @@ require("lazy").setup({
       })
     end
   },
+	{
+    "L3MON4D3/LuaSnip",
+    event = "InsertEnter",
+    dependencies = { "rafamadriz/friendly-snippets" },
+    build = "make install_jsregexp",
+  },
   {
     'nvim-treesitter/nvim-treesitter',
     build = ':TSUpdate',
@@ -148,6 +154,7 @@ require("lazy").setup({
   },
 	{
 		"phaazon/hop.nvim",
+    enabled = false,
     config = function()
       require'hop'.setup()
     end
@@ -224,6 +231,7 @@ require("lazy").setup({
   },
 	{
     "https://git.sr.ht/~whynothugo/lsp_lines.nvim",
+    enabled = false,
     config = function()
       require('lsp_lines').setup({})
     end
@@ -242,12 +250,24 @@ require("lazy").setup({
       require "bufferline".setup(require 'plugins.bufferline')
     end
   },
-	{
-    "L3MON4D3/LuaSnip",
-    event = "InsertEnter",
-    dependencies = { "rafamadriz/friendly-snippets" },
-    build = "make install_jsregexp",
+  {
+    "smjonas/inc-rename.nvim",
+    config = function()
+      require("inc_rename").setup(require 'plugins.inc_rename')
+    end,
   },
+  {
+    'VidocqH/lsp-lens.nvim',
+    enabled = false,
+    config = function()
+      require("lsp-lens").setup(require 'plugins.lsp-lens')
+    end,
+  },
+  {
+    "folke/flash.nvim",
+    event = "VeryLazy",
+    ---@type Flash.Config
+  }
 })
 
 -- vim.cmd('highlight Search guifg=#F24211  guibg=#000000')

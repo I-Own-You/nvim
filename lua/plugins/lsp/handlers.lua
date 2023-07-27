@@ -25,7 +25,7 @@ M.setup = function()
 	end
 
 	local config = {
-		virtual_text = false, -- disable virtual text
+		virtual_text = true, -- disable virtual text
 		signs = {
 			active = signs, -- show signs
 		},
@@ -70,7 +70,13 @@ local function lsp_keymaps(bufnr)
 	-- keymap(bufnr, "n", "<leader>wa", "<cmd> lua vim.lsp.buf.add_workspace_folder()<CR>", opts)
 	-- keymap(bufnr, "n", "<leader>wr", "<cmd> lua vim.lsp.buf.remove_workspace_folder()<CR>", opts)
 	-- keymap(bufnr, "n", "<leader>wl", "<cmd> lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>", opts)
-	keymap(bufnr, "n", "<leader>re", "<cmd> lua vim.lsp.buf.rename()<CR>", opts)
+
+	keymap(bufnr, "n", "<leader>re", ":IncRename ", {noremap = true})
+	-- keymap(bufnr, "n", "<leader>re", "<cmd> lua vim.lsp.buf.rename()<CR>", opts)
+
+  keymap(bufnr, "n", "gD", ":lua vim.lsp.buf.declaration()<CR>", opts)
+  keymap(bufnr, "n", "<leader>D", ":lua vim.lsp.buf.type_definition()<CR>", opts)
+  keymap(bufnr, "n", "gi", ":lua vim.lsp.buf.implementation()<CR>", opts)
 
 	-- keymap(bufnr, "n", "<leader>li", "<cmd>LspInfo<cr>", opts)
 	keymap(bufnr, "n", "<leader>li", "<cmd>Mason<cr>", opts)

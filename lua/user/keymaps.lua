@@ -57,7 +57,13 @@ keymap("n", "<C-]>", "]m", opts)
 keymap("n", "<leader>ww", ":set invwrap<CR>:set wrap?<CR>", opts)
 keymap("n", "!", ":!", { noremap = true })
 
--- dont forget to map <space>j in the plugin that splits {} and etc
+keymap("n", "s", "<cmd>lua require('flash').jump()<CR>", { noremap = true })
+keymap("x", "s", "<cmd>lua require('flash').jump()<CR>", { noremap = true })
+keymap("o", "s", "<cmd>lua require('flash').jump()<CR>", { noremap = true })
+keymap("n", "S", "<cmd>lua require('flash').treesitter()<CR>", { noremap = true })
+keymap("o", "S", "<cmd>lua require('flash').treesitter()<CR>", { noremap = true })
+keymap("x", "S", "<cmd>lua require('flash').treesitter()<CR>", { noremap = true })
+keymap("o", "r", "<cmd>lua require('flash').remote()<CR>", { noremap = true })
 
 keymap("n", "+", "<C-a>", { noremap = true, silent = true })
 keymap("n", "-", "<C-x>", { noremap = true, silent = true })
@@ -148,14 +154,12 @@ keymap("n", "<leader>gbb", ":FzfLua git_branches<CR>", opts)
 keymap("n", "<leader>gsh", ":FzfLua git_stash<CR>", opts)
 -- FzfLua lsp/diagnostics
 keymap("n", "gr", ":FzfLua lsp_references<CR>", opts)
--- keymap("n", "gd", ":FzfLua lsp_definitions<CR>", opts)
+
 keymap("n", "gd", ":lua vim.lsp.buf.definition()<CR>", opts)
+-- keymap("n", "gd", ":FzfLua lsp_definitions<CR>", opts)
 -- keymap("n", "gD", ":FzfLua lsp_declarations<CR>", opts)
-keymap("n", "gD", ":lua vim.lsp.buf.declaration()<CR>", opts)
 -- keymap("n", "<leader>D", ":FzfLua lsp_typedefs<CR>", opts)
-keymap("n", "<leader>D", ":lua vim.lsp.buf.type_definition()<CR>", opts)
 -- keymap("n", "gi", ":FzfLua lsp_implementations<CR>", opts)
-keymap("n", "gi", ":lua vim.lsp.buf.implementation()<CR>", opts)
 keymap("n", "<leader>oo", ":FzfLua lsp_document_symbols<CR>", opts)
 keymap("n", "<leader>ow", ":FzfLua lsp_workspace_symbols<CR>", opts)
 keymap("n", "<leader>ol", ":FzfLua lsp_live_workspace_symbols<CR>", opts)
@@ -227,7 +231,7 @@ vim.keymap.set('n', '<leader>/', function() require("Comment.api").toggle.linewi
 keymap('v', '<leader>/', "<ESC><cmd>lua require('Comment.api').toggle.linewise(vim.fn.visualmode())<CR>", opts)
 
 
-keymap("n", "<leader>hw", ":HopWord<CR>", opts)
+-- keymap("n", "<leader>hw", ":HopWord<CR>", opts)
 
 -- git section
 keymap("n", "<leader>nn", ":Gitsigns next_hunk<cr>",  opts)
