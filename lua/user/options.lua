@@ -21,15 +21,15 @@ local options = {
 	tabstop = 4,
 	softtabstop = 4,
 	incsearch = true,
-	colorcolumn = "101",
+	-- colorcolumn = "101",
 	cursorline = true,
 	number = true,
 	relativenumber = true,
 	numberwidth = 4,
 	wrap = false,
 	linebreak = true,
-    fillchars = "eob: "
-	-- scrolloff = 5,
+  fillchars = "eob: ",
+	scrolloff = 5,
     -- sessionoptions = "buffers"
 }
 for k, v in pairs(options) do

@@ -231,7 +231,7 @@ vim.keymap.set('n', '<leader>/', function() require("Comment.api").toggle.linewi
 keymap('v', '<leader>/', "<ESC><cmd>lua require('Comment.api').toggle.linewise(vim.fn.visualmode())<CR>", opts)
 
 
--- keymap("n", "<leader>hw", ":HopWord<CR>", opts)
+keymap("n", "<leader>hw", ":HopWord<CR>", opts)
 
 -- git section
 keymap("n", "<leader>nn", ":Gitsigns next_hunk<cr>",  opts)

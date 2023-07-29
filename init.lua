@@ -19,7 +19,7 @@ require("lazy").setup({
     'notken12/base46-colors',
     lazy = false,
     priority = 1000,
-    config = function() vim.cmd([[colorscheme gatekeeper]]) end,
+    config = function() vim.cmd([[colorscheme nordic]]) end,
   },
 	{
     "neovim/nvim-lspconfig",
@@ -267,6 +267,17 @@ require("lazy").setup({
     "folke/flash.nvim",
     event = "VeryLazy",
     ---@type Flash.Config
+  },
+  {
+    "xiantang/darcula-dark.nvim",
+  },
+  {
+    'AlexvZyl/nordic.nvim',
+    lazy = false,
+    priority = 1000,
+    config = function()
+      require 'nordic' .load()
+    end
   }
 })
 

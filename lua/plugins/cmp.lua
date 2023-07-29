@@ -1,4 +1,3 @@
-vim.api.nvim_set_hl(0, "CustomFloatCompletion", { bg = "#101010", fg = "#B7B7B9"})
 vim.api.nvim_set_hl(0, "CmpItemKindSnippet", { fg = "green"})
 vim.api.nvim_set_hl(0, "CmpItemKindText", { fg = "#00E756"})
 vim.api.nvim_set_hl(0, "CmpItemKindFunction", { fg = "cyan"})
@@ -153,15 +152,15 @@ return {
 
   window = {
     completion = cmp.config.window.bordered({
-            scrollbar = true,
-            border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
-            winhighlight = "Normal:CustomFloatCompletion,FloatBorder:CmpItemKindEnum,CursorLine:CursorLine,Search:None",
+            -- scrollbar = true,
+            -- border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
+            -- winhighlight = "Normal:CustomFloatCompletion,FloatBorder:CmpItemKindEnum,CursorLine:CursorLine,Search:None",
             -- side_padding = 0,
             -- col_offset = 0, --moves right and left
         }),
     documentation = {
         border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
-        winhighlight = "Normal:CustomFloatCompletion,FloatBorder:CmpItemKindEnum,CursorLine:CursorLine,Search:None",
+        -- winhighlight = "Normal:CustomFloatCompletion,FloatBorder:CmpItemKindEnum,CursorLine:CursorLine,Search:None",
     },
   },
   experimental = {
