@@ -123,6 +123,7 @@ require("lazy").setup({
     'lukas-reineke/indent-blankline.nvim',
     config = function()
       require("indent_blankline").setup(require 'plugins.indent_blankline')
+      vim.cmd([[highlight IndentBlanklineContextStart guisp=#8FBCBB gui=underline]])
     end
   },
   {
@@ -189,6 +190,10 @@ require("lazy").setup({
   },
 	{
     "andymass/vim-matchup",
+    config = function()
+      vim.cmd([[highlight MatchParen guibg=#5C4E4E]])
+      vim.cmd([[highlight MatchParen gui=NONE]])
+    end
   },
   {
     "kylechui/nvim-surround",
