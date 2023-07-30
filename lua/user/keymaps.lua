@@ -82,7 +82,6 @@ keymap('n', '<C-c>', ":%y<CR>", opts)
 keymap('n', '<C-a>', "ggVG", opts)
 keymap('n', '<C-x>', ":%d<CR>", opts)
 
-vim.keymap.set("n", "<leader>kk", function() require("treesitter-context").go_to_context() end, { silent = true })
 vim.keymap.set("n", "<leader>kl",
     function()
         local ok, start = require("indent_blankline.utils").get_current_context(

@@ -100,12 +100,6 @@ require("lazy").setup({
     end
   },
   {
-    'nvim-treesitter/nvim-treesitter-context',
-    config = function()
-      require("treesitter-context").setup(require 'plugins.treesitter-context')
-    end
-  },
-  {
     'ibhagwan/fzf-lua',
     dependencies = { 'kyazdani42/nvim-web-devicons' },
     config = function()
@@ -153,13 +147,6 @@ require("lazy").setup({
       require 'plugins.comment'
     end
   },
-	{
-		"phaazon/hop.nvim",
-    enabled = false,
-    config = function()
-      require'hop'.setup()
-    end
-	},
   {
     "lewis6991/gitsigns.nvim",
     config = function()
