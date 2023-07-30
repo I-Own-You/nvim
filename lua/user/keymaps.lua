@@ -53,6 +53,10 @@ keymap('n', '<leader>vv', ':vsplit<CR>', opts)
 keymap('n', '<leader>hh', ':split<CR>', opts)
 keymap('n', '<leader>vd', ':vert diffsplit ', opts)
 
+keymap('n', '<leader>mm', ':DiffviewOpen<CR>', opts)
+keymap('n', '<leader>mk', ':DiffviewClose<CR>', opts)
+keymap('n', '<leader>mf', ':DiffviewFileHistory<CR>', opts)
+
 keymap("n", "<C-[>", "[m", opts)
 keymap("n", "<C-]>", "]m", opts)
 
