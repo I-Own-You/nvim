@@ -283,6 +283,9 @@ require("lazy").setup({
     config = function()
       require 'nordic' .load()
     end
+  },
+  {
+    'sindrets/diffview.nvim'
   }
 })
 
