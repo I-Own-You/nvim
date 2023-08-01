@@ -306,6 +306,18 @@ require("lazy").setup({
     config = function()
       require('ufo').setup(require 'plugins.ufo')
     end
+  },
+  {
+    "utilyre/barbecue.nvim",
+    name = "barbecue",
+    version = "*",
+    dependencies = {
+      "SmiteshP/nvim-navic",
+      "kyazdani42/nvim-web-devicons", -- optional dependency
+    },
+    opts = {
+      -- configurations go here
+    },
   }
 })
 
