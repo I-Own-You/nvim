@@ -82,7 +82,7 @@ keymap('n', '<C-c>', ":%y<CR>", opts)
 keymap('n', '<C-a>', "ggVG", opts)
 keymap('n', '<C-x>', ":%d<CR>", opts)
 
-vim.keymap.set("n", "<leader>kl",
+vim.keymap.set("n", "<leader>kk",
     function()
         local ok, start = require("indent_blankline.utils").get_current_context(
             vim.g.indent_blankline_context_patterns,
@@ -96,6 +96,8 @@ vim.keymap.set("n", "<leader>kl",
     end,
     opts
 )
+keymap("n", "<leader>kl", ":lua require('barbecue.ui').navigate(-)<left>", {noremap = true})
+
 
 vim.keymap.set('n', 'zR', function() require('ufo').openAllFolds() end, {silent = true})
 vim.keymap.set('n', 'zM', function() require('ufo').closeAllFolds() end, {silent = true})
