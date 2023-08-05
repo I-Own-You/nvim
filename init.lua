@@ -124,9 +124,18 @@ require("lazy").setup({
   },
   {
     'lukas-reineke/indent-blankline.nvim',
+    enabled = true,
     config = function()
       require("indent_blankline").setup(require 'plugins.indent_blankline')
       vim.cmd([[highlight IndentBlanklineContextStart guisp=#8FBCBB gui=underline]])
+    end
+  },
+  {
+    "shellRaining/hlchunk.nvim",
+    enabled = false,
+    event = { "UIEnter" },
+    config = function()
+      require("hlchunk").setup(require 'plugins.hlchunk')
     end
   },
   {

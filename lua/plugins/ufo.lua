@@ -1,5 +1,5 @@
 local ftMap = {
-  python = ''
+  ocaml = ''
 }
 return {
   provider_selector = function(bufnr, filetype)
