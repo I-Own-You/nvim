@@ -56,6 +56,12 @@ config = {
         action = 'Telescope possession list',
         key = 's',
       },
+      {
+        desc = '󰳭 bye bye',
+        group = 'DevIconScheme',
+        action = 'exit',
+        key = 'q',
+      },
     },
   },    --  config used for theme
 
