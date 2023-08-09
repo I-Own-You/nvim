@@ -128,6 +128,7 @@ require("lazy").setup({
     config = function()
       require("indent_blankline").setup(require 'plugins.indent_blankline')
       vim.cmd([[highlight IndentBlanklineContextStart guisp=#8FBCBB gui=underline]])
+      vim.g.indent_blankline_filetype_exclude = {'dashboard'}
     end
   },
   {
@@ -203,6 +204,7 @@ require("lazy").setup({
   {
     "kylechui/nvim-surround",
     tag = "*",
+    event = "VeryLazy",
     config = function()
       require("nvim-surround").setup({})
     end,
@@ -336,7 +338,15 @@ require("lazy").setup({
     opts = {
       -- configurations go here
     },
-  }
+  },
+  {
+    'glepnir/dashboard-nvim',
+    event = 'VimEnter',
+    config = function()
+      require('dashboard').setup(require 'plugins.dashboard')
+    end,
+    dependencies = { {'kyazdani42/nvim-web-devicons'}}
+  },
 })
 
 -- vim.cmd('highlight Search guifg=#F24211  guibg=#000000')
