@@ -71,7 +71,6 @@ local function lsp_keymaps(bufnr)
   -- keymap(bufnr, "n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", opts) --keymaps.lua
   -- keymap(bufnr, "n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", opts) --keymaps.lua
   keymap(bufnr, "n", "<leader>rr", "<cmd>lua vim.lsp.buf.format{ async = true }<cr>", {silent = true})
-  keymap(bufnr, "n", "<leader>rt", "<cmd>EslintFixAll<cr>", {silent = true})
   -- keymap(bufnr, "n", "<leader>D", "<cmd> lua vim.lsp.buf.type_definition()<CR>", opts) --keymaps.lua
 
   -- keymap(bufnr, "n", "<leader>wa", "<cmd> lua vim.lsp.buf.add_workspace_folder()<CR>", opts)
