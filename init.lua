@@ -353,17 +353,17 @@ require("lazy").setup({
 -- vim.cmd('highlight IncSearch guifg=#F24211 guibg=#000000')
 -- vim.cmd('highlight Substitute guifg=#F24211  guibg=#000000')
 
-vim.api.nvim_set_hl(0, "dap_breakpoint_red",   { fg = "#ff0011" })
-vim.api.nvim_set_hl(0, "dap_log_point",  { fg = "#31353f" })
-vim.api.nvim_set_hl(0, "dap_stopped", { fg = "#00E756" })
-vim.api.nvim_set_hl(0, "dap_condition", { fg = "#F24211" })
+-- vim.api.nvim_set_hl(0, "dap_breakpoint_red",   { fg = "#ff0011" })
+-- vim.api.nvim_set_hl(0, "dap_log_point",  { fg = "#31353f" })
+-- vim.api.nvim_set_hl(0, "dap_stopped", { fg = "#00E756" })
+-- vim.api.nvim_set_hl(0, "dap_condition", { fg = "#F24211" })
 
 
-vim.fn.sign_define('DapBreakpoint',          { text='', texthl='dap_breakpoint_red',   linehl='', numhl='', priority = 1000})
-vim.fn.sign_define('DapBreakpointCondition', { text='ﳁ', texthl='dap_condition',   linehl='', numhl='' })
-vim.fn.sign_define('DapBreakpointRejected',  { text='', texthl='dap_breakpoint_red', linehl='', numhl='' })
-vim.fn.sign_define('DapStopped',             { text='', texthl='dap_stopped',  linehl='', numhl='' })
-vim.fn.sign_define('DapLogPoint',            { text='', texthl='dap_log_point', linehl='', numhl='' })
+-- vim.fn.sign_define('DapBreakpoint',          { text='', texthl='dap_breakpoint_red',   linehl='', numhl='', priority = 1000})
+-- vim.fn.sign_define('DapBreakpointCondition', { text='ﳁ', texthl='dap_condition',   linehl='', numhl='' })
+-- vim.fn.sign_define('DapBreakpointRejected',  { text='', texthl='dap_breakpoint_red', linehl='', numhl='' })
+-- vim.fn.sign_define('DapStopped',             { text='', texthl='dap_stopped',  linehl='', numhl='' })
+-- vim.fn.sign_define('DapLogPoint',            { text='', texthl='dap_log_point', linehl='', numhl='' })
 
 vim.api.nvim_exec("autocmd BufWritePost * source ~/.config/nvim/lua/plugins/lualine.lua", false)
 vim.api.nvim_exec("autocmd Filetype rnvimr tnoremap <buffer><nowait> j j", false)
