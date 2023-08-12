@@ -398,8 +398,9 @@ augroup END
 -- vim.cmd('Glow')
 -- vim.defer_fn(function()
 --   vim.cmd('bdelete ' .. buf)
--- end, 2000)  -- for operations.lua in devdocs plugin
--- previewer = previwer, -- for pickers.lua in devdocs plguing
+-- end, 2000)  -- for operations.lua in open functioni in devdocs plugin
+-- previewer = previwer, -- for pickers.lua in devdocs plugin in: local new_docs_picker = function(prompt, entries, previwer, attach)
+-- comment previewer in M.open_doc_entry_picker = function(entries, float) for pickers.lua in devdocs plugin
 
 -- vim.diagnostic.config({ virtual_lines = false })
 -- vim.diagnostic.config({ virtual_lines = true })
