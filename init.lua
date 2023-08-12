@@ -360,6 +360,7 @@ require("lazy").setup({
   },
   {
     "ellisonleao/glow.nvim",
+    lazy = false,
     config = function ()
       require('glow').setup(require 'plugins.glow')
     end,
@@ -398,10 +399,31 @@ augroup END
 vim.cmd[[
 augroup MarkdownKeymaps
   autocmd!
-  autocmd FileType markdown nnoremap <buffer> <leader>dd :Glow<CR>
+  autocmd FileType markdown nnoremap <buffer> <leader>dd :lua MyGlow()<CR>
   autocmd FileType glowpreview nnoremap <buffer> <leader>dd :<CR>
 augroup END
 ]]
+
+function MyGlow()
+  vim.cmd('Glow')
+  for _, winid in ipairs(vim.fn.getwininfo()) do
+    local bufnr = winid.bufnr
+    local filetype = vim.api.nvim_buf_get_option(bufnr, 'filetype')
+    if filetype == 'markdown' then
+      vim.cmd('bw ' .. bufnr)
+      return
+    end
+  end
+end
+
+-- vim.cmd[[
+-- augroup MarkdownKeymaps
+--   autocmd!
+--   autocmd FileType markdown nnoremap <buffer> <leader>dd :Glow<CR>
+--   autocmd FileType glowpreview nnoremap <buffer> <leader>dd :<CR>
+-- augroup END
+-- ]]
+
 
 -- vim.diagnostic.config({ virtual_lines = false })
 -- vim.diagnostic.config({ virtual_lines = true })
