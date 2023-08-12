@@ -347,6 +347,24 @@ require("lazy").setup({
     end,
     dependencies = { {'kyazdani42/nvim-web-devicons'}}
   },
+  {
+    "luckasRanarison/nvim-devdocs",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "nvim-telescope/telescope.nvim",
+      "nvim-treesitter/nvim-treesitter",
+    },
+    config = function()
+      require('nvim-devdocs').setup(require 'plugins.devdocs')
+    end,
+  },
+  {
+    "ellisonleao/glow.nvim",
+    config = function ()
+      require('glow').setup(require 'plugins.glow')
+    end,
+    cmd = "Glow",
+  },
 })
 
 -- vim.cmd('highlight Search guifg=#F24211  guibg=#000000')
@@ -369,6 +387,21 @@ vim.api.nvim_exec("autocmd BufWritePost * source ~/.config/nvim/lua/plugins/lual
 vim.api.nvim_exec("autocmd Filetype rnvimr tnoremap <buffer><nowait> j j", false)
 vim.api.nvim_exec("autocmd Filetype rnvimr tnoremap <buffer><nowait> k k", false)
 vim.api.nvim_exec("autocmd Filetype rnvimr tnoremap <buffer><nowait> <Space> <Space>", false)
+
+vim.cmd[[
+augroup AutoCloseMarkdownGlow
+  autocmd!
+  autocmd FileType markdown,glowpreview nnoremap <buffer> q :q<CR>
+augroup END
+]]
+
+vim.cmd[[
+augroup MarkdownKeymaps
+  autocmd!
+  autocmd FileType markdown nnoremap <buffer> <leader>dd :Glow<CR>
+  autocmd FileType glowpreview nnoremap <buffer> <leader>dd :<CR>
+augroup END
+]]
 
 -- vim.diagnostic.config({ virtual_lines = false })
 -- vim.diagnostic.config({ virtual_lines = true })
