@@ -395,6 +395,10 @@ augroup AutoCloseMarkdownGlow
   autocmd FileType markdown nnoremap <buffer> q :q<CR>
 augroup END
 ]]
+-- vim.cmd('Glow')
+-- vim.defer_fn(function()
+--   vim.cmd('bdelete ' .. buf)
+-- end, 2000)  for operations.lua in devdocs plugin
 
 -- vim.diagnostic.config({ virtual_lines = false })
 -- vim.diagnostic.config({ virtual_lines = true })
