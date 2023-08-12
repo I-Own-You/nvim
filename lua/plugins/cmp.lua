@@ -144,7 +144,8 @@ return {
     { name = "luasnip" },
     { name = "buffer" },
     { name = "path" },
-    -- { name = 'npm', keyword_length = 4 },
+    { name = "emoji" },
+    { name = 'npm', keyword_length = 4 },
   },
   confirm_opts = {
     behavior = cmp.ConfirmBehavior.Replace,

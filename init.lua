@@ -50,15 +50,6 @@ require("lazy").setup({
 	{ "hrsh7th/cmp-nvim-lua" },
 	{ "hrsh7th/cmp-emoji" },
 	{ "saadparwaiz1/cmp_luasnip" },
-  {
-    "David-Kunz/cmp-npm",
-    enabled = false,
-    dependencies = { 'nvim-lua/plenary.nvim' },
-    ft = "json",
-    config = function()
-      require('cmp-npm').setup({})
-    end
-  },
 	{
     "hrsh7th/nvim-cmp",
     config = function()
