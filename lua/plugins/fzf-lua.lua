@@ -320,6 +320,10 @@ git = {
     --preview_pager = "delta --width=$FZF_PREVIEW_COLUMNS",
     actions = {
       ["default"] = actions.git_checkout,
+      ['ctrl-y'] = function(selected, _)
+        local commit_hash = selected[1]:match("[^ ]+")
+        vim.fn.setreg([[+]], commit_hash)
+      end
     },
   },
   bcommits = {
@@ -338,6 +342,10 @@ git = {
       ["ctrl-s"]  = actions.git_buf_split,
       ["ctrl-v"]  = actions.git_buf_vsplit,
       ["ctrl-t"]  = actions.git_buf_tabedit,
+      ['ctrl-y'] = function(selected, _)
+        local commit_hash = selected[1]:match("[^ ]+")
+        vim.fn.setreg([[+]], commit_hash)
+      end
     },
   },
   branches = {
