@@ -280,7 +280,7 @@ require("lazy").setup({
     lazy = false,
     priority = 1000,
     config = function()
-      require 'nordic' .load()
+      require 'nordic' .setup(require 'plugins.nordic')
     end
   },
   {
@@ -381,12 +381,6 @@ vim.api.nvim_exec("autocmd Filetype rnvimr tnoremap <buffer><nowait> j j", false
 vim.api.nvim_exec("autocmd Filetype rnvimr tnoremap <buffer><nowait> k k", false)
 vim.api.nvim_exec("autocmd Filetype rnvimr tnoremap <buffer><nowait> <Space> <Space>", false)
 
-vim.cmd[[
-augroup AutoCloseMarkdownGlow
-  autocmd!
-  autocmd FileType markdown nnoremap <buffer> q :q<CR>
-augroup END
-]]
 -- vim.cmd('Glow')
 -- vim.defer_fn(function()
 --   vim.cmd('bdelete ' .. buf)

@@ -14,4 +14,6 @@ return {
 	},
 	wrap = false, -- text wrap, only applies to floating window
 	ensure_installed = { "html" }, -- get automatically installed
+	previewer_cmd = "glow",
+	cmd_args = { "-s", "dark", "-w", "80" },
 }
