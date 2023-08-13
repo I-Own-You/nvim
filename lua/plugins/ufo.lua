@@ -47,7 +47,7 @@ return {
 			jumpBot = "]",
 		},
 	},
-	fold_virt_text_handler = handler,
+  fold_virt_text_handler = handler,
 	provider_selector = function(bufnr, filetype, buftype)
 		-- if you prefer treesitter provider rather than lsp,
 		-- return ftMap[filetype] or {'treesitter', 'indent'}
