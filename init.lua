@@ -381,12 +381,12 @@ vim.api.nvim_exec("autocmd Filetype rnvimr tnoremap <buffer><nowait> j j", false
 vim.api.nvim_exec("autocmd Filetype rnvimr tnoremap <buffer><nowait> k k", false)
 vim.api.nvim_exec("autocmd Filetype rnvimr tnoremap <buffer><nowait> <Space> <Space>", false)
 
--- vim.cmd('Glow')
--- vim.defer_fn(function()
---   vim.cmd('bdelete ' .. buf)
--- end, 2000)  -- for operations.lua in open functioni in devdocs plugin
--- previewer = previwer, -- for pickers.lua in devdocs plugin in: local new_docs_picker = function(prompt, entries, previwer, attach)
--- comment previewer in M.open_doc_entry_picker = function(entries, float) for pickers.lua in devdocs plugin
+vim.cmd([[
+augroup DjangoHtmlHighlight
+  autocmd!
+  autocmd FileType htmldjango highlight MatchParen guibg=NONE
+augroup END
+]])
 
 -- vim.diagnostic.config({ virtual_lines = false })
 -- vim.diagnostic.config({ virtual_lines = true })
