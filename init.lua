@@ -357,7 +357,6 @@ require("lazy").setup({
   },
   {
     "ellisonleao/glow.nvim",
-    lazy = false,
     config = function ()
       require('glow').setup(require 'plugins.glow')
     end,
@@ -392,6 +391,13 @@ augroup DjangoHtmlHighlight
   autocmd FileType htmldjango highlight MatchParen guibg=NONE
 augroup END
 ]])
+
+vim.cmd[[
+augroup AutoCloseMarkdownGlow
+  autocmd!
+  autocmd FileType glow nnoremap <buffer> q :q<CR>
+augroup END
+]]
 
 -- vim.diagnostic.config({ virtual_lines = false })
 -- vim.diagnostic.config({ virtual_lines = true })
