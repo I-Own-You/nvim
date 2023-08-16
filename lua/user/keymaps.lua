@@ -103,8 +103,6 @@ keymap("n", "<leader>dd", ":DevdocsOpenCurrentFloat<CR>", {noremap = true})
 vim.keymap.set('n', 'zR', function() require('ufo').openAllFolds() end, {silent = true})
 vim.keymap.set('n', 'zM', function() require('ufo').closeAllFolds() end, {silent = true})
 
-keymap("n", ",.", "'.", opts) -- go to last edited location
-
 keymap("n", "<leader>nh", ":nohlsearch<CR>", opts)
 
 keymap("n", "<leader>bo", ":only<CR>", opts)
