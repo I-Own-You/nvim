@@ -94,6 +94,7 @@ require("lazy").setup({
     config = function()
       local luasnip = require("luasnip")
       luasnip.filetype_extend("htmldjango", {"html"})
+      luasnip.filetype_extend("typescript", {"javascript"})
       require("luasnip/loaders/from_vscode").lazy_load()
     end,
     build = "make install_jsregexp",
