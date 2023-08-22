@@ -20,7 +20,7 @@ require("lazy").setup({
 		lazy = false,
 		priority = 1000,
 		config = function()
-			vim.cmd([[colorscheme everblush]])
+			vim.cmd([[colorscheme nordic]])
 		end,
 	},
 	{
@@ -128,7 +128,7 @@ require("lazy").setup({
 		enabled = true,
 		config = function()
 			require("indent_blankline").setup(require("plugins.indent_blankline"))
-			-- vim.cmd([[highlight IndentBlanklineContextStart guisp=#8FBCBB gui=underline]])
+			vim.cmd([[highlight IndentBlanklineContextStart guisp=#8FBCBB gui=underline]])
 			vim.g.indent_blankline_filetype_exclude = { "dashboard" }
 		end,
 	},
@@ -218,8 +218,8 @@ require("lazy").setup({
 	{
 		"andymass/vim-matchup",
 		config = function()
-			-- vim.cmd([[highlight MatchParen guibg=#5C4E4E]])
-			-- vim.cmd([[highlight MatchParen gui=NONE]])
+			vim.cmd([[highlight MatchParen guibg=#5C4E4E]])
+			vim.cmd([[highlight MatchParen gui=NONE]])
 		end,
 	},
 	{
@@ -300,7 +300,7 @@ require("lazy").setup({
 	},
 	{
 		"AlexvZyl/nordic.nvim",
-    enabled = false,
+    enabled = true,
 		lazy = false,
 		priority = 1000,
 		opts = {
