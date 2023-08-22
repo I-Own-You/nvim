@@ -67,34 +67,30 @@ local function lsp_keymaps(bufnr)
 
   -- keymap(bufnr, "n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", opts) --keymaps.lua
   -- keymap(bufnr, "n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opts) --keymaps.lua
-  keymap(bufnr, "n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
   -- keymap(bufnr, "n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", opts) --keymaps.lua
   -- keymap(bufnr, "n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", opts) --keymaps.lua
-  keymap(bufnr, "n", "<leader>rr", "<cmd>lua vim.lsp.buf.format{ async = true }<cr>", {silent = true})
-  keymap(bufnr, "n", "<leader>rt", "<cmd>EslintFixAll<cr>", {silent = true})
   -- keymap(bufnr, "n", "<leader>D", "<cmd> lua vim.lsp.buf.type_definition()<CR>", opts) --keymaps.lua
-
   -- keymap(bufnr, "n", "<leader>wa", "<cmd> lua vim.lsp.buf.add_workspace_folder()<CR>", opts)
   -- keymap(bufnr, "n", "<leader>wr", "<cmd> lua vim.lsp.buf.remove_workspace_folder()<CR>", opts)
   -- keymap(bufnr, "n", "<leader>wl", "<cmd> lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>", opts)
-
-  keymap(bufnr, "n", "<leader>re", ":IncRename ", {noremap = true})
   -- keymap(bufnr, "n", "<leader>re", "<cmd> lua vim.lsp.buf.rename()<CR>", opts)
-
-  keymap(bufnr, "n", "gD", ":lua vim.lsp.buf.declaration()<CR>", opts)
-  keymap(bufnr, "n", "<leader>D", ":lua vim.lsp.buf.type_definition()<CR>", opts)
-  keymap(bufnr, "n", "gi", ":lua vim.lsp.buf.implementation()<CR>", opts)
-
   -- keymap(bufnr, "n", "<leader>li", "<cmd>LspInfo<cr>", opts)
-  keymap(bufnr, "n", "<leader>li", "<cmd>Mason<cr>", opts)
-  -- keymap(bufnr, "n", "<leader>lI", "<cmd>LspInstallInfo<cr>", opts)
-  keymap(bufnr, "n", "<leader>lI", "<cmd>NullLsInfo<cr>", opts)
   -- keymap(bufnr, "n", "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<cr>", opts) --keymaps.lua
+  -- keymap(bufnr, "n", "<leader>lI", "<cmd>LspInstallInfo<cr>", opts)
+  -- keymap(bufnr, "n", "<leader>lq", "<cmd>lua vim.diagnostic.setloclist()<CR>", opts) --keymaps.lua
+  keymap(bufnr, "n", "<leader>rr", "<cmd>lua vim.lsp.buf.format{ async = true }<cr>", {silent = true})
+  keymap(bufnr, "n", "gD", ":lua vim.lsp.buf.declaration()<CR>", opts)
+  keymap(bufnr, "n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
+  keymap(bufnr, "n", "gi", ":lua vim.lsp.buf.implementation()<CR>", opts)
   keymap(bufnr, "n", "ge", "<cmd>lua vim.diagnostic.goto_next({buffer=0})<cr>", opts)
   keymap(bufnr, "n", "gE", "<cmd>lua vim.diagnostic.goto_prev({buffer=0})<cr>", opts)
+  keymap(bufnr, "n", "<leader>rt", "<cmd>EslintFixAll<cr>", {silent = true})
+  keymap(bufnr, "n", "<leader>re", ":IncRename ", {noremap = true})
+  keymap(bufnr, "n", "<leader>D", ":lua vim.lsp.buf.type_definition()<CR>", opts)
+  keymap(bufnr, "n", "<leader>li", "<cmd>Mason<cr>", opts)
+  keymap(bufnr, "n", "<leader>lI", "<cmd>NullLsInfo<cr>", opts)
   keymap(bufnr, "n", "<leader>fl", "<cmd>lua vim.diagnostic.open_float()<cr>", opts)
   keymap(bufnr, "n", "<leader>ls", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
-  -- keymap(bufnr, "n", "<leader>lq", "<cmd>lua vim.diagnostic.setloclist()<CR>", opts) --keymaps.lua
 end
 
 M.on_attach = function(client, bufnr)
