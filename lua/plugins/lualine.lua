@@ -56,7 +56,7 @@ end
 return {
   options = {
     icons_enabled = true,
-    theme = 'nordic',
+    theme = 'auto',
     component_separators = { left = '', right = ''},
     -- section_separators = { left = '', right = ''},
     section_separators = { left = '', right = ''},
