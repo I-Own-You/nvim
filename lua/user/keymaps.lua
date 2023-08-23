@@ -252,6 +252,7 @@ keymap("v", "<leader>/", "<ESC><cmd>lua require('Comment.api').toggle.linewise(v
 
 keymap("n", "<leader>hw", ":HopWord<CR>", opts)
 
+keymap("n", "<leader>nt", ":tabnew<CR>", opts)
 -- git section
 keymap("n", "<leader>nn", ":Gitsigns next_hunk<cr>", opts)
 keymap("n", "<leader>pp", ":Gitsigns prev_hunk<cr>", opts)
