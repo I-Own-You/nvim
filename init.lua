@@ -304,7 +304,7 @@ require("lazy").setup({
 		lazy = false,
 		priority = 1000,
 		opts = {
-			italic_comments = true,
+			italic_comments = false,
 			transparent_bg = false,
 			bold_keywords = true,
 			override = {
