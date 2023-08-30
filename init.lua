@@ -278,7 +278,7 @@ require("lazy").setup({
 	},
 	{
 		"akinsho/bufferline.nvim",
-    enabled = false,
+		enabled = false,
 		config = function()
 			require("bufferline").setup(require("plugins.bufferline"))
 		end,
@@ -301,7 +301,7 @@ require("lazy").setup({
 	},
 	{
 		"AlexvZyl/nordic.nvim",
-    enabled = true,
+		enabled = true,
 		lazy = false,
 		priority = 1000,
 		opts = {
@@ -491,6 +491,80 @@ require("lazy").setup({
 			height_ratio = 0.7,
 		},
 		cmd = "Glow",
+	},
+	{
+		"NStefan002/speedtyper.nvim",
+		branch = "main",
+		cmd = "Speedtyper",
+		opts = {
+			window = {
+				height = 5, -- integer >= 5 | float in range (0, 1)
+				width = 0.55, -- integer | float in range (0, 1)
+				border = "rounded", -- "none" | "single" | "double" | "rounded" | "shadow" | "solid"
+			},
+			language = "en", -- currently only only supports English
+			game_modes = { -- prefered settings for different game modes
+				-- type until time expires
+				countdown = {
+					time = 30,
+				},
+				-- type until you complete one page
+				stopwatch = {
+					hide_time = true, -- hide time while typing
+				},
+			},
+			-- MORE COMING SOON
+		},
+	},
+	{
+		"kevinhwang91/nvim-fundo",
+		dependencies = { "kevinhwang91/promise-async" },
+		init = function()
+			vim.o.undofile = true
+		end,
+		build = function()
+			require("fundo").install()
+		end,
+		opts = {
+			-- archives_dir = vim.fn.stdpath("cache") .. path.separator .. "fundo", -- default
+			limit_archives_size = 64, --defualt was 512
+			-- fdssfsd
+		},
+	},
+	{
+		"piersolenski/wtf.nvim",
+		dependencies = {
+			"MunifTanjim/nui.nvim",
+		},
+    -- init = function ()
+    --   vim.g["wtf_hooks"] = {
+    --     request_started = function()
+    --       vim.cmd("hi StatusLine ctermbg=NONE ctermfg=yellow")
+    --     end,
+    --     request_finished = vim.schedule_wrap(function()
+    --       vim.cmd("hi StatusLine ctermbg=NONE ctermfg=NONE")
+    --     end)
+    --   }
+    -- end, -- for gpt, the future
+    -- also look for lualine hook in the docs, when you will setup chatgpt
+		event = "VeryLazy",
+		opts = {
+			-- Default AI popup type
+			popup_type = "popup", -- "popup" | "horizontal" | "vertical",
+			-- An alternative way to set your OpenAI api key
+			-- openai_api_key = "sk-xxxxxxxxxxxxxx",
+			-- ChatGPT Model
+			-- openai_model_id = "gpt-3.5-turbo",
+			-- Set your preferred language for the response
+			language = "english",
+			-- Any additional instructions
+			-- additional_instructions = "Start the reply with 'OH HAI THERE'",
+			-- Default search engine, can be overridden by passing an option to WtfSeatch
+			-- search_engine = "google" | "duck_duck_go" | "stack_overflow" | "github",
+		},
+		keys = {
+			{ "<leader>wt", ":WtfSearch " },
+		},
 	},
 })
 

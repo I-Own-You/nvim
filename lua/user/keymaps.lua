@@ -269,6 +269,7 @@ keymap("n", "<leader>gsw", ":Gitsigns show ", { noremap = true })
 -- keymap("n", "<leader>gcb", ":Gitsigns change_base ",  opts)
 keymap("n", "<leader>gid", ":Gitsigns diffthis ", { noremap = true })
 
+keymap("n", "<leader>st", ":Speedtyper<CR>", opts)
 -- STAGE THIS
 -- keymap("n", "<leader>dru", ":lua require('dap').continue()<CR>", opts)
 -- keymap("n", "<C-n>", ":lua require('dap').step_into()<CR>", opts)
