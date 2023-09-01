@@ -54,7 +54,7 @@ keymap("v", "<A-k>", ":m '<-2<CR>gv=gv", opts)
 
 keymap("n", "<leader>vv", ":vsplit<CR>", opts)
 keymap("n", "<leader>hh", ":split<CR>", opts)
-keymap("n", "<leader>vd", ":vert diffsplit ", opts)
+keymap("n", "<leader>vd", ":vert diffsplit ", { noremap = true})
 
 keymap("n", "<C-[>", "[m", opts)
 keymap("n", "<C-]>", "]m", opts)
