@@ -226,9 +226,9 @@ require("lazy").setup({
 		"kylechui/nvim-surround",
 		tag = "*",
 		event = "VeryLazy",
-    opts = {
-      move_cursor = false
-    },
+		opts = {
+			move_cursor = false,
+		},
 	},
 	{
 		"jedrzejboczar/possession.nvim",
@@ -536,17 +536,17 @@ require("lazy").setup({
 		dependencies = {
 			"MunifTanjim/nui.nvim",
 		},
-    -- init = function ()
-    --   vim.g["wtf_hooks"] = {
-    --     request_started = function()
-    --       vim.cmd("hi StatusLine ctermbg=NONE ctermfg=yellow")
-    --     end,
-    --     request_finished = vim.schedule_wrap(function()
-    --       vim.cmd("hi StatusLine ctermbg=NONE ctermfg=NONE")
-    --     end)
-    --   }
-    -- end, -- for gpt, the future
-    -- also look for lualine hook in the docs, when you will setup chatgpt
+		-- init = function ()
+		--   vim.g["wtf_hooks"] = {
+		--     request_started = function()
+		--       vim.cmd("hi StatusLine ctermbg=NONE ctermfg=yellow")
+		--     end,
+		--     request_finished = vim.schedule_wrap(function()
+		--       vim.cmd("hi StatusLine ctermbg=NONE ctermfg=NONE")
+		--     end)
+		--   }
+		-- end, -- for gpt, the future
+		-- also look for lualine hook in the docs, when you will setup chatgpt
 		event = "VeryLazy",
 		opts = {
 			-- Default AI popup type
