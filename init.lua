@@ -226,9 +226,9 @@ require("lazy").setup({
 		"kylechui/nvim-surround",
 		tag = "*",
 		event = "VeryLazy",
-		config = function()
-			require("nvim-surround").setup({})
-		end,
+    opts = {
+      move_cursor = false
+    },
 	},
 	{
 		"jedrzejboczar/possession.nvim",
