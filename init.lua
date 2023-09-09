@@ -613,6 +613,21 @@ require("lazy").setup({
 			{ "<C-Space>l", '<cmd>lua require("smart-splits").swap_buf_right()<CR>' },
 		},
 	},
+	{
+		"fedepujol/move.nvim",
+		keys = {
+			-- normal mode, move lines/words
+			{ "<A-j>", ":MoveLine(1)<CR>" },
+			{ "<A-k>", ":MoveLine(-1)<CR>" },
+			{ "<A-h>", ":MoveWord(-1)<CR>" },
+			{ "<A-l>", ":MoveWord(1)<CR>" },
+			-- visual mode, move blocks
+			{ "<A-j>", ":MoveBlock(1)<CR>", mode = "v" },
+			{ "<A-k>", ":MoveBlock(-1)<CR>", mode = "v" },
+			{ "<A-h>", ":MoveHBlock(-1)<CR>", mode = "v" },
+			{ "<A-l>", ":MoveHBlock(1)<CR>", mode = "v" },
+		},
+	},
 })
 
 -- vim.cmd('highlight Search guifg=#F24211  guibg=#000000')
