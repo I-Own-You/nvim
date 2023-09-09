@@ -1,105 +1,117 @@
 local status_ok, lualine = pcall(require, "lualine")
 if not status_ok then
-  return
+	return
 end
 
 local colors = {
-  black        = '#1c1e26',
-  white        = '#6C6F93',
-  red          = '#F43E5C',
-  green        = '#09F7A0',
-  blue         = '#25B2BC',
-  yellow       = '#F09383',
-  gray         = '#E95678',
-  -- darkgray     = '#1A1C23',
-  lightgray    = '#2E303E',
-  inactivegray = '#1C1E26',
+	black = "#1c1e26",
+	white = "#6C6F93",
+	red = "#F43E5C",
+	green = "#09F7A0",
+	blue = "#25B2BC",
+	yellow = "#F09383",
+	gray = "#E95678",
+	-- darkgray     = '#1A1C23',
+	lightgray = "#2E303E",
+	inactivegray = "#1C1E26",
 }
 
 local bubbles_theme = {
-  normal = {
-    a = { bg = "#f71964", fg = "#ffffff", gui = 'bold' },
-    b = { bg = colors.lightgray, fg = '#c5d9d6' },
-    c = { bg = '#181818', fg = '#c5d9d6' },
-  },
-  insert = {
-    a = { bg = colors.blue, fg = "#ffffff", gui = 'bold' },
-    b = { bg = colors.lightgray, fg = '#c5d9d6' },
-    c = { bg = '#181818', fg = '#c5d9d6' },
-  },
-  visual = {
-    a = { bg = "#FF7900", fg = "#ffffff", gui = 'bold' },
-    b = { bg = colors.lightgray, fg = '#c5d9d6' },
-    c = { bg = '#181818', fg = '#c5d9d6' },
-  },
-  replace = {
-    a = { bg = colors.red, fg = "#ffffff", gui = 'bold' },
-    b = { bg = colors.lightgray, fg = '#c5d9d6' },
-    c = { bg = '#181818', fg = '#c5d9d6' },
-  },
-  command = {
-    a = { bg = colors.green, fg = "#ffffff", gui = 'bold' },
-    b = { bg = colors.lightgray, fg = '#c5d9d6' },
-    c = { bg = '#181818', fg = '#c5d9d6' },
-  },
-  inactive = {
-    a = { bg = colors.inactivegray, fg = colors.lightgray, gui = 'bold' },
-    b = { bg = colors.inactivegray, fg = colors.lightgray },
-    c = { bg = colors.inactivegray, fg = colors.lightgray },
-  },
+	normal = {
+		a = { bg = "#f71964", fg = "#ffffff", gui = "bold" },
+		b = { bg = colors.lightgray, fg = "#c5d9d6" },
+		c = { bg = "#181818", fg = "#c5d9d6" },
+	},
+	insert = {
+		a = { bg = colors.blue, fg = "#ffffff", gui = "bold" },
+		b = { bg = colors.lightgray, fg = "#c5d9d6" },
+		c = { bg = "#181818", fg = "#c5d9d6" },
+	},
+	visual = {
+		a = { bg = "#FF7900", fg = "#ffffff", gui = "bold" },
+		b = { bg = colors.lightgray, fg = "#c5d9d6" },
+		c = { bg = "#181818", fg = "#c5d9d6" },
+	},
+	replace = {
+		a = { bg = colors.red, fg = "#ffffff", gui = "bold" },
+		b = { bg = colors.lightgray, fg = "#c5d9d6" },
+		c = { bg = "#181818", fg = "#c5d9d6" },
+	},
+	command = {
+		a = { bg = colors.green, fg = "#ffffff", gui = "bold" },
+		b = { bg = colors.lightgray, fg = "#c5d9d6" },
+		c = { bg = "#181818", fg = "#c5d9d6" },
+	},
+	inactive = {
+		a = { bg = colors.inactivegray, fg = colors.lightgray, gui = "bold" },
+		b = { bg = colors.inactivegray, fg = colors.lightgray },
+		c = { bg = colors.inactivegray, fg = colors.lightgray },
+	},
 }
 
 local function session_name()
-    return 'session: ' .. require('possession.session').session_name or ''
+	return "session: " .. require("possession.session").session_name or ""
 end
 
 return {
-  options = {
-    icons_enabled = true,
-    theme = 'auto',
-    component_separators = { left = '', right = ''},
-    -- section_separators = { left = '', right = ''},
-    section_separators = { left = '', right = ''},
-    disabled_filetypes = {
-      statusline = {},
-      winbar = {},
-    },
-    ignore_focus = {},
-    always_divide_middle = true,
-    globalstatus = true,
-    refresh = {
-      statusline = 100,
-      tabline = 100,
-      winbar = 100,
-    }
-  },
-  sections = {
-    lualine_a = {
-            {
-                'mode',
-                separator = {
-                    -- left = '',
-                    right = '',
-                },
-                right_padding = 2,
-            }
-    },
-    lualine_b = {'branch', 'diff', },
-    lualine_c = {'filename', {session_name}},
-    lualine_x = { 'diagnostics', function() return vim.fn['codeium#GetStatusString']() end,'encoding', 'filetype' },
-    lualine_y = {'progress'},
-    lualine_z = {'location'}
-  },
-  inactive_sections = {
-    lualine_a = {},
-    lualine_b = {},
-    lualine_c = {'filename', session_name},
-    lualine_x = {'location'},
-    lualine_y = {},
-    lualine_z = {}
-  },
-  tabline = {},
-  winbar = {},
-  inactive_winbar = {},
-  extensions = {}
+	options = {
+		icons_enabled = true,
+		theme = "auto",
+		component_separators = { left = "", right = "" },
+		-- section_separators = { left = '', right = ''},
+		section_separators = { left = "", right = "" },
+		disabled_filetypes = {
+			statusline = {},
+			winbar = {},
+		},
+		ignore_focus = {},
+		always_divide_middle = true,
+		globalstatus = true,
+		refresh = {
+			statusline = 100,
+			tabline = 100,
+			winbar = 100,
+		},
+	},
+	sections = {
+		lualine_a = {
+			{
+				"mode",
+				separator = {
+					-- left = '',
+					right = "",
+				},
+				right_padding = 2,
+			},
+		},
+		lualine_b = { "branch", "diff" },
+		lualine_c = { "filename", { session_name } },
+		lualine_x = {
+			-- function()
+			-- dont use [ram, internet/wifi], it lags idk why on my pc
+			-- local cpu = require("pigeon.hostname").hostname()
+			--     return cpu
+			-- end,
+			"diagnostics",
+			function()
+				return vim.fn["codeium#GetStatusString"]()
+			end,
+			"encoding",
+			"filetype",
+		},
+		lualine_y = { "progress" },
+		lualine_z = { "location" },
+	},
+	inactive_sections = {
+		lualine_a = {},
+		lualine_b = {},
+		lualine_c = { "filename", session_name },
+		lualine_x = { "location" },
+		lualine_y = {},
+		lualine_z = {},
+	},
+	tabline = {},
+	winbar = {},
+	inactive_winbar = {},
+	extensions = {},
 }

@@ -9,10 +9,16 @@ vim.g.mapleader = " "
 keymap("n", ";", ":", { noremap = true })
 keymap("v", ";", ":", { noremap = true })
 keymap("x", ";", ":", { noremap = true })
-keymap("n", "<C-h>", "<C-w>h", opts)
-keymap("n", "<C-j>", "<C-w>j", opts)
-keymap("n", "<C-k>", "<C-w>k", opts)
-keymap("n", "<C-l>", "<C-w>l", opts)
+-- keymap("n", "<C-h>", "<C-w>h", opts)
+-- keymap("n", "<C-j>", "<C-w>j", opts)
+-- keymap("n", "<C-k>", "<C-w>k", opts)
+-- keymap("n", "<C-l>", "<C-w>l", opts)
+
+-- keymap("n", "<C-Up>", ":resize +2<CR>", opts)
+-- keymap("n", "<C-Down>", ":resize -2<CR>", opts)
+-- keymap("n", "<C-Left>", ":vertical resize +2<CR>", opts)
+-- keymap("n", "<C-Right>", ":vertical resize -2<CR>", opts)
+
 keymap("n", "<leader>to", ":terminal<CR>", opts)
 keymap("t", "<leader>tc", "<C-\\><C-n>", opts)
 
@@ -20,10 +26,6 @@ keymap("n", "<leader>td", ":TodoTelescope<CR>", opts)
 
 keymap("n", "q", "<Nop>", opts)
 
-keymap("n", "<C-Up>", ":resize +2<CR>", opts)
-keymap("n", "<C-Down>", ":resize -2<CR>", opts)
-keymap("n", "<C-Left>", ":vertical resize +2<CR>", opts)
-keymap("n", "<C-Right>", ":vertical resize -2<CR>", opts)
 
 keymap("n", "<TAB>", ":bnext<CR>", opts)
 keymap("n", "<S-TAB>", ":bprevious<CR>", opts)
@@ -38,12 +40,12 @@ keymap("v", ">", ">gv", opts)
 
 keymap("v", "p", '"_dP', opts)
 keymap("n", "<leader>ip", ':normal! gg0"0P<CR><C-o>', opts)
-vim.api.nvim_set_keymap(
-	"n",
-	"<Space>ii",
-	'yiw:lua require("custom_imports").centered_window()<CR>',
-	{ noremap = true, silent = true }
-)
+-- vim.api.nvim_set_keymap(
+-- 	"n",
+-- 	"<Space>ii",
+-- 	'yiw:lua require("custom_imports").centered_window()<CR>',
+-- 	{ noremap = true, silent = true }
+-- )
 
 keymap("n", "<A-j>", ":m .+1<CR>==", opts)
 keymap("n", "<A-k>", ":m .-2<CR>==", opts)

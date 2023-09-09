@@ -20,7 +20,7 @@ require("lazy").setup({
 		lazy = false,
 		priority = 1000,
 		config = function()
-			vim.cmd([[colorscheme nordic]])
+			vim.cmd([[colorscheme gatekeeper]])
 		end,
 	},
 	{
@@ -566,6 +566,53 @@ require("lazy").setup({
 			{ "<leader>wt", ":WtfSearch " },
 		},
 	},
+	{
+		-- NOTE: now my cpu is too slow, it lags using cpu/ram/wifi, use when upgrade the pc
+		"Pheon-Dev/pigeon",
+		event = "VimEnter",
+		enabled = false,
+		opts = {
+			enabled = true,
+			os = "linux", -- windows, osx
+			plugin_manager = "lazy", -- packer, paq, vim-plug
+			callbacks = {
+				killing_pigeon = nil,
+				respawning_pigeon = nil,
+			},
+		},
+	},
+	{
+		-- NOTE: you can also make for another lang the import, look at github of the extension, in case
+		"piersolenski/telescope-import.nvim",
+		dependencies = "nvim-telescope/telescope.nvim",
+		keys = {
+			{ "<leader>ii", "<cmd>Telescope import<CR>" },
+		},
+		config = function()
+			require("telescope").load_extension("import")
+		end,
+	},
+	{
+		"mrjones2014/smart-splits.nvim",
+		build = "./kitty/install-kittens.bash",
+		keys = {
+			-- move between buffers
+			{ "<C-h>", '<cmd>lua require("smart-splits").move_cursor_left()<CR>' },
+			{ "<C-j>", '<cmd>lua require("smart-splits").move_cursor_down()<CR>' },
+			{ "<C-k>", '<cmd>lua require("smart-splits").move_cursor_up()<CR>' },
+			{ "<C-l>", '<cmd>lua require("smart-splits").move_cursor_right()<CR>' },
+			-- resize buffers
+			{ "<C-Left>", '<cmd>lua require("smart-splits").resize_left()<CR>' },
+			{ "<C-Down>", '<cmd>lua require("smart-splits").resize_down()<CR>' },
+			{ "<C-Up>", '<cmd>lua require("smart-splits").resize_up()<CR>' },
+			{ "<C-Right>", '<cmd>lua require("smart-splits").resize_right()<CR>' },
+			-- swapping buffers
+			{ "<C-Space>h", '<cmd>lua require("smart-splits").swap_buf_left()<CR>' },
+			{ "<C-Space>j", '<cmd>lua require("smart-splits").swap_buf_down()<CR>' },
+			{ "<C-Space>k", '<cmd>lua require("smart-splits").swap_buf_up()<CR>' },
+			{ "<C-Space>l", '<cmd>lua require("smart-splits").swap_buf_right()<CR>' },
+		},
+	},
 })
 
 -- vim.cmd('highlight Search guifg=#F24211  guibg=#000000')
@@ -583,7 +630,7 @@ require("lazy").setup({
 -- vim.fn.sign_define('DapStopped',             { text='', texthl='dap_stopped',  linehl='', numhl='' })
 -- vim.fn.sign_define('DapLogPoint',            { text='', texthl='dap_log_point', linehl='', numhl='' })
 
-vim.api.nvim_exec("autocmd BufWritePost * source ~/.config/nvim/lua/plugins/lualine.lua", false)
+-- vim.api.nvim_exec("autocmd BufWritePost * source ~/.config/nvim/lua/plugins/lualine.lua", false)
 vim.api.nvim_exec("autocmd Filetype rnvimr tnoremap <buffer><nowait> j j", false)
 vim.api.nvim_exec("autocmd Filetype rnvimr tnoremap <buffer><nowait> k k", false)
 vim.api.nvim_exec("autocmd Filetype rnvimr tnoremap <buffer><nowait> <Space> <Space>", false)
