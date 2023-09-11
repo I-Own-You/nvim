@@ -597,13 +597,15 @@ require("lazy").setup({
 		build = "./kitty/install-kittens.bash",
     opts = {
       cursor_follows_swapped_bufs = true,
+      -- at_edge = 'stop',
     },
 		keys = {
 			-- move between buffers
-			{ "<C-h>", '<cmd>lua require("smart-splits").move_cursor_left()<CR>' },
-			{ "<C-j>", '<cmd>lua require("smart-splits").move_cursor_down()<CR>' },
-			{ "<C-k>", '<cmd>lua require("smart-splits").move_cursor_up()<CR>' },
-			{ "<C-l>", '<cmd>lua require("smart-splits").move_cursor_right()<CR>' },
+      -- commented because i dont need the cycle option, so it has a delay anyway, so its slower than neovim builtin
+			-- { "<C-h>", '<cmd>lua require("smart-splits").move_cursor_left()<CR>' },
+			-- { "<C-j>", '<cmd>lua require("smart-splits").move_cursor_down()<CR>' },
+			-- { "<C-k>", '<cmd>lua require("smart-splits").move_cursor_up()<CR>' },
+			-- { "<C-l>", '<cmd>lua require("smart-splits").move_cursor_right()<CR>' },
 			-- resize buffers
 			{ "<C-Left>", '<cmd>lua require("smart-splits").resize_left()<CR>' },
 			{ "<C-Down>", '<cmd>lua require("smart-splits").resize_down()<CR>' },
