@@ -1,4 +1,4 @@
-vim.api.nvim_set_hl(0, "CmpItemKindSnippet", { fg = "green" })
+vim.api.nvim_set_hl(0, "CmpItemKindSnippet", { fg = "#00E756" })
 vim.api.nvim_set_hl(0, "CmpItemKindText", { fg = "#00E756" })
 vim.api.nvim_set_hl(0, "CmpItemKindFunction", { fg = "cyan" })
 vim.api.nvim_set_hl(0, "CmpItemKindVariable", { fg = "#C54BCF" })
@@ -6,8 +6,9 @@ vim.api.nvim_set_hl(0, "CmpItemKindClass", { fg = "#FFB20F" })
 vim.api.nvim_set_hl(0, "CmpItemKindModule", { fg = "#7F7F7F" })
 vim.api.nvim_set_hl(0, "CmpItemKindKeyword", { fg = "#A79AC0" })
 vim.api.nvim_set_hl(0, "CmpItemKindConstant", { fg = "white" })
-vim.api.nvim_set_hl(0, "CmpItemKindProperty", { fg = "#CB0340" })
+vim.api.nvim_set_hl(0, "CmpItemKindProperty", { fg = "#ff4394" })
 vim.api.nvim_set_hl(0, "CmpItemKindMethod", { fg = "#29ADFF" })
+vim.api.nvim_set_hl(0, "CmpItemMenu", { fg = "#FFDBB8" })
 -- vim.api.nvim_set_hl(0, "CmpItemKindConstructor", { fg = "cyan"})
 -- vim.api.nvim_set_hl(0, "CmpItemKindField", { fg = "cyan"})
 -- vim.api.nvim_set_hl(0, "CmpItemKindInterface", { fg = "cyan"})
@@ -155,7 +156,7 @@ return {
 		completion = cmp.config.window.bordered({
 			-- scrollbar = true,
 			-- border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
-			winhighlight = "Normal:CustomFloatCompletion,FloatBorder:CmpItemKindEnum,CursorLine:CursorLine,Search:None",
+			winhighlight = "Normal:CustomFloatCompletion,FloatBorder:Boolean,CursorLine:CursorLine,Search:None", -- switched to Boolean for gatekeeper
 			-- side_padding = 0,
 			-- col_offset = 0, --moves right and left
 		}),
