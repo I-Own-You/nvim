@@ -595,6 +595,9 @@ require("lazy").setup({
 	{
 		"mrjones2014/smart-splits.nvim",
 		build = "./kitty/install-kittens.bash",
+    opts = {
+      cursor_follows_swapped_bufs = true,
+    },
 		keys = {
 			-- move between buffers
 			{ "<C-h>", '<cmd>lua require("smart-splits").move_cursor_left()<CR>' },
