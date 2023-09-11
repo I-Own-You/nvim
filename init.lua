@@ -20,7 +20,7 @@ require("lazy").setup({
 		lazy = false,
 		priority = 1000,
 		config = function()
-			vim.cmd([[colorscheme gatekeeper]])
+			vim.cmd([[colorscheme miasma]])
 		end,
 	},
 	{
@@ -312,6 +312,11 @@ require("lazy").setup({
 				FoldColumn = { bg = "#242933", fg = "#28A761" }, -- 'foldcolumn'
 			},
 		},
+	},
+	{
+		"xero/miasma.nvim",
+		lazy = false,
+		priority = 1000,
 	},
 	{
 		"sindrets/diffview.nvim",
