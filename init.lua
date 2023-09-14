@@ -99,6 +99,7 @@ require("lazy").setup({
 			luasnip.filetype_extend("htmldjango", { "html" })
 			luasnip.filetype_extend("typescript", { "javascript" })
 			require("luasnip/loaders/from_vscode").lazy_load()
+			require("luasnip.loaders.from_lua").load({ paths = "~/.config/nvim/snippets/" })
 		end,
 		build = "make install_jsregexp",
 	},
@@ -595,13 +596,13 @@ require("lazy").setup({
 	{
 		"mrjones2014/smart-splits.nvim",
 		build = "./kitty/install-kittens.bash",
-    opts = {
-      cursor_follows_swapped_bufs = true,
-      -- at_edge = 'stop',
-    },
+		opts = {
+			cursor_follows_swapped_bufs = true,
+			-- at_edge = 'stop',
+		},
 		keys = {
 			-- move between buffers
-      -- commented because i dont need the cycle option, so it has a delay anyway, so its slower than neovim builtin
+			-- commented because i dont need the cycle option, so it has a delay anyway, so its slower than neovim builtin
 			-- { "<C-h>", '<cmd>lua require("smart-splits").move_cursor_left()<CR>' },
 			-- { "<C-j>", '<cmd>lua require("smart-splits").move_cursor_down()<CR>' },
 			-- { "<C-k>", '<cmd>lua require("smart-splits").move_cursor_up()<CR>' },
