@@ -42,4 +42,14 @@ ls.add_snippets("typescript", {
 		t(" = "),
 		i(2, "typeExpression"),
 	}),
+	s("en", {
+		t("enum "),
+		i(1, "EnumName "),
+		t({ " {", "\t" }),
+		i(2, "Name"),
+		t(" = "),
+		i(3, "value"),
+		t({ "", "}" }),
+		i(0),
+	}),
 })
