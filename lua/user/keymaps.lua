@@ -28,8 +28,8 @@ keymap("n", "<leader>td", ":TodoTelescope<CR>", opts)
 keymap("n", "q", "<Nop>", opts)
 
 
-keymap("n", "<TAB>", ":bnext<CR>", opts)
-keymap("n", "<S-TAB>", ":bprevious<CR>", opts)
+-- keymap("n", "<TAB>", ":bnext<CR>", opts)
+-- keymap("n", "<S-TAB>", ":bprevious<CR>", opts)
 
 keymap("i", "jk", "<ESC>", opts)
 keymap("i", "kk", "<ESC>", opts)
