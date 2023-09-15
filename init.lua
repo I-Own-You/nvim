@@ -453,7 +453,7 @@ require("lazy").setup({
 			"nvim-treesitter/nvim-treesitter",
 		},
 		keys = {
-			{ "<leader>dd", ":DevdocsOpenCurrentFloat<CR>" },
+			{ "<leader>dd", ":DevdocsOpenFloat " },
 		},
 		opts = {
 			-- dir_path = vim.fn.stdpath("data") .. "/devdocs", -- installation directory

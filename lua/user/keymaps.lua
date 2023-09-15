@@ -97,8 +97,6 @@ vim.keymap.set("n", "<leader>kk", function()
 end, opts)
 keymap("n", "<leader>kl", ":lua require('barbecue.ui').navigate(-)<left>", { noremap = true })
 
-keymap("n", "<leader>dd", ":DevdocsOpenCurrentFloat<CR>", { noremap = true })
-
 vim.keymap.set("n", "zR", function()
 	require("ufo").openAllFolds()
 end, { silent = true })
