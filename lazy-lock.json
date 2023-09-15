@@ -1,5 +1,6 @@
 {
   "Comment.nvim": { "branch": "master", "commit": "0236521ea582747b58869cb72f70ccfa967d2e89" },
+  "LeetBuddy.nvim": { "branch": "main", "commit": "fd689478cb192908204985e4630066074f73034c" },
   "LuaSnip": { "branch": "master", "commit": "ea7d7ea510c641c4f15042becd27f35b3e5b3c2b" },
   "barbecue": { "branch": "main", "commit": "cd7e7da622d68136e13721865b4d919efd6325ed" },
   "base46-colors": { "branch": "main", "commit": "9b142cf7ecef300d6e66f05ed8ae77f4e358bfcd" },

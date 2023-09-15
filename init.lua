@@ -634,6 +634,32 @@ require("lazy").setup({
 			{ "<A-l>", ":MoveHBlock(1)<CR>", mode = "v" },
 		},
 	},
+	{
+		"Dhanus3133/LeetBuddy.nvim",
+		dependencies = {
+			"nvim-lua/plenary.nvim",
+			"nvim-telescope/telescope.nvim",
+		},
+		config = function()
+			require("leetbuddy").setup({
+				domain = "com",
+				language = "ts",
+			})
+		end,
+		-- LBQuestions: Lists all Leetcode problems with submission status and difficulty level.
+		-- <A-r>: Reset all filters and display all problems.
+		-- <A-e>: Display only easy difficulty problems.
+		-- <A-m>: Display only medium difficulty problems.
+		-- <A-h>: Display only hard difficulty problems.
+		-- <A-a>: Display only problems with a status of "Accepted" (AC).
+		-- <A-y>: Display only problems with a status of "Not Started" (NOT_STARTED).
+		-- <A-t>: Display only problems with a status of "Tried" (TRIED).
+		-- LBQuestion: Displays the question in a popup window.
+		-- LBReset: Resets the code of the current question to the default template.
+		-- LBTest: Runs the test cases for the current question. Multiple test cases can be added.
+		-- LBSubmit: Submits the code for the current question.
+		-- LBChangeLanguage: Dynamically switch the language for the current problem.
+	},
 })
 
 -- vim.cmd('highlight Search guifg=#F24211  guibg=#000000')
