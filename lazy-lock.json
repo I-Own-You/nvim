@@ -1,10 +1,10 @@
 {
+  "BufferTabs.nvim": { "branch": "main", "commit": "de5557831ed00e2a1b88a8143e78510d9d0df87d" },
   "Comment.nvim": { "branch": "master", "commit": "0236521ea582747b58869cb72f70ccfa967d2e89" },
   "LeetBuddy.nvim": { "branch": "main", "commit": "fd689478cb192908204985e4630066074f73034c" },
   "LuaSnip": { "branch": "master", "commit": "ea7d7ea510c641c4f15042becd27f35b3e5b3c2b" },
   "barbecue": { "branch": "main", "commit": "cd7e7da622d68136e13721865b4d919efd6325ed" },
   "base46-colors": { "branch": "main", "commit": "9b142cf7ecef300d6e66f05ed8ae77f4e358bfcd" },
-  "bufferline.nvim": { "branch": "main", "commit": "9961d87bb3ec008213c46ba14b3f384a5f520eb5" },
   "cmp-buffer": { "branch": "main", "commit": "3022dbc9166796b644a841a02de8dd1cc1d311fa" },
   "cmp-cmdline": { "branch": "main", "commit": "8ee981b4a91f536f52add291594e89fb6645e451" },
   "cmp-emoji": { "branch": "main", "commit": "19075c36d5820253d32e2478b6aaf3734aeaafa0" },

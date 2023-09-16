@@ -28,8 +28,8 @@ keymap("n", "<leader>td", ":TodoTelescope<CR>", opts)
 keymap("n", "q", "<Nop>", opts)
 
 
--- keymap("n", "<TAB>", ":bnext<CR>", opts)
--- keymap("n", "<S-TAB>", ":bprevious<CR>", opts)
+keymap("n", "<TAB>", ":tabnext<CR>", opts)
+keymap("n", "<S-TAB>", ":tabprevious<CR>", opts)
 
 keymap("i", "jk", "<ESC>", opts)
 keymap("i", "kk", "<ESC>", opts)
@@ -150,6 +150,7 @@ keymap(
 	opts
 )
 keymap("n", "<leader>bb", ":FzfLua buffers<CR>", opts)
+keymap("n", "<leader>ta", ":FzfLua tabs<CR>", opts)
 keymap("n", "<leader>ho", ":FzfLua oldfiles<CR>", opts)
 keymap("n", "<leader>ll", ":FzfLua lines<CR>", opts)
 -- keymap('n', '<leader>lb', ":FzfLua blines<CR>", opts) used in search categore because of speed
@@ -158,7 +159,6 @@ keymap("n", "<leader>ll", ":FzfLua lines<CR>", opts)
 -- loclist
 -- loclist_stack
 -- args
--- tabs
 -- FzfLua git
 keymap("n", "<leader>gst", ":FzfLua git_status<CR>", opts)
 keymap("n", "<leader>gls", ":FzfLua git_files<CR>", opts)
