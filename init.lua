@@ -690,13 +690,6 @@ augroup END
 ]]) -- for htmldjango, it conflicted with rustywind lsp
 
 vim.cmd([[
-augroup GlowHighlight
-  autocmd!
-  autocmd FileType glow highlight FoldColumn guibg=#10171A
-augroup END
-]]) -- its for devdocs plugin
-
-vim.cmd([[
 augroup AutoCloseMarkdownGlow
   autocmd!
   autocmd FileType glow nnoremap <buffer> q :q<CR>
