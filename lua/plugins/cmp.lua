@@ -157,12 +157,13 @@ return {
 			-- scrollbar = true,
 			-- border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
 			-- winhighlight = "Normal:CustomFloatCompletion,FloatBorder:Boolean,CursorLine:CursorLine,Search:None", -- switched to Boolean for gatekeeper
-			-- side_padding = 0,
-			-- col_offset = 0, --moves right and left
+			winhighlight = "Normal:CustomFloatCompletion,FloatBorder:CmpItemKindEnum,CursorLine:CursorLine,Search:None",
+			side_padding = 0,
+			col_offset = 0, --moves right and left
 		}),
 		documentation = {
 			border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
-			-- winhighlight = "Normal:CustomFloatCompletion,FloatBorder:CmpItemKindEnum,CursorLine:CursorLine,Search:None",
+			winhighlight = "Normal:CustomFloatCompletion,FloatBorder:CmpItemKindEnum,CursorLine:CursorLine,Search:None",
 		},
 	},
 	experimental = {
