@@ -660,6 +660,7 @@ require("lazy").setup({
 		-- LBSubmit: Submits the code for the current question.
 		-- LBChangeLanguage: Dynamically switch the language for the current problem.
 	},
+	{ "chrisgrieser/nvim-dr-lsp" },
 })
 
 -- vim.cmd('highlight Search guifg=#F24211  guibg=#000000')

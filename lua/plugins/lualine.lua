@@ -50,7 +50,17 @@ local bubbles_theme = {
 }
 
 local function session_name()
-	return "session: " .. require("possession.session").session_name or ""
+	return "s: " .. require("possession.session").session_name or ""
+end
+
+local function count_buffers()
+	local buffers = vim.fn.getbufinfo({ buflisted = 1 })
+	return "b: " .. #buffers
+end
+
+local function count_tabs()
+	local tabs = vim.fn.tabpagenr("$")
+	return "t: " .. tabs
 end
 
 return {
@@ -85,19 +95,26 @@ return {
 			},
 		},
 		lualine_b = { "branch", "diff" },
-		lualine_c = { "filename", { session_name } },
+		lualine_c = {
+			"filename",
+			{ session_name, color = { fg = "#9AE38A" } },
+			{ count_buffers, color = { fg = "#6cbfbf" } },
+			{ count_tabs, color = { fg = "#6cbfbf" } },
+		},
 		lualine_x = {
 			-- function()
 			-- dont use [ram, internet/wifi], it lags idk why on my pc
 			-- local cpu = require("pigeon.hostname").hostname()
 			--     return cpu
 			-- end,
+			{ require("dr-lsp").lspProgress, color = { fg = "#E4C66A" } },
+			{ require("dr-lsp").lspCount, color = { fg = "#E57474" } },
 			"diagnostics",
 			function()
 				return vim.fn["codeium#GetStatusString"]()
 			end,
-			"encoding",
-			"filetype",
+			-- "encoding",
+			-- "filetype",
 		},
 		lualine_y = { "progress" },
 		lualine_z = { "location" },

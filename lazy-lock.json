@@ -1,5 +1,4 @@
 {
-  "BufferTabs.nvim": { "branch": "main", "commit": "de5557831ed00e2a1b88a8143e78510d9d0df87d" },
   "Comment.nvim": { "branch": "master", "commit": "0236521ea582747b58869cb72f70ccfa967d2e89" },
   "LeetBuddy.nvim": { "branch": "main", "commit": "fd689478cb192908204985e4630066074f73034c" },
   "LuaSnip": { "branch": "master", "commit": "ea7d7ea510c641c4f15042becd27f35b3e5b3c2b" },
@@ -36,6 +35,7 @@
   "nvim-cmp": { "branch": "main", "commit": "5dce1b778b85c717f6614e3f4da45e9f19f54435" },
   "nvim-colorizer.lua": { "branch": "master", "commit": "dde3084106a70b9a79d48f426f6d6fec6fd203f7" },
   "nvim-devdocs": { "branch": "master", "commit": "73becafa2d41c1f4631468645939b950909d15d9" },
+  "nvim-dr-lsp": { "branch": "main", "commit": "c7fcea02086f72e3674ebf218d2c9fb63fb67bb7" },
   "nvim-fundo": { "branch": "main", "commit": "a0d105d4588ffe43cc7e40220b1b6c1313156330" },
   "nvim-lspconfig": { "branch": "master", "commit": "cc388d3f6b9c7c943ae2b2dcd46ad470fd257f91" },
   "nvim-navic": { "branch": "master", "commit": "9c89730da6a05acfeb6a197e212dfadf5aa60ca0" },
