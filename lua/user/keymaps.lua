@@ -20,7 +20,7 @@ keymap("n", "<C-l>", "<C-w>l", opts)
 -- keymap("n", "<C-Left>", ":vertical resize +2<CR>", opts)
 -- keymap("n", "<C-Right>", ":vertical resize -2<CR>", opts)
 
-keymap("n", "<leader>to", ":terminal<CR>", opts)
+keymap("n", "<leader>ot", ":terminal<CR>", opts)
 keymap("t", "<leader>tc", "<C-\\><C-n>", opts)
 
 keymap("n", "<leader>td", ":TodoTelescope<CR>", opts)
@@ -106,6 +106,7 @@ keymap("n", "<leader>nh", ":nohlsearch<CR>", opts)
 keymap("n", "<leader>bo", ":only<CR>", opts)
 keymap("n", "<leader>bda", ":%bdelete<CR>", opts)
 keymap("n", "<leader>bdo", ":%bd|e#|bd#<CR>|'\"", { noremap = true, silent = true })
+keymap("n", "<leader>to", ":tabonly<CR>", { noremap = true, silent = true })
 
 -- session keymaps
 keymap("n", "<leader>sl", ":Telescope possession list<CR>", { noremap = true, silent = true })
