@@ -96,10 +96,11 @@ return {
 		},
 		lualine_b = { "branch", "diff" },
 		lualine_c = {
-			"filename",
-			{ session_name, color = { fg = "#9AE38A" } },
-			{ count_buffers, color = { fg = "#6cbfbf" } },
-			{ count_tabs, color = { fg = "#6cbfbf" } },
+			{ require("dr-lsp").lspProgress, color = { fg = "#E4C66A" } },
+			{ require("dr-lsp").lspCount, color = { fg = "#E57474" } },
+			function()
+				return vim.fn["codeium#GetStatusString"]()
+			end,
 		},
 		lualine_x = {
 			-- function()
@@ -107,12 +108,11 @@ return {
 			-- local cpu = require("pigeon.hostname").hostname()
 			--     return cpu
 			-- end,
-			{ require("dr-lsp").lspProgress, color = { fg = "#E4C66A" } },
-			{ require("dr-lsp").lspCount, color = { fg = "#E57474" } },
 			"diagnostics",
-			function()
-				return vim.fn["codeium#GetStatusString"]()
-			end,
+			"filename",
+			{ session_name, color = { fg = "#9AE38A" } },
+			{ count_buffers, color = { fg = "#6cbfbf" } },
+			{ count_tabs, color = { fg = "#6cbfbf" } },
 			-- "encoding",
 			-- "filetype",
 		},
