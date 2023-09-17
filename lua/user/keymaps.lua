@@ -166,7 +166,8 @@ keymap("n", "<leader>gsh", ":FzfLua git_stash<CR>", opts)
 -- FzfLua lsp/diagnostics
 -- keymap("n", "gr", ":FzfLua lsp_references<CR>", opts)
 -- keymap("n", "gd", ":lua vim.lsp.buf.definition()<CR>", opts)
-keymap("n", "gd", "<cmd>tab split | lua vim.lsp.buf.definition()<CR>", opts)
+-- keymap("n", "gd", "<cmd>tab split | lua vim.lsp.buf.definition()<CR>", opts)
+keymap("n", "gd", ':lua require("utility_functions").goto_defintion()<CR>', opts)
 -- keymap("n", "gd", ":FzfLua lsp_definitions<CR>", opts)
 -- keymap("n", "gD", ":FzfLua lsp_declarations<CR>", opts)
 -- keymap("n", "<leader>D", ":FzfLua lsp_typedefs<CR>", opts)
@@ -268,30 +269,11 @@ keymap("n", "<leader>gsw", ":Gitsigns show ", { noremap = true })
 keymap("n", "<leader>gid", ":Gitsigns diffthis ", { noremap = true })
 
 keymap("n", "<leader>st", ":Speedtyper<CR>", opts)
--- STAGE THIS
--- keymap("n", "<leader>dru", ":lua require('dap').continue()<CR>", opts)
--- keymap("n", "<C-n>", ":lua require('dap').step_into()<CR>", opts)
--- keymap("n", "<Leader>dov", ":lua require('dap').step_over()<CR>", opts)
--- keymap("n", "<Leader>dou", ":lua require('dap').step_out()<CR>", opts)
--- keymap("n", "<Leader>dst", ":lua require('dap').terminate()<CR>", opts)
--- keymap("n", "<Leader>drr", ":lua require('dap').run_last()<CR>", opts)
-
--- keymap("n", "<Leader>dro", ":lua require('dap').repl.toggle()<CR>", opts)
-
--- keymap("n", "<Leader>bpe", ":lua require('dap').set_breakpoint(vim.fn.input('Breakpoint condition: '))<CR>", opts)
--- keymap("n", "<Leader>bpm", ":lua require('dap').set_breakpoint(nil, nil, vim.fn.input('Log point message: '))<CR>", opts)
--- keymap("n", "<Leader>bpc", ":lua require('dap').clear_breakpoints()<CR>:lua require('debugger_signs_adjust').ontl()<CR>", opts)
--- keymap("n", "<Leader>bpp", ":lua require('dap').toggle_breakpoint()<CR>:lua require('debugger_signs_adjust').offtl()<CR>", opts)
-
--- keymap("n", "<Leader>dii", ":lua require('dapui').toggle()<CR>", opts)
-
--- keymap("n", "<Leader>sv", ":lua require('dap.ui.widgets').hover()<CR>", opts)
--- keymap("n", "<Leader>sv", ":lua local widgets=require('dap.ui.widgets');widgets.centered_float(widgets.scopes)<CR>", opts)
 
 keymap("n", "<Leader>xo", ":!dolphin %:p:h &<CR><CR>", opts)
 keymap("n", "<Leader>xt", ':let @+=expand("%:p:h")<CR>', opts)
 
--- keymap("n", ":w<CR>", ":w<CR>:so ~/.config/nvim/lua/plugins/lualine.lua<CR>", opts)
+keymap("n", "zz", "za", { silent = true, noremap = true }) -- for
 -- za - toggle fold
 -- zf(line numbers)j|k - fold up or down
 -- zf/ - fold till the line where you type the string
