@@ -65,18 +65,13 @@ local function lsp_keymaps(bufnr)
 
 	vim.api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp.omnifunc")
 
-	-- keymap(bufnr, "n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", opts) --keymaps.lua
 	-- keymap(bufnr, "n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opts) --keymaps.lua
-	-- keymap(bufnr, "n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", opts) --keymaps.lua
-	-- keymap(bufnr, "n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", opts) --keymaps.lua
-	-- keymap(bufnr, "n", "<leader>D", "<cmd> lua vim.lsp.buf.type_definition()<CR>", opts) --keymaps.lua
+	keymap(bufnr, "n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", opts) --keymaps.lua
 	-- keymap(bufnr, "n", "<leader>wa", "<cmd> lua vim.lsp.buf.add_workspace_folder()<CR>", opts)
 	-- keymap(bufnr, "n", "<leader>wr", "<cmd> lua vim.lsp.buf.remove_workspace_folder()<CR>", opts)
 	-- keymap(bufnr, "n", "<leader>wl", "<cmd> lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>", opts)
 	-- keymap(bufnr, "n", "<leader>re", "<cmd> lua vim.lsp.buf.rename()<CR>", opts)
-	-- keymap(bufnr, "n", "<leader>li", "<cmd>LspInfo<cr>", opts)
 	-- keymap(bufnr, "n", "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<cr>", opts) --keymaps.lua
-	-- keymap(bufnr, "n", "<leader>lI", "<cmd>LspInstallInfo<cr>", opts)
 	-- keymap(bufnr, "n", "<leader>lq", "<cmd>lua vim.diagnostic.setloclist()<CR>", opts) --keymaps.lua
 	keymap(bufnr, "n", "<leader>rr", "<cmd>lua vim.lsp.buf.format{ async = true }<cr>", { silent = true })
 	keymap(bufnr, "n", "gD", ":lua vim.lsp.buf.declaration()<CR>", opts)
