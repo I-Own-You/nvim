@@ -156,13 +156,15 @@ return {
 		completion = cmp.config.window.bordered({
 			-- scrollbar = true,
 			-- border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
+			border = { "┏", "━", "┓", "┃", "┛", "━", "┗", "┃" },
 			-- winhighlight = "Normal:CustomFloatCompletion,FloatBorder:Boolean,CursorLine:CursorLine,Search:None", -- switched to Boolean for gatekeeper
 			winhighlight = "Normal:CustomFloatCompletion,FloatBorder:CmpItemKindEnum,CursorLine:CursorLine,Search:None",
 			side_padding = 0,
 			col_offset = 0, --moves right and left
 		}),
 		documentation = {
-			border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
+			-- border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
+			border = { "┏", "━", "┓", "┃", "┛", "━", "┗", "┃" },
 			winhighlight = "Normal:CustomFloatCompletion,FloatBorder:CmpItemKindEnum,CursorLine:CursorLine,Search:None",
 		},
 	},
