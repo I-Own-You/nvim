@@ -103,7 +103,6 @@ vim.keymap.set("n", "zM", function()
 end, { silent = true })
 
 keymap("n", "<leader>nh", ":nohlsearch<CR>", opts)
-
 keymap("n", "<leader>bo", ":only<CR>", opts)
 keymap("n", "<leader>bda", ":%bdelete<CR>", opts)
 keymap("n", "<leader>bdo", ":%bd|e#|bd#<CR>|'\"", { noremap = true, silent = true })
