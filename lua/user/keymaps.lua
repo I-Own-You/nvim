@@ -27,7 +27,6 @@ keymap("n", "<leader>td", ":TodoTelescope<CR>", opts)
 
 keymap("n", "q", "<Nop>", opts)
 
-
 keymap("n", "<TAB>", ":tabnext<CR>", opts)
 keymap("n", "<S-TAB>", ":tabprevious<CR>", opts)
 
@@ -40,7 +39,6 @@ keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
 
 keymap("v", "p", '"_dP', opts)
-keymap("n", "<leader>ip", ':normal! gg0"0P<CR><C-o>', opts)
 -- vim.api.nvim_set_keymap(
 -- 	"n",
 -- 	"<Space>ii",
@@ -57,7 +55,7 @@ keymap("v", "<A-k>", ":m '<-2<CR>gv=gv", opts)
 
 keymap("n", "<leader>vv", ":vsplit<CR>", opts)
 keymap("n", "<leader>hh", ":split<CR>", opts)
-keymap("n", "<leader>vd", ":vert diffsplit ", { noremap = true})
+keymap("n", "<leader>vd", ":vert diffsplit ", { noremap = true })
 
 keymap("n", "<C-[>", "[m", opts)
 keymap("n", "<C-]>", "]m", opts)
@@ -168,7 +166,8 @@ keymap("n", "<leader>gbb", ":FzfLua git_branches<CR>", opts)
 keymap("n", "<leader>gsh", ":FzfLua git_stash<CR>", opts)
 -- FzfLua lsp/diagnostics
 -- keymap("n", "gr", ":FzfLua lsp_references<CR>", opts)
-keymap("n", "gd", ":lua vim.lsp.buf.definition()<CR>", opts)
+-- keymap("n", "gd", ":lua vim.lsp.buf.definition()<CR>", opts)
+keymap("n", "gd", "<cmd>tab split | lua vim.lsp.buf.definition()<CR>", opts)
 -- keymap("n", "gd", ":FzfLua lsp_definitions<CR>", opts)
 -- keymap("n", "gD", ":FzfLua lsp_declarations<CR>", opts)
 -- keymap("n", "<leader>D", ":FzfLua lsp_typedefs<CR>", opts)
