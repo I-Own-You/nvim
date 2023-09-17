@@ -96,8 +96,6 @@ return {
 		},
 		lualine_b = { "branch", "diff" },
 		lualine_c = {
-			{ require("dr-lsp").lspProgress, color = { fg = "#E4C66A" } },
-			{ require("dr-lsp").lspCount, color = { fg = "#E57474" } },
 			function()
 				return vim.fn["codeium#GetStatusString"]()
 			end,

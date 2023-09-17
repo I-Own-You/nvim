@@ -175,7 +175,11 @@ require("lazy").setup({
 	},
 	{
 		"kevinhwang91/nvim-bqf",
-    enabled = false,
+		opts = {
+			preview = {
+				winblend = 0,
+			},
+		},
 	},
 	{
 		"NvChad/nvim-colorizer.lua",
@@ -661,7 +665,6 @@ require("lazy").setup({
 		-- LBSubmit: Submits the code for the current question.
 		-- LBChangeLanguage: Dynamically switch the language for the current problem.
 	},
-	{ "chrisgrieser/nvim-dr-lsp" },
 })
 
 -- vim.cmd('highlight Search guifg=#F24211  guibg=#000000')
