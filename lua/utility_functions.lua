@@ -8,8 +8,10 @@ function M.goto_defintion()
 			for _, item in ipairs(def_list["items"]) do
 				if item["filename"] == absolute_path then
 					vim.lsp.buf.definition()
+          break
 				else
 					vim.cmd("tab split | lua vim.lsp.buf.definition()")
+          break
 				end
 			end
 		end,
