@@ -5,14 +5,21 @@ function M.goto_defintion()
 	vim.lsp.buf.definition({
 		reuse_win = false,
 		on_list = function(def_list)
+			local counter = 0
 			for _, item in ipairs(def_list["items"]) do
 				if item["filename"] == absolute_path then
 					vim.lsp.buf.definition()
-          break
+					return
 				else
-					vim.cmd("tab split | lua vim.lsp.buf.definition()")
-          break
+					counter = counter + 1
+					-- vim.cmd("tab split | lua vim.lsp.buf.definition()")
 				end
+			end
+			-- for cases where definiton > 1
+			if counter > 1 then
+				vim.cmd("lua vim.lsp.buf.definition()")
+			else
+				vim.cmd("tab split | lua vim.lsp.buf.definition()")
 			end
 		end,
 	})
