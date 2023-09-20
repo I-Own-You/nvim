@@ -62,7 +62,6 @@ require("lazy").setup({
 			cmp.setup.cmdline("/", {
 				mapping = cmp.mapping.preset.cmdline(),
 				sources = {
-          /home/mkc/dot-files/picom.conf
 					{ name = "buffer" },
 				},
 			})
