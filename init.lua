@@ -62,6 +62,7 @@ require("lazy").setup({
 			cmp.setup.cmdline("/", {
 				mapping = cmp.mapping.preset.cmdline(),
 				sources = {
+          /home/mkc/dot-files/picom.conf
 					{ name = "buffer" },
 				},
 			})
@@ -664,6 +665,12 @@ require("lazy").setup({
 		-- LBTest: Runs the test cases for the current question. Multiple test cases can be added.
 		-- LBSubmit: Submits the code for the current question.
 		-- LBChangeLanguage: Dynamically switch the language for the current problem.
+	},
+	{
+		"kevinhwang91/nvim-hlslens",
+		config = function()
+			require("hlslens").setup()
+		end,
 	},
 })
 

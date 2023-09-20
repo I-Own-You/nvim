@@ -1,4 +1,5 @@
 local opts = { silent = true }
+local kopts = { noremap = true, silent = true }
 
 local term_opts = { silent = true }
 
@@ -275,6 +276,13 @@ keymap("n", "<Leader>xo", ":!dolphin %:p:h &<CR><CR>", opts)
 keymap("n", "<Leader>xt", ':let @+=expand("%:p:h")<CR>', opts)
 
 keymap("n", "zz", "za", { silent = true, noremap = true }) -- for
+
+keymap("n", "n", [[<Cmd>execute('normal! ' . v:count1 . 'n')<CR><Cmd>lua require('hlslens').start()<CR>]], kopts)
+keymap("n", "N", [[<Cmd>execute('normal! ' . v:count1 . 'N')<CR><Cmd>lua require('hlslens').start()<CR>]], kopts)
+keymap("n", "*", [[*<Cmd>lua require('hlslens').start()<CR>]], kopts)
+keymap("n", "#", [[#<Cmd>lua require('hlslens').start()<CR>]], kopts)
+keymap("n", "g*", [[g*<Cmd>lua require('hlslens').start()<CR>]], kopts)
+keymap("n", "g#", [[g#<Cmd>lua require('hlslens').start()<CR>]], kopts)
 -- za - toggle fold
 -- zf(line numbers)j|k - fold up or down
 -- zf/ - fold till the line where you type the string
