@@ -32,8 +32,6 @@ keymap("n", "<TAB>", ":tabnext<CR>", opts)
 keymap("n", "<S-TAB>", ":tabprevious<CR>", opts)
 
 keymap("i", "jk", "<ESC>", opts)
-keymap("i", "jj", "<ESC>", opts)
-keymap("i", "kk", "<ESC>", opts)
 
 keymap("n", "<leader>j", "<cmd>TSJToggle<cr>", opts)
 
