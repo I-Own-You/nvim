@@ -1,8 +1,6 @@
 local opts = { silent = true }
 local kopts = { noremap = true, silent = true }
 
-local term_opts = { silent = true }
-
 local keymap = vim.api.nvim_set_keymap
 
 vim.g.mapleader = " "
