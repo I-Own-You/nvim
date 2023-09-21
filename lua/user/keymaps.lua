@@ -44,7 +44,7 @@ keymap("v", "p", '"_dP', opts)
 -- 	"n",
 -- 	"<Space>ii",
 -- 	'yiw:lua require("custom_imports").centered_window()<CR>',
--- 	{ noremap = true, silent = true }
+-- 	kopts
 -- )
 
 keymap("n", "<A-j>", ":m .+1<CR>==", opts)
@@ -72,12 +72,12 @@ keymap("o", "S", "<cmd>lua require('flash').treesitter()<CR>", { noremap = true 
 keymap("x", "S", "<cmd>lua require('flash').treesitter()<CR>", { noremap = true })
 keymap("o", "r", "<cmd>lua require('flash').remote()<CR>", { noremap = true })
 
-keymap("n", "+", "<C-a>", { noremap = true, silent = true })
-keymap("n", "-", "<C-x>", { noremap = true, silent = true })
-keymap("v", "+", "<C-a>gv=gv", { noremap = true, silent = true })
-keymap("v", "-", "<C-x>gv=gv", { noremap = true, silent = true })
-keymap("x", "+", "<C-a>", { noremap = true, silent = true })
-keymap("x", "-", "<C-x>", { noremap = true, silent = true })
+keymap("n", "+", "<C-a>", kopts)
+keymap("n", "-", "<C-x>", kopts)
+keymap("v", "+", "<C-a>gv=gv", kopts)
+keymap("v", "-", "<C-x>gv=gv", kopts)
+keymap("x", "+", "<C-a>", kopts)
+keymap("x", "-", "<C-x>", kopts)
 
 keymap("n", "<C-c>", ":%y<CR>", opts)
 keymap("n", "<C-a>", "ggVG", opts)
@@ -106,11 +106,11 @@ end, { silent = true })
 keymap("n", "<leader>nh", ":nohlsearch<CR>", opts)
 keymap("n", "<leader>bo", ":only<CR>", opts)
 keymap("n", "<leader>bda", ":%bdelete<CR>", opts)
-keymap("n", "<leader>bdo", ":%bd|e#|bd#<CR>|'\"", { noremap = true, silent = true })
-keymap("n", "<leader>to", ":tabonly<CR>", { noremap = true, silent = true })
+keymap("n", "<leader>bdo", ":%bd|e#|bd#<CR>|'\"", kopts)
+keymap("n", "<leader>to", ":tabonly<CR>", kopts)
 
 -- session keymaps
-keymap("n", "<leader>sl", ":Telescope possession list<CR>", { noremap = true, silent = true })
+keymap("n", "<leader>sl", ":Telescope possession list<CR>", kopts)
 keymap("n", "<leader>ss", ":PossessionSave ", { noremap = true })
 
 keymap("n", "<leader>la", ":Lazy<CR>", { noremap = true })
@@ -275,7 +275,7 @@ keymap("n", "<leader>st", ":Speedtyper<CR>", opts)
 keymap("n", "<Leader>xo", ":!dolphin %:p:h &<CR><CR>", opts)
 keymap("n", "<Leader>xt", ':let @+=expand("%:p:h")<CR>', opts)
 
-keymap("n", "zz", "za", { silent = true, noremap = true }) -- for
+keymap("n", "zz", "za", kopts) -- for
 
 keymap("n", "n", [[<Cmd>execute('normal! ' . v:count1 . 'n')<CR><Cmd>lua require('hlslens').start()<CR>]], kopts)
 keymap("n", "N", [[<Cmd>execute('normal! ' . v:count1 . 'N')<CR><Cmd>lua require('hlslens').start()<CR>]], kopts)
