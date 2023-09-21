@@ -189,9 +189,10 @@ require("lazy").setup({
 	},
 	{
 		"numToStr/Comment.nvim",
-		config = function()
-			require("plugins.comment")
-		end,
+		opts = {
+			ignore = "^$",
+		},
+		lazy = false,
 	},
 	{
 		"lewis6991/gitsigns.nvim",
