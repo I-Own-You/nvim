@@ -17,9 +17,106 @@ function M.goto_defintion()
 			end
 			-- for cases where definiton > 1
 			if counter > 1 then
-				vim.cmd("lua vim.lsp.buf.definition()")
+				vim.lsp.buf.definition()
+				-- vim.cmd("lua vim.lsp.buf.definition()")
 			else
-				vim.cmd("tab split | lua vim.lsp.buf.definition()")
+				-- if 1 occurence but in another file
+				local success, result_or_error = pcall(vim.cmd, "lua vim.lsp.buf.definition()")
+				if success then
+					vim.cmd("tab split | lua vim.lsp.buf.definition()")
+				else
+					vim.lsp.buf.definition()
+				end
+			end
+		end,
+	})
+end
+function M.goto_declaration()
+	local current_buffer = vim.api.nvim_get_current_buf()
+	local absolute_path = vim.fn.expand("#" .. current_buffer .. ":p")
+	vim.lsp.buf.definition({
+		reuse_win = false,
+		on_list = function(def_list)
+			local counter = 0
+			for _, item in ipairs(def_list["items"]) do
+				if item["filename"] == absolute_path then
+					vim.lsp.buf.declaration()
+					return
+				else
+					counter = counter + 1
+				end
+			end
+			-- for cases where definiton > 1
+			if counter > 1 then
+				vim.lsp.buf.declaration()
+			else
+				-- if 1 occurence but in another file
+				local success, result_or_error = pcall(vim.cmd, "lua vim.lsp.buf.declaration()")
+				if success then
+					vim.cmd("tab split | lua vim.lsp.buf.declaration()")
+				else
+					vim.lsp.buf.declaration()
+				end
+			end
+		end,
+	})
+end
+function M.goto_implementation()
+	local current_buffer = vim.api.nvim_get_current_buf()
+	local absolute_path = vim.fn.expand("#" .. current_buffer .. ":p")
+	vim.lsp.buf.definition({
+		reuse_win = false,
+		on_list = function(def_list)
+			local counter = 0
+			for _, item in ipairs(def_list["items"]) do
+				if item["filename"] == absolute_path then
+					vim.lsp.buf.implementation()
+					return
+				else
+					counter = counter + 1
+				end
+			end
+			-- for cases where definiton > 1
+			if counter > 1 then
+				vim.lsp.buf.implementation()
+			else
+				-- if 1 occurence but in another file
+				local success, result_or_error = pcall(vim.cmd, "lua vim.lsp.buf.implementation()")
+				if success then
+					vim.cmd("tab split | lua vim.lsp.buf.implementation()")
+				else
+					vim.lsp.buf.implementation()
+				end
+			end
+		end,
+	})
+end
+function M.goto_type_definition()
+	local current_buffer = vim.api.nvim_get_current_buf()
+	local absolute_path = vim.fn.expand("#" .. current_buffer .. ":p")
+	vim.lsp.buf.definition({
+		reuse_win = false,
+		on_list = function(def_list)
+			local counter = 0
+			for _, item in ipairs(def_list["items"]) do
+				if item["filename"] == absolute_path then
+					vim.lsp.buf.type_definition()
+					return
+				else
+					counter = counter + 1
+				end
+			end
+			-- for cases where definiton > 1
+			if counter > 1 then
+				vim.lsp.buf.type_definition()
+			else
+				-- if 1 occurence but in another file
+				local success, result_or_error = pcall(vim.cmd, "lua vim.lsp.buf.type_definition()")
+				if success then
+					vim.cmd("tab split | lua vim.lsp.buf.type_definition()")
+				else
+					vim.lsp.buf.type_definition()
+				end
 			end
 		end,
 	})

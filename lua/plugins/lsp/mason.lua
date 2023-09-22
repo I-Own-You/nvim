@@ -14,6 +14,7 @@ local servers = {
   -- "ruff_lsp",
   "tsserver",
   "eslint",
+  "biome",
 }
 
 local settings = {
