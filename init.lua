@@ -127,6 +127,7 @@ require("lazy").setup({
 	{
 		"lukas-reineke/indent-blankline.nvim",
 		enabled = true,
+		commit = "9637670896b68805430e2f72cf5d16be5b97a22a",
 		config = function()
 			require("indent_blankline").setup(require("plugins.indent_blankline"))
 			-- vim.cmd([[highlight IndentBlanklineContextStart guisp=#8FBCBB gui=underline]])
