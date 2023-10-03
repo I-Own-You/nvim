@@ -572,7 +572,6 @@ return {
 		includeDeclaration = true, -- include current declaration in LSP context
 		-- settings for 'lsp_{document|workspace|lsp_live_workspace}_symbols'
 		symbols = {
-			file_ignore_patterns = { "^node_modules/" },
 			async_or_timeout = true, -- symbols are async by default
 			symbol_style = 1, -- style for document/workspace symbols
 			-- false: disable,    1: icon+kind
