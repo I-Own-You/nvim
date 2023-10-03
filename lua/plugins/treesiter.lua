@@ -5,7 +5,7 @@ return {
         -- disable = { "c", "ruby" },  -- optional, list of language that will be disabled
         -- [options]
     },
-    ensure_installed = {"python", "javascript", "typescript", "lua", "json", "html", "htmldjango", "css"},
+    ensure_installed = {"python", "javascript", "typescript", "lua", "json", "html", "htmldjango", "css", "prisma"},
     ignore_install = { "" }, -- List of parsers to ignore installing
     highlight = {
         enable = true, -- false will disable the whole extension
