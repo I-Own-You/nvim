@@ -266,7 +266,7 @@ return {
 		--
 		find_opts = [[-type f -not -path '*/\.git/*' -printf '%P\n']],
 		rg_opts = "--color=never --files --hidden --follow --no-ignore -g '!.git'",
-		fd_opts = "--color=never --type f --follow",
+		fd_opts = "--color=never --type f --follow --hidden",
 		-- fd_opts           = "--color=never --type f --follow --exclude={.git,node_modules,env,venv,package-lock.json}",
 		-- by default, cwd appears in the header only if {opts} contain a cwd
 		-- parameter to a different folder than the current working directory
@@ -398,7 +398,7 @@ return {
 		-- default options are controlled by 'rg|grep_opts'
 		-- cmd            = "rg --vimgrep",
 		grep_opts = "--no-ignore --binary-files=without-match --line-number --recursive --color=auto --perl-regexp",
-		rg_opts = "--column --line-number --no-heading --color=always --smart-case --max-columns=4096",
+		rg_opts = "--hidden --column --line-number --no-heading --color=always --smart-case --max-columns=4096",
 		-- set to 'true' to always parse globs in both 'grep' and 'live_grep'
 		-- search strings will be split using the 'glob_separator' and translated
 		-- to '--iglob=' arguments, requires 'rg'
