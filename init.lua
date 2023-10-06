@@ -674,6 +674,14 @@ require("lazy").setup({
 			require("hlslens").setup()
 		end,
 	},
+	{
+		"2kabhishek/nerdy.nvim",
+		dependencies = {
+			"stevearc/dressing.nvim",
+			"nvim-telescope/telescope.nvim",
+		},
+		cmd = "Nerdy",
+	},
 })
 
 -- vim.cmd('highlight Search guifg=#F24211  guibg=#000000')
