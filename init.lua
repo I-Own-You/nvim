@@ -157,7 +157,7 @@ require("lazy").setup({
 			vim.g.rnvimr_border_attr = { fg = 14, bg = -1 } -- Change the border's color"
 			vim.g.rnvimr_enable_bw = 1 -- Make Neovim wipe the buffers corresponding to the files deleted by Ranger"
 			vim.g.rnvimr_shadow_winblend = 70 -- Add a shadow window, value is equal to 100 will disable shadow"
-			vim.g.rnvimr_ranger_cmd = { "ranger", "--cmd=set draw_borders false" } -- Draw border with both"
+			vim.g.rnvimr_ranger_cmd = { "ranger", "--cmd=set draw_borders true" } -- Draw border with both"
 
 			vim.g.rnvimr_layout = {
 				relative = "editor",
