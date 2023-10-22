@@ -683,12 +683,6 @@ require("lazy").setup({
 			-- },
 		},
 	},
-	{
-		"nanozuki/tabby.nvim",
-		config = function()
-      require('tabby').setup()
-    end
-	},
 })
 
 -- vim.cmd('highlight Search guifg=#F24211  guibg=#000000')
