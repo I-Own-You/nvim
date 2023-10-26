@@ -683,6 +683,21 @@ require("lazy").setup({
 			-- },
 		},
 	},
+	{
+		"folke/trouble.nvim",
+		dependencies = { "kyazdani42/nvim-web-devicons" },
+		opts = {
+			cycle_results = false,
+			action_keys = {
+				jump = { "<cr>" },
+				open_tab = { "t" },
+				toggle_fold = { "zz" },
+			},
+		},
+		keys = {
+			{ "<leader>lq", ":Trouble document_diagnostics<CR>" },
+		},
+	},
 })
 
 -- vim.cmd('highlight Search guifg=#F24211  guibg=#000000')

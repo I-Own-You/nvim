@@ -180,7 +180,7 @@ keymap("n", "<leader>ow", ":FzfLua lsp_workspace_symbols<CR>", opts)
 keymap("n", "<leader>ol", ":lua require('fzf-lua').lsp_document_symbols({ file_ignore_patterns = { '^node_modules/' } })<CR>", opts)
 keymap("n", "<leader>ca", ":FzfLua lsp_code_actions<CR>", opts)
 keymap("n", "gR", ":FzfLua lsp_finder<CR>", opts)
-keymap("n", "<leader>lq", ":FzfLua lsp_document_diagnostics<CR>", opts)
+-- keymap("n", "<leader>lq", ":FzfLua lsp_document_diagnostics<CR>", opts)
 keymap("n", "<leader>lw", ":FzfLua lsp_workspace_diagnostics<CR>", opts)
 -- lsp_incoming_calls
 -- lsp_outgoing_calls
