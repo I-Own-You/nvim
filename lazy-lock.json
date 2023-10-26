@@ -54,6 +54,7 @@
   "smart-splits.nvim": { "branch": "master", "commit": "c8a9173d70cbbd1f6e4a414e49e31df2b32a1362" },
   "speedtyper.nvim": { "branch": "main", "commit": "33b4bc35e458cd448fdb1a82c2395e3b9a7f6446" },
   "statuscol.nvim": { "branch": "main", "commit": "98d02fc90ebd7c4674ec935074d1d09443d49318" },
+  "taboo.vim": { "branch": "master", "commit": "caf948187694d3f1374913d36f947b3f9fa1c22f" },
   "telescope-import.nvim": { "branch": "main", "commit": "2f559d6b6cbce323b135821f200781063b9aacde" },
   "telescope-undo.nvim": { "branch": "main", "commit": "3dec002ea3e7952071d26fbb5d01e2038a58a554" },
   "telescope.nvim": { "branch": "master", "commit": "74ce793a60759e3db0d265174f137fb627430355" },

@@ -698,6 +698,37 @@ require("lazy").setup({
 			{ "<leader>lq", ":Trouble document_diagnostics<CR>" },
 		},
 	},
+	{
+		"gcmt/taboo.vim",
+		init = function()
+			vim.g.taboo_tabline = 1
+			-- vim.g.taboo_close_tab_label = "x"
+			vim.g.taboo_modified_tab_flag = "  "
+			vim.g.taboo_tab_format = " %n|%w %r%m "
+			vim.g.taboo_renamed_tab_format = " %n|%w [%l]%m "
+			-- %f: the name of the first buffer open in the tab
+			-- %a: the path relative to $HOME of the first buffer open in the tab
+			-- %r: the path relative to the current working directory
+			-- %n: the tab number, but only on the active tab
+			-- %N: the tab number on each tab
+			-- %i: same as %n, but using superscript numbers (eg. ²)
+			-- %I: same as %N, but using superscript numbers
+			-- %w: the number of windows opened into the tab, but only on the active tab
+			-- %W: the number of windows opened into the tab, on each tab
+			-- %u: same as %w, but using superscript numbers (eg. ³)
+			-- %U: same as %W, but using superscript numbers
+			-- %m: the modified flag
+			-- %p: the tab current working directory
+			-- %P: the last component of the tab current working directory
+			-- %S: the shortened tab current working directory
+			-- %x: close tab button, see g:taboo_close_tab_label
+		end,
+		config = function()
+			vim.cmd("highlight TabLineSel guifg=#81C6FA guibg=#33383d")
+			vim.cmd("highlight TabModified guifg=#ffffff guibg=#33383d")
+			vim.cmd("highlight TabModifiedSelected guifg=#2EC27E guibg=#33383d")
+		end,
+	},
 })
 
 -- vim.cmd('highlight Search guifg=#F24211  guibg=#000000')

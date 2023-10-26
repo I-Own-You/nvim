@@ -8,7 +8,7 @@ local options = {
 	showtabline = 1,
 	smartcase = true,
 	smartindent = true,
-    ignorecase = true,
+	ignorecase = true,
 	splitbelow = true,
 	splitright = true,
 	swapfile = false,
@@ -28,12 +28,12 @@ local options = {
 	numberwidth = 4,
 	wrap = false,
 	linebreak = true,
-  fillchars = "eob: ",
+	fillchars = "eob: ",
 	scrolloff = 5,
-    -- sessionoptions = "buffers"
+	sessionoptions = "curdir,folds,globals,help,tabpages,terminal,winsize",
 }
 for k, v in pairs(options) do
 	vim.opt[k] = v
 end
 
-vim.api.nvim_command('set whichwrap+=<,>,h,l,[,]')
+vim.api.nvim_command("set whichwrap+=<,>,h,l,[,]")
