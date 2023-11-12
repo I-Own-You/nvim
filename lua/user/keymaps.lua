@@ -177,7 +177,7 @@ keymap("n", "<leader>D", ':lua require("utility_functions").goto_type_definition
 keymap("n", "<leader>oo", ":FzfLua lsp_document_symbols<CR>", opts)
 keymap("n", "<leader>ow", ":FzfLua lsp_workspace_symbols<CR>", opts)
 -- keymap("n", "<leader>ol", ":FzfLua lsp_live_workspace_symbols<CR>", opts)
-keymap("n", "<leader>ol", ":lua require('fzf-lua').lsp_document_symbols({ file_ignore_patterns = { '^node_modules/' } })<CR>", opts)
+keymap("n", "<leader>ol", ":lua require('fzf-lua').lsp_live_workspace_symbols({ file_ignore_patterns = { '^node_modules/' } })<CR>", opts)
 keymap("n", "<leader>ca", ":FzfLua lsp_code_actions<CR>", opts)
 keymap("n", "gR", ":FzfLua lsp_finder<CR>", opts)
 -- keymap("n", "<leader>lq", ":FzfLua lsp_document_diagnostics<CR>", opts)
