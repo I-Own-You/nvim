@@ -729,6 +729,9 @@ require("lazy").setup({
 			vim.cmd("highlight TabModifiedSelected guifg=#2EC27E guibg=#33383d")
 		end,
 	},
+	{ "ms-jpq/coq_nvim", branch = "coq" },	-- main one
+	{ "ms-jpq/coq.artifacts", branch = "artifacts" }, -- 9000+ Snippets
+	-- { 'ms-jpq/coq.thirdparty', branch= '3p' } -- lua & third party sources, See https://github.com/ms-jpq/coq.thirdparty
 })
 
 -- vim.cmd('highlight Search guifg=#F24211  guibg=#000000')

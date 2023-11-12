@@ -162,6 +162,7 @@ keymap("n", "<leader>fgl", ":FzfLua git_commits<CR>", opts)
 keymap("n", "<leader>fgb", ":FzfLua git_bcommits<CR>", opts)
 keymap("n", "<leader>gbb", ":FzfLua git_branches<CR>", opts)
 keymap("n", "<leader>gsh", ":FzfLua git_stash<CR>", opts)
+keymap("n", "<leader>gt", ":FzfLua git_tags<CR>", opts)
 -- FzfLua lsp/diagnostics
 -- keymap("n", "gr", ":FzfLua lsp_references<CR>", opts)
 -- keymap("n", "gd", ":lua vim.lsp.buf.definition()<CR>", opts)
