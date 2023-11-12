@@ -704,8 +704,8 @@ require("lazy").setup({
 			vim.g.taboo_tabline = 1
 			-- vim.g.taboo_close_tab_label = "x"
 			vim.g.taboo_modified_tab_flag = "  "
-			vim.g.taboo_tab_format = " %w %f%m "
-			vim.g.taboo_renamed_tab_format = " %w R:[%l]%m "
+			vim.g.taboo_tab_format = " %f%m|%W "
+			vim.g.taboo_renamed_tab_format = " R:%l%m|%W "
 			-- %f: the name of the first buffer open in the tab
 			-- %a: the path relative to $HOME of the first buffer open in the tab
 			-- %r: the path relative to the current working directory
