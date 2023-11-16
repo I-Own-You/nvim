@@ -763,7 +763,7 @@ require("lazy").setup({
 			-- 	auto_preview = true, -- will show a float window
 			-- },
 			outline_window = {
-				-- auto_jump = true, -- will show it inside the buffer and not in float window
+				auto_jump = true, -- will show it inside the buffer and not in float window
 				show_cursorline = true, --: both remove cursor and blend it into line
 				hide_cursor = true, --:
 			},
