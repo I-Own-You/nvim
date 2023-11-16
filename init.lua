@@ -770,6 +770,10 @@ require("lazy").setup({
 			-- outline_items = {
 			-- 	show_symbol_lineno = true, -- will show line number in outline window
 			-- },
+			symbol_folding = {
+				autofold_depth = 1,
+				auto_unfold_hover = true,
+			},
 		},
 	},
 })
