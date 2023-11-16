@@ -729,9 +729,49 @@ require("lazy").setup({
 			vim.cmd("highlight TabModifiedSelected guifg=#2EC27E guibg=#33383d")
 		end,
 	},
-	{ "ms-jpq/coq_nvim", branch = "coq" },	-- main one
+	{ "ms-jpq/coq_nvim", branch = "coq" }, -- main one
 	{ "ms-jpq/coq.artifacts", branch = "artifacts" }, -- 9000+ Snippets
 	-- { 'ms-jpq/coq.thirdparty', branch= '3p' } -- lua & third party sources, See https://github.com/ms-jpq/coq.thirdparty
+	{
+		"hedyhli/outline.nvim",
+		lazy = true,
+		cmd = { "Outline", "OutlineOpen" },
+		keys = { -- Example mapping to toggle outline
+			{ "<leader>ow", "<cmd>Outline<CR>", desc = "Toggle outline" },
+			-- Esc / q	    Close outline
+			-- Enter	      Go to symbol location in code
+			-- o	          Go to symbol location in code without losing focus
+			-- Shift+Enter	Go to symbol location in code and close outline
+			-- Ctrl+g	      Update outline window to focus on code location
+			-- K	          Toggles the current symbol preview
+			-- Ctrl+Space	  Hover current symbol (provider action)
+			-- r	          Rename symbol
+			-- a	          Code actions
+			-- h	          Fold symbol or parent symbol
+			-- Tab	        Toggle fold under cursor
+			-- Shift+Tab	  Toggle all folds
+			-- l	          Unfold symbol
+			-- W	          Fold all symbols
+			-- E	          Unfold all symbols
+			-- R	          Reset all folding
+			-- Ctrl+k	      Go up and peek location
+			-- Ctrl+j	      Go down and peek location
+			-- ?	          Show current keymaps as a vim message
+		},
+		opts = {
+			-- preview_window = {
+			-- 	auto_preview = true, -- will show a float window
+			-- },
+			outline_window = {
+				-- auto_jump = true, -- will show it inside the buffer and not in float window
+				show_cursorline = true, --: both remove cursor and blend it into line
+				hide_cursor = true, --:
+			},
+			-- outline_items = {
+			-- 	show_symbol_lineno = true, -- will show line number in outline window
+			-- },
+		},
+	},
 })
 
 -- vim.cmd('highlight Search guifg=#F24211  guibg=#000000')
