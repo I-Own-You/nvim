@@ -106,6 +106,15 @@ keymap("n", "<leader>bda", ":%bdelete<CR>", opts)
 keymap("n", "<leader>bdo", ":%bd|e#|bd#<CR>|'\"", kopts)
 keymap("n", "<leader>to", ":tabonly<CR>", kopts)
 
+-- node package manager
+-- { "<leader>nps", require("package-info").show },
+-- { "<leader>nph", require("package-info").hide },
+keymap("n", "<leader>nps", ":lua require('package-info').toggle()<CR>", opts)
+keymap("n", "<leader>npu", ":lua require('package-info').update()<CR>", opts)
+keymap("n", "<leader>npd", ":lua require('package-info').delete()<CR>", opts)
+keymap("n", "<leader>npi", ":lua require('package-info').install()<CR>", opts)
+keymap("n", "<leader>npc", ":lua require('package-info').change_version()<CR>", opts)
+
 -- session keymaps
 keymap("n", "<leader>sl", ":Telescope possession list<CR>", kopts)
 keymap("n", "<leader>ss", ":PossessionSave ", { noremap = true })
@@ -178,7 +187,12 @@ keymap("n", "<leader>D", ':lua require("utility_functions").goto_type_definition
 keymap("n", "<leader>oo", ":FzfLua lsp_document_symbols<CR>", opts)
 -- keymap("n", "<leader>ow", ":FzfLua lsp_workspace_symbols<CR>", opts)
 -- keymap("n", "<leader>ol", ":FzfLua lsp_live_workspace_symbols<CR>", opts)
-keymap("n", "<leader>ol", ":lua require('fzf-lua').lsp_live_workspace_symbols({ file_ignore_patterns = { '^node_modules/' } })<CR>", opts)
+keymap(
+	"n",
+	"<leader>ol",
+	":lua require('fzf-lua').lsp_live_workspace_symbols({ file_ignore_patterns = { '^node_modules/' } })<CR>",
+	opts
+)
 keymap("n", "<leader>ca", ":FzfLua lsp_code_actions<CR>", opts)
 keymap("n", "gR", ":FzfLua lsp_finder<CR>", opts)
 -- keymap("n", "<leader>lq", ":FzfLua lsp_document_diagnostics<CR>", opts)

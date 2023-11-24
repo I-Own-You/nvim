@@ -776,6 +776,20 @@ require("lazy").setup({
 			},
 		},
 	},
+	{
+		-- if you delete this plugin, delete also the keybinding form keymaps.lua
+		"vuki656/package-info.nvim",
+		ft = "json",
+		dependencies = "MunifTanjim/nui.nvim",
+		opts = {
+			hide_up_to_date = true,
+			icons = {
+				style = {
+					outdated = "| 󰎔 ",
+				},
+			},
+		},
+	},
 })
 
 -- vim.cmd('highlight Search guifg=#F24211  guibg=#000000')
