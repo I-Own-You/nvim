@@ -478,7 +478,7 @@ require("lazy").setup({
 				border = "rounded",
 			},
 			wrap = false, -- text wrap, only applies to floating window
-			-- ensure_installed = { "html", "javascript", "typescript", "go", "lua-5.4", "python-3.11", "django-4.2", "tailwindcss" }, -- get automatically installed
+			--  install them: html, javascript, npm, react, express, react-router, css, typescript, python, django, tailwindcss, dom 
 			previewer_cmd = "glow",
 			cmd_args = { "-s", "dark", "-w", "80" },
 			-- cmd_ignore = {}, -- ignore cmd rendering for the listed docs
