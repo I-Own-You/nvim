@@ -147,10 +147,17 @@ keymap("n", "<leader>gp", ":Floggit push<CR>", opts)
 keymap("n", "<leader>fs", ":Flogsplit ", { noremap = true })
 
 -- FzfLua buffers and files
-keymap("n", "<leader>ff", ":FzfLua files<CR>", opts)
+-- keymap("n", "<leader>ff", ":FzfLua files<CR>", opts)
+-- keymap(
+-- 	"n",
+-- 	"<leader>fa",
+-- 	":lua require('fzf-lua').files({fd_opts = '--color=never --type f --hidden --follow --no-ignore'})<CR>",
+-- 	opts
+-- )
+keymap("n", "<A-f>", ":FzfLua files<CR>", opts)
 keymap(
 	"n",
-	"<leader>fa",
+	"<A-a>",
 	":lua require('fzf-lua').files({fd_opts = '--color=never --type f --hidden --follow --no-ignore'})<CR>",
 	opts
 )
