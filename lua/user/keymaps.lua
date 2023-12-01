@@ -22,7 +22,8 @@ keymap("n", "<C-l>", "<C-w>l", opts)
 keymap("n", "<leader>ot", ":tab split | terminal<CR>", opts)
 keymap("t", "<leader>tc", "<C-\\><C-n>", opts)
 
-keymap("n", "<leader>td", ":TodoTelescope<CR>", opts)
+-- keymap("n", "<leader>td", ":TodoTelescope<CR>", opts)
+keymap("n", "<leader>td", ":TodoQuickFix<CR>", opts)
 
 keymap("n", "q", "<Nop>", opts)
 
