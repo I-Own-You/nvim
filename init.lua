@@ -94,6 +94,7 @@ require("lazy").setup({
 	{
 		"L3MON4D3/LuaSnip",
 		event = "InsertEnter",
+		commit = "07f217ff03be671e7ec0f2f226e2b80c587a3f6c", -- NOTE: change it when plugin works again
 		dependencies = { "rafamadriz/friendly-snippets" },
 		config = function()
 			local luasnip = require("luasnip")
@@ -478,7 +479,7 @@ require("lazy").setup({
 				border = "rounded",
 			},
 			wrap = false, -- text wrap, only applies to floating window
-			--  install them: html, javascript, npm, react, express, react-router, css, typescript, python, django, tailwindcss, dom 
+			--  install them: html, javascript, npm, react, express, react-router, css, typescript, python, django, tailwindcss, dom
 			previewer_cmd = "glow",
 			cmd_args = { "-s", "dark", "-w", "80" },
 			-- cmd_ignore = {}, -- ignore cmd rendering for the listed docs
@@ -789,6 +790,12 @@ require("lazy").setup({
 				},
 			},
 		},
+	},
+	{
+		"stevearc/dressing.nvim",
+		config = function()
+			require("dressing").setup(require("plugins.dressing"))
+		end,
 	},
 })
 
