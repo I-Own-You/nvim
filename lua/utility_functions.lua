@@ -23,7 +23,7 @@ function M.goto_defintion()
 				-- if 1 occurence but in another file
 				local success, result_or_error = pcall(vim.cmd, "lua vim.lsp.buf.definition()")
 				if success then
-					vim.cmd("tab split | lua vim.lsp.buf.definition()")
+					vim.cmd("vertical split | lua vim.lsp.buf.definition()")
 				else
 					vim.lsp.buf.definition()
 				end
@@ -53,7 +53,7 @@ function M.goto_declaration()
 				-- if 1 occurence but in another file
 				local success, result_or_error = pcall(vim.cmd, "lua vim.lsp.buf.declaration()")
 				if success then
-					vim.cmd("tab split | lua vim.lsp.buf.declaration()")
+					vim.cmd("vertical split | lua vim.lsp.buf.declaration()")
 				else
 					vim.lsp.buf.declaration()
 				end
@@ -83,7 +83,7 @@ function M.goto_implementation()
 				-- if 1 occurence but in another file
 				local success, result_or_error = pcall(vim.cmd, "lua vim.lsp.buf.implementation()")
 				if success then
-					vim.cmd("tab split | lua vim.lsp.buf.implementation()")
+					vim.cmd("vertical split | lua vim.lsp.buf.implementation()")
 				else
 					vim.lsp.buf.implementation()
 				end
@@ -113,7 +113,7 @@ function M.goto_type_definition()
 				-- if 1 occurence but in another file
 				local success, result_or_error = pcall(vim.cmd, "lua vim.lsp.buf.type_definition()")
 				if success then
-					vim.cmd("tab split | lua vim.lsp.buf.type_definition()")
+					vim.cmd("vertical split | lua vim.lsp.buf.type_definition()")
 				else
 					vim.lsp.buf.type_definition()
 				end
