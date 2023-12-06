@@ -270,10 +270,10 @@ keymap("n", "<leader>nb", ":enew<cr>", opts)
 keymap("n", "<C-d>", "15j", opts)
 keymap("n", "<C-u>", "15k", opts)
 
-vim.keymap.set("n", "<leader>/", function()
-	require("Comment.api").toggle.linewise.current()
-end, opts)
-keymap("v", "<leader>/", "<ESC><cmd>lua require('Comment.api').toggle.linewise(vim.fn.visualmode())<CR>", opts)
+-- vim.keymap.set("n", "<leader>/", function()
+-- 	require("Comment.api").toggle.linewise.current()
+-- end, opts)
+-- keymap("v", "<leader>/", "<ESC><cmd>lua require('Comment.api').toggle.linewise(vim.fn.visualmode())<CR>", opts)
 
 keymap("n", "<leader>hw", ":HopWord<CR>", opts)
 
