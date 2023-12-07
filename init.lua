@@ -869,6 +869,13 @@ augroup AutoCloseLspWindowReferenceAndDefintion
 augroup END
 ]])
 
+vim.cmd([[
+augroup AutoCloseCommandHistoryMode
+  autocmd!
+  autocmd FileType vim nnoremap <buffer> q :q<CR>
+augroup END
+]])
+
 -- vim.diagnostic.config({ virtual_lines = false })
 -- vim.diagnostic.config({ virtual_lines = true })
 -- vim.diagnostic.config({ virtual_lines = { only_current_line = true } })
