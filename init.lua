@@ -195,6 +195,11 @@ require("lazy").setup({
 		opts = {
 			ignore = "^$",
 		},
+		config = function()
+			require("Comment").setup({
+				pre_hook = require("ts_context_commentstring.integrations.comment_nvim").create_pre_hook(),
+			})
+		end,
 		lazy = false,
 	},
 	{
@@ -858,6 +863,15 @@ require("lazy").setup({
 			-- above was defined in keymaps.lua delete them, if deletes the plugin
 			{ "<c-p>", "<Plug>(YankyPreviousEntry)", desc = "Select previous entry through yank history" },
 			{ "<c-n>", "<Plug>(YankyNextEntry)", desc = "Select next entry through yank history" },
+		},
+	},
+	{
+		"JoosepAlviste/nvim-ts-context-commentstring",
+		init = function()
+			vim.g.skip_ts_context_commentstring_module = true
+		end,
+		opts = {
+			enable_autocmd = false,
 		},
 	},
 })
