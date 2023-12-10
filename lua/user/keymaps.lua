@@ -62,6 +62,10 @@ keymap("n", "<C-]>", "]m", opts)
 keymap("n", "<leader>ww", ":set invwrap<CR>:set wrap?<CR>", opts)
 keymap("n", "!", ":!", { noremap = true })
 
+-- yanky.nvim
+keymap('x', 'p', '"_d<Plug>(YankyPutAfter)', opts)
+keymap('x', 'P', '"_d<Plug>(YankyPutBefore)', opts)
+
 keymap("n", "s", "<cmd>lua require('flash').jump()<CR>", { noremap = true })
 keymap("x", "s", "<cmd>lua require('flash').jump()<CR>", { noremap = true })
 keymap("o", "s", "<cmd>lua require('flash').jump()<CR>", { noremap = true })
