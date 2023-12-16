@@ -135,7 +135,6 @@ return {
 				path = "Path",
 				nvim_lua = "NVIM_LUA",
 				npm = " ",
-				cmp_yanky = "Yank 󱣹 ",
 				codeium = " AI  ",
 			})[entry.source.name]
 			return vim_item
@@ -149,15 +148,6 @@ return {
 		{ name = "buffer" },
 		{ name = "path" },
 		{ name = "npm", keyword_length = 4 },
-		{
-			name = "cmp_yanky",
-			option = {
-				-- only suggest items which match the current filetype
-				onlyCurrentFiletype = false,
-				-- only suggest items with a minimum length
-				minLength = 3,
-			},
-		},
 	},
 	confirm_opts = {
 		behavior = cmp.ConfirmBehavior.Replace,
