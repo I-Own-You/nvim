@@ -95,17 +95,16 @@ return {
 			},
 		},
 		lualine_b = { "branch", "diff" },
-		lualine_c = {
-			function()
-				return vim.fn["codeium#GetStatusString"]()
-			end,
-		},
+		lualine_c = {},
 		lualine_x = {
 			-- function()
 			-- dont use [ram, internet/wifi], it lags idk why on my pc
 			-- local cpu = require("pigeon.hostname").hostname()
 			--     return cpu
 			-- end,
+			function()
+				return vim.fn["codeium#GetStatusString"]()
+			end,
 			"diagnostics",
 			"filename",
 			{ session_name, color = { fg = "#9AE38A" } },
