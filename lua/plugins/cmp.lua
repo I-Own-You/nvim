@@ -134,13 +134,15 @@ return {
 				buffer = "Buffer",
 				path = "Path",
 				nvim_lua = "NVIM_LUA",
-        npm = ' ',
-        cmp_yanky = "Yank 󱣹 "
+				npm = " ",
+				cmp_yanky = "Yank 󱣹 ",
+				codeium = " AI  ",
 			})[entry.source.name]
 			return vim_item
 		end,
 	},
 	sources = {
+    { name = "codeium" },
 		{ name = "nvim_lsp" },
 		{ name = "nvim_lua" },
 		{ name = "luasnip" },

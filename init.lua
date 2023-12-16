@@ -874,6 +874,16 @@ require("lazy").setup({
 			enable_autocmd = false,
 		},
 	},
+	{
+		"Exafunction/codeium.nvim",
+		dependencies = {
+			"nvim-lua/plenary.nvim",
+			"hrsh7th/nvim-cmp",
+		},
+		config = function()
+			require("codeium").setup({})
+		end,
+	},
 })
 
 -- vim.cmd('highlight Search guifg=#F24211  guibg=#000000')
