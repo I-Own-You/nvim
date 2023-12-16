@@ -135,13 +135,13 @@ return {
 				path = "Path",
 				nvim_lua = "NVIM_LUA",
 				npm = " ",
-				codeium = " AI  ",
+				-- codeium = " AI  ",
 			})[entry.source.name]
 			return vim_item
 		end,
 	},
 	sources = {
-    { name = "codeium" },
+    -- { name = "codeium" },
 		{ name = "nvim_lsp" },
 		{ name = "nvim_lua" },
 		{ name = "luasnip" },

@@ -305,6 +305,11 @@ keymap("n", "<Leader>xt", ':let @+=expand("%:p:h")<CR>', opts)
 
 keymap("n", "zz", "za", kopts) -- for
 
+vim.keymap.set('i', '<A-l>', function() return vim.fn['codeium#CycleCompletions'](1) end, { expr = true })
+vim.keymap.set('i', '<A-h>', function() return vim.fn['codeium#CycleCompletions'](-1) end, { expr = true })
+vim.keymap.set('i', '<c-x>', function() return vim.fn['codeium#Clear']() end, { expr = true })
+vim.keymap.set('i', '<c-cr>', function() return vim.fn['codeium#Accept']() end, { expr = true })
+
 keymap("n", "n", [[<Cmd>execute('normal! ' . v:count1 . 'n')<CR><Cmd>lua require('hlslens').start()<CR>]], kopts)
 keymap("n", "N", [[<Cmd>execute('normal! ' . v:count1 . 'N')<CR><Cmd>lua require('hlslens').start()<CR>]], kopts)
 keymap("n", "*", [[*<Cmd>lua require('hlslens').start()<CR>]], kopts)
