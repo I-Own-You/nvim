@@ -66,7 +66,7 @@ end
 return {
 	options = {
 		icons_enabled = true,
-		theme = "auto",
+		theme = "tokyonight",
 		component_separators = { left = "", right = "" },
 		-- section_separators = { left = '', right = ''},
 		section_separators = { left = "", right = "" },

@@ -1,7 +1,6 @@
 require("user.options")
 require("user.keymaps")
 
-
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
 	vim.fn.system({
@@ -16,12 +15,24 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
+	-- {
+	-- 	"notken12/base46-colors",
+	-- 	lazy = false,
+	-- 	priority = 1000,
+	-- 	config = function()
+	-- 		vim.cmd([[colorscheme github_dark]])
+	-- 	end,
+	-- },
 	{
-		"notken12/base46-colors",
+		"folke/tokyonight.nvim",
 		lazy = false,
 		priority = 1000,
 		config = function()
-			vim.cmd([[colorscheme github_dark]])
+			require("tokyonight").setup({
+				style = "moon",
+				transparent = true, -- Enable this to disable setting the background color
+			})
+			vim.cmd([[colorscheme tokyonight]])
 		end,
 	},
 	{
@@ -316,20 +327,6 @@ require("lazy").setup({
 		---@type Flash.Config
 	},
 	{
-		"AlexvZyl/nordic.nvim",
-		enabled = true,
-		lazy = false,
-		priority = 1000,
-		opts = {
-			italic_comments = false,
-			transparent_bg = false,
-			bold_keywords = true,
-			override = {
-				FoldColumn = { bg = "#242933", fg = "#28A761" }, -- 'foldcolumn'
-			},
-		},
-	},
-	{
 		"sindrets/diffview.nvim",
 		keys = {
 			{ "<leader>mt", ":DiffviewOpen<CR>" },
@@ -377,6 +374,7 @@ require("lazy").setup({
 			"kyazdani42/nvim-web-devicons", -- optional dependency
 		},
 		opts = {},
+		theme = "tokyonight",
 	},
 	{
 		"glepnir/dashboard-nvim",
@@ -888,7 +886,7 @@ require("lazy").setup({
 		"Exafunction/codeium.vim",
 		event = "BufEnter",
 	},
-  -- keymaps are defined in keymaps.lua delete them
+	-- keymaps are defined in keymaps.lua delete them
 	config = function()
 		require("codeium").setup(require("plugins.codeium"))
 	end,
