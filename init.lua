@@ -329,9 +329,9 @@ require("lazy").setup({
 	{
 		"sindrets/diffview.nvim",
 		keys = {
-			{ "<leader>mt", ":DiffviewOpen<CR>" },
-			{ "<leader>mf", ":DiffviewFileHistory<CR>" },
-			{ "<leader>mk", ":DiffviewClose<CR>" },
+			{ "<leader>mt", ':lua require("utility_functions").diffViewOpen()<CR>' },
+			{ "<leader>mf", ':lua require("utility_functions").diffViewFileHistoryOpen()<CR>' },
+			{ "<leader>mk", ':lua require("utility_functions").diffViewClose()<CR>' },
 		},
 	},
 	{
