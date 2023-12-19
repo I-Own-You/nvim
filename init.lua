@@ -293,6 +293,9 @@ require("lazy").setup({
 		"https://git.sr.ht/~whynothugo/lsp_lines.nvim",
 		enabled = false,
 		config = function()
+			vim.diagnostic.config({ virtual_text = false })
+			-- vim.diagnostic.config({ virtual_lines = true })
+			-- vim.diagnostic.config({ virtual_lines = { only_current_line = true } })
 			require("lsp_lines").setup({})
 		end,
 	},
@@ -883,13 +886,10 @@ require("lazy").setup({
 	-- 		require("codeium").setup({})
 	-- 	end,
 	{
+		-- keymaps are defined in keymaps.lua delete them
 		"Exafunction/codeium.vim",
 		event = "BufEnter",
 	},
-	-- keymaps are defined in keymaps.lua delete them
-	config = function()
-		require("codeium").setup(require("plugins.codeium"))
-	end,
 })
 
 -- vim.cmd('highlight Search guifg=#F24211  guibg=#000000')
@@ -928,7 +928,3 @@ augroup AutoCloseCommandHistoryMode
   autocmd FileType vim nnoremap <buffer> q :q<CR>
 augroup END
 ]])
-
--- vim.diagnostic.config({ virtual_lines = false })
--- vim.diagnostic.config({ virtual_lines = true })
--- vim.diagnostic.config({ virtual_lines = { only_current_line = true } })
