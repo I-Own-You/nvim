@@ -7,7 +7,7 @@ local servers = {
 	"pylsp",
 	-- "pylyzer",
 	"cssmodules_ls",
-	-- "tailwindcss",
+	"tailwindcss",
 	-- "bashls",
 	"jsonls",
 	-- "yamlls",
