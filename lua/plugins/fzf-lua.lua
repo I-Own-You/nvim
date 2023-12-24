@@ -232,15 +232,14 @@ return {
 			-- will do nothing if `viu` isn't executable
 			extensions = {
 				-- neovim terminal only supports `viu` block output
-				-- ["png"] = { "chafa" },
-				-- ["jpg"] = { "chafa" },
-				-- ["svg"] = { "chafa" },
-				-- ["jpeg"] = { "chafa" },
-				-- ["svg"]       = { "chafa" },
-				["png"] = { "ueberzug" },
-				["jpg"] = { "ueberzug" },
-				["svg"] = { "ueberzug" },
-				["jpeg"] = { "ueberzug" },
+				["png"] = { "chafa" },
+				["jpg"] = { "chafa" },
+				["svg"] = { "chafa" },
+				["jpeg"] = { "chafa" },
+				-- ["png"] = { "ueberzug" },
+				-- ["jpg"] = { "ueberzug" },
+				-- ["svg"] = { "ueberzug" },
+				-- ["jpeg"] = { "ueberzug" },
 			},
 			-- if using `ueberzug` in the above extensions map
 			-- set the default image scaler, possible scalers:
