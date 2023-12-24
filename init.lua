@@ -273,6 +273,9 @@ require("lazy").setup({
 			require("telescope").setup(require("plugins.telescope"))
 			require("telescope").load_extension("undo")
 			require("telescope").load_extension("possession")
+
+			vim.api.nvim_set_hl(0, "TelescopeNormal", { bg = "none" })
+			vim.api.nvim_set_hl(0, "TelescopeBorder", { bg = "none", fg = "#589ed7" })
 		end,
 	},
 	{
