@@ -1,6 +1,6 @@
 local options = {
 	backup = false,
-	clipboard = "unnamedplus",
+	clipboard = "unnamed,unnamedplus",
 	completeopt = { "menuone", "noselect" },
 	hlsearch = true,
 	pumheight = 10,

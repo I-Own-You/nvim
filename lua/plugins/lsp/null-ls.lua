@@ -19,18 +19,18 @@ null_ls.setup({
 		formatting.stylua,
 		formatting.isort,
 		formatting.autoflake.with({ extra_args = { "--remove-all-unused-imports" } }),
-		formatting.rustywind.with({
-			filetypes = {
-				"javascript",
-				"javascriptreact",
-				"typescript",
-				"typescriptreact",
-				"vue",
-				"svelte",
-				"html",
-				"htmldjango",
-			},
-		}),
+		-- formatting.rustywind.with({
+		-- 	filetypes = {
+		-- 		"javascript",
+		-- 		"javascriptreact",
+		-- 		"typescript",
+		-- 		"typescriptreact",
+		-- 		"vue",
+		-- 		"svelte",
+		-- 		"html",
+		-- 		"htmldjango",
+		-- 	},
+		-- }),
 		-- formatting.autopep8,
 	},
 })
