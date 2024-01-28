@@ -9,10 +9,10 @@ keymap("n", ";", ":", { noremap = true })
 keymap("v", ";", ":", { noremap = true })
 keymap("x", ";", ":", { noremap = true })
 
-keymap("n", "<C-h>", "<C-w>h", opts)
-keymap("n", "<C-j>", "<C-w>j", opts)
-keymap("n", "<C-k>", "<C-w>k", opts)
-keymap("n", "<C-l>", "<C-w>l", opts)
+-- keymap("n", "<C-h>", "<C-w>h", opts)
+-- keymap("n", "<C-j>", "<C-w>j", opts)
+-- keymap("n", "<C-k>", "<C-w>k", opts)
+-- keymap("n", "<C-l>", "<C-w>l", opts)
 
 -- keymap("n", "<C-Up>", ":resize +2<CR>", opts)
 -- keymap("n", "<C-Down>", ":resize -2<CR>", opts)
@@ -22,9 +22,6 @@ keymap("n", "<C-l>", "<C-w>l", opts)
 keymap("n", "<leader>ot", ":tab split | terminal<CR>", opts)
 keymap("t", "<leader>tc", "<C-\\><C-n>", opts)
 
--- keymap("n", "<leader>td", ":TodoTelescope<CR>", opts)
-keymap("n", "<leader>td", ":TodoQuickFix<CR>", opts)
-
 keymap("n", "q", "<Nop>", opts)
 
 keymap("n", "<TAB>", ":tabnext<CR>", opts)
@@ -32,25 +29,17 @@ keymap("n", "<S-TAB>", ":tabprevious<CR>", opts)
 
 keymap("i", "jk", "<ESC>", opts)
 
-keymap("n", "<leader>j", "<cmd>TSJToggle<cr>", opts)
-
 keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
 
 keymap("v", "p", '"_dP', opts)
--- vim.api.nvim_set_keymap(
--- 	"n",
--- 	"<Space>ii",
--- 	'yiw:lua require("custom_imports").centered_window()<CR>',
--- 	kopts
--- )
 
-keymap("n", "<A-j>", ":m .+1<CR>==", opts)
-keymap("n", "<A-k>", ":m .-2<CR>==", opts)
-keymap("i", "<A-j>", "<ESC>:m .+1<CR>==gi", opts)
-keymap("i", "<A-k>", "<ESC>:m .-2<CR>==gi", opts)
-keymap("v", "<A-j>", ":m '>+1<CR>gv=gv", opts)
-keymap("v", "<A-k>", ":m '<-2<CR>gv=gv", opts)
+-- keymap("n", "<A-j>", ":m .+1<CR>==", opts)
+-- keymap("n", "<A-k>", ":m .-2<CR>==", opts)
+-- keymap("i", "<A-j>", "<ESC>:m .+1<CR>==gi", opts)
+-- keymap("i", "<A-k>", "<ESC>:m .-2<CR>==gi", opts)
+-- keymap("v", "<A-j>", ":m '>+1<CR>gv=gv", opts)
+-- keymap("v", "<A-k>", ":m '<-2<CR>gv=gv", opts)
 
 keymap("n", "<leader>vv", ":vsplit<CR>", opts)
 keymap("n", "<leader>hh", ":split<CR>", opts)
@@ -61,18 +50,6 @@ keymap("n", "<C-]>", "]m", opts)
 
 keymap("n", "<leader>ww", ":set invwrap<CR>:set wrap?<CR>", opts)
 keymap("n", "!", ":!", { noremap = true })
-
--- yanky.nvim
-keymap('x', 'p', '"_d<Plug>(YankyPutAfter)', opts)
-keymap('x', 'P', '"_d<Plug>(YankyPutBefore)', opts)
-
-keymap("n", "s", "<cmd>lua require('flash').jump()<CR>", { noremap = true })
-keymap("x", "s", "<cmd>lua require('flash').jump()<CR>", { noremap = true })
-keymap("o", "s", "<cmd>lua require('flash').jump()<CR>", { noremap = true })
-keymap("n", "S", "<cmd>lua require('flash').treesitter()<CR>", { noremap = true })
-keymap("o", "S", "<cmd>lua require('flash').treesitter()<CR>", { noremap = true })
-keymap("x", "S", "<cmd>lua require('flash').treesitter()<CR>", { noremap = true })
-keymap("o", "r", "<cmd>lua require('flash').remote()<CR>", { noremap = true })
 
 keymap("n", "+", "<C-a>", kopts)
 keymap("n", "-", "<C-x>", kopts)
@@ -96,14 +73,7 @@ vim.keymap.set("n", "<leader>kk", function()
 		vim.cmd([[normal! _]])
 	end
 end, opts)
-keymap("n", "<leader>kl", ":lua require('barbecue.ui').navigate(-)<left>", { noremap = true })
 
-vim.keymap.set("n", "zR", function()
-	require("ufo").openAllFolds()
-end, { silent = true })
-vim.keymap.set("n", "zM", function()
-	require("ufo").closeAllFolds()
-end, { silent = true })
 
 keymap("n", "<leader>nh", ":nohlsearch<CR>", opts)
 keymap("n", "<leader>bo", ":only<CR>", opts)
@@ -111,219 +81,20 @@ keymap("n", "<leader>bda", ":%bdelete<CR>", opts)
 keymap("n", "<leader>bdo", ":%bd|e#|bd#<CR>|'\"", kopts)
 keymap("n", "<leader>to", ":tabonly<CR>", kopts)
 
--- node package manager
--- { "<leader>nps", require("package-info").show },
--- { "<leader>nph", require("package-info").hide },
-keymap("n", "<leader>nps", ":lua require('package-info').toggle()<CR>", opts)
-keymap("n", "<leader>npu", ":lua require('package-info').update()<CR>", opts)
-keymap("n", "<leader>npd", ":lua require('package-info').delete()<CR>", opts)
-keymap("n", "<leader>npi", ":lua require('package-info').install()<CR>", opts)
-keymap("n", "<leader>npc", ":lua require('package-info').change_version()<CR>", opts)
-
--- session keymaps
-keymap("n", "<leader>sl", ":Telescope possession list<CR>", kopts)
-keymap("n", "<leader>ss", ":PossessionSave ", { noremap = true })
-
 keymap("n", "<leader>la", ":Lazy<CR>", { noremap = true })
--- Open/close quickfix window faster
--- keymap("n", ",qc", ":cclose<CR>", opts)
--- keymap("n", ",qo", ":copen<CR>", opts)
 
--- keymap("n", "<leader><leader>", "<cmd>Telescope live_grep<cr>", opts)
--- keymap("n", "<leader>ff", "<cmd>Telescope find_files<cr>", opts)
--- keymap("n", "<leader>fa", "<cmd>Telescope find_files follow=true no_ignore=true hidden=true <cr>", opts)
--- keymap("n", "<leader>fb", "<cmd>Telescope buffers <cr>", opts)
-keymap("n", "<leader>tu", "<cmd>Telescope undo <cr>", opts)
--- keymap("n", "<leader>ft", "<cmd>Telescope help_tags <cr>", opts)
--- keymap("n", "<leader>fo", "<cmd>Telescope oldfiles <cr>", opts)
--- keymap("n", "<leader>fk", "<cmd>Telescope keymaps <cr>", opts)
--- keymap("n", "<leader>gsh", "<cmd>Telescope git_stash <cr>", opts)
--- keymap("n", "<leader>gbb", "<cmd>Telescope git_branches <cr>", opts)
--- keymap("n", "<leader>gf", "<cmd>Telescope git_files <cr>", opts)
--- keymap("n", "<leader>tgc", "<cmd>Telescope git_commits <cr>", opts)
--- keymap("n", "<leader>gst", "<cmd>Telescope git_status <cr>", opts)
--- keymap("n", "<leader>gbc", "<cmd>Telescope git_bcommits <cr>", opts)
-
--- flog vim
-keymap("n", "<leader>fgg", ":Flog ", { noremap = true })
-keymap("n", "<leader>fb", ":Floggit ", { noremap = true })
-keymap("n", "<leader>gc", ':Floggit commit -m ""<left>', { noremap = true })
-keymap("n", "<leader>gp", ":Floggit push<CR>", opts)
-keymap("n", "<leader>fs", ":Flogsplit ", { noremap = true })
-
--- FzfLua buffers and files
--- keymap("n", "<leader>ff", ":FzfLua files<CR>", opts)
--- keymap(
--- 	"n",
--- 	"<leader>fa",
--- 	":lua require('fzf-lua').files({fd_opts = '--color=never --type f --hidden --follow --no-ignore'})<CR>",
--- 	opts
--- )
-keymap("n", "<A-f>", ":FzfLua files<CR>", opts)
-keymap(
-	"n",
-	"<A-a>",
-	":lua require('fzf-lua').files({fd_opts = '--color=never --type f --hidden --follow --no-ignore'})<CR>",
-	opts
-)
-keymap("n", "<leader>bb", ":FzfLua buffers<CR>", opts)
-keymap("n", "<leader>ta", ":FzfLua tabs<CR>", opts)
-keymap("n", "<leader>ho", ":FzfLua oldfiles<CR>", opts)
-keymap("n", "<leader>ll", ":FzfLua lines<CR>", opts)
--- keymap('n', '<leader>lb', ":FzfLua blines<CR>", opts) used in search categore because of speed
--- quickfix
--- quickfix_stack
--- loclist
--- loclist_stack
--- args
--- FzfLua git
-keymap("n", "<leader>gst", ":FzfLua git_status<CR>", opts)
-keymap("n", "<leader>gls", ":FzfLua git_files<CR>", opts)
-keymap("n", "<leader>fgl", ":FzfLua git_commits<CR>", opts)
-keymap("n", "<leader>fgb", ":FzfLua git_bcommits<CR>", opts)
-keymap("n", "<leader>gbb", ":FzfLua git_branches<CR>", opts)
-keymap("n", "<leader>gsh", ":FzfLua git_stash<CR>", opts)
-keymap("n", "<leader>gt", ":FzfLua git_tags<CR>", opts)
--- FzfLua lsp/diagnostics
--- keymap("n", "gr", ":FzfLua lsp_references<CR>", opts)
--- keymap("n", "gd", ":lua vim.lsp.buf.definition()<CR>", opts)
--- keymap("n", "gd", "<cmd>tab split | lua vim.lsp.buf.definition()<CR>", opts)
 keymap("n", "gd", ':lua require("utility_functions").goto_defintion()<CR>', opts)
 keymap("n", "gD", ':lua require("utility_functions").goto_declaration()<CR>', opts)
 keymap("n", "gi", ':lua require("utility_functions").goto_implementation()<CR>', opts)
 keymap("n", "<leader>D", ':lua require("utility_functions").goto_type_definition()<CR>', opts)
--- keymap("n", "gd", ":FzfLua lsp_definitions<CR>", opts)
--- keymap("n", "gD", ":FzfLua lsp_declarations<CR>", opts)
--- keymap("n", "<leader>D", ":FzfLua lsp_typedefs<CR>", opts)
--- keymap("n", "gi", ":FzfLua lsp_implementations<CR>", opts)
-keymap("n", "<leader>oo", ":FzfLua lsp_document_symbols<CR>", opts)
--- keymap("n", "<leader>ow", ":FzfLua lsp_workspace_symbols<CR>", opts)
--- keymap("n", "<leader>ol", ":FzfLua lsp_live_workspace_symbols<CR>", opts)
-keymap(
-	"n",
-	"<leader>ol",
-	":lua require('fzf-lua').lsp_live_workspace_symbols({ file_ignore_patterns = { '^node_modules/' } })<CR>",
-	opts
-)
-keymap("n", "<leader>ca", ":FzfLua lsp_code_actions<CR>", opts)
-keymap("n", "gR", ":FzfLua lsp_finder<CR>", opts)
--- keymap("n", "<leader>lq", ":FzfLua lsp_document_diagnostics<CR>", opts)
-keymap("n", "<leader>lw", ":FzfLua lsp_workspace_diagnostics<CR>", opts)
--- lsp_incoming_calls
--- lsp_outgoing_calls
--- FzfLua misc
-keymap("n", "<leader>bt", ":FzfLua builtin<CR>", opts)
-keymap("n", "<leader>ht", ":FzfLua help_tags<CR>", opts)
-keymap("n", "<leader>hc", ":FzfLua command_history<CR>", opts)
-keymap("n", "<leader>hs", ":FzfLua search_history<CR>", opts)
-keymap("n", "<leader>fk", ":FzfLua keymaps<CR>", opts)
--- resume
--- profiles
--- man_pages
--- colorschemes
--- highlights
--- commands
--- marks
--- jumps
--- changes
--- registers
--- tagstack
--- autocmds
--- filetypes
--- menus
--- spell_suggest
--- packadd
--- FzfLua tags
-keymap("n", "<leader>tt", ":FzfLua tags<CR>", opts)
-keymap("n", "<leader>tb", ":FzfLua btags<CR>", opts)
-keymap("n", "<leader>tw", ":FzfLua tags_grep_cword<CR>", opts)
-keymap("n", "<leader>tl", ":FzfLua tags_live_grep<CR>", opts)
--- tags_grep
--- tags_grep_cWORD
--- tags_grep_visual
--- FzfLua search
-keymap("n", "<leader><leader>", ":FzfLua grep_project<CR>", opts)
-keymap(
-	"n",
-	"<leader>a",
-	":lua require('fzf-lua').grep_project({rg_opts = '--hidden --no-ignore --column --line-number --no-heading --color=always --smart-case --max-columns=4096'})<CR>",
-	opts
-)
-keymap("n", "<leader>gw", ":FzfLua grep_cword<CR>", opts)
-keymap("n", "<leader>lb", ":FzfLua lgrep_curbuf<CR>", opts)
--- grep
--- grep_last
--- grep_cword
--- grep_cWORD
--- grep_visual
--- lgrep_curbuf
--- live_grep
--- live_grep_resume
--- live_grep_glob
--- live_grep_native
 
--- nvim-dap didnt add
--- problems with lsp_workspace_symbols
 
-keymap("n", "<leader>q", ":Bdelete!<cr>", opts)
-
--- keymap('n', '<leader>o', ':SymbolsOutline<cr>', opts)
+-- keymap("n", "<C-d>", "15j", opts)
+-- keymap("n", "<C-u>", "15k", opts)
 
 keymap("n", "<leader>nb", ":enew<cr>", opts)
-
-keymap("n", "<C-d>", "15j", opts)
-keymap("n", "<C-u>", "15k", opts)
-
--- vim.keymap.set("n", "<leader>/", function()
--- 	require("Comment.api").toggle.linewise.current()
--- end, opts)
--- keymap("v", "<leader>/", "<ESC><cmd>lua require('Comment.api').toggle.linewise(vim.fn.visualmode())<CR>", opts)
-
-keymap("n", "<leader>hw", ":HopWord<CR>", opts)
-
 keymap("n", "<leader>nt", ":tabnew<CR>", opts)
--- git section
-keymap("n", "<leader>nn", ":Gitsigns next_hunk<cr>", opts)
-keymap("n", "<leader>pp", ":Gitsigns prev_hunk<cr>", opts)
-keymap("n", "<leader>bl", ":Gitsigns blame_line<cr>", opts)
-keymap("n", "<leader>ph", ":Gitsigns preview_hunk<cr>", opts)
-keymap("n", "<leader>pih", ":Gitsigns preview_hunk_inline<cr>", opts)
-keymap("n", "<leader>sh", ":Gitsigns stage_hunk<cr>", opts)
-keymap("n", "<leader>sb", ":Gitsigns stage_buffer<cr>", opts)
-keymap("n", "<leader>ush", ":Gitsigns undo_stage_hunk<cr>", opts)
-keymap("n", "<leader>rbb", ":Gitsigns reset_buffer<cr>", opts)
-keymap("n", "<leader>rbi", ":Gitsigns reset_buffer_index<cr>", opts)
-keymap("n", "<leader>rh", ":Gitsigns reset_hunk<cr>", opts)
-keymap("n", "<leader>gsw", ":Gitsigns show ", { noremap = true })
--- keymap("n", "<leader>gcb", ":Gitsigns change_base ",  opts)
-keymap("n", "<leader>gid", ":Gitsigns diffthis ", { noremap = true })
 
-keymap("n", "<leader>st", ":Speedtyper<CR>", opts)
-
-keymap("n", "<Leader>xo", ":!dolphin %:p:h &<CR><CR>", opts)
 keymap("n", "<Leader>xt", ':let @+=expand("%:p:h")<CR>', opts)
 
 keymap("n", "zz", "za", kopts) -- for
-
-vim.keymap.set('i', '<A-l>', function() return vim.fn['codeium#CycleCompletions'](1) end, { expr = true })
-vim.keymap.set('i', '<A-h>', function() return vim.fn['codeium#CycleCompletions'](-1) end, { expr = true })
-vim.keymap.set('i', '<c-x>', function() return vim.fn['codeium#Clear']() end, { expr = true })
-vim.keymap.set('i', '<c-cr>', function() return vim.fn['codeium#Accept']() end, { expr = true })
-
-keymap("n", "n", [[<Cmd>execute('normal! ' . v:count1 . 'n')<CR><Cmd>lua require('hlslens').start()<CR>]], kopts)
-keymap("n", "N", [[<Cmd>execute('normal! ' . v:count1 . 'N')<CR><Cmd>lua require('hlslens').start()<CR>]], kopts)
-keymap("n", "*", [[*<Cmd>lua require('hlslens').start()<CR>]], kopts)
-keymap("n", "#", [[#<Cmd>lua require('hlslens').start()<CR>]], kopts)
-keymap("n", "g*", [[g*<Cmd>lua require('hlslens').start()<CR>]], kopts)
-keymap("n", "g#", [[g#<Cmd>lua require('hlslens').start()<CR>]], kopts)
--- za - toggle fold
--- zf(line numbers)j|k - fold up or down
--- zf/ - fold till the line where you type the string
--- zj - next fold
--- zk - previous fold
--- zO - opens all folds
--- zM - close all folds
--- zE - deletes all folds
--- zd - deletes fold at current cursor
--- [z - start of fold
--- ]z - end of fold
