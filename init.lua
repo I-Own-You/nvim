@@ -475,7 +475,10 @@ require("lazy").setup({
 			},
 			{ "<leader>ss", mode = "n", ":PossessionSave ", desc = "save session", { noremap = true } },
 		},
-		dependencies = { "nvim-lua/plenary.nvim" },
+		dependencies = {
+			"nvim-lua/plenary.nvim",
+			"nvim-telescope/telescope.nvim",
+		},
 		opts = {
 			silent = false,
 			load_silent = true,
