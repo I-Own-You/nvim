@@ -15,36 +15,31 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-	-- {
-	-- 	"notken12/base46-colors",
-	-- 	lazy = false,
-	-- 	priority = 1000,
-	-- 	config = function()
-	-- 		vim.cmd([[colorscheme github_dark]])
-	-- 	end,
-	-- },
-	-- {
-	-- 	"folke/tokyonight.nvim",
-	-- 	lazy = false,
-	-- 	priority = 1000,
-	-- 	config = function()
-	-- 		require("tokyonight").setup({
-	-- 			style = "moon",
-	-- 			-- transparent = true, -- Enable this to disable setting the background color
-	-- 		})
-	-- 		vim.cmd([[colorscheme tokyonight]])
-	-- 	end,
-	-- },
 	{
 		"notken12/base46-colors",
+		lazy = false,
+		-- priority = 1000,
 		config = function()
 			vim.cmd([[colorscheme everblush]])
 
 			local hl = vim.api.nvim_set_hl
 			hl(0, "FoldColumn", { fg = "#68B9B9", bg = "#141B1E" })
 			hl(0, "PackageInfoOutdatedVersion", { fg = "#CDC61E", bg = "#141B1E" })
+			hl(0, "Identifier", { fg = "#dadada", bg = "NONE", sp = "NONE" })
 		end,
 	},
+	-- {
+	-- "folke/tokyonight.nvim",
+	-- lazy = false,
+	-- priority = 1000,
+	-- config = function()
+	-- 	require("tokyonight").setup({
+	-- 		style = "moon",
+	-- 		-- transparent = true, -- Enable this to disable setting the background color
+	-- 	})
+	-- vim.cmd([[colorscheme tokyonight]])
+	-- end,
+	-- },
 	{
 		"neovim/nvim-lspconfig",
 		event = "BufReadPost",
