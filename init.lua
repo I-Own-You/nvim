@@ -38,6 +38,7 @@ require("lazy").setup({
 			local hl = vim.api.nvim_set_hl
 			hl(0, "CmpItemAbbrMatch", { fg = "#F761E9", bg = "#141B1E" })
 			hl(0, "CmpItemAbbrMatchFuzzy", { fg = "#F761E9", bg = "#141B1E" })
+			hl(0, "CmpItemAbbrDeprecated", { fg = "#8CCF7E", bg = "#141B1E", strikethrough = true })
 			hl(0, "GitSignsAdd", { fg = "#8CCF7E", bg = "#141B1E" })
 			hl(0, "GitSignsChange", { fg = "#67b0e8", bg = "#141B1E" })
 			hl(0, "diffAdded", { fg = "#8CCF7E", bg = "#141B1E" })
