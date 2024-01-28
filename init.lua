@@ -86,6 +86,10 @@ require("lazy").setup({
 		event = "InsertEnter",
 	},
 	{
+		"lukas-reineke/cmp-rg",
+		event = "InsertEnter",
+	},
+	{
 		"hrsh7th/nvim-cmp",
 		event = "InsertEnter",
 		config = function()
@@ -1250,6 +1254,11 @@ require("lazy").setup({
 		config = function()
 			require("better_escape").setup()
 		end,
+	},
+	{
+		"0xAdk/full_visual_line.nvim",
+		keys = "V",
+		opts = {},
 	},
 })
 
