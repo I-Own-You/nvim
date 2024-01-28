@@ -23,16 +23,26 @@ require("lazy").setup({
 	-- 		vim.cmd([[colorscheme github_dark]])
 	-- 	end,
 	-- },
+	-- {
+	-- 	"folke/tokyonight.nvim",
+	-- 	lazy = false,
+	-- 	priority = 1000,
+	-- 	config = function()
+	-- 		require("tokyonight").setup({
+	-- 			style = "moon",
+	-- 			-- transparent = true, -- Enable this to disable setting the background color
+	-- 		})
+	-- 		vim.cmd([[colorscheme tokyonight]])
+	-- 	end,
+	-- },
 	{
-		"folke/tokyonight.nvim",
-		lazy = false,
-		priority = 1000,
+		"notken12/base46-colors",
 		config = function()
-			require("tokyonight").setup({
-				style = "moon",
-				-- transparent = true, -- Enable this to disable setting the background color
-			})
-			vim.cmd([[colorscheme tokyonight]])
+			vim.cmd([[colorscheme everblush]])
+
+			local hl = vim.api.nvim_set_hl
+			hl(0, "FoldColumn", { fg = "#68B9B9", bg = "#141B1E" })
+			hl(0, "PackageInfoOutdatedVersion", { fg = "#CDC61E", bg = "#141B1E" })
 		end,
 	},
 	{
