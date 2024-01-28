@@ -1260,6 +1260,14 @@ require("lazy").setup({
 		keys = "V",
 		opts = {},
 	},
+	{
+		"kylechui/nvim-surround",
+		tag = "*",
+		event = "BufReadPost",
+		opts = {
+			move_cursor = false,
+		},
+	},
 })
 
 -- vim.cmd('highlight Search guifg=#F24211  guibg=#000000')
