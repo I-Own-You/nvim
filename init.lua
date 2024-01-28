@@ -576,7 +576,6 @@ require("lazy").setup({
 	{
 		"folke/todo-comments.nvim",
 		config = function()
-			dofile(vim.g.base46_cache .. "todo")
 			require("todo-comments").setup()
 		end,
 		keys = {
