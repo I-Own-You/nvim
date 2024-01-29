@@ -47,6 +47,7 @@ require("lazy").setup({
 			hl(0, "DiffAdd", { fg = "#8CCF7E", bg = "#141B1E" })
 			hl(0, "DiffChange", { fg = "#67b0e8", bg = "#141B1E" })
 			hl(0, "TelescopeSelection", { fg = "NONE", bg = "#2c3333" })
+			hl(0, "CursorLineNr", { fg = "#ffffff", bg = "NONE" })
 		end,
 	},
 	-- {
