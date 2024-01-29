@@ -48,6 +48,9 @@ require("lazy").setup({
 			hl(0, "DiffChange", { fg = "#67b0e8", bg = "#141B1E" })
 			hl(0, "TelescopeSelection", { fg = "NONE", bg = "#2c3333" })
 			hl(0, "CursorLineNr", { fg = "#ffffff", bg = "NONE" })
+			hl(0, "FlashLabel", { fg = "#ffffff", bg = "#FF007C" })
+			hl(0, "FlashMatch", { fg = "#B1C0EF", bg = "#3E68D7" })
+			hl(0, "FlashCurrent", { fg = "#443135", bg = "#FF966C" })
 		end,
 	},
 	-- {
@@ -314,7 +317,6 @@ require("lazy").setup({
 		event = "BufReadPost",
 		opts = {
 			filetypes = {
-				"lua",
 				"typescript",
 				"javascript",
 				"typescriptreact",
