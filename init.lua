@@ -61,6 +61,8 @@ require("lazy").setup({
 			hl(0, "@operator", { fg = "#67cbe7", bg = "NONE" })
 			hl(0, "Search", { fg = "#ffffff", bg = "#FF007C" })
 			hl(0, "IncSearch", { fg = "#ffffff", bg = "#FF007C" })
+			hl(0, "QuickFixLine", { fg = "NONE", bg = "NONE" })
+			hl(0, "QfLineNr", { fg = "#C4DE72", bg = "NONE" })
 		end,
 	},
 	-- {
