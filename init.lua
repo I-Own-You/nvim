@@ -51,6 +51,13 @@ require("lazy").setup({
 			hl(0, "FlashLabel", { fg = "#ffffff", bg = "#FF007C" })
 			hl(0, "FlashMatch", { fg = "#B1C0EF", bg = "#3E68D7" })
 			hl(0, "FlashCurrent", { fg = "#443135", bg = "#FF966C" })
+			hl(0, "GitSignsAddInline", { fg = "#8CCF7E", bg = "NONE" })
+			hl(0, "GitSignsAddLnInline", { fg = "#8CCF7E", bg = "NONE" })
+			hl(0, "GitSignsChangeInline", { fg = "#67b0e8", bg = "NONE" })
+			hl(0, "GitSignsChangeLnInline", { fg = "#67b0e8", bg = "NONE" })
+			hl(0, "GitSignsDeleteInline", { fg = "#e57474", bg = "NONE" })
+			hl(0, "GitSignsDeleteLnInline", { fg = "#e57474", bg = "NONE" })
+			hl(0, "GitSignsDeleteVirtLnInline", { fg = "#e57474", bg = "NONE" })
 		end,
 	},
 	-- {
@@ -372,14 +379,14 @@ require("lazy").setup({
 		keys = {
 			{
 				mode = "n",
-				"<leader>nn",
+				"<A-n>",
 				":Gitsigns next_hunk<cr>",
 				desc = "next git change",
 				{ silent = true },
 			},
 			{
 				mode = "n",
-				"<leader>pp",
+				"<A-p>",
 				":Gitsigns prev_hunk<cr>",
 				desc = "previous git change",
 				{ silent = true },
