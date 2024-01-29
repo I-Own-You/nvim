@@ -16,39 +16,6 @@ local colors = {
 	inactivegray = "#1C1E26",
 }
 
-local bubbles_theme = {
-	normal = {
-		a = { bg = "#f71964", fg = "#ffffff", gui = "bold" },
-		b = { bg = colors.lightgray, fg = "#c5d9d6" },
-		c = { bg = "#181818", fg = "#c5d9d6" },
-	},
-	insert = {
-		a = { bg = colors.blue, fg = "#ffffff", gui = "bold" },
-		b = { bg = colors.lightgray, fg = "#c5d9d6" },
-		c = { bg = "#181818", fg = "#c5d9d6" },
-	},
-	visual = {
-		a = { bg = "#FF7900", fg = "#ffffff", gui = "bold" },
-		b = { bg = colors.lightgray, fg = "#c5d9d6" },
-		c = { bg = "#181818", fg = "#c5d9d6" },
-	},
-	replace = {
-		a = { bg = colors.red, fg = "#ffffff", gui = "bold" },
-		b = { bg = colors.lightgray, fg = "#c5d9d6" },
-		c = { bg = "#181818", fg = "#c5d9d6" },
-	},
-	command = {
-		a = { bg = colors.green, fg = "#ffffff", gui = "bold" },
-		b = { bg = colors.lightgray, fg = "#c5d9d6" },
-		c = { bg = "#181818", fg = "#c5d9d6" },
-	},
-	inactive = {
-		a = { bg = colors.inactivegray, fg = colors.lightgray, gui = "bold" },
-		b = { bg = colors.inactivegray, fg = colors.lightgray },
-		c = { bg = colors.inactivegray, fg = colors.lightgray },
-	},
-}
-
 local function session_name()
 	return "s: " .. require("possession.session").session_name or ""
 end
