@@ -58,6 +58,7 @@ require("lazy").setup({
 			hl(0, "GitSignsDeleteInline", { fg = "#e57474", bg = "NONE" })
 			hl(0, "GitSignsDeleteLnInline", { fg = "#e57474", bg = "NONE" })
 			hl(0, "GitSignsDeleteVirtLnInline", { fg = "#e57474", bg = "NONE" })
+			hl(0, "@operator", { fg = "#67cbe7", bg = "NONE" })
 		end,
 	},
 	-- {
@@ -324,6 +325,7 @@ require("lazy").setup({
 		event = "BufReadPost",
 		opts = {
 			filetypes = {
+        "lua",
 				"typescript",
 				"javascript",
 				"typescriptreact",
