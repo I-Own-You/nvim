@@ -29,7 +29,7 @@ local options = {
 	wrap = false,
 	linebreak = true,
 	fillchars = "eob: ",
-	scrolloff = 5,
+	-- scrolloff = 5,
 	sessionoptions = "curdir,folds,globals,help,tabpages,terminal,winsize",
 }
 for k, v in pairs(options) do

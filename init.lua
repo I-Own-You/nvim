@@ -59,6 +59,8 @@ require("lazy").setup({
 			hl(0, "GitSignsDeleteLnInline", { fg = "#e57474", bg = "NONE" })
 			hl(0, "GitSignsDeleteVirtLnInline", { fg = "#e57474", bg = "NONE" })
 			hl(0, "@operator", { fg = "#67cbe7", bg = "NONE" })
+			hl(0, "Search", { fg = "#ffffff", bg = "#FF007C" })
+			hl(0, "IncSearch", { fg = "#ffffff", bg = "#FF007C" })
 		end,
 	},
 	-- {
@@ -195,12 +197,12 @@ require("lazy").setup({
 		},
 		cmd = "FzfLua",
 		keys = {
-			{ mode = "n", "<A-f>", ":FzfLua files<CR>", desc = "", { silent = true } },
+			{ mode = "n", "<A-f>", ":FzfLua files<CR>", desc = "find files", { silent = true } },
 			{
 				mode = "n",
 				"<A-a>",
 				":lua require('fzf-lua').files({fd_opts = '--color=never --type f --hidden --follow --no-ignore'})<CR>",
-				desc = "",
+				desc = "find hidden/ignored files",
 				{ silent = true },
 			},
 			{ mode = "n", "<leader>bb", desc = "buffers list", ":FzfLua buffers<CR>", { silent = true } },
@@ -272,6 +274,17 @@ require("lazy").setup({
 			require("indent_blankline").setup(require("plugins.indent_blankline"))
 			-- vim.cmd([[highlight IndentBlanklineContextStart guisp=#8FBCBB gui=underline]])
 			vim.g.indent_blankline_filetype_exclude = { "dashboard" }
+			vim.keymap.set("n", "<leader>kk", function()
+				local ok, start = require("indent_blankline.utils").get_current_context(
+					vim.g.indent_blankline_context_patterns,
+					vim.g.indent_blankline_use_treesitter_scope
+				)
+
+				if ok then
+					vim.api.nvim_win_set_cursor(vim.api.nvim_get_current_win(), { start, 0 })
+					vim.cmd([[normal! _]])
+				end
+			end, { silent = true, desc = "go to parent node" })
 		end,
 	},
 	{
@@ -325,7 +338,7 @@ require("lazy").setup({
 		event = "BufReadPost",
 		opts = {
 			filetypes = {
-        "lua",
+				-- "lua",
 				"typescript",
 				"javascript",
 				"typescriptreact",
@@ -919,7 +932,7 @@ require("lazy").setup({
 			"nvim-treesitter/nvim-treesitter",
 		},
 		keys = {
-			{ "<leader>dd", ":DevdocsOpenFloat " },
+			{ "<leader>dd", ":DevdocsOpenFloat ", desc = "open devdocs" },
 		},
 		opts = {
 			-- dir_path = vim.fn.stdpath("data") .. "/devdocs", -- installation directory
@@ -1006,7 +1019,7 @@ require("lazy").setup({
 			-- search_engine = "google" | "duck_duck_go" | "stack_overflow" | "github",
 		},
 		keys = {
-			{ "<leader>wt", ":WtfSearch " },
+			{ "<leader>wt", ":WtfSearch ", desc = "open wtf search" },
 		},
 	},
 	{
@@ -1014,7 +1027,7 @@ require("lazy").setup({
 		"piersolenski/telescope-import.nvim",
 		dependencies = "nvim-telescope/telescope.nvim",
 		keys = {
-			{ "<leader>ii", "<cmd>Telescope import<CR>" },
+			{ "<leader>ii", "<cmd>Telescope import<CR>", desc = "open imports" },
 		},
 		config = function()
 			require("telescope").load_extension("import")
@@ -1086,8 +1099,20 @@ require("lazy").setup({
 			},
 			{ mode = "n", "*", [[*<Cmd>lua require('hlslens').start()<CR>]], { noremap = true, silent = true } },
 			{ mode = "n", "#", [[#<Cmd>lua require('hlslens').start()<CR>]], { noremap = true, silent = true } },
-			{ mode = "n", "g*", [[g*<Cmd>lua require('hlslens').start()<CR>]], { noremap = true, silent = true } },
-			{ mode = "n", "g#", [[g#<Cmd>lua require('hlslens').start()<CR>]], { noremap = true, silent = true } },
+			{
+				mode = "n",
+				"g*",
+				[[g*<Cmd>lua require('hlslens').start()<CR>]],
+				desc = "search forward word",
+				{ noremap = true, silent = true },
+			},
+			{
+				mode = "n",
+				"g#",
+				[[g#<Cmd>lua require('hlslens').start()<CR>]],
+				desc = "search backgward word",
+				{ noremap = true, silent = true },
+			},
 		},
 	},
 	{
@@ -1138,7 +1163,7 @@ require("lazy").setup({
 			},
 		},
 		keys = {
-			{ "<leader>lq", ":Trouble document_diagnostics<CR>" },
+			{ "<leader>lq", ":Trouble document_diagnostics<CR>", desc = "open document diagnostics" },
 		},
 	},
 	{
@@ -1306,6 +1331,43 @@ require("lazy").setup({
 		opts = {
 			move_cursor = false,
 		},
+	},
+	{
+		"abecodes/tabout.nvim",
+		event = "InsertEnter",
+		config = function()
+			require("tabout").setup({
+				tabkey = "<Tab>", -- key to trigger tabout, set to an empty string to disable
+				backwards_tabkey = "<S-Tab>", -- key to trigger backwards tabout, set to an empty string to disable
+				act_as_tab = true, -- shift content if tab out is not possible
+				act_as_shift_tab = false, -- reverse shift content if tab out is not possible (if your keyboard/terminal supports <S-Tab>)
+				default_tab = "<C-t>", -- shift default action (only at the beginning of a line, otherwise <TAB> is used)
+				default_shift_tab = "<C-d>", -- reverse shift default action,
+				enable_backwards = true, -- well ...
+				completion = true, -- if the tabkey is used in a completion pum
+				tabouts = {
+					{ open = "'", close = "'" },
+					{ open = '"', close = '"' },
+					{ open = "`", close = "`" },
+					{ open = "(", close = ")" },
+					{ open = "[", close = "]" },
+					{ open = "{", close = "}" },
+				},
+				ignore_beginning = true, --[[ if the cursor is at the beginning of a filled element it will rather tab out than shift the content ]]
+				exclude = {}, -- tabout will ignore these filetypes
+			})
+		end,
+		wants = { "nvim-treesitter" }, -- or require if not used so far
+		after = { "nvim-cmp" }, -- if a completion plugin is using tabs load it before
+	},
+	{
+		"folke/which-key.nvim",
+		event = "VeryLazy",
+		init = function()
+			vim.o.timeout = true
+			vim.o.timeoutlen = 300
+		end,
+		opts = {},
 	},
 })
 
