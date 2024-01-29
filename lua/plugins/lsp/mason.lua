@@ -16,6 +16,7 @@ local servers = {
 	-- "eslint",
 	"biome",
 	"prismals",
+  "emmet_ls"
 }
 
 local settings = {
