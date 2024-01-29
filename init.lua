@@ -951,7 +951,7 @@ require("lazy").setup({
 				width = 100,
 				border = "rounded",
 			},
-			wrap = false, -- text wrap, only applies to floating window
+			wrap = true, -- text wrap, only applies to floating window
 			--  install them: html, javascript, npm, react, express, react-router, css, typescript, python, django, tailwindcss, dom
 			-- previewer_cmd = "glow",
 			cmd_args = { "-s", "dark", "-w", "80" },
