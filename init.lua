@@ -64,6 +64,8 @@ require("lazy").setup({
 			hl(0, "QuickFixLine", { fg = "NONE", bg = "NONE" })
 			hl(0, "QfLineNr", { fg = "#C4DE72", bg = "NONE" })
 			hl(0, "Visual", { fg = "NONE", bg = "#2c3333" })
+			hl(0, "CustomSpectreSearch", { fg = "#FF007C", bg = "NONE" })
+			hl(0, "CustomSpectreReplace", { fg = "#5ACB43", bg = "NONE" })
 		end,
 	},
 	-- {
@@ -1406,6 +1408,11 @@ require("lazy").setup({
 						cmd = "<cmd>lua vim.cmd('tab split ' .. require('spectre.actions').get_current_entry().filename)<CR>",
 						desc = "open in new tab",
 					},
+				},
+				highlight = {
+					ui = "String",
+					search = "CustomSpectreSearch",
+					replace = "CustomSpectreReplace",
 				},
 			})
 		end,
