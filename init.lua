@@ -1379,6 +1379,58 @@ require("lazy").setup({
 		end,
 		opts = {},
 	},
+	-- {
+	-- 	"Bekaboo/dropbar.nvim", --use when neovim is 10 version
+	-- 	dependencies = {
+	-- 		"nvim-telescope/telescope-fzf-native.nvim",
+	-- 	},
+	-- },
+	{
+		"nvim-pack/nvim-spectre",
+		dependencies = { "nvim-lua/plenary.nvim" },
+		config = function()
+			require("spectre").setup({
+				mapping = {
+					["open_in_vsplit"] = {
+						map = "<c-v>",
+						cmd = "<cmd>lua vim.cmd('vsplit ' .. require('spectre.actions').get_current_entry().filename)<CR>",
+						desc = "open in vertical split",
+					},
+					["open_in_split"] = {
+						map = "<c-s>",
+						cmd = "<cmd>lua vim.cmd('split ' .. require('spectre.actions').get_current_entry().filename)<CR>",
+						desc = "open in horizontal split",
+					},
+					["open_in_tab"] = {
+						map = "<c-t>",
+						cmd = "<cmd>lua vim.cmd('tab split ' .. require('spectre.actions').get_current_entry().filename)<CR>",
+						desc = "open in new tab",
+					},
+				},
+			})
+		end,
+		keys = {
+			{ "<leader>S", '<cmd>lua require("spectre").toggle()<CR>', mode = "n", desc = "Toggle Spectre" },
+			{
+				"<leader>sw",
+				'<cmd>lua require("spectre").open_visual({select_word=true})<CR>',
+				mode = "n",
+				desc = "Search and replace current word",
+			},
+			{
+				"<leader>sw",
+				'<esc><cmd>lua require("spectre").open_visual()<CR>',
+				mode = "v",
+				desc = "Search and replace current selection",
+			},
+			-- {
+			-- 	"<leader>sp",
+			-- 	'<cmd>lua require("spectre").open_file_search({select_word=true})<CR>',
+			-- 	mode = "n",
+			-- 	desc = "Toggle Spectre for current file",
+			-- },
+		},
+	},
 })
 
 -- vim.cmd('highlight Search guifg=#F24211  guibg=#000000')
