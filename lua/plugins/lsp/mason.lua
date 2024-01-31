@@ -3,7 +3,7 @@ local servers = {
 	"html",
 	"cssls",
 	"pyright",
-	"pylsp",
+	-- "pylsp",
 	-- "pylyzer",
 	"cssmodules_ls",
 	-- "tailwindcss",
