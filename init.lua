@@ -1501,31 +1501,31 @@ vim.api.nvim_exec("autocmd Filetype rnvimr tnoremap <buffer><nowait> j j", false
 vim.api.nvim_exec("autocmd Filetype rnvimr tnoremap <buffer><nowait> k k", false)
 vim.api.nvim_exec("autocmd Filetype rnvimr tnoremap <buffer><nowait> <Space> <Space>", false)
 
-vim.cmd([[
-augroup DjangoHtmlHighlight
-  autocmd!
-  autocmd FileType htmldjango highlight MatchParen guibg=NONE
-augroup END
-]]) -- for htmldjango, it conflicted with rustywind lsp
-
-vim.cmd([[
-augroup AutoCloseMarkdownGlow
-  autocmd!
-  autocmd FileType glow nnoremap <buffer> q :q<CR>
-augroup END
-]])
+-- vim.cmd([[
+-- augroup DjangoHtmlHighlight
+--   autocmd!
+--   autocmd FileType htmldjango highlight MatchParen guibg=NONE
+-- augroup END
+-- ]]) -- for htmldjango, it conflicted with rustywind lsp
 
 vim.cmd([[
 augroup AutoCloseLspWindowReferenceAndDefintion
   autocmd!
-  autocmd FileType qf nnoremap <buffer> q :q<CR>
+  autocmd FileType qf nnoremap <buffer> qq :q<CR>
 augroup END
 ]])
 
 vim.cmd([[
 augroup AutoCloseCommandHistoryMode
   autocmd!
-  autocmd FileType vim nnoremap <buffer> q :q<CR>
+  autocmd FileType vim nnoremap <buffer> qq :q<CR>
+augroup END
+]])
+
+vim.cmd([[
+augroup AutoCloseCommandSpectrePannel
+  autocmd!
+  autocmd FileType spectre_panel nnoremap <buffer> qq :q<CR>
 augroup END
 ]])
 
