@@ -124,10 +124,6 @@ require("lazy").setup({
 		event = "InsertEnter",
 	},
 	{
-		"hrsh7th/cmp-nvim-lua",
-		event = "InsertEnter",
-	},
-	{
 		"saadparwaiz1/cmp_luasnip",
 		event = "InsertEnter",
 	},

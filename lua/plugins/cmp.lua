@@ -135,7 +135,6 @@ return {
 				luasnip = "Snippet",
 				buffer = "Buffer",
 				path = "Path",
-				nvim_lua = "NVIM_LUA",
 				npm = " ",
 				rg = "RG",
 				-- codeium = " AI  ",
@@ -146,12 +145,10 @@ return {
 	sources = {
 		-- { name = "codeium" },
 		{ name = "nvim_lsp" },
-		{ name = "nvim_lua" },
 		{ name = "luasnip" },
+		{ name = "rg" },
 		{ name = "buffer" },
 		{ name = "path" },
-		{ name = "npm", keyword_length = 4 },
-		{ name = "rg" },
 	},
 	confirm_opts = {
 		behavior = cmp.ConfirmBehavior.Replace,
