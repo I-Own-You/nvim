@@ -1518,22 +1518,8 @@ vim.api.nvim_exec("autocmd Filetype rnvimr tnoremap <buffer><nowait> <Space> <Sp
 -- ]]) -- for htmldjango, it conflicted with rustywind lsp
 
 vim.cmd([[
-augroup AutoCloseLspWindowReferenceAndDefintion
+augroup AutoCloseHelpers
   autocmd!
-  autocmd FileType qf nnoremap <buffer> qq :q<CR>
-augroup END
-]])
-
-vim.cmd([[
-augroup AutoCloseCommandHistoryMode
-  autocmd!
-  autocmd FileType vim nnoremap <buffer> qq :q<CR>
-augroup END
-]])
-
-vim.cmd([[
-augroup AutoCloseCommandSpectrePannel
-  autocmd!
-  autocmd FileType spectre_panel nnoremap <buffer> qq :q<CR>
+  autocmd FileType markdown,help,qf,vim,spectre_panel nnoremap <buffer> qq :q<CR>
 augroup END
 ]])
