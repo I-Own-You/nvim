@@ -1210,7 +1210,6 @@ require("lazy").setup({
 	}, -- 9000+ Snippets
 	-- { 'ms-jpq/coq.thirdparty', branch= '3p' } -- lua & third party sources, See https://github.com/ms-jpq/coq.thirdparty
 	{
-		-- if you delete this plugin, delete also the keybinding form keymaps.lua
 		"vuki656/package-info.nvim",
 		ft = "json",
 		dependencies = "MunifTanjim/nui.nvim",
