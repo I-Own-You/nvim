@@ -811,44 +811,44 @@ require("lazy").setup({
 			},
 		},
 	},
-	-- {
-	-- 	"kevinhwang91/nvim-ufo",
-	-- 	event = "BufReadPost",
-	-- 	-- look into handlers.lua/keymaps.lua there is code for ufo.nvim, in case you delete the pluign
-	-- 	dependencies = {
-	-- 		"kevinhwang91/promise-async",
-	-- 		{
-	-- 			"luukvbaal/statuscol.nvim", -- tweak for right columnt that shows redundant digits
-	-- 			config = function()
-	-- 				local builtin = require("statuscol.builtin")
-	-- 				require("statuscol").setup({
-	-- 					relculright = true,
-	-- 					segments = {
-	-- 						{ text = { builtin.foldfunc }, click = "v:lua.ScFa" },
-	-- 						{ text = { "%s" }, click = "v:lua.ScSa" },
-	-- 						{ text = { builtin.lnumfunc, " " }, click = "v:lua.ScLa" },
-	-- 					},
-	-- 				})
-	-- 			end,
-	-- 		},
-	-- 	},
-	-- 	init = function()
-	-- 		vim.o.fillchars = [[eob:,fold:,foldopen:,foldsep:,foldclose:]]
-	-- 		vim.opt.foldcolumn = "1" -- '0' is not bad
-	-- 		vim.opt.foldlevel = 99 -- Using ufo provider need a large value, feel free to decrease the value
-	-- 		vim.opt.foldlevelstart = 99
-	-- 		vim.opt.foldenable = true
-	-- 	end,
-	-- 	config = function()
-	-- 		require("ufo").setup(require("plugins.ufo"))
-	-- 		vim.keymap.set("n", "zR", function()
-	-- 			require("ufo").openAllFolds()
-	-- 		end, { silent = true })
-	-- 		vim.keymap.set("n", "zM", function()
-	-- 			require("ufo").closeAllFolds()
-	-- 		end, { silent = true })
-	-- 	end,
-	--  },
+	{
+		"kevinhwang91/nvim-ufo",
+		event = "BufReadPost",
+		-- look into handlers.lua/keymaps.lua there is code for ufo.nvim, in case you delete the pluign
+		dependencies = {
+			"kevinhwang91/promise-async",
+			{
+				"luukvbaal/statuscol.nvim", -- tweak for right columnt that shows redundant digits
+				config = function()
+					local builtin = require("statuscol.builtin")
+					require("statuscol").setup({
+						relculright = true,
+						segments = {
+							{ text = { builtin.foldfunc }, click = "v:lua.ScFa" },
+							{ text = { "%s" }, click = "v:lua.ScSa" },
+							{ text = { builtin.lnumfunc, " " }, click = "v:lua.ScLa" },
+						},
+					})
+				end,
+			},
+		},
+		init = function()
+			vim.o.fillchars = [[eob: ,fold: ,foldopen:,foldsep: ,foldclose:]]
+			vim.opt.foldcolumn = "1" -- '0' is not bad
+			vim.opt.foldlevel = 99 -- Using ufo provider need a large value, feel free to decrease the value
+			vim.opt.foldlevelstart = 99
+			vim.opt.foldenable = true
+		end,
+		config = function()
+			require("ufo").setup(require("plugins.ufo"))
+			vim.keymap.set("n", "zR", function()
+				require("ufo").openAllFolds()
+			end, { silent = true })
+			vim.keymap.set("n", "zM", function()
+				require("ufo").closeAllFolds()
+			end, { silent = true })
+		end,
+	},
 	{
 		"utilyre/barbecue.nvim",
 		event = "BufReadPost",
