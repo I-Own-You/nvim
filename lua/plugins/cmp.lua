@@ -32,17 +32,6 @@ end
 
 -- for de prioritize emmet ls
 local cmp_types_status, types = pcall(require, "cmp.types")
-if not cmp_types_status then
-	return
-end
--- local function deprioritize_snippet(entry1, entry2)
--- 	if entry1:get_kind() == types.lsp.CompletionItemKind.Snippet then
--- 		return false
--- 	end
--- 	if entry2:get_kind() == types.lsp.CompletionItemKind.Snippet then
--- 		return true
--- 	end
--- end
 
 local snip_status_ok, luasnip = pcall(require, "luasnip")
 if not snip_status_ok then
@@ -188,32 +177,31 @@ return {
 	experimental = {
 		ghost_text = false,
 	},
-	sorting = {
-		comparators = {
-			-- deprioritize_snippet,
-      cmp.config.compare.locality,
-      cmp.config.compare.recently_used,
-      cmp.config.compare.score,
-      cmp.config.compare.offset,
-      cmp.config.compare.order,
-			-- cmp.config.compare.exact,
-			-- cmp.config.compare.kind,
-			-- cmp.config.compare.length,
-		},
-		-- default config way
-		-- comparators = {
-		-- 	cmp.config.compare.offset,
-		-- 	cmp.config.compare.exact,
-		-- 	-- cmp.config.compare.scopes,
-		-- 	cmp.config.compare.score,
-		-- 	cmp.config.compare.recently_used,
-		-- 	cmp.config.compare.locality,
-		-- 	cmp.config.compare.kind,
-		-- 	-- cmp.config.compare.sort_text,
-		-- 	cmp.config.compare.length,
-		-- 	cmp.config.compare.order,
-		-- },
-	},
+	-- sorting = {
+	-- 	comparators = {
+	-- cmp.config.compare.offset,
+	-- cmp.config.compare.locality,
+	-- cmp.config.compare.recently_used,
+	-- cmp.config.compare.score,
+	-- cmp.config.compare.order,
+	-- cmp.config.compare.kind,
+	-- cmp.config.compare.exact,
+	-- cmp.config.compare.length,
+	-- },
+	-- default config way
+	-- comparators = {
+	-- 	cmp.config.compare.offset,
+	-- 	cmp.config.compare.exact,
+	-- 	-- cmp.config.compare.scopes,
+	-- 	cmp.config.compare.score,
+	-- 	cmp.config.compare.recently_used,
+	-- 	cmp.config.compare.locality,
+	-- 	cmp.config.compare.kind,
+	-- 	-- cmp.config.compare.sort_text,
+	-- 	cmp.config.compare.length,
+	-- 	cmp.config.compare.order,
+	-- },
+	-- },
 }
 -- cmp.setup.cmdline('/', {
 --   mapping = cmp.mapping.preset.cmdline(),

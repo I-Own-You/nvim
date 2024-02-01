@@ -344,7 +344,7 @@ require("lazy").setup({
 		event = "BufReadPost",
 		opts = {
 			filetypes = {
-				"lua",
+				-- "lua",
 				"typescript",
 				"javascript",
 				"typescriptreact",
