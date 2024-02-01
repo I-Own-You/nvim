@@ -731,16 +731,18 @@ require("lazy").setup({
 			},
 		},
 	},
-	-- {
-	-- 	"https://git.sr.ht/~whynothugo/lsp_lines.nvim",
-	-- 	enabled = false,
-	-- 	config = function()
-	-- 		vim.diagnostic.config({ virtual_text = false })
-	-- 		-- vim.diagnostic.config({ virtual_lines = true })
-	-- 		-- vim.diagnostic.config({ virtual_lines = { only_current_line = true } })
-	-- 		require("lsp_lines").setup({})
-	-- 	end,
-	-- },
+	{
+		"https://git.sr.ht/~whynothugo/lsp_lines.nvim",
+		enabled = true,
+		config = function()
+			-- virtual_text is disabled in handlers.lua
+			-- vim.diagnostic.config({ virtual_text = false })
+			-- vim.diagnostic.config({ virtual_lines = true })
+			-- vim.diagnostic.config({ virtual_lines = { only_current_line = true } })
+			vim.diagnostic.config({ virtual_lines = { highlight_whole_line = false } })
+			require("lsp_lines").setup({})
+		end,
+	},
 	{
 		"ray-x/lsp_signature.nvim",
 		event = "InsertEnter",
