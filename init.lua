@@ -28,59 +28,59 @@ require("lazy").setup({
 	-- 		hl(0, "Identifier", { fg = "#dadada", bg = "NONE", sp = "NONE" })
 	-- 	end,
 	-- },
-	{
-		"Everblush/nvim",
-		lazy = false,
-		priority = 1000,
-		config = function()
-			vim.cmd([[colorscheme everblush]])
-
-			local hl = vim.api.nvim_set_hl
-			hl(0, "CmpItemAbbrMatch", { fg = "#67cbe7", bg = "NONE" })
-			hl(0, "CmpItemAbbrMatchFuzzy", { fg = "#67cbe7", bg = "NONE" })
-			hl(0, "CmpItemAbbrDeprecated", { fg = "#8CCF7E", bg = "NONE", strikethrough = true })
-			hl(0, "CmpItemAbbr", { fg = "NONE", bg = "NONE" })
-			hl(0, "GitSignsAdd", { fg = "#8CCF7E", bg = "#141B1E" })
-			hl(0, "GitSignsChange", { fg = "#67b0e8", bg = "#141B1E" })
-			hl(0, "diffAdded", { fg = "#8CCF7E", bg = "#141B1E" })
-			hl(0, "diffChanged", { fg = "#67b0e8", bg = "#141B1E" })
-			hl(0, "DiffAdd", { fg = "#8CCF7E", bg = "#141B1E" })
-			hl(0, "DiffChange", { fg = "#67b0e8", bg = "#141B1E" })
-			hl(0, "TelescopeSelection", { fg = "NONE", bg = "#2c3333" })
-			hl(0, "CursorLineNr", { fg = "#ffffff", bg = "NONE" })
-			hl(0, "FlashLabel", { fg = "#ffffff", bg = "#FF007C" })
-			hl(0, "FlashMatch", { fg = "#B1C0EF", bg = "#3E68D7" })
-			hl(0, "FlashCurrent", { fg = "#443135", bg = "#FF966C" })
-			hl(0, "GitSignsAddInline", { fg = "#8CCF7E", bg = "NONE" })
-			hl(0, "GitSignsAddLnInline", { fg = "#8CCF7E", bg = "NONE" })
-			hl(0, "GitSignsChangeInline", { fg = "#67b0e8", bg = "NONE" })
-			hl(0, "GitSignsChangeLnInline", { fg = "#67b0e8", bg = "NONE" })
-			hl(0, "GitSignsDeleteInline", { fg = "#e57474", bg = "NONE" })
-			hl(0, "GitSignsDeleteLnInline", { fg = "#e57474", bg = "NONE" })
-			hl(0, "GitSignsDeleteVirtLnInline", { fg = "#e57474", bg = "NONE" })
-			hl(0, "@operator", { fg = "#67cbe7", bg = "NONE" })
-			hl(0, "@exception", { fg = "#e57474", bg = "NONE" })
-			hl(0, "Search", { fg = "#B1C0EF", bg = "#3E68D7" })
-			hl(0, "IncSearch", { fg = "#ffffff", bg = "#FF007C" })
-			hl(0, "QuickFixLine", { fg = "NONE", bg = "NONE" })
-			hl(0, "QfLineNr", { fg = "#C4DE72", bg = "NONE" })
-			hl(0, "Visual", { fg = "NONE", bg = "#2c3333" })
-			hl(0, "CustomSpectreSearch", { fg = "#FF007C", bg = "NONE" })
-			hl(0, "CustomSpectreReplace", { fg = "#5ACB43", bg = "NONE" })
-		end,
-	},
 	-- {
-	-- "folke/tokyonight.nvim",
-	-- lazy = false,
-	-- priority = 1000,
-	-- config = function()
-	-- 	require("tokyonight").setup({
-	-- 		style = "moon",
-	-- 		-- transparent = true, -- Enable this to disable setting the background color
-	-- 	})
-	-- vim.cmd([[colorscheme tokyonight]])
-	-- end,
+	-- 	"Everblush/nvim",
+	-- 	lazy = false,
+	-- 	priority = 1000,
+	-- 	config = function()
+	-- 		vim.cmd([[colorscheme everblush]])
+	--
+	-- 		local hl = vim.api.nvim_set_hl
+	-- 		hl(0, "CmpItemAbbrMatch", { fg = "#67cbe7", bg = "NONE" })
+	-- 		hl(0, "CmpItemAbbrMatchFuzzy", { fg = "#67cbe7", bg = "NONE" })
+	-- 		hl(0, "CmpItemAbbrDeprecated", { fg = "#8CCF7E", bg = "NONE", strikethrough = true })
+	-- 		hl(0, "CmpItemAbbr", { fg = "NONE", bg = "NONE" })
+	-- 		hl(0, "GitSignsAdd", { fg = "#8CCF7E", bg = "#141B1E" })
+	-- 		hl(0, "GitSignsChange", { fg = "#67b0e8", bg = "#141B1E" })
+	-- 		hl(0, "diffAdded", { fg = "#8CCF7E", bg = "#141B1E" })
+	-- 		hl(0, "diffChanged", { fg = "#67b0e8", bg = "#141B1E" })
+	-- 		hl(0, "DiffAdd", { fg = "#8CCF7E", bg = "#141B1E" })
+	-- 		hl(0, "DiffChange", { fg = "#67b0e8", bg = "#141B1E" })
+	-- 		hl(0, "TelescopeSelection", { fg = "NONE", bg = "#2c3333" })
+	-- 		hl(0, "CursorLineNr", { fg = "#ffffff", bg = "NONE" })
+	-- 		hl(0, "FlashLabel", { fg = "#ffffff", bg = "#FF007C" })
+	-- 		hl(0, "FlashMatch", { fg = "#B1C0EF", bg = "#3E68D7" })
+	-- 		hl(0, "FlashCurrent", { fg = "#443135", bg = "#FF966C" })
+	-- 		hl(0, "GitSignsAddInline", { fg = "#8CCF7E", bg = "NONE" })
+	-- 		hl(0, "GitSignsAddLnInline", { fg = "#8CCF7E", bg = "NONE" })
+	-- 		hl(0, "GitSignsChangeInline", { fg = "#67b0e8", bg = "NONE" })
+	-- 		hl(0, "GitSignsChangeLnInline", { fg = "#67b0e8", bg = "NONE" })
+	-- 		hl(0, "GitSignsDeleteInline", { fg = "#e57474", bg = "NONE" })
+	-- 		hl(0, "GitSignsDeleteLnInline", { fg = "#e57474", bg = "NONE" })
+	-- 		hl(0, "GitSignsDeleteVirtLnInline", { fg = "#e57474", bg = "NONE" })
+	-- 		hl(0, "@operator", { fg = "#67cbe7", bg = "NONE" })
+	-- 		hl(0, "@exception", { fg = "#e57474", bg = "NONE" })
+	-- 		hl(0, "Search", { fg = "#B1C0EF", bg = "#3E68D7" })
+	-- 		hl(0, "IncSearch", { fg = "#ffffff", bg = "#FF007C" })
+	-- 		hl(0, "QuickFixLine", { fg = "NONE", bg = "NONE" })
+	-- 		hl(0, "QfLineNr", { fg = "#C4DE72", bg = "NONE" })
+	-- 		hl(0, "Visual", { fg = "NONE", bg = "#2c3333" })
+	-- 		hl(0, "CustomSpectreSearch", { fg = "#FF007C", bg = "NONE" })
+	-- 		hl(0, "CustomSpectreReplace", { fg = "#5ACB43", bg = "NONE" })
+	-- 	end,
 	-- },
+	{
+	"folke/tokyonight.nvim",
+	lazy = false,
+	priority = 1000,
+	config = function()
+		require("tokyonight").setup({
+			style = "moon",
+			-- transparent = true, -- Enable this to disable setting the background color
+		})
+	vim.cmd([[colorscheme tokyonight-night]])
+	end,
+	},
 	{
 		"neovim/nvim-lspconfig",
 		event = "BufReadPost",
