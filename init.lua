@@ -70,16 +70,20 @@ require("lazy").setup({
 	-- 	end,
 	-- },
 	{
-	"folke/tokyonight.nvim",
-	lazy = false,
-	priority = 1000,
-	config = function()
-		require("tokyonight").setup({
-			style = "moon",
-			-- transparent = true, -- Enable this to disable setting the background color
-		})
-	vim.cmd([[colorscheme tokyonight-night]])
-	end,
+		"folke/tokyonight.nvim",
+		lazy = false,
+		priority = 1000,
+		config = function()
+			require("tokyonight").setup({
+				style = "moon",
+				-- transparent = true, -- Enable this to disable setting the background color
+			})
+			vim.cmd([[colorscheme tokyonight-night]])
+
+			local hl = vim.api.nvim_set_hl
+			hl(0, "CustomSpectreSearch", { fg = "#FF007C", bg = "NONE" })
+			hl(0, "CustomSpectreReplace", { fg = "#5ACB43", bg = "NONE" })
+		end,
 	},
 	{
 		"neovim/nvim-lspconfig",
