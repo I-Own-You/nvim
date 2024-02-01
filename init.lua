@@ -1493,6 +1493,10 @@ require("lazy").setup({
 			},
 		},
 	},
+	{
+		"b0o/schemastore.nvim",
+		ft = { "json", "jsonc" },
+	},
 })
 
 -- vim.cmd('highlight Search guifg=#F24211  guibg=#000000')
@@ -1531,5 +1535,3 @@ augroup AutoCloseCommandSpectrePannel
   autocmd FileType spectre_panel nnoremap <buffer> qq :q<CR>
 augroup END
 ]])
-
--- { "b0o/schemastore.nvim" },

@@ -56,6 +56,7 @@
   "possession.nvim": { "branch": "master", "commit": "4665ceec10991e040b7117582e62cc5edd3c964f" },
   "promise-async": { "branch": "main", "commit": "94f6f03c6c1e2aab551aacdf0c1e597a7269abb6" },
   "rnvimr": { "branch": "main", "commit": "5f0483d1c107ab1fe7e0af08cdf7900aa0dcb40e" },
+  "schemastore.nvim": { "branch": "main", "commit": "273cd742bf86aedc21c1154a2bcea044071f48d6" },
   "smart-splits.nvim": { "branch": "master", "commit": "403ad1a4fd7eb39388690a5657e7cbfb16da6668" },
   "sqlite.lua": { "branch": "master", "commit": "b7e28c8463254c46a8e61c52d27d6a2040492fc3" },
   "tabout.nvim": { "branch": "master", "commit": "0d275c8d25f32457e67b5c66d6ae43f26a61bce5" },
