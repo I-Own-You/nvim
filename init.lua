@@ -225,7 +225,7 @@ require("lazy").setup({
 			{ mode = "n", "<leader>oo", desc = "lsp symbols", ":FzfLua lsp_document_symbols<CR>", { silent = true } },
 			{
 				mode = "n",
-				"<leader>ol",
+				"<leader>tt",
 				":lua require('fzf-lua').lsp_live_workspace_symbols({ file_ignore_patterns = { '^node_modules/' }, })<CR>",
 				desc = "live workspace symbols",
 				{ silent = true },
@@ -244,7 +244,7 @@ require("lazy").setup({
 			{ mode = "n", "<leader>hc", desc = "comand history", ":FzfLua command_history<CR>", { silent = true } },
 			{ mode = "n", "<leader>hs", desc = "search history", ":FzfLua search_history<CR>", { silent = true } },
 			{ mode = "n", "<leader>fk", desc = "keymaps", ":FzfLua keymaps<CR>", { silent = true } },
-			{ mode = "n", "<leader>tt", desc = "project tags", ":FzfLua tags<CR>", { silent = true } },
+			{ mode = "n", "<leader>ol", desc = "project tags", ":FzfLua tags<CR>", { silent = true } },
 			{ mode = "n", "<leader>tb", desc = "buffer tags", ":FzfLua btags<CR>", { silent = true } },
 			{ mode = "n", "<leader>tw", desc = "grep tag word", ":FzfLua tags_grep_cword<CR>", { silent = true } },
 			{ mode = "n", "<leader>tl", desc = "live tag", ":FzfLua tags_live_grep<CR>", { silent = true } },
