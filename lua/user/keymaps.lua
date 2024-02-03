@@ -55,9 +55,16 @@ keymap("v", "-", "<C-x>gv=gv", { noremap = true, silent = true })
 keymap("x", "+", "<C-a>", { noremap = true, silent = true })
 keymap("x", "-", "<C-x>", { noremap = true, silent = true })
 
-keymap("n", "<C-c>", ":%y<CR>", { silent = true })
-keymap("n", "<C-a>", "ggVG", { silent = true })
-keymap("n", "<C-x>", ":%d<CR>", { silent = true })
+-- keymap("n", "<C-c>", ":%y<CR>", { silent = true })
+-- keymap("n", "<C-a>", "ggVG", { silent = true })
+-- keymap("n", "<C-x>", ":%d<CR>", { silent = true })
+
+keymap("i", "<C-i>", "<ESC><S-_>i", { silent = true, desc = "" })
+keymap("i", "<C-o>", "<ESC><S-$>a", { silent = true, desc = "" })
+keymap("i", "<C-h>", "<Left>", { silent = true, desc = "" })
+keymap("i", "<C-j>", "<Down>", { silent = true, desc = "" })
+keymap("i", "<C-k>", "<Up>", { silent = true, desc = "" })
+keymap("i", "<C-l>", "<Right>", { silent = true, desc = "" })
 
 keymap("n", "<leader>nh", ":nohlsearch<CR>", { silent = true, desc = "toggle search results" })
 keymap("n", "<leader>bo", ":only<CR>", { silent = true, desc = "clear buffer windows" })
@@ -92,8 +99,8 @@ keymap(
 	{ silent = true, desc = "lsp type definition" }
 )
 
--- keymap("n", "<C-d>", "15j", {silent=true, desc=''})
--- keymap("n", "<C-u>", "15k", {silent=true, desc=''})
+keymap("n", "<C-d>", "15j", { silent = true, desc = "" })
+keymap("n", "<C-u>", "15k", { silent = true, desc = "" })
 
 keymap("n", "<leader>nb", ":enew<cr>", { silent = true, desc = "open new buffer" })
 keymap("n", "<leader>nt", ":tabnew<CR>", { silent = true, desc = "open new tab" })
