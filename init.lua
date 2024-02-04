@@ -140,37 +140,6 @@ require("lazy").setup({
 		event = "InsertEnter",
 		config = function()
 			require("cmp").setup(require("plugins.cmp"))
-			local cmp = require("cmp")
-
-			cmp.setup.cmdline("/", {
-				mapping = cmp.mapping.preset.cmdline(),
-				sources = {
-					{ name = "buffer" },
-				},
-			})
-
-			-- `?` cmdline setup.
-			cmp.setup.cmdline("?", {
-				mapping = cmp.mapping.preset.cmdline(),
-				sources = {
-					{ name = "buffer" },
-				},
-			})
-
-			-- `:` cmdline setup.
-			cmp.setup.cmdline(":", {
-				mapping = cmp.mapping.preset.cmdline(),
-				sources = cmp.config.sources({
-					{ name = "path" },
-				}, {
-					{
-						name = "cmdline",
-						option = {
-							ignore_cmds = {},
-						},
-					},
-				}),
-			})
 		end,
 	},
 	{
