@@ -150,17 +150,6 @@ ins_left({
 	color = { fg = "#dadada", gui = "bold" },
 })
 
-ins_left({
-	"diagnostics",
-	sources = { "nvim_diagnostic" },
-	symbols = { error = " ", warn = " ", info = " " },
-	diagnostics_color = {
-		color_error = { fg = colors.red },
-		color_warn = { fg = colors.yellow },
-		color_info = { fg = colors.cyan },
-	},
-})
-
 -- Insert mid section. You can make any number of sections in neovim :)
 -- for lualine it's any number greater then 2
 ins_left({
@@ -188,6 +177,17 @@ ins_left({
 	end,
 	icon = " LSP:",
 	color = { fg = "#ffffff", gui = "bold" },
+})
+
+ins_right({
+	"diagnostics",
+	sources = { "nvim_diagnostic" },
+	symbols = { error = " ", warn = " ", info = " " },
+	diagnostics_color = {
+		color_error = { fg = colors.red },
+		color_warn = { fg = colors.yellow },
+		color_info = { fg = colors.cyan },
+	},
 })
 
 -- Add components to right sections
