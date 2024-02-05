@@ -55,9 +55,9 @@ keymap("v", "-", "<C-x>gv=gv", { noremap = true, silent = true })
 keymap("x", "+", "<C-a>", { noremap = true, silent = true })
 keymap("x", "-", "<C-x>", { noremap = true, silent = true })
 
--- keymap("n", "<C-c>", ":%y<CR>", { silent = true })
--- keymap("n", "<C-a>", "ggVG", { silent = true })
--- keymap("n", "<C-x>", ":%d<CR>", { silent = true })
+keymap("n", "<C-c>", ":%y<CR>", { silent = true })
+keymap("n", "<C-a>", "ggVG", { silent = true })
+keymap("n", "<C-x>", ":%d<CR>", { silent = true })
 
 keymap("i", "<C-u>", "<C-o><S-_>", { silent = true, desc = "" })
 keymap("i", "<C-i>", "<C-o><S-$>", { silent = true, desc = "" })
