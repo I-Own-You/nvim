@@ -13,6 +13,7 @@ return {
 		"json",
 		"jsonc",
 		"html",
+		"http",
 		"htmldjango",
 		"css",
 		"prisma",
