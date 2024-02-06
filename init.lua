@@ -784,6 +784,7 @@ require("lazy").setup({
 	},
 	{
 		"sindrets/diffview.nvim",
+		event = "BufReadPost",
 		config = function()
 			local actions = require("diffview.actions")
 			require("diffview").setup({
@@ -792,58 +793,31 @@ require("lazy").setup({
 						{ "n", "<A-n>", "]c", { desc = "Next hunk / entry" } },
 						{ "n", "<A-p>", "[c", { desc = "Prev hunk / entry" } },
 					},
-					file_history_panel = {
-						{
-							"n",
-							"<cr>",
-							actions.focus_entry,
-							{ desc = "Open and focus the diff for the selected entry." },
-						},
-						{
-							"n",
-							"o",
-							actions.focus_entry,
-							{ desc = "Open and focus the diff for the selected entry." },
-						},
-						{
-							"n",
-							"l",
-							actions.focus_entry,
-							{ desc = "Open and focus the diff for the selected entry." },
-						},
-						{
-							"n",
-							"<2-LeftMouse>",
-							actions.focus_entry,
-							{ desc = "Open and focus the diff for the selected entry." },
-						},
-					},
 				},
 			})
 		end,
 		keys = {
-			-- { "<leader>mt", mode = "n", ":DiffviewOpen<CR>", desc = "open diff view" },
-			-- { "<leader>mf", mode = "n", ":DiffviewFileHistory<CR>", desc = "open diff view for single file" },
-			-- { "<leader>mk", mode = "n", ":DiffviewClose<CR>", desc = "close diff view" },
-
-			{
-				"<leader>mt",
-				mode = "n",
-				':lua require("utility_functions").diffViewOpen()<CR>',
-				desc = "open diff view",
-			},
-			{
-				"<leader>mf",
-				mode = "n",
-				':lua require("utility_functions").diffViewFileHistoryOpen()<CR>',
-				desc = "open diff view for single file",
-			},
-			{
-				"<leader>mk",
-				mode = "n",
-				':lua require("utility_functions").diffViewClose()<CR>',
-				desc = "close diff view",
-			},
+			{ "<leader>mt", mode = "n", ":DiffviewOpen ", desc = "open diff view" },
+			{ "<leader>mf", mode = "n", ":DiffviewFileHistory ", desc = "open diff view for single file" },
+			{ "<leader>mk", mode = "n", ":DiffviewClose<CR>", desc = "close diff view" },
+			-- {
+			-- 	"<leader>mt",
+			-- 	mode = "n",
+			-- 	':lua require("utility_functions").diffViewOpen()<CR>',
+			-- 	desc = "open diff view",
+			-- },
+			-- {
+			-- 	"<leader>mf",
+			-- 	mode = "n",
+			-- 	':lua require("utility_functions").diffViewFileHistoryOpen()<CR>',
+			-- 	desc = "open diff view for single file",
+			-- },
+			-- {
+			-- 	"<leader>mk",
+			-- 	mode = "n",
+			-- 	':lua require("utility_functions").diffViewClose()<CR>',
+			-- 	desc = "close diff view",
+			-- },
 		},
 	},
 	{
@@ -1501,6 +1475,9 @@ require("lazy").setup({
 		"nvim-focus/focus.nvim",
 		event = "BufReadPost",
 		version = "*",
+		keys = {
+			{ "<leader>df", ":FocusToggle<CR>", mode = "n", desc = "disable focus.nvim" },
+		},
 		opts = {
 			enable = true, -- Enable module
 			commands = true, -- Create Focus commands

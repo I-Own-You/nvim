@@ -122,19 +122,19 @@ function M.goto_type_definition()
 	})
 end
 
-function M.diffViewOpen()
-	vim.cmd("FocusToggle")
-	vim.cmd("DiffviewOpen")
-end
-
-function M.diffViewClose()
-	vim.cmd("FocusToggle")
-	vim.cmd("DiffviewClose")
-end
-
-function M.diffViewFileHistoryOpen()
-	vim.cmd("FocusToggle")
-	vim.cmd("DiffviewFileHistory")
-end
+-- function M.diffViewOpen()
+-- 	vim.cmd("FocusToggle")
+-- 	vim.cmd("DiffviewOpen")
+-- end
+--
+-- function M.diffViewClose()
+-- 	vim.cmd("FocusToggle")
+-- 	vim.cmd("DiffviewClose")
+-- end
+--
+-- function M.diffViewFileHistoryOpen()
+-- 	vim.cmd("FocusToggle")
+-- 	vim.cmd("DiffviewFileHistory")
+-- end
 
 return M
