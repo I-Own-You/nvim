@@ -28,47 +28,6 @@ require("lazy").setup({
 	-- 		hl(0, "Identifier", { fg = "#dadada", bg = "NONE", sp = "NONE" })
 	-- 	end,
 	-- },
-	-- {
-	-- 	"Everblush/nvim",
-	-- 	lazy = false,
-	-- 	priority = 1000,
-	-- 	config = function()
-	-- 		vim.cmd([[colorscheme everblush]])
-	--
-	-- 		local hl = vim.api.nvim_set_hl
-	-- 		hl(0, "CmpItemAbbrMatch", { fg = "#67cbe7", bg = "NONE" })
-	-- 		hl(0, "CmpItemAbbrMatchFuzzy", { fg = "#67cbe7", bg = "NONE" })
-	-- 		hl(0, "CmpItemAbbrDeprecated", { fg = "#8CCF7E", bg = "NONE", strikethrough = true })
-	-- 		hl(0, "CmpItemAbbr", { fg = "NONE", bg = "NONE" })
-	-- 		hl(0, "GitSignsAdd", { fg = "#8CCF7E", bg = "#141B1E" })
-	-- 		hl(0, "GitSignsChange", { fg = "#67b0e8", bg = "#141B1E" })
-	-- 		hl(0, "diffAdded", { fg = "#8CCF7E", bg = "#141B1E" })
-	-- 		hl(0, "diffChanged", { fg = "#67b0e8", bg = "#141B1E" })
-	-- 		hl(0, "DiffAdd", { fg = "#8CCF7E", bg = "#141B1E" })
-	-- 		hl(0, "DiffChange", { fg = "#67b0e8", bg = "#141B1E" })
-	-- 		hl(0, "TelescopeSelection", { fg = "NONE", bg = "#2c3333" })
-	-- 		hl(0, "CursorLineNr", { fg = "#ffffff", bg = "NONE" })
-	-- 		hl(0, "FlashLabel", { fg = "#ffffff", bg = "#FF007C" })
-	-- 		hl(0, "FlashMatch", { fg = "#B1C0EF", bg = "#3E68D7" })
-	-- 		hl(0, "FlashCurrent", { fg = "#443135", bg = "#FF966C" })
-	-- 		hl(0, "GitSignsAddInline", { fg = "#8CCF7E", bg = "NONE" })
-	-- 		hl(0, "GitSignsAddLnInline", { fg = "#8CCF7E", bg = "NONE" })
-	-- 		hl(0, "GitSignsChangeInline", { fg = "#67b0e8", bg = "NONE" })
-	-- 		hl(0, "GitSignsChangeLnInline", { fg = "#67b0e8", bg = "NONE" })
-	-- 		hl(0, "GitSignsDeleteInline", { fg = "#e57474", bg = "NONE" })
-	-- 		hl(0, "GitSignsDeleteLnInline", { fg = "#e57474", bg = "NONE" })
-	-- 		hl(0, "GitSignsDeleteVirtLnInline", { fg = "#e57474", bg = "NONE" })
-	-- 		hl(0, "@operator", { fg = "#67cbe7", bg = "NONE" })
-	-- 		hl(0, "@exception", { fg = "#e57474", bg = "NONE" })
-	-- 		hl(0, "Search", { fg = "#B1C0EF", bg = "#3E68D7" })
-	-- 		hl(0, "IncSearch", { fg = "#ffffff", bg = "#FF007C" })
-	-- 		hl(0, "QuickFixLine", { fg = "NONE", bg = "NONE" })
-	-- 		hl(0, "QfLineNr", { fg = "#C4DE72", bg = "NONE" })
-	-- 		hl(0, "Visual", { fg = "NONE", bg = "#2c3333" })
-	-- 		hl(0, "CustomSpectreSearch", { fg = "#FF007C", bg = "NONE" })
-	-- 		hl(0, "CustomSpectreReplace", { fg = "#5ACB43", bg = "NONE" })
-	-- 	end,
-	-- },
 	{
 		"folke/tokyonight.nvim",
 		lazy = false,
@@ -114,31 +73,33 @@ require("lazy").setup({
 		end,
 	},
 	{
-		"hrsh7th/cmp-cmdline",
-		event = "CmdlineEnter",
-	},
-	{
-		"hrsh7th/cmp-buffer",
-		event = "CmdlineEnter",
-	},
-	{
-		"hrsh7th/cmp-path",
-		event = "InsertEnter",
-	},
-	{
-		"hrsh7th/cmp-nvim-lsp",
-		event = "InsertEnter",
-	},
-	{
-		"saadparwaiz1/cmp_luasnip",
-		event = "InsertEnter",
-	},
-	{
-		"lukas-reineke/cmp-rg",
-		event = "InsertEnter",
-	},
-	{
 		"hrsh7th/nvim-cmp",
+		dependencies = {
+			{
+				"hrsh7th/cmp-cmdline",
+				event = "CmdlineEnter",
+			},
+			{
+				"hrsh7th/cmp-buffer",
+				event = "CmdlineEnter",
+			},
+			{
+				"hrsh7th/cmp-path",
+				event = "InsertEnter",
+			},
+			{
+				"hrsh7th/cmp-nvim-lsp",
+				event = "InsertEnter",
+			},
+			{
+				"saadparwaiz1/cmp_luasnip",
+				event = "InsertEnter",
+			},
+			{
+				"lukas-reineke/cmp-rg",
+				event = "InsertEnter",
+			},
+		},
 		event = "InsertEnter",
 		config = function()
 			require("cmp").setup(require("plugins.cmp"))
@@ -147,7 +108,6 @@ require("lazy").setup({
 	{
 		"L3MON4D3/LuaSnip",
 		event = "InsertEnter",
-		commit = "07f217ff03be671e7ec0f2f226e2b80c587a3f6c", -- NOTE: change it when plugin works again
 		dependencies = { "rafamadriz/friendly-snippets" },
 		config = function()
 			local luasnip = require("luasnip")
@@ -321,70 +281,22 @@ require("lazy").setup({
 	{
 		"nacro90/numb.nvim",
 		event = "BufReadPost",
-		opts = {
-			-- show_numbers = true, -- Enable 'number' for the window while peeking
-			-- show_cursorline = true, -- Enable 'cursorline' for the window while peeking
-			-- hide_relativenumbers = true -- Enable turning off 'relativenumber' for the window while peeking
-			number_only = false, -- Peek only when the command is only a number instead of when it starts with a number
-			centered_peeking = true, -- Peeked line will be centered relative to window
-		},
+		opts = require("plugins.numb"),
 	},
 	{
 		"kevinhwang91/nvim-bqf",
 		event = "BufReadPost",
-		opts = {
-			preview = {
-				winblend = 0,
-			},
-		},
+		opts = require("plugins.bqf"),
 	},
 	{
 		"NvChad/nvim-colorizer.lua",
 		event = "BufReadPost",
-		opts = {
-			filetypes = {
-				-- "lua",
-				"typescript",
-				"javascript",
-				"typescriptreact",
-				"javascriptreact",
-				"css",
-				"scss",
-				"sass",
-				"text",
-			},
-			user_default_options = {
-				RGB = true, -- #RGB hex codes
-				RRGGBB = true, -- #RRGGBB hex codes
-				names = true, -- "Name" codes like Blue or blue
-				RRGGBBAA = false, -- #RRGGBBAA hex codes
-				AARRGGBB = false, -- 0xAARRGGBB hex codes
-				rgb_fn = false, -- CSS rgb() and rgba() functions
-				hsl_fn = false, -- CSS hsl() and hsla() functions
-				css = false, -- Enable all CSS features: rgb_fn, hsl_fn, names, RGB, RRGGBB
-				css_fn = false, -- Enable all CSS *functions*: rgb_fn, hsl_fn
-				-- Available modes for `mode`: foreground, background,  virtualtext
-				mode = "background", -- Set the display mode.
-				-- Available methods are false / true / "normal" / "lsp" / "both"
-				-- True is same as normal
-				tailwind = true, -- Enable tailwind colors
-				-- parsers can contain values used in |user_default_options|
-				sass = { enable = true, parsers = { "css" } }, -- Enable sass colors
-				virtualtext = "■",
-				-- update color values even if buffer is not focused
-				-- example use: cmp_menu, cmp_docs
-				always_update = false,
-			},
-			-- all the sub-options of filetypes apply to buftypes
-			buftypes = {},
-		},
+		opts = require("plugins.colorizer"),
 	},
 	{
 		"numToStr/Comment.nvim",
 		event = "BufReadPost",
-		opts = {
-			ignore = "^$",
-		},
+		opts = require("plugins.comment"),
 		config = function()
 			require("Comment").setup({
 				pre_hook = require("ts_context_commentstring.integrations.comment_nvim").create_pre_hook(),
@@ -479,39 +391,12 @@ require("lazy").setup({
 	{
 		"windwp/nvim-autopairs",
 		event = "InsertEnter",
-		opts = {
-			check_ts = true,
-			ts_config = {
-				lua = { "string", "source" },
-				javascript = { "string", "template_string" },
-			},
-			disable_filetype = { "TelescopePrompt", "spectre_panel", "vim" },
-			fast_wrap = {
-				map = "<M-e>",
-				chars = { "{", "[", "(", '"', "'" },
-				pattern = string.gsub([[ [%'%"%)%>%]%)%}%,] ]], "%s+", ""),
-				offset = 0, -- Offset from pattern match
-				end_key = "$",
-				keys = "qwertyuiopzxcvbnmasdfghjkl",
-				check_comma = true,
-				highlight = "PmenuSel",
-				highlight_grey = "LineNr",
-			},
-		},
-		-- config = function()
-		-- 	require("nvim-autopairs").setup(require("plugins.autopairs"))
-		-- local cmp_autopairs = require "nvim-autopairs.completion.cmp"
-		-- local cmp = require('cmp')
-		-- cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done {})
-		-- end,
+		opts = require("plugins.autopairs"),
 	},
 	{
 		"Wansmer/treesj",
 		dependencies = { "nvim-treesitter" },
-		opts = {
-			use_default_keymaps = false,
-			max_join_length = 999,
-		},
+		opts = require("plugins.treesj"),
 		keys = {
 			{ "<leader>j", mode = "n", "<cmd>TSJToggle<cr>", desc = "toggle node split", { silent = true } },
 		},
@@ -519,10 +404,10 @@ require("lazy").setup({
 	{
 		"andymass/vim-matchup",
 		event = "BufReadPost",
-		config = function()
-			-- vim.cmd([[highlight MatchParen guibg=#5C4E4E]])
-			-- vim.cmd([[highlight MatchParen gui=NONE]])
-		end,
+		-- config = function()
+		-- vim.cmd([[highlight MatchParen guibg=#5C4E4E]])
+		-- vim.cmd([[highlight MatchParen gui=NONE]])
+		-- end,
 	},
 	{
 		"jedrzejboczar/possession.nvim",
@@ -540,85 +425,11 @@ require("lazy").setup({
 			"nvim-lua/plenary.nvim",
 			"nvim-telescope/telescope.nvim",
 		},
-		opts = {
-			silent = false,
-			load_silent = true,
-			debug = false,
-			logfile = false,
-			prompt_no_cr = false,
-			autosave = {
-				current = true, -- or fun(name): boolean
-				tmp = false, -- or fun(): boolean
-				tmp_name = "tmp", -- or fun(): string
-				on_load = true,
-				on_quit = true,
-			},
-			commands = {
-				save = "PossessionSave",
-				load = "PossessionLoad",
-				rename = "PossessionRename",
-				close = "PossessionClose",
-				delete = "PossessionDelete",
-				show = "PossessionShow",
-				list = "PossessionList",
-				migrate = "PossessionMigrate",
-			},
-			hooks = {
-				before_save = function(name)
-					return {}
-				end,
-				after_save = function(name, user_data, aborted) end,
-				before_load = function(name, user_data)
-					return user_data
-				end,
-				after_load = function(name, user_data) end,
-			},
-			plugins = {
-				close_windows = {
-					hooks = { "before_save", "before_load" },
-					preserve_layout = true, -- or fun(win): boolean
-					match = {
-						floating = true,
-						buftype = {},
-						filetype = {},
-						custom = false, -- or fun(win): boolean
-					},
-				},
-				-- delete_hidden_buffers = {
-				-- 	hooks = {
-				-- 		"before_load",
-				-- 		vim.o.sessionoptions:match("buffer") and "before_save",
-				-- 	},
-				-- 	force = false, -- or fun(buf): boolean
-				-- },
-				nvim_tree = true,
-				tabby = true,
-				dap = true,
-				delete_buffers = true,
-				delete_hidden_buffers = false,
-			},
-			telescope = {
-				list = {
-					default_action = "load",
-					mappings = {
-						save = { n = "<c-s>", i = "<c-s>" },
-						load = { n = "<CR>", i = "<CR>" },
-						delete = { n = "<c-x>", i = "<c-x>" },
-						rename = { n = "<c-r>", i = "<c-r>" },
-					},
-				},
-			},
-		},
+		opts = require("plugins.session"),
 	},
 	{
 		"debugloop/telescope-undo.nvim",
-		opts = {
-			extensions = {
-				import = {
-					insert_at_top = true,
-				},
-			},
-		},
+		opts = require("plugins.telescope-undo"),
 		dependencies = {
 			{
 				"nvim-telescope/telescope.nvim",
@@ -645,6 +456,7 @@ require("lazy").setup({
 		keys = {
 			{ "<leader>td", mode = "n", ":TodoQuickFix<CR>", desc = "open todos", { noremap = true } },
 		},
+		opts = require("plugins.todo-comments"),
 	},
 	{
 		"rbong/vim-flog",
@@ -686,49 +498,7 @@ require("lazy").setup({
 			"djangohtml",
 			"htmldjango",
 		},
-		opts = {
-			filetypes = {
-				"html",
-				"javascript",
-				"typescript",
-				"javascriptreact",
-				"typescriptreact",
-				"svelte",
-				"vue",
-				"tsx",
-				"jsx",
-				"rescript",
-				"xml",
-				"php",
-				"markdown",
-				"astro",
-				"glimmer",
-				"handlebars",
-				"hbs",
-				"djangohtml",
-				"htmldjango",
-			},
-			skip_tags = {
-				"area",
-				"base",
-				"br",
-				"col",
-				"command",
-				"embed",
-				"hr",
-				"img",
-				"slot",
-				"input",
-				"keygen",
-				"link",
-				"meta",
-				"param",
-				"source",
-				"track",
-				"wbr",
-				"menuitem",
-			},
-		},
+		opts = require("plugins.nvim-ts-autotag"),
 	},
 	-- {
 	-- 	"https://git.sr.ht/~whynothugo/lsp_lines.nvim",
@@ -756,18 +526,6 @@ require("lazy").setup({
 	-- 		require("bufferline").setup(require("plugins.bufferline"))
 	-- 	end,
 	-- },
-	{
-		"smjonas/inc-rename.nvim",
-		event = "InsertEnter",
-		opts = {
-			cmd_name = "IncRename", -- the name of the command
-			hl_group = "Substitute", -- the highlight group used for highlighting the identifier's new name
-			preview_empty_name = false, -- whether an empty new name should be previewed; if false the command preview will be cancelled instead
-			show_message = true, -- whether to display a `Renamed m instances in n files` message after a rename operation
-			input_buffer_type = nil, -- the type of the external input buffer to use (the only supported value is currently "dressing")
-			post_hook = nil, -- callback to run after renaming, receives the result table (from LSP handler) as an argument
-		},
-	},
 	{
 		"folke/flash.nvim",
 		event = "BufReadPost",
@@ -868,96 +626,11 @@ require("lazy").setup({
 			"kyazdani42/nvim-web-devicons",
 		},
 		opts = {},
-		keys = {
-			{
-				"<leader>kl",
-				mode = "n",
-				":lua require('barbecue.ui').navigate(-)<left>",
-				desc = "go up context",
-				{ silent = true },
-			},
-		},
 	},
 	{
 		"glepnir/dashboard-nvim",
 		event = "VimEnter",
-		opts = {
-			theme = "hyper", --  theme is doom and hyper default is hyper
-			-- disable_move = false    --  default is false disable move keymap for hyper
-			-- shortcut_type = 'letter'   --  shorcut type 'letter' or 'number'
-			-- change_to_vcs_root =  -- default is false,for open file in hyper mru. it will change to the root of vcs
-			config = {
-				-- header -- type is table def
-				-- week_header = {
-				--   enable  --boolean use a week header
-				--   concat  --concat string after time string line
-				--   append  --table append after time string line
-				-- },
-				-- disable_move  -- boolean default is false disable move key
-
-				-- week_header = {
-				--   enable = true,
-				-- },
-				header = {
-					"",
-					" ⣿⣿⣷⡁⢆⠈⠕⢕⢂⢕⢂⢕⢂⢔⢂⢕⢄⠂⣂⠂⠆⢂⢕⢂⢕⢂⢕⢂⢕⢂ ",
-					" ⣿⣿⣿⡷⠊⡢⡹⣦⡑⢂⢕⢂⢕⢂⢕⢂⠕⠔⠌⠝⠛⠶⠶⢶⣦⣄⢂⢕⢂⢕ ",
-					" ⣿⣿⠏⣠⣾⣦⡐⢌⢿⣷⣦⣅⡑⠕⠡⠐⢿⠿⣛⠟⠛⠛⠛⠛⠡⢷⡈⢂⢕⢂ ",
-					" ⠟⣡⣾⣿⣿⣿⣿⣦⣑⠝⢿⣿⣿⣿⣿⣿⡵⢁⣤⣶⣶⣿⢿⢿⢿⡟⢻⣤⢑⢂ ",
-					" ⣾⣿⣿⡿⢟⣛⣻⣿⣿⣿⣦⣬⣙⣻⣿⣿⣷⣿⣿⢟⢝⢕⢕⢕⢕⢽⣿⣿⣷⣔ ",
-					" ⣿⣿⠵⠚⠉⢀⣀⣀⣈⣿⣿⣿⣿⣿⣿⣿⣿⣿⣗⢕⢕⢕⢕⢕⢕⣽⣿⣿⣿⣿ ",
-					" ⢷⣂⣠⣴⣾⡿⡿⡻⡻⣿⣿⣴⣿⣿⣿⣿⣿⣿⣷⣵⣵⣵⣷⣿⣿⣿⣿⣿⣿⡿ ",
-					" ⢌⠻⣿⡿⡫⡪⡪⡪⡪⣺⣿⣿⣿⣿⣿⠿⠿⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠃ ",
-					" ⠣⡁⠹⡪⡪⡪⡪⣪⣾⣿⣿⣿⣿⠋⠐⢉⢍⢄⢌⠻⣿⣿⣿⣿⣿⣿⣿⣿⠏⠈ ",
-					" ⡣⡘⢄⠙⣾⣾⣾⣿⣿⣿⣿⣿⣿⡀⢐⢕⢕⢕⢕⢕⡘⣿⣿⣿⣿⣿⣿⠏⠠⠈ ",
-					" ⠌⢊⢂⢣⠹⣿⣿⣿⣿⣿⣿⣿⣿⣧⢐⢕⢕⢕⢕⢕⢅⣿⣿⣿⣿⡿⢋⢜⠠⠈ ",
-					" ⠄⠁⠕⢝⡢⠈⠻⣿⣿⣿⣿⣿⣿⣿⣷⣕⣑⣑⣑⣵⣿⣿⣿⡿⢋⢔⢕⣿⠠⠈ ",
-					" ⠨⡂⡀⢑⢕⡅⠂⠄⠉⠛⠻⠿⢿⣿⣿⣿⣿⣿⣿⣿⣿⡿⢋⢔⢕⢕⣿⣿⠠⠈ ",
-					" ⠄⠪⣂⠁⢕⠆⠄⠂⠄⠁⡀⠂⡀⠄⢈⠉⢍⢛⢛⢛⢋⢔⢕⢕⢕⣽⣿⣿⠠⠈ ",
-					"",
-				},
-				shortcut = {
-					{ desc = "󰊳 Update", group = "@property", action = "Lazy update", key = "u" },
-					{
-						icon = " ",
-						icon_hl = "@variable",
-						desc = "Files",
-						group = "Label",
-						action = "FzfLua files",
-						key = "f",
-					},
-					-- {
-					--   desc = ' Apps',
-					--   group = 'DiagnosticHint',
-					--   action = 'Telescope app',
-					--   key = 'a',
-					-- },
-					{
-						desc = " sessions",
-						group = "Number",
-						action = "Telescope possession list",
-						key = "s",
-					},
-					{
-						desc = "󰳭 bye bye",
-						group = "DevIconScheme",
-						action = "exit",
-						key = "q",
-					},
-				},
-			}, --  config used for theme
-			-- hide = {
-			--   statusline = true,    -- hide statusline default is true
-			--   tabline = true,       -- hide the tabline
-			--   winbar = true,        -- hide winbar
-			-- },
-			-- preview = {
-			-- command       -- preview command
-			-- file_path     -- preview file path
-			-- file_height   -- preview file height
-			-- file_width    -- preview file width
-			-- },
-		},
+		opts = require("plugins.dashboard"),
 		dependencies = { { "kyazdani42/nvim-web-devicons" } },
 	},
 	{
@@ -970,50 +643,7 @@ require("lazy").setup({
 		keys = {
 			{ "<leader>dd", ":DevdocsOpenFloat ", desc = "open devdocs" },
 		},
-		opts = {
-			-- dir_path = vim.fn.stdpath("data") .. "/devdocs", -- installation directory
-			telescope = {}, -- passed to the telescope picker
-			telescope_alt = { -- when searching globally without preview
-				layout_config = {
-					width = 75,
-				},
-			},
-			float_win = { -- passed to nvim_open_win(), see :h api-floatwin
-				relative = "editor",
-				height = 25,
-				width = 100,
-				border = "rounded",
-			},
-			wrap = true, -- text wrap, only applies to floating window
-			--  install them: html, javascript, npm, react, express, react-router, css, typescript, python, django, tailwindcss, dom
-			-- previewer_cmd = "glow",
-			cmd_args = { "-s", "dark", "-w", "80" },
-			cmd_ignore = {}, -- ignore cmd rendering for the listed docs
-			picker_cmd = false, -- use cmd previewer in picker preview
-			picker_cmd_args = {}, -- example using glow: { "-s", "dark", "-w", "50" }
-			mappings = { -- keymaps for the doc buffer
-				open_in_browser = "",
-			},
-			ensure_installed = {}, -- get automatically installed
-			after_open = function(bufnr)
-				vim.api.nvim_buf_set_keymap(bufnr, "n", "qq", ":close<CR>", {})
-			end, -- callback that runs after the Devdocs window is opened. Devdocs buffer ID will be passed in
-		},
-	},
-	{
-		"ellisonleao/glow.nvim",
-		opts = {
-			-- glow_path = "", -- will be filled automatically with your glow bin in $PATH, if any
-			-- install_path = "~/.local/bin", -- default path for installing glow binary
-			border = "solid", -- floating window border: | 'shadow' | 'none' | 'double' | 'rounded' | 'solid' | 'single' | 'rounded'
-			-- style = "dark|light", -- filled automatically with your current editor background, you can override using glow json style
-			pager = false,
-			width = 100,
-			height = 100,
-			width_ratio = 0.7, -- maximum width of the Glow window compared to the nvim window size (overrides `width`)
-			height_ratio = 0.7,
-		},
-		cmd = "Glow",
+		opts = require("plugins.devdocs"),
 	},
 	{
 		"kevinhwang91/nvim-fundo",
@@ -1025,42 +655,14 @@ require("lazy").setup({
 		build = function()
 			require("fundo").install()
 		end,
-		opts = {
-			-- archives_dir = vim.fn.stdpath("cache") .. path.separator .. "fundo", -- default
-			limit_archives_size = 64, --defualt was 512
-			-- fdssfsd
-		},
+		opts = require("plugins.fundo"),
 	},
 	{
 		"piersolenski/wtf.nvim",
 		dependencies = {
 			"MunifTanjim/nui.nvim",
 		},
-		-- init = function ()
-		--   vim.g["wtf_hooks"] = {
-		--     request_started = function()
-		--       vim.cmd("hi StatusLine ctermbg=NONE ctermfg=yellow")
-		--     end,
-		--     request_finished = vim.schedule_wrap(function()
-		--       vim.cmd("hi StatusLine ctermbg=NONE ctermfg=NONE")
-		--     end)
-		--   }
-		-- end, -- for gpt, the future
-		-- also look for lualine hook in the docs, when you will setup chatgpt
-		opts = {
-			-- Default AI popup type
-			popup_type = "popup", -- "popup" | "horizontal" | "vertical",
-			-- An alternative way to set your OpenAI api key
-			-- openai_api_key = "sk-xxxxxxxxxxxxxx",
-			-- ChatGPT Model
-			-- openai_model_id = "gpt-3.5-turbo",
-			-- Set your preferred language for the response
-			language = "english",
-			-- Any additional instructions
-			-- additional_instructions = "Start the reply with 'OH HAI THERE'",
-			-- Default search engine, can be overridden by passing an option to WtfSeatch
-			-- search_engine = "google" | "duck_duck_go" | "stack_overflow" | "github",
-		},
+		opts = {},
 		keys = {
 			{ "<leader>wt", ":WtfSearch ", desc = "open wtf search" },
 		},
@@ -1079,10 +681,7 @@ require("lazy").setup({
 	{
 		"mrjones2014/smart-splits.nvim",
 		build = "./kitty/install-kittens.bash",
-		opts = {
-			cursor_follows_swapped_bufs = true,
-			-- at_edge = 'stop',
-		},
+		opts = require("plugins.smart-splits"),
 		keys = {
 			-- move between buffers
 			-- commented because i dont need the cycle option, so it has a delay anyway, so its slower than neovim builtin
@@ -1183,95 +782,12 @@ require("lazy").setup({
 		config = function()
 			require("leetcode").setup()
 		end,
-		opts = {
-			-- ---@type string
-			-- arg = "leetcode.nvim",
-
-			---@type lc.lang
-			lang = "typescript",
-
-			-- cn = { -- leetcode.cn
-			-- 	enabled = false, ---@type boolean
-			-- 	translator = true, ---@type boolean
-			-- 	translate_problems = true, ---@type boolean
-			-- },
-
-			-- ---@type lc.storage
-			-- storage = {
-			-- 	home = vim.fn.stdpath("data") .. "/leetcode",
-			-- 	cache = vim.fn.stdpath("cache") .. "/leetcode",
-			-- },
-
-			-- ---@type boolean
-			-- logging = true,
-			--
-			-- injector = {}, ---@type table<lc.lang, lc.inject>
-			--
-			-- cache = {
-			-- 	update_interval = 60 * 60 * 24 * 7, ---@type integer 7 days
-			-- },
-
-			-- console = {
-			-- 	open_on_runcode = true, ---@type boolean
-			--
-			-- 	dir = "row", ---@type lc.direction
-			--
-			-- 	size = { ---@type lc.size
-			-- 		width = "90%",
-			-- 		height = "75%",
-			-- 	},
-			--
-			-- 	result = {
-			-- 		size = "60%", ---@type lc.size
-			-- 	},
-			--
-			-- 	testcase = {
-			-- 		virt_text = true, ---@type boolean
-			--
-			-- 		size = "40%", ---@type lc.size
-			-- 	},
-			-- },
-			-- description = {
-			-- 	position = "left", ---@type lc.position
-			--
-			-- 	width = "40%", ---@type lc.size
-			--
-			-- 	show_stats = true, ---@type boolean
-			-- },
-
-			-- hooks = {
-			-- 	---@type fun()[]
-			-- 	LeetEnter = {},
-			--
-			-- 	---@type fun(question: lc.ui.Question)[]
-			-- 	LeetQuestionNew = {},
-			-- },
-
-			-- keys = {
-			-- 	toggle = { "q", "<Esc>" }, ---@type string|string[]
-			-- 	confirm = { "<CR>" }, ---@type string|string[]
-			--
-			-- 	reset_testcases = "r", ---@type string
-			-- 	use_testcase = "U", ---@type string
-			-- 	focus_testcases = "H", ---@type string
-			-- 	focus_result = "L", ---@type string
-			-- },
-
-			-- ---@type boolean
-			-- image_support = false,
-		},
+		opts = require("plugins.leetcode"),
 	},
 	{
 		"folke/trouble.nvim",
 		dependencies = { "kyazdani42/nvim-web-devicons" },
-		opts = {
-			cycle_results = false,
-			action_keys = {
-				jump = { "<cr>" },
-				open_tab = { "t" },
-				toggle_fold = { "zz" },
-			},
-		},
+		opts = require("plugins.trouble"),
 		keys = {
 			{ "<leader>lq", ":Trouble document_diagnostics<CR>", desc = "open document diagnostics" },
 		},
@@ -1291,14 +807,7 @@ require("lazy").setup({
 		"vuki656/package-info.nvim",
 		ft = "json",
 		dependencies = "MunifTanjim/nui.nvim",
-		opts = {
-			hide_up_to_date = true,
-			icons = {
-				style = {
-					outdated = "| 󰎔 ",
-				},
-			},
-		},
+		opts = require("plugins.package-info"),
 		keys = {
 			-- { "<leader>nps", require("package-info").show },
 			-- { "<leader>nph", require("package-info").hide },
@@ -1343,20 +852,14 @@ require("lazy").setup({
 		"nvim-zh/colorful-winsep.nvim",
 		config = true,
 		event = { "WinNew" },
+		opts = require("plugins.colorful-winsep"),
 	},
 	{
 		"gbprod/yanky.nvim",
 		dependencies = {
 			{ "kkharji/sqlite.lua" },
 		},
-		opts = {
-			ring = { storage = "sqlite" },
-			highlight = {
-				on_put = false,
-				on_yank = false,
-				-- timer = 500,
-			},
-		},
+		opts = require("plugins.yanky"),
 		keys = {
 			{ "y", "<Plug>(YankyYank)", mode = { "n", "x" }, desc = "Yank text" },
 			-- { "p", mode = "x", '"_d<Plug>(YankyPutAfter)', { silent = true } },
@@ -1385,9 +888,7 @@ require("lazy").setup({
 		init = function()
 			vim.g.skip_ts_context_commentstring_module = true
 		end,
-		opts = {
-			enable_autocmd = false,
-		},
+		opts = require("plugins.nvim-ts-context-commentstring"),
 	},
 	-- {
 	-- 	"Exafunction/codeium.nvim",
@@ -1439,34 +940,13 @@ require("lazy").setup({
 		"kylechui/nvim-surround",
 		tag = "*",
 		event = "BufReadPost",
-		opts = {
-			move_cursor = false,
-		},
+		opts = require("plugins.nvim-surround"),
 	},
 	{
 		"abecodes/tabout.nvim",
 		event = "InsertEnter",
 		config = function()
-			require("tabout").setup({
-				tabkey = "<Tab>", -- key to trigger tabout, set to an empty string to disable
-				backwards_tabkey = "<S-Tab>", -- key to trigger backwards tabout, set to an empty string to disable
-				act_as_tab = true, -- shift content if tab out is not possible
-				act_as_shift_tab = false, -- reverse shift content if tab out is not possible (if your keyboard/terminal supports <S-Tab>)
-				default_tab = "<C-t>", -- shift default action (only at the beginning of a line, otherwise <TAB> is used)
-				default_shift_tab = "<C-d>", -- reverse shift default action,
-				enable_backwards = true, -- well ...
-				completion = true, -- if the tabkey is used in a completion pum
-				tabouts = {
-					{ open = "'", close = "'" },
-					{ open = '"', close = '"' },
-					{ open = "`", close = "`" },
-					{ open = "(", close = ")" },
-					{ open = "[", close = "]" },
-					{ open = "{", close = "}" },
-				},
-				ignore_beginning = true, --[[ if the cursor is at the beginning of a filled element it will rather tab out than shift the content ]]
-				exclude = {}, -- tabout will ignore these filetypes
-			})
+			require("tabout").setup()
 		end,
 		wants = { "nvim-treesitter" }, -- or require if not used so far
 		after = { "nvim-cmp" }, -- if a completion plugin is using tabs load it before
@@ -1489,32 +969,7 @@ require("lazy").setup({
 	{
 		"nvim-pack/nvim-spectre",
 		dependencies = { "nvim-lua/plenary.nvim" },
-		config = function()
-			require("spectre").setup({
-				mapping = {
-					["open_in_vsplit"] = {
-						map = "<c-v>",
-						cmd = "<cmd>lua vim.cmd('vsplit ' .. require('spectre.actions').get_current_entry().filename)<CR>",
-						desc = "open in vertical split",
-					},
-					["open_in_split"] = {
-						map = "<c-s>",
-						cmd = "<cmd>lua vim.cmd('split ' .. require('spectre.actions').get_current_entry().filename)<CR>",
-						desc = "open in horizontal split",
-					},
-					["open_in_tab"] = {
-						map = "<c-t>",
-						cmd = "<cmd>lua vim.cmd('tab split ' .. require('spectre.actions').get_current_entry().filename)<CR>",
-						desc = "open in new tab",
-					},
-				},
-				highlight = {
-					ui = "String",
-					search = "CustomSpectreSearch",
-					replace = "CustomSpectreReplace",
-				},
-			})
-		end,
+		opts = require("plugins.spectre"),
 		keys = {
 			{ "<leader>S", '<cmd>lua require("spectre").toggle()<CR>', mode = "n", desc = "Toggle Spectre" },
 			{
@@ -1544,37 +999,7 @@ require("lazy").setup({
 		keys = {
 			{ "<leader>df", ":FocusToggle<CR>", mode = "n", desc = "disable focus.nvim" },
 		},
-		opts = {
-			enable = true, -- Enable module
-			commands = true, -- Create Focus commands
-			autoresize = {
-				enable = true, -- Enable or disable auto-resizing of splits
-				width = 0, -- Force width for the focused window
-				height = 0, -- Force height for the focused window
-				minwidth = 0, -- Force minimum width for the unfocused window
-				minheight = 0, -- Force minimum height for the unfocused window
-				height_quickfix = 10, -- Set the height of quickfix panel
-			},
-			split = {
-				bufnew = false, -- Create blank buffer for new split windows
-				tmux = false, -- Create tmux splits instead of neovim splits
-			},
-			ui = {
-				number = false, -- Display line numbers in the focussed window only
-				relativenumber = false, -- Display relative line numbers in the focussed window only
-				hybridnumber = false, -- Display hybrid line numbers in the focussed window only
-				absolutenumber_unfocussed = false, -- Preserve absolute numbers in the unfocussed windows
-
-				cursorline = false, -- Display a cursorline in the focussed window only
-				cursorcolumn = false, -- Display cursorcolumn in the focussed window only
-				colorcolumn = {
-					enable = false, -- Display colorcolumn in the foccused window only
-					list = "+1", -- Set the comma-saperated list for the colorcolumn
-				},
-				signcolumn = true, -- Display signcolumn in the focussed window only
-				winhighlight = false, -- Auto highlighting for focussed/unfocussed windows
-			},
-		},
+		opts = {},
 	},
 	{
 		"b0o/schemastore.nvim",
@@ -1598,6 +1023,19 @@ require("lazy").setup({
 		},
 		config = function()
 			require("sg").setup()
+		end,
+	},
+	{
+		"rest-nvim/rest.nvim",
+		ft = { "http" },
+		dependencies = {
+			"nvim-lua/plenary.nvim",
+		},
+		opts = require("plugins.rest-nvim"),
+		init = function()
+			vim.api.nvim_create_user_command("RestRun", "lua require('rest-nvim').run()<CR>", { nargs = 0 })
+			vim.api.nvim_create_user_command("RestLast", "lua require('rest-nvim').last()<CR>", { nargs = 0 })
+			vim.api.nvim_create_user_command("RestPreview", "lua require('rest-nvim').run(true)<CR>", { nargs = 0 })
 		end,
 	},
 })

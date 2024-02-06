@@ -53,7 +53,7 @@ return {
 		tabby = true,
 		dap = true,
 		delete_buffers = true,
-        delete_hidden_buffers = false,
+		delete_hidden_buffers = false,
 	},
 	telescope = {
 		list = {
