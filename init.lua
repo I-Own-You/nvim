@@ -83,6 +83,8 @@ require("lazy").setup({
 			local hl = vim.api.nvim_set_hl
 			hl(0, "CustomSpectreSearch", { fg = "#FF007C", bg = "NONE" })
 			hl(0, "CustomSpectreReplace", { fg = "#5ACB43", bg = "NONE" })
+			hl(0, "TelescopeBorder", { fg = "#16161E", bg = "#16161E" })
+			-- hl(0, "TelescopeNormal", { fg = "#5ACB43", bg = "NONE" })
 		end,
 	},
 	{
@@ -752,9 +754,45 @@ require("lazy").setup({
 			{ "r", mode = "o", "<cmd>lua require('flash').remote()<CR>", { noremap = true } },
 		},
 	},
-
 	{
 		"sindrets/diffview.nvim",
+		config = function()
+			local actions = require("diffview.actions")
+			require("diffview").setup({
+				keymaps = {
+					view = {
+						{ "n", "<A-n>", "]c", { desc = "Next hunk / entry" } },
+						{ "n", "<A-p>", "[c", { desc = "Prev hunk / entry" } },
+					},
+					file_history_panel = {
+						{
+							"n",
+							"<cr>",
+							actions.focus_entry,
+							{ desc = "Open and focus the diff for the selected entry." },
+						},
+						{
+							"n",
+							"o",
+							actions.focus_entry,
+							{ desc = "Open and focus the diff for the selected entry." },
+						},
+						{
+							"n",
+							"l",
+							actions.focus_entry,
+							{ desc = "Open and focus the diff for the selected entry." },
+						},
+						{
+							"n",
+							"<2-LeftMouse>",
+							actions.focus_entry,
+							{ desc = "Open and focus the diff for the selected entry." },
+						},
+					},
+				},
+			})
+		end,
 		keys = {
 			-- { "<leader>mt", mode = "n", ":DiffviewOpen<CR>", desc = "open diff view" },
 			-- { "<leader>mf", mode = "n", ":DiffviewFileHistory<CR>", desc = "open diff view for single file" },
@@ -1080,6 +1118,7 @@ require("lazy").setup({
 			{ "<A-h>", ":MoveHBlock(-1)<CR>", mode = "v" },
 			{ "<A-l>", ":MoveHBlock(1)<CR>", mode = "v" },
 		},
+		opts = {},
 	},
 	{
 		"kevinhwang91/nvim-hlslens",

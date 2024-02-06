@@ -53,7 +53,7 @@ return {
 			border = "border", -- border|noborder, applies only to
 			-- native fzf previewers (bat/cat/git/etc)
 			wrap = "nowrap", -- wrap|nowrap
-			hidden = "hidden", -- hidden|nohidden
+			hidden = "nohidden", -- hidden|nohidden
 			vertical = "down:45%", -- up|down:size
 			horizontal = "right:60%", -- right|left:size
 			layout = "flex", -- horizontal|vertical|flex
@@ -160,7 +160,7 @@ return {
 		["--ansi"] = "",
 		["--info"] = "inline",
 		["--height"] = "100%",
-		["--layout"] = false,
+		["--layout"] = "reverse",
 		["--border"] = "none",
 	},
 	-- Only used when fzf_bin = "fzf-tmux", by default opens as a
