@@ -1499,7 +1499,7 @@ require("lazy").setup({
 	},
 	{
 		"nvim-focus/focus.nvim",
-		event = "WinEnter",
+		event = "BufReadPost",
 		version = "*",
 		opts = {
 			enable = true, -- Enable module
