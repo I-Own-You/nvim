@@ -11,6 +11,7 @@ return {
 		"typescript",
 		"lua",
 		"json",
+		"jsonc",
 		"html",
 		"htmldjango",
 		"css",
