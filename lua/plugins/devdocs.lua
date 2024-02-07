@@ -23,6 +23,7 @@ return {
 		open_in_browser = "",
 	},
 	ensure_installed = {}, -- get automatically installed
+	-- {"javascript", "typescript", "html", "react", "express", "go", "htmx", "dom", "lua", "python"}
 	after_open = function(bufnr)
 		vim.api.nvim_buf_set_keymap(bufnr, "n", "qq", ":close<CR>", {})
 	end, -- callback that runs after the Devdocs window is opened. Devdocs buffer ID will be passed in
