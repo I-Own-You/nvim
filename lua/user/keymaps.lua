@@ -69,6 +69,7 @@ keymap("i", "<C-j>", "<Down>", { silent = true, desc = "" })
 keymap("i", "<C-k>", "<Up>", { silent = true, desc = "" })
 keymap("i", "<C-l>", "<Right>", { silent = true, desc = "" })
 keymap("i", "<C-BACKSPACE>", "<ESC>vbdi", { silent = true, desc = "" })
+keymap("i", "<S-ENTER>", "<C-o>o", { silent = true, desc = "" })
 
 keymap("n", "<leader>nh", ":nohlsearch<CR>", { silent = true, desc = "toggle search results" })
 keymap("n", "<leader>bo", ":only<CR>", { silent = true, desc = "clear buffer windows" })
