@@ -792,17 +792,6 @@ require("lazy").setup({
 			{ "<leader>lq", ":Trouble document_diagnostics<CR>", desc = "open document diagnostics" },
 		},
 	},
-	-- {
-	-- 	"ms-jpq/coq_nvim",
-	-- 	branch = "coq",
-	-- 	event = "BufReadPost",
-	-- }, -- main one
-	-- {
-	-- 	"ms-jpq/coq.artifacts",
-	-- 	branch = "artifacts",
-	-- 	event = "BufReadPost",
-	-- }, -- 9000+ Snippets
-	-- { 'ms-jpq/coq.thirdparty', branch= '3p' } -- lua & third party sources, See https://github.com/ms-jpq/coq.thirdparty
 	{
 		"vuki656/package-info.nvim",
 		ft = "json",
