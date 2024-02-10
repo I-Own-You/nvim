@@ -27,6 +27,7 @@ return {
 		"prisma",
 		"markdown",
 		"markdown_inline",
+    "sql",
 	},
 	ignore_install = { "" }, -- List of parsers to ignore installing
 	highlight = {
