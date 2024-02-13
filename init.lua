@@ -1027,6 +1027,49 @@ require("lazy").setup({
 			vim.api.nvim_create_user_command("RestPreview", "lua require('rest-nvim').run(true)<CR>", { nargs = 0 })
 		end,
 	},
+	{
+		-- you can install support for styled components
+		-- from github plugin settings of this plugin
+		"pmizio/typescript-tools.nvim",
+		ft = { "javascript", "typescript", "typescriptreact", "javascriptreact" },
+		dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
+		opts = {},
+		config = function()
+			require("typescript-tools").setup(require("plugins.ts-tools"))
+		end,
+		keys = {
+			{
+				"<leader>lfr",
+				":TSToolsFileReferences<CR>",
+				mode = "n",
+				{ silent = true, desc = "TS file references" },
+			},
+			{
+				"<leader>lir",
+				":TSToolsRemoveUnusedImports<CR>",
+				mode = "n",
+				{ silent = true, desc = "TS remove unused imports" },
+			},
+			{
+				"<leader>lia",
+				":TSToolsAddMissingImports<CR>",
+				mode = "n",
+				{ silent = true, desc = "TS add missing imports" },
+			},
+			{
+				"<leader>lis",
+				":TSToolsSortImports<CR>",
+				mode = "n",
+				{ silent = true, desc = "TS sort imports" },
+			},
+			{
+				"<leader>lio",
+				":TSToolsOrganizeImports<CR>",
+				mode = "n",
+				{ silent = true, desc = "TS organize imports" },
+			},
+		},
+	},
 })
 
 -- vim.cmd('highlight Search guifg=#F24211  guibg=#000000')
