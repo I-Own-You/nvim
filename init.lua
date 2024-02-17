@@ -1091,6 +1091,6 @@ vim.api.nvim_exec("autocmd Filetype rnvimr tnoremap <buffer><nowait> <Space> <Sp
 vim.cmd([[
 augroup AutoCloseHelpers
   autocmd!
-  autocmd FileType markdown,help,qf,vim,spectre_panel nnoremap <buffer> qq :q<CR>
+  autocmd FileType markdown,help,qf,vim,spectre_panel nnoremap <buffer> q :q<CR>
 augroup END
 ]])
