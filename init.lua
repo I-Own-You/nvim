@@ -266,7 +266,7 @@ require("lazy").setup({
 			vim.g.rnvimr_border_attr = { fg = 14, bg = -1 } -- Change the border's color"
 			vim.g.rnvimr_enable_bw = 1 -- Make Neovim wipe the buffers corresponding to the files deleted by Ranger"
 			vim.g.rnvimr_shadow_winblend = 70 -- Add a shadow window, value is equal to 100 will disable shadow"
-			vim.g.rnvimr_ranger_cmd = { "ranger", "--cmd=set draw_borders true" } -- Draw border with both"
+			vim.g.rnvimr_ranger_cmd = { "ranger", "--cmd=set draw_borders false" } -- Draw border with both"
 
 			vim.g.rnvimr_layout = {
 				relative = "editor",
@@ -278,6 +278,18 @@ require("lazy").setup({
 			}
 		end,
 	},
+	-- { -- in case rnvimr no longer works, use this instead
+	-- 	"kelly-lin/ranger.nvim",
+	-- 	config = function()
+	-- 		require("ranger-nvim").setup({ replace_netrw = true })
+	-- 		vim.api.nvim_set_keymap("n", "<leader>ef", "", {
+	-- 			noremap = true,
+	-- 			callback = function()
+	-- 				require("ranger-nvim").open(true)
+	-- 			end,
+	-- 		})
+	-- 	end,
+	-- },
 	{
 		"nacro90/numb.nvim",
 		event = "BufReadPost",
