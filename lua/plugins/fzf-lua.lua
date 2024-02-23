@@ -232,10 +232,10 @@ return {
 			-- will do nothing if `viu` isn't executable
 			extensions = {
 				-- neovim terminal only supports `viu` block output
-				["png"] = { "chafa" },
-				["jpg"] = { "chafa" },
-				["svg"] = { "chafa" },
-				["jpeg"] = { "chafa" },
+				["png"] = { "viu" },
+				["jpg"] = { "viu" },
+				["svg"] = { "viu" },
+				["jpeg"] = { "viu" },
 				-- ["png"] = { "ueberzug" },
 				-- ["jpg"] = { "ueberzug" },
 				-- ["svg"] = { "ueberzug" },
