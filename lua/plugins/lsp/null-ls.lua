@@ -3,6 +3,16 @@ if not null_ls_status_ok then
 	return
 end
 
+-- beautysh
+-- shellcheck
+-- autoflake
+-- biome
+-- black
+-- isort
+-- prettier
+-- prettierd
+-- stylua
+
 -- https://github.com/jose-elias-alvarez/null-ls.nvim/tree/main/lua/null-ls/builtins/formatting
 local formatting = null_ls.builtins.formatting
 -- https://github.com/jose-elias-alvarez/null-ls.nvim/tree/main/lua/null-ls/builtins/diagnostics
@@ -13,12 +23,14 @@ null_ls.setup({
 	sources = {
 		--formatting.prettier.with({ extra_args = { "--no-semi", "--single-quote", "--jsx-single-quote" } }),
 		-- formatting.ruff,
-    formatting.prettierd,
+		formatting.prettierd,
 		formatting.black.with({ extra_args = { "--line-length", "200", "--skip-string-normalization", "--fast" } }),
 		diagnostics.ruff.with({ extra_args = { "--ignore=E501" } }),
 		formatting.stylua,
 		formatting.isort,
 		formatting.autoflake.with({ extra_args = { "--remove-all-unused-imports" } }),
+		formatting.beautysh,
+		diagnostics.shellcheck,
 		-- formatting.rustywind.with({
 		-- 	filetypes = {
 		-- 		"javascript",

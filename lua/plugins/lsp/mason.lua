@@ -12,6 +12,7 @@ local servers = {
 	-- "yamlls",
 	"ruff_lsp",
 	"gopls",
+  "bashls",
 	-- "tsserver",
 	-- "eslint",
 	"biome",
