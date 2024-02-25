@@ -28,6 +28,7 @@ return {
 		"markdown",
 		"markdown_inline",
     "sql",
+    "bash",
 	},
 	ignore_install = { "" }, -- List of parsers to ignore installing
 	highlight = {
