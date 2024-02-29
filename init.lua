@@ -43,6 +43,7 @@ require("lazy").setup({
 			hl(0, "CustomSpectreSearch", { fg = "#FF007C", bg = "NONE" })
 			hl(0, "CustomSpectreReplace", { fg = "#5ACB43", bg = "NONE" })
 			hl(0, "TelescopeBorder", { fg = "#16161E", bg = "#16161E" })
+			hl(0, "FzfLuaLiveSym", { fg = "#2AC3DE", bg = "NONE" })
 			-- hl(0, "TelescopeNormal", { fg = "#5ACB43", bg = "NONE" })
 		end,
 	},

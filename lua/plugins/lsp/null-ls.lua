@@ -3,9 +3,8 @@ if not null_ls_status_ok then
 	return
 end
 
--- beautysh
--- shellcheck
--- autoflake
+-- shfmt
+-- shellharden
 -- biome
 -- black
 -- isort
@@ -22,15 +21,12 @@ null_ls.setup({
 	debug = false,
 	sources = {
 		--formatting.prettier.with({ extra_args = { "--no-semi", "--single-quote", "--jsx-single-quote" } }),
-		-- formatting.ruff,
 		formatting.prettierd,
 		formatting.black.with({ extra_args = { "--line-length", "200", "--skip-string-normalization", "--fast" } }),
-		diagnostics.ruff.with({ extra_args = { "--ignore=E501" } }),
 		formatting.stylua,
 		formatting.isort,
-		formatting.autoflake.with({ extra_args = { "--remove-all-unused-imports" } }),
-		formatting.beautysh,
-		diagnostics.shellcheck,
+		formatting.shellharden,
+		formatting.shfmt,
 		-- formatting.rustywind.with({
 		-- 	filetypes = {
 		-- 		"javascript",
