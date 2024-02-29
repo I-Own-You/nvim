@@ -15,6 +15,7 @@ return {
 		"html",
 		"http",
 		"htmldjango",
+    "rasi",
 		"css",
 		"prisma",
 		"tsx",
