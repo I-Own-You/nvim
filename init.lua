@@ -844,12 +844,6 @@ require("lazy").setup({
 		},
 	},
 	{
-		"nvim-zh/colorful-winsep.nvim",
-		config = true,
-		event = { "WinNew" },
-		opts = require("plugins.colorful-winsep"),
-	},
-	{
 		"gbprod/yanky.nvim",
 		dependencies = {
 			{ "kkharji/sqlite.lua" },
