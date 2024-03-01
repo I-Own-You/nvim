@@ -1076,6 +1076,13 @@ require("lazy").setup({
 			},
 		},
 	},
+	{
+		"dmmulroy/ts-error-translator.nvim",
+		ft = { "javascript", "typescript", "typescriptreact", "javascriptreact" },
+		config = function()
+			require("ts-error-translator").setup()
+		end,
+	},
 })
 
 -- vim.cmd('highlight Search guifg=#F24211  guibg=#000000')
