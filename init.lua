@@ -1083,6 +1083,27 @@ require("lazy").setup({
 			require("ts-error-translator").setup()
 		end,
 	},
+	{
+		"kdheepak/lazygit.nvim",
+		cmd = {
+			"LazyGit",
+			"LazyGitConfig",
+			"LazyGitCurrentFile",
+			"LazyGitFilter",
+			"LazyGitFilterCurrentFile",
+		},
+		keys = {
+			{
+				"<leader>lg",
+				":LazyGit",
+				mode = "n",
+				{ silent = true, desc = "Open Lazy Git" },
+			},
+		},
+		dependencies = {
+			"nvim-lua/plenary.nvim",
+		},
+	},
 })
 
 -- vim.cmd('highlight Search guifg=#F24211  guibg=#000000')
