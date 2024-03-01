@@ -990,26 +990,26 @@ require("lazy").setup({
 		"b0o/schemastore.nvim",
 		ft = { "json", "jsonc" },
 	},
-	{
-		"sourcegraph/sg.nvim",
-		event = "BufReadPost",
-		dependencies = {
-			"nvim-lua/plenary.nvim",
-			"nvim-telescope/telescope.nvim",
-		},
-		keys = {
-			{ "<leader>sgl", ":SourcegraphLink", mode = "n", desc = "SG: Get Link for current line" },
-			{
-				"<leader>sgo",
-				"<cmd>lua require('sg.extensions.telescope').fuzzy_search_results()<CR>",
-				mode = "n",
-				desc = "SG: Get Link for current line",
-			},
-		},
-		config = function()
-			require("sg").setup()
-		end,
-	},
+	-- {
+	-- 	"sourcegraph/sg.nvim",
+	-- 	event = "BufReadPost",
+	-- 	dependencies = {
+	-- 		"nvim-lua/plenary.nvim",
+	-- 		"nvim-telescope/telescope.nvim",
+	-- 	},
+	-- 	keys = {
+	-- 		{ "<leader>sgl", ":SourcegraphLink", mode = "n", desc = "SG: Get Link for current line" },
+	-- 		{
+	-- 			"<leader>sgo",
+	-- 			"<cmd>lua require('sg.extensions.telescope').fuzzy_search_results()<CR>",
+	-- 			mode = "n",
+	-- 			desc = "SG: Get Link for current line",
+	-- 		},
+	-- 	},
+	-- 	config = function()
+	-- 		require("sg").setup()
+	-- 	end,
+	-- },
 	{
 		"rest-nvim/rest.nvim",
 		ft = { "http" },
