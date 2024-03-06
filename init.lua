@@ -1033,38 +1033,6 @@ require("lazy").setup({
 		config = function()
 			require("typescript-tools").setup(require("plugins.ts-tools"))
 		end,
-		keys = {
-			{
-				"<leader>lfr",
-				":TSToolsFileReferences<CR>",
-				mode = "n",
-				{ silent = true, desc = "TS file references" },
-			},
-			{
-				"<leader>lir",
-				":TSToolsRemoveUnusedImports<CR>",
-				mode = "n",
-				{ silent = true, desc = "TS remove unused imports" },
-			},
-			{
-				"<leader>lia",
-				":TSToolsAddMissingImports<CR>",
-				mode = "n",
-				{ silent = true, desc = "TS add missing imports" },
-			},
-			{
-				"<leader>lis",
-				":TSToolsSortImports<CR>",
-				mode = "n",
-				{ silent = true, desc = "TS sort imports" },
-			},
-			{
-				"<leader>lio",
-				":TSToolsOrganizeImports<CR>",
-				mode = "n",
-				{ silent = true, desc = "TS organize imports" },
-			},
-		},
 	},
 	{
 		"dmmulroy/ts-error-translator.nvim",
