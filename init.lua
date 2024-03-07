@@ -1062,6 +1062,17 @@ require("lazy").setup({
 			"nvim-lua/plenary.nvim",
 		},
 	},
+	{
+		"bloznelis/before.nvim",
+		event = "BufReadPost",
+		config = function()
+			local before = require("before")
+			before.setup()
+			vim.keymap.set("n", "<A-h>", before.jump_to_last_edit, {})
+			vim.keymap.set("n", "<A-l>", before.jump_to_next_edit, {})
+		end,
+		opts = require("plugins.before"),
+	},
 })
 
 -- vim.cmd('highlight Search guifg=#F24211  guibg=#000000')
