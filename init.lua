@@ -1016,7 +1016,9 @@ require("lazy").setup({
 		dependencies = {
 			"nvim-lua/plenary.nvim",
 		},
-		opts = require("plugins.rest-nvim"),
+		config = function()
+			require("rest-nvim").setup(require("plugins.rest-nvim"))
+		end,
 		init = function()
 			vim.api.nvim_create_user_command("RestRun", "lua require('rest-nvim').run()<CR>", { nargs = 0 })
 			vim.api.nvim_create_user_command("RestLast", "lua require('rest-nvim').last()<CR>", { nargs = 0 })
@@ -1094,6 +1096,6 @@ vim.api.nvim_exec("autocmd Filetype rnvimr tnoremap <buffer><nowait> <Space> <Sp
 vim.cmd([[
 augroup AutoCloseHelpers
   autocmd!
-  autocmd FileType markdown,help,qf,vim,spectre_panel nnoremap <buffer> q :q<CR>
+  autocmd FileType markdown,help,qf,vim,spectre_panel,httpResult nnoremap <buffer> q :q<CR>
 augroup END
 ]])
