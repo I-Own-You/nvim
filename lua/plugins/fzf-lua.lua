@@ -268,7 +268,7 @@ return {
 		--
 		find_opts = [[-type f -not -path '*/\.git/*' -printf '%P\n']],
 		rg_opts = "--color=never --files --hidden --follow --no-ignore -g '!.git'",
-		fd_opts = "--color=never --type f --follow",
+		fd_opts = "--color=never --type f --follow --hidden --no-ignore",
 		-- fd_opts           = "--color=never --type f --follow --exclude={.git,node_modules,env,venv,package-lock.json}",
 		-- by default, cwd appears in the header only if {opts} contain a cwd
 		-- parameter to a different folder than the current working directory

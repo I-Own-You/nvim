@@ -139,7 +139,7 @@ require("lazy").setup({
 			{
 				mode = "n",
 				"<A-f>",
-				":lua require('fzf-lua').files({winopts={preview={hidden='hidden'}}})<CR>",
+				":lua require('fzf-lua').files({fd_opts = '--color=never --type f --hidden --follow --exclude={.git,node_modules}', winopts={preview={hidden='hidden'}}})<CR>",
 				desc = "find files",
 				{ silent = true },
 			},
