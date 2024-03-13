@@ -1072,6 +1072,7 @@ require("lazy").setup({
 			before.setup()
 			vim.keymap.set("n", "<A-h>", before.jump_to_last_edit, {})
 			vim.keymap.set("n", "<A-l>", before.jump_to_next_edit, {})
+			vim.keymap.set("n", "<leader>le", before.show_edits_in_quickfix, {})
 		end,
 		opts = require("plugins.before"),
 	},
