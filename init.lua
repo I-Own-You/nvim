@@ -1093,6 +1093,10 @@ require("lazy").setup({
 			vim.g.db_ui_use_nerd_fonts = 1
 		end,
 	},
+	{
+		"kilavila/nvim-gitignore",
+		cmd = { "Gitignore", "Licenses" },
+	},
 })
 
 -- vim.cmd('highlight Search guifg=#F24211  guibg=#000000')
@@ -1114,6 +1118,6 @@ vim.api.nvim_exec("autocmd Filetype rnvimr tnoremap <buffer><nowait> <Space> <Sp
 vim.cmd([[
 augroup AutoCloseHelpers
   autocmd!
-  autocmd FileType markdown,help,qf,vim,spectre_panel,httpResult nnoremap <buffer> q :q<CR>
+  autocmd FileType markdown,help,qf,vim,spectre_panel,httpResult,bufferlist nnoremap <buffer> q :q<CR>
 augroup END
 ]])
