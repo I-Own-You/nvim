@@ -138,8 +138,8 @@ local settings = {
 				luasnip = "Snippet",
 				buffer = "Buffer",
 				path = "Path",
-				npm = " ",
 				rg = "RG",
+        dotenv = "SHELL ENV",
 				-- codeium = " AI  ",
 			})[entry.source.name]
 			return vim_item
@@ -152,6 +152,7 @@ local settings = {
 		{ name = "rg" },
 		{ name = "buffer" },
 		{ name = "path" },
+		{ name = "dotenv" },
 	},
 	confirm_opts = {
 		behavior = cmp.ConfirmBehavior.Replace,

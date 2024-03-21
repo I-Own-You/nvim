@@ -13,6 +13,8 @@ return {
 		"json",
 		"jsonc",
 		"html",
+    "xml",
+    "graphql",
 		"http",
 		"htmldjango",
     "rasi",

@@ -100,6 +100,10 @@ require("lazy").setup({
 				"lukas-reineke/cmp-rg",
 				event = "InsertEnter",
 			},
+			{
+				"SergioRibera/cmp-dotenv",
+				event = "InsertEnter",
+			},
 		},
 		event = "InsertEnter",
 		config = function()
@@ -1096,6 +1100,14 @@ require("lazy").setup({
 	{
 		"kilavila/nvim-gitignore",
 		cmd = { "Gitignore", "Licenses" },
+	},
+	{
+		"LinArcX/telescope-env.nvim",
+		dependencies = { "nvim-telescope/telescope.nvim" },
+    event = "BufReadPost",
+		config = function()
+			require("telescope").load_extension("env")
+		end,
 	},
 })
 
