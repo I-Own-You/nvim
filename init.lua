@@ -1059,7 +1059,7 @@ require("lazy").setup({
 		keys = {
 			{
 				"<leader>lg",
-				":LazyGit",
+				":LazyGit<CR>",
 				mode = "n",
 				{ silent = true, desc = "Open Lazy Git" },
 			},
