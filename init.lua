@@ -1104,10 +1104,46 @@ require("lazy").setup({
 	{
 		"LinArcX/telescope-env.nvim",
 		dependencies = { "nvim-telescope/telescope.nvim" },
-    event = "BufReadPost",
+		event = "BufReadPost",
 		config = function()
 			require("telescope").load_extension("env")
 		end,
+	},
+	{
+		"luckasRanarison/tailwind-tools.nvim",
+		ft = {
+			"astro",
+			"css",
+			"html",
+			"php",
+			"svelte",
+			"typescriptreact",
+			"javascriptreact",
+			"twig",
+			"vue",
+			"djangohtml",
+			"htmldjango",
+		},
+    -- NOTE: change from bg to inline when neovim gets 0.10 on exta
+		opts = require("plugins.tailwind-tools"),
+	},
+	{
+		"MaximilianLloyd/tw-values.nvim",
+		ft = {
+			"astro",
+			"css",
+			"html",
+			"php",
+			"svelte",
+			"typescriptreact",
+			"javascriptreact",
+			"twig",
+			"vue",
+			"djangohtml",
+			"htmldjango",
+		},
+		cmd = "TWValues",
+		opts = require("plugins.tw-values"),
 	},
 })
 
