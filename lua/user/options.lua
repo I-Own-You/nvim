@@ -1,6 +1,6 @@
 vim.opt.backup = false
 vim.opt.clipboard = "unnamedplus"
-vim.opt.completeopt = { "menuone", "noselect" }
+vim.opt.completeopt = { "menu","menuone", "noselect" }
 vim.opt.hlsearch = true
 vim.opt.showmode = false
 vim.opt.smartcase = true
