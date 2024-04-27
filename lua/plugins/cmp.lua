@@ -1,14 +1,14 @@
-vim.api.nvim_set_hl(0, "CmpItemKindSnippet", { fg = "#00E756" })
-vim.api.nvim_set_hl(0, "CmpItemKindText", { fg = "#00E756" })
-vim.api.nvim_set_hl(0, "CmpItemKindFunction", { fg = "cyan" })
-vim.api.nvim_set_hl(0, "CmpItemKindVariable", { fg = "#C54BCF" })
-vim.api.nvim_set_hl(0, "CmpItemKindClass", { fg = "#FFB20F" })
-vim.api.nvim_set_hl(0, "CmpItemKindModule", { fg = "#7F7F7F" })
-vim.api.nvim_set_hl(0, "CmpItemKindKeyword", { fg = "#A79AC0" })
-vim.api.nvim_set_hl(0, "CmpItemKindConstant", { fg = "white" })
-vim.api.nvim_set_hl(0, "CmpItemKindProperty", { fg = "#ff4394" })
-vim.api.nvim_set_hl(0, "CmpItemKindMethod", { fg = "#29ADFF" })
-vim.api.nvim_set_hl(0, "CmpItemMenu", { fg = "#FFDBB8" })
+-- vim.api.nvim_set_hl(0, "CmpItemKindSnippet", { fg = "#00E756" })
+-- vim.api.nvim_set_hl(0, "CmpItemKindText", { fg = "#00E756" })
+-- vim.api.nvim_set_hl(0, "CmpItemKindFunction", { fg = "cyan" })
+-- vim.api.nvim_set_hl(0, "CmpItemKindVariable", { fg = "#C54BCF" })
+-- vim.api.nvim_set_hl(0, "CmpItemKindClass", { fg = "#FFB20F" })
+-- vim.api.nvim_set_hl(0, "CmpItemKindModule", { fg = "#7F7F7F" })
+-- vim.api.nvim_set_hl(0, "CmpItemKindKeyword", { fg = "#A79AC0" })
+-- vim.api.nvim_set_hl(0, "CmpItemKindConstant", { fg = "white" })
+-- vim.api.nvim_set_hl(0, "CmpItemKindProperty", { fg = "#ff4394" })
+-- vim.api.nvim_set_hl(0, "CmpItemKindMethod", { fg = "#29ADFF" })
+-- vim.api.nvim_set_hl(0, "CmpItemMenu", { fg = "#FFDBB8" })
 -- vim.api.nvim_set_hl(0, "CmpItemKindConstructor", { fg = "cyan"})
 -- vim.api.nvim_set_hl(0, "CmpItemKindField", { fg = "cyan"})
 -- vim.api.nvim_set_hl(0, "CmpItemKindInterface", { fg = "cyan"})
@@ -29,9 +29,6 @@ local cmp_status_ok, cmp = pcall(require, "cmp")
 if not cmp_status_ok then
 	return
 end
-
--- for de prioritize emmet ls
-local cmp_types_status, types = pcall(require, "cmp.types")
 
 local snip_status_ok, luasnip = pcall(require, "luasnip")
 if not snip_status_ok then

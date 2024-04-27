@@ -20,10 +20,9 @@ require("lazy").setup({
 		lazy = false,
 		-- priority = 1000,
 		config = function()
-			vim.cmd([[colorscheme everblush]])
-
+			vim.cmd([[colorscheme onedark]])
 			local hl = vim.api.nvim_set_hl
-			hl(0, "FoldColumn", { fg = "#68B9B9", bg = "#141B1E" })
+			hl(0, "FoldColumn", { fg = "#68B9B9", bg = "#1E222A" })
 			hl(0, "PackageInfoOutdatedVersion", { fg = "#CDC61E", bg = "#141B1E" })
 			hl(0, "Identifier", { fg = "#dadada", bg = "NONE", sp = "NONE" })
 			hl(0, "FzfLuaLiveSym", { fg = "#2AC3DE", bg = "NONE" })
