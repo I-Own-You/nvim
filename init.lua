@@ -1130,7 +1130,24 @@ require("lazy").setup({
 		dependencies = { "MunifTanjim/nui.nvim" },
 		opts = require("plugins.better-ts-errors"),
 	},
-	-- { "folke/neodev.nvim", opts = {} }, -- also enable in mason.lua line before lspconfig to work
+	{
+		"mikavilpas/yazi.nvim",
+		dependencies = {
+			"nvim-lua/plenary.nvim",
+		},
+		event = "VeryLazy",
+		keys = {
+			-- 👇 in this section, choose your own keymappings!
+			{
+				"<leader>e",
+				function()
+					require("yazi").yazi()
+				end,
+				desc = "Open the file manager",
+			},
+		},
+	},
+	-- { "folke/neodev.nvim", opts = {} }, -- also enable in mason.lua line before mlspconfig to work
 }, require("plugins.lazy"))
 
 vim.api.nvim_exec("autocmd Filetype yazi tnoremap <buffer><nowait> <Space> <Space>", false)
