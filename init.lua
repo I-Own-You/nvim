@@ -20,9 +20,9 @@ require("lazy").setup({
 		lazy = false,
 		-- priority = 1000,
 		config = function()
-			vim.cmd([[colorscheme onedark]])
+			vim.cmd([[colorscheme everblush]])
 			local hl = vim.api.nvim_set_hl
-			hl(0, "FoldColumn", { fg = "#68B9B9", bg = "#1E222A" })
+			hl(0, "FoldColumn", { fg = "#68B9B9", bg = "#141B1E" })
 			hl(0, "PackageInfoOutdatedVersion", { fg = "#CDC61E", bg = "#141B1E" })
 			hl(0, "Identifier", { fg = "#dadada", bg = "NONE", sp = "NONE" })
 			hl(0, "FzfLuaLiveSym", { fg = "#2AC3DE", bg = "NONE" })
@@ -476,18 +476,18 @@ require("lazy").setup({
 		},
 		opts = require("plugins.nvim-ts-autotag"),
 	},
-	{
-		"https://git.sr.ht/~whynothugo/lsp_lines.nvim",
-		event = "BufReadPost",
-		config = function()
-			-- virtual_text is disabled in handlers.lua
-			-- vim.diagnostic.config({ virtual_text = false })
-			-- vim.diagnostic.config({ virtual_lines = true })
-			-- vim.diagnostic.config({ virtual_lines = { only_current_line = true } })
-			vim.diagnostic.config({ virtual_lines = { highlight_whole_line = false } })
-			require("lsp_lines").setup({})
-		end,
-	},
+	-- {
+	-- 	"https://git.sr.ht/~whynothugo/lsp_lines.nvim",
+	-- 	event = "BufReadPost",
+	-- 	config = function()
+	-- 		-- virtual_text is disabled in handlers.lua
+	-- 		-- vim.diagnostic.config({ virtual_text = false })
+	-- 		-- vim.diagnostic.config({ virtual_lines = true })
+	-- 		-- vim.diagnostic.config({ virtual_lines = { only_current_line = true } })
+	-- 		vim.diagnostic.config({ virtual_lines = { highlight_whole_line = false } })
+	-- 		require("lsp_lines").setup({})
+	-- 	end,
+	-- },
 	-- {
 	-- 	"akinsho/bufferline.nvim",
 	-- 	enabled = false,
@@ -1136,7 +1136,6 @@ require("lazy").setup({
 		},
 		event = "VeryLazy",
 		keys = {
-			-- 👇 in this section, choose your own keymappings!
 			{
 				"<leader>e",
 				function()
@@ -1145,7 +1144,7 @@ require("lazy").setup({
 				desc = "Open the file manager",
 			},
 		},
-    opts = require("plugins.yazi")
+		opts = require("plugins.yazi"),
 	},
 	-- { "folke/neodev.nvim", opts = {} }, -- also enable in mason.lua line before mlspconfig to work
 }, require("plugins.lazy"))
