@@ -97,6 +97,6 @@ keymap("n", "<leader>nt", ":tabnew<CR>", { silent = true, desc = "open new tab" 
 -- "%:p:h" without filename
 keymap("n", "<Leader>xt", ':let @+=expand("%:p")<CR>', { silent = true, desc = "copy current buffers location" })
 
-keymap("n", "zz", "za", { noremap = true, silent = true, desc = "toggle folding" }) -- for
+keymap("n", "zm", "za", { noremap = true, silent = true, desc = "toggle folding" }) -- for
 
 keymap("n", "q", ":lua require('utility_functions').close_file_type_buffers()<CR>", { silent = true })

@@ -15,21 +15,36 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
+	-- {
+	-- 	"notken12/base46-colors",
+	-- 	lazy = false,
+	-- 	-- priority = 1000,
+	-- 	config = function()
+	-- 		vim.cmd([[colorscheme everblush]])
+	-- 		local hl = vim.api.nvim_set_hl
+	-- 		hl(0, "FoldColumn", { fg = "#68B9B9", bg = "#141B1E" })
+	-- 		hl(0, "PackageInfoOutdatedVersion", { fg = "#CDC61E", bg = "#141B1E" })
+	-- 		hl(0, "Identifier", { fg = "#dadada", bg = "NONE", sp = "NONE" })
+	-- 		hl(0, "FzfLuaLiveSym", { fg = "#2AC3DE", bg = "NONE" })
+	-- 		hl(0, "CustomSpectreSearch", { fg = "#FF4040", bg = "NONE" })
+	-- 		hl(0, "CustomSpectreReplace", {how to copy word after selection in visula mode neovm fg = "#8BCE7E", bg = "NONE" })
+	-- 		hl(0, "String", { fg = "#85de73", bg = "NONE" })
+	-- 		hl(0, "TelescopeMatching", { fg = "#2AC3DE", bg = "NONE" })
+	-- 	end,
+	-- },
 	{
-		"notken12/base46-colors",
+		"nyoom-engineering/oxocarbon.nvim",
 		lazy = false,
-		-- priority = 1000,
 		config = function()
-			vim.cmd([[colorscheme everblush]])
-			local hl = vim.api.nvim_set_hl
-			hl(0, "FoldColumn", { fg = "#68B9B9", bg = "#141B1E" })
-			hl(0, "PackageInfoOutdatedVersion", { fg = "#CDC61E", bg = "#141B1E" })
-			hl(0, "Identifier", { fg = "#dadada", bg = "NONE", sp = "NONE" })
-			hl(0, "FzfLuaLiveSym", { fg = "#2AC3DE", bg = "NONE" })
-			hl(0, "CustomSpectreSearch", { fg = "#FF4040", bg = "NONE" })
-			hl(0, "CustomSpectreReplace", { fg = "#8BCE7E", bg = "NONE" })
-			hl(0, "String", { fg = "#85de73", bg = "NONE" })
-			hl(0, "TelescopeMatching", { fg = "#2AC3DE", bg = "NONE" })
+			vim.opt.background = "dark"
+			vim.cmd("colorscheme oxocarbon")
+			vim.api.nvim_set_hl(0, "CustomSpectreSearch", { fg = "#EE5396", bg = "NONE" })
+			vim.api.nvim_set_hl(0, "CustomSpectreReplace", { fg = "#5ACB43", bg = "NONE" })
+			vim.api.nvim_set_hl(0, "CmpItemAbbrMatch", { fg = "#3DDBD9", bg = "NONE" })
+			vim.api.nvim_set_hl(0, "CmpItemAbbrMatchFuzzy", { fg = "#3DDBD9", bg = "NONE" })
+			vim.api.nvim_set_hl(0, "FzfLuaLiveSym", { fg = "#3DDBD9", bg = "NONE" })
+			vim.api.nvim_set_hl(0, "FoldColumn", { fg = "#68B9B9", bg = "NONE" })
+			vim.api.nvim_set_hl(0, "PackageInfoOutdatedVersion", { fg = "#CDC61E", bg = "NONE" })
 		end,
 	},
 	-- {
@@ -38,7 +53,7 @@ require("lazy").setup({
 	-- 	priority = 1000,
 	-- 	config = function()
 	-- 		require("tokyonight").setup(require("plugins.tokyonight-theme"))
-	-- 		vim.cmd([[colorscheme tokyonight-night]])
+	-- 		vim.cmd(c[colorscheme tokyonight-night]c)
 	--
 	-- 		local hl = vim.api.nvim_set_hl
 	-- 		hl(0, "CustomSpectreSearch", { fg = "#FF007C", bg = "NONE" })
@@ -701,24 +716,24 @@ require("lazy").setup({
 		keys = {
 			{
 				"n",
-				[[<Cmd>execute('normal! ' . v:count1 . 'n')<CR><Cmd>lua require('hlslens').start()<CR>]],
+				"<Cmd>execute('normal! ' . v:count1 . 'n')<CR><Cmd>lua require('hlslens').start()<CR>zz",
 				mode = "n",
 				noremap = true,
 				silent = true,
 			},
 			{
 				"N",
-				[[<Cmd>execute('normal! ' . v:count1 . 'N')<CR><Cmd>lua require('hlslens').start()<CR>]],
+				"<Cmd>execute('normal! ' . v:count1 . 'N')<CR><Cmd>lua require('hlslens').start()<CR>zz",
 				mode = "n",
 				noremap = true,
 				silent = true,
 			},
-			{ mode = "n", "*", [[*<Cmd>lua require('hlslens').start()<CR>]], noremap = true, silent = true },
-			{ mode = "n", "#", [[#<Cmd>lua require('hlslens').start()<CR>]], noremap = true, silent = true },
+			{ mode = "n", "*", "*<Cmd>lua require('hlslens').start()<CR>zz", noremap = true, silent = true },
+			{ mode = "n", "#", "#<Cmd>lua require('hlslens').start()<CR>zz", noremap = true, silent = true },
 			{
 				mode = "n",
 				"g*",
-				[[g*<Cmd>lua require('hlslens').start()<CR>]],
+				"g*<Cmd>lua require('hlslens').start()<CR>zz",
 				desc = "search forward word",
 				noremap = true,
 				silent = true,
@@ -726,7 +741,7 @@ require("lazy").setup({
 			{
 				mode = "n",
 				"g#",
-				[[g#<Cmd>lua require('hlslens').start()<CR>]],
+				"g#<Cmd>lua require('hlslens').start()<CR>zz",
 				desc = "search backgward word",
 				noremap = true,
 				silent = true,
