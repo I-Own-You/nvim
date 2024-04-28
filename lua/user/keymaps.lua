@@ -52,10 +52,6 @@ keymap("n", "!", ":!", { noremap = true })
 keymap("n", "+", "<C-a>", { noremap = true, silent = true })
 keymap("n", "-", "<C-x>", { noremap = true, silent = true })
 
-keymap("n", "<C-c>", ":%y<CR>", { silent = true })
-keymap("n", "<C-a>", "ggVG", { silent = true })
-keymap("n", "<C-x>", ":%d<CR>", { silent = true })
-
 keymap("i", "<C-BACKSPACE>", "<ESC>vbdi", { silent = true, desc = "" })
 keymap("i", "<C-l>", "<ESC><leader>lsa", { silent = true, desc = "" })
 
