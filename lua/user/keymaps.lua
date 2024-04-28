@@ -46,15 +46,11 @@ keymap("n", "<leader>vd", ":vert diffsplit ", { noremap = true, desc = "diff som
 keymap("n", "<C-[>", "[m", { silent = true })
 keymap("n", "<C-]>", "]m", { silent = true })
 
-keymap("n", "<leader>ww", ":set invwrap<CR>:set wrap?<CR>", { silent = true, desc = "toggle wrap" })
+keymap("n", "<leader>ww", ":set invwrap<CR>", { silent = true, desc = "toggle wrap" })
 keymap("n", "!", ":!", { noremap = true })
 
 keymap("n", "+", "<C-a>", { noremap = true, silent = true })
 keymap("n", "-", "<C-x>", { noremap = true, silent = true })
-keymap("v", "+", "<C-a>gv=gv", { noremap = true, silent = true })
-keymap("v", "-", "<C-x>gv=gv", { noremap = true, silent = true })
-keymap("x", "+", "<C-a>", { noremap = true, silent = true })
-keymap("x", "-", "<C-x>", { noremap = true, silent = true })
 
 keymap("n", "<C-c>", ":%y<CR>", { silent = true })
 keymap("n", "<C-a>", "ggVG", { silent = true })
