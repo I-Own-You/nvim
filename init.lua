@@ -959,12 +959,12 @@ require("lazy").setup({
 				desc = "Search and replace current selection",
 				silent = true,
 			},
-			-- {
-			-- 	"<leader>sp",
-			-- 	'<cmd>lua require("spectre").open_file_search({select_word=true})<CR>',
-			-- 	mode = "n",
-			-- 	desc = "Toggle Spectre for current file",
-			-- },
+			{
+				"<leader>sp",
+				'<cmd>lua require("spectre").open_file_search({select_word=true})<CR>',
+				mode = "n",
+				desc = "Toggle Spectre for current file",
+			},
 		},
 	},
 	{
