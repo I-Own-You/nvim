@@ -132,6 +132,7 @@ function M.close_file_type_buffers()
 		"http",
 		"bufferlist",
 		"netrw",
+		"notify",
 	}
 	local current_filetype = vim.bo.filetype
 
@@ -141,7 +142,7 @@ function M.close_file_type_buffers()
 			return
 		elseif current_filetype == "" then
 			vim.cmd("silent! bd")
-      return
+			return
 		end
 	end
 end
