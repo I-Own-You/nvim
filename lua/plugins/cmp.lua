@@ -146,7 +146,7 @@ local settings = {
 				path = "Path",
 				rg = "RG",
 				dotenv = "SHELL ENV",
-        nvim_lsp_signature_help = "signature"
+				nvim_lsp_signature_help = "signature",
 				-- codeium = " AI  ",
 			})[entry.source.name]
 			-- vim_item.kind = string.format("%s", kind_icons[vim_item.kind])
