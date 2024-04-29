@@ -120,6 +120,10 @@ require("lazy").setup({
 				"SergioRibera/cmp-dotenv",
 				event = "InsertEnter",
 			},
+			{
+				"hrsh7th/cmp-nvim-lsp-signature-help",
+				event = "InsertEnter",
+			},
 		},
 		event = "InsertEnter",
 		config = function()
@@ -1151,8 +1155,8 @@ require("lazy").setup({
 	-- { "folke/neodev.nvim", opts = {} }, -- also enable in mason.lua line before mlspconfig to work
 	{
 		"j-hui/fidget.nvim",
-    event = "VeryLazy",
-    opts = {}
+		event = "VeryLazy",
+		opts = {},
 	},
 }, require("plugins.lazy"))
 
