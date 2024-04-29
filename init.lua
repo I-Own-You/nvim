@@ -1126,19 +1126,6 @@ require("lazy").setup({
 		},
 	},
 	{
-		"rcarriga/nvim-notify",
-		opts = require("plugins.notify"),
-	},
-	{
-		"folke/noice.nvim",
-		event = "VeryLazy",
-		opts = require("plugins.noice"),
-		dependencies = {
-			"MunifTanjim/nui.nvim",
-			"rcarriga/nvim-notify",
-		},
-	},
-	{
 		"OlegGulevskyy/better-ts-errors.nvim",
 		ft = { "typescript", "javascript", "typescriptreact", "javascriptreact", "vue", "js", "ts" },
 		dependencies = { "MunifTanjim/nui.nvim" },
@@ -1162,6 +1149,11 @@ require("lazy").setup({
 		opts = require("plugins.yazi"),
 	},
 	-- { "folke/neodev.nvim", opts = {} }, -- also enable in mason.lua line before mlspconfig to work
+	{
+		"j-hui/fidget.nvim",
+    event = "VeryLazy",
+    opts = {}
+	},
 }, require("plugins.lazy"))
 
 vim.api.nvim_exec("autocmd Filetype yazi tnoremap <buffer><nowait> <Space> <Space>", false)

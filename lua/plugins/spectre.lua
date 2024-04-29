@@ -16,9 +16,9 @@ return {
 			desc = "open in new tab",
 		},
 	},
-	highlight = {
-		ui = "String",
-		search = "CustomSpectreSearch",
-		replace = "CustomSpectreReplace",
-	},
+	-- highlight = {
+	-- 	ui = "String",
+	-- 	search = "CustomSpectreSearch",
+	-- 	replace = "CustomSpectreReplace",
+	-- },
 }
