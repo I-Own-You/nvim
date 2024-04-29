@@ -36,5 +36,9 @@ return {
 			filter = { find = "No information available" },
 			opts = { stop = true },
 		},
+		{
+			filter = { find = "E486: Pattern not found:" }, -- for search, to not display if there are no matches
+			opts = { stop = true },
+		},
 	},
 }
