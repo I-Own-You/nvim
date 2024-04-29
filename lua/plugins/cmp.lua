@@ -125,12 +125,21 @@ local settings = {
 		}),
 	},
 	formatting = {
-		fields = { "abbr", "kind", "menu" },
+		fields = {
+			"abbr",
+			"kind" --[[ , "menu" ]],
+		},
 		format = function(entry, vim_item)
-			-- Kind icons
-			vim_item.kind = string.format("%s", kind_icons[vim_item.kind])
-			-- vim_item.kind = string.format('%s %s', kind_icons[vim_item.kind], vim_item.kind) -- This concatonates the icons with the name of the item kind
-			vim_item.menu = ({
+			-- vim_item.menu = ({
+			-- 	nvim_lsp = "LSP",
+			-- 	luasnip = "Snippet",
+			-- 	buffer = "Buffer",
+			-- 	path = "Path",
+			-- 	rg = "RG",
+			-- 	dotenv = "SHELL ENV",
+			-- 	-- codeium = " AI  ",
+			-- })[entry.source.name]
+			custom_menu = ({
 				nvim_lsp = "LSP",
 				luasnip = "Snippet",
 				buffer = "Buffer",
@@ -139,6 +148,8 @@ local settings = {
 				dotenv = "SHELL ENV",
 				-- codeium = " AI  ",
 			})[entry.source.name]
+			-- vim_item.kind = string.format("%s", kind_icons[vim_item.kind])
+			vim_item.kind = string.format("%-13s -> %s", kind_icons[vim_item.kind], custom_menu) -- This concatonates the icons with the name of the item kind
 			return vim_item
 		end,
 	},
