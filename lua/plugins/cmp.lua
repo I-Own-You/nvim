@@ -139,7 +139,7 @@ local settings = {
 			-- 	dotenv = "SHELL ENV",
 			-- 	-- codeium = " AI  ",
 			-- })[entry.source.name]
-			custom_menu = ({
+			local custom_menu = ({
 				nvim_lsp = "LSP",
 				luasnip = "Snippet",
 				buffer = "Buffer",
