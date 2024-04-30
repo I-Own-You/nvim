@@ -46,7 +46,7 @@ require("lazy").setup({
 			vim.api.nvim_set_hl(0, "FoldColumn", { fg = "#68B9B9", bg = "NONE" })
 			vim.api.nvim_set_hl(0, "PackageInfoOutdatedVersion", { fg = "#CDC61E", bg = "NONE" })
 			vim.api.nvim_set_hl(0, "FloatBorder", { fg = "#eeeeee", bg = "NONE" })
-      -- cmp hi
+			-- cmp hi
 			vim.api.nvim_set_hl(0, "CmpItemKindField", { fg = "#ff7eb6", bg = "NONE" })
 			vim.api.nvim_set_hl(0, "CmpItemKindProperty", { fg = "#ff7eb6", bg = "NONE" })
 			vim.api.nvim_set_hl(0, "CmpItemKindText", { fg = "#78a9ff", bg = "NONE" })
