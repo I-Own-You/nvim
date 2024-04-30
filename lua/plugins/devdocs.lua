@@ -8,7 +8,7 @@ return {
 	},
 	float_win = { -- passed to nvim_open_win(), see :h api-floatwin
 		relative = "editor",
-		height = 20,
+		height = 24,
 		width = 100,
 		border = "rounded",
 	},
