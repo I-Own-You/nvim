@@ -1192,6 +1192,11 @@ require("lazy").setup({
 		event = "VeryLazy",
 		opts = {},
 	},
+	{
+		"nvim-zh/colorful-winsep.nvim",
+		config = true,
+		event = { "WinNew" },
+	},
 }, require("plugins.lazy"))
 
 vim.api.nvim_exec("autocmd Filetype yazi tnoremap <buffer><nowait> <Space> <Space>", false)
