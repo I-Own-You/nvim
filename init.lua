@@ -73,6 +73,12 @@ require("lazy").setup({
 			vim.api.nvim_set_hl(0, "CmpItemKindEnumMember", { fg = "#82cfff", bg = "NONE" })
 			vim.api.nvim_set_hl(0, "CmpItemKindConstructor", { fg = "#EE5396", bg = "NONE" })
 			vim.api.nvim_set_hl(0, "CmpItemKindTypeParameter", { fg = "#3ddbd9", bg = "NONE" })
+			vim.api.nvim_set_hl(0, "CmpItemAbbrDeprecated", { fg = "#525252", bg = "NONE", strikethrough = true })
+			vim.api.nvim_set_hl(
+				0,
+				"CmpItemAbbrDeprecatedDefault",
+				{ fg = "#525252", bg = "NONE", strikethrough = true }
+			)
 		end,
 	},
 	-- {
