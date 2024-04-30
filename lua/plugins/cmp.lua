@@ -177,7 +177,7 @@ local settings = {
 			-- border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
 			border = { "┏", "━", "┓", "┃", "┛", "━", "┗", "┃" },
 			-- winhighlight = "Normal:CustomFloatCompletion,FloatBorder:Boolean,CursorLine:CursorLine,Search:None", -- switched to Boolean for gatekeeper
-			winhighlight = "Normal:None,FloatBorder:None,CursorLine:CursorLine,Search:None",
+			-- winhighlight = "Normal:None,FloatBorder:None,CursorLine:CursorLine,Search:None",
 			-- side_padding = 0,
 			-- col_offset = 0, --moves right and left
 		}),
