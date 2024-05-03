@@ -99,6 +99,7 @@ require("lazy").setup({
 	-- },
 	{
 		"neovim/nvim-lspconfig",
+		enabled = true,
 		event = "BufReadPost",
 		config = function()
 			require("plugins.lsp.handlers").setup()
@@ -106,6 +107,7 @@ require("lazy").setup({
 	},
 	{
 		"williamboman/mason.nvim",
+		enabled = true,
 		event = "BufReadPost",
 		-- use({ "williamboman/nvim-lsp-installer" }) -- lsp installer
 		dependencies = { "williamboman/mason-lspconfig.nvim" },
@@ -117,6 +119,7 @@ require("lazy").setup({
 	{
 		-- "jose-elias-alvarez/null-ls.nvim",
 		"nvimtools/none-ls.nvim",
+		enabled = true,
 		event = "BufReadPost",
 		dependencies = { "nvim-lua/plenary.nvim" },
 		config = function()
@@ -125,6 +128,7 @@ require("lazy").setup({
 	},
 	{
 		"hrsh7th/nvim-cmp",
+		enabled = true,
 		dependencies = {
 			{
 				"hrsh7th/cmp-cmdline",
@@ -166,6 +170,7 @@ require("lazy").setup({
 	},
 	{
 		"L3MON4D3/LuaSnip",
+		enabled = true,
 		event = "InsertEnter",
 		dependencies = { "rafamadriz/friendly-snippets" },
 		config = function()
@@ -179,6 +184,7 @@ require("lazy").setup({
 	},
 	{
 		"nvim-treesitter/nvim-treesitter",
+		enabled = true,
 		build = ":TSUpdate",
 		event = "BufReadPost",
 		config = function()
@@ -187,6 +193,7 @@ require("lazy").setup({
 	},
 	{
 		"ibhagwan/fzf-lua",
+		enabled = true,
 		dependencies = {
 			"kyazdani42/nvim-web-devicons",
 			"nvim-telescope/telescope.nvim",
@@ -276,6 +283,7 @@ require("lazy").setup({
 	},
 	{
 		"nvim-lualine/lualine.nvim",
+		enabled = true,
 		event = "BufReadPost",
 		dependencies = { "kyazdani42/nvim-web-devicons" },
 		config = function()
@@ -284,8 +292,8 @@ require("lazy").setup({
 	},
 	{
 		"lukas-reineke/indent-blankline.nvim",
+		enabled = false,
 		event = "BufReadPost",
-		enabled = true,
 		commit = "9637670896b68805430e2f72cf5d16be5b97a22a",
 		config = function()
 			require("indent_blankline").setup(require("plugins.indent_blankline"))
@@ -316,23 +324,26 @@ require("lazy").setup({
 	},
 	{
 		"NvChad/nvim-colorizer.lua",
+		enabled = true,
 		event = "BufReadPost",
 		opts = require("plugins.colorizer"),
 	},
 	{
 		"numToStr/Comment.nvim",
+		enabled = true,
 		event = "BufReadPost",
 		opts = require("plugins.comment"),
-		config = function()
-			require("Comment").setup({
-				pre_hook = require("ts_context_commentstring.integrations.comment_nvim").create_pre_hook(),
-			})
-			local ft = require("Comment.ft")
-			ft.scss = { "// %s", "/* %s */" }
-		end,
+		-- config = function()
+			-- require("Comment").setup({
+				-- pre_hook = require("ts_context_commentstring.integrations.comment_nvim").create_pre_hook(),
+			-- })
+			-- local ft = require("Comment.ft")
+			-- ft.scss = { "// %s", "/* %s */" }
+		-- end,
 	},
 	{
 		"lewis6991/gitsigns.nvim",
+		enabled = true,
 		event = "BufReadPost",
 		keys = {
 			{
@@ -409,6 +420,7 @@ require("lazy").setup({
 	},
 	{
 		"moll/vim-bbye",
+		enabled = true,
 		keys = {
 			{ "<leader>q", mode = "n", ":Bdelete!<cr>", desc = "delete buffer", silent = true },
 		},
@@ -416,11 +428,13 @@ require("lazy").setup({
 
 	{
 		"windwp/nvim-autopairs",
+		enabled = true,
 		event = "InsertEnter",
 		opts = require("plugins.autopairs"),
 	},
 	{
 		"Wansmer/treesj",
+		enabled = true,
 		dependencies = { "nvim-treesitter" },
 		opts = require("plugins.treesj"),
 		keys = {
@@ -429,6 +443,7 @@ require("lazy").setup({
 	},
 	{
 		"andymass/vim-matchup",
+		enabled = true,
 		event = "BufReadPost",
 		-- config = function()
 		-- vim.cmd([[highlight MatchParen guibg=#5C4E4E]])
@@ -437,6 +452,7 @@ require("lazy").setup({
 	},
 	{
 		"jedrzejboczar/possession.nvim",
+		enabled = true,
 		keys = {
 			{
 				"<leader>sl",
@@ -456,6 +472,7 @@ require("lazy").setup({
 	},
 	{
 		"debugloop/telescope-undo.nvim",
+		enabled = true,
 		opts = require("plugins.telescope-undo"),
 		dependencies = {
 			{
@@ -476,18 +493,19 @@ require("lazy").setup({
 			require("telescope").load_extension("undo")
 		end,
 	},
-	{
-		"folke/todo-comments.nvim",
-		config = function()
-			require("todo-comments").setup()
-		end,
-		keys = {
-			{ "<leader>td", mode = "n", ":TodoQuickFix<CR>", desc = "open todos", noremap = true, silent = true },
-		},
-		opts = require("plugins.todo-comments"),
-	},
+	-- {
+	-- 	"folke/todo-comments.nvim",
+	-- 	config = function()
+	-- 		require("todo-comments").setup()
+	-- 	end,
+	-- 	keys = {
+	-- 		{ "<leader>td", mode = "n", ":TodoQuickFix<CR>", desc = "open todos", noremap = true, silent = true },
+	-- 	},
+	-- 	opts = require("plugins.todo-comments"),
+	-- },
 	{
 		"rbong/vim-flog",
+		enabled = true,
 		dependencies = { "tpope/vim-fugitive" },
 		keys = {
 			{ "<leader>fgg", mode = "n", ":Flog ", desc = "open floggit", noremap = true, silent = true },
@@ -506,6 +524,7 @@ require("lazy").setup({
 	},
 	{
 		"windwp/nvim-ts-autotag",
+		enabled = false,
 		ft = {
 			"html",
 			"javascript",
@@ -529,27 +548,29 @@ require("lazy").setup({
 		},
 		opts = require("plugins.nvim-ts-autotag"),
 	},
-	-- {
-	-- 	"https://git.sr.ht/~whynothugo/lsp_lines.nvim",
-	-- 	event = "BufReadPost",
-	-- 	config = function()
-	-- 		-- virtual_text is disabled in handlers.lua
-	-- 		-- vim.diagnostic.config({ virtual_text = false })
-	-- 		-- vim.diagnostic.config({ virtual_lines = true })
-	-- 		-- vim.diagnostic.config({ virtual_lines = { only_current_line = true } })
-	-- 		vim.diagnostic.config({ virtual_lines = { highlight_whole_line = false } })
-	-- 		require("lsp_lines").setup({})
-	-- 	end,
-	-- },
-	-- {
-	-- 	"akinsho/bufferline.nvim",
-	-- 	enabled = false,
-	-- 	config = function()
-	-- 		require("bufferline").setup(require("plugins.bufferline"))
-	-- 	end,
-	-- },
+	{
+		"https://git.sr.ht/~whynothugo/lsp_lines.nvim",
+		enabled = false,
+		event = "BufReadPost",
+		config = function()
+			-- virtual_text is disabled in handlers.lua
+			-- vim.diagnostic.config({ virtual_text = false })
+			-- vim.diagnostic.config({ virtual_lines = true })
+			-- vim.diagnostic.config({ virtual_lines = { only_current_line = true } })
+			vim.diagnostic.config({ virtual_lines = { highlight_whole_line = false } })
+			require("lsp_lines").setup({})
+		end,
+	},
+	{
+		"akinsho/bufferline.nvim",
+		enabled = false,
+		config = function()
+			require("bufferline").setup(require("plugins.bufferline"))
+		end,
+	},
 	{
 		"folke/flash.nvim",
+		enabled = false,
 		event = "BufReadPost",
 		---@type Flash.Config
 		keys = {
@@ -564,6 +585,7 @@ require("lazy").setup({
 	},
 	{
 		"sindrets/diffview.nvim",
+		enabled = false,
 		event = "BufReadPost",
 		config = function()
 			local actions = require("diffview.actions")
@@ -608,6 +630,7 @@ require("lazy").setup({
 	},
 	{
 		"kevinhwang91/nvim-ufo",
+		enabled = false,
 		event = "BufReadPost",
 		-- look into handlers.lua/keymaps.lua there is code for ufo.nvim, in case you delete the pluign
 		dependencies = {
@@ -646,6 +669,7 @@ require("lazy").setup({
 	},
 	{
 		"utilyre/barbecue.nvim",
+		enabled = false,
 		event = "BufReadPost",
 		name = "barbecue",
 		version = "*",
@@ -657,12 +681,14 @@ require("lazy").setup({
 	},
 	{
 		"glepnir/dashboard-nvim",
+		enabled = false,
 		event = "VimEnter",
 		opts = require("plugins.dashboard"),
 		dependencies = { { "kyazdani42/nvim-web-devicons" } },
 	},
 	{
 		"luckasRanarison/nvim-devdocs",
+		enabled = false,
 		dependencies = {
 			"nvim-lua/plenary.nvim",
 			"nvim-telescope/telescope.nvim",
@@ -675,6 +701,7 @@ require("lazy").setup({
 	},
 	{
 		"kevinhwang91/nvim-fundo",
+		enabled = true,
 		dependencies = { "kevinhwang91/promise-async" },
 		event = "BufReadPost",
 		init = function()
@@ -687,6 +714,7 @@ require("lazy").setup({
 	},
 	{
 		"piersolenski/wtf.nvim",
+		enabled = false,
 		dependencies = {
 			"MunifTanjim/nui.nvim",
 		},
@@ -698,6 +726,7 @@ require("lazy").setup({
 	{
 		-- NOTE: you can also make for another lang the import, look at github of the extension, in case
 		"piersolenski/telescope-import.nvim",
+		enabled = false,
 		dependencies = "nvim-telescope/telescope.nvim",
 		keys = {
 			{ "<leader>ii", "<cmd>Telescope import<CR>", desc = "open imports", silent = true },
@@ -708,6 +737,7 @@ require("lazy").setup({
 	},
 	{
 		"mrjones2014/smart-splits.nvim",
+		enabled = true,
 		build = "./kitty/install-kittens.bash",
 		opts = require("plugins.smart-splits"),
 		keys = {
@@ -735,6 +765,7 @@ require("lazy").setup({
 	},
 	{
 		"fedepujol/move.nvim",
+		enabled = true,
 		keys = {
 			-- normal mode, move lines/words
 			{ "<A-j>", ":MoveLine(1)<CR>", silent = true },
@@ -747,6 +778,7 @@ require("lazy").setup({
 	},
 	{
 		"kevinhwang91/nvim-hlslens",
+		enabled = true,
 		event = "BufReadPost",
 		config = function()
 			require("hlslens").setup()
@@ -788,6 +820,7 @@ require("lazy").setup({
 	},
 	{
 		"2kabhishek/nerdy.nvim",
+		enabled = false,
 		dependencies = {
 			"stevearc/dressing.nvim",
 			"nvim-telescope/telescope.nvim",
@@ -815,6 +848,7 @@ require("lazy").setup({
 	},
 	{
 		"vuki656/package-info.nvim",
+		enabled = false,
 		ft = "json",
 		dependencies = "MunifTanjim/nui.nvim",
 		opts = require("plugins.package-info"),
@@ -860,6 +894,7 @@ require("lazy").setup({
 	},
 	{
 		"gbprod/yanky.nvim",
+		enabled = true,
 		dependencies = {
 			{ "kkharji/sqlite.lua" },
 		},
@@ -898,48 +933,51 @@ require("lazy").setup({
 	},
 	{
 		"JoosepAlviste/nvim-ts-context-commentstring",
+		enabled = false,
 		event = "BufReadPost",
 		init = function()
 			vim.g.skip_ts_context_commentstring_module = true
 		end,
 		opts = require("plugins.nvim-ts-context-commentstring"),
 	},
-	-- {
-	-- 	"Exafunction/codeium.nvim",
-	-- 	event = "InsertEnter",
-	-- 	dependencies = {
-	-- 		"nvim-lua/plenary.nvim",
-	-- 		"hrsh7th/nvim-cmp",
-	-- 	},
-	-- 	config = function()
-	-- 		require("codeium").setup({})
-	-- 	end,
-	-- },
-	-- {
-	-- 	"Exafunction/codeium.vim",
-	-- 	enabled = false,
-	-- 	event = "BufReadPost",
-	-- 	init = function()
-	-- 		vim.g.codeium_disable_bindings = 1
-	-- 		vim.g.codeium_enabled = true
-	-- 	end,
-	-- 	config = function()
-	-- 		vim.keymap.set("i", "<A-l>", function()
-	-- 			return vim.fn["codeium#CycleCompletions"](1)
-	-- 		end, { expr = true })
-	-- 		vim.keymap.set("i", "<A-h>", function()
-	-- 			return vim.fn["codeium#CycleCompletions"](-1)
-	-- 		end, { expr = true })
-	-- 		vim.keymap.set("i", "<c-x>", function()
-	-- 			return vim.fn["codeium#Clear"]()
-	-- 		end, { expr = true })
-	-- 		vim.keymap.set("i", "<c-cr>", function()
-	-- 			return vim.fn["codeium#Accept"]()
-	-- 		end, { expr = true })
-	-- 	end,
-	-- },
+	{
+		"Exafunction/codeium.nvim",
+		enabled = false,
+		event = "InsertEnter",
+		dependencies = {
+			"nvim-lua/plenary.nvim",
+			"hrsh7th/nvim-cmp",
+		},
+		config = function()
+			require("codeium").setup({})
+		end,
+	},
+	{
+		"Exafunction/codeium.vim",
+		enabled = false,
+		event = "BufReadPost",
+		init = function()
+			vim.g.codeium_disable_bindings = 1
+			vim.g.codeium_enabled = true
+		end,
+		config = function()
+			vim.keymap.set("i", "<A-l>", function()
+				return vim.fn["codeium#CycleCompletions"](1)
+			end, { expr = true })
+			vim.keymap.set("i", "<A-h>", function()
+				return vim.fn["codeium#CycleCompletions"](-1)
+			end, { expr = true })
+			vim.keymap.set("i", "<c-x>", function()
+				return vim.fn["codeium#Clear"]()
+			end, { expr = true })
+			vim.keymap.set("i", "<c-cr>", function()
+				return vim.fn["codeium#Accept"]()
+			end, { expr = true })
+		end,
+	},
 	{
 		"max397574/better-escape.nvim",
+		enabled = true,
 		event = "InsertEnter",
 		config = function()
 			require("better_escape").setup()
@@ -965,48 +1003,9 @@ require("lazy").setup({
 		end,
 		opts = {},
 	},
-	-- {
-	-- 	"Bekaboo/dropbar.nvim", --use when neovim is 10 version
-	-- 	dependencies = {
-	-- 		"nvim-telescope/telescope-fzf-native.nvim",
-	-- 	},
-	-- },
-	{
-		"nvim-pack/nvim-spectre",
-		dependencies = { "nvim-lua/plenary.nvim" },
-		opts = require("plugins.spectre"),
-		keys = {
-			{
-				"<leader>S",
-				'<cmd>lua require("spectre").toggle()<CR>',
-				mode = "n",
-				desc = "Toggle Spectre",
-				silent = true,
-			},
-			{
-				"<leader>sw",
-				'<cmd>lua require("spectre").open_visual({select_word=true})<CR>',
-				mode = "n",
-				desc = "Search and replace current word",
-				silent = true,
-			},
-			{
-				"<leader>sw",
-				'<esc><cmd>lua require("spectre").open_visual()<CR>',
-				mode = "v",
-				desc = "Search and replace current selection",
-				silent = true,
-			},
-			{
-				"<leader>sp",
-				'<cmd>lua require("spectre").open_file_search({select_word=true})<CR>',
-				mode = "n",
-				desc = "Toggle Spectre for current file",
-			},
-		},
-	},
 	{
 		"nvim-focus/focus.nvim",
+		enabled = false,
 		event = "BufReadPost",
 		version = "*",
 		keys = {
@@ -1016,30 +1015,12 @@ require("lazy").setup({
 	},
 	{
 		"b0o/schemastore.nvim",
+		enabled = false,
 		ft = { "json", "jsonc" },
 	},
-	-- {
-	-- 	"sourcegraph/sg.nvim",
-	-- 	event = "BufReadPost",
-	-- 	dependencies = {
-	-- 		"nvim-lua/plenary.nvim",
-	-- 		"nvim-telescope/telescope.nvim",
-	-- 	},
-	-- 	keys = {
-	-- 		{ "<leader>sgl", ":SourcegraphLink", mode = "n", desc = "SG: Get Link for current line" ,silent=true},
-	-- 		{
-	-- 			"<leader>sgo",
-	-- 			"<cmd>lua require('sg.extensions.telescope').fuzzy_search_results()<CR>",
-	-- 			mode = "n",
-	-- 			desc = "SG: Get Link for current line",silent=true
-	-- 		},
-	-- 	},
-	-- 	config = function()
-	-- 		require("sg").setup()
-	-- 	end,
-	-- },
 	{
 		"rest-nvim/rest.nvim",
+		enabled = false,
 		ft = "http",
 		dependencies = {
 			{
@@ -1054,6 +1035,7 @@ require("lazy").setup({
 	},
 	{
 		"kdheepak/lazygit.nvim",
+		enabled = false,
 		cmd = {
 			"LazyGit",
 			"LazyGitConfig",
@@ -1077,6 +1059,7 @@ require("lazy").setup({
 	},
 	{
 		"bloznelis/before.nvim",
+		enabled = true,
 		event = "BufReadPost",
 		config = function()
 			local before = require("before")
@@ -1088,19 +1071,8 @@ require("lazy").setup({
 		opts = require("plugins.before"),
 	},
 	{
-		"kilavila/nvim-gitignore",
-		cmd = { "Gitignore", "Licenses" },
-	},
-	{
-		"LinArcX/telescope-env.nvim",
-		dependencies = { "nvim-telescope/telescope.nvim" },
-		event = "BufReadPost",
-		config = function()
-			require("telescope").load_extension("env")
-		end,
-	},
-	{
 		"luckasRanarison/tailwind-tools.nvim",
+		enabled = false,
 		ft = {
 			"astro",
 			"css",
@@ -1119,6 +1091,7 @@ require("lazy").setup({
 	},
 	{
 		"MaximilianLloyd/tw-values.nvim",
+		enabled = false,
 		ft = {
 			"astro",
 			"css",
@@ -1138,20 +1111,27 @@ require("lazy").setup({
 	{
 		{
 			"Rawnly/gist.nvim",
+			enabled = false,
 			cmd = { "GistCreate", "GistCreateFromFile", "GistsList" },
 			opts = require("plugins.gist"),
 		},
 		{
 			"samjwill/nvim-unception",
+			enabled = false,
 			event = "BufReadPost",
 			init = function()
 				vim.g.unception_block_while_host_edits = true
 			end,
 		},
 	},
-	{ "yutkat/wb-only-current-line.nvim", event = "BufReadPost" },
+	{
+		"yutkat/wb-only-current-line.nvim",
+		enabled = true,
+		event = "BufReadPost",
+	},
 	{
 		"FabijanZulj/blame.nvim",
+		enabled = false,
 		opts = {},
 		keys = {
 			{
@@ -1164,13 +1144,8 @@ require("lazy").setup({
 		},
 	},
 	{
-		"OlegGulevskyy/better-ts-errors.nvim",
-		ft = { "typescript", "javascript", "typescriptreact", "javascriptreact", "vue", "js", "ts" },
-		dependencies = { "MunifTanjim/nui.nvim" },
-		opts = require("plugins.better-ts-errors"),
-	},
-	{
 		"mikavilpas/yazi.nvim",
+		enabled = true,
 		dependencies = {
 			"nvim-lua/plenary.nvim",
 		},
@@ -1186,14 +1161,16 @@ require("lazy").setup({
 		},
 		opts = require("plugins.yazi"),
 	},
-	-- { "folke/neodev.nvim", opts = {} }, -- also enable in mason.lua line before mlspconfig to work
+	{ "folke/neodev.nvim", enabled = false, opts = {} }, -- also enable in mason.lua line before mlspconfig to work
 	{
 		"j-hui/fidget.nvim",
+		enabled = false,
 		event = "VeryLazy",
 		opts = {},
 	},
 	{
 		"nvim-zh/colorful-winsep.nvim",
+		enabled = true,
 		config = true,
 		event = { "WinNew" },
 	},

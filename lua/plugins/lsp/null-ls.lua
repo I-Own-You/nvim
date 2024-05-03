@@ -21,12 +21,12 @@ null_ls.setup({
 	debug = false,
 	sources = {
 		--formatting.prettier.with({ extra_args = { "--no-semi", "--single-quote", "--jsx-single-quote" } }),
-		formatting.prettierd,
-		formatting.black.with({ extra_args = { "--line-length", "200", "--skip-string-normalization", "--fast" } }),
+		-- formatting.prettierd,
+		-- formatting.black.with({ extra_args = { "--line-length", "200", "--skip-string-normalization", "--fast" } }),
 		formatting.stylua,
-		formatting.isort,
-		formatting.shellharden,
-		formatting.shfmt,
+		-- formatting.isort,
+		-- formatting.shellharden,
+		-- formatting.shfmt,
 		-- formatting.rustywind.with({
 		-- 	filetypes = {
 		-- 		"javascript",
