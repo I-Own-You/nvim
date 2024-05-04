@@ -97,25 +97,25 @@ require("lazy").setup({
 	-- 		-- hl(0, "TelescopeNormal", { fg = "#5ACB43", bg = "NONE" })
 	-- 	end,
 	-- },
-	{
-		"neovim/nvim-lspconfig",
-		enabled = true,
-		event = "BufReadPost",
-		config = function()
-			require("plugins.lsp.handlers").setup()
-		end,
-	},
-	{
-		"williamboman/mason.nvim",
-		enabled = true,
-		event = "BufReadPost",
-		-- use({ "williamboman/nvim-lsp-installer" }) -- lsp installer
-		dependencies = { "williamboman/mason-lspconfig.nvim" },
-		build = ":MasonUpdate",
-		config = function()
-			require("plugins.lsp.mason")
-		end,
-	},
+	-- {
+	-- 	"neovim/nvim-lspconfig",
+	-- 	enabled = true,
+	-- 	event = "BufReadPost",
+	-- 	config = function()
+	-- 		require("plugins.lsp.handlers").setup()
+	-- 	end,
+	-- },
+	-- {
+	-- 	"williamboman/mason.nvim",
+	-- 	enabled = true,
+	-- 	event = "BufReadPost",
+	-- 	-- use({ "williamboman/nvim-lsp-installer" }) -- lsp installer
+	-- 	dependencies = { "williamboman/mason-lspconfig.nvim" },
+	-- 	build = ":MasonUpdate",
+	-- 	config = function()
+	-- 		require("plugins.lsp.mason")
+	-- 	end,
+	-- },
 	{
 		-- "jose-elias-alvarez/null-ls.nvim",
 		"nvimtools/none-ls.nvim",

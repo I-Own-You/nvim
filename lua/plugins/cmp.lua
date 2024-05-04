@@ -156,13 +156,13 @@ local settings = {
 	},
 	sources = {
 		-- { name = "codeium" },
-		{ name = "nvim_lsp" },
-		{ name = "luasnip" },
-		-- { name = "rg" }, -- enable when processor will be better
+		-- { name = "nvim_lsp" },
+		-- { name = "luasnip" },
+		{ name = "rg" }, -- enable when processor will be better
 		{ name = "buffer" },
 		{ name = "path" },
 		{ name = "dotenv" },
-		{ name = "nvim_lsp_signature_help" },
+		-- { name = "nvim_lsp_signature_help" },
 	},
 	confirm_opts = {
 		behavior = cmp.ConfirmBehavior.Replace,
