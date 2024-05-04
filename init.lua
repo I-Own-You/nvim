@@ -182,15 +182,15 @@ require("lazy").setup({
 		end,
 		build = "make install_jsregexp",
 	},
-	{
-		"nvim-treesitter/nvim-treesitter",
-		enabled = true,
-		build = ":TSUpdate",
-		event = "BufReadPost",
-		config = function()
-			require("nvim-treesitter.configs").setup(require("plugins.treesiter"))
-		end,
-	},
+	-- {
+	-- 	"nvim-treesitter/nvim-treesitter",
+	-- 	enabled = true,
+	-- 	build = ":TSUpdate",
+	-- 	event = "BufReadPost",
+	-- 	config = function()
+	-- 		require("nvim-treesitter.configs").setup(require("plugins.treesiter"))
+	-- 	end,
+	-- },
 	{
 		"ibhagwan/fzf-lua",
 		enabled = true,
