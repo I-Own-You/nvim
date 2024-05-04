@@ -158,10 +158,10 @@ local settings = {
 		-- { name = "codeium" },
 		-- { name = "nvim_lsp" },
 		-- { name = "luasnip" },
-		{ name = "rg" }, -- enable when processor will be better
-		{ name = "buffer" },
+    { name = "buffer" },
 		{ name = "path" },
 		{ name = "dotenv" },
+    { name = "rg" }, -- enable when processor will be better
 		-- { name = "nvim_lsp_signature_help" },
 	},
 	confirm_opts = {
