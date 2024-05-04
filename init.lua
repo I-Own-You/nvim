@@ -15,23 +15,24 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-	-- {
-	-- 	"notken12/base46-colors",
-	-- 	lazy = false,
-	-- 	-- priority = 1000,
-	-- 	config = function()
-	-- 		vim.cmd([[colorscheme everblush]])
-	-- 		local hl = vim.api.nvim_set_hl
-	-- 		hl(0, "FoldColumn", { fg = "#68B9B9", bg = "#141B1E" })
-	-- 		hl(0, "PackageInfoOutdatedVersion", { fg = "#CDC61E", bg = "#141B1E" })
-	-- 		hl(0, "Identifier", { fg = "#dadada", bg = "NONE", sp = "NONE" })
-	-- 		hl(0, "FzfLuaLiveSym", { fg = "#2AC3DE", bg = "NONE" })
-	-- 		hl(0, "CustomSpectreSearch", { fg = "#FF4040", bg = "NONE" })
-	-- 		hl(0, "CustomSpectreReplace", {how to copy word after selection in visula mode neovm fg = "#8BCE7E", bg = "NONE" })
-	-- 		hl(0, "String", { fg = "#85de73", bg = "NONE" })
-	-- 		hl(0, "TelescopeMatching", { fg = "#2AC3DE", bg = "NONE" })
-	-- 	end,
-	-- },
+	{
+		"notken12/base46-colors",
+    enabled = false,
+		lazy = false,
+		-- priority = 1000,
+		config = function()
+			vim.cmd([[colorscheme everblush]])
+			local hl = vim.api.nvim_set_hl
+			hl(0, "FoldColumn", { fg = "#68B9B9", bg = "#141B1E" })
+			hl(0, "PackageInfoOutdatedVersion", { fg = "#CDC61E", bg = "#141B1E" })
+			hl(0, "Identifier", { fg = "#dadada", bg = "NONE", sp = "NONE" })
+			hl(0, "FzfLuaLiveSym", { fg = "#2AC3DE", bg = "NONE" })
+			hl(0, "CustomSpectreSearch", { fg = "#FF4040", bg = "NONE" })
+			hl(0, "CustomSpectreReplace", { fg = "#8BCE7E", bg = "NONE" })
+			hl(0, "String", { fg = "#85de73", bg = "NONE" })
+			hl(0, "TelescopeMatching", { fg = "#2AC3DE", bg = "NONE" })
+		end,
+	},
 	{
 		"nyoom-engineering/oxocarbon.nvim",
 		lazy = false,
@@ -81,41 +82,42 @@ require("lazy").setup({
 			)
 		end,
 	},
-	-- {
-	-- 	"folke/tokyonight.nvim",
-	-- 	lazy = false,
-	-- 	priority = 1000,
-	-- 	config = function()
-	-- 		require("tokyonight").setup(require("plugins.tokyonight-theme"))
-	-- 		vim.cmd(c[colorscheme tokyonight-night]c)
-	--
-	-- 		local hl = vim.api.nvim_set_hl
-	-- 		hl(0, "CustomSpectreSearch", { fg = "#FF007C", bg = "NONE" })
-	-- 		hl(0, "CustomSpectreReplace", { fg = "#5ACB43", bg = "NONE" })
-	-- 		hl(0, "TelescopeBorder", { fg = "#16161E", bg = "#16161E" })
-	-- 		hl(0, "FzfLuaLiveSym", { fg = "#2AC3DE", bg = "NONE" })
-	-- 		-- hl(0, "TelescopeNormal", { fg = "#5ACB43", bg = "NONE" })
-	-- 	end,
-	-- },
-	-- {
-	-- 	"neovim/nvim-lspconfig",
-	-- 	enabled = true,
-	-- 	event = "BufReadPost",
-	-- 	config = function()
-	-- 		require("plugins.lsp.handlers").setup()
-	-- 	end,
-	-- },
-	-- {
-	-- 	"williamboman/mason.nvim",
-	-- 	enabled = true,
-	-- 	event = "BufReadPost",
-	-- 	-- use({ "williamboman/nvim-lsp-installer" }) -- lsp installer
-	-- 	dependencies = { "williamboman/mason-lspconfig.nvim" },
-	-- 	build = ":MasonUpdate",
-	-- 	config = function()
-	-- 		require("plugins.lsp.mason")
-	-- 	end,
-	-- },
+	{
+		"folke/tokyonight.nvim",
+    enabled = false,
+		lazy = false,
+		priority = 1000,
+		config = function()
+			require("tokyonight").setup(require("plugins.tokyonight-theme"))
+			vim.cmd([[colorscheme tokyonight-night]])
+
+			local hl = vim.api.nvim_set_hl
+			hl(0, "CustomSpectreSearch", { fg = "#FF007C", bg = "NONE" })
+			hl(0, "CustomSpectreReplace", { fg = "#5ACB43", bg = "NONE" })
+			hl(0, "TelescopeBorder", { fg = "#16161E", bg = "#16161E" })
+			hl(0, "FzfLuaLiveSym", { fg = "#2AC3DE", bg = "NONE" })
+			-- hl(0, "TelescopeNormal", { fg = "#5ACB43", bg = "NONE" })
+		end,
+	},
+	{
+		"neovim/nvim-lspconfig",
+		enabled = false,
+		event = "BufReadPost",
+		config = function()
+			require("plugins.lsp.handlers").setup()
+		end,
+	},
+	{
+		"williamboman/mason.nvim",
+		enabled = false,
+		event = "BufReadPost",
+		-- use({ "williamboman/nvim-lsp-installer" }) -- lsp installer
+		dependencies = { "williamboman/mason-lspconfig.nvim" },
+		build = ":MasonUpdate",
+		config = function()
+			require("plugins.lsp.mason")
+		end,
+	},
 	{
 		-- "jose-elias-alvarez/null-ls.nvim",
 		"nvimtools/none-ls.nvim",
@@ -182,15 +184,15 @@ require("lazy").setup({
 		end,
 		build = "make install_jsregexp",
 	},
-	-- {
-	-- 	"nvim-treesitter/nvim-treesitter",
-	-- 	enabled = true,
-	-- 	build = ":TSUpdate",
-	-- 	event = "BufReadPost",
-	-- 	config = function()
-	-- 		require("nvim-treesitter.configs").setup(require("plugins.treesiter"))
-	-- 	end,
-	-- },
+	{
+		"nvim-treesitter/nvim-treesitter",
+		enabled = false,
+		build = ":TSUpdate",
+		event = "BufReadPost",
+		config = function()
+			require("nvim-treesitter.configs").setup(require("plugins.treesiter"))
+		end,
+	},
 	{
 		"ibhagwan/fzf-lua",
 		enabled = true,
@@ -493,16 +495,17 @@ require("lazy").setup({
 			require("telescope").load_extension("undo")
 		end,
 	},
-	-- {
-	-- 	"folke/todo-comments.nvim",
-	-- 	config = function()
-	-- 		require("todo-comments").setup()
-	-- 	end,
-	-- 	keys = {
-	-- 		{ "<leader>td", mode = "n", ":TodoQuickFix<CR>", desc = "open todos", noremap = true, silent = true },
-	-- 	},
-	-- 	opts = require("plugins.todo-comments"),
-	-- },
+	{
+		"folke/todo-comments.nvim",
+    enabled = false,
+		config = function()
+			require("todo-comments").setup()
+		end,
+		keys = {
+			{ "<leader>td", mode = "n", ":TodoQuickFix<CR>", desc = "open todos", noremap = true, silent = true },
+		},
+		opts = require("plugins.todo-comments"),
+	},
 	{
 		"rbong/vim-flog",
 		enabled = true,
