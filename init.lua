@@ -121,7 +121,7 @@ require("lazy").setup({
 	{
 		-- "jose-elias-alvarez/null-ls.nvim",
 		"nvimtools/none-ls.nvim",
-		enabled = true,
+		enabled = false,
 		event = "BufReadPost",
 		dependencies = { "nvim-lua/plenary.nvim" },
 		config = function()
@@ -321,18 +321,19 @@ require("lazy").setup({
 	},
 	{
 		"kevinhwang91/nvim-bqf",
+    enabled = false,
 		event = "BufReadPost",
 		opts = require("plugins.bqf"),
 	},
 	{
 		"NvChad/nvim-colorizer.lua",
-		enabled = true,
+		enabled = false,
 		event = "BufReadPost",
 		opts = require("plugins.colorizer"),
 	},
 	{
 		"numToStr/Comment.nvim",
-		enabled = true,
+		enabled = false,
 		event = "BufReadPost",
 		opts = require("plugins.comment"),
 		-- config = function()
@@ -427,22 +428,19 @@ require("lazy").setup({
 			{ "<leader>q", mode = "n", ":Bdelete!<cr>", desc = "delete buffer", silent = true },
 		},
 	},
-
 	{
 		"windwp/nvim-autopairs",
 		enabled = true,
 		event = "InsertEnter",
 		opts = require("plugins.autopairs"),
 	},
-	{
-		"Wansmer/treesj",
-		enabled = true,
-		dependencies = { "nvim-treesitter" },
-		opts = require("plugins.treesj"),
-		keys = {
-			{ "<leader>j", mode = "n", "<cmd>TSJToggle<cr>", desc = "toggle node split", silent = true },
-		},
-	},
+  {
+    "Wansmer/treesj",
+    enabled = true,
+    dependencies = { "nvim-treesitter" },
+    opts = require("plugins.treesj"),
+    keys = { { "<leader>j", mode = "n", "<cmd>TSJToggle<cr>", desc = "toggle node split", silent = true } },
+  },
 	{
 		"andymass/vim-matchup",
 		enabled = true,
