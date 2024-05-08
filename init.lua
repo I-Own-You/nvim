@@ -17,7 +17,7 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
 	{
 		"notken12/base46-colors",
-    enabled = false,
+    enabled = true,
 		lazy = false,
 		-- priority = 1000,
 		config = function()
@@ -35,6 +35,7 @@ require("lazy").setup({
 	},
 	{
 		"nyoom-engineering/oxocarbon.nvim",
+    enabled = false,
 		lazy = false,
 		config = function()
 			vim.opt.background = "dark"
