@@ -572,7 +572,7 @@ require("lazy").setup({
 	},
 	{
 		"folke/flash.nvim",
-		enabled = false,
+		enabled = true,
 		event = "BufReadPost",
 		---@type Flash.Config
 		keys = {
@@ -987,17 +987,20 @@ require("lazy").setup({
 	},
 	{
 		"0xAdk/full_visual_line.nvim",
+    enabled = true,
 		keys = "V",
 		opts = {},
 	},
 	{
 		"kylechui/nvim-surround",
+    enabled = true,
 		tag = "*",
 		event = "BufReadPost",
 		opts = require("plugins.nvim-surround"),
 	},
 	{
 		"folke/which-key.nvim",
+    enabled = true,
 		event = "VeryLazy",
 		init = function()
 			vim.o.timeout = true
