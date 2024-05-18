@@ -1136,7 +1136,7 @@ require("lazy").setup({
 	},
 	{
 		"FabijanZulj/blame.nvim",
-		enabled = false,
+		enabled = true,
 		opts = {},
 		keys = {
 			{
