@@ -94,6 +94,10 @@ keymap("n", "<C-u>", "5k", { silent = true, desc = "" })
 keymap("n", "<C-e>", "5<C-e>", { silent = true, desc = "", noremap = true })
 keymap("n", "<C-y>", "5<C-y>", { silent = true, desc = "", noremap = true })
 
+keymap("n", "<C-c>", ":%y<CR>", { silent = true })
+keymap("n", "<C-a>", "ggVG", { silent = true })
+keymap("n", "<C-x>", ":%d<CR>", { silent = true })
+
 keymap("n", "<leader>nb", ":enew<cr>", { silent = true, desc = "open new buffer" })
 keymap("n", "<leader>nt", ":tabnew<CR>", { silent = true, desc = "open new tab" })
 
