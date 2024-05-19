@@ -1131,7 +1131,7 @@ require("lazy").setup({
 	},
 	{
 		"yutkat/wb-only-current-line.nvim",
-		enabled = true,
+		enabled = false,
 		event = "BufReadPost",
 	},
 	{
