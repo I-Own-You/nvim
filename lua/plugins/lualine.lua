@@ -198,7 +198,7 @@ ins_right({
 -- Add components to right sections
 ins_right({
 	function()
-		return "s:" .. require("possession.session").session_name or ""
+		return "s:" .. require("possession.session").get_session_name() or ""
 	end,
 	color = { fg = "#E0AF68", gui = "bold" },
 })
