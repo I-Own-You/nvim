@@ -1173,7 +1173,7 @@ require("lazy").setup({
 				desc = "Open the file manager",
 			},
 		},
-		opts = require("plugins.yazi"),
+		-- opts = require("plugins.yazi"),
 	},
 	{ "folke/neodev.nvim", enabled = false, opts = {} }, -- also enable in mason.lua line before mlspconfig to work
 	{
