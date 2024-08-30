@@ -472,7 +472,7 @@ require("lazy").setup({
 				noremap = true,
 				silent = true,
 			},
-			{ "<leader>ss", mode = "n", ":PossessionSave ", desc = "save session", noremap = true, silent = true },
+			{ "<leader>ss", mode = "n", ":PossessionSave ", desc = "save session", noremap = true },
 		},
 		dependencies = {
 			"nvim-lua/plenary.nvim",
