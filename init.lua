@@ -991,7 +991,11 @@ require("lazy").setup({
 		enabled = true,
 		event = "InsertEnter",
 		config = function()
-			require("better_escape").setup()
+			require("better_escape").setup({
+        mappings = {
+          t = false
+        }
+      })
 		end,
 	},
 	{

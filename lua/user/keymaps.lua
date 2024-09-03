@@ -18,14 +18,14 @@ keymap("n", "<C-l>", "<C-w>l", { silent = true })
 keymap("n", "<C-i>", "<C-6>", { silent = true, noremap = true })
 
 keymap("n", "<leader>ot", ":tab split | terminal<CR>", { silent = true, desc = "open terminal" })
-keymap("t", "<leader>tc", "<C-\\><C-n>", { silent = true, desc = "exit terminal mode" })
+-- keymap("t", "<leader>tc", "<C-\\><C-n>", { silent = true, desc = "exit terminal mode" })
 
 keymap("n", "q", "<Nop>", { silent = true })
 
 keymap("n", "<TAB>", ":tabnext<CR>", { silent = true })
 keymap("n", "<S-TAB>", ":tabprevious<CR>", { silent = true })
 
-keymap("i", "jk", "<ESC>", { silent = true })
+-- keymap("i", "jk", "<ESC>", { silent = true })
 
 keymap("v", "<", "<gv", { silent = true })
 keymap("v", ">", ">gv", { silent = true })
