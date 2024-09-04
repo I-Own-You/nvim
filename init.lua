@@ -990,13 +990,11 @@ require("lazy").setup({
 		"max397574/better-escape.nvim",
 		enabled = true,
 		event = "InsertEnter",
-		config = function()
-			require("better_escape").setup({
-        mappings = {
-          t = false
-        }
-      })
-		end,
+    opts = require("plugins.better_escape")
+		-- config = function()
+		-- 	require("better_escape").setup({
+		--     })
+		-- end,
 	},
 	{
 		"0xAdk/full_visual_line.nvim",
