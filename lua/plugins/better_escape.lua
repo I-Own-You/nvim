@@ -15,7 +15,11 @@ return {
         j = "<Esc>",
       },
     },
-    t = false,
+    t = {
+      j = {
+        k = false
+      }
+    },
     v = {
       j = {
         k = "<Esc>",
