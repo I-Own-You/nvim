@@ -28,18 +28,6 @@ null_ls.setup({
 		-- formatting.isort,
 		-- formatting.shellharden,
 		-- formatting.shfmt,
-		-- formatting.rustywind.with({
-		-- 	filetypes = {
-		-- 		"javascript",
-		-- 		"javascriptreact",
-		-- 		"typescript",
-		-- 		"typescriptreact",
-		-- 		"vue",
-		-- 		"svelte",
-		-- 		"html",
-		-- 		"htmldjango",
-		-- 	},
-		-- }),
 		-- formatting.autopep8,
 	},
 
