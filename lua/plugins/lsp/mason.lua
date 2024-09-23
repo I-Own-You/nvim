@@ -5,7 +5,6 @@ local servers = {
 	-- "pyright",
 	-- "pylsp",
 	-- "cssmodules_ls",
-	-- "tailwindcss",
 	-- "jsonls",
 	-- "taplo",
 	-- "yamlls",
