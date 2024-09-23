@@ -63,8 +63,6 @@ local function lsp_keymaps(bufnr)
 	local opts = { noremap = true, silent = true }
 	local keymap = vim.api.nvim_buf_set_keymap
 
-	vim.api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp.omnifunc")
-
 	keymap(bufnr, "n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opts) --keymaps.lua
 	keymap(bufnr, "n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", opts) --keymaps.lua
 	-- keymap(bufnr, "n", "<leader>wa", "<cmd> lua vim.lsp.buf.add_workspace_folder()<CR>", opts)
@@ -97,6 +95,17 @@ M.on_attach = function(client, bufnr)
 
 	if client.name == "pylsp" then
 		client.server_capabilities.documentSymbolProvider = false
+	end
+
+	if client.name == "gopls" then
+		if client.server_capabilities.documentFormattingProvider then
+			vim.api.nvim_create_autocmd("BufWritePre", {
+				buffer = bufnr,
+				callback = function()
+					vim.lsp.buf.format({ bufnr = bufnr })
+				end,
+			})
+		end
 	end
 
 	lsp_keymaps(bufnr)
