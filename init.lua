@@ -62,7 +62,7 @@ require("lazy").setup({
 		event = "BufReadPost",
 		dependencies = { "nvim-lua/plenary.nvim" },
 		config = function()
-			require("plugins.lsp.null-ls")
+			require("plugins.lsp.none-ls")
 		end,
 	},
 	{
