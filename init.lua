@@ -338,10 +338,11 @@ require("lazy").setup({
 		"andymass/vim-matchup",
 		enabled = true,
 		event = "BufReadPost",
-		-- config = function()
-		-- vim.cmd([[highlight MatchParen guibg=#5C4E4E]])
-		-- vim.cmd([[highlight MatchParen gui=NONE]])
-		-- end,
+		config = function()
+			vim.g.matchup_matchparen_enabled = 0
+			-- vim.cmd([[highlight MatchParen guibg=#000000]])
+			-- vim.cmd([[highlight MatchParen gui=NONE]])
+		end,
 	},
 	{
 		"jedrzejboczar/possession.nvim",
