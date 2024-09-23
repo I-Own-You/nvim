@@ -157,9 +157,9 @@ local settings = {
 	sources = {
 		{ name = "nvim_lsp" },
 		{ name = "luasnip" },
-    { name = "buffer" },
+		{ name = "buffer" },
 		{ name = "path" },
-		{ name = "dotenv" },
+		-- { name = "dotenv" },
 		-- { name = "rg" },
 	},
 	confirm_opts = {
