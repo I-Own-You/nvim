@@ -16,6 +16,7 @@ null_ls.setup({
 		-- formatting.black.with({ extra_args = { "--line-length", "200", "--skip-string-normalization", "--fast" } }),
 		formatting.stylua,
 		formatting.goimports,
+		diagnostics.golangci_lint,
 		-- formatting.isort,
 		-- formatting.shellharden,
 		-- formatting.shfmt,
