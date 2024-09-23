@@ -3,15 +3,6 @@ if not null_ls_status_ok then
 	return
 end
 
--- shfmt
--- shellharden
--- biome
--- black
--- isort
--- prettier
--- prettierd
--- stylua
-
 -- https://github.com/jose-elias-alvarez/null-ls.nvim/tree/main/lua/null-ls/builtins/formatting
 local formatting = null_ls.builtins.formatting
 -- https://github.com/jose-elias-alvarez/null-ls.nvim/tree/main/lua/null-ls/builtins/diagnostics
