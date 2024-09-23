@@ -24,6 +24,7 @@ null_ls.setup({
 		-- formatting.prettierd,
 		-- formatting.black.with({ extra_args = { "--line-length", "200", "--skip-string-normalization", "--fast" } }),
 		formatting.stylua,
+		formatting.goimports,
 		-- formatting.isort,
 		-- formatting.shellharden,
 		-- formatting.shfmt,
