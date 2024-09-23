@@ -17,7 +17,7 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
 	{
 		"notken12/base46-colors",
-    enabled = true,
+		enabled = true,
 		lazy = false,
 		-- priority = 1000,
 		config = function()
@@ -27,91 +27,18 @@ require("lazy").setup({
 			hl(0, "PackageInfoOutdatedVersion", { fg = "#CDC61E", bg = "#141B1E" })
 			hl(0, "Identifier", { fg = "#dadada", bg = "NONE", sp = "NONE" })
 			hl(0, "FzfLuaLiveSym", { fg = "#2AC3DE", bg = "NONE" })
-			hl(0, "CustomSpectreSearch", { fg = "#FF4040", bg = "NONE" })
-			hl(0, "CustomSpectreReplace", { fg = "#8BCE7E", bg = "NONE" })
 			hl(0, "String", { fg = "#85de73", bg = "NONE" })
 			hl(0, "TelescopeMatching", { fg = "#2AC3DE", bg = "NONE" })
-		end,
-	},
-	{
-		"nyoom-engineering/oxocarbon.nvim",
-    enabled = false,
-		lazy = false,
-		config = function()
-			vim.opt.background = "dark"
-			vim.cmd("colorscheme oxocarbon")
-			vim.api.nvim_set_hl(0, "CustomSpectreSearch", { fg = "#EE5396", bg = "NONE" })
-			vim.api.nvim_set_hl(0, "CustomSpectreReplace", { fg = "#5ACB43", bg = "NONE" })
-			vim.api.nvim_set_hl(0, "FzfLuaLiveSym", { fg = "#3DDBD9", bg = "NONE" })
-			vim.api.nvim_set_hl(0, "FoldColumn", { fg = "#68B9B9", bg = "NONE" })
-			vim.api.nvim_set_hl(0, "PackageInfoOutdatedVersion", { fg = "#CDC61E", bg = "NONE" })
-			vim.api.nvim_set_hl(0, "FloatBorder", { fg = "#eeeeee", bg = "NONE" })
-			-- cmp hi
-			vim.api.nvim_set_hl(0, "CmpItemAbbrMatch", { fg = "#ff7eb6", bg = "NONE" })
-			vim.api.nvim_set_hl(0, "CmpItemAbbrMatchFuzzy", { fg = "#ff7eb6", bg = "NONE" })
-			vim.api.nvim_set_hl(0, "CmpItemKindField", { fg = "#ff7eb6", bg = "NONE" })
-			vim.api.nvim_set_hl(0, "CmpItemKindProperty", { fg = "#ff7eb6", bg = "NONE" })
-			vim.api.nvim_set_hl(0, "CmpItemKindText", { fg = "#78a9ff", bg = "NONE" })
-			vim.api.nvim_set_hl(0, "CmpItemKindVariable", { fg = "#be95ff", bg = "NONE" })
-			vim.api.nvim_set_hl(0, "CmpItemKindFile", { fg = "#be95ff", bg = "NONE" })
-			vim.api.nvim_set_hl(0, "CmpItemKindEnum", { fg = "#78a9ff", bg = "NONE" })
-			vim.api.nvim_set_hl(0, "CmpItemKindUnit", { fg = "#42be65", bg = "NONE" })
-			vim.api.nvim_set_hl(0, "CmpItemKindClass", { fg = "#33b1ff", bg = "NONE" })
-			vim.api.nvim_set_hl(0, "CmpItemKindColor", { fg = "#3ddbd9", bg = "NONE" })
-			vim.api.nvim_set_hl(0, "CmpItemKindEvent", { fg = "#ff7eb6", bg = "NONE" })
-			vim.api.nvim_set_hl(0, "CmpItemKindValue", { fg = "#82cfff", bg = "NONE" })
-			vim.api.nvim_set_hl(0, "CmpItemKindFolder", { fg = "#42be65", bg = "NONE" })
-			vim.api.nvim_set_hl(0, "CmpItemKindMethod", { fg = "#82cfff", bg = "NONE" })
-			vim.api.nvim_set_hl(0, "CmpItemKindModule", { fg = "#33b1ff", bg = "NONE" })
-			vim.api.nvim_set_hl(0, "CmpItemKindStruct", { fg = "#33b1ff", bg = "NONE" })
-			vim.api.nvim_set_hl(0, "CmpItemKindDefault", { fg = "#d0d0d0", bg = "NONE" })
-			vim.api.nvim_set_hl(0, "CmpItemKindKeyword", { fg = "#78a9ff", bg = "NONE" })
-			vim.api.nvim_set_hl(0, "CmpItemKindSnippet", { fg = "#42be65", bg = "NONE" })
-			vim.api.nvim_set_hl(0, "CmpItemKindConstant", { fg = "#EE5396", bg = "NONE" })
-			vim.api.nvim_set_hl(0, "CmpItemKindFunction", { fg = "#33b1ff", bg = "NONE" })
-			vim.api.nvim_set_hl(0, "CmpItemKindOperator", { fg = "#33b1ff", bg = "NONE" })
-			vim.api.nvim_set_hl(0, "CmpItemKindInterface", { fg = "#3ddbd9", bg = "NONE" })
-			vim.api.nvim_set_hl(0, "CmpItemKindReference", { fg = "#EE5396", bg = "NONE" })
-			vim.api.nvim_set_hl(0, "CmpItemKindEnumMember", { fg = "#82cfff", bg = "NONE" })
-			vim.api.nvim_set_hl(0, "CmpItemKindConstructor", { fg = "#EE5396", bg = "NONE" })
-			vim.api.nvim_set_hl(0, "CmpItemKindTypeParameter", { fg = "#3ddbd9", bg = "NONE" })
-			vim.api.nvim_set_hl(0, "CmpItemAbbrDeprecated", { fg = "#525252", bg = "NONE", strikethrough = true })
-			vim.api.nvim_set_hl(
-				0,
-				"CmpItemAbbrDeprecatedDefault",
-				{ fg = "#525252", bg = "NONE", strikethrough = true }
-			)
-			vim.api.nvim_set_hl(0, "GitSignsAdd", { link = "GitSignsAdd" })
-			vim.api.nvim_set_hl(0, "GitSignsAddNr", { link = "GitSignsAddNr" })
-			vim.api.nvim_set_hl(0, "GitSignsAddLn", { link = "GitSignsAddLn" })
-			vim.api.nvim_set_hl(0, "GitSignsChange", { link = "GitSignsChange" })
-			vim.api.nvim_set_hl(0, "GitSignsChangeNr", { link = "GitSignsChangeNr" })
-			vim.api.nvim_set_hl(0, "GitSignsChangeLn", { link = "GitSignsChangeLn" })
-			vim.api.nvim_set_hl(0, "GitSignsDelete", { link = "GitSignsDelete" })
-			vim.api.nvim_set_hl(0, "GitSignsDeleteNr", { link = "GitSignsDeleteNr" })
-			vim.api.nvim_set_hl(0, "GitSignsDeleteLn", { link = "GitSignsDeleteLn" })
-		end,
-	},
-	{
-		"folke/tokyonight.nvim",
-    enabled = false,
-		lazy = false,
-		priority = 1000,
-		config = function()
-			require("tokyonight").setup(require("plugins.tokyonight-theme"))
-			vim.cmd([[colorscheme tokyonight-night]])
-
-			local hl = vim.api.nvim_set_hl
-			hl(0, "CustomSpectreSearch", { fg = "#FF007C", bg = "NONE" })
-			hl(0, "CustomSpectreReplace", { fg = "#5ACB43", bg = "NONE" })
-			hl(0, "TelescopeBorder", { fg = "#16161E", bg = "#16161E" })
-			hl(0, "FzfLuaLiveSym", { fg = "#2AC3DE", bg = "NONE" })
-			-- hl(0, "TelescopeNormal", { fg = "#5ACB43", bg = "NONE" })
+			-- hl(0, "HlSearchNear", { fg = "#ffffff", bg = "#000000" })
+			hl(0, "Search", { fg = "#000000", bg = "#85DE73" })
+			hl(0, "IncSearch", { fg = "#000000", bg = "#85DE73" })
+			hl(0, "HlSearchLens", { bg = "#1e1e1e", fg = "#c8c8c8" })
+			hl(0, "HlSearchLensNear", { fg = "#000000", bg = "#85DE73" })
 		end,
 	},
 	{
 		"neovim/nvim-lspconfig",
-		enabled = false,
+		enabled = true,
 		event = "BufReadPost",
 		config = function()
 			require("plugins.lsp.handlers").setup()
@@ -119,7 +46,7 @@ require("lazy").setup({
 	},
 	{
 		"williamboman/mason.nvim",
-		enabled = false,
+		enabled = true,
 		event = "BufReadPost",
 		-- use({ "williamboman/nvim-lsp-installer" }) -- lsp installer
 		dependencies = { "williamboman/mason-lspconfig.nvim" },
@@ -131,7 +58,7 @@ require("lazy").setup({
 	{
 		-- "jose-elias-alvarez/null-ls.nvim",
 		"nvimtools/none-ls.nvim",
-		enabled = false,
+		enabled = true,
 		event = "BufReadPost",
 		dependencies = { "nvim-lua/plenary.nvim" },
 		config = function()
@@ -162,16 +89,12 @@ require("lazy").setup({
 				"saadparwaiz1/cmp_luasnip",
 				event = "InsertEnter",
 			},
-			{
-				"lukas-reineke/cmp-rg",
-				event = "InsertEnter",
-			},
+			-- {
+			-- 	"lukas-reineke/cmp-rg",
+			-- 	event = "InsertEnter",
+			-- },
 			{
 				"SergioRibera/cmp-dotenv",
-				event = "InsertEnter",
-			},
-			{
-				"hrsh7th/cmp-nvim-lsp-signature-help",
 				event = "InsertEnter",
 			},
 		},
@@ -196,7 +119,7 @@ require("lazy").setup({
 	},
 	{
 		"nvim-treesitter/nvim-treesitter",
-		enabled = false,
+		enabled = true,
 		build = ":TSUpdate",
 		event = "BufReadPost",
 		config = function()
@@ -303,57 +226,17 @@ require("lazy").setup({
 		end,
 	},
 	{
-		"lukas-reineke/indent-blankline.nvim",
-		enabled = false,
-		event = "BufReadPost",
-		commit = "9637670896b68805430e2f72cf5d16be5b97a22a",
-		config = function()
-			require("indent_blankline").setup(require("plugins.indent_blankline"))
-			-- vim.cmd([[highlight IndentBlanklineContextStart guisp=#8FBCBB gui=underline]])
-			vim.g.indent_blankline_filetype_exclude = { "dashboard" }
-			vim.keymap.set("n", "<leader>kk", function()
-				local ok, start = require("indent_blankline.utils").get_current_context(
-					vim.g.indent_blankline_context_patterns,
-					vim.g.indent_blankline_use_treesitter_scope
-				)
-
-				if ok then
-					vim.api.nvim_win_set_cursor(vim.api.nvim_get_current_win(), { start, 0 })
-					vim.cmd([[normal! _]])
-				end
-			end, { silent = true, desc = "go to parent node" })
-		end,
-	},
-	{
-		"nacro90/numb.nvim",
-		event = "BufReadPost",
-		opts = require("plugins.numb"),
-	},
-	{
 		"kevinhwang91/nvim-bqf",
-    enabled = false,
+		enabled = true,
 		event = "BufReadPost",
 		opts = require("plugins.bqf"),
 	},
-	{
-		"NvChad/nvim-colorizer.lua",
-		enabled = false,
-		event = "BufReadPost",
-		opts = require("plugins.colorizer"),
-	},
-	{
-		"numToStr/Comment.nvim",
-		enabled = false,
-		event = "BufReadPost",
-		opts = require("plugins.comment"),
-		-- config = function()
-			-- require("Comment").setup({
-				-- pre_hook = require("ts_context_commentstring.integrations.comment_nvim").create_pre_hook(),
-			-- })
-			-- local ft = require("Comment.ft")
-			-- ft.scss = { "// %s", "/* %s */" }
-		-- end,
-	},
+	-- {
+	-- 	"NvChad/nvim-colorizer.lua",
+	-- 	enabled = false,
+	-- 	event = "BufReadPost",
+	-- 	opts = require("plugins.colorizer"),
+	-- },
 	{
 		"lewis6991/gitsigns.nvim",
 		enabled = true,
@@ -444,13 +327,13 @@ require("lazy").setup({
 		event = "InsertEnter",
 		opts = require("plugins.autopairs"),
 	},
-  {
-    "Wansmer/treesj",
-    enabled = true,
-    dependencies = { "nvim-treesitter" },
-    opts = require("plugins.treesj"),
-    keys = { { "<leader>j", mode = "n", "<cmd>TSJToggle<cr>", desc = "toggle node split", silent = true } },
-  },
+	{
+		"Wansmer/treesj",
+		enabled = true,
+		dependencies = { "nvim-treesitter" },
+		opts = require("plugins.treesj"),
+		keys = { { "<leader>j", mode = "n", "<cmd>TSJToggle<cr>", desc = "toggle node split", silent = true } },
+	},
 	{
 		"andymass/vim-matchup",
 		enabled = true,
@@ -505,7 +388,7 @@ require("lazy").setup({
 	},
 	{
 		"folke/todo-comments.nvim",
-    enabled = false,
+		enabled = true,
 		config = function()
 			require("todo-comments").setup()
 		end,
@@ -533,52 +416,19 @@ require("lazy").setup({
 			{ "<leader>fs", mode = "n", ":Flogsplit ", desc = "flog split", noremap = true, silent = true },
 		},
 	},
-	{
-		"windwp/nvim-ts-autotag",
-		enabled = false,
-		ft = {
-			"html",
-			"javascript",
-			"typescript",
-			"javascriptreact",
-			"typescriptreact",
-			"svelte",
-			"vue",
-			"tsx",
-			"jsx",
-			"rescript",
-			"xml",
-			"php",
-			"markdown",
-			"astro",
-			"glimmer",
-			"handlebars",
-			"hbs",
-			"djangohtml",
-			"htmldjango",
-		},
-		opts = require("plugins.nvim-ts-autotag"),
-	},
-	{
-		"https://git.sr.ht/~whynothugo/lsp_lines.nvim",
-		enabled = false,
-		event = "BufReadPost",
-		config = function()
-			-- virtual_text is disabled in handlers.lua
-			-- vim.diagnostic.config({ virtual_text = false })
-			-- vim.diagnostic.config({ virtual_lines = true })
-			-- vim.diagnostic.config({ virtual_lines = { only_current_line = true } })
-			vim.diagnostic.config({ virtual_lines = { highlight_whole_line = false } })
-			require("lsp_lines").setup({})
-		end,
-	},
-	{
-		"akinsho/bufferline.nvim",
-		enabled = false,
-		config = function()
-			require("bufferline").setup(require("plugins.bufferline"))
-		end,
-	},
+	-- {
+	-- 	"https://git.sr.ht/~whynothugo/lsp_lines.nvim",
+	-- 	enabled = false,
+	-- 	event = "BufReadPost",
+	-- 	config = function()
+	-- 		-- virtual_text is disabled in handlers.lua
+	-- 		-- vim.diagnostic.config({ virtual_text = false })
+	-- 		-- vim.diagnostic.config({ virtual_lines = true })
+	-- 		-- vim.diagnostic.config({ virtual_lines = { only_current_line = true } })
+	-- 		vim.diagnostic.config({ virtual_lines = { highlight_whole_line = false } })
+	-- 		require("lsp_lines").setup({})
+	-- 	end,
+	-- },
 	{
 		"folke/flash.nvim",
 		enabled = true,
@@ -596,7 +446,7 @@ require("lazy").setup({
 	},
 	{
 		"sindrets/diffview.nvim",
-		enabled = false,
+		enabled = true,
 		event = "BufReadPost",
 		config = function()
 			local actions = require("diffview.actions")
@@ -619,68 +469,11 @@ require("lazy").setup({
 				silent = true,
 			},
 			{ "<leader>mk", mode = "n", ":DiffviewClose<CR>", desc = "close diff view", silent = true },
-			-- {
-			-- 	"<leader>mt",
-			-- 	mode = "n",
-			-- 	':lua require("utility_functions").diffViewOpen()<CR>',
-			-- 	desc = "open diff view",silent=true
-			-- },
-			-- {
-			-- 	"<leader>mf",
-			-- 	mode = "n",
-			-- 	':lua require("utility_functions").diffViewFileHistoryOpen()<CR>',
-			-- 	desc = "open diff view for single file",silent=true
-			-- },
-			-- {
-			-- 	"<leader>mk",
-			-- 	mode = "n",
-			-- 	':lua require("utility_functions").diffViewClose()<CR>',
-			-- 	desc = "close diff view",silent=true
-			-- },
 		},
-	},
-	{
-		"kevinhwang91/nvim-ufo",
-		enabled = false,
-		event = "BufReadPost",
-		-- look into handlers.lua/keymaps.lua there is code for ufo.nvim, in case you delete the pluign
-		dependencies = {
-			"kevinhwang91/promise-async",
-			{
-				"luukvbaal/statuscol.nvim", -- tweak for right columnt that shows redundant digits
-				config = function()
-					local builtin = require("statuscol.builtin")
-					require("statuscol").setup({
-						relculright = true,
-						segments = {
-							{ text = { builtin.foldfunc }, click = "v:lua.ScFa" },
-							{ text = { "%s" }, click = "v:lua.ScSa" },
-							{ text = { builtin.lnumfunc, " " }, click = "v:lua.ScLa" },
-						},
-					})
-				end,
-			},
-		},
-		init = function()
-			vim.o.fillchars = [[eob: ,fold: ,foldopen:,foldsep: ,foldclose:]]
-			vim.opt.foldcolumn = "1" -- '0' is not bad
-			vim.opt.foldlevel = 99 -- Using ufo provider need a large value, feel free to decrease the value
-			vim.opt.foldlevelstart = 99
-			vim.opt.foldenable = true
-		end,
-		config = function()
-			require("ufo").setup(require("plugins.ufo"))
-			vim.keymap.set("n", "zR", function()
-				require("ufo").openAllFolds()
-			end, { silent = true })
-			vim.keymap.set("n", "zM", function()
-				require("ufo").closeAllFolds()
-			end, { silent = true })
-		end,
 	},
 	{
 		"utilyre/barbecue.nvim",
-		enabled = false,
+		enabled = true,
 		event = "BufReadPost",
 		name = "barbecue",
 		version = "*",
@@ -688,28 +481,24 @@ require("lazy").setup({
 			"SmiteshP/nvim-navic",
 			"kyazdani42/nvim-web-devicons",
 		},
+		config = function()
+			-- callback so that barbecue is toggled off by default
+			vim.api.nvim_create_autocmd("VimEnter", {
+				once = true,
+				callback = function()
+					vim.cmd("Barbecue toggle")
+				end,
+			})
+		end,
 		opts = {},
 	},
-	{
-		"glepnir/dashboard-nvim",
-		enabled = false,
-		event = "VimEnter",
-		opts = require("plugins.dashboard"),
-		dependencies = { { "kyazdani42/nvim-web-devicons" } },
-	},
-	{
-		"luckasRanarison/nvim-devdocs",
-		enabled = false,
-		dependencies = {
-			"nvim-lua/plenary.nvim",
-			"nvim-telescope/telescope.nvim",
-			"nvim-treesitter/nvim-treesitter",
-		},
-		keys = {
-			{ "<leader>dd", ":DevdocsOpenFloat ", desc = "open devdocs", silent = true },
-		},
-		opts = require("plugins.devdocs"),
-	},
+	-- {
+	-- 	"glepnir/dashboard-nvim",
+	-- 	enabled = false,
+	-- 	event = "VimEnter",
+	-- 	opts = require("plugins.dashboard"),
+	-- 	dependencies = { { "kyazdani42/nvim-web-devicons" } },
+	-- },
 	{
 		"kevinhwang91/nvim-fundo",
 		enabled = true,
@@ -725,7 +514,7 @@ require("lazy").setup({
 	},
 	{
 		"piersolenski/wtf.nvim",
-		enabled = false,
+		enabled = true,
 		dependencies = {
 			"MunifTanjim/nui.nvim",
 		},
@@ -734,18 +523,18 @@ require("lazy").setup({
 			{ "<leader>wt", ":WtfSearch ", desc = "open wtf search", silent = true },
 		},
 	},
-	{
-		-- NOTE: you can also make for another lang the import, look at github of the extension, in case
-		"piersolenski/telescope-import.nvim",
-		enabled = false,
-		dependencies = "nvim-telescope/telescope.nvim",
-		keys = {
-			{ "<leader>ii", "<cmd>Telescope import<CR>", desc = "open imports", silent = true },
-		},
-		config = function()
-			require("telescope").load_extension("import")
-		end,
-	},
+	-- {
+	-- 	-- NOTE: you can also make for another lang the import, look at github of the extension, in case
+	-- 	"piersolenski/telescope-import.nvim",
+	-- 	enabled = false,
+	-- 	dependencies = "nvim-telescope/telescope.nvim",
+	-- 	keys = {
+	-- 		{ "<leader>ii", "<cmd>Telescope import<CR>", desc = "open imports", silent = true },
+	-- 	},
+	-- 	config = function()
+	-- 		require("telescope").load_extension("import")
+	-- 	end,
+	-- },
 	{
 		"mrjones2014/smart-splits.nvim",
 		enabled = true,
@@ -773,19 +562,6 @@ require("lazy").setup({
 			{ "<C-Space>k", '<cmd>lua require("smart-splits").swap_buf_up()<CR>' },
 			{ "<C-Space>l", '<cmd>lua require("smart-splits").swap_buf_right()<CR>' },
 		},
-	},
-	{
-		"fedepujol/move.nvim",
-		enabled = true,
-		keys = {
-			-- normal mode, move lines/words
-			{ "<A-j>", ":MoveLine(1)<CR>", silent = true },
-			{ "<A-k>", ":MoveLine(-1)<CR>", silent = true },
-			-- visual mode, move blocks
-			{ "<A-j>", ":MoveBlock(1)<CR>", mode = "v", silent = true },
-			{ "<A-k>", ":MoveBlock(-1)<CR>", mode = "v", silent = true },
-		},
-		opts = {},
 	},
 	{
 		"kevinhwang91/nvim-hlslens",
@@ -829,80 +605,25 @@ require("lazy").setup({
 			},
 		},
 	},
-	{
-		"2kabhishek/nerdy.nvim",
-		enabled = false,
-		dependencies = {
-			"stevearc/dressing.nvim",
-			"nvim-telescope/telescope.nvim",
-		},
-		cmd = "Nerdy",
-	},
-	{
-		"kawre/leetcode.nvim",
-		-- lazy = false,
-		enabled = false,
-		build = ":TSUpdate html",
-		cmd = "Leet",
-		dependencies = {
-			"nvim-treesitter/nvim-treesitter",
-			"nvim-telescope/telescope.nvim",
-			"nvim-lua/plenary.nvim", -- required by telescope
-			"MunifTanjim/nui.nvim",
-			"kyazdani42/nvim-web-devicons",
-			"rcarriga/nvim-notify",
-		},
-		config = function()
-			require("leetcode").setup()
-		end,
-		opts = require("plugins.leetcode"),
-	},
-	{
-		"vuki656/package-info.nvim",
-		enabled = false,
-		ft = "json",
-		dependencies = "MunifTanjim/nui.nvim",
-		opts = require("plugins.package-info"),
-		keys = {
-			-- { "<leader>nps", require("package-info").show },
-			-- { "<leader>nph", require("package-info").hide },
-			{
-				"<leader>nps",
-				mode = "n",
-				":lua require('package-info').toggle()<CR>",
-				desc = "toggle pkg json hide/show",
-				silent = true,
-			},
-			{
-				"<leader>npu",
-				mode = "n",
-				":lua require('package-info').update()<CR>",
-				desc = "pkg json update",
-				silent = true,
-			},
-			{
-				"<leader>npd",
-				mode = "n",
-				":lua require('package-info').delete()<CR>",
-				desc = "pkg json delete",
-				silent = true,
-			},
-			{
-				"<leader>npi",
-				mode = "n",
-				":lua require('package-info').install()<CR>",
-				desc = "pkg json install",
-				silent = true,
-			},
-			{
-				"<leader>npc",
-				mode = "n",
-				":lua require('package-info').change_version()<CR>",
-				desc = "pkg json change version",
-				silent = true,
-			},
-		},
-	},
+	-- {
+	-- 	"kawre/leetcode.nvim",
+	-- 	-- lazy = false,
+	-- 	enabled = false,
+	-- 	build = ":TSUpdate html",
+	-- 	cmd = "Leet",
+	-- 	dependencies = {
+	-- 		"nvim-treesitter/nvim-treesitter",
+	-- 		"nvim-telescope/telescope.nvim",
+	-- 		"nvim-lua/plenary.nvim", -- required by telescope
+	-- 		"MunifTanjim/nui.nvim",
+	-- 		"kyazdani42/nvim-web-devicons",
+	-- 		"rcarriga/nvim-notify",
+	-- 	},
+	-- 	config = function()
+	-- 		require("leetcode").setup()
+	-- 	end,
+	--    opts = {}
+	-- },
 	{
 		"gbprod/yanky.nvim",
 		enabled = true,
@@ -943,75 +664,25 @@ require("lazy").setup({
 		},
 	},
 	{
-		"JoosepAlviste/nvim-ts-context-commentstring",
-		enabled = false,
-		event = "BufReadPost",
-		init = function()
-			vim.g.skip_ts_context_commentstring_module = true
-		end,
-		opts = require("plugins.nvim-ts-context-commentstring"),
-	},
-	{
-		"Exafunction/codeium.nvim",
-		enabled = false,
-		event = "InsertEnter",
-		dependencies = {
-			"nvim-lua/plenary.nvim",
-			"hrsh7th/nvim-cmp",
-		},
-		config = function()
-			require("codeium").setup({})
-		end,
-	},
-	{
-		"Exafunction/codeium.vim",
-		enabled = false,
-		event = "BufReadPost",
-		init = function()
-			vim.g.codeium_disable_bindings = 1
-			vim.g.codeium_enabled = true
-		end,
-		config = function()
-			vim.keymap.set("i", "<A-l>", function()
-				return vim.fn["codeium#CycleCompletions"](1)
-			end, { expr = true })
-			vim.keymap.set("i", "<A-h>", function()
-				return vim.fn["codeium#CycleCompletions"](-1)
-			end, { expr = true })
-			vim.keymap.set("i", "<c-x>", function()
-				return vim.fn["codeium#Clear"]()
-			end, { expr = true })
-			vim.keymap.set("i", "<c-cr>", function()
-				return vim.fn["codeium#Accept"]()
-			end, { expr = true })
-		end,
-	},
-	{
 		"max397574/better-escape.nvim",
 		enabled = true,
 		event = "InsertEnter",
-    opts = require("plugins.better_escape")
+		opts = require("plugins.better_escape"),
 		-- config = function()
 		-- 	require("better_escape").setup({
 		--     })
 		-- end,
 	},
 	{
-		"0xAdk/full_visual_line.nvim",
-    enabled = true,
-		keys = "V",
-		opts = {},
-	},
-	{
 		"kylechui/nvim-surround",
-    enabled = true,
+		enabled = true,
 		tag = "*",
 		event = "BufReadPost",
 		opts = require("plugins.nvim-surround"),
 	},
 	{
 		"folke/which-key.nvim",
-    enabled = true,
+		enabled = true,
 		event = "VeryLazy",
 		init = function()
 			vim.o.timeout = true
@@ -1021,7 +692,7 @@ require("lazy").setup({
 	},
 	{
 		"nvim-focus/focus.nvim",
-		enabled = false,
+		enabled = true,
 		event = "BufReadPost",
 		version = "*",
 		keys = {
@@ -1031,119 +702,8 @@ require("lazy").setup({
 	},
 	{
 		"b0o/schemastore.nvim",
-		enabled = false,
-		ft = { "json", "jsonc" },
-	},
-	{
-		"rest-nvim/rest.nvim",
-		enabled = false,
-		ft = "http",
-		dependencies = {
-			{
-				"vhyrro/luarocks.nvim",
-				priority = 1000,
-				config = true,
-			},
-		},
-		config = function()
-			require("rest-nvim").setup(require("plugins.rest-nvim"))
-		end,
-	},
-	{
-		"kdheepak/lazygit.nvim",
-		enabled = false,
-		cmd = {
-			"LazyGit",
-			"LazyGitConfig",
-			"LazyGitCurrentFile",
-			"LazyGitFilter",
-			"LazyGitFilterCurrentFile",
-		},
-		keys = {
-			{
-				"<leader>lg",
-				":LazyGit<CR>",
-				mode = "n",
-				silent = true,
-				desc = "Open Lazy Git",
-				silent = true,
-			},
-		},
-		dependencies = {
-			"nvim-lua/plenary.nvim",
-		},
-	},
-	{
-		"bloznelis/before.nvim",
 		enabled = true,
-		event = "BufReadPost",
-		config = function()
-			local before = require("before")
-			before.setup()
-			vim.keymap.set("n", "<A-h>", before.jump_to_last_edit, {})
-			vim.keymap.set("n", "<A-l>", before.jump_to_next_edit, {})
-			vim.keymap.set("n", "<leader>le", before.show_edits_in_quickfix, {})
-		end,
-		opts = require("plugins.before"),
-	},
-	{
-		"luckasRanarison/tailwind-tools.nvim",
-		enabled = false,
-		ft = {
-			"astro",
-			"css",
-			"html",
-			"php",
-			"svelte",
-			"typescriptreact",
-			"javascriptreact",
-			"twig",
-			"vue",
-			"djangohtml",
-			"htmldjango",
-		},
-		-- NOTE: change from bg to inline when neovim gets 0.10 on exta
-		opts = require("plugins.tailwind-tools"),
-	},
-	{
-		"MaximilianLloyd/tw-values.nvim",
-		enabled = false,
-		ft = {
-			"astro",
-			"css",
-			"html",
-			"php",
-			"svelte",
-			"typescriptreact",
-			"javascriptreact",
-			"twig",
-			"vue",
-			"djangohtml",
-			"htmldjango",
-		},
-		cmd = "TWValues",
-		opts = require("plugins.tw-values"),
-	},
-	{
-		{
-			"Rawnly/gist.nvim",
-			enabled = false,
-			cmd = { "GistCreate", "GistCreateFromFile", "GistsList" },
-			opts = require("plugins.gist"),
-		},
-		{
-			"samjwill/nvim-unception",
-			enabled = false,
-			event = "BufReadPost",
-			init = function()
-				vim.g.unception_block_while_host_edits = true
-			end,
-		},
-	},
-	{
-		"yutkat/wb-only-current-line.nvim",
-		enabled = false,
-		event = "BufReadPost",
+		ft = { "json", "jsonc" },
 	},
 	{
 		"FabijanZulj/blame.nvim",
@@ -1175,20 +735,18 @@ require("lazy").setup({
 				desc = "Open the file manager",
 			},
 		},
-		-- opts = require("plugins.yazi"),
 	},
-	{ "folke/neodev.nvim", enabled = false, opts = {} }, -- also enable in mason.lua line before mlspconfig to work
+	{
+		"yutkat/wb-only-current-line.nvim",
+		enabled = true,
+		event = "BufReadPost",
+	},
+	-- { "folke/neodev.nvim", enabled = false, opts = {} }, -- also enable in mason.lua line before mlspconfig to work
 	{
 		"j-hui/fidget.nvim",
-		enabled = false,
+		enabled = true,
 		event = "VeryLazy",
 		opts = {},
-	},
-	{
-		"nvim-zh/colorful-winsep.nvim",
-		enabled = true,
-		config = true,
-		event = { "WinNew" },
 	},
 }, require("plugins.lazy"))
 

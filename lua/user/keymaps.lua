@@ -66,8 +66,6 @@ keymap(
 )
 keymap("n", "<leader>to", ":tabonly<CR>", { noremap = true, silent = true, desc = "remove all tabs but not current" })
 
-keymap("n", "<leader>la", ":Lazy<CR>", { noremap = true, desc = "open lazy nvim" })
-
 -- keymap("n", "gd", ':lua require("utility_functions").goto_defintion()<CR>', { silent = true, desc = "lsp definition" })
 -- keymap(
 -- 	"n",
@@ -107,7 +105,5 @@ keymap("n", "<leader>nt", ":tabnew<CR>", { silent = true, desc = "open new tab" 
 
 -- "%:p:h" without filename
 keymap("n", "<Leader>xt", ':let @+=expand("%:p")<CR>', { silent = true, desc = "copy current buffers location" })
-
-keymap("n", "mm", "za", { noremap = true, silent = true, desc = "toggle folding" }) -- for
 
 keymap("n", "q", ":lua require('utility_functions').close_file_type_buffers()<CR>", { silent = true })

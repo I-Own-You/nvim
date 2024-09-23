@@ -155,14 +155,12 @@ local settings = {
 		end,
 	},
 	sources = {
-		-- { name = "codeium" },
-		-- { name = "nvim_lsp" },
-		-- { name = "luasnip" },
+		{ name = "nvim_lsp" },
+		{ name = "luasnip" },
     { name = "buffer" },
 		{ name = "path" },
 		{ name = "dotenv" },
-    { name = "rg" }, -- enable when processor will be better
-		-- { name = "nvim_lsp_signature_help" },
+		-- { name = "rg" },
 	},
 	confirm_opts = {
 		behavior = cmp.ConfirmBehavior.Replace,
@@ -184,7 +182,7 @@ local settings = {
 		documentation = {
 			-- border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
 			border = { "┏", "━", "┓", "┃", "┛", "━", "┗", "┃" },
-			-- winhighlight = "Normal:CustomFloatCompletion,FloatBorder:CmpItemKindEnum,CursorLine:CursorLine,Search:None",
+			winhighlight = "FloatBorder:FloatBorder",
 		},
 	},
 	experimental = {

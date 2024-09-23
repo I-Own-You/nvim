@@ -9,7 +9,7 @@ local servers = {
 	-- "jsonls",
 	-- "taplo",
 	-- "yamlls",
-	-- "gopls",
+	"gopls",
 	-- "tsserver",
 	-- "eslint",
 	-- "biome",
