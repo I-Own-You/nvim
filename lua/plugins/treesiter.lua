@@ -50,10 +50,6 @@ return {
 		enable = true,
 		disable = { "python" },
 	},
-	context_commentstring = {
-		enable = true,
-		enable_autocmd = false,
-	},
 	autotag = {
 		enable = true,
 		enable_rename = true,
