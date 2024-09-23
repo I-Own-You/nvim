@@ -482,15 +482,6 @@ require("lazy").setup({
 			"SmiteshP/nvim-navic",
 			"kyazdani42/nvim-web-devicons",
 		},
-		config = function()
-			-- callback so that barbecue is toggled off by default
-			vim.api.nvim_create_autocmd("VimEnter", {
-				once = true,
-				callback = function()
-					vim.cmd("Barbecue toggle")
-				end,
-			})
-		end,
 		opts = {},
 	},
 	-- {
