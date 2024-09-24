@@ -110,8 +110,8 @@ require("lazy").setup({
 		dependencies = { "rafamadriz/friendly-snippets" },
 		config = function()
 			local luasnip = require("luasnip")
-			luasnip.filetype_extend("htmldjango", { "html" })
-			luasnip.filetype_extend("typescript", { "javascript" })
+			-- luasnip.filetype_extend("htmldjango", { "html" })
+			-- luasnip.filetype_extend("typescript", { "javascript" })
 			require("luasnip/loaders/from_vscode").lazy_load()
 			require("luasnip.loaders.from_lua").load({ paths = "~/.config/nvim/snippets/" })
 		end,
