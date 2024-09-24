@@ -742,7 +742,7 @@ require("lazy").setup({
 	},
 	{
 		"olexsmir/gopher.nvim",
-		ft = "go",
+		ft = { "go", "gomod", "gotmpl", "gohtmltmpl" },
 		dependencies = {
 			"nvim-lua/plenary.nvim",
 			"nvim-treesitter/nvim-treesitter",
