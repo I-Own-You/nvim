@@ -750,4 +750,9 @@ require("lazy").setup({
 		},
 		opts = {},
 	},
+	{
+		"nvim-zh/colorful-winsep.nvim",
+		config = true,
+		event = { "WinLeave" },
+	},
 }, require("plugins.lazy"))
