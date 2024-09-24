@@ -755,4 +755,16 @@ require("lazy").setup({
 		config = true,
 		event = { "WinLeave" },
 	},
+	{
+		"mistweaverco/kulala.nvim",
+		event = "VimEnter",
+		opts = require("plugins.kulala"),
+		config = function()
+			vim.filetype.add({
+				extension = {
+					["http"] = "http",
+				},
+			})
+		end,
+	},
 }, require("plugins.lazy"))
