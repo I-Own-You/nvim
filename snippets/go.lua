@@ -25,31 +25,5 @@ local types = require("luasnip.util.types")
 local parse = require("luasnip.util.parser").parse_snippet
 local ms = ls.multi_snippet
 local k = require("luasnip.nodes.key_indexer").new_key
-ls.add_snippets("typescript", {
-	-- 	s("int", {
-	-- 		t({ "interface " }),
-	-- 		i(1, "InterfaceName"),
-	-- 		t({ " {", "\t" }),
-	-- 		i(2, "name"),
-	-- 		t(": "),
-	-- 		i(3, "type"),
-	-- 		t({ "", "}" }),
-	-- 		i(0),
-	-- 	}),
-	s("tp", {
-		t("type "),
-		i(1, "typeName"),
-		t(" = "),
-		i(2, "typeExpression"),
-	}),
-	s("en", {
-		t("enum "),
-		i(1, "EnumName "),
-		t({ " {", "\t" }),
-		i(2, "Name"),
-		t(" = "),
-		i(3, "value"),
-		t({ "", "}" }),
-		i(0),
-	}),
-})
+
+ls.add_snippets("go", {})
