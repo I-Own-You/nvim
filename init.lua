@@ -741,5 +741,3 @@ require("lazy").setup({
 		opts = {},
 	},
 }, require("plugins.lazy"))
-
-vim.api.nvim_exec("autocmd Filetype yazi tnoremap <buffer><nowait> <Space> <Space>", false)
