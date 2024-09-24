@@ -140,7 +140,7 @@ return {
 			["ctrl-s"] = actions.file_split,
 			["ctrl-v"] = actions.file_vsplit,
 			["ctrl-t"] = actions.file_tabedit,
-			["alt-q"] = actions.file_sel_to_qf,
+			["ctrl-a"] = actions.file_sel_to_qf, -- changed, it was alt-q
 			["alt-l"] = actions.file_sel_to_ll,
 		},
 		buffers = {
