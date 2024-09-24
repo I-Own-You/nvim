@@ -1,16 +1,16 @@
 vim.opt.backup = false
 vim.opt.clipboard = "unnamedplus"
-vim.opt.completeopt = { "menu","menuone", "noinsert" }
+vim.opt.completeopt = { "menu", "menuone", "noinsert" }
 vim.opt.hlsearch = true
 vim.opt.showmode = false
 vim.opt.smartcase = true
 
 -- nvim-ufo related
 vim.o.fillchars = [[eob: ,fold: ,foldopen:,foldsep: ,foldclose:]]
-vim.opt.foldenable = true
-vim.opt.foldcolumn = "1" -- '0' is not bad
-vim.opt.foldlevel = 99 -- Using ufo provider need a large value, feel free to decrease the value
-vim.opt.foldlevelstart = 99
+-- vim.opt.foldenable = true
+-- vim.opt.foldcolumn = "1" -- '0' is not bad
+-- vim.opt.foldlevel = 99 -- Using ufo provider need a large value, feel free to decrease the value
+-- vim.opt.foldlevelstart = 99
 -- nvim-ufo related
 
 vim.o.mouse = "a"
@@ -34,7 +34,7 @@ vim.o.cursorlineopt = "both"
 vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.numberwidth = 2
-vim.opt.shortmess:append "sI"
+vim.opt.shortmess:append("sI")
 vim.o.signcolumn = "yes"
 vim.o.timeoutlen = 400
 vim.opt.wrap = false
@@ -42,4 +42,4 @@ vim.opt.linebreak = true
 -- vim.opt.fillchars = "eob: "
 -- vim.opt.scrolloff = 5
 vim.opt.sessionoptions = "curdir,folds,globals,help,tabpages,terminal,winsize"
-vim.opt.whichwrap:append "<>[]hl"
+vim.opt.whichwrap:append("<>[]hl")
