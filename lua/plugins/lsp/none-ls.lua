@@ -14,13 +14,13 @@ null_ls.setup({
 		--formatting.prettier.with({ extra_args = { "--no-semi", "--single-quote", "--jsx-single-quote" } }),
 		-- formatting.prettierd,
 		-- formatting.black.with({ extra_args = { "--line-length", "200", "--skip-string-normalization", "--fast" } }),
-		formatting.stylua,
-		formatting.goimports,
-		diagnostics.golangci_lint,
 		-- formatting.isort,
 		-- formatting.shellharden,
 		-- formatting.shfmt,
 		-- formatting.autopep8,
+		formatting.stylua,
+		formatting.goimports,
+		diagnostics.golangci_lint,
 	},
 
 	on_attach = function(client, bufnr)
