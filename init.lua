@@ -753,7 +753,12 @@ require("lazy").setup({
 		"nvim-zh/colorful-winsep.nvim",
 		config = true,
 		event = { "WinLeave" },
-		-- #00AFFF
+		opts = {
+			hi = {
+				fg = "#73DACA",
+			},
+		},
+		--
 	},
 	{
 		"mistweaverco/kulala.nvim",
