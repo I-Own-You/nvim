@@ -756,9 +756,9 @@ require("lazy").setup({
 	},
 	{
 		"mistweaverco/kulala.nvim",
-		event = "VimEnter",
+		ft = "http",
 		opts = require("plugins.kulala"),
-		config = function()
+		init = function()
 			vim.filetype.add({
 				extension = {
 					["http"] = "http",
