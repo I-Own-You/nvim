@@ -31,8 +31,8 @@ require("lazy").setup({
 			-- hl(0, "HlSearchNear", { fg = "#ffffff", bg = "#000000" })
 			hl(0, "Search", { fg = "#000000", bg = "#85DE73" })
 			hl(0, "IncSearch", { fg = "#000000", bg = "#85DE73" })
-			hl(0, "HlSearchLens", { bg = "#1e1e1e", fg = "#c8c8c8" })
-			hl(0, "HlSearchLensNear", { fg = "#000000", bg = "#85DE73" })
+			hl(0, "HlSearchLens", { bg = "#1A1B26", fg = "#1A1B26" }) -- the unmatched
+			hl(0, "HlSearchLensNear", { fg = "#000000", bg = "#73DACA" }) -- the matched
 		end,
 	},
 	{
