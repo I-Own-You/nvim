@@ -753,6 +753,7 @@ require("lazy").setup({
 		"nvim-zh/colorful-winsep.nvim",
 		config = true,
 		event = { "WinLeave" },
+		-- #00AFFF
 	},
 	{
 		"mistweaverco/kulala.nvim",
@@ -764,6 +765,17 @@ require("lazy").setup({
 					["http"] = "http",
 				},
 			})
+		end,
+	},
+	{
+		"crispgm/nvim-tabline",
+		event = "TabNew",
+		config = function()
+			local hl = vim.api.nvim_set_hl
+			hl(0, "TabLineSel", { fg = "#00AFFF", bg = "#1A1B26" })
+			hl(0, "TabLine", { fg = "#000000", bg = "#32333E" })
+			-- hl(0, "TabLineFill", { fg = "NONE", bg = "#32333E" })
+			require("tabline").setup(require("plugins.tabline"))
 		end,
 	},
 }, require("plugins.lazy"))
