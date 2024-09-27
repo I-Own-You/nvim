@@ -150,7 +150,7 @@ local settings = {
 				-- codeium = " AI  ",
 			})[entry.source.name]
 			-- vim_item.kind = string.format("%s", kind_icons[vim_item.kind])
-			vim_item.kind = string.format("%-13s -> %s", kind_icons[vim_item.kind], custom_menu) -- This concatonates the icons with the name of the item kind
+			vim_item.kind = string.format("%-13s => %s", kind_icons[vim_item.kind], custom_menu) -- This concatonates the icons with the name of the item kind
 			return vim_item
 		end,
 	},
