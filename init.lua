@@ -749,17 +749,18 @@ require("lazy").setup({
 		},
 		opts = {},
 	},
-	{
-		"nvim-zh/colorful-winsep.nvim",
-		config = true,
-		event = { "WinLeave" },
-		opts = {
-			hi = {
-				fg = "#73DACA",
-			},
-		},
-		--
-	},
+	-- {
+	-- 	"nvim-zh/colorful-winsep.nvim",
+	-- 	enabled = false,
+	-- 	config = true,
+	-- 	event = { "WinLeave" },
+	-- 	opts = {
+	-- 		hi = {
+	-- 			fg = "#73DACA",
+	-- 		},
+	-- 	},
+	-- 	--
+	-- },
 	{
 		"mistweaverco/kulala.nvim",
 		ft = "http",
