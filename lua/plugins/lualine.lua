@@ -87,7 +87,8 @@ end
 
 ins_left({
 	function()
-		return "▊"
+		return " "
+		-- return "▊"
 	end,
 	color = { fg = colors.blue }, -- Sets highlighting of component
 	padding = { left = 0, right = 1 }, -- We don't need space before this
@@ -245,7 +246,8 @@ ins_right({
 
 ins_right({
 	function()
-		return "▊"
+		return " "
+		-- return "▊"
 	end,
 	color = { fg = colors.blue },
 	padding = { left = 1 },
