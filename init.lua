@@ -21,7 +21,7 @@ require("lazy").setup({
 		lazy = false,
 		-- priority = 1000,
 		config = function()
-			vim.cmd([[colorscheme tokyonight]])
+			vim.cmd([[colorscheme everblush]])
 			local hl = vim.api.nvim_set_hl
 			hl(0, "FoldColumn", { fg = "#68B9B9", bg = "#141B1E" })
 			-- hl(0, "Identifier", { fg = "#dadada", bg = "NONE", sp = "NONE" })
@@ -31,8 +31,8 @@ require("lazy").setup({
 			-- hl(0, "HlSearchNear", { fg = "#ffffff", bg = "#000000" })
 			hl(0, "Search", { fg = "#000000", bg = "#85DE73" })
 			hl(0, "IncSearch", { fg = "#000000", bg = "#85DE73" })
-			hl(0, "HlSearchLens", { bg = "#1A1B26", fg = "#1A1B26" }) -- the unmatched
-			hl(0, "HlSearchLensNear", { fg = "#000000", bg = "#73DACA" }) -- the matched
+			hl(0, "HlSearchLens", { bg = "#141B1E", fg = "#141B1E" }) -- the unmatched
+			hl(0, "HlSearchLensNear", { fg = "#000000", bg = "#85DE73" }) -- the matched
 		end,
 	},
 	{
@@ -778,7 +778,7 @@ require("lazy").setup({
 		event = "TabNew",
 		config = function()
 			local hl = vim.api.nvim_set_hl
-			hl(0, "TabLineSel", { fg = "#00AFFF", bg = "#1A1B26" })
+			hl(0, "TabLineSel", { fg = "#85DE73", bg = "#141B1E" })
 			hl(0, "TabLine", { fg = "#000000", bg = "#32333E" })
 			-- hl(0, "TabLineFill", { fg = "NONE", bg = "#32333E" })
 			require("tabline").setup(require("plugins.tabline"))
