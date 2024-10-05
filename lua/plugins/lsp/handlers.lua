@@ -69,7 +69,14 @@ local function lsp_keymaps(bufnr)
 	-- keymap(bufnr, "n", "<leader>wa", "<cmd> lua vim.lsp.buf.add_workspace_folder()<CR>", opts)
 	-- keymap(bufnr, "n", "<leader>wr", "<cmd> lua vim.lsp.buf.remove_workspace_folder()<CR>", opts)
 	-- keymap(bufnr, "n", "<leader>wl", "<cmd> lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>", opts)
-	keymap(bufnr, "n", "<leader>re", "<cmd> lua vim.lsp.buf.rename()<CR>", opts)
+	-- keymap(bufnr, "n", "<leader>re", "<cmd> lua vim.lsp.buf.rename()<CR>", opts)
+	keymap(
+		bufnr,
+		"n",
+		"<leader>re",
+		':lua require("nvchad.lsp.renamer")()<CR>',
+		{ silent = true, desc = "LSP Rename symbol" }
+	)
 	-- keymap(bufnr, "n", "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<cr>", opts) --keymaps.lua
 	-- keymap(bufnr, "n", "<leader>lq", "<cmd>lua vim.diagnostic.setloclist()<CR>", opts) --keymaps.lua
 	-- keymap(bufnr, "n", "<leader>oo", "<cmd>lua vim.lsp.buf.document_symbol()<CR>", opts)

@@ -39,6 +39,7 @@ vim.o.signcolumn = "yes"
 vim.o.timeoutlen = 400
 vim.opt.wrap = false
 vim.opt.linebreak = true
+vim.opt.laststatus = 3 -- https://github.com/neovim/neovim/pull/17266, customization docs
 -- vim.opt.fillchars = "eob: "
 -- vim.opt.scrolloff = 5
 vim.opt.sessionoptions = "curdir,folds,globals,help,tabpages,terminal,winsize"

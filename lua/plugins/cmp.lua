@@ -42,38 +42,41 @@ local check_backspace = function()
 	return col == 0 or vim.fn.getline("."):sub(col, col):match("%s")
 end
 
---   פּ ﯟ   some other good icons
-local kind_icons = {
-	Text = " txt",
-	Method = " method",
-	Function = " func",
-	Constructor = " construct",
-	Field = " field",
-	Variable = " var",
-	Class = " class",
-	Interface = " interface",
-	-- Module = " module",
-	Module = " module",
-	Property = " property",
-	Unit = " unit",
-	Value = " value",
-	Enum = " enum",
-	Keyword = " keyword",
-	Snippet = "",
-	Color = " color",
-	File = " file",
-	Reference = " reference",
-	Folder = " folder",
-	EnumMember = " enumMem",
-	Constant = " const",
-	Struct = " struct",
-	Event = " event",
-	Operator = " operator",
-	TypeParameter = " typeParameter",
-}
+-- local kind_icons = {
+-- 	Text = " txt",
+-- 	Method = " method",
+-- 	Function = " func",
+-- 	Constructor = " construct",
+-- 	Field = " field",
+-- 	Variable = " var",
+-- 	Class = " class",
+-- 	Interface = " interface",
+-- 	-- Module = " module",
+-- 	Module = " module",
+-- 	Property = " property",
+-- 	Unit = " unit",
+-- 	Value = " value",
+-- 	Enum = " enum",
+-- 	Keyword = " keyword",
+-- 	Snippet = "",
+-- 	Color = " color",
+-- 	File = " file",
+-- 	Reference = " reference",
+-- 	Folder = " folder",
+-- 	EnumMember = " enumMem",
+-- 	Constant = " const",
+-- 	Struct = " struct",
+-- 	Event = " event",
+-- 	Operator = " operator",
+-- 	TypeParameter = " typeParameter",
+-- }
+
 -- find more here: https://www.nerdfonts.com/cheat-sheet
 
+dofile(vim.g.base46_cache .. "cmp")
+
 local settings = {
+	completion = { completeopt = "menu,menuone" },
 	snippet = {
 		expand = function(args)
 			luasnip.lsp_expand(args.body) -- For `luasnip` users.
@@ -124,36 +127,36 @@ local settings = {
 			"s",
 		}),
 	},
-	formatting = {
-		fields = {
-			"abbr",
-			"kind" --[[ , "menu" ]],
-		},
-		format = function(entry, vim_item)
-			-- vim_item.menu = ({
-			-- 	nvim_lsp = "LSP",
-			-- 	luasnip = "Snippet",
-			-- 	buffer = "Buffer",
-			-- 	path = "Path",
-			-- 	rg = "RG",
-			-- 	dotenv = "SHELL ENV",
-			-- 	-- codeium = " AI  ",
-			-- })[entry.source.name]
-			local custom_menu = ({
-				nvim_lsp = "LSP",
-				luasnip = "Snippet",
-				buffer = "Buffer",
-				path = "Path",
-				rg = "RG",
-				dotenv = "SHELL ENV",
-				nvim_lsp_signature_help = "signature",
-				-- codeium = " AI  ",
-			})[entry.source.name]
-			-- vim_item.kind = string.format("%s", kind_icons[vim_item.kind])
-			vim_item.kind = string.format("%-13s => %s", kind_icons[vim_item.kind], custom_menu) -- This concatonates the icons with the name of the item kind
-			return vim_item
-		end,
-	},
+	-- formatting = {
+	-- 	fields = {
+	-- 		"abbr",
+	-- 		"kind" --[[ , "menu" ]],
+	-- 	},
+	-- 	format = function(entry, vim_item)
+	-- 		-- vim_item.menu = ({
+	-- 		-- 	nvim_lsp = "LSP",
+	-- 		-- 	luasnip = "Snippet",
+	-- 		-- 	buffer = "Buffer",
+	-- 		-- 	path = "Path",
+	-- 		-- 	rg = "RG",
+	-- 		-- 	dotenv = "SHELL ENV",
+	-- 		-- 	-- codeium = " AI  ",
+	-- 		-- })[entry.source.name]
+	-- 		local custom_menu = ({
+	-- 			nvim_lsp = "LSP",
+	-- 			luasnip = "Snippet",
+	-- 			buffer = "Buffer",
+	-- 			path = "Path",
+	-- 			rg = "RG",
+	-- 			dotenv = "SHELL ENV",
+	-- 			nvim_lsp_signature_help = "signature",
+	-- 			-- codeium = " AI  ",
+	-- 		})[entry.source.name]
+	-- 		-- vim_item.kind = string.format("%s", kind_icons[vim_item.kind])
+	-- 		vim_item.kind = string.format("%-13s => %s", kind_icons[vim_item.kind], custom_menu) -- This concatonates the icons with the name of the item kind
+	-- 		return vim_item
+	-- 	end,
+	-- },
 	sources = {
 		{ name = "nvim_lsp" },
 		{ name = "luasnip" },
@@ -169,22 +172,23 @@ local settings = {
 	-- completion = {
 	--    completeopt = "menu,menuone,noinsert",
 	--  },
-	window = {
-		completion = cmp.config.window.bordered({
-			-- scrollbar = true,
-			-- border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
-			border = { "┏", "━", "┓", "┃", "┛", "━", "┗", "┃" },
-			-- winhighlight = "Normal:CustomFloatCompletion,FloatBorder:Boolean,CursorLine:CursorLine,Search:None", -- switched to Boolean for gatekeeper
-			-- winhighlight = "Normal:None,FloatBorder:None,CursorLine:CursorLine,Search:None",
-			-- side_padding = 0,
-			-- col_offset = 0, --moves right and left
-		}),
-		documentation = {
-			-- border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
-			border = { "┏", "━", "┓", "┃", "┛", "━", "┗", "┃" },
-			winhighlight = "FloatBorder:FloatBorder",
-		},
-	},
+	-- window = {
+	-- completion = cmp.config.window.bordered({
+	-- 	scrollbar = true,
+	-- 		-- border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
+	-- 		border = { "┏", "━", "┓", "┃", "┛", "━", "┗", "┃" },
+	-- 		-- winhighlight = "Normal:CustomFloatCompletion,FloatBorder:Boolean,CursorLine:CursorLine,Search:None", -- switched to Boolean for gatekeeper
+	-- 		-- winhighlight = "Normal:None,FloatBorder:None,CursorLine:CursorLine,Search:None",
+	-- 		-- side_padding = 0,
+	-- 		-- col_offset = 0, --moves right and left
+	-- }),
+	-- documentation = {
+	-- 	scrollbar = true,
+	-- border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
+	-- border = { "┏", "━", "┓", "┃", "┛", "━", "┗", "┃" },
+	-- winhighlight = "FloatBorder:FloatBorder",
+	-- },
+	-- },
 	experimental = {
 		ghost_text = false,
 	},
@@ -245,4 +249,5 @@ cmp.setup.cmdline(":", {
 	}),
 })
 
-return settings
+-- return settings
+return vim.tbl_deep_extend("force", settings, require("nvchad.cmp"))

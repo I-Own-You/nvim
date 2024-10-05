@@ -17,27 +17,63 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
+require("user.nvchad-custom-options")
+
 require("lazy").setup({
 	{
-		"notken12/base46-colors",
-		enabled = true,
-		lazy = false,
-		-- priority = 1000,
-		config = function()
-			vim.cmd([[colorscheme everblush]])
-			local hl = vim.api.nvim_set_hl
-			hl(0, "FoldColumn", { fg = "#68B9B9", bg = "#141B1E" })
-			-- hl(0, "Identifier", { fg = "#dadada", bg = "NONE", sp = "NONE" })
-			hl(0, "FzfLuaLiveSym", { fg = "#2AC3DE", bg = "NONE" })
-			hl(0, "String", { fg = "#85de73", bg = "NONE" })
-			hl(0, "TelescopeMatching", { fg = "#2AC3DE", bg = "NONE" })
-			-- hl(0, "HlSearchNear", { fg = "#ffffff", bg = "#000000" })
-			hl(0, "Search", { fg = "#000000", bg = "#85DE73" })
-			hl(0, "IncSearch", { fg = "#000000", bg = "#85DE73" })
-			hl(0, "HlSearchLens", { bg = "#141B1E", fg = "#141B1E" }) -- the unmatched
-			hl(0, "HlSearchLensNear", { fg = "#000000", bg = "#85DE73" }) -- the matched
-		end,
+		{
+			"nvchad/ui",
+			enabled = true,
+			event = "VimEnter",
+			config = function()
+				require("nvchad")
+			end,
+			dependencies = {
+				"nvim-lua/plenary.nvim",
+				"NvChad/volt",
+			},
+		},
+		{
+			"nvchad/base46",
+			enabled = true,
+			event = "VimEnter",
+			build = function()
+				require("base46").load_all_highlights()
+			end,
+			config = function()
+				local hl = vim.api.nvim_set_hl
+				hl(0, "FoldColumn", { fg = "#68B9B9", bg = "#141B1E" })
+				hl(0, "FzfLuaLiveSym", { fg = "#2AC3DE", bg = "NONE" })
+				hl(0, "String", { fg = "#85de73", bg = "NONE" })
+				hl(0, "TelescopeMatching", { fg = "#2AC3DE", bg = "NONE" })
+				hl(0, "HlSearchNear", { fg = "#000000", bg = "#85DE73" })
+				hl(0, "Search", { fg = "#000000", bg = "#85DE73" })
+				hl(0, "IncSearch", { fg = "#000000", bg = "#85DE73" })
+				hl(0, "HlSearchLens", { bg = "#141B1E", fg = "#141B1E" }) -- the unmatched
+				hl(0, "HlSearchLensNear", { fg = "#000000", bg = "#85DE73" }) -- the matched
+			end,
+		},
 	},
+	-- {
+	-- 	"notken12/base46-colors",
+	-- 	enabled = false,
+	-- 	lazy = false,
+	-- 	-- priority = 1000,
+	-- 	config = function()
+	-- 		vim.cmd([[colorscheme everblush]])
+	-- 		local hl = vim.api.nvim_set_hl
+	-- 		hl(0, "FoldColumn", { fg = "#68B9B9", bg = "#141B1E" })
+	-- 		-- hl(0, "Identifier", { fg = "#dadada", bg = "NONE", sp = "NONE" })
+	-- 		hl(0, "FzfLuaLiveSym", { fg = "#2AC3DE", bg = "NONE" })
+	-- 		hl(0, "String", { fg = "#85de73", bg = "NONE" })
+	-- 		hl(0, "TelescopeMatching", { fg = "#2AC3DE", bg = "NONE" })
+	-- 		-- hl(0, "HlSearchNear", { fg = "#ffffff", bg = "#000000" })
+	-- 		hl(0, "Search", { fg = "#000000", bg = "#85DE73" })
+	-- 		hl(0, "IncSearch", { fg = "#000000", bg = "#85DE73" })
+	-- 		hl(0, "HlSearchLens", { bg = "#141B1E", fg = "#141B1E" }) -- the unmatched
+	-- 		hl(0, "HlSearchLensNear", { fg = "#000000", bg = "#85DE73" }) -- the matched
+	-- 	end,
+	-- },
 	{
 		"neovim/nvim-lspconfig",
 		enabled = true,
@@ -218,15 +254,15 @@ require("lazy").setup({
 			require("fzf-lua").setup(require("plugins.fzf-lua"))
 		end,
 	},
-	{
-		"nvim-lualine/lualine.nvim",
-		enabled = true,
-		event = "BufReadPost",
-		dependencies = { "kyazdani42/nvim-web-devicons" },
-		config = function()
-			require("lualine").setup(require("plugins.lualine"))
-		end,
-	},
+	-- {
+	-- 	"nvim-lualine/lualine.nvim",
+	-- 	enabled = false,
+	-- 	event = "BufReadPost",
+	-- 	dependencies = { "kyazdani42/nvim-web-devicons" },
+	-- 	config = function()
+	-- 		require("lualine").setup(require("plugins.lualine"))
+	-- 	end,
+	-- },
 	{
 		"kevinhwang91/nvim-bqf",
 		enabled = true,
@@ -780,15 +816,16 @@ require("lazy").setup({
 			})
 		end,
 	},
-	{
-		"crispgm/nvim-tabline",
-		event = "TabNew",
-		config = function()
-			local hl = vim.api.nvim_set_hl
-			hl(0, "TabLineSel", { fg = "#85DE73", bg = "#141B1E" })
-			hl(0, "TabLine", { fg = "#000000", bg = "#32333E" })
-			-- hl(0, "TabLineFill", { fg = "NONE", bg = "#32333E" })
-			require("tabline").setup(require("plugins.tabline"))
-		end,
-	},
+	-- {
+	-- 	"crispgm/nvim-tabline",
+	-- 	enabled = false,
+	-- 	event = "TabNew",
+	-- 	config = function()
+	-- 		local hl = vim.api.nvim_set_hl
+	-- 		hl(0, "TabLineSel", { fg = "#85DE73", bg = "#141B1E" })
+	-- 		hl(0, "TabLine", { fg = "#000000", bg = "#32333E" })
+	-- 		-- hl(0, "TabLineFill", { fg = "NONE", bg = "#32333E" })
+	-- 		require("tabline").setup(require("plugins.tabline"))
+	-- 	end,
+	-- },
 }, require("plugins.lazy"))
