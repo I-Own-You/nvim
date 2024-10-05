@@ -642,12 +642,14 @@ require("lazy").setup({
 			},
 			{
 				"<c-p>",
+				mode = { "n", "x" },
 				"<Plug>(YankyPreviousEntry)",
 				desc = "Select previous entry through yank history",
 				silent = true,
 			},
 			{
 				"<c-n>",
+				mode = { "n", "x" },
 				"<Plug>(YankyNextEntry)",
 				desc = "Select next entry through yank history",
 				silent = true,
@@ -741,6 +743,7 @@ require("lazy").setup({
 	},
 	{
 		"olexsmir/gopher.nvim",
+		enabled = true,
 		ft = { "go", "gomod", "gotmpl", "gohtmltmpl" },
 		dependencies = {
 			"nvim-lua/plenary.nvim",
@@ -763,6 +766,7 @@ require("lazy").setup({
 	-- },
 	{
 		"mistweaverco/kulala.nvim",
+		enabled = true,
 		ft = "http",
 		opts = require("plugins.kulala"),
 		init = function()
