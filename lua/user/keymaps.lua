@@ -61,7 +61,7 @@ keymap("n", "<leader>bda", ":%bdelete<CR>", { silent = true, desc = "delete all 
 keymap(
 	"n",
 	"<leader>bdo",
-	":%bd!|e#|bd#<CR>|'\"",
+	":%bd|e#|bd#<CR>|'\"",
 	{ noremap = true, silent = true, desc = "delete all buffers but not current" }
 )
 keymap("n", "<leader>to", ":tabonly<CR>", { noremap = true, silent = true, desc = "remove all tabs but not current" })
