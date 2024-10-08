@@ -462,19 +462,19 @@ require("lazy").setup({
 			{ "<leader>fs", mode = "n", ":Flogsplit ", desc = "flog split", noremap = true, silent = true },
 		},
 	},
-	{
-		"https://git.sr.ht/~whynothugo/lsp_lines.nvim",
-		enabled = true,
-		event = "BufReadPost",
-		config = function()
-			-- virtual_text is disabled in handlers.lua
-			-- vim.diagnostic.config({ virtual_text = false })
-			-- vim.diagnostic.config({ virtual_lines = true })
-			-- vim.diagnostic.config({ virtual_lines = { only_current_line = true } })
-			vim.diagnostic.config({ virtual_lines = { highlight_whole_line = false } })
-			require("lsp_lines").setup({})
-		end,
-	},
+	-- {
+	-- 	"https://git.sr.ht/~whynothugo/lsp_lines.nvim",
+	-- 	enabled = false,
+	-- 	event = "BufReadPost",
+	-- 	config = function()
+	-- 		-- virtual_text is disabled in handlers.lua
+	-- 		-- vim.diagnostic.config({ virtual_text = false })
+	-- 		-- vim.diagnostic.config({ virtual_lines = true })
+	-- 		-- vim.diagnostic.config({ virtual_lines = { only_current_line = true } })
+	-- 		vim.diagnostic.config({ virtual_lines = { highlight_whole_line = false } })
+	-- 		require("lsp_lines").setup({})
+	-- 	end,
+	-- },
 	{
 		"folke/flash.nvim",
 		enabled = true,
