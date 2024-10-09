@@ -86,10 +86,10 @@ keymap("n", "<leader>to", ":tabonly<CR>", { noremap = true, silent = true, desc 
 -- 	{ silent = true, desc = "lsp type definition" }
 -- )
 
-keymap("n", "<C-d>", "5j", { silent = true, desc = "" })
-keymap("n", "<C-u>", "5k", { silent = true, desc = "" })
-keymap("v", "<C-d>", "5j", { silent = true, desc = "" })
-keymap("v", "<C-u>", "5k", { silent = true, desc = "" })
+-- keymap("n", "<C-d>", "5j", { silent = true, desc = "" })
+-- keymap("n", "<C-u>", "5k", { silent = true, desc = "" })
+-- keymap("v", "<C-d>", "5j", { silent = true, desc = "" })
+-- keymap("v", "<C-u>", "5k", { silent = true, desc = "" })
 
 keymap("n", "<C-e>", "5<C-e>", { silent = true, desc = "", noremap = true })
 keymap("n", "<C-y>", "5<C-y>", { silent = true, desc = "", noremap = true })
