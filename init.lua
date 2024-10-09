@@ -49,15 +49,15 @@ require("lazy").setup({
 			end,
 			config = function()
 				local hl = vim.api.nvim_set_hl
-				hl(0, "FoldColumn", { fg = "#68B9B9", bg = "#141B1E" })
+				hl(0, "FoldColumn", { fg = "#68B9B9", bg = "#0B0E14" })
 				hl(0, "FzfLuaLiveSym", { fg = "#2AC3DE", bg = "NONE" })
 				hl(0, "String", { fg = "#85de73", bg = "NONE" })
 				hl(0, "TelescopeMatching", { fg = "#2AC3DE", bg = "NONE" })
-				hl(0, "HlSearchNear", { fg = "#000000", bg = "#85DE73" })
-				hl(0, "Search", { fg = "#000000", bg = "#85DE73" })
-				hl(0, "IncSearch", { fg = "#000000", bg = "#85DE73" })
-				hl(0, "HlSearchLens", { bg = "#141B1E", fg = "#141B1E" }) -- the unmatched
-				hl(0, "HlSearchLensNear", { fg = "#000000", bg = "#85DE73" }) -- the matched
+				hl(0, "HlSearchNear", { fg = "#000000", bg = "#FF9445" })
+				hl(0, "Search", { fg = "#000000", bg = "#FF9445" })
+				hl(0, "IncSearch", { fg = "#000000", bg = "#FF9445" })
+				hl(0, "HlSearchLens", { bg = "#0B0E14", fg = "#0B0E14" }) -- the unmatched
+				hl(0, "HlSearchLensNear", { fg = "#000000", bg = "#FF9445" }) -- the matched
 			end,
 		},
 	},
