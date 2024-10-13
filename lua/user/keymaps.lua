@@ -96,6 +96,11 @@ keymap("n", "<C-y>", "5<C-y>", { silent = true, desc = "", noremap = true })
 keymap("v", "<C-e>", "5<C-e>", { silent = true, desc = "", noremap = true })
 keymap("v", "<C-y>", "5<C-y>", { silent = true, desc = "", noremap = true })
 
+-- keymap("n", "<C-d>", "5<C-d>", { silent = true, desc = "", noremap = true })
+-- keymap("n", "<C-u>", "5<C-u>", { silent = true, desc = "", noremap = true })
+-- keymap("v", "<C-d>", "5<C-d>", { silent = true, desc = "", noremap = true })
+-- keymap("v", "<C-u>", "5<C-u>", { silent = true, desc = "", noremap = true })
+
 keymap("n", "<C-c>", ":%y<CR>", { silent = true })
 keymap("n", "<C-a>", "ggVG", { silent = true })
 keymap("n", "<C-x>", ":%d<CR>", { silent = true })
