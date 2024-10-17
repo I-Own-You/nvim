@@ -53,11 +53,11 @@ require("lazy").setup({
 				hl(0, "FzfLuaLiveSym", { fg = "#2AC3DE", bg = "NONE" })
 				-- hl(0, "String", { fg = "#85de73", bg = "NONE" })
 				hl(0, "TelescopeMatching", { fg = "#2AC3DE", bg = "NONE" })
-				hl(0, "HlSearchNear", { fg = "#000000", bg = "#FF9445" })
-				hl(0, "Search", { fg = "#000000", bg = "#FF9445" })
-				hl(0, "IncSearch", { fg = "#000000", bg = "#FF9445" })
-				hl(0, "HlSearchLens", { bg = "#100F0F", fg = "#100F0F" }) -- the unmatched
-				hl(0, "HlSearchLensNear", { fg = "#000000", bg = "#FF9445" }) -- the matched
+				hl(0, "HlSearchNear", { fg = "#000000", bg = "#8CCF7E" })
+				hl(0, "Search", { fg = "#000000", bg = "#8CCF7E" })
+				hl(0, "IncSearch", { fg = "#000000", bg = "#8CCF7E" })
+				hl(0, "HlSearchLens", { bg = "#141B1E", fg = "#141B1E" }) -- the unmatched
+				hl(0, "HlSearchLensNear", { fg = "#000000", bg = "#8CCF7E" }) -- the matched
 			end,
 		},
 	},
