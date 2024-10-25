@@ -32,12 +32,12 @@ keymap("v", ">", ">gv", { silent = true })
 
 keymap("v", "p", '"_dP', { silent = true })
 
--- keymap("n", "<A-j>", ":m .+1<CR>==", {silent=true, desc=''})
--- keymap("n", "<A-k>", ":m .-2<CR>==", {silent=true, desc=''})
--- keymap("i", "<A-j>", "<ESC>:m .+1<CR>==gi", {silent=true, desc=''})
--- keymap("i", "<A-k>", "<ESC>:m .-2<CR>==gi", {silent=true, desc=''})
--- keymap("v", "<A-j>", ":m '>+1<CR>gv=gv", {silent=true, desc=''})
--- keymap("v", "<A-k>", ":m '<-2<CR>gv=gv", {silent=true, desc=''})
+keymap("n", "<A-j>", ":m .+1<CR>==", { silent = true, desc = "" })
+keymap("n", "<A-k>", ":m .-2<CR>==", { silent = true, desc = "" })
+keymap("i", "<A-j>", "<ESC>:m .+1<CR>==gi", { silent = true, desc = "" })
+keymap("i", "<A-k>", "<ESC>:m .-2<CR>==gi", { silent = true, desc = "" })
+keymap("v", "<A-j>", ":m '>+1<CR>gv=gv", { silent = true, desc = "" })
+keymap("v", "<A-k>", ":m '<-2<CR>gv=gv", { silent = true, desc = "" })
 
 keymap("n", "<leader>vv", ":vsplit<CR>", { silent = true, desc = "split buffer vertically" })
 keymap("n", "<leader>hh", ":split<CR>", { silent = true, desc = "split buffer horizontally" })
