@@ -824,16 +824,4 @@ require("lazy").setup({
 			})
 		end,
 	},
-	-- {
-	-- 	"crispgm/nvim-tabline",
-	-- 	enabled = false,
-	-- 	event = "TabNew",
-	-- 	config = function()
-	-- 		local hl = vim.api.nvim_set_hl
-	-- 		hl(0, "TabLineSel", { fg = "#85DE73", bg = "#141B1E" })
-	-- 		hl(0, "TabLine", { fg = "#000000", bg = "#32333E" })
-	-- 		-- hl(0, "TabLineFill", { fg = "NONE", bg = "#32333E" })
-	-- 		require("tabline").setup(require("plugins.tabline"))
-	-- 	end,
-	-- },
 }, require("plugins.lazy"))
