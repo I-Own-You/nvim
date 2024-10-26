@@ -434,6 +434,7 @@ require("lazy").setup({
 	},
 	{
 		"folke/todo-comments.nvim",
+		event = "BufReadPost",
 		enabled = true,
 		config = function()
 			require("todo-comments").setup()
