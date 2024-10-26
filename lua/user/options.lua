@@ -1,9 +1,9 @@
-vim.opt.backup = false
-vim.opt.clipboard = "unnamedplus"
+vim.o.backup = false
+vim.o.clipboard = "unnamedplus"
 vim.opt.completeopt = { "menu", "menuone", "noinsert" }
-vim.opt.hlsearch = true
-vim.opt.showmode = false
-vim.opt.smartcase = true
+vim.o.hlsearch = true
+vim.o.showmode = false
+vim.o.smartcase = true
 
 -- nvim-ufo related
 vim.o.fillchars = [[eob: ,fold: ,foldopen:,foldsep: ,foldclose:]]
@@ -14,33 +14,33 @@ vim.o.fillchars = [[eob: ,fold: ,foldopen:,foldsep: ,foldclose:]]
 -- nvim-ufo related
 
 vim.o.mouse = "a"
-vim.opt.smartindent = true
-vim.opt.ignorecase = true
-vim.opt.splitbelow = true
-vim.opt.splitright = true
-vim.opt.swapfile = false
-vim.opt.termguicolors = true
-vim.opt.undofile = true
-vim.opt.updatetime = 250
-vim.opt.writebackup = false
-vim.opt.expandtab = true
-vim.opt.shiftwidth = 2
-vim.opt.tabstop = 2
-vim.opt.softtabstop = 2
-vim.opt.incsearch = true
-vim.opt.colorcolumn = "81"
-vim.opt.cursorline = true
+vim.o.smartindent = true
+vim.o.ignorecase = true
+vim.o.splitbelow = true
+vim.o.splitright = true
+vim.o.swapfile = false
+vim.o.termguicolors = true
+vim.o.undofile = true
+vim.o.updatetime = 250
+vim.o.writebackup = false
+vim.o.expandtab = true
+vim.o.shiftwidth = 2
+vim.o.tabstop = 2
+vim.o.softtabstop = 2
+vim.o.incsearch = true
+vim.o.colorcolumn = "81"
+vim.o.cursorline = true
 vim.o.cursorlineopt = "both"
-vim.opt.number = true
-vim.opt.relativenumber = true
-vim.opt.numberwidth = 2
+vim.o.number = true
+vim.o.relativenumber = true
+vim.o.numberwidth = 2
 vim.opt.shortmess:append("sI")
 vim.o.signcolumn = "yes"
 vim.o.timeoutlen = 400
-vim.opt.wrap = false
-vim.opt.linebreak = true
-vim.opt.laststatus = 3 -- https://github.com/neovim/neovim/pull/17266, customization docs
+vim.o.wrap = false
+vim.o.linebreak = true
+vim.o.laststatus = 3 -- https://github.com/neovim/neovim/pull/17266, customization docs
 -- vim.opt.fillchars = "eob: "
 -- vim.opt.scrolloff = 5
-vim.opt.sessionoptions = "curdir,folds,globals,help,tabpages,terminal,winsize"
+vim.o.sessionoptions = "curdir,folds,globals,help,tabpages,terminal,winsize"
 vim.opt.whichwrap:append("<>[]hl")
