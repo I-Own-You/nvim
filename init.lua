@@ -518,18 +518,18 @@ require("lazy").setup({
 			{ "<leader>mk", mode = "n", ":DiffviewClose<CR>", desc = "close diff view", silent = true },
 		},
 	},
-	-- {
-	-- 	"utilyre/barbecue.nvim",
-	-- 	enabled = false,
-	-- 	event = "VimEnter",
-	-- 	name = "barbecue",
-	-- 	version = "*",
-	-- 	dependencies = {
-	-- 		"SmiteshP/nvim-navic",
-	-- 		"kyazdani42/nvim-web-devicons",
-	-- 	},
-	-- 	opts = {},
-	-- },
+	{
+		"utilyre/barbecue.nvim",
+		enabled = true,
+		event = "VimEnter",
+		name = "barbecue",
+		version = "*",
+		dependencies = {
+			"SmiteshP/nvim-navic",
+			"kyazdani42/nvim-web-devicons",
+		},
+		opts = {},
+	},
 	-- {
 	-- 	"glepnir/dashboard-nvim",
 	-- 	enabled = false,
