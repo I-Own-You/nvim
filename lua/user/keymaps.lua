@@ -22,8 +22,8 @@ keymap("n", "<leader>ot", ":tab split | terminal<CR>", { silent = true, desc = "
 
 keymap("n", "q", "<Nop>", { silent = true })
 
-keymap("n", "<TAB>", ":bnext<CR>", { silent = true })
-keymap("n", "<S-TAB>", ":bNext<CR>", { silent = true })
+keymap("n", "<TAB>", ":tabnext<CR>", { silent = true })
+keymap("n", "<S-TAB>", ":tabNext<CR>", { silent = true })
 
 -- keymap("i", "jk", "<ESC>", { silent = true })
 
