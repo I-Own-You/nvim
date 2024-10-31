@@ -13,23 +13,21 @@ return {
 		["<TAB>"] = {
 			function(cmp)
 				if cmp.is_in_snippet() then
-					return cmp.accept()
+					return cmp.snippet_forward()
 				else
 					return cmp.select_next()
 				end
 			end,
-			"snippet_forward",
 			"fallback",
 		},
 		["<S-TAB>"] = {
 			function(cmp)
 				if cmp.is_in_snippet() then
-					return cmp.accept()
+					return cmp.snippet_backward()
 				else
-					return cmp.select_prev()
+					cmp.select_prev()
 				end
 			end,
-			"snippet_backward",
 			"fallback",
 		},
 	},
