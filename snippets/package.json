@@ -1,0 +1,19 @@
+{
+  "name": "custom-snippets",
+  "contributes": {
+    "snippets": [
+      {
+        "language": [
+          "all"
+        ],
+        "path": "./snips/custom.json"
+      },
+      {
+        "language": [
+          "kubernetes"
+        ],
+        "path": "./snips/kubernetes.json"
+      }
+    ]
+  }
+}
