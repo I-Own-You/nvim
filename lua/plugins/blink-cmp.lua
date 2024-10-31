@@ -25,7 +25,7 @@ return {
 				if cmp.is_in_snippet() then
 					return cmp.snippet_backward()
 				else
-					cmp.select_prev()
+					return cmp.select_prev()
 				end
 			end,
 			"fallback",
