@@ -110,58 +110,58 @@ require("lazy").setup({
 			require("plugins.lsp.none-ls")
 		end,
 	},
-	-- {
-	-- 	"hrsh7th/nvim-cmp",
-	-- 	enabled = true,
-	-- 	dependencies = {
-	-- 		{
-	-- 			"hrsh7th/cmp-cmdline",
-	-- 			event = "CmdlineEnter",
-	-- 		},
-	-- 		{
-	-- 			"hrsh7th/cmp-buffer",
-	-- 			event = "CmdlineEnter",
-	-- 		},
-	-- 		{
-	-- 			"hrsh7th/cmp-path",
-	-- 			event = "InsertEnter",
-	-- 		},
-	-- 		{
-	-- 			"hrsh7th/cmp-nvim-lsp",
-	-- 			event = "InsertEnter",
-	-- 		},
-	-- 		{
-	-- 			"saadparwaiz1/cmp_luasnip",
-	-- 			event = "InsertEnter",
-	-- 		},
-	-- 		-- {
-	-- 		-- 	"lukas-reineke/cmp-rg",
-	-- 		-- 	event = "InsertEnter",
-	-- 		-- },
-	-- 		{
-	-- 			"SergioRibera/cmp-dotenv",
-	-- 			event = "InsertEnter",
-	-- 		},
-	-- 	},
-	-- 	event = "InsertEnter",
-	-- 	config = function()
-	-- 		require("cmp").setup(require("plugins.cmp"))
-	-- 	end,
-	-- },
-	-- {
-	-- 	"L3MON4D3/LuaSnip",
-	-- 	enabled = false,
-	-- 	event = "InsertEnter",
-	-- 	dependencies = { "rafamadriz/friendly-snippets" },
-	-- 	config = function()
-	-- 		-- local luasnip = require("luasnip")
-	-- 		-- luasnip.filetype_extend("htmldjango", { "html" })
-	-- 		-- luasnip.filetype_extend("typescript", { "javascript" })
-	-- 		require("luasnip/loaders/from_vscode").lazy_load()
-	-- 		require("luasnip.loaders.from_lua").load({ paths = "~/.config/nvim/snippets/" })
-	-- 	end,
-	-- 	build = "make install_jsregexp",
-	-- },
+	{
+		"hrsh7th/nvim-cmp",
+		enabled = true,
+		dependencies = {
+			{
+				"hrsh7th/cmp-cmdline",
+				event = "CmdlineEnter",
+			},
+			{
+				"hrsh7th/cmp-buffer",
+				event = "CmdlineEnter",
+			},
+			{
+				"hrsh7th/cmp-path",
+				event = "InsertEnter",
+			},
+			{
+				"hrsh7th/cmp-nvim-lsp",
+				event = "InsertEnter",
+			},
+			{
+				"saadparwaiz1/cmp_luasnip",
+				event = "InsertEnter",
+			},
+			-- {
+			-- 	"lukas-reineke/cmp-rg",
+			-- 	event = "InsertEnter",
+			-- },
+			{
+				"SergioRibera/cmp-dotenv",
+				event = "InsertEnter",
+			},
+		},
+		event = "InsertEnter",
+		config = function()
+			require("cmp").setup(require("plugins.cmp"))
+		end,
+	},
+	{
+		"L3MON4D3/LuaSnip",
+		enabled = true,
+		event = "InsertEnter",
+		dependencies = { "rafamadriz/friendly-snippets" },
+		config = function()
+			-- local luasnip = require("luasnip")
+			-- luasnip.filetype_extend("htmldjango", { "html" })
+			-- luasnip.filetype_extend("typescript", { "javascript" })
+			require("luasnip/loaders/from_vscode").lazy_load()
+			require("luasnip.loaders.from_lua").load({ paths = "~/.config/nvim/snippets/" })
+		end,
+		build = "make install_jsregexp",
+	},
 	{
 		"nvim-treesitter/nvim-treesitter",
 		enabled = true,
@@ -824,14 +824,15 @@ require("lazy").setup({
 			})
 		end,
 	},
-	{
-		"saghen/blink.cmp",
-		lazy = false, -- lazy loading handled internally
-		-- optional: provides snippets for the snippet source
-		dependencies = { "rafamadriz/friendly-snippets" },
-		-- use a release tag to download pre-built binaries
-		version = "v0.*",
-
-		opts = require("plugins.blink-cmp"),
-	},
+	-- {
+	-- 	"saghen/blink.cmp",
+	-- 	enabled = false,
+	-- 	lazy = false, -- lazy loading handled internally
+	-- 	-- optional: provides snippets for the snippet source
+	-- 	dependencies = { "rafamadriz/friendly-snippets" },
+	-- 	-- use a release tag to download pre-built binaries
+	-- 	version = "v0.*",
+	--
+	-- 	opts = require("plugins.blink-cmp"),
+	-- },
 }, require("plugins.lazy"))

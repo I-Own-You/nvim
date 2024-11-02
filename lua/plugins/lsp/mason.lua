@@ -1,7 +1,7 @@
 local servers = {
 	"lua_ls",
-	-- "html",
-	-- "cssls",
+	"html",
+	"cssls",
 	-- "pyright",
 	-- "pylsp",
 	-- "cssmodules_ls",
@@ -9,7 +9,7 @@ local servers = {
 	-- "taplo",
 	-- "yamlls",
 	"gopls",
-	-- "tsserver",
+	"ts_ls",
 	-- "eslint",
 	-- "biome",
 	-- "prismals",
