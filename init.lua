@@ -531,13 +531,6 @@ require("lazy").setup({
 		},
 		opts = {},
 	},
-	-- {
-	-- 	"glepnir/dashboard-nvim",
-	-- 	enabled = false,
-	-- 	event = "VimEnter",
-	-- 	opts = require("plugins.dashboard"),
-	-- 	dependencies = { { "kyazdani42/nvim-web-devicons" } },
-	-- },
 	{
 		"kevinhwang91/nvim-fundo",
 		enabled = true,
