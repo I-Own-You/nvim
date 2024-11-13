@@ -769,11 +769,6 @@ require("lazy").setup({
 			},
 		},
 	},
-	{
-		"yutkat/wb-only-current-line.nvim",
-		enabled = true,
-		event = "BufReadPost",
-	},
 	-- { "folke/neodev.nvim", enabled = false, opts = {} }, -- also enable in mason.lua line before mlspconfig to work
 	{
 		"j-hui/fidget.nvim",
