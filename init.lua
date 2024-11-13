@@ -555,18 +555,17 @@ require("lazy").setup({
 			{ "<leader>wt", ":WtfSearch ", desc = "open wtf search", silent = true },
 		},
 	},
-	-- {
-	-- 	-- NOTE: you can also make for another lang the import, look at github of the extension, in case
-	-- 	"piersolenski/telescope-import.nvim",
-	-- 	enabled = false,
-	-- 	dependencies = "nvim-telescope/telescope.nvim",
-	-- 	keys = {
-	-- 		{ "<leader>ii", "<cmd>Telescope import<CR>", desc = "open imports", silent = true },
-	-- 	},
-	-- 	config = function()
-	-- 		require("telescope").load_extension("import")
-	-- 	end,
-	-- },
+	{
+		"piersolenski/telescope-import.nvim",
+		enabled = true,
+		dependencies = "nvim-telescope/telescope.nvim",
+		keys = {
+			{ "<leader>ii", "<cmd>Telescope import<CR>", desc = "open imports", silent = true },
+		},
+		config = function()
+			require("telescope").load_extension("import")
+		end,
+	},
 	{
 		"mrjones2014/smart-splits.nvim",
 		enabled = true,
