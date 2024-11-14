@@ -147,4 +147,38 @@ function M.close_file_type_buffers()
 	end
 end
 
+function M.moveFloatingWindow(x_offset, y_offset)
+	local win_id = vim.api.nvim_get_current_win()
+	local win_config = vim.api.nvim_win_get_config(win_id)
+
+	win_config.row = win_config.row + y_offset
+	win_config.col = win_config.col + x_offset
+
+	vim.api.nvim_win_set_config(win_id, win_config)
+end
+
+function M.resize_float(direction, amount)
+	local win = vim.api.nvim_get_current_win()
+	local win_config = vim.api.nvim_win_get_config(win)
+
+	if win_config.relative ~= "" then
+		if direction == "right" then
+			win_config.width = win_config.width + amount
+		elseif direction == "left" then
+			win_config.width = win_config.width + amount
+			win_config.col = win_config.col - amount
+		elseif direction == "down" then
+			win_config.height = win_config.height + amount
+		elseif direction == "up" then
+			win_config.height = win_config.height + amount
+			win_config.row = win_config.row - amount
+		end
+
+		-- Apply the updated configuration
+		vim.api.nvim_win_set_config(win, win_config)
+	else
+		print("Not in a floating window.")
+	end
+end
+
 return M
