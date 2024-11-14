@@ -15,7 +15,31 @@ keymap("n", "<C-l>", "<C-w>l", { silent = true })
 -- keymap("n", "<C-Down>", ":resize -2<CR>", {silent=true, desc=''})
 -- keymap("n", "<C-Left>", ":vertical resize +2<CR>", {silent=true, desc=''})
 -- keymap("n", "<C-Right>", ":vertical resize -2<CR>", {silent=true, desc=''})
-keymap("n", "<C-i>", ":tabnext<CR>", { silent = true, noremap = true })
+
+-- vim.api.nvim_set_keymap(
+-- 	"n",
+-- 	"<leader>mh",
+-- 	":lua require('utility_functions').moveFloatingWindow(-5, 0)<CR>",
+-- 	{ noremap = true, silent = true }
+-- )
+-- vim.api.nvim_set_keymap(
+-- 	"n",
+-- 	"<leader>mj",
+-- 	":lua require('utility_functions').moveFloatingWindow(0, 5)<CR>",
+-- 	{ noremap = true, silent = true }
+-- )
+-- vim.api.nvim_set_keymap(
+-- 	"n",
+-- 	"<leader>mk",
+-- 	":lua require('utility_functions').moveFloatingWindow(0, -5)<CR>",
+-- 	{ noremap = true, silent = true }
+-- )
+-- vim.api.nvim_set_keymap(
+-- 	"n",
+-- 	"<leader>ml",
+-- 	":lua require('utility_functions').moveFloatingWindow(5, 0)<CR>",
+-- 	{ noremap = true, silent = true }
+-- )
 
 keymap("n", "<leader>ot", ":tab split | terminal<CR>", { silent = true, desc = "open terminal" })
 -- keymap("t", "<leader>tc", "<C-\\><C-n>", { silent = true, desc = "exit terminal mode" })
