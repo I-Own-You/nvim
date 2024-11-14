@@ -838,4 +838,12 @@ require("lazy").setup({
 			},
 		},
 	},
+	{
+		"dnlhc/glance.nvim",
+		event = "BufReadPost",
+		enabled = true,
+		config = function()
+			require("glance").setup(require("plugins.glance"))
+		end,
+	},
 }, require("plugins.lazy"))

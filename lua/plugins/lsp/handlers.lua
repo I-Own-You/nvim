@@ -80,12 +80,21 @@ local function lsp_keymaps(bufnr)
 	local opts = { noremap = true, silent = true }
 	local keymap = vim.api.nvim_buf_set_keymap
 
-	keymap(bufnr, "n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opts) --keymaps.lua
-	keymap(bufnr, "n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", opts) --keymaps.lua
-	-- keymap(bufnr, "n", "<leader>wa", "<cmd> lua vim.lsp.buf.add_workspace_folder()<CR>", opts)
-	-- keymap(bufnr, "n", "<leader>wr", "<cmd> lua vim.lsp.buf.remove_workspace_folder()<CR>", opts)
-	-- keymap(bufnr, "n", "<leader>wl", "<cmd> lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>", opts)
-	-- keymap(bufnr, "n", "<leader>re", "<cmd> lua vim.lsp.buf.rename()<CR>", opts)
+	keymap(bufnr, "n", "gd", ":Glance definitions<CR>", opts)
+	keymap(bufnr, "n", "gr", ":Glance references<CR>", opts)
+	keymap(bufnr, "n", "gi", ":Glance implementations<CR>", opts)
+	keymap(bufnr, "n", "<leader>D", ":Glance type_definitions<CR>", opts)
+	keymap(bufnr, "n", "gD", ":lua vim.lsp.buf.declaration()<CR>", opts)
+
+	-- keymap(bufnr, "n", "<leader>D", ":lua vim.lsp.buf.type_definition()<CR>", opts)
+	-- keymap(bufnr, "n", "gi", ":lua vim.lsp.buf.implementation()<CR>", opts)
+	-- keymap(bufnr, "n", "gd", ":lua vim.lsp.buf.definition()<CR>", opts) --keymaps.lua
+	-- keymap(bufnr, "n", "gr", ":lua vim.lsp.buf.references()<CR>", opts) --keymaps.lua
+
+	-- keymap(bufnr, "n", "<leader>wa", ":lua vim.lsp.buf.add_workspace_folder()<CR>", opts)
+	-- keymap(bufnr, "n", "<leader>wr", ":lua vim.lsp.buf.remove_workspace_folder()<CR>", opts)
+	-- keymap(bufnr, "n", "<leader>wl", ":lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>", opts)
+	-- keymap(bufnr, "n", "<leader>re", ":lua vim.lsp.buf.rename()<CR>", opts)
 	keymap(
 		bufnr,
 		"n",
@@ -93,19 +102,16 @@ local function lsp_keymaps(bufnr)
 		':lua require("nvchad.lsp.renamer")()<CR>',
 		{ silent = true, desc = "LSP Rename symbol" }
 	)
-	-- keymap(bufnr, "n", "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<cr>", opts) --keymaps.lua
-	-- keymap(bufnr, "n", "<leader>lq", "<cmd>lua vim.diagnostic.setloclist()<CR>", opts) --keymaps.lua
-	-- keymap(bufnr, "n", "<leader>oo", "<cmd>lua vim.lsp.buf.document_symbol()<CR>", opts)
-	keymap(bufnr, "n", "<leader>rr", "<cmd>lua vim.lsp.buf.format{ async = true }<cr>", { silent = true })
-	keymap(bufnr, "n", "gD", ":lua vim.lsp.buf.declaration()<CR>", opts)
-	keymap(bufnr, "n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
-	keymap(bufnr, "n", "gi", ":lua vim.lsp.buf.implementation()<CR>", opts)
-	keymap(bufnr, "n", "ge", "<cmd>lua vim.diagnostic.goto_next({buffer=0, float=false})<cr>", opts)
-	keymap(bufnr, "n", "<leader>lq", "<cmd>lua vim.diagnostic.setloclist()<cr>", opts)
-	keymap(bufnr, "n", "gE", "<cmd>lua vim.diagnostic.goto_prev({buffer=0, float=false})<cr>", opts)
-	keymap(bufnr, "n", "<leader>D", ":lua vim.lsp.buf.type_definition()<CR>", opts)
-	keymap(bufnr, "n", "<leader>fl", "<cmd>lua vim.diagnostic.open_float()<cr>", opts)
-	keymap(bufnr, "n", "<leader>ls", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
+	-- keymap(bufnr, "n", "<leader>ca", ":lua vim.lsp.buf.code_action()<cr>", opts) --keymaps.lua
+	-- keymap(bufnr, "n", "<leader>lq", ":lua vim.diagnostic.setloclist()<CR>", opts) --keymaps.lua
+	-- keymap(bufnr, "n", "<leader>oo", ":lua vim.lsp.buf.document_symbol()<CR>", opts)
+	keymap(bufnr, "n", "<leader>rr", ":lua vim.lsp.buf.format{ async = true }<cr>", { silent = true })
+	keymap(bufnr, "n", "K", ":lua vim.lsp.buf.hover()<CR>", opts)
+	keymap(bufnr, "n", "ge", ":lua vim.diagnostic.goto_next({buffer=0, float=false})<cr>", opts)
+	keymap(bufnr, "n", "<leader>lq", ":lua vim.diagnostic.setloclist()<cr>", opts)
+	keymap(bufnr, "n", "gE", ":lua vim.diagnostic.goto_prev({buffer=0, float=false})<cr>", opts)
+	keymap(bufnr, "n", "<leader>fl", ":lua vim.diagnostic.open_float()<cr>", opts)
+	keymap(bufnr, "n", "<leader>ls", ":lua vim.lsp.buf.signature_help()<CR>", opts)
 end
 
 M.on_attach = function(client, bufnr)
