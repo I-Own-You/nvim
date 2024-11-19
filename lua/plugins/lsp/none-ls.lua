@@ -18,7 +18,15 @@ null_ls.setup({
 		-- formatting.shellharden,
 		-- formatting.shfmt,
 		-- formatting.autopep8,
+		--
+		--lua
 		formatting.stylua,
+		--
+		-- bash
+		formatting.shfmt,
+		diagnostics.shellcheck,
+		--
+		-- golang
 		formatting.goimports,
 		diagnostics.golangci_lint,
 	},
