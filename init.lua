@@ -491,6 +491,7 @@ require("lazy").setup({
 			-- { "S", mode = "x", "<cmd>lua require('flash').treesitter()<CR>", noremap = true ,silent=true},
 			{ "r", mode = "o", "<cmd>lua require('flash').remote()<CR>", noremap = true, silent = true },
 		},
+		opts = {},
 	},
 	{
 		"sindrets/diffview.nvim",
