@@ -813,33 +813,6 @@ require("lazy").setup({
 	-- 	opts = require("plugins.blink-cmp"),
 	-- },
 	{
-		"chrisgrieser/nvim-spider",
-		enabled = true,
-		event = "BufReadPost",
-		config = function()
-			vim.keymap.set("o", "w", "<cmd>lua require('spider').motion('w')<CR>")
-			vim.keymap.set("n", "cw", "ce", { remap = true })
-			vim.keymap.set("n", "dw", "de", { remap = true })
-		end,
-		keys = {
-			{
-				"w",
-				"<cmd>lua require('spider').motion('w')<CR>",
-				mode = { "n", "o", "x" },
-			},
-			{
-				"e",
-				"<cmd>lua require('spider').motion('e')<CR>",
-				mode = { "n", "o", "x" },
-			},
-			{
-				"b",
-				"<cmd>lua require('spider').motion('b')<CR>",
-				mode = { "n", "o", "x" },
-			},
-		},
-	},
-	{
 		"dnlhc/glance.nvim",
 		event = "BufReadPost",
 		enabled = true,
