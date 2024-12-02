@@ -22,13 +22,13 @@ null_ls.setup({
 		--lua
 		formatting.stylua,
 		--
-		-- bash
-		formatting.shfmt,
-		diagnostics.shellcheck,
-		--
 		-- golang
 		formatting.goimports,
 		diagnostics.golangci_lint,
+		--
+		-- bash
+		formatting.shfmt,
+		diagnostics.shellcheck,
 	},
 
 	on_attach = function(client, bufnr)
