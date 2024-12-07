@@ -124,6 +124,7 @@ M.on_attach = function(client, bufnr)
 	end
 
 	if client.name == "pylsp" then
+		-- this is needed if you setup 2 lsp (pyright and pylsp)
 		client.server_capabilities.documentSymbolProvider = false
 	end
 
