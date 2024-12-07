@@ -11,6 +11,20 @@ keymap("n", "<C-j>", "<C-w>j", { silent = true })
 keymap("n", "<C-k>", "<C-w>k", { silent = true })
 keymap("n", "<C-l>", "<C-w>l", { silent = true })
 
+-- vim.api.nvim_buf_set_keymap(
+-- 	bufnr,
+-- 	"n",
+-- 	"<Leader>oi",
+-- 	':lua vim.lsp.buf.execute_command({command = "_typescript.organizeImports", arguments = {vim.fn.expand("%:p")}})<CR>',
+-- 	{ noremap = true, silent = true }
+-- )
+vim.api.nvim_create_user_command("TSOrganizeImports", function()
+	vim.lsp.buf.execute_command({
+		command = "_typescript.organizeImports",
+		arguments = { vim.fn.expand("%:p") },
+	})
+end, { desc = "Organize imports in TypeScript file" })
+
 -- keymap("n", "<C-Up>", ":resize +2<CR>", {silent=true, desc=''})
 -- keymap("n", "<C-Down>", ":resize -2<CR>", {silent=true, desc=''})
 -- keymap("n", "<C-Left>", ":vertical resize +2<CR>", {silent=true, desc=''})
