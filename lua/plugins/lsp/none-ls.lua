@@ -26,6 +26,21 @@ null_ls.setup({
 		formatting.goimports,
 		diagnostics.golangci_lint,
 		--
+		-- prettier
+		formatting.prettierd.with({
+			filetypes = {
+				"javascript",
+				"typescript",
+				"json",
+				"jsonc",
+				"html",
+				"css",
+				"javascriptreact",
+				"typescriptreact",
+				"vue",
+			},
+		}),
+		--
 		-- bash
 		formatting.shfmt,
 		diagnostics.shellcheck,
