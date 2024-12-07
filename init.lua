@@ -229,7 +229,14 @@ require("lazy").setup({
 				desc = "live workspace symbols",
 				silent = true,
 			},
-			{ mode = "n", "<leader>ka", desc = "code actions", ":FzfLua lsp_code_actions<CR>", silent = true },
+			-- { mode = "n", "<leader>ka", desc = "code actions", ":FzfLua lsp_code_actions<CR>", silent = true },
+			{
+				mode = "n",
+				"<leader>ka",
+				desc = "code actions",
+				":lua require('fzf-lua').lsp_code_actions({winopts={preview={hidden='hidden'}}})<CR>",
+				silent = true,
+			},
 			{ mode = "n", "gR", ":FzfLua lsp_finder<CR>", desc = "all lsp refs", silent = true },
 			{
 				mode = "n",
