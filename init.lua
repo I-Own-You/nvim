@@ -827,4 +827,47 @@ require("lazy").setup({
 			require("glance").setup(require("plugins.glance"))
 		end,
 	},
+	{
+		"aaronik/treewalker.nvim",
+		event = "BufReadPost",
+		enabled = true,
+		keys = {
+			{
+				mode = "n",
+				"<leader>hh",
+				":Treewalker Left<CR>",
+				desc = "treewalker left",
+				silent = true,
+			},
+			-- {
+			-- 	mode = "n",
+			-- 	"<leader>ll",
+			-- 	":Treewalker Right<CR>",
+			-- 	desc = "treewalker right",
+			-- 	silent = true,
+			-- },
+			{
+				mode = "n",
+				"<leader>kk",
+				":Treewalker Up<CR>",
+				desc = "treewalker up",
+				silent = true,
+			},
+			{
+				mode = "n",
+				"<leader>jj",
+				":Treewalker Down<CR>",
+				desc = "treewalker down",
+				silent = true,
+			},
+		},
+	},
+	{
+		"trevorhauter/gitportal.nvim",
+		cmd = "GitPortal",
+		enabled = true,
+		opts = {
+			always_include_current_line = true,
+		},
+	},
 }, require("plugins.lazy"))
