@@ -78,7 +78,7 @@ keymap("v", "<A-j>", ":m '>+1<CR>gv=gv", { silent = true, desc = "" })
 keymap("v", "<A-k>", ":m '<-2<CR>gv=gv", { silent = true, desc = "" })
 
 keymap("n", "<leader>vv", ":vsplit<CR>", { silent = true, desc = "split buffer vertically" })
-keymap("n", "<leader>hh", ":split<CR>", { silent = true, desc = "split buffer horizontally" })
+keymap("n", "<leader>xx", ":split<CR>", { silent = true, desc = "split buffer horizontally" })
 keymap("n", "<leader>vd", ":vert diffsplit ", { noremap = true, desc = "diff some file" })
 
 keymap("n", "<C-[>", "[m", { silent = true })
