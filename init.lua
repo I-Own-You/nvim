@@ -456,7 +456,7 @@ require("lazy").setup({
 		enabled = true,
 		event = "CmdlineEnter",
 		keys = {
-			{ "<leader>fb", mode = "n", ":Git ", desc = "open git", noremap = true, silent = true },
+			{ "<leader>gg", mode = "n", ":Git ", desc = "open git", noremap = true, silent = true },
 			{
 
 				"<leader>gc",
