@@ -133,6 +133,7 @@ function M.close_file_type_buffers()
 		"bufferlist",
 		"netrw",
 		"notify",
+		"fugitiveblame",
 	}
 	local current_filetype = vim.bo.filetype
 
