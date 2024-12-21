@@ -456,15 +456,6 @@ require("lazy").setup({
 		enabled = true,
 		event = "CmdlineEnter",
 		keys = {
-			{ "<leader>bl", mode = "n", ":Git blame<CR>", desc = "git blame", noremap = true, silent = true },
-		},
-	},
-	{
-		"rbong/vim-flog",
-		enabled = true,
-		dependencies = { "tpope/vim-fugitive" },
-		keys = {
-			{ "<leader>fgg", mode = "n", ":Flog ", desc = "open floggit", noremap = true, silent = true },
 			{ "<leader>fb", mode = "n", ":Git ", desc = "open git", noremap = true, silent = true },
 			{
 
@@ -476,6 +467,15 @@ require("lazy").setup({
 				silent = true,
 			},
 			{ "<leader>gp", mode = "n", ":Git push<CR>", desc = "git push", silent = true },
+			{ "<leader>bl", mode = "n", ":Git blame<CR>", desc = "git blame", noremap = true, silent = true },
+		},
+	},
+	{
+		"rbong/vim-flog",
+		enabled = true,
+		dependencies = { "tpope/vim-fugitive" },
+		keys = {
+			{ "<leader>fgg", mode = "n", ":Flog ", desc = "open floggit", noremap = true, silent = true },
 			{ "<leader>fs", mode = "n", ":Flogsplit ", desc = "flog split", noremap = true, silent = true },
 		},
 	},
