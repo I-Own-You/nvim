@@ -452,6 +452,14 @@ require("lazy").setup({
 		opts = require("plugins.todo-comments"),
 	},
 	{
+		"tpope/vim-fugitive",
+		enabled = true,
+		event = "CmdlineEnter",
+		keys = {
+			{ "<leader>bl", mode = "n", ":Git blame<CR>", desc = "git blame", noremap = true, silent = true },
+		},
+	},
+	{
 		"rbong/vim-flog",
 		enabled = true,
 		dependencies = { "tpope/vim-fugitive" },
