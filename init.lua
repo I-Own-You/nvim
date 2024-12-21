@@ -748,20 +748,6 @@ require("lazy").setup({
 		ft = { "json", "jsonc" },
 	},
 	{
-		"FabijanZulj/blame.nvim",
-		enabled = true,
-		opts = {},
-		keys = {
-			{
-				"<leader>bl",
-				":BlameToggle<CR>",
-				mode = "n",
-				desc = "git blame lines",
-				silent = true,
-			},
-		},
-	},
-	{
 		"mikavilpas/yazi.nvim",
 		enabled = true,
 		dependencies = {
