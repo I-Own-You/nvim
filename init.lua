@@ -457,17 +457,17 @@ require("lazy").setup({
 		dependencies = { "tpope/vim-fugitive" },
 		keys = {
 			{ "<leader>fgg", mode = "n", ":Flog ", desc = "open floggit", noremap = true, silent = true },
-			{ "<leader>fb", mode = "n", ":Floggit ", desc = "open flog branch", noremap = true, silent = true },
+			{ "<leader>fb", mode = "n", ":Git ", desc = "open git", noremap = true, silent = true },
 			{
 
 				"<leader>gc",
 				mode = "n",
-				':Floggit commit -m ""<left>',
-				desc = "open flog branch commit",
+				":Git commit<CR>",
+				desc = "git commit",
 				noremap = true,
 				silent = true,
 			},
-			{ "<leader>gp", mode = "n", ":Floggit push<CR>", desc = "floggit push", silent = true },
+			{ "<leader>gp", mode = "n", ":Git push<CR>", desc = "git push", silent = true },
 			{ "<leader>fs", mode = "n", ":Flogsplit ", desc = "flog split", noremap = true, silent = true },
 		},
 	},
