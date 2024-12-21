@@ -459,6 +459,7 @@ require("lazy").setup({
 			{ "<leader>fgg", mode = "n", ":Flog ", desc = "open floggit", noremap = true, silent = true },
 			{ "<leader>fb", mode = "n", ":Floggit ", desc = "open flog branch", noremap = true, silent = true },
 			{
+
 				"<leader>gc",
 				mode = "n",
 				':Floggit commit -m ""<left>',
