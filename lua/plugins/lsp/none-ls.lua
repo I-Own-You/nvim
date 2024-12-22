@@ -23,7 +23,7 @@ null_ls.setup({
 		formatting.stylua,
 		--
 		-- sql
-		diagnostics.sqlfluff.with({ extra_args = { "--dialect", "postgres" } }),
+		-- diagnostics.sqlfluff.with({ extra_args = { "--dialect", "postgres" } }),
 		--
 		-- golang
 		formatting.goimports,
