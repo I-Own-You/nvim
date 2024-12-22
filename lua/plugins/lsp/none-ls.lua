@@ -24,7 +24,6 @@ null_ls.setup({
 		--
 		-- sql
 		diagnostics.sqlfluff.with({ extra_args = { "--dialect", "postgres" } }),
-		formatting.sqlfmt,
 		--
 		-- golang
 		formatting.goimports,
