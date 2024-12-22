@@ -22,6 +22,10 @@ null_ls.setup({
 		--lua
 		formatting.stylua,
 		--
+		-- sql
+		diagnostics.sqlfluff.with({ extra_args = { "--dialect", "postgres" } }),
+		formatting.sqlfmt,
+		--
 		-- golang
 		formatting.goimports,
 		diagnostics.golangci_lint,
