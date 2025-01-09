@@ -56,8 +56,16 @@ require("lazy").setup({
 				hl(0, "HlSearchNear", { fg = "#000000", bg = "#8CCF7E" })
 				hl(0, "Search", { fg = "#000000", bg = "#8CCF7E" })
 				hl(0, "IncSearch", { fg = "#000000", bg = "#8CCF7E" })
-				hl(0, "HlSearchLens", { bg = "#141B1E", fg = "#141B1E" }) -- the unmatched
-				hl(0, "HlSearchLensNear", { fg = "#000000", bg = "#8CCF7E" }) -- the matched
+				hl(0, "HlSearchLens", { bg = "#141B1E", fg = "#141B1E" })
+				hl(0, "HlSearchLensNear", { fg = "#000000", bg = "#8CCF7E" })
+				-- blink.cmp
+				hl(0, "BlinkCmpMenu", { bg = "#141b1e" })
+				hl(0, "BlinkCmpMenuBorder", { fg = "#2f3639", bg = "#141b1e" })
+				hl(0, "BlinkCmpDoc", { bg = "#141b1e" })
+				hl(0, "BlinkCmpDocBorder", { fg = "#2f3639", bg = "#141b1e" })
+				hl(0, "BlinkCmpDocSeparator", { fg = "#2f3639", bg = "#141b1e" })
+				hl(0, "BlinkCmpSignatureHelp", { bg = "#141b1e" })
+				hl(0, "BlinkCmpSignatureHelpBorder", { fg = "#2f3639", bg = "#141b1e" })
 			end,
 		},
 	},
@@ -110,44 +118,44 @@ require("lazy").setup({
 			require("plugins.lsp.none-ls")
 		end,
 	},
-	{
-		"hrsh7th/nvim-cmp",
-		enabled = true,
-		dependencies = {
-			{
-				"hrsh7th/cmp-cmdline",
-				event = "CmdlineEnter",
-			},
-			{
-				"hrsh7th/cmp-buffer",
-				event = "CmdlineEnter",
-			},
-			{
-				"hrsh7th/cmp-path",
-				event = "InsertEnter",
-			},
-			{
-				"hrsh7th/cmp-nvim-lsp",
-				event = "InsertEnter",
-			},
-			{
-				"saadparwaiz1/cmp_luasnip",
-				event = "InsertEnter",
-			},
-			-- {
-			-- 	"lukas-reineke/cmp-rg",
-			-- 	event = "InsertEnter",
-			-- },
-			{
-				"SergioRibera/cmp-dotenv",
-				event = "InsertEnter",
-			},
-		},
-		event = "InsertEnter",
-		config = function()
-			require("cmp").setup(require("plugins.cmp"))
-		end,
-	},
+	-- {
+	-- 	"hrsh7th/nvim-cmp",
+	-- 	enabled = false,
+	-- 	dependencies = {
+	-- 		{
+	-- 			"hrsh7th/cmp-cmdline",
+	-- 			event = "CmdlineEnter",
+	-- 		},
+	-- 		{
+	-- 			"hrsh7th/cmp-buffer",
+	-- 			event = "CmdlineEnter",
+	-- 		},
+	-- 		{
+	-- 			"hrsh7th/cmp-path",
+	-- 			event = "InsertEnter",
+	-- 		},
+	-- 		{
+	-- 			"hrsh7th/cmp-nvim-lsp",
+	-- 			event = "InsertEnter",
+	-- 		},
+	-- 		{
+	-- 			"saadparwaiz1/cmp_luasnip",
+	-- 			event = "InsertEnter",
+	-- 		},
+	-- 		-- {
+	-- 		-- 	"lukas-reineke/cmp-rg",
+	-- 		-- 	event = "InsertEnter",
+	-- 		-- },
+	-- 		{
+	-- 			"SergioRibera/cmp-dotenv",
+	-- 			event = "InsertEnter",
+	-- 		},
+	-- 	},
+	-- 	event = "InsertEnter",
+	-- 	config = function()
+	-- 		require("cmp").setup(require("plugins.cmp"))
+	-- 	end,
+	-- },
 	{
 		"L3MON4D3/LuaSnip",
 		enabled = true,
@@ -803,17 +811,29 @@ require("lazy").setup({
 			})
 		end,
 	},
-	-- {
-	-- 	"saghen/blink.cmp",
-	-- 	enabled = false,
-	-- 	lazy = false, -- lazy loading handled internally
-	-- 	-- optional: provides snippets for the snippet source
-	-- 	dependencies = { "rafamadriz/friendly-snippets" },
-	-- 	-- use a release tag to download pre-built binaries
-	-- 	version = "v0.*",
-	--
-	-- 	opts = require("plugins.blink-cmp"),
-	-- },
+	{
+		"saghen/blink.cmp",
+		enabled = true,
+		lazy = false,
+		dependencies = {
+			"rafamadriz/friendly-snippets",
+			"mikavilpas/blink-ripgrep.nvim",
+		},
+		-- use a release tag to download pre-built binaries
+		version = "v0.*",
+		opts = require("plugins.blink-cmp"),
+		keys = {
+			{
+				mode = "i",
+				"<C-g>",
+				function()
+					require("blink-cmp").show({ providers = { "ripgrep" } })
+				end,
+				desc = "",
+				silent = true,
+			},
+		},
+	},
 	{
 		"dnlhc/glance.nvim",
 		event = "BufReadPost",
