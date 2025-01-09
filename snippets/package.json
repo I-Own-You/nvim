@@ -4,15 +4,15 @@
     "snippets": [
       {
         "language": [
-          "all"
+          "javascript"
         ],
-        "path": "./snips/custom.json"
+        "path": "./custom-snippets/js.json"
       },
       {
         "language": [
-          "kubernetes"
+          "typescript"
         ],
-        "path": "./snips/kubernetes.json"
+        "path": "./custom-snippets/ts.json"
       }
     ]
   }
