@@ -885,4 +885,10 @@ require("lazy").setup({
 			always_include_current_line = true,
 		},
 	},
+	{
+		"rachartier/tiny-inline-diagnostic.nvim",
+		event = "VeryLazy",
+		priority = 1000,
+		opts = require("plugins.tiny-inline-diagnostic"),
+	},
 }, require("plugins.lazy"))
