@@ -83,8 +83,6 @@ keymap("n", "<leader>vd", ":vert diffsplit ", { noremap = true, desc = "diff som
 
 keymap("i", "<C-a>", "<C-o>A", { noremap = true, silent = true })
 keymap("i", "<C-i>", "<C-o>I", { noremap = true, silent = true })
-keymap("i", "<C-w>", "<C-o>w", { noremap = true, silent = true })
-keymap("i", "<C-b>", "<C-o>b", { noremap = true, silent = true })
 
 keymap("n", "<C-[>", "[m", { silent = true })
 keymap("n", "<C-]>", "]m", { silent = true })
