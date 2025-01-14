@@ -891,4 +891,10 @@ require("lazy").setup({
 		priority = 1000,
 		opts = require("plugins.tiny-inline-diagnostic"),
 	},
+	{
+		"barrett-ruth/import-cost.nvim",
+		build = "sh install.sh npm", -- change if you need, npm/yarn/bun/.etc
+		ft = { "javascript", "typescript", "javascriptreact", "typescriptreact", "vue" },
+		config = true,
+	},
 }, require("plugins.lazy"))
