@@ -50,15 +50,19 @@ require("lazy").setup({
 			end,
 			config = function()
 				local hl = vim.api.nvim_set_hl
+				-- general
 				-- hl(0, "FoldColumn", { fg = "#68B9B9", bg = "#141B1E" })
-				hl(0, "FzfLuaLiveSym", { fg = "#2AC3DE", bg = "NONE" })
 				-- hl(0, "String", { fg = "#85de73", bg = "NONE" })
-				hl(0, "TelescopeMatching", { fg = "#2AC3DE", bg = "NONE" })
-				hl(0, "HlSearchNear", { fg = "#000000", bg = "#8CCF7E" })
 				hl(0, "Search", { fg = "#000000", bg = "#8CCF7E" })
 				hl(0, "IncSearch", { fg = "#000000", bg = "#8CCF7E" })
+				-- hlslens
+				hl(0, "HlSearchNear", { fg = "#000000", bg = "#8CCF7E" })
 				hl(0, "HlSearchLens", { bg = "#141B1E", fg = "#141B1E" })
 				hl(0, "HlSearchLensNear", { fg = "#000000", bg = "#8CCF7E" })
+				-- telescope
+				hl(0, "TelescopeMatching", { fg = "#2AC3DE", bg = "NONE" })
+				-- fzf lua
+				hl(0, "FzfLuaLiveSym", { fg = "#2AC3DE", bg = "NONE" })
 				-- blink.cmp
 				hl(0, "BlinkCmpMenu", { bg = "#141b1e" })
 				hl(0, "BlinkCmpMenuBorder", { fg = "#2f3639", bg = "#141b1e" })
@@ -67,6 +71,11 @@ require("lazy").setup({
 				hl(0, "BlinkCmpDocSeparator", { fg = "#2f3639", bg = "#141b1e" })
 				hl(0, "BlinkCmpSignatureHelp", { bg = "#141b1e" })
 				hl(0, "BlinkCmpSignatureHelpBorder", { fg = "#2f3639", bg = "#141b1e" })
+				-- dropbar
+				hl(0, "DropBarMenuCurrentContext", { fg = "#2f3639", bg = "#141b1e" })
+				hl(0, "DropBarMenuHoverEntry", { fg = "#dadada", bg = "#1a2124" })
+				hl(0, "DropBarMenuFloatBorder", { fg = "#2f3639", bg = "#141b1e" })
+				hl(0, "DropBarMenuNormalFloat", { bg = "#141b1e" })
 			end,
 		},
 	},
@@ -850,41 +859,42 @@ require("lazy").setup({
 			require("glance").setup(require("plugins.glance"))
 		end,
 	},
-	{
-		"aaronik/treewalker.nvim",
-		event = "BufReadPost",
-		enabled = true,
-		keys = {
-			{
-				mode = "n",
-				"<leader>hh",
-				":Treewalker Left<CR>",
-				desc = "treewalker left",
-				silent = true,
-			},
-			-- {
-			-- 	mode = "n",
-			-- 	"<leader>ll",
-			-- 	":Treewalker Right<CR>",
-			-- 	desc = "treewalker right",
-			-- 	silent = true,
-			-- },
-			-- {
-			-- 	mode = "n",
-			-- 	"<leader>kk",
-			-- 	":Treewalker Up<CR>",
-			-- 	desc = "treewalker up",
-			-- 	silent = true,
-			-- },
-			-- {
-			-- 	mode = "n",
-			-- 	"<leader>jj",
-			-- 	":Treewalker Down<CR>",
-			-- 	desc = "treewalker down",
-			-- 	silent = true,
-			-- },
-		},
-	},
+	-- this is replaced by dropbar
+	-- {
+	-- 	"aaronik/treewalker.nvim",
+	-- 	event = "BufReadPost",
+	-- 	enabled = true,
+	-- 	keys = {
+	-- 		{
+	-- 			mode = "n",
+	-- 			"<leader>hh",
+	-- 			":Treewalker Left<CR>",
+	-- 			desc = "treewalker left",
+	-- 			silent = true,
+	-- 		},
+	-- 		-- {
+	-- 		-- 	mode = "n",
+	-- 		-- 	"<leader>ll",
+	-- 		-- 	":Treewalker Right<CR>",
+	-- 		-- 	desc = "treewalker right",
+	-- 		-- 	silent = true,
+	-- 		-- },
+	-- 		-- {
+	-- 		-- 	mode = "n",
+	-- 		-- 	"<leader>kk",
+	-- 		-- 	":Treewalker Up<CR>",
+	-- 		-- 	desc = "treewalker up",
+	-- 		-- 	silent = true,
+	-- 		-- },
+	-- 		-- {
+	-- 		-- 	mode = "n",
+	-- 		-- 	"<leader>jj",
+	-- 		-- 	":Treewalker Down<CR>",
+	-- 		-- 	desc = "treewalker down",
+	-- 		-- 	silent = true,
+	-- 		-- },
+	-- 	},
+	-- },
 	{
 		"trevorhauter/gitportal.nvim",
 		cmd = "GitPortal",
@@ -901,15 +911,16 @@ require("lazy").setup({
 		config = true,
 	},
 	{
-		"utilyre/barbecue.nvim",
-		enabled = true,
-		event = "VimEnter",
-		name = "barbecue",
-		version = "*",
+		"Bekaboo/dropbar.nvim",
+		enalbed = true,
+		event = "BufReadPost",
 		dependencies = {
-			"SmiteshP/nvim-navic",
-			"kyazdani42/nvim-web-devicons",
+			"nvim-telescope/telescope-fzf-native.nvim",
+			build = "make",
 		},
-		opts = {},
+		config = function()
+			require("plugins.dropbar-keymaps")
+			require("dropbar").setup(require("plugins.dropbar-settings"))
+		end,
 	},
 }, require("plugins.lazy"))
