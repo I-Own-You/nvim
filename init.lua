@@ -217,30 +217,37 @@ require("lazy").setup({
 	-- 	end,
 	-- },
 	-- { "folke/neodev.nvim", enabled = false, opts = {} }, -- also enable in mason.lua line before mlspconfig to work
-	{
-		"j-hui/fidget.nvim",
-		enabled = true,
-		event = "VeryLazy",
-		opts = {},
-	},
-	{
-		"olexsmir/gopher.nvim",
-		enabled = true,
-		ft = { "go", "gomod", "gotmpl", "gohtmltmpl" },
-		dependencies = {
-			"nvim-lua/plenary.nvim",
-			"nvim-treesitter/nvim-treesitter",
-			-- "mfussenegger/nvim-dap", -- (optional) only if you use `gopher.dap`
-		},
-		opts = {},
-	},
-	{
-		"rachartier/tiny-inline-diagnostic.nvim",
-		enabled = true,
-		event = "VeryLazy",
-		priority = 1000,
-		opts = require("plugins.tiny-inline-diagnostic"),
-	},
+	-- {
+	-- 	"j-hui/fidget.nvim",
+	-- 	enabled = true,
+	-- 	event = "VeryLazy",
+	-- 	opts = {},
+	-- },
+	-- {
+	-- 	"olexsmir/gopher.nvim",
+	-- 	enabled = true,
+	-- 	ft = { "go", "gomod", "gotmpl", "gohtmltmpl" },
+	-- 	dependencies = {
+	-- 		"nvim-lua/plenary.nvim",
+	-- 		"nvim-treesitter/nvim-treesitter",
+	-- 		-- "mfussenegger/nvim-dap", -- (optional) only if you use `gopher.dap`
+	-- 	},
+	-- 	opts = {},
+	-- },
+	-- {
+	-- 	"rachartier/tiny-inline-diagnostic.nvim",
+	-- 	enabled = true,
+	-- 	event = "VeryLazy",
+	-- 	priority = 1000,
+	-- 	opts = require("plugins.tiny-inline-diagnostic"),
+	-- },
+	-- {
+	-- 	"Wansmer/treesj",
+	-- 	enabled = true,
+	-- 	dependencies = { "nvim-treesitter" },
+	-- 	opts = require("plugins.treesj"),
+	-- 	keys = { { "<leader>j", mode = "n", "<cmd>TSJToggle<cr>", desc = "toggle node split", silent = true } },
+	-- },
 
 	-- git related
 	{
