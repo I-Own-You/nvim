@@ -89,6 +89,8 @@ require("lazy").setup({
 	-- 		hl(0, "HlSearchLensNear", { fg = "#000000", bg = "#85DE73" }) -- the matched
 	-- 	end,
 	-- },
+
+	-- lsp, cmp, none-ls, mason
 	{
 		"neovim/nvim-lspconfig",
 		enabled = true,
@@ -109,7 +111,6 @@ require("lazy").setup({
 		end,
 	},
 	{
-		-- "jose-elias-alvarez/null-ls.nvim",
 		"nvimtools/none-ls.nvim",
 		enabled = true,
 		event = "BufReadPost",
@@ -117,6 +118,43 @@ require("lazy").setup({
 		config = function()
 			require("plugins.lsp.none-ls")
 		end,
+	},
+	{
+		"L3MON4D3/LuaSnip",
+		enabled = true,
+		event = "InsertEnter",
+		dependencies = { "rafamadriz/friendly-snippets" },
+		config = function()
+			-- local luasnip = require("luasnip")
+			-- luasnip.filetype_extend("htmldjango", { "html" })
+			-- luasnip.filetype_extend("typescript", { "javascript" })
+			require("luasnip/loaders/from_vscode").lazy_load({ paths = "~/.config/nvim/snippets/" })
+			require("luasnip.loaders.from_lua").load({ paths = "~/.config/nvim/snippets/" })
+		end,
+		build = "make install_jsregexp",
+	},
+	{
+		"saghen/blink.cmp",
+		enabled = true,
+		lazy = false,
+		dependencies = {
+			"rafamadriz/friendly-snippets",
+			"mikavilpas/blink-ripgrep.nvim",
+		},
+		-- use a release tag to download pre-built binaries
+		version = "v0.*",
+		opts = require("plugins.blink-cmp"),
+		keys = {
+			{
+				mode = "i",
+				"<C-g>",
+				function()
+					require("blink-cmp").show({ providers = { "ripgrep" } })
+				end,
+				desc = "",
+				silent = true,
+			},
+		},
 	},
 	-- {
 	-- 	"hrsh7th/nvim-cmp",
@@ -156,20 +194,8 @@ require("lazy").setup({
 	-- 		require("cmp").setup(require("plugins.cmp"))
 	-- 	end,
 	-- },
-	{
-		"L3MON4D3/LuaSnip",
-		enabled = true,
-		event = "InsertEnter",
-		dependencies = { "rafamadriz/friendly-snippets" },
-		config = function()
-			-- local luasnip = require("luasnip")
-			-- luasnip.filetype_extend("htmldjango", { "html" })
-			-- luasnip.filetype_extend("typescript", { "javascript" })
-			require("luasnip/loaders/from_vscode").lazy_load({ paths = "~/.config/nvim/snippets/" })
-			require("luasnip.loaders.from_lua").load({ paths = "~/.config/nvim/snippets/" })
-		end,
-		build = "make install_jsregexp",
-	},
+	-- lsp, cmp, none-ls, mason
+
 	{
 		"nvim-treesitter/nvim-treesitter",
 		enabled = true,
@@ -810,29 +836,6 @@ require("lazy").setup({
 				},
 			})
 		end,
-	},
-	{
-		"saghen/blink.cmp",
-		enabled = true,
-		lazy = false,
-		dependencies = {
-			"rafamadriz/friendly-snippets",
-			"mikavilpas/blink-ripgrep.nvim",
-		},
-		-- use a release tag to download pre-built binaries
-		version = "v0.*",
-		opts = require("plugins.blink-cmp"),
-		keys = {
-			{
-				mode = "i",
-				"<C-g>",
-				function()
-					require("blink-cmp").show({ providers = { "ripgrep" } })
-				end,
-				desc = "",
-				silent = true,
-			},
-		},
 	},
 	{
 		"dnlhc/glance.nvim",
