@@ -20,6 +20,7 @@ vim.opt.rtp:prepend(lazypath)
 require("user.nvchad-custom-options")
 
 require("lazy").setup({
+	-- ui related
 	{
 		{
 			"nvchad/ui",
@@ -89,8 +90,14 @@ require("lazy").setup({
 	-- 		hl(0, "HlSearchLensNear", { fg = "#000000", bg = "#85DE73" }) -- the matched
 	-- 	end,
 	-- },
+	-- {
+	-- 	"NvChad/nvim-colorizer.lua",
+	-- 	enabled = false,
+	-- 	event = "BufReadPost",
+	-- 	opts = require("plugins.colorizer"),
+	-- },
 
-	-- lsp, cmp, none-ls, mason
+	-- lsp, cmp, none-ls, mason related
 	{
 		"neovim/nvim-lspconfig",
 		enabled = true,
@@ -99,6 +106,7 @@ require("lazy").setup({
 			require("plugins.lsp.handlers").setup()
 		end,
 	},
+
 	{
 		"williamboman/mason.nvim",
 		enabled = true,
@@ -194,8 +202,181 @@ require("lazy").setup({
 	-- 		require("cmp").setup(require("plugins.cmp"))
 	-- 	end,
 	-- },
-	-- lsp, cmp, none-ls, mason
+	-- {
+	-- 	"https://git.sr.ht/~whynothugo/lsp_lines.nvim",
+	-- 	enabled = false,
+	-- 	event = "BufReadPost",
+	-- 	config = function()
+	-- 		-- virtual_text is disabled in handlers.lua
+	-- 		-- vim.diagnostic.config({ virtual_text = false })
+	-- 		-- vim.diagnostic.config({ virtual_lines = true })
+	-- 		-- vim.diagnostic.config({ virtual_lines = { only_current_line = true } })
+	-- 		vim.diagnostic.config({ virtual_lines = { highlight_whole_line = false } })
+	-- 		vim.diagnostic.config({ virtual_text = false })
+	-- 		require("lsp_lines").setup({})
+	-- 	end,
+	-- },
+	-- { "folke/neodev.nvim", enabled = false, opts = {} }, -- also enable in mason.lua line before mlspconfig to work
+	{
+		"j-hui/fidget.nvim",
+		enabled = true,
+		event = "VeryLazy",
+		opts = {},
+	},
+	{
+		"olexsmir/gopher.nvim",
+		enabled = true,
+		ft = { "go", "gomod", "gotmpl", "gohtmltmpl" },
+		dependencies = {
+			"nvim-lua/plenary.nvim",
+			"nvim-treesitter/nvim-treesitter",
+			-- "mfussenegger/nvim-dap", -- (optional) only if you use `gopher.dap`
+		},
+		opts = {},
+	},
+	{
+		"rachartier/tiny-inline-diagnostic.nvim",
+		enabled = true,
+		event = "VeryLazy",
+		priority = 1000,
+		opts = require("plugins.tiny-inline-diagnostic"),
+	},
 
+	-- git related
+	{
+		"lewis6991/gitsigns.nvim",
+		enabled = true,
+		event = "BufReadPost",
+		keys = {
+			{
+				mode = "n",
+				"<A-n>",
+				":Gitsigns next_hunk<cr>",
+				desc = "next git change",
+				silent = true,
+			},
+			{
+				mode = "n",
+				"<A-p>",
+				":Gitsigns prev_hunk<cr>",
+				desc = "previous git change",
+				silent = true,
+			},
+			-- { mode = "n", "<leader>bl", ":Gitsigns blame_line<cr>", desc = "blame line", silent = true },
+			{
+				mode = "n",
+				"<leader>ph",
+				":Gitsigns preview_hunk<cr>",
+				desc = "preview float window change",
+				silent = true,
+			},
+			{
+				mode = "n",
+				"<leader>pih",
+				":Gitsigns preview_hunk_inline<cr>",
+				desc = "preview inline change",
+				silent = true,
+			},
+			{
+				mode = "n",
+				"<leader>sh",
+				":Gitsigns stage_hunk<cr>",
+				desc = "stage inline change",
+				silent = true,
+			},
+			{ mode = "n", "<leader>sb", ":Gitsigns stage_buffer<cr>", desc = "stage buffer", silent = true },
+			{
+				mode = "n",
+				"<leader>ush",
+				":Gitsigns undo_stage_hunk<cr>",
+				desc = "unstage inline change",
+				silent = true,
+			},
+			{
+				mode = "n",
+				"<leader>rbb",
+				":Gitsigns reset_buffer<cr>",
+				desc = "redo git buffer changes",
+				silent = true,
+			},
+			{
+				mode = "n",
+				"<leader>rbi",
+				":Gitsigns reset_buffer_index<cr>",
+				desc = "unstage buffer",
+				silent = true,
+			},
+			{
+				mode = "n",
+				"<leader>rh",
+				":Gitsigns reset_hunk<cr>",
+				desc = "redo git inline change",
+				silent = true,
+			},
+			{ mode = "n", "<leader>gsw", ":Gitsigns show ", desc = "git show", noremap = true, silent = true },
+			{ mode = "n", "<leader>gid", ":Gitsigns diffthis ", desc = "git diff", noremap = true, silent = true },
+		},
+		config = function()
+			require("gitsigns").setup(require("plugins.gitsigns"))
+		end,
+	},
+	{
+		"tpope/vim-fugitive",
+		enabled = true,
+		event = "CmdlineEnter",
+		keys = {
+			{ "<leader>gg", mode = "n", ":Git ", desc = "open git", noremap = true, silent = true },
+			{
+
+				"<leader>gc",
+				mode = "n",
+				":Git commit<CR>",
+				desc = "git commit",
+				noremap = true,
+				silent = true,
+			},
+			{ "<leader>gp", mode = "n", ":Git push<CR>", desc = "git push", silent = true },
+			{ "<leader>bl", mode = "n", ":Git blame<CR>", desc = "git blame", noremap = true, silent = true },
+		},
+	},
+	{
+		"rbong/vim-flog",
+		enabled = true,
+		dependencies = { "tpope/vim-fugitive" },
+		keys = {
+			{ "<leader>fgg", mode = "n", ":Flog ", desc = "open floggit", noremap = true, silent = true },
+			{ "<leader>fs", mode = "n", ":Flogsplit ", desc = "flog split", noremap = true, silent = true },
+		},
+	},
+	{
+		"sindrets/diffview.nvim",
+		enabled = true,
+		event = "BufReadPost",
+		config = function()
+			local actions = require("diffview.actions")
+			require("diffview").setup({
+				keymaps = {
+					view = {
+						{ "n", "<A-n>", "]c", { desc = "Next hunk / entry" } },
+						{ "n", "<A-p>", "[c", { desc = "Prev hunk / entry" } },
+					},
+				},
+			})
+		end,
+		keys = {
+			{ "<leader>mt", mode = "n", ":DiffviewOpen ", desc = "open diff view", silent = true },
+			{
+				"<leader>mf",
+				mode = "n",
+				":DiffviewFileHistory ",
+				desc = "open diff view for single file",
+				silent = true,
+			},
+			{ "<leader>mk", mode = "n", ":DiffviewClose<CR>", desc = "close diff view", silent = true },
+		},
+	},
+
+	-- utilities
 	{
 		"nvim-treesitter/nvim-treesitter",
 		enabled = true,
@@ -317,89 +498,6 @@ require("lazy").setup({
 		event = "BufReadPost",
 		opts = require("plugins.bqf"),
 	},
-	-- {
-	-- 	"NvChad/nvim-colorizer.lua",
-	-- 	enabled = false,
-	-- 	event = "BufReadPost",
-	-- 	opts = require("plugins.colorizer"),
-	-- },
-	{
-		"lewis6991/gitsigns.nvim",
-		enabled = true,
-		event = "BufReadPost",
-		keys = {
-			{
-				mode = "n",
-				"<A-n>",
-				":Gitsigns next_hunk<cr>",
-				desc = "next git change",
-				silent = true,
-			},
-			{
-				mode = "n",
-				"<A-p>",
-				":Gitsigns prev_hunk<cr>",
-				desc = "previous git change",
-				silent = true,
-			},
-			-- { mode = "n", "<leader>bl", ":Gitsigns blame_line<cr>", desc = "blame line", silent = true },
-			{
-				mode = "n",
-				"<leader>ph",
-				":Gitsigns preview_hunk<cr>",
-				desc = "preview float window change",
-				silent = true,
-			},
-			{
-				mode = "n",
-				"<leader>pih",
-				":Gitsigns preview_hunk_inline<cr>",
-				desc = "preview inline change",
-				silent = true,
-			},
-			{
-				mode = "n",
-				"<leader>sh",
-				":Gitsigns stage_hunk<cr>",
-				desc = "stage inline change",
-				silent = true,
-			},
-			{ mode = "n", "<leader>sb", ":Gitsigns stage_buffer<cr>", desc = "stage buffer", silent = true },
-			{
-				mode = "n",
-				"<leader>ush",
-				":Gitsigns undo_stage_hunk<cr>",
-				desc = "unstage inline change",
-				silent = true,
-			},
-			{
-				mode = "n",
-				"<leader>rbb",
-				":Gitsigns reset_buffer<cr>",
-				desc = "redo git buffer changes",
-				silent = true,
-			},
-			{
-				mode = "n",
-				"<leader>rbi",
-				":Gitsigns reset_buffer_index<cr>",
-				desc = "unstage buffer",
-				silent = true,
-			},
-			{
-				mode = "n",
-				"<leader>rh",
-				":Gitsigns reset_hunk<cr>",
-				desc = "redo git inline change",
-				silent = true,
-			},
-			{ mode = "n", "<leader>gsw", ":Gitsigns show ", desc = "git show", noremap = true, silent = true },
-			{ mode = "n", "<leader>gid", ":Gitsigns diffthis ", desc = "git diff", noremap = true, silent = true },
-		},
-		config = function()
-			require("gitsigns").setup(require("plugins.gitsigns"))
-		end,
-	},
 	{
 		"moll/vim-bbye",
 		enabled = true,
@@ -486,48 +584,6 @@ require("lazy").setup({
 		opts = require("plugins.todo-comments"),
 	},
 	{
-		"tpope/vim-fugitive",
-		enabled = true,
-		event = "CmdlineEnter",
-		keys = {
-			{ "<leader>gg", mode = "n", ":Git ", desc = "open git", noremap = true, silent = true },
-			{
-
-				"<leader>gc",
-				mode = "n",
-				":Git commit<CR>",
-				desc = "git commit",
-				noremap = true,
-				silent = true,
-			},
-			{ "<leader>gp", mode = "n", ":Git push<CR>", desc = "git push", silent = true },
-			{ "<leader>bl", mode = "n", ":Git blame<CR>", desc = "git blame", noremap = true, silent = true },
-		},
-	},
-	{
-		"rbong/vim-flog",
-		enabled = true,
-		dependencies = { "tpope/vim-fugitive" },
-		keys = {
-			{ "<leader>fgg", mode = "n", ":Flog ", desc = "open floggit", noremap = true, silent = true },
-			{ "<leader>fs", mode = "n", ":Flogsplit ", desc = "flog split", noremap = true, silent = true },
-		},
-	},
-	-- {
-	-- 	"https://git.sr.ht/~whynothugo/lsp_lines.nvim",
-	-- 	enabled = false,
-	-- 	event = "BufReadPost",
-	-- 	config = function()
-	-- 		-- virtual_text is disabled in handlers.lua
-	-- 		-- vim.diagnostic.config({ virtual_text = false })
-	-- 		-- vim.diagnostic.config({ virtual_lines = true })
-	-- 		-- vim.diagnostic.config({ virtual_lines = { only_current_line = true } })
-	-- 		vim.diagnostic.config({ virtual_lines = { highlight_whole_line = false } })
-	-- 		vim.diagnostic.config({ virtual_text = false })
-	-- 		require("lsp_lines").setup({})
-	-- 	end,
-	-- },
-	{
 		"folke/flash.nvim",
 		enabled = true,
 		event = "BufReadPost",
@@ -540,45 +596,6 @@ require("lazy").setup({
 			{ "S", mode = "o", "<cmd>lua require('flash').treesitter()<CR>", noremap = true, silent = true },
 			-- { "S", mode = "x", "<cmd>lua require('flash').treesitter()<CR>", noremap = true ,silent=true},
 			{ "r", mode = "o", "<cmd>lua require('flash').remote()<CR>", noremap = true, silent = true },
-		},
-		opts = {},
-	},
-	{
-		"sindrets/diffview.nvim",
-		enabled = true,
-		event = "BufReadPost",
-		config = function()
-			local actions = require("diffview.actions")
-			require("diffview").setup({
-				keymaps = {
-					view = {
-						{ "n", "<A-n>", "]c", { desc = "Next hunk / entry" } },
-						{ "n", "<A-p>", "[c", { desc = "Prev hunk / entry" } },
-					},
-				},
-			})
-		end,
-		keys = {
-			{ "<leader>mt", mode = "n", ":DiffviewOpen ", desc = "open diff view", silent = true },
-			{
-				"<leader>mf",
-				mode = "n",
-				":DiffviewFileHistory ",
-				desc = "open diff view for single file",
-				silent = true,
-			},
-			{ "<leader>mk", mode = "n", ":DiffviewClose<CR>", desc = "close diff view", silent = true },
-		},
-	},
-	{
-		"utilyre/barbecue.nvim",
-		enabled = true,
-		event = "VimEnter",
-		name = "barbecue",
-		version = "*",
-		dependencies = {
-			"SmiteshP/nvim-navic",
-			"kyazdani42/nvim-web-devicons",
 		},
 		opts = {},
 	},
@@ -806,24 +823,6 @@ require("lazy").setup({
 			},
 		},
 	},
-	-- { "folke/neodev.nvim", enabled = false, opts = {} }, -- also enable in mason.lua line before mlspconfig to work
-	{
-		"j-hui/fidget.nvim",
-		enabled = true,
-		event = "VeryLazy",
-		opts = {},
-	},
-	{
-		"olexsmir/gopher.nvim",
-		enabled = true,
-		ft = { "go", "gomod", "gotmpl", "gohtmltmpl" },
-		dependencies = {
-			"nvim-lua/plenary.nvim",
-			"nvim-treesitter/nvim-treesitter",
-			-- "mfussenegger/nvim-dap", -- (optional) only if you use `gopher.dap`
-		},
-		opts = {},
-	},
 	{
 		"mistweaverco/kulala.nvim",
 		enabled = true,
@@ -887,13 +886,6 @@ require("lazy").setup({
 		opts = {
 			always_include_current_line = true,
 		},
-	},
-	{
-		"rachartier/tiny-inline-diagnostic.nvim",
-		enabled = true,
-		event = "VeryLazy",
-		priority = 1000,
-		opts = require("plugins.tiny-inline-diagnostic"),
 	},
 	{
 		"barrett-ruth/import-cost.nvim",
