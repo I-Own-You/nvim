@@ -1,21 +1,22 @@
 local servers = {
 	"lua_ls",
-	--
-	"ts_ls",
-	"html",
-	-- "emmet_language_server",
-	"cssls",
-	"jsonls",
 	"pyright",
-	-- "pylsp",
-	-- "cssmodules_ls",
-	-- "taplo",
-	-- "yamlls",
-	-- "eslint",
-	"biome",
-	"prismals",
 	"bashls",
 	"gopls",
+	-- "pylsp",
+	-- "taplo",
+	-- "yamlls",
+	-- web
+	"ts_ls",
+	"html",
+	"cssls",
+	"jsonls",
+	"cssmodules_ls",
+	"tailwindcss",
+	"eslint",
+	"biome",
+	"prismals",
+	-- "emmet_language_server",
 }
 
 local settings = {
