@@ -46,7 +46,7 @@ null_ls.setup({
 		--
 		-- bash
 		formatting.shfmt,
-		diagnostics.shellcheck,
+		-- diagnostics.shellcheck,
 	},
 
 	on_attach = function(client, bufnr)
