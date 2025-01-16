@@ -77,7 +77,7 @@ local function lsp_keymaps(bufnr)
 	local opts = { noremap = true, silent = true }
 	local keymap = vim.api.nvim_buf_set_keymap
 
-	keymap(bufnr, "n", "gd", ":Glance definitions<CR>", opts)
+	-- keymap(bufnr, "n", "gd", ":Glance definitions<CR>", opts)
 	keymap(bufnr, "n", "gr", ":Glance references<CR>", opts)
 	keymap(bufnr, "n", "gi", ":Glance implementations<CR>", opts)
 	keymap(bufnr, "n", "<leader>D", ":Glance type_definitions<CR>", opts)
@@ -103,7 +103,7 @@ local function lsp_keymaps(bufnr)
 	-- keymap(bufnr, "n", "<leader>lq", ":lua vim.diagnostic.setloclist()<CR>", opts) --keymaps.lua
 	-- keymap(bufnr, "n", "<leader>oo", ":lua vim.lsp.buf.document_symbol()<CR>", opts)
 	keymap(bufnr, "n", "<leader>rr", ":lua vim.lsp.buf.format{ async = true }<cr>", { silent = true })
-	keymap(bufnr, "n", "K", ":lua vim.lsp.buf.hover()<CR>", opts)
+	-- keymap(bufnr, "n", "K", ":lua vim.lsp.buf.hover()<CR>", opts)
 	keymap(bufnr, "n", "ge", ":lua vim.diagnostic.goto_next({buffer=0, float=false})<cr>", opts)
 	keymap(bufnr, "n", "<leader>lq", ":lua vim.diagnostic.setloclist()<cr>", opts)
 	keymap(bufnr, "n", "gE", ":lua vim.diagnostic.goto_prev({buffer=0, float=false})<cr>", opts)
