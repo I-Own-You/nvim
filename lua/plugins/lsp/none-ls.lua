@@ -16,7 +16,7 @@ null_ls.setup({
 		diagnostics.golangci_lint,
 		-- js/ts related
 		formatting.prettierd.with({
-            -- extra_args = {},
+			-- extra_args = {},
 			filetypes = {
 				"javascript",
 				"typescript",
