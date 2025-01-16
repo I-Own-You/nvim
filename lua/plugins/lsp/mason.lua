@@ -3,6 +3,7 @@ local servers = {
 	--
 	"ts_ls",
 	"html",
+	-- "emmet_language_server",
 	"cssls",
 	"jsonls",
 	"pyright",
