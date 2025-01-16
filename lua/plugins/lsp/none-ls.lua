@@ -3,34 +3,20 @@ if not null_ls_status_ok then
 	return
 end
 
--- https://github.com/jose-elias-alvarez/null-ls.nvim/tree/main/lua/null-ls/builtins/formatting
 local formatting = null_ls.builtins.formatting
--- https://github.com/jose-elias-alvarez/null-ls.nvim/tree/main/lua/null-ls/builtins/diagnostics
 local diagnostics = null_ls.builtins.diagnostics
 
 null_ls.setup({
 	debug = false,
 	sources = {
-		--formatting.prettier.with({ extra_args = { "--no-semi", "--single-quote", "--jsx-single-quote" } }),
-		-- formatting.prettierd,
-		-- formatting.black.with({ extra_args = { "--line-length", "200", "--skip-string-normalization", "--fast" } }),
-		-- formatting.isort,
-		-- formatting.shellharden,
-		-- formatting.shfmt,
-		-- formatting.autopep8,
-		--
 		--lua
 		formatting.stylua,
-		--
-		-- sql
-		-- diagnostics.sqlfluff.with({ extra_args = { "--dialect", "postgres" } }),
-		--
 		-- golang
 		formatting.goimports,
 		diagnostics.golangci_lint,
-		--
-		-- prettier
+		-- js/ts related
 		formatting.prettierd.with({
+            -- extra_args = {},
 			filetypes = {
 				"javascript",
 				"typescript",
@@ -43,7 +29,6 @@ null_ls.setup({
 				"vue",
 			},
 		}),
-		--
 		-- bash
 		formatting.shfmt,
 		-- diagnostics.shellcheck,
