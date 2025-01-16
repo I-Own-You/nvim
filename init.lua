@@ -71,6 +71,7 @@ require("lazy").setup({
 				hl(0, "BlinkCmpDocSeparator", { fg = "#2f3639", bg = "#141b1e" })
 				hl(0, "BlinkCmpSignatureHelp", { bg = "#141b1e" })
 				hl(0, "BlinkCmpSignatureHelpBorder", { fg = "#2f3639", bg = "#141b1e" })
+				hl(0, "BlinkCmpLabelDeprecated", { fg = "#2f3639", strikethrough = true })
 				-- dropbar
 				hl(0, "DropBarMenuCurrentContext", { fg = "#2f3639", bg = "#141b1e" })
 				hl(0, "DropBarMenuHoverEntry", { fg = "#dadada", bg = "#1a2124" })
@@ -158,7 +159,7 @@ require("lazy").setup({
 			"mikavilpas/blink-ripgrep.nvim",
 		},
 		-- use a release tag to download pre-built binaries
-		version = "v0.*",
+		version = "*",
 		opts = require("plugins.blink-cmp"),
 		keys = {
 			{
