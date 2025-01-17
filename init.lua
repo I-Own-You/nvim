@@ -80,76 +80,50 @@ require("lazy").setup({
 			end,
 		},
 	},
+
+	-- lsp, cmp, none-ls, mason related
 	-- {
-	-- 	"notken12/base46-colors",
-	-- 	enabled = false,
-	-- 	lazy = false,
-	-- 	-- priority = 1000,
+	-- 	"neovim/nvim-lspconfig",
+	-- 	enabled = true,
+	-- 	event = "BufReadPost",
 	-- 	config = function()
-	-- 		vim.cmd([[colorscheme everblush]])
-	-- 		local hl = vim.api.nvim_set_hl
-	-- 		hl(0, "FoldColumn", { fg = "#68B9B9", bg = "#141B1E" })
-	-- 		-- hl(0, "Identifier", { fg = "#dadada", bg = "NONE", sp = "NONE" })
-	-- 		hl(0, "FzfLuaLiveSym", { fg = "#2AC3DE", bg = "NONE" })
-	-- 		hl(0, "String", { fg = "#85de73", bg = "NONE" })
-	-- 		hl(0, "TelescopeMatching", { fg = "#2AC3DE", bg = "NONE" })
-	-- 		-- hl(0, "HlSearchNear", { fg = "#ffffff", bg = "#000000" })
-	-- 		hl(0, "Search", { fg = "#000000", bg = "#85DE73" })
-	-- 		hl(0, "IncSearch", { fg = "#000000", bg = "#85DE73" })
-	-- 		hl(0, "HlSearchLens", { bg = "#141B1E", fg = "#141B1E" }) -- the unmatched
-	-- 		hl(0, "HlSearchLensNear", { fg = "#000000", bg = "#85DE73" }) -- the matched
+	-- 		require("plugins.lsp.handlers").setup()
 	-- 	end,
 	-- },
 	-- {
-	-- 	"NvChad/nvim-colorizer.lua",
-	-- 	enabled = false,
+	-- 	"williamboman/mason.nvim",
+	-- 	enabled = true,
 	-- 	event = "BufReadPost",
-	-- 	opts = require("plugins.colorizer"),
+	-- 	-- use({ "williamboman/nvim-lsp-installer" }) -- lsp installer
+	-- 	dependencies = { "williamboman/mason-lspconfig.nvim" },
+	-- 	build = ":MasonUpdate",
+	-- 	config = function()
+	-- 		require("plugins.lsp.mason")
+	-- 	end,
 	-- },
-
-	-- lsp, cmp, none-ls, mason related
-	{
-		"neovim/nvim-lspconfig",
-		enabled = true,
-		event = "BufReadPost",
-		config = function()
-			require("plugins.lsp.handlers").setup()
-		end,
-	},
-	{
-		"williamboman/mason.nvim",
-		enabled = true,
-		event = "BufReadPost",
-		-- use({ "williamboman/nvim-lsp-installer" }) -- lsp installer
-		dependencies = { "williamboman/mason-lspconfig.nvim" },
-		build = ":MasonUpdate",
-		config = function()
-			require("plugins.lsp.mason")
-		end,
-	},
-	{
-		"nvimtools/none-ls.nvim",
-		enabled = true,
-		event = "BufReadPost",
-		dependencies = { "nvim-lua/plenary.nvim" },
-		config = function()
-			require("plugins.lsp.none-ls")
-		end,
-	},
-	{
-		"L3MON4D3/LuaSnip",
-		enabled = true,
-		event = "InsertEnter",
-		dependencies = { "rafamadriz/friendly-snippets" },
-		config = function()
-			-- local luasnip = require("luasnip")
-			-- luasnip.filetype_extend("htmldjango", { "html" })
-			-- luasnip.filetype_extend("typescript", { "javascript" })
-			require("luasnip/loaders/from_vscode").lazy_load({ paths = "~/.config/nvim/snippets/" })
-			require("luasnip.loaders.from_lua").load({ paths = "~/.config/nvim/snippets/" })
-		end,
-		build = "make install_jsregexp",
-	},
+	-- {
+	-- 	"nvimtools/none-ls.nvim",
+	-- 	enabled = true,
+	-- 	event = "BufReadPost",
+	-- 	dependencies = { "nvim-lua/plenary.nvim" },
+	-- 	config = function()
+	-- 		require("plugins.lsp.none-ls")
+	-- 	end,
+	-- },
+	-- {
+	-- 	"L3MON4D3/LuaSnip",
+	-- 	enabled = true,
+	-- 	event = "InsertEnter",
+	-- 	dependencies = { "rafamadriz/friendly-snippets" },
+	-- 	config = function()
+	-- 		-- local luasnip = require("luasnip")
+	-- 		-- luasnip.filetype_extend("htmldjango", { "html" })
+	-- 		-- luasnip.filetype_extend("typescript", { "javascript" })
+	-- 		require("luasnip/loaders/from_vscode").lazy_load({ paths = "~/.config/nvim/snippets/" })
+	-- 		require("luasnip.loaders.from_lua").load({ paths = "~/.config/nvim/snippets/" })
+	-- 	end,
+	-- 	build = "make install_jsregexp",
+	-- },
 	{
 		"saghen/blink.cmp",
 		enabled = true,
@@ -179,44 +153,6 @@ require("lazy").setup({
 		},
 	},
 	-- {
-	-- 	"hrsh7th/nvim-cmp",
-	-- 	enabled = false,
-	-- 	dependencies = {
-	-- 		{
-	-- 			"hrsh7th/cmp-cmdline",
-	-- 			event = "CmdlineEnter",
-	-- 		},
-	-- 		{
-	-- 			"hrsh7th/cmp-buffer",
-	-- 			event = "CmdlineEnter",
-	-- 		},
-	-- 		{
-	-- 			"hrsh7th/cmp-path",
-	-- 			event = "InsertEnter",
-	-- 		},
-	-- 		{
-	-- 			"hrsh7th/cmp-nvim-lsp",
-	-- 			event = "InsertEnter",
-	-- 		},
-	-- 		{
-	-- 			"saadparwaiz1/cmp_luasnip",
-	-- 			event = "InsertEnter",
-	-- 		},
-	-- 		-- {
-	-- 		-- 	"lukas-reineke/cmp-rg",
-	-- 		-- 	event = "InsertEnter",
-	-- 		-- },
-	-- 		{
-	-- 			"SergioRibera/cmp-dotenv",
-	-- 			event = "InsertEnter",
-	-- 		},
-	-- 	},
-	-- 	event = "InsertEnter",
-	-- 	config = function()
-	-- 		require("cmp").setup(require("plugins.cmp"))
-	-- 	end,
-	-- },
-	-- {
 	-- 	"https://git.sr.ht/~whynothugo/lsp_lines.nvim",
 	-- 	enabled = false,
 	-- 	event = "BufReadPost",
@@ -231,37 +167,26 @@ require("lazy").setup({
 	-- 	end,
 	-- },
 	-- { "folke/neodev.nvim", enabled = false, opts = {} }, -- also enable in mason.lua line before mlspconfig to work
-	{
-		"j-hui/fidget.nvim",
-		enabled = true,
-		event = "VeryLazy",
-		opts = {},
-	},
-	{
-		"olexsmir/gopher.nvim",
-		enabled = true,
-		ft = { "go", "gomod", "gotmpl", "gohtmltmpl" },
-		dependencies = {
-			"nvim-lua/plenary.nvim",
-			"nvim-treesitter/nvim-treesitter",
-			-- "mfussenegger/nvim-dap", -- (optional) only if you use `gopher.dap`
-		},
-		opts = {},
-	},
-	{
-		"rachartier/tiny-inline-diagnostic.nvim",
-		enabled = true,
-		event = "VeryLazy",
-		priority = 1000,
-		opts = require("plugins.tiny-inline-diagnostic"),
-	},
-	{
-		"Wansmer/treesj",
-		enabled = true,
-		dependencies = { "nvim-treesitter" },
-		opts = require("plugins.treesj"),
-		keys = { { "<leader>j", mode = "n", "<cmd>TSJToggle<cr>", desc = "toggle node split", silent = true } },
-	},
+	-- {
+	-- 	"j-hui/fidget.nvim",
+	-- 	enabled = true,
+	-- 	event = "VeryLazy",
+	-- 	opts = {},
+	-- },
+	-- {
+	-- 	"rachartier/tiny-inline-diagnostic.nvim",
+	-- 	enabled = true,
+	-- 	event = "VeryLazy",
+	-- 	priority = 1000,
+	-- 	opts = require("plugins.tiny-inline-diagnostic"),
+	-- },
+	-- {
+	-- 	"Wansmer/treesj",
+	-- 	enabled = true,
+	-- 	dependencies = { "nvim-treesitter" },
+	-- 	opts = require("plugins.treesj"),
+	-- 	keys = { { "<leader>j", mode = "n", "<cmd>TSJToggle<cr>", desc = "toggle node split", silent = true } },
+	-- },
 
 	-- git related
 	{
@@ -533,13 +458,6 @@ require("lazy").setup({
 		opts = require("plugins.autopairs"),
 	},
 	{
-		"Wansmer/treesj",
-		enabled = true,
-		dependencies = { "nvim-treesitter" },
-		opts = require("plugins.treesj"),
-		keys = { { "<leader>j", mode = "n", "<cmd>TSJToggle<cr>", desc = "toggle node split", silent = true } },
-	},
-	{
 		"andymass/vim-matchup",
 		enabled = true,
 		event = "BufReadPost",
@@ -633,28 +551,17 @@ require("lazy").setup({
 		end,
 		opts = require("plugins.fundo"),
 	},
-	{
-		"piersolenski/wtf.nvim",
-		enabled = true,
-		dependencies = {
-			"MunifTanjim/nui.nvim",
-		},
-		opts = {},
-		keys = {
-			{ "<leader>wt", ":WtfSearch ", desc = "open wtf search", silent = true },
-		},
-	},
-	{
-		"piersolenski/telescope-import.nvim",
-		enabled = true,
-		dependencies = "nvim-telescope/telescope.nvim",
-		keys = {
-			{ "<leader>ii", "<cmd>Telescope import<CR>", desc = "open imports", silent = true },
-		},
-		config = function()
-			require("telescope").load_extension("import")
-		end,
-	},
+	-- {
+	-- 	"piersolenski/telescope-import.nvim",
+	-- 	enabled = true,
+	-- 	dependencies = "nvim-telescope/telescope.nvim",
+	-- 	keys = {
+	-- 		{ "<leader>ii", "<cmd>Telescope import<CR>", desc = "open imports", silent = true },
+	-- 	},
+	-- 	config = function()
+	-- 		require("telescope").load_extension("import")
+	-- 	end,
+	-- },
 	{
 		"mrjones2014/smart-splits.nvim",
 		enabled = true,
@@ -725,25 +632,6 @@ require("lazy").setup({
 			},
 		},
 	},
-	-- {
-	-- 	"kawre/leetcode.nvim",
-	-- 	-- lazy = false,
-	-- 	enabled = false,
-	-- 	build = ":TSUpdate html",
-	-- 	cmd = "Leet",
-	-- 	dependencies = {
-	-- 		"nvim-treesitter/nvim-treesitter",
-	-- 		"nvim-telescope/telescope.nvim",
-	-- 		"nvim-lua/plenary.nvim", -- required by telescope
-	-- 		"MunifTanjim/nui.nvim",
-	-- 		"kyazdani42/nvim-web-devicons",
-	-- 		"rcarriga/nvim-notify",
-	-- 	},
-	-- 	config = function()
-	-- 		require("leetcode").setup()
-	-- 	end,
-	--    opts = {}
-	-- },
 	{
 		"gbprod/yanky.nvim",
 		enabled = true,
@@ -844,19 +732,19 @@ require("lazy").setup({
 			},
 		},
 	},
-	{
-		"mistweaverco/kulala.nvim",
-		enabled = true,
-		ft = "http",
-		opts = require("plugins.kulala"),
-		init = function()
-			vim.filetype.add({
-				extension = {
-					["http"] = "http",
-				},
-			})
-		end,
-	},
+	-- {
+	-- 	"mistweaverco/kulala.nvim",
+	-- 	enabled = true,
+	-- 	ft = "http",
+	-- 	opts = require("plugins.kulala"),
+	-- 	init = function()
+	-- 		vim.filetype.add({
+	-- 			extension = {
+	-- 				["http"] = "http",
+	-- 			},
+	-- 		})
+	-- 	end,
+	-- },
 	{
 		"dnlhc/glance.nvim",
 		event = "BufReadPost",
@@ -865,57 +753,13 @@ require("lazy").setup({
 			require("glance").setup(require("plugins.glance"))
 		end,
 	},
-	-- this is replaced by dropbar
 	-- {
-	-- 	"aaronik/treewalker.nvim",
-	-- 	event = "BufReadPost",
+	-- 	"barrett-ruth/import-cost.nvim",
 	-- 	enabled = true,
-	-- 	keys = {
-	-- 		{
-	-- 			mode = "n",
-	-- 			"<leader>hh",
-	-- 			":Treewalker Left<CR>",
-	-- 			desc = "treewalker left",
-	-- 			silent = true,
-	-- 		},
-	-- 		-- {
-	-- 		-- 	mode = "n",
-	-- 		-- 	"<leader>ll",
-	-- 		-- 	":Treewalker Right<CR>",
-	-- 		-- 	desc = "treewalker right",
-	-- 		-- 	silent = true,
-	-- 		-- },
-	-- 		-- {
-	-- 		-- 	mode = "n",
-	-- 		-- 	"<leader>kk",
-	-- 		-- 	":Treewalker Up<CR>",
-	-- 		-- 	desc = "treewalker up",
-	-- 		-- 	silent = true,
-	-- 		-- },
-	-- 		-- {
-	-- 		-- 	mode = "n",
-	-- 		-- 	"<leader>jj",
-	-- 		-- 	":Treewalker Down<CR>",
-	-- 		-- 	desc = "treewalker down",
-	-- 		-- 	silent = true,
-	-- 		-- },
-	-- 	},
+	-- 	build = "sh install.sh npm", -- change if you need, npm/yarn/bun/.etc
+	-- 	ft = { "javascript", "typescript", "javascriptreact", "typescriptreact", "vue" },
+	-- 	config = true,
 	-- },
-	{
-		"trevorhauter/gitportal.nvim",
-		cmd = "GitPortal",
-		enabled = true,
-		opts = {
-			always_include_current_line = true,
-		},
-	},
-	{
-		"barrett-ruth/import-cost.nvim",
-		enabled = true,
-		build = "sh install.sh npm", -- change if you need, npm/yarn/bun/.etc
-		ft = { "javascript", "typescript", "javascriptreact", "typescriptreact", "vue" },
-		config = true,
-	},
 	{
 		"Bekaboo/dropbar.nvim",
 		enalbed = true,

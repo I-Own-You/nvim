@@ -12,25 +12,26 @@ null_ls.setup({
 		--lua
 		formatting.stylua,
 		-- golang
-		formatting.goimports,
-		diagnostics.golangci_lint,
+		-- formatting.goimports,
+		-- diagnostics.golangci_lint,
 		-- js/ts related
-		formatting.prettierd.with({
-			-- extra_args = {},
-			filetypes = {
-				"javascript",
-				"typescript",
-				"json",
-				"jsonc",
-				"html",
-				"css",
-				"javascriptreact",
-				"typescriptreact",
-				"vue",
-			},
-		}),
+		-- formatting.prettierd.with({
+		-- 	-- extra_args = {},
+		-- 	filetypes = {
+		-- 		"javascript",
+		-- 		"typescript",
+		-- 		"json",
+		-- 		"jsonc",
+		-- 		"html",
+		-- 		"css",
+		-- 		"javascriptreact",
+		-- 		"typescriptreact",
+		-- 		"vue",
+		-- 	},
+		-- }),
+		-- json
 		-- bash
-		formatting.shfmt,
+		-- formatting.shfmt,
 		-- diagnostics.shellcheck,
 	},
 
