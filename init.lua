@@ -82,48 +82,48 @@ require("lazy").setup({
 	},
 
 	-- lsp, cmp, none-ls, mason related
-	-- {
-	-- 	"neovim/nvim-lspconfig",
-	-- 	enabled = true,
-	-- 	event = "BufReadPost",
-	-- 	config = function()
-	-- 		require("plugins.lsp.handlers").setup()
-	-- 	end,
-	-- },
-	-- {
-	-- 	"williamboman/mason.nvim",
-	-- 	enabled = true,
-	-- 	event = "BufReadPost",
-	-- 	-- use({ "williamboman/nvim-lsp-installer" }) -- lsp installer
-	-- 	dependencies = { "williamboman/mason-lspconfig.nvim" },
-	-- 	build = ":MasonUpdate",
-	-- 	config = function()
-	-- 		require("plugins.lsp.mason")
-	-- 	end,
-	-- },
-	-- {
-	-- 	"nvimtools/none-ls.nvim",
-	-- 	enabled = true,
-	-- 	event = "BufReadPost",
-	-- 	dependencies = { "nvim-lua/plenary.nvim" },
-	-- 	config = function()
-	-- 		require("plugins.lsp.none-ls")
-	-- 	end,
-	-- },
-	-- {
-	-- 	"L3MON4D3/LuaSnip",
-	-- 	enabled = true,
-	-- 	event = "InsertEnter",
-	-- 	dependencies = { "rafamadriz/friendly-snippets" },
-	-- 	config = function()
-	-- 		-- local luasnip = require("luasnip")
-	-- 		-- luasnip.filetype_extend("htmldjango", { "html" })
-	-- 		-- luasnip.filetype_extend("typescript", { "javascript" })
-	-- 		require("luasnip/loaders/from_vscode").lazy_load({ paths = "~/.config/nvim/snippets/" })
-	-- 		require("luasnip.loaders.from_lua").load({ paths = "~/.config/nvim/snippets/" })
-	-- 	end,
-	-- 	build = "make install_jsregexp",
-	-- },
+	{
+		"neovim/nvim-lspconfig",
+		enabled = true,
+		event = "BufReadPost",
+		config = function()
+			require("plugins.lsp.handlers").setup()
+		end,
+	},
+	{
+		"williamboman/mason.nvim",
+		enabled = true,
+		event = "BufReadPost",
+		-- use({ "williamboman/nvim-lsp-installer" }) -- lsp installer
+		dependencies = { "williamboman/mason-lspconfig.nvim" },
+		build = ":MasonUpdate",
+		config = function()
+			require("plugins.lsp.mason")
+		end,
+	},
+	{
+		"nvimtools/none-ls.nvim",
+		enabled = true,
+		event = "BufReadPost",
+		dependencies = { "nvim-lua/plenary.nvim" },
+		config = function()
+			require("plugins.lsp.none-ls")
+		end,
+	},
+	{
+		"L3MON4D3/LuaSnip",
+		enabled = true,
+		event = "InsertEnter",
+		dependencies = { "rafamadriz/friendly-snippets" },
+		config = function()
+			-- local luasnip = require("luasnip")
+			-- luasnip.filetype_extend("htmldjango", { "html" })
+			-- luasnip.filetype_extend("typescript", { "javascript" })
+			require("luasnip/loaders/from_vscode").lazy_load({ paths = "~/.config/nvim/snippets/" })
+			require("luasnip.loaders.from_lua").load({ paths = "~/.config/nvim/snippets/" })
+		end,
+		build = "make install_jsregexp",
+	},
 	{
 		"saghen/blink.cmp",
 		enabled = true,
@@ -131,11 +131,6 @@ require("lazy").setup({
 		dependencies = {
 			"rafamadriz/friendly-snippets",
 			"mikavilpas/blink-ripgrep.nvim",
-			{
-				"xzbdmw/colorful-menu.nvim",
-				enabled = true,
-				event = "BufReadPost",
-			},
 		},
 		-- use a release tag to download pre-built binaries
 		version = "*",
@@ -167,26 +162,26 @@ require("lazy").setup({
 	-- 	end,
 	-- },
 	-- { "folke/neodev.nvim", enabled = false, opts = {} }, -- also enable in mason.lua line before mlspconfig to work
-	-- {
-	-- 	"j-hui/fidget.nvim",
-	-- 	enabled = true,
-	-- 	event = "VeryLazy",
-	-- 	opts = {},
-	-- },
-	-- {
-	-- 	"rachartier/tiny-inline-diagnostic.nvim",
-	-- 	enabled = true,
-	-- 	event = "VeryLazy",
-	-- 	priority = 1000,
-	-- 	opts = require("plugins.tiny-inline-diagnostic"),
-	-- },
-	-- {
-	-- 	"Wansmer/treesj",
-	-- 	enabled = true,
-	-- 	dependencies = { "nvim-treesitter" },
-	-- 	opts = require("plugins.treesj"),
-	-- 	keys = { { "<leader>j", mode = "n", "<cmd>TSJToggle<cr>", desc = "toggle node split", silent = true } },
-	-- },
+	{
+		"j-hui/fidget.nvim",
+		enabled = true,
+		event = "VeryLazy",
+		opts = {},
+	},
+	{
+		"rachartier/tiny-inline-diagnostic.nvim",
+		enabled = true,
+		event = "VeryLazy",
+		priority = 1000,
+		opts = require("plugins.tiny-inline-diagnostic"),
+	},
+	{
+		"Wansmer/treesj",
+		enabled = true,
+		dependencies = { "nvim-treesitter" },
+		opts = require("plugins.treesj"),
+		keys = { { "<leader>j", mode = "n", "<cmd>TSJToggle<cr>", desc = "toggle node split", silent = true } },
+	},
 
 	-- git related
 	{
