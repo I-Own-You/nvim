@@ -728,19 +728,6 @@ require("lazy").setup({
 			},
 		},
 	},
-	-- {
-	-- 	"mistweaverco/kulala.nvim",
-	-- 	enabled = true,
-	-- 	ft = "http",
-	-- 	opts = require("plugins.kulala"),
-	-- 	init = function()
-	-- 		vim.filetype.add({
-	-- 			extension = {
-	-- 				["http"] = "http",
-	-- 			},
-	-- 		})
-	-- 	end,
-	-- },
 	{
 		"dnlhc/glance.nvim",
 		event = "BufReadPost",
