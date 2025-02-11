@@ -131,6 +131,11 @@ require("lazy").setup({
 		dependencies = {
 			"rafamadriz/friendly-snippets",
 			"mikavilpas/blink-ripgrep.nvim",
+			{
+				"xzbdmw/colorful-menu.nvim",
+				enabled = true,
+				event = "BufReadPost",
+			},
 		},
 		-- use a release tag to download pre-built binaries
 		version = "*",

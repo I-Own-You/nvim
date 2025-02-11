@@ -85,7 +85,7 @@ local function lsp_keymaps(bufnr)
 
 	-- keymap(bufnr, "n", "<leader>D", ":lua vim.lsp.buf.type_definition()<CR>", opts)
 	-- keymap(bufnr, "n", "gi", ":lua vim.lsp.buf.implementation()<CR>", opts)
-	-- keymap(bufnr, "n", "gd", ":lua vim.lsp.buf.definition()<CR>", opts) --keymaps.lua
+	keymap(bufnr, "n", "gd", ":lua vim.lsp.buf.definition()<CR>", opts) --keymaps.lua
 	-- keymap(bufnr, "n", "gr", ":lua vim.lsp.buf.references()<CR>", opts) --keymaps.lua
 
 	-- keymap(bufnr, "n", "<leader>wa", ":lua vim.lsp.buf.add_workspace_folder()<CR>", opts)
