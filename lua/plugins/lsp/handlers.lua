@@ -83,6 +83,15 @@ local function lsp_keymaps(bufnr)
 	keymap(bufnr, "n", "<leader>D", ":Glance type_definitions<CR>", opts)
 	keymap(bufnr, "n", "gD", ":lua vim.lsp.buf.declaration()<CR>", opts)
 
+	-- typescript related
+	keymap(
+		bufnr,
+		"n",
+		"<leader>ii",
+		':lua vim.lsp.buf.execute_command({command = "_typescript.organizeImports", arguments = {vim.fn.expand("%:p")}})<CR>',
+		{ noremap = true, silent = true }
+	)
+
 	-- keymap(bufnr, "n", "<leader>D", ":lua vim.lsp.buf.type_definition()<CR>", opts)
 	-- keymap(bufnr, "n", "gi", ":lua vim.lsp.buf.implementation()<CR>", opts)
 	keymap(bufnr, "n", "gd", ":lua vim.lsp.buf.definition()<CR>", opts) --keymaps.lua
