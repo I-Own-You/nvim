@@ -756,4 +756,10 @@ require("lazy").setup({
 			require("dropbar").setup(require("plugins.dropbar-settings"))
 		end,
 	},
+	{
+		"supermaven-inc/supermaven-nvim",
+		enabled = true,
+		event = "BufReadPost",
+		opts = require("plugins.supermaven"),
+	},
 }, require("plugins.lazy"))
