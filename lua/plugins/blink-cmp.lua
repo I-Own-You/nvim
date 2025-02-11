@@ -69,22 +69,9 @@ return {
 		},
 	},
 	sources = {
-		default = { "lsp", "path", "snippets", "buffer", "supermaven" },
+		-- default = { "lsp", "path", "snippets", "buffer" },
 		-- cmdline = {}, -- will disable cmdline completions
 		providers = {
-			supermaven = {
-				name = "supermaven",
-				module = "blink.compat.source",
-				score_offset = 3,
-				transform_items = function(_, items)
-					for _, item in ipairs(items) do
-						item.labelDetails = {
-							description = "󱜙 ",
-						}
-					end
-					return items
-				end,
-			},
 			ripgrep = {
 				module = "blink-ripgrep",
 				name = "Ripgrep",
