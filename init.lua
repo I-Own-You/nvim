@@ -63,7 +63,8 @@ require("lazy").setup({
 				hl(0, "BlinkCmpDocSeparator", { fg = "#2f3639", bg = "#141b1e" })
 				hl(0, "BlinkCmpSignatureHelp", { bg = "#141b1e" })
 				hl(0, "BlinkCmpSignatureHelpBorder", { fg = "#2f3639", bg = "#141b1e" })
-				hl(0, "BlinkCmpLabelDeprecated", { fg = "#2f3639", strikethrough = true })
+				-- add here strikethrough again if you remove colorful-menu plugin from blink
+				hl(0, "BlinkCmpLabelDeprecated", { fg = "#2f3639" })
 				-- dropbar
 				hl(0, "DropBarMenuCurrentContext", { fg = "#2f3639", bg = "#141b1e" })
 				hl(0, "DropBarMenuHoverEntry", { fg = "#dadada", bg = "#1a2124" })
