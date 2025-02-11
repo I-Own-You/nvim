@@ -97,7 +97,7 @@ return {
 		},
 	},
 	snippets = {
-		-- preset = "luasnip",
+		preset = "luasnip",
 	},
 	signature = {
 		enabled = true,
