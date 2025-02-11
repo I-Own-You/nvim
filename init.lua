@@ -31,14 +31,6 @@ require("lazy").setup({
 			end,
 			dependencies = {
 				"nvim-lua/plenary.nvim",
-				{
-					"NvChad/volt",
-					config = function()
-						vim.api.nvim_create_user_command("NvChadThemes", function()
-							vim.cmd(":lua require('nvchad.themes').open()")
-						end, {})
-					end,
-				},
 			},
 		},
 		{
