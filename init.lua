@@ -132,6 +132,16 @@ require("lazy").setup({
 				enabled = true,
 				event = "BufReadPost",
 			},
+			"saghen/blink.compat",
+			{
+				"supermaven-inc/supermaven-nvim",
+				opts = {
+					keymaps = {
+						accept_suggestion = nil,
+					},
+					disable_inline_completion = true,
+				},
+			},
 		},
 		-- use a release tag to download pre-built binaries
 		version = "*",
