@@ -47,6 +47,8 @@ require("lazy").setup({
 				-- hl(0, "String", { fg = "#85de73", bg = "NONE" })
 				hl(0, "Search", { fg = "#000000", bg = "#8CCF7E" })
 				hl(0, "IncSearch", { fg = "#000000", bg = "#8CCF7E" })
+				hl(0, "FloatBorder", { fg = "#2f3639" })
+				hl(0, "NormalFloat", { bg = "#141b1e" })
 				-- hlslens
 				hl(0, "HlSearchNear", { fg = "#000000", bg = "#8CCF7E" })
 				hl(0, "HlSearchLens", { bg = "#141B1E", fg = "#141B1E" })
