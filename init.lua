@@ -59,6 +59,8 @@ require("lazy").setup({
 				hl(0, "BlinkCmpMenu", { bg = "#141b1e" })
 				hl(0, "BlinkCmpMenuBorder", { fg = "#2f3639", bg = "#141b1e" })
 				hl(0, "BlinkCmpDoc", { bg = "#141b1e" })
+				hl(0, "BlinkCmpMenuSelection", { bg = "#1a2124" })
+				hl(0, "BlinkCmpSignatureHelpActiveParameter", { bg = "#2f3639" })
 				hl(0, "BlinkCmpDocBorder", { fg = "#2f3639", bg = "#141b1e" })
 				hl(0, "BlinkCmpDocSeparator", { fg = "#2f3639", bg = "#141b1e" })
 				hl(0, "BlinkCmpSignatureHelp", { bg = "#141b1e" })
