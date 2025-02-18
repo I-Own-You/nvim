@@ -48,8 +48,14 @@ end, { desc = "Organize imports in TypeScript file" })
 -- 	{ noremap = true, silent = true }
 -- )
 
-keymap("n", "<leader>ot", ":tab split | terminal<CR>", { silent = true, desc = "open terminal" })
--- keymap("t", "<leader>tc", "<C-\\><C-n>", { silent = true, desc = "exit terminal mode" })
+keymap("t", "<A-t>", "<C-\\><C-n>", { silent = true, desc = "exit terminal mode" })
+keymap("n", "<leader>ott", ":tab split | terminal<CR>i", { silent = true, desc = "open terminal" })
+keymap("n", "<leader>otv", ":vsp | terminal<CR>i", { silent = true, desc = "open terminal" })
+keymap("n", "<leader>oth", ":sp | terminal<CR>i", { silent = true, desc = "open terminal" })
+-- keymap("t", "<C-h>", "<C-\\><C-n>:wincmd h<CR>", { silent = true })
+-- keymap("t", "<C-j>", "<C-\\><C-n>:wincmd j<CR>", { silent = true })
+-- keymap("t", "<C-k>", "<C-\\><C-n>:wincmd k<CR>", { silent = true })
+-- keymap("t", "<C-l>", "<C-\\><C-n>:wincmd l<CR>", { silent = true })
 
 keymap("n", "q", "<Nop>", { silent = true })
 
