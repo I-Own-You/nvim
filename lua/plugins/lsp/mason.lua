@@ -2,7 +2,7 @@ local servers = {
 	"lua_ls",
 	"pyright",
 	-- "bashls",
-	-- "gopls",
+	"gopls",
 	-- "pylsp",
 	-- "taplo",
 	-- "yamlls",
