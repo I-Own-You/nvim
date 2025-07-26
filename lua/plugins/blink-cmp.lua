@@ -70,7 +70,6 @@ return {
 	},
 	sources = {
 		-- default = { "lsp", "path", "snippets", "buffer" },
-		-- cmdline = {}, -- will disable cmdline completions
 		providers = {
 			ripgrep = {
 				module = "blink-ripgrep",
@@ -95,7 +94,10 @@ return {
 				end,
 			},
 		},
-	},
+    },
+    cmdline = {
+        completion = { menu = { auto_show = true } },
+    }, -- will disable cmdline completions
 	snippets = {
 		preset = "luasnip",
 	},
