@@ -81,6 +81,34 @@ require("lazy").setup({
 
 	-- lsp, cmp, none-ls, mason related
 	{
+		"neovim/nvim-lspconfig",
+		enabled = true,
+		event = "BufReadPost",
+		config = function()
+			require("plugins.lsp.handlers").setup()
+		end,
+	},
+	{
+		"williamboman/mason.nvim",
+		enabled = true,
+		event = "BufReadPost",
+		-- use({ "williamboman/nvim-lsp-installer" }) -- lsp installer
+		dependencies = { "williamboman/mason-lspconfig.nvim" },
+		build = ":MasonUpdate",
+		config = function()
+			require("plugins.lsp.mason")
+		end,
+	},
+	{
+		"nvimtools/none-ls.nvim",
+		enabled = true,
+		event = "BufReadPost",
+		dependencies = { "nvim-lua/plenary.nvim" },
+		config = function()
+			require("plugins.lsp.none-ls")
+		end,
+	},
+	{
 		"L3MON4D3/LuaSnip",
 		enabled = true,
 		event = "InsertEnter",
@@ -140,13 +168,26 @@ require("lazy").setup({
 	-- 	end,
 	-- },
 	-- { "folke/neodev.nvim", enabled = false, opts = {} }, -- also enable in mason.lua line before mlspconfig to work
-    {
-        "Wansmer/treesj",
-        enabled = true,
-        dependencies = { "nvim-treesitter" },
-        opts = require("plugins.treesj"),
-        keys = { { "<leader>j", mode = "n", "<cmd>TSJToggle<cr>", desc = "toggle node split", silent = true } },
-    },
+	{
+		"j-hui/fidget.nvim",
+		enabled = true,
+		event = "VeryLazy",
+		opts = {},
+	},
+	{
+		"rachartier/tiny-inline-diagnostic.nvim",
+		enabled = true,
+		event = "VeryLazy",
+		priority = 1000,
+		opts = require("plugins.tiny-inline-diagnostic"),
+	},
+	{
+		"Wansmer/treesj",
+		enabled = true,
+		dependencies = { "nvim-treesitter" },
+		opts = require("plugins.treesj"),
+		keys = { { "<leader>j", mode = "n", "<cmd>TSJToggle<cr>", desc = "toggle node split", silent = true } },
+	},
 
 	-- git related
 	{
@@ -469,6 +510,15 @@ require("lazy").setup({
 			require("fzf-lua").setup(require("plugins.fzf-lua"))
 		end,
 	},
+	-- {
+	-- 	"nvim-lualine/lualine.nvim",
+	-- 	enabled = false,
+	-- 	event = "BufReadPost",
+	-- 	dependencies = { "kyazdani42/nvim-web-devicons" },
+	-- 	config = function()
+	-- 		require("lualine").setup(require("plugins.lualine"))
+	-- 	end,
+	-- },
 	{
 		"kevinhwang91/nvim-bqf",
 		enabled = true,
@@ -582,6 +632,17 @@ require("lazy").setup({
 		end,
 		opts = require("plugins.fundo"),
 	},
+	-- {
+	-- 	"piersolenski/telescope-import.nvim",
+	-- 	enabled = true,
+	-- 	dependencies = "nvim-telescope/telescope.nvim",
+	-- 	keys = {
+	-- 		{ "<leader>ii", "<cmd>Telescope import<CR>", desc = "open imports", silent = true },
+	-- 	},
+	-- 	config = function()
+	-- 		require("telescope").load_extension("import")
+	-- 	end,
+	-- },
 	{
 		"mrjones2014/smart-splits.nvim",
 		enabled = true,
@@ -731,6 +792,11 @@ require("lazy").setup({
 		opts = {},
 	},
 	{
+		"b0o/schemastore.nvim",
+		enabled = true,
+		ft = { "json", "jsonc" },
+	},
+	{
 		"mikavilpas/yazi.nvim",
 		enabled = true,
 		dependencies = {
@@ -747,6 +813,21 @@ require("lazy").setup({
 			},
 		},
 	},
+	{
+		"dnlhc/glance.nvim",
+		event = "BufReadPost",
+		enabled = true,
+		config = function()
+			require("glance").setup(require("plugins.glance"))
+		end,
+	},
+	-- {
+	-- 	"barrett-ruth/import-cost.nvim",
+	-- 	enabled = true,
+	-- 	build = "sh install.sh npm", -- change if you need, npm/yarn/bun/.etc
+	-- 	ft = { "javascript", "typescript", "javascriptreact", "typescriptreact", "vue" },
+	-- 	config = true,
+	-- },
 	{
 		"Bekaboo/dropbar.nvim",
 		enalbed = true,
