@@ -160,6 +160,7 @@ return {
 	config = function()
 		local actions = require("fzf-lua.actions")
 		require("fzf-lua").setup({
+			"telescope",
 			previewers = {
 				builtin = {
 					extensions = {
@@ -167,6 +168,15 @@ return {
 						["jpg"] = { "ueberzug" },
 						["svg"] = { "ueberzug" },
 						["jpeg"] = { "ueberzug" },
+					},
+				},
+			},
+			git = {
+				status = {
+
+					actions = {
+						["alt-l"] = { actions.git_unstage, actions.resume },
+						["alt-h"] = { actions.git_stage, actions.resume },
 					},
 				},
 			},
