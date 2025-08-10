@@ -59,8 +59,8 @@ keymap("n", "<leader>oth", ":sp | terminal<CR>i", { silent = true, desc = "open 
 
 keymap("n", "q", "<Nop>", { silent = true })
 
-keymap("n", "<TAB>", ":tabnext<CR>", { silent = true })
-keymap("n", "<S-TAB>", ":tabNext<CR>", { silent = true })
+-- keymap("n", "<TAB>", ":tabnext<CR>", { silent = true })
+-- keymap("n", "<S-TAB>", ":tabNext<CR>", { silent = true })
 
 -- keymap("i", "jk", "<ESC>", { silent = true })
 
