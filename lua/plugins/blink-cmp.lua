@@ -94,47 +94,47 @@ local options = {
 				end,
 			},
 		},
-    },
-    cmdline = {
-        completion = { menu = { auto_show = true } },
-    }, -- will disable cmdline completions
+	},
+	cmdline = {
+		completion = { menu = { auto_show = true } },
+	}, -- will disable cmdline completions
 	snippets = {
 		preset = "luasnip",
 	},
 	signature = {
 		enabled = true,
 		window = {
-			border = { "┏", "━", "┓", "┃", "┛", "━", "┗", "┃" },
+			-- border = { "┏", "━", "┓", "┃", "┛", "━", "┗", "┃" },
+			border = "rounded",
 		},
 	},
 }
 
-
-return   {
-        "saghen/blink.cmp",
-        enabled = true,
-        lazy = false,
-        dependencies = {
-            "rafamadriz/friendly-snippets",
-            "mikavilpas/blink-ripgrep.nvim",
-            {
-                "xzbdmw/colorful-menu.nvim",
-                enabled = true,
-                opts = {}
-            },
-        },
-        -- use a release tag to download pre-built binaries
-        version = "*",
-        opts = options,
-        keys = {
-            {
-                mode = "i",
-                "<C-g>",
-                function()
-                    require("blink-cmp").show({ providers = { "ripgrep" } })
-                end,
-                desc = "",
-                silent = true,
-            },
-        },
-    }
+return {
+	"saghen/blink.cmp",
+	enabled = true,
+	lazy = false,
+	dependencies = {
+		"rafamadriz/friendly-snippets",
+		"mikavilpas/blink-ripgrep.nvim",
+		{
+			"xzbdmw/colorful-menu.nvim",
+			enabled = true,
+			opts = {},
+		},
+	},
+	-- use a release tag to download pre-built binaries
+	version = "*",
+	opts = options,
+	keys = {
+		{
+			mode = "i",
+			"<C-g>",
+			function()
+				require("blink-cmp").show({ providers = { "ripgrep" } })
+			end,
+			desc = "",
+			silent = true,
+		},
+	},
+}

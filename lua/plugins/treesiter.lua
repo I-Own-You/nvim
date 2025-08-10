@@ -57,12 +57,12 @@ local opts = {
 }
 
 return {
-    
-        "nvim-treesitter/nvim-treesitter",
-        enabled = true,
-        build = ":TSUpdate",
-        event = "BufReadPost",
-        config = function()
-            require("nvim-treesitter.configs").setup(opts)
-        end,
+
+	"nvim-treesitter/nvim-treesitter",
+	enabled = true,
+	build = ":TSUpdate",
+	event = "BufReadPost",
+	config = function()
+		require("nvim-treesitter.configs").setup(opts)
+	end,
 }

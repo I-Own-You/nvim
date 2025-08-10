@@ -1,4 +1,4 @@
-local opts =  {
+local opts = {
 	signs = true, -- show icons in the signs column
 	sign_priority = 8, -- sign priority
 	-- keywords recognized as todo comments
@@ -64,15 +64,15 @@ local opts =  {
 }
 
 return {
-    
-        "folke/todo-comments.nvim",
-        event = "BufReadPost",
-        enabled = true,
-        config = function()
-            require("todo-comments").setup()
-        end,
-        keys = {
-            { "<leader>td", mode = "n", ":TodoQuickFix<CR>", desc = "open todos", noremap = true, silent = true },
-        },
-        opts = opts,
+
+	"folke/todo-comments.nvim",
+	event = "BufReadPost",
+	enabled = true,
+	config = function()
+		require("todo-comments").setup()
+	end,
+	keys = {
+		{ "<leader>td", mode = "n", ":TodoQuickFix<CR>", desc = "open todos", noremap = true, silent = true },
+	},
+	opts = opts,
 }

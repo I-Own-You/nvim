@@ -34,8 +34,8 @@ local options = {
 }
 
 return {
-    "max397574/better-escape.nvim",
-    enabled = true,
-    event = "InsertEnter",
-    opts = options,
-        }
+	"max397574/better-escape.nvim",
+	enabled = true,
+	event = "InsertEnter",
+	opts = options,
+}
