@@ -1,4 +1,4 @@
-return {
+local opts = {
 	matchup = {
 		enable = true, -- mandatory, false will disable the whole extension
 		enable_quotes = true,
@@ -54,4 +54,15 @@ return {
 		enable_close = true,
 		enable_close_on_slash = true,
 	},
+}
+
+return {
+    
+        "nvim-treesitter/nvim-treesitter",
+        enabled = true,
+        build = ":TSUpdate",
+        event = "BufReadPost",
+        config = function()
+            require("nvim-treesitter.configs").setup(opts)
+        end,
 }

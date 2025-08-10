@@ -1,22 +1,17 @@
--- Eviline config for lualine
--- Author: shadmansaleh
--- Credit: glepnir
-local lualine = require("lualine")
-
 -- Color table for highlights
 -- stylua: ignore
 local colors = {
-  bg       = '#141B1E',
-  fg       = '#bbc2cf',
-  yellow   = '#ECBE7B',
-  cyan     = '#008080',
-  darkblue = '#081633',
-  green    = '#98be65',
-  orange   = '#FF8800',
-  violet   = '#a9a1e1',
-  magenta  = '#c678dd',
-  blue     = '#51afef',
-  red      = '#ec5f67',
+    bg       = '#141B1E',
+    fg       = '#bbc2cf',
+    yellow   = '#ECBE7B',
+    cyan     = '#008080',
+    darkblue = '#081633',
+    green    = '#98be65',
+    orange   = '#FF8800',
+    violet   = '#a9a1e1',
+    magenta  = '#c678dd',
+    blue     = '#51afef',
+    red      = '#ec5f67',
 }
 
 local conditions = {
@@ -169,7 +164,7 @@ ins_left({
 	function()
 		local msg = "No Active Lsp"
 		local buf_ft = vim.api.nvim_buf_get_option(0, "filetype")
-		local clients = vim.lsp.get_active_clients()
+		local clients = vim.lsp.vim.lsp.get_clients()()
 		if next(clients) == nil then
 			return msg
 		end
@@ -253,6 +248,12 @@ ins_right({
 	padding = { left = 1 },
 })
 
--- Now don't forget to initialize lualine
--- lualine.setup(config)
-return config
+return {
+	"nvim-lualine/lualine.nvim",
+	enabled = true,
+	event = "VeryLazy",
+	dependencies = { "kyazdani42/nvim-web-devicons" },
+	config = function()
+		require("lualine").setup(config)
+	end,
+}

@@ -1,4 +1,4 @@
-return {
+local opts =  {
 	signs = true, -- show icons in the signs column
 	sign_priority = 8, -- sign priority
 	-- keywords recognized as todo comments
@@ -61,4 +61,18 @@ return {
 		pattern = [[\b(KEYWORDS):]], -- ripgrep regex
 		-- pattern = [[\b(KEYWORDS)\b]], -- match without the extra colon. You'll likely get false positives
 	},
+}
+
+return {
+    
+        "folke/todo-comments.nvim",
+        event = "BufReadPost",
+        enabled = true,
+        config = function()
+            require("todo-comments").setup()
+        end,
+        keys = {
+            { "<leader>td", mode = "n", ":TodoQuickFix<CR>", desc = "open todos", noremap = true, silent = true },
+        },
+        opts = opts,
 }

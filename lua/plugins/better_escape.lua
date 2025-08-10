@@ -1,4 +1,4 @@
-return {
+local options = {
 	timeout = vim.o.timeoutlen,
 	default_mappings = true,
 	mappings = {
@@ -32,3 +32,10 @@ return {
 		},
 	},
 }
+
+return {
+    "max397574/better-escape.nvim",
+    enabled = true,
+    event = "InsertEnter",
+    opts = options,
+        }

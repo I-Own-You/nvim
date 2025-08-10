@@ -93,7 +93,6 @@ keymap("n", "+", "<C-a>", { noremap = true, silent = true })
 keymap("n", "-", "<C-x>", { noremap = true, silent = true })
 
 keymap("i", "<C-BACKSPACE>", "<ESC>vbdi", { silent = true, desc = "" })
-keymap("i", "<C-l>", "<ESC><leader>lsa", { silent = true, desc = "" })
 
 keymap("n", "<leader>nh", ":nohlsearch<CR>", { silent = true, desc = "toggle search results" })
 keymap("n", "<leader>bo", ":only<CR>", { silent = true, desc = "clear buffer windows" })
@@ -152,3 +151,21 @@ keymap("n", "<leader>nt", ":tabnew<CR>", { silent = true, desc = "open new tab" 
 keymap("n", "<Leader>xt", ':let @+=expand("%:p")<CR>', { silent = true, desc = "copy current buffers location" })
 
 keymap("n", "q", ":lua require('utility_functions').close_file_type_buffers()<CR>", { silent = true })
+
+vim.keymap.del("n", "grn")
+vim.keymap.del("n", "gra")
+vim.keymap.del("v", "gra")
+vim.keymap.del("n", "grr")
+vim.keymap.del("n", "gri")
+vim.keymap.del("n", "grt")
+vim.keymap.del("n", "gO")
+vim.keymap.del("i", "<C-s>")
+
+vim.api.nvim_create_autocmd("LspAttach", {
+	callback = function(args)
+		local buf = args.buf
+		local ok, err = pcall(function()
+			vim.keymap.del("n", "K", { buffer = buf })
+		end)
+	end,
+})

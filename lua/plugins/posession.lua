@@ -1,4 +1,4 @@
-return {
+local options =  {
 	silent = false,
 	load_silent = true,
 	debug = false,
@@ -66,4 +66,26 @@ return {
 			},
 		},
 	},
+}
+
+return {
+    
+        "jedrzejboczar/possession.nvim",
+        enabled = true,
+        keys = {
+            {
+                "<leader>sl",
+                mode = "n",
+                ":Telescope possession list<CR>",
+                desc = "Open sessions list",
+                noremap = true,
+                silent = true,
+            },
+            { "<leader>ss", mode = "n", ":PossessionSave ", desc = "save session", noremap = true },
+        },
+        dependencies = {
+            "nvim-lua/plenary.nvim",
+            "nvim-telescope/telescope.nvim",
+        },
+        opts = options,
 }

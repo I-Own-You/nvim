@@ -1,14 +1,14 @@
-return {
+local opts = {
 	filetypes = {
-		-- "lua",
-		"typescript",
-		"javascript",
-		"typescriptreact",
-		"javascriptreact",
-		"css",
-		"scss",
-		"sass",
-		"text",
+		"lua",
+		-- "typescript",
+		-- "javascript",
+		-- "typescriptreact",
+		-- "javascriptreact",
+		-- "css",
+		-- "scss",
+		-- "sass",
+		-- "text",
 	},
 	user_default_options = {
 		RGB = true, -- #RGB hex codes
@@ -34,4 +34,11 @@ return {
 	},
 	-- all the sub-options of filetypes apply to buftypes
 	buftypes = {},
+}
+
+return {
+	"NvChad/nvim-colorizer.lua",
+	enabled = true,
+	event = "BufReadPost",
+	opts = opts,
 }

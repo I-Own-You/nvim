@@ -1,4 +1,4 @@
-return {
+local options = {
 	keymap = {
 		["<C-space>"] = { "show", "show_documentation", "hide_documentation" },
 		["<C-e>"] = { "hide" },
@@ -108,3 +108,33 @@ return {
 		},
 	},
 }
+
+
+return   {
+        "saghen/blink.cmp",
+        enabled = true,
+        lazy = false,
+        dependencies = {
+            "rafamadriz/friendly-snippets",
+            "mikavilpas/blink-ripgrep.nvim",
+            {
+                "xzbdmw/colorful-menu.nvim",
+                enabled = true,
+                opts = {}
+            },
+        },
+        -- use a release tag to download pre-built binaries
+        version = "*",
+        opts = options,
+        keys = {
+            {
+                mode = "i",
+                "<C-g>",
+                function()
+                    require("blink-cmp").show({ providers = { "ripgrep" } })
+                end,
+                desc = "",
+                silent = true,
+            },
+        },
+    }
