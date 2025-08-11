@@ -38,7 +38,7 @@ local opts = {
 
 return {
 	"NvChad/nvim-colorizer.lua",
-	enabled = true,
+	enabled = false,
 	event = "BufReadPost",
 	opts = opts,
 }
