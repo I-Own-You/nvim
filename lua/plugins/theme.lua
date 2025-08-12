@@ -40,11 +40,10 @@
 -- }
 
 return {
-	"bluz71/vim-moonfly-colors",
-	name = "moonfly",
+	"olimorris/onedarkpro.nvim",
 	lazy = false,
-	priority = 1000,
+	priority = 1000, -- Ensure it loads first
 	config = function()
-		vim.cmd("colorscheme moonfly")
+		vim.cmd("colorscheme onedark")
 	end,
 }
