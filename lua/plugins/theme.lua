@@ -45,5 +45,8 @@ return {
 	priority = 1000, -- Ensure it loads first
 	config = function()
 		vim.cmd("colorscheme onedark")
+
+		local hl = vim.api.nvim_set_hl
+		hl(0, "BlinkCmpLabelDeprecated", { fg = "#2f3639", strikethrough = true })
 	end,
 }
