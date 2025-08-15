@@ -11,13 +11,6 @@ keymap("n", "<C-j>", "<C-w>j", { silent = true })
 keymap("n", "<C-k>", "<C-w>k", { silent = true })
 keymap("n", "<C-l>", "<C-w>l", { silent = true })
 
-vim.api.nvim_create_user_command("TSOrganizeImports", function()
-	vim.lsp.buf.execute_command({
-		command = "_typescript.organizeImports",
-		arguments = { vim.fn.expand("%:p") },
-	})
-end, { desc = "Organize imports in TypeScript file" })
-
 -- keymap("n", "<C-Up>", ":resize +2<CR>", {silent=true, desc=''})
 -- keymap("n", "<C-Down>", ":resize -2<CR>", {silent=true, desc=''})
 -- keymap("n", "<C-Left>", ":vertical resize +2<CR>", {silent=true, desc=''})
@@ -152,6 +145,7 @@ keymap("n", "<Leader>xt", ':let @+=expand("%:p")<CR>', { silent = true, desc = "
 
 keymap("n", "q", ":lua require('utility_functions').close_file_type_buffers()<CR>", { silent = true })
 
+-- this is for LSP builtin keymaps to remove them
 vim.keymap.del("n", "grn")
 vim.keymap.del("n", "gra")
 vim.keymap.del("v", "gra")
