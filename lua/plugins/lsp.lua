@@ -100,12 +100,12 @@ return {
 				vim.diagnostic.setloclist,
 				{ buffer = bufnr, remap = false, silent = true, desc = "show loc list" }
 			)
-			keymap.set(
-				"n",
-				"<leader>oo",
-				vim.lsp.buf.document_symbol,
-				{ buffer = bufnr, remap = false, silent = true, desc = "show document symbols" }
-			)
+			-- keymap.set(
+			-- 	"n",
+			-- 	"<leader>oo",
+			-- 	vim.lsp.buf.document_symbol,
+			-- 	{ buffer = bufnr, remap = false, silent = true, desc = "show document symbols" }
+			-- )
 			keymap.set("n", "<leader>rr", function()
 				vim.lsp.buf.format({ async = true })
 			end, { buffer = bufnr, remap = false, silent = true, desc = "lsp format file" })

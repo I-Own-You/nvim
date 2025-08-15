@@ -48,7 +48,7 @@ return {
 		{ mode = "n", "<leader>gbb", desc = "git branches", ":FzfLua git_branches<CR>", silent = true },
 		{ mode = "n", "<leader>gsh", desc = "git stash list", ":FzfLua git_stash<CR>", silent = true },
 		{ mode = "n", "<leader>gt", desc = "git tags", ":FzfLua git_tags<CR>", silent = true },
-		-- { mode = "n", "<leader>oo",  desc = "lsp symbols",     ":FzfLua lsp_document_symbols<CR>", silent = true },
+		{ mode = "n", "<leader>oo", desc = "lsp symbols", ":FzfLua lsp_document_symbols<CR>", silent = true },
 		{
 			mode = "n",
 			"<leader>tt",
