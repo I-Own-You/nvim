@@ -1,6 +1,6 @@
 return {
 	"nvim-focus/focus.nvim",
-	enabled = true,
+	enabled = false,
 	event = "BufReadPost",
 	version = "*",
 	keys = {
