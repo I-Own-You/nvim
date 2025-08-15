@@ -61,10 +61,12 @@ local options = {
 		ghost_text = { enabled = true },
 		list = {
 			selection = {
-				preselect = function(ctx)
-					return ctx.mode ~= "cmdline"
-					-- return ctx.mode ~= "cmdline" and not require("blink.cmp").snippet_active({ direction = 1 })
-				end,
+				preselect = true,
+				auto_insert = false,
+				-- preselect = function(ctx)
+				-- 	return ctx.mode ~= "cmdline"
+				-- 	-- return ctx.mode ~= "cmdline" and not require("blink.cmp").snippet_active({ direction = 1 })
+				-- end,
 			},
 		},
 	},
