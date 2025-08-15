@@ -6,11 +6,6 @@ keymap("n", ";", ":", { noremap = true })
 keymap("v", ";", ":", { noremap = true })
 keymap("x", ";", ":", { noremap = true })
 
-keymap("n", "<C-h>", "<C-w>h", { silent = true })
-keymap("n", "<C-j>", "<C-w>j", { silent = true })
-keymap("n", "<C-k>", "<C-w>k", { silent = true })
-keymap("n", "<C-l>", "<C-w>l", { silent = true })
-
 -- keymap("n", "<C-Up>", ":resize +2<CR>", {silent=true, desc=''})
 -- keymap("n", "<C-Down>", ":resize -2<CR>", {silent=true, desc=''})
 -- keymap("n", "<C-Left>", ":vertical resize +2<CR>", {silent=true, desc=''})
@@ -41,10 +36,6 @@ keymap("n", "<C-l>", "<C-w>l", { silent = true })
 -- 	{ noremap = true, silent = true }
 -- )
 
-keymap("t", "<A-t>", "<C-\\><C-n>", { silent = true, desc = "exit terminal mode" })
-keymap("n", "<leader>ott", ":tab split | terminal<CR>i", { silent = true, desc = "open terminal" })
-keymap("n", "<leader>otv", ":vsp | terminal<CR>i", { silent = true, desc = "open terminal" })
-keymap("n", "<leader>oth", ":sp | terminal<CR>i", { silent = true, desc = "open terminal" })
 -- keymap("t", "<C-h>", "<C-\\><C-n>:wincmd h<CR>", { silent = true })
 -- keymap("t", "<C-j>", "<C-\\><C-n>:wincmd j<CR>", { silent = true })
 -- keymap("t", "<C-k>", "<C-\\><C-n>:wincmd k<CR>", { silent = true })
@@ -68,10 +59,6 @@ keymap("i", "<A-j>", "<ESC>:m .+1<CR>==gi", { silent = true, desc = "" })
 keymap("i", "<A-k>", "<ESC>:m .-2<CR>==gi", { silent = true, desc = "" })
 keymap("v", "<A-j>", ":m '>+1<CR>gv=gv", { silent = true, desc = "" })
 keymap("v", "<A-k>", ":m '<-2<CR>gv=gv", { silent = true, desc = "" })
-
-keymap("n", "<leader>vv", ":vsplit<CR>", { silent = true, desc = "split buffer vertically" })
-keymap("n", "<leader>xx", ":split<CR>", { silent = true, desc = "split buffer horizontally" })
-keymap("n", "<leader>vd", ":vert diffsplit ", { noremap = true, desc = "diff some file" })
 
 keymap("i", "<C-a>", "<C-o>A", { noremap = true, silent = true })
 keymap("i", "<C-i>", "<C-o>I", { noremap = true, silent = true })
