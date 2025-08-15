@@ -6,8 +6,15 @@ return {
 		{ "ibhagwan/fzf-lua" },
 		{ "nvim-treesitter/nvim-treesitter" },
 	},
+	keys = {
+		{
+			"<leader>ig",
+			":GoDoc<CR>",
+			desc = "open golang imports info",
+			silent = true,
+		},
+	},
 	build = "go install github.com/lotusirous/gostdsym/stdsym@latest", -- optional
-	-- cmd = { "GoDoc" }, -- optional
 	opts = {
 		picker = {
 			type = "fzf_lua", -- native (vim.ui.select) | telescope | snacks | mini | fzf_lua
