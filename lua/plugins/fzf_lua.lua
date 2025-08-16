@@ -161,6 +161,11 @@ return {
 		local actions = require("fzf-lua.actions")
 		require("fzf-lua").setup({
 			"telescope",
+			winopts = {
+				preview = {
+					layout = "horizontal",
+				},
+			},
 			previewers = {
 				builtin = {
 					extensions = {
