@@ -101,7 +101,7 @@ local options = {
 		completion = { menu = { auto_show = true } },
 	}, -- will disable cmdline completions
 	snippets = {
-		preset = "luasnip",
+		-- preset = "luasnip",
 	},
 	signature = {
 		enabled = true,
