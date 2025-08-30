@@ -19,7 +19,7 @@ return function(on_attach, capabilities)
 		init_options = {
 			settings = {
 				lint = {
-					ignore = { "F401" },
+					ignore = {},
 				},
 			},
 		},
