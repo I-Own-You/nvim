@@ -139,11 +139,11 @@ vim.keymap.del("n", "grt")
 vim.keymap.del("n", "gO")
 vim.keymap.del("i", "<C-s>")
 
-vim.api.nvim_create_autocmd("LspAttach", {
-	callback = function(args)
-		local buf = args.buf
-		local ok, err = pcall(function()
-			vim.keymap.del("n", "K", { buffer = buf })
-		end)
-	end,
-})
+-- vim.api.nvim_create_autocmd("LspAttach", {
+-- 	callback = function(args)
+-- 		local buf = args.buf
+-- 		local ok, err = pcall(function()
+-- 			vim.keymap.del("n", "K", { buffer = buf })
+-- 		end)
+-- 	end,
+-- })
