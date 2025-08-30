@@ -115,12 +115,12 @@ return {
 					border = "rounded",
 				})
 			end, { buffer = bufnr, remap = false, silent = true, desc = "hover" })
-			keymap.set("n", "ge", function()
-				vim.diagnostic.jump({ count = 1, float = false })
-			end, { buffer = bufnr, remap = false, silent = true, desc = "show next diagnostic" })
-			keymap.set("n", "gE", function()
-				vim.diagnostic.jump({ count = 1, float = false })
-			end, { buffer = bufnr, remap = false, silent = true, desc = "show previous diagnostic" })
+			-- keymap.set("n", "ge", function()
+			-- 	vim.diagnostic.jump({ count = 1, float = false })
+			-- end, { buffer = bufnr, remap = false, silent = true, desc = "show next diagnostic" })
+			-- keymap.set("n", "gE", function()
+			-- 	vim.diagnostic.jump({ count = 1, float = false })
+			-- end, { buffer = bufnr, remap = false, silent = true, desc = "show previous diagnostic" })
 			keymap.set(
 				"n",
 				"<leader>fl",
