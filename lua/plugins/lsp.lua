@@ -170,7 +170,7 @@ return {
 
 		vim.lsp.config("lua_ls", require("lsp.lua")(on_attach, capabilities))
 		vim.lsp.config("pyright", require("lsp.pyright")(on_attach, capabilities)) -- replace with ty when released
-		vim.lsp.config("ruff", require("lsp.ruff"))
+		vim.lsp.config("ruff", require("lsp.ruff")(on_attach, capabilities))
 
 		vim.diagnostic.config({
 			virtual_text = false,

@@ -9,12 +9,19 @@ vim.api.nvim_create_autocmd("LspAttach", {
 	desc = "Disable hover capability from Ruff",
 })
 
-return {
-	init_options = {
-		settings = {
-			-- lint = {
-			-- 	ignore = { "F401" },
-			-- },
+return function(on_attach, capabilities)
+	return {
+		cmd = { "ruff", "server" },
+		filetypes = { "python" },
+		root_markers = { "pyproject.toml", "ruff.toml", ".ruff.toml", ".git" },
+		on_attach = on_attach,
+		capabilities = capabilities,
+		init_options = {
+			settings = {
+				lint = {
+					ignore = { "F401" },
+				},
+			},
 		},
-	},
-}
+	}
+end
