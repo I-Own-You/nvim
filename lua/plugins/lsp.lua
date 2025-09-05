@@ -142,6 +142,10 @@ return {
 			if client.name == "pyright" then
 				client.server_capabilities.documentFormattingProvider = false
 			end
+
+			if client.name == "jsonls" then
+				client.server_capabilities.documentFormattingProvider = false
+			end
 		end
 
 		require("mason").setup()
@@ -156,6 +160,7 @@ return {
 				"pyright",
 				"ruff",
 				"mypy",
+				"biome",
 			},
 		})
 
@@ -169,6 +174,7 @@ return {
 		})
 
 		vim.lsp.config("lua_ls", require("lsp.lua")(on_attach, capabilities))
+		vim.lsp.config("jsonls", require("lsp.lua")(on_attach, capabilities))
 		vim.lsp.config("pyright", require("lsp.pyright")(on_attach, capabilities)) -- replace with ty when released
 		vim.lsp.config("ruff", require("lsp.ruff")(on_attach, capabilities))
 
