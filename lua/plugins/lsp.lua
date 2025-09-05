@@ -205,11 +205,16 @@ return {
 		local null_ls = require("null-ls")
 		null_ls.setup({
 			sources = {
-				-- null_ls.builtins.diagnostics.golangci_lint,
+				-- lua
 				null_ls.builtins.formatting.stylua,
-				-- null_ls.builtins.formatting.ruff,
-				-- null_ls.builtins.formatting.goimports,
+				-- python
 				null_ls.builtins.diagnostics.mypy,
+				-- json
+				null_ls.builtins.formatting.biome,
+				null_ls.builtins.diagnostics.biome,
+				-- golang
+				-- null_ls.builtins.diagnostics.golangci_lint,
+				-- null_ls.builtins.formatting.goimports,
 			},
 
 			on_attach = function(client, bufnr)
