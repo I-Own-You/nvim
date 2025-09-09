@@ -151,11 +151,11 @@ return {
 		require("mason").setup()
 		require("mason-tool-installer").setup({
 			ensure_installed = {
-				"lua_ls",
-				-- "gopls",
+				-- "lua_ls",
+				"gopls",
 				"jsonls",
-				-- "golangci-lint",
-				-- "goimports",
+				"golangci-lint",
+				"goimports",
 				"stylua",
 				"pyright",
 				"ruff",
@@ -168,15 +168,16 @@ return {
 		capabilities = require("blink.cmp").get_lsp_capabilities(capabilities)
 
 		require("mason-lspconfig").setup({
-			ensure_installed = { "lua_ls", "jsonls", "pyright" },
+			ensure_installed = { "lua_ls", "jsonls", "pyright", "gopls" },
 			-- automatic_installation = true,,,
 			-- automatic_enable = true,
 		})
 
 		vim.lsp.config("lua_ls", require("lsp.lua")(on_attach, capabilities))
-		vim.lsp.config("jsonls", require("lsp.lua")(on_attach, capabilities))
+		vim.lsp.config("jsonls", require("lsp.jsonls")(on_attach, capabilities))
 		vim.lsp.config("pyright", require("lsp.pyright")(on_attach, capabilities)) -- replace with ty when released
 		vim.lsp.config("ruff", require("lsp.ruff")(on_attach, capabilities))
+		vim.lsp.config("gopls", require("lsp.gopls")(on_attach, capabilities))
 
 		vim.diagnostic.config({
 			virtual_text = false,
@@ -217,10 +218,9 @@ return {
 				null_ls.builtins.diagnostics.mypy,
 				-- json
 				null_ls.builtins.formatting.biome,
-				null_ls.builtins.diagnostics.biome,
 				-- golang
-				-- null_ls.builtins.diagnostics.golangci_lint,
-				-- null_ls.builtins.formatting.goimports,
+				null_ls.builtins.diagnostics.golangci_lint,
+				null_ls.builtins.formatting.goimports,
 			},
 
 			on_attach = function(client, bufnr)
