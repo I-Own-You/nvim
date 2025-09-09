@@ -233,9 +233,9 @@ ins_right({
 	-- Is it me or the symbol for modified us really weird
 	symbols = { added = " ", modified = " ", removed = " " },
 	diff_color = {
-		added = { fg = colors.green },
-		modified = { fg = colors.blue },
-		removed = { fg = colors.red },
+		added = { fg = "#109868" }, -- colors.green
+		modified = { fg = "#948b60" }, -- colors.blue
+		removed = { fg = "#9a353d" }, -- colors.red
 	},
 	cond = conditions.hide_in_width,
 })
