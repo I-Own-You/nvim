@@ -45,7 +45,7 @@ return function(on_attach, capabilities)
 					autoSearchPaths = true,
 					useLibraryCodeForTypes = true,
 					diagnosticMode = "openFilesOnly",
-					typeCheckingMode = "strict",
+					typeCheckingMode = "basic",
 					reportUnnecessaryCode = "warning",
 					-- ignore = { "*" },
 				},
