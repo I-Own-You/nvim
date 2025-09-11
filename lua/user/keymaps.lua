@@ -117,9 +117,9 @@ keymap("v", "<C-y>", "5<C-y>", { silent = true, desc = "", noremap = true })
 -- keymap("v", "<C-d>", "5<C-d>", { silent = true, desc = "", noremap = true })
 -- keymap("v", "<C-u>", "5<C-u>", { silent = true, desc = "", noremap = true })
 
-keymap("n", "<C-c>", ":%y<CR>", { silent = true })
-keymap("n", "<C-a>", "ggVG", { silent = true })
-keymap("n", "<C-x>", ":%d<CR>", { silent = true })
+-- keymap("n", "<C-c>", ":%y<CR>", { silent = true })
+-- keymap("n", "<C-a>", "ggVG", { silent = true })
+-- keymap("n", "<C-x>", ":%d<CR>", { silent = true })
 
 keymap("n", "<leader>nb", ":enew<cr>", { silent = true, desc = "open new buffer" })
 keymap("n", "<leader>nt", ":tabnew<CR>", { silent = true, desc = "open new tab" })
