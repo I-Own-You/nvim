@@ -36,15 +36,7 @@ keymap("x", ";", ":", { noremap = true })
 -- 	{ noremap = true, silent = true }
 -- )
 
--- keymap("t", "<C-h>", "<C-\\><C-n>:wincmd h<CR>", { silent = true })
--- keymap("t", "<C-j>", "<C-\\><C-n>:wincmd j<CR>", { silent = true })
--- keymap("t", "<C-k>", "<C-\\><C-n>:wincmd k<CR>", { silent = true })
--- keymap("t", "<C-l>", "<C-\\><C-n>:wincmd l<CR>", { silent = true })
-
 keymap("n", "q", "<Nop>", { silent = true })
-
--- keymap("n", "<TAB>", ":tabnext<CR>", { silent = true })
--- keymap("n", "<S-TAB>", ":tabNext<CR>", { silent = true })
 
 -- keymap("i", "jk", "<ESC>", { silent = true })
 
@@ -69,57 +61,12 @@ keymap("n", "!", ":!", { noremap = true })
 keymap("n", "+", "<C-a>", { noremap = true, silent = true })
 keymap("n", "-", "<C-x>", { noremap = true, silent = true })
 
-keymap("i", "<C-BACKSPACE>", "<ESC>vbdi", { silent = true, desc = "" })
-
-keymap("n", "<leader>nh", ":nohlsearch<CR>", { silent = true, desc = "toggle search results" })
-keymap("n", "<leader>bo", ":only<CR>", { silent = true, desc = "clear buffer windows" })
-keymap("n", "<leader>bda", ":%bdelete<CR>", { silent = true, desc = "delete all buffers" })
-keymap(
-	"n",
-	"<leader>bdo",
-	":%bd|e#|bd#<CR>|'\"",
-	{ noremap = true, silent = true, desc = "delete all buffers but not current" }
-)
-keymap("n", "<leader>to", ":tabonly<CR>", { noremap = true, silent = true, desc = "remove all tabs but not current" })
-
--- keymap("n", "gd", ':lua require("utility_functions").goto_defintion()<CR>', { silent = true, desc = "lsp definition" })
--- keymap(
--- 	"n",
--- 	"gD",
--- 	':lua require("utility_functions").goto_declaration()<CR>',
--- 	{ silent = true, desc = "lsp declaration" }
--- )
--- keymap(
--- 	"n",
--- 	"gi",
--- 	':lua require("utility_functions").goto_implementation()<CR>',
--- 	{ silent = true, desc = "lsp implementation" }
--- )
--- keymap(
--- 	"n",
--- 	"<leader>D",
--- 	':lua require("utility_functions").goto_type_definition()<CR>',
--- 	{ silent = true, desc = "lsp type definition" }
--- )
-
--- keymap("n", "<C-d>", "5j", { silent = true, desc = "" })
--- keymap("n", "<C-u>", "5k", { silent = true, desc = "" })
--- keymap("v", "<C-d>", "5j", { silent = true, desc = "" })
--- keymap("v", "<C-u>", "5k", { silent = true, desc = "" })
+keymap("i", "<C-l>", "<Del>", { noremap = true, silent = true })
 
 keymap("n", "<C-e>", "5<C-e>", { silent = true, desc = "", noremap = true })
 keymap("n", "<C-y>", "5<C-y>", { silent = true, desc = "", noremap = true })
 keymap("v", "<C-e>", "5<C-e>", { silent = true, desc = "", noremap = true })
 keymap("v", "<C-y>", "5<C-y>", { silent = true, desc = "", noremap = true })
-
--- keymap("n", "<C-d>", "5<C-d>", { silent = true, desc = "", noremap = true })
--- keymap("n", "<C-u>", "5<C-u>", { silent = true, desc = "", noremap = true })
--- keymap("v", "<C-d>", "5<C-d>", { silent = true, desc = "", noremap = true })
--- keymap("v", "<C-u>", "5<C-u>", { silent = true, desc = "", noremap = true })
-
--- keymap("n", "<C-c>", ":%y<CR>", { silent = true })
--- keymap("n", "<C-a>", "ggVG", { silent = true })
--- keymap("n", "<C-x>", ":%d<CR>", { silent = true })
 
 keymap("n", "<leader>nb", ":enew<cr>", { silent = true, desc = "open new buffer" })
 keymap("n", "<leader>nt", ":tabnew<CR>", { silent = true, desc = "open new tab" })
