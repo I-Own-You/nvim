@@ -1,6 +1,7 @@
 require("user.options")
 require("user.keymaps")
-require("auto_commands")
+require("user.auto_commands")
+require("user.neovide")
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
