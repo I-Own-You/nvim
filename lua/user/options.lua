@@ -20,6 +20,17 @@ vim.o.splitbelow = true
 vim.o.splitright = true
 vim.o.swapfile = false
 vim.o.termguicolors = true
+vim.opt.guicursor = {
+	-- Normal, Visual, Command modes → block cursor with blink
+	"n-v-c:block-Cursor/lCursor-blinkwait700-blinkon700-blinkoff500",
+	-- Insert, Command-line insert, Visual-ex → vertical bar with blink
+	"i-ci-ve:ver25-Cursor/lCursor-blinkwait700-blinkon700-blinkoff500",
+	-- Replace, Command-line replace → horizontal bar with blink
+	"r-cr:hor20-Cursor/lCursor-blinkwait700-blinkon700-blinkoff500",
+	-- Operator-pending → wide horizontal with blink
+	"o:hor50-Cursor/lCursor-blinkwait700-blinkon700-blinkoff500",
+	"t:block-Cursor/lCursor-blinkwait700-blinkon700-blinkoff500",
+}
 vim.o.undofile = true
 vim.o.updatetime = 250
 vim.o.writebackup = false
