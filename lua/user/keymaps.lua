@@ -61,6 +61,17 @@ keymap("n", "!", ":!", { noremap = true })
 keymap("n", "+", "<C-a>", { noremap = true, silent = true })
 keymap("n", "-", "<C-x>", { noremap = true, silent = true })
 
+keymap("n", "<leader>nh", ":nohlsearch<CR>", { silent = true, desc = "toggle search results" })
+keymap("n", "<leader>bo", ":only<CR>", { silent = true, desc = "clear buffer windows" })
+keymap("n", "<leader>bda", ":%bdelete<CR>", { silent = true, desc = "delete all buffers" })
+keymap(
+	"n",
+	"<leader>bdo",
+	":%bd|e#|bd#<CR>|'\"",
+	{ noremap = true, silent = true, desc = "delete all buffers but not current" }
+)
+keymap("n", "<leader>to", ":tabonly<CR>", { noremap = true, silent = true, desc = "remove all tabs but not current" })
+
 keymap("i", "<C-l>", "<Del>", { noremap = true, silent = true })
 
 keymap("n", "<C-e>", "5<C-e>", { silent = true, desc = "", noremap = true })
