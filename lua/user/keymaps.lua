@@ -82,6 +82,11 @@ keymap("v", "<C-y>", "5<C-y>", { silent = true, desc = "", noremap = true })
 keymap("n", "<leader>nb", ":enew<cr>", { silent = true, desc = "open new buffer" })
 keymap("n", "<leader>nt", ":tabnew<CR>", { silent = true, desc = "open new tab" })
 
+keymap("n", "[t", ":tabprevious<CR>", { silent = true, desc = "", noremap = true })
+keymap("n", "]t", ":tabnext<CR>", { silent = true, desc = "", noremap = true })
+keymap("n", "[T", ":tabfirst<CR>", { silent = true, desc = "", noremap = true })
+keymap("n", "]T", ":tablast<CR>", { silent = true, desc = "", noremap = true })
+
 -- "%:p:h" without filename
 keymap("n", "<Leader>xt", ':let @+=expand("%:p")<CR>', { silent = true, desc = "copy current buffers location" })
 
