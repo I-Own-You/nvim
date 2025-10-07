@@ -22,14 +22,14 @@ vim.o.swapfile = false
 vim.o.termguicolors = true
 vim.opt.guicursor = {
 	-- Normal, Visual, Command modes → block cursor with blink
-	"n-v-c:block-Cursor/lCursor-blinkwait700-blinkon700-blinkoff500",
+	"n-v-c:block-Cursor/lCursor-blinkwait0-blinkon0-blinkoff0",
 	-- Insert, Command-line insert, Visual-ex → vertical bar with blink
-	"i-ci-ve:ver25-Cursor/lCursor-blinkwait700-blinkon700-blinkoff500",
+	"i-ci-ve:ver25-Cursor/lCursor-blinkwait0-blinkon0-blinkoff0",
 	-- Replace, Command-line replace → horizontal bar with blink
-	"r-cr:hor20-Cursor/lCursor-blinkwait700-blinkon700-blinkoff500",
+	"r-cr:hor20-Cursor/lCursor-blinkwait0-blinkon0-blinkoff0",
 	-- Operator-pending → wide horizontal with blink
-	"o:hor50-Cursor/lCursor-blinkwait700-blinkon700-blinkoff500",
-	"t:block-Cursor/lCursor-blinkwait700-blinkon700-blinkoff500",
+	"o:hor50-Cursor/lCursor-blinkwait0-blinkon0-blinkoff0",
+	"t:block-Cursor/lCursor-blinkwait0-blinkon0-blinkoff0",
 }
 vim.o.undofile = true
 vim.o.updatetime = 250
