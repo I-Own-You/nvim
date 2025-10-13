@@ -13,6 +13,7 @@ local t_i_d = {
 }
 return {
 	"neovim/nvim-lspconfig",
+	enabled = false,
 	dependencies = {
 		-- Ensure these plugins are loaded before lspconfig is configured
 		"williamboman/mason.nvim",

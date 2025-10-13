@@ -30,8 +30,8 @@ return {
 	enalbed = true,
 	event = "BufReadPost",
 	dependencies = {
-		"nvim-telescope/telescope-fzf-native.nvim",
-		build = "make",
+		-- "nvim-telescope/telescope-fzf-native.nvim", -
+		-- build = "make",
 	},
 	config = function()
 		local dropbar_api = require("dropbar.api")

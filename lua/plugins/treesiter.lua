@@ -1,6 +1,6 @@
 local opts = {
 	matchup = {
-		enable = true, -- mandatory, false will disable the whole extension
+		enable = false, -- mandatory, false will disable the whole extension
 		enable_quotes = true,
 		disable_virtual_text = true, -- at the ending of functioin
 		-- disable = { "c", "ruby" },  -- optional, list of language that will be disabled

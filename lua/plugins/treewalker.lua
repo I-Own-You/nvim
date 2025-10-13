@@ -1,5 +1,6 @@
 return {
 	"aaronik/treewalker.nvim",
+	enabled = false,
 	opts = {
 		-- How long should above highlight last (in ms)
 		highlight_duration = 250,
