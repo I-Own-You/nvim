@@ -25,10 +25,5 @@ return {
 		{ "<A-S-l>", '<cmd>lua require("smart-splits").resize_right()<CR>' },
 		{ "<A-S-j>", '<cmd>lua require("smart-splits").resize_down()<CR>' },
 		{ "<A-S-k>", '<cmd>lua require("smart-splits").resize_up()<CR>' },
-		-- swapping buffers
-		{ "<C-Space>h", '<cmd>lua require("smart-splits").swap_buf_left()<CR>' },
-		{ "<C-Space>j", '<cmd>lua require("smart-splits").swap_buf_down()<CR>' },
-		{ "<C-Space>k", '<cmd>lua require("smart-splits").swap_buf_up()<CR>' },
-		{ "<C-Space>l", '<cmd>lua require("smart-splits").swap_buf_right()<CR>' },
 	},
 }
