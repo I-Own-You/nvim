@@ -1,10 +1,8 @@
-local keymap = vim.api.nvim_set_keymap
-
 vim.g.mapleader = " "
 
-keymap("n", ";", ":", { noremap = true })
-keymap("v", ";", ":", { noremap = true })
-keymap("x", ";", ":", { noremap = true })
+vim.keymap.set("n", ";", ":")
+vim.keymap.set("v", ";", ":")
+vim.keymap.set("x", ";", ":")
 
 -- keymap("n", "<C-Up>", ":resize +2<CR>", {silent=true, desc=''})
 -- keymap("n", "<C-Down>", ":resize -2<CR>", {silent=true, desc=''})
@@ -15,82 +13,84 @@ keymap("x", ";", ":", { noremap = true })
 -- 	"n",
 -- 	"<leader>mh",
 -- 	":lua require('utility_functions').moveFloatingWindow(-5, 0)<CR>",
--- 	{ noremap = true, silent = true }
+-- 	{silent = true }
 -- )
 -- vim.api.nvim_set_keymap(
 -- 	"n",
 -- 	"<leader>mj",
 -- 	":lua require('utility_functions').moveFloatingWindow(0, 5)<CR>",
--- 	{ noremap = true, silent = true }
+-- 	{silent = true }
 -- )
 -- vim.api.nvim_set_keymap(
 -- 	"n",
 -- 	"<leader>mk",
 -- 	":lua require('utility_functions').moveFloatingWindow(0, -5)<CR>",
--- 	{ noremap = true, silent = true }
+-- 	{silent = true }
 -- )
 -- vim.api.nvim_set_keymap(
 -- 	"n",
 -- 	"<leader>ml",
 -- 	":lua require('utility_functions').moveFloatingWindow(5, 0)<CR>",
--- 	{ noremap = true, silent = true }
+-- 	{silent = true }
 -- )
 
-keymap("n", "q", "<Nop>", { silent = true })
+vim.keymap.set("n", "q", "<Nop>", { silent = true })
 
 -- keymap("i", "jk", "<ESC>", { silent = true })
 
-keymap("v", "<", "<gv", { silent = true })
-keymap("v", ">", ">gv", { silent = true })
+vim.keymap.set("v", "<", "<gv", { silent = true })
+vim.keymap.set("v", ">", ">gv", { silent = true })
 
-keymap("v", "p", '"_dP', { silent = true })
+vim.keymap.set("v", "p", '"_dP', { silent = true })
 
-keymap("n", "<A-j>", ":m .+1<CR>==", { silent = true, desc = "" })
-keymap("n", "<A-k>", ":m .-2<CR>==", { silent = true, desc = "" })
-keymap("i", "<A-j>", "<ESC>:m .+1<CR>==gi", { silent = true, desc = "" })
-keymap("i", "<A-k>", "<ESC>:m .-2<CR>==gi", { silent = true, desc = "" })
-keymap("v", "<A-j>", ":m '>+1<CR>gv=gv", { silent = true, desc = "" })
-keymap("v", "<A-k>", ":m '<-2<CR>gv=gv", { silent = true, desc = "" })
+vim.keymap.set("n", "<A-j>", ":m .+1<CR>==", { silent = true, desc = "" })
+vim.keymap.set("n", "<A-k>", ":m .-2<CR>==", { silent = true, desc = "" })
+vim.keymap.set("i", "<A-j>", "<ESC>:m .+1<CR>==gi", { silent = true, desc = "" })
+vim.keymap.set("i", "<A-k>", "<ESC>:m .-2<CR>==gi", { silent = true, desc = "" })
+vim.keymap.set("v", "<A-j>", ":m '>+1<CR>gv=gv", { silent = true, desc = "" })
+vim.keymap.set("v", "<A-k>", ":m '<-2<CR>gv=gv", { silent = true, desc = "" })
 
-keymap("i", "<C-a>", "<C-o>A", { noremap = true, silent = true })
-keymap("i", "<C-i>", "<C-o>I", { noremap = true, silent = true })
+vim.keymap.set("i", "<C-a>", "<C-o>A", {silent = true })
+vim.keymap.set("i", "<C-i>", "<C-o>I", {silent = true })
 
-keymap("n", "<leader>ww", ":set invwrap<CR>", { silent = true, desc = "toggle wrap" })
-keymap("n", "!", ":!", { noremap = true })
+vim.keymap.set("n", "<leader>ww", ":set invwrap<CR>", { silent = true, desc = "toggle wrap" })
+vim.keymap.set("n", "!", ":!", { noremap = true })
 
-keymap("n", "+", "<C-a>", { noremap = true, silent = true })
-keymap("n", "-", "<C-x>", { noremap = true, silent = true })
+vim.keymap.set("n", "+", "<C-a>", {silent = true })
+vim.keymap.set("n", "-", "<C-x>", {silent = true })
 
-keymap("n", "<leader>nh", ":nohlsearch<CR>", { silent = true, desc = "toggle search results" })
-keymap("n", "<leader>bo", ":only<CR>", { silent = true, desc = "clear buffer windows" })
-keymap("n", "<leader>bda", ":%bdelete<CR>", { silent = true, desc = "delete all buffers" })
-keymap(
+vim.keymap.set("n", "<leader>nh", ":nohlsearch<CR>", { silent = true, desc = "toggle search results" })
+vim.keymap.set("n", "<leader>bo", ":only<CR>", { silent = true, desc = "clear buffer windows" })
+vim.keymap.set("n", "<leader>bda", ":%bdelete<CR>", { silent = true, desc = "delete all buffers" })
+vim.keymap.set(
 	"n",
 	"<leader>bdo",
 	":%bd|e#|bd#<CR>|'\"",
-	{ noremap = true, silent = true, desc = "delete all buffers but not current" }
+	{silent = true, desc = "delete all buffers but not current" }
 )
-keymap("n", "<leader>to", ":tabonly<CR>", { noremap = true, silent = true, desc = "remove all tabs but not current" })
+vim.keymap.set("n", "<leader>to", ":tabonly<CR>", {silent = true, desc = "remove all tabs but not current" })
 
-keymap("i", "<C-l>", "<Del>", { noremap = true, silent = true })
+vim.keymap.set("i", "<C-l>", "<Del>", {silent = true })
 
-keymap("n", "<C-e>", "5<C-e>", { silent = true, desc = "", noremap = true })
-keymap("n", "<C-y>", "5<C-y>", { silent = true, desc = "", noremap = true })
-keymap("v", "<C-e>", "5<C-e>", { silent = true, desc = "", noremap = true })
-keymap("v", "<C-y>", "5<C-y>", { silent = true, desc = "", noremap = true })
+vim.keymap.set("n", "<C-e>", "5<C-e>", { silent = true, desc = ""})
+vim.keymap.set("n", "<C-y>", "5<C-y>", { silent = true, desc = ""})
+vim.keymap.set("v", "<C-e>", "5<C-e>", { silent = true, desc = ""})
+vim.keymap.set("v", "<C-y>", "5<C-y>", { silent = true, desc = ""})
 
-keymap("n", "<leader>nb", ":enew<cr>", { silent = true, desc = "open new buffer" })
-keymap("n", "<leader>nt", ":tabnew<CR>", { silent = true, desc = "open new tab" })
+vim.keymap.set("n", "<leader>nb", ":enew<cr>", { silent = true, desc = "open new buffer" })
+vim.keymap.set("n", "<leader>nt", ":tabnew<CR>", { silent = true, desc = "open new tab" })
 
-keymap("n", "[t", ":tabprevious<CR>", { silent = true, desc = "", noremap = true })
-keymap("n", "]t", ":tabnext<CR>", { silent = true, desc = "", noremap = true })
-keymap("n", "[T", ":tabfirst<CR>", { silent = true, desc = "", noremap = true })
-keymap("n", "]T", ":tablast<CR>", { silent = true, desc = "", noremap = true })
+vim.keymap.set("n", "[t", ":tabprevious<CR>", { silent = true, desc = ""})
+vim.keymap.set("n", "]t", ":tabnext<CR>", { silent = true, desc = ""})
+vim.keymap.set("n", "[T", ":tabfirst<CR>", { silent = true, desc = ""})
+vim.keymap.set("n", "]T", ":tablast<CR>", { silent = true, desc = ""})
 
 -- "%:p:h" without filename
-keymap("n", "<Leader>xt", ':let @+=expand("%:p")<CR>', { silent = true, desc = "copy current buffers location" })
+vim.keymap.set("n", "<Leader>xt", ':let @+=expand("%:p")<CR>', { silent = true, desc = "copy current buffers location" })
 
-keymap("n", "q", ":lua require('user.utility_functions').close_file_type_buffers()<CR>", { silent = true })
+vim.keymap.set("n", "q", function()
+    require('user.utility_functions').close_file_type_buffers()
+end, { silent = true })
 
 -- this is for LSP builtin keymaps to remove them
 vim.keymap.del("n", "grn")
