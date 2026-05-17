@@ -142,6 +142,7 @@ vim.lsp.config("lua_ls", require("lsp.lua")(on_attach, capabilities))
 
 vim.diagnostic.config({
 	virtual_text = false,
+    virtual_lines = false,
 	signs = {
 		active = true,
 		text = {
