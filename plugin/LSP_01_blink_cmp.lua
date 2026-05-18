@@ -139,3 +139,5 @@ vim.keymap.set( "i", "<C-g>", function()
     require("blink-cmp").show({ providers = { "ripgrep" } })
 end, {desc = "", silent = true}
 )
+
+vim.api.nvim_set_hl(0, "BlinkCmpLabelDeprecated", { fg = "#2f3639", strikethrough = true })

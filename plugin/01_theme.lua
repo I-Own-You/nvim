@@ -39,12 +39,5 @@
 -- 	end,
 -- }
 
-vim.pack.add({'https://github.com/olimorris/onedarkpro.nvim' })
-vim.cmd.colorscheme('onedark')
-
--- config = function()
-    -- 	vim.cmd("colorscheme onedark")
-    --
-    -- 	local hl = vim.api.nvim_set_hl
-    -- 	hl(0, "BlinkCmpLabelDeprecated", { fg = "#2f3639", strikethrough = true })
-    -- end,
+vim.pack.add({'https://github.com/nyoom-engineering/oxocarbon.nvim' })
+vim.cmd.colorscheme('oxocarbon')
