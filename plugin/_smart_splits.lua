@@ -1,7 +1,7 @@
-vim.pack.add({'https://github.com/mrjones2014/smart-splits.nvim'})
-require('smart-splits').setup({
-    cursor_follows_swapped_bufs = true,
-    -- at_edge = 'stop',
+vim.pack.add({ "https://github.com/mrjones2014/smart-splits.nvim" })
+require("smart-splits").setup({
+	cursor_follows_swapped_bufs = true,
+	-- at_edge = 'stop',
 })
 
 vim.keymap.set("n", "<A-S-l>", '<cmd>lua require("smart-splits").resize_right()<CR>', { silent = true })

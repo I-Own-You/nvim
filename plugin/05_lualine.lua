@@ -249,10 +249,9 @@ ins_right({
 	padding = { left = 1 },
 })
 
-
 vim.pack.add({
-    'https://github.com/kyazdani42/nvim-web-devicons',  -- dep
-    'https://github.com/nvim-lualine/lualine.nvim'
+	"https://github.com/kyazdani42/nvim-web-devicons", -- dep
+	"https://github.com/nvim-lualine/lualine.nvim",
 })
 
-require('lualine').setup(config)
+require("lualine").setup(config)

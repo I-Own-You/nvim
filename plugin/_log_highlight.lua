@@ -1,1 +1,1 @@
-vim.pack.add({ 'https://github.com/fei6409/log-highlight.nvim' })
+vim.pack.add({ "https://github.com/fei6409/log-highlight.nvim" })

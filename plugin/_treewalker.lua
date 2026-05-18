@@ -1,8 +1,8 @@
-vim.pack.add({ 'https://github.com/aaronik/treewalker.nvim' })
-require('treewalker').setup({
-    highlight_duration = 250,
-    highlight = true,
-    highlight_group = "CursorLine",
+vim.pack.add({ "https://github.com/aaronik/treewalker.nvim" })
+require("treewalker").setup({
+	highlight_duration = 250,
+	highlight = true,
+	highlight_group = "CursorLine",
 })
 
 -- movement

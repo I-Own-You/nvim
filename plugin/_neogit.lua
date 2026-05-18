@@ -1,20 +1,19 @@
 vim.pack.add({
-    'https://github.com/nvim-lua/plenary.nvim',  -- dep
-    'https://github.com/sindrets/diffview.nvim',  -- dep
-    'https://github.com/ibhagwan/fzf-lua', -- dep
-    'https://github.com/NeogitOrg/neogit',
+	"https://github.com/nvim-lua/plenary.nvim", -- dep
+	"https://github.com/sindrets/diffview.nvim", -- dep
+	"https://github.com/ibhagwan/fzf-lua", -- dep
+	"https://github.com/NeogitOrg/neogit",
 })
 
-require('neogit').setup({
-    opts = {
-        integrations = {
-            fzf_lua = true,
-        },
-    },
+require("neogit").setup({
+	opts = {
+		integrations = {
+			fzf_lua = true,
+		},
+	},
 })
 
-vim.keymap.set("n", "<leader>neo", ":Neogit<CR>", {desc = "open neogit", silent = true })
-        
+vim.keymap.set("n", "<leader>neo", ":Neogit<CR>", { desc = "open neogit", silent = true })
 
 -- mappings = {
 --     commit_editor = {
@@ -131,4 +130,4 @@ vim.keymap.set("n", "<leader>neo", ":Neogit<CR>", {desc = "open neogit", silent 
 --       ["<c-j>"] = "PeekDown",
 --       ["<c-n>"] = "NextSection",
 --       ["<c-p>"] = "PreviousSection",
---       
+--

@@ -117,7 +117,7 @@ require("mason").setup()
 require("mason-tool-installer").setup({
 	ensure_installed = {
 		"lua_ls",
-        "clangd",
+		"clangd",
 		-- "gopls",
 		-- "jsonls",
 		-- "golangci-lint",
