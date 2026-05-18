@@ -117,6 +117,7 @@ require("mason").setup()
 require("mason-tool-installer").setup({
 	ensure_installed = {
 		"lua_ls",
+        "clangd",
 		-- "gopls",
 		-- "jsonls",
 		-- "golangci-lint",
@@ -133,12 +134,13 @@ local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require("blink.cmp").get_lsp_capabilities(capabilities)
 
 require("mason-lspconfig").setup({
-	ensure_installed = { "lua_ls" },
+	ensure_installed = { "lua_ls", "clangd" },
 	-- automatic_installation = true,,,
 	-- automatic_enable = true,
 })
 
 vim.lsp.config("lua_ls", require("lsp.lua")(on_attach, capabilities))
+vim.lsp.config("clangd", require("lsp.clangd")(on_attach, capabilities))
 
 vim.diagnostic.config({
 	virtual_text = false,
