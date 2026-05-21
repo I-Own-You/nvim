@@ -1,6 +1,6 @@
 if vim.g.neovide then
 	vim.o.guifont = "CommitMono:h15"
-	vim.opt.linespace = 1
+	vim.opt.linespace = 0
 
 	vim.g.neovide_padding_top = 0
 	vim.g.neovide_padding_bottom = 0
