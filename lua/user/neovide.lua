@@ -1,6 +1,6 @@
 if vim.g.neovide then
-	vim.o.guifont = "CommitMono:h16"
-	vim.opt.linespace = 3
+	vim.o.guifont = "CommitMono:h15"
+	vim.opt.linespace = 1
 
 	vim.g.neovide_padding_top = 0
 	vim.g.neovide_padding_bottom = 0
@@ -8,6 +8,7 @@ if vim.g.neovide then
 	vim.g.neovide_padding_left = 0
 
 	vim.g.neovide_cursor_smooth_blink = true
+
 end
 
 -- vim.keymap.set("n", "<C-S-v>", '"+p', { noremap = true, silent = true })
