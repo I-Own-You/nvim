@@ -73,6 +73,7 @@ local config = {
   },
 }
 
+
 -- Inserts a component in lualine_c at left section
 local function ins_left(component)
   table.insert(config.sections.lualine_c, component)
@@ -182,6 +183,21 @@ ins_left {
 }
 
 -- Add components to right sections
+ins_right({
+	function()
+		return "s:" .. require("possession.session").get_session_name() or ""
+	end,
+	color = { fg = "#E0AF68", gui = "bold" },
+})
+
+ins_right({
+	function()
+		return "t:" .. vim.fn.tabpagenr("$") .. " " .. "b:" .. #vim.fn.getbufinfo({ buflisted = 1 })
+	end,
+	cond = conditions.buffer_not_empty,
+	color = { fg = "#6CCCBD", gui = "bold" },
+})
+
 ins_right {
   'o:encoding', -- option component same as &encoding in viml
   fmt = string.upper, -- I'm not sure why it's upper case either ;)
