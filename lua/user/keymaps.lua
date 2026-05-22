@@ -50,14 +50,14 @@ vim.keymap.set("i", "<A-k>", "<ESC>:m .-2<CR>==gi", { silent = true, desc = "" }
 vim.keymap.set("v", "<A-j>", ":m '>+1<CR>gv=gv", { silent = true, desc = "" })
 vim.keymap.set("v", "<A-k>", ":m '<-2<CR>gv=gv", { silent = true, desc = "" })
 
-vim.keymap.set("i", "<C-a>", "<C-o>A", {silent = true })
-vim.keymap.set("i", "<C-i>", "<C-o>I", {silent = true })
+vim.keymap.set("i", "<C-a>", "<C-o>A", { silent = true })
+vim.keymap.set("i", "<C-i>", "<C-o>I", { silent = true })
 
 vim.keymap.set("n", "<leader>ww", ":set invwrap<CR>", { silent = true, desc = "toggle wrap" })
 vim.keymap.set("n", "!", ":!", { noremap = true })
 
-vim.keymap.set("n", "+", "<C-a>", {silent = true })
-vim.keymap.set("n", "-", "<C-x>", {silent = true })
+vim.keymap.set("n", "+", "<C-a>", { silent = true })
+vim.keymap.set("n", "-", "<C-x>", { silent = true })
 
 vim.keymap.set("n", "ZR", function()
 	vim.cmd(":restart")
@@ -70,30 +70,35 @@ vim.keymap.set(
 	"n",
 	"<leader>bdo",
 	":%bd|e#|bd#<CR>|'\"",
-	{silent = true, desc = "delete all buffers but not current" }
+	{ silent = true, desc = "delete all buffers but not current" }
 )
-vim.keymap.set("n", "<leader>to", ":tabonly<CR>", {silent = true, desc = "remove all tabs but not current" })
+vim.keymap.set("n", "<leader>to", ":tabonly<CR>", { silent = true, desc = "remove all tabs but not current" })
 
-vim.keymap.set("i", "<C-l>", "<Del>", {silent = true })
+vim.keymap.set("i", "<C-l>", "<Del>", { silent = true })
 
-vim.keymap.set("n", "<C-e>", "5<C-e>", { silent = true, desc = ""})
-vim.keymap.set("n", "<C-y>", "5<C-y>", { silent = true, desc = ""})
-vim.keymap.set("v", "<C-e>", "5<C-e>", { silent = true, desc = ""})
-vim.keymap.set("v", "<C-y>", "5<C-y>", { silent = true, desc = ""})
+vim.keymap.set("n", "<C-e>", "5<C-e>", { silent = true, desc = "" })
+vim.keymap.set("n", "<C-y>", "5<C-y>", { silent = true, desc = "" })
+vim.keymap.set("v", "<C-e>", "5<C-e>", { silent = true, desc = "" })
+vim.keymap.set("v", "<C-y>", "5<C-y>", { silent = true, desc = "" })
 
 vim.keymap.set("n", "<leader>nb", ":enew<cr>", { silent = true, desc = "open new buffer" })
 vim.keymap.set("n", "<leader>nt", ":tabnew<CR>", { silent = true, desc = "open new tab" })
 
-vim.keymap.set("n", "[t", ":tabprevious<CR>", { silent = true, desc = ""})
-vim.keymap.set("n", "]t", ":tabnext<CR>", { silent = true, desc = ""})
-vim.keymap.set("n", "[T", ":tabfirst<CR>", { silent = true, desc = ""})
-vim.keymap.set("n", "]T", ":tablast<CR>", { silent = true, desc = ""})
+vim.keymap.set("n", "[t", ":tabprevious<CR>", { silent = true, desc = "" })
+vim.keymap.set("n", "]t", ":tabnext<CR>", { silent = true, desc = "" })
+vim.keymap.set("n", "[T", ":tabfirst<CR>", { silent = true, desc = "" })
+vim.keymap.set("n", "]T", ":tablast<CR>", { silent = true, desc = "" })
 
 -- "%:p:h" without filename
-vim.keymap.set("n", "<Leader>xt", ':let @+=expand("%:p")<CR>', { silent = true, desc = "copy current buffers location" })
+vim.keymap.set(
+	"n",
+	"<Leader>xt",
+	':let @+=expand("%:p")<CR>',
+	{ silent = true, desc = "copy current buffers location" }
+)
 
 vim.keymap.set("n", "q", function()
-    require('user.utility_functions').close_file_type_buffers()
+	require("user.utility_functions").close_file_type_buffers()
 end, { silent = true })
 
 -- this is for LSP builtin keymaps to remove them
