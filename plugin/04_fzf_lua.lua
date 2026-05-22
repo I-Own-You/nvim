@@ -161,3 +161,5 @@ vim.keymap.set("n", "<leader>a", function()
 		rg_opts = "--hidden --no-ignore --column --line-number --no-heading --color=always --smart-case --max-columns=4096",
 	})
 end, { silent = true, desc = "grep without rules(everyhting)" })
+
+require("fzf-lua").register_ui_select()
