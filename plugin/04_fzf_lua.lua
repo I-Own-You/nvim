@@ -8,9 +8,14 @@ local actions = require("fzf-lua.actions")
 require("fzf-lua").setup({
 	"telescope",
 	winopts = {
+		width = 0.90,
 		preview = {
 			layout = "horizontal",
+			horizontal = "down:65%",
 		},
+	},
+	fzf_opts = {
+		["--layout"] = "reverse",
 	},
 	previewers = {
 		builtin = {
@@ -33,15 +38,33 @@ require("fzf-lua").setup({
 })
 
 vim.keymap.set("n", "<leader>bb", function()
-	require("fzf-lua").buffers()
+	require("fzf-lua").buffers({
+		winopts = {
+			preview = {
+				hidden = "hidden",
+			},
+		},
+	})
 end, { desc = "buffers list", silent = true })
 
 vim.keymap.set("n", "<leader>ta", function()
-	require("fzf-lua").tabs()
+	require("fzf-lua").tabs({
+		winopts = {
+			preview = {
+				hidden = "hidden",
+			},
+		},
+	})
 end, { desc = "tabs list", silent = true })
 
 vim.keymap.set("n", "<leader>ho", function()
-	require("fzf-lua").oldfiles()
+	require("fzf-lua").oldfiles({
+		winopts = {
+			preview = {
+				hidden = "hidden",
+			},
+		},
+	})
 end, { desc = "old files", silent = true })
 
 vim.keymap.set("n", "<leader>lb", function()
@@ -101,7 +124,14 @@ vim.keymap.set("n", "<leader>hs", function()
 end, { desc = "search history", silent = true })
 
 vim.keymap.set("n", "<leader>fk", function()
-	require("fzf-lua").keymaps()
+	require("fzf-lua").keymaps({
+		winopts = {
+			preview = {
+				layout = "horizontal",
+				horizontal = "down:65%",
+			},
+		},
+	})
 end, { desc = "keymaps", silent = true })
 
 vim.keymap.set("n", "<leader>ol", function()
@@ -129,14 +159,13 @@ vim.keymap.set("n", "<leader>gw", function()
 end, { desc = "grep word", silent = true })
 
 vim.keymap.set("n", "<A-f>", function()
-	require("fzf-lua").files({ winopts = { preview = { hidden = "hidden" } }, fzf_opts = { ["--layout"] = "default" } })
+	require("fzf-lua").files({ winopts = { preview = { hidden = "hidden" } } })
 end, { silent = true, desc = "find files" })
 
 vim.keymap.set("n", "<A-a>", function()
 	require("fzf-lua").files({
 		fd_opts = "--color=never --type f --hidden --follow --no-ignore",
 		winopts = { preview = { hidden = "hidden" } },
-		fzf_opts = { ["--layout"] = "default" },
 	})
 end, { silent = true, desc = "find hidden/ignored files" })
 
