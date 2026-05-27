@@ -191,4 +191,8 @@ vim.keymap.set("n", "<leader>a", function()
 	})
 end, { silent = true, desc = "grep without rules(everyhting)" })
 
+vim.keymap.set("n", "<leader>cd", function()
+	require("fzf-lua").zoxide()
+end, { silent = true, desc = "code actions" })
+
 require("fzf-lua").register_ui_select()
