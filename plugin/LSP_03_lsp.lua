@@ -60,12 +60,12 @@ local on_attach = function(client, bufnr)
 		vim.lsp.buf.declaration,
 		{ buffer = bufnr, remap = false, silent = true, desc = "show type declaration" }
 	)
-	vim.keymap.set(
-		"n",
-		"<leader>re",
-		vim.lsp.buf.rename,
-		{ buffer = bufnr, remap = false, silent = true, desc = "lsp rename" }
-	)
+	-- vim.keymap.set(
+	-- 	"n",
+	-- 	"<leader>re",
+	-- 	vim.lsp.buf.rename,
+	-- 	{ buffer = bufnr, remap = false, silent = true, desc = "lsp rename" }
+	-- )
 	vim.keymap.set(
 		"n",
 		"<leader>ca",
