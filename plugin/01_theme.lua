@@ -39,5 +39,5 @@
 -- 	end,
 -- }
 
-vim.pack.add({ "https://github.com/nyoom-engineering/oxocarbon.nvim" })
-vim.cmd.colorscheme("oxocarbon")
+vim.pack.add({ "https://github.com/srcery-colors/srcery-vim" })
+vim.cmd.colorscheme("srcery")

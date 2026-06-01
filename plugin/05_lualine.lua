@@ -11,12 +11,12 @@ local lualine = require("lualine")
 -- Color table for highlights
 -- stylua: ignore
 local colors = {
-  bg       = '#202328',
-  fg       = '#bbc2cf',
+  bg       = '#121110',
+  fg       = '#857462',
   yellow   = '#ECBE7B',
   cyan     = '#008080',
   darkblue = '#081633',
-  green    = '#98be65',
+  green    = '#519f50',
   orange   = '#FF8800',
   violet   = '#a9a1e1',
   magenta  = '#c678dd',
@@ -87,7 +87,7 @@ ins_left({
 	function()
 		return "▊"
 	end,
-	color = { fg = colors.blue }, -- Sets highlighting of component
+	color = { fg = colors.orange }, -- Sets highlighting of component
 	padding = { left = 0, right = 1 }, -- We don't need space before this
 })
 
@@ -186,7 +186,7 @@ ins_right({
 	function()
 		return "s:" .. require("possession.session").get_session_name() or ""
 	end,
-	color = { fg = "#E0AF68", gui = "bold" },
+	color = { fg = colors.orange, gui = "bold" },
 })
 
 ins_right({
@@ -223,7 +223,7 @@ ins_right({
 	symbols = { added = " ", modified = "󰝤 ", removed = " " },
 	diff_color = {
 		added = { fg = colors.green },
-		modified = { fg = colors.blue },
+		modified = { fg = colors.orange },
 		removed = { fg = colors.red },
 	},
 	cond = conditions.hide_in_width,
@@ -233,7 +233,7 @@ ins_right({
 	function()
 		return "▊"
 	end,
-	color = { fg = colors.blue },
+	color = { fg = colors.orange },
 	padding = { left = 1 },
 })
 

@@ -121,10 +121,6 @@
       "rev": "f5fddfd5122fe00421e199151ae4fe8571a02898",
       "src": "https://github.com/olimorris/onedarkpro.nvim"
     },
-    "oxocarbon.nvim": {
-      "rev": "a7ba74849a00546a311f8c146320b433900393e7",
-      "src": "https://github.com/nyoom-engineering/oxocarbon.nvim"
-    },
     "plenary.nvim": {
       "rev": "74b06c6c75e4eeb3108ec01852001636d85a932b",
       "src": "https://github.com/nvim-lua/plenary.nvim"
@@ -148,6 +144,10 @@
     "sqlite.lua": {
       "rev": "50092d60feb242602d7578398c6eb53b4a8ffe7b",
       "src": "https://github.com/kkharji/sqlite.lua"
+    },
+    "srcery-vim": {
+      "rev": "49e3fcd1294068c260c4bdf5e0596162eb287f22",
+      "src": "https://github.com/srcery-colors/srcery-vim"
     },
     "telescope-import.nvim": {
       "rev": "7f6116ce53a9176f8e7aaf3e41cc60be11c7d8ee",
