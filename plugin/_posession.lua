@@ -29,13 +29,44 @@ require("possession").setup({
 	},
 	hooks = {
 		before_save = function(name)
-			return {}
+			local tabpages = vim.api.nvim_list_tabpages()
+			local titles = {}
+
+			for _, tab_handle in ipairs(tabpages) do
+				local has_name, title = pcall(vim.api.nvim_tabpage_get_var, tab_handle, "tab_title")
+				if has_name then
+					table.insert(titles, title)
+				else
+					table.insert(titles, "") -- Blank space for un-renamed tabs
+				end
+			end
+
+			return {
+				custom_tab_titles = titles,
+			}
 		end,
+
 		after_save = function(name, user_data, aborted) end,
 		before_load = function(name, user_data)
 			return user_data
 		end,
-		after_load = function(name, user_data) end,
+
+		after_load = function(name, user_data)
+			if not user_data or not user_data.custom_tab_titles then
+				return
+			end
+
+			local titles = user_data.custom_tab_titles
+			local tabpages = vim.api.nvim_list_tabpages()
+
+			for i, tab_handle in ipairs(tabpages) do
+				if titles[i] and titles[i] ~= "" then
+					vim.api.nvim_tabpage_set_var(tab_handle, "tab_title", titles[i])
+				end
+			end
+
+			vim.cmd("redrawtabline")
+		end,
 	},
 	plugins = {
 		close_windows = {
@@ -75,4 +106,11 @@ require("possession").setup({
 })
 
 vim.keymap.set("n", "<leader>sl", ":Telescope possession list<CR>", { desc = "Open sessions list", silent = true })
+-- vim.keymap.set("n", "<leader>sl", function()
+-- 	require("telescope").extensions.possession.list({
+-- 		previewer = false,
+-- 		layout_strategy = "vertical",
+-- 		layout_config = { width = 0.4, height = 0.4 },
+-- 	})
+-- end, { desc = "List sessions cleanly" })
 vim.keymap.set("n", "<leader>ss", ":PossessionSave ", { desc = "save session" })
