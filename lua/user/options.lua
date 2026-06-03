@@ -3,6 +3,7 @@ vim.o.clipboard = "unnamedplus"
 vim.opt.completeopt = { "menu", "menuone", "noinsert" }
 vim.o.hlsearch = true
 vim.o.showmode = false
+vim.o.showtabline = 2
 vim.o.smartcase = true
 
 -- nvim-ufo related
@@ -55,3 +56,6 @@ vim.o.laststatus = 3 -- https://github.com/neovim/neovim/pull/17266, customizati
 -- vim.opt.scrolloff = 5
 vim.o.sessionoptions = "curdir,folds,globals,help,tabpages,terminal,winsize"
 vim.opt.whichwrap:append("<>[]hl")
+
+-- remove the user command as well if you remove this
+vim.o.tabline = "%!v:lua.require('user.user_commands').MyTabLine()"
