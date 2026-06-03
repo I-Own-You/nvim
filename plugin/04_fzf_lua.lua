@@ -35,6 +35,11 @@ require("fzf-lua").setup({
 			},
 		},
 	},
+	zoxide = {
+		fn_change_dir = function(dir)
+			vim.cmd("tcd " .. vim.fn.fnameescape(dir))
+		end,
+	},
 })
 
 vim.keymap.set("n", "<leader>bb", function()
