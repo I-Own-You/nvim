@@ -3,7 +3,7 @@ vim.o.clipboard = "unnamedplus"
 vim.opt.completeopt = { "menu", "menuone", "noinsert" }
 vim.o.hlsearch = true
 vim.o.showmode = false
-vim.o.showtabline = 2
+vim.o.showtabline = 1
 vim.o.smartcase = true
 
 -- nvim-ufo related
