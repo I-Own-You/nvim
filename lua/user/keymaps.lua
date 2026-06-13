@@ -1,8 +1,8 @@
 vim.g.mapleader = " "
 
-vim.keymap.set("n", ";", ":")
-vim.keymap.set("v", ";", ":")
-vim.keymap.set("x", ";", ":")
+-- vim.keymap.set("n", ";", ":")
+-- vim.keymap.set("v", ";", ":")
+-- vim.keymap.set("x", ";", ":")
 
 vim.keymap.set("c", "<C-a>", function()
 	vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<Home>", true, true, true), "n", true)
