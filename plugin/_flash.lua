@@ -18,4 +18,8 @@ end, { silent = true })
 vim.keymap.set("o", "S", function()
 	require("flash").treesitter()
 end, { silent = true })
--- { "S", mode = "x", "<cmd>lua require('flash').treesitter()<CR>", noremap = true ,silent=true},
+-- vim.keymap.set("x", "S", function()
+-- 	require("flash").treesitter()
+-- end, { silent = true })
+
+vim.api.nvim_set_hl(0, "FlashLabel", { fg = "#000000", bg = "#aaf800" })
