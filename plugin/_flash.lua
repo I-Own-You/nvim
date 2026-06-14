@@ -42,4 +42,6 @@ end, { silent = true, noremap = false, desc = "flash treesitter operator mode" }
 -- 	require("flash").treesitter()
 -- end, { silent = true })
 
-vim.api.nvim_set_hl(0, "FlashLabel", { fg = "#000000", bg = "#aaf800" })
+vim.api.nvim_set_hl(0, "FlashLabel", { bg = "#f00078", fg = "#ffffff" })
+vim.api.nvim_set_hl(0, "FlashMatch", { bg = "#426bd8", fg = "#95a9e6" })
+vim.api.nvim_set_hl(0, "FlashBackdrop", { link = "NONE" })
