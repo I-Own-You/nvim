@@ -20,7 +20,7 @@ vim.keymap.set("n", "yss", "<Plug>(nvim-surround-normal-cur)", {
 -- vim.keymap.set("n", "ySS", "<Plug>(nvim-surround-normal-cur-line)", {
 -- 	desc = "Add a surrounding pair around the current line, on new lines (normal mode)",
 -- })
-vim.keymap.set("x", "S", "<Plug>(nvim-surround-visual)", {
+vim.keymap.set("x", "s", "<Plug>(nvim-surround-visual)", {
 	desc = "Add a surrounding pair around a visual selection",
 })
 -- vim.keymap.set("x", "gS", "<Plug>(nvim-surround-visual-line)", {
