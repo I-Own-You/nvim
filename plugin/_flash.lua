@@ -1,23 +1,43 @@
 vim.pack.add({ "https://github.com/folke/flash.nvim" })
 
-vim.keymap.set("n", "s", function()
+require("flash").setup({})
+
+vim.keymap.set("n", "ss", function()
 	require("flash").jump()
-end, { noremap = true, silent = true })
-vim.keymap.set("x", "s", function()
+end, { noremap = true, silent = true, desc = "search a word" })
+
+vim.keymap.set("n", "sw", function()
+	require("flash").jump({
+		pattern = vim.fn.expand("<cword>"),
+	})
+end, { silent = true, desc = "search a word under the cursor" })
+
+vim.keymap.set("x", "ss", function()
 	require("flash").jump()
-end, { noremap = true, silent = true })
-vim.keymap.set("o", "s", function()
-	require("flash").jump()
-end, { noremap = true, silent = true })
+end, { noremap = true, silent = true, desc = "search a word in visual mode" })
+
 vim.keymap.set("o", "r", function()
-	require("flash").remote()
-end, { noremap = true, silent = true })
+	require("flash").jump({
+		search = {
+			mode = function(pattern)
+				if pattern == "" then
+					return ""
+				end
+				return ([[\<%s\w*\>]]):format(pattern), ([[\<%s]]):format(pattern)
+			end,
+		},
+		jump = { pos = "range" },
+	})
+end, { noremap = true, silent = true, desc = "flash operator mode word" })
+
 vim.keymap.set("n", "S", function()
 	require("flash").treesitter()
 end, { silent = true })
+
 vim.keymap.set("o", "S", function()
 	require("flash").treesitter()
-end, { silent = true })
+end, { silent = true, noremap = false, desc = "flash treesitter operator mode" })
+
 -- vim.keymap.set("x", "S", function()
 -- 	require("flash").treesitter()
 -- end, { silent = true })
