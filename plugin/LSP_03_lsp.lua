@@ -160,7 +160,7 @@ vim.diagnostic.config({
 		--    [vim.diagnostic.severity.HINT] = 'DiagnosticSignHint',
 		-- }
 	},
-	underline = false,
+	underline = true,
 	update_in_insert = false, -- Don’t update diagnostics while typing
 	severity_sort = true,
 	float = {
