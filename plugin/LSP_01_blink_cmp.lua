@@ -36,6 +36,7 @@ local kinds = {
 	Module = "Include",
 	File = "Directory",
 	Folder = "Directory",
+	Snippet = "Macro",
 }
 
 for blink_kind, nvim_hl in pairs(kinds) do
