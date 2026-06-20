@@ -30,12 +30,9 @@ local on_attach = function(client, bufnr)
 		vim.lsp.buf.definition,
 		{ buffer = bufnr, remap = false, silent = true, desc = "go to defintion" }
 	)
-	vim.keymap.set(
-		"i",
-		"<C-s>",
-		vim.lsp.buf.signature_help,
-		{ buffer = bufnr, remap = false, silent = true, desc = "signature help" }
-	)
+	vim.keymap.set("i", "<C-s>", function()
+		vim.lsp.buf.signature_help({ border = "rounded" })
+	end, { buffer = bufnr, remap = false, silent = true, desc = "signature help" })
 	vim.keymap.set(
 		"n",
 		"gr",

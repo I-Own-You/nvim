@@ -18,7 +18,31 @@ vim.pack.add({
 	{ src = "https://github.com/saghen/blink.cmp", version = vim.version.range("1.*") },
 })
 
--- require("blink.cmp").build():wait(60000)
+local kinds = {
+	Function = "Function",
+	Method = "Function",
+	Constructor = "Structure",
+	Field = "Identifier",
+	Variable = "Identifier",
+	Property = "Identifier",
+	Class = "Type",
+	Interface = "Type",
+	Struct = "Structure",
+	Enum = "Type",
+	EnumMember = "Constant",
+	Constant = "Constant",
+	Keyword = "Keyword",
+	Text = "String",
+	Module = "Include",
+	File = "Directory",
+	Folder = "Directory",
+}
+
+for blink_kind, nvim_hl in pairs(kinds) do
+	vim.api.nvim_set_hl(0, "BlinkCmpKind" .. blink_kind, { link = nvim_hl, default = true })
+end
+
+require("blink.cmp").build():wait(60000)
 
 require("colorful-menu").setup()
 require("blink-cmp").setup({
@@ -68,10 +92,29 @@ require("blink-cmp").setup({
 							return highlights
 						end,
 					},
+					kind_icon = {
+						ellipsis = false,
+						text = function(ctx)
+							return ctx.kind_icon .. ctx.icon_gap
+						end,
+						highlight = function(ctx)
+							return "BlinkCmpKind" .. ctx.kind
+						end,
+					},
+					kind = {
+						ellipsis = false,
+						text = function(ctx)
+							return ctx.kind
+						end,
+						highlight = function(ctx)
+							return "BlinkCmpKind" .. ctx.kind
+						end,
+					},
 				},
 			},
 			-- border = { "┏", "━", "┓", "┃", "┛", "━", "┗", "┃" },
-			border = "none",
+			-- border = { "◤", "∿", "◥", "⌇", "◢", "∿", "◣", "⌇" },
+			border = "rounded",
 			scrollbar = false,
 		},
 		documentation = {
@@ -142,4 +185,11 @@ vim.keymap.set("i", "<C-g>", function()
 end, { desc = "", silent = true })
 
 vim.api.nvim_set_hl(0, "BlinkCmpLabelDeprecated", { fg = "#2f3639", strikethrough = true })
-vim.api.nvim_set_hl(0, 'BlinkCmpMenuSelection', { bg = '#1a1a1a', fg = 'NONE', force = true })
+--
+vim.api.nvim_set_hl(0, "BlinkCmpMenu", { bg = "#111111", fg = "NONE", force = true })
+vim.api.nvim_set_hl(0, "BlinkCmpMenuSelection", { bg = "#1a1a1a", fg = "NONE", force = true })
+vim.api.nvim_set_hl(0, "BlinkCmpMenuBorder", { bg = "NONE", force = true })
+--
+vim.api.nvim_set_hl(0, "BlinkCmpDoc", { bg = "#111111", fg = "NONE", force = true })
+vim.api.nvim_set_hl(0, "BlinkCmpDocSeparator", { bg = "NONE", force = true })
+vim.api.nvim_set_hl(0, "BlinkCmpDocBorder", { bg = "NONE", force = true })
