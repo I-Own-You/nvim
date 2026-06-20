@@ -61,6 +61,8 @@ require("blink-cmp").setup({
 	},
 	completion = {
 		menu = {
+            -- min_width = 100,
+            max_height = 9999,
 			draw = {
 				columns = {
 					{ "label", "label_description", gap = 1 },
@@ -119,7 +121,7 @@ require("blink-cmp").setup({
 		},
 		documentation = {
 			window = {
-				scrollbar = false,
+				scrollbar = true,
 				-- border = { "┏", "━", "┓", "┃", "┛", "━", "┗", "┃" },
 				border = "rounded",
 			},
@@ -127,16 +129,6 @@ require("blink-cmp").setup({
 			auto_show_delay_ms = 200,
 		},
 		ghost_text = { enabled = true },
-		list = {
-			selection = {
-				preselect = true,
-				auto_insert = false,
-				-- preselect = function(ctx)
-				-- 	return ctx.mode ~= "cmdline"
-				-- 	-- return ctx.mode ~= "cmdline" and not require("blink.cmp").snippet_active({ direction = 1 })
-				-- end,
-			},
-		},
 	},
 	sources = {
 		-- default = { "lsp", "path", "snippets", "buffer" },
