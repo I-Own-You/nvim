@@ -70,13 +70,15 @@ require("blink-cmp").setup({
 					},
 				},
 			},
-			border = { "┏", "━", "┓", "┃", "┛", "━", "┗", "┃" },
+			-- border = { "┏", "━", "┓", "┃", "┛", "━", "┗", "┃" },
+			border = "none",
 			scrollbar = false,
 		},
 		documentation = {
 			window = {
 				scrollbar = false,
-				border = { "┏", "━", "┓", "┃", "┛", "━", "┗", "┃" },
+				-- border = { "┏", "━", "┓", "┃", "┛", "━", "┗", "┃" },
+				border = "rounded",
 			},
 			auto_show = true,
 			auto_show_delay_ms = 200,
@@ -140,3 +142,4 @@ vim.keymap.set("i", "<C-g>", function()
 end, { desc = "", silent = true })
 
 vim.api.nvim_set_hl(0, "BlinkCmpLabelDeprecated", { fg = "#2f3639", strikethrough = true })
+vim.api.nvim_set_hl(0, 'BlinkCmpMenuSelection', { bg = '#1a1a1a', fg = 'NONE', force = true })
