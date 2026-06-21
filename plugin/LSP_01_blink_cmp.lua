@@ -180,7 +180,7 @@ end, { desc = "", silent = true })
 vim.api.nvim_set_hl(0, "BlinkCmpLabelDeprecated", { fg = "#2f3639", strikethrough = true })
 --
 vim.api.nvim_set_hl(0, "BlinkCmpMenu", { bg = "#111111", fg = "NONE", force = true })
-vim.api.nvim_set_hl(0, "BlinkCmpMenuSelection", { bg = "#1a1a1a", fg = "NONE", force = true })
+vim.api.nvim_set_hl(0, "BlinkCmpMenuSelection", { bg = "#1e222a", fg = "NONE", force = true })
 vim.api.nvim_set_hl(0, "BlinkCmpMenuBorder", { bg = "NONE", force = true })
 --
 vim.api.nvim_set_hl(0, "BlinkCmpDoc", { bg = "#111111", fg = "NONE", force = true })
