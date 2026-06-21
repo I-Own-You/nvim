@@ -126,6 +126,8 @@ vim.keymap.set("n", "q", function()
 	require("user.utility_functions").close_file_type_buffers()
 end, { silent = true })
 
+vim.keymap.set("n", "<C-Space>", "<C-^>", { desc = "cycle between prev/current file", silent = true })
+
 -- this is for LSP builtin keymaps to remove them
 vim.keymap.del("n", "grn")
 vim.keymap.del("n", "gra")
