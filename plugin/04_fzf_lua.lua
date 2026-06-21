@@ -42,7 +42,7 @@ require("fzf-lua").setup({
 	},
 })
 
-vim.keymap.set("n", "<leader>bb", function()
+vim.keymap.set("n", "<A-b>", function()
 	require("fzf-lua").buffers({
 		winopts = {
 			preview = {
