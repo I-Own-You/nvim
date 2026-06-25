@@ -66,28 +66,19 @@ end, {})
 vim.api.nvim_create_user_command("LspInfo", function()
 	local clients = vim.lsp.get_clients({ bufnr = 0 })
 	if #clients == 0 then
-		print("❌ No active LPS Servers")
+		print("❌ NO ACTIVE LSP CLIENTS")
 		return
 	end
 
-	local lines = { "  === Active LSP Servers ===  ", "" }
+	print("=== ACTIVE LSP SERVERS ===")
 	for _, client in ipairs(clients) do
-		table.insert(lines, string.format(" 🤖 Name:           %s (ID: %d)", client.name, client.id))
-		table.insert(lines, string.format(" 📁 Root folder:   %s", client.root_dir or "Not defined"))
+		print(string.format("🤖 Name: %s (ID: %d)", client.name, client.id))
+		print(string.format("📁 Root folder: %s", client.root_dir or "NOT DEFINED"))
 		if client.config and client.config["filetypes"] then
-			table.insert(lines, string.format(" 📄 File types:   %s", table.concat(client.config["filetypes"], ", ")))
+			print(string.format("📄 Suppoered Fileypes: %s", table.concat(client.config["filetypes"], ", ")))
 		end
-		table.insert(lines, " ----------------------------------------- ")
+		print("----------------------------")
 	end
-
-	local buf, _ = vim.lsp.util.open_floating_preview(lines, "markdown", {
-		border = "rounded",
-		focusable = true,
-		focus_id = "lsp_info_popup",
-	})
-
-	vim.keymap.set("n", "q", ":close<CR>", { buffer = buf, silent = true, nowait = true })
-	vim.keymap.set("n", "<Esc>", ":close<CR>", { buffer = buf, silent = true, nowait = true })
 end, {})
 
 vim.cmd("cabbrev tabrename TabRename")
