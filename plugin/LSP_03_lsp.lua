@@ -113,16 +113,14 @@ end
 require("mason").setup()
 require("mason-tool-installer").setup({
 	ensure_installed = {
-		"lua_ls",
-		"clangd",
-		-- "gopls",
-		-- "jsonls",
-		-- "golangci-lint",
-		-- "goimports",
 		"stylua",
-		-- "pyright",
+
+		"golangci-lint",
+		"goimports",
+
 		-- "ruff",
 		-- "mypy",
+
 		-- "biome",
 	},
 })
@@ -131,13 +129,16 @@ local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require("blink.cmp").get_lsp_capabilities(capabilities)
 
 require("mason-lspconfig").setup({
-	ensure_installed = { "lua_ls", "clangd" },
-	-- automatic_installation = true,,,
-	-- automatic_enable = true,
+	ensure_installed = { "lua_ls", "clangd", "gopls" }, -- pyright, jsonls, gopls
+	automatic_installation = true,
+	automatic_enable = false,
 })
 
 vim.lsp.config("lua_ls", require("lsp.lua")(on_attach, capabilities))
-vim.lsp.config("clangd", require("lsp.clangd")(on_attach, capabilities))
+vim.lsp.config("gopls", require("lsp.gopls")(on_attach, capabilities))
+-- vim.lsp.config("clangd", require("lsp.clangd")(on_attach, capabilities))
+
+vim.lsp.enable({ "lua_ls", "gopls" })
 
 vim.diagnostic.config({
 	virtual_text = false,
@@ -173,18 +174,9 @@ vim.diagnostic.config({
 local null_ls = require("null-ls")
 null_ls.setup({
 	sources = {
-		-- lua
 		null_ls.builtins.formatting.stylua,
-	},
 
-	-- on_attach = function(client, bufnr)
-	--     if client.server_capabilities.documentFormattingProvider then
-	--         vim.api.nvim_create_autocmd("BufWritePre", {
-	--             buffer = bufnr,
-	--             callback = function()
-	--                 vim.lsp.buf.format({ bufnr = bufnr })
-	--             end,
-	--         })
-	--     end
-	-- end,
+		null_ls.builtins.formatting.goimports,
+		null_ls.builtins.diagnostics.golangci_lint,
+	},
 })
