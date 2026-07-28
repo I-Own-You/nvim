@@ -1,21 +1,9 @@
-local hooks = function(ev)
-	local name, kind = ev.data.spec.name, ev.data.kind
-	if name == "blink.cmp" and (kind == "install" or kind == "update") then
-		if not ev.data.active then
-			vim.cmd.packadd("blink.cmp")
-			vim.cmd.packadd("blink.lib")
-		end
-		require("blink.cmp").build():wait(60000)
-	end
-end
-vim.api.nvim_create_autocmd("PackChanged", { callback = hooks })
-
 vim.pack.add({
 	"https://github.com/rafamadriz/friendly-snippets", -- dep
 	"https://github.com/mikavilpas/blink-ripgrep.nvim", -- dep
 	"https://github.com/xzbdmw/colorful-menu.nvim", -- dep
 	"https://github.com/saghen/blink.lib",
-	{ src = "https://github.com/saghen/blink.cmp", version = vim.version.range("1.*") },
+	"https://github.com/saghen/blink.cmp",
 })
 
 local kinds = {
@@ -43,10 +31,8 @@ for blink_kind, nvim_hl in pairs(kinds) do
 	vim.api.nvim_set_hl(0, "BlinkCmpKind" .. blink_kind, { link = nvim_hl, default = true })
 end
 
-require("blink.cmp").build():wait(60000)
-
 require("colorful-menu").setup()
-require("blink-cmp").setup({
+require("blink.cmp").setup({
 	keymap = {
 		["<C-space>"] = { "show", "show_documentation", "hide_documentation" },
 		["<C-e>"] = { "hide" },
@@ -190,7 +176,7 @@ vim.api.nvim_set_hl(0, "BlinkCmpLabelDeprecated", { fg = "#2f3639", strikethroug
 --
 vim.api.nvim_set_hl(0, "BlinkCmpMenu", { bg = "#111111", fg = "NONE", force = true })
 vim.api.nvim_set_hl(0, "BlinkCmpMenuSelection", { bg = "#1e222a", fg = "NONE", force = true })
-vim.api.nvim_set_hl(0, "BlinkCmpMenuBorder", { bg = "NONE", force = true })
+vim.api.nvim_set_hl(0, "BlinkCmpMenuBorder", { bg = "#121110", force = true })
 --
 vim.api.nvim_set_hl(0, "BlinkCmpDoc", { bg = "#111111", fg = "NONE", force = true })
 vim.api.nvim_set_hl(0, "BlinkCmpDocSeparator", { bg = "NONE", force = true })
