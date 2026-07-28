@@ -9,6 +9,7 @@ if vim.g.neovide then
 
 	vim.g.neovide_cursor_smooth_blink = true
 
+	vim.keymap.set("t", "<C-S-V>", "<C-\\><C-n>pi")
 end
 
 -- vim.keymap.set("n", "<C-S-v>", '"+p', { noremap = true, silent = true })
