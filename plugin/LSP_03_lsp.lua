@@ -136,9 +136,9 @@ require("mason-lspconfig").setup({
 
 vim.lsp.config("lua_ls", require("lsp.lua")(on_attach, capabilities))
 vim.lsp.config("gopls", require("lsp.gopls")(on_attach, capabilities))
--- vim.lsp.config("clangd", require("lsp.clangd")(on_attach, capabilities))
+vim.lsp.config("clangd", require("lsp.clangd")(on_attach, capabilities))
 
-vim.lsp.enable({ "lua_ls", "gopls" })
+vim.lsp.enable({ "lua_ls", "clangd", "gopls" })
 
 vim.diagnostic.config({
 	virtual_text = false,
