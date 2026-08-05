@@ -9,15 +9,15 @@
       "src": "https://github.com/max397574/better-escape.nvim"
     },
     "blink-ripgrep.nvim": {
-      "rev": "b887afd10056b258f1c0ea222b59a17181a818a1",
+      "rev": "39c5ff31fe91e7f37900cce287fcd6633d799c56",
       "src": "https://github.com/mikavilpas/blink-ripgrep.nvim"
     },
     "blink.cmp": {
-      "rev": "78336bc89ee5365633bcf754d93df01678b5c08f",
+      "rev": "cba53eff1948109ec0f47cbead4f07494d1e25c9",
       "src": "https://github.com/saghen/blink.cmp"
     },
     "blink.lib": {
-      "rev": "2789206e10a0e4880f808c2aaf52bc57d876b481",
+      "rev": "8b04d0e0acc8565cfa4dd291a89a9212b7262633",
       "src": "https://github.com/saghen/blink.lib"
     },
     "colorful-menu.nvim": {

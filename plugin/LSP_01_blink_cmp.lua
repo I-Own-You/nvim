@@ -32,7 +32,9 @@ for blink_kind, nvim_hl in pairs(kinds) do
 end
 
 require("colorful-menu").setup()
-require("blink.cmp").setup({
+local blink_cmp = require("blink.cmp")
+blink_cmp.build():pwait()
+blink_cmp.setup({
 	keymap = {
 		["<C-space>"] = { "show", "show_documentation", "hide_documentation" },
 		["<C-e>"] = { "hide" },
