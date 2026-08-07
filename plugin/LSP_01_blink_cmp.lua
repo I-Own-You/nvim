@@ -177,9 +177,11 @@ end, { desc = "", silent = true })
 vim.api.nvim_set_hl(0, "BlinkCmpLabelDeprecated", { fg = "#2f3639", strikethrough = true })
 --
 vim.api.nvim_set_hl(0, "BlinkCmpMenu", { bg = "#111111", fg = "NONE", force = true })
-vim.api.nvim_set_hl(0, "BlinkCmpMenuSelection", { bg = "#1e222a", fg = "NONE", force = true })
-vim.api.nvim_set_hl(0, "BlinkCmpMenuBorder", { bg = "#121110", force = true })
+vim.api.nvim_set_hl(0, "BlinkCmpMenuSelection", { bg = "#2e251e", fg = "NONE", force = true, blend = 50 })
+vim.api.nvim_set_hl(0, "BlinkCmpMenuBorder", { fg = "#2e251e", force = true })
 --
 vim.api.nvim_set_hl(0, "BlinkCmpDoc", { bg = "#111111", fg = "NONE", force = true })
-vim.api.nvim_set_hl(0, "BlinkCmpDocSeparator", { bg = "NONE", force = true })
-vim.api.nvim_set_hl(0, "BlinkCmpDocBorder", { bg = "NONE", force = true })
+vim.api.nvim_set_hl(0, "BlinkCmpDocSeparator", { fg = "#2e251e", force = true })
+vim.api.nvim_set_hl(0, "BlinkCmpDocBorder", { fg = "#2e251e", force = true })
+--
+vim.api.nvim_set_hl(0, "BlinkCmpSignatureHelpBorder", { fg = "#2e251e", force = true })
