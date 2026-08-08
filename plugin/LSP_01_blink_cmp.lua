@@ -41,8 +41,6 @@ blink_cmp.setup({
 		["<CR>"] = { "accept", "fallback" },
 		["<C-p>"] = { "select_prev" },
 		["<C-n>"] = { "select_next" },
-		["<C-k>"] = { "select_prev" },
-		["<C-j>"] = { "select_next" },
 		-- ["<C-b>"] = { "scroll_documentation_up", "fallback" },
 		["<C-b>"] = {
 			function(cmp)
