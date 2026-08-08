@@ -88,7 +88,8 @@ vim.api.nvim_create_autocmd("FileType", {
   end,
 })
 
-vim.cmd("cabbrev lspstart LspStart")
-vim.cmd("cabbrev lsprestart LspRestart")
-vim.cmd("cabbrev lspstop LspStop")
-vim.cmd("cabbrev lspinfo LspInfo")
+-- vim.cmd("cabbrev tabrename TabRename")
+-- vim.cmd("cabbrev lspstart LspStart")
+-- vim.cmd("cabbrev lsprestart LspRestart")
+-- vim.cmd("cabbrev lspstop LspStop")
+-- vim.cmd("cabbrev lspinfo LspInfo")
