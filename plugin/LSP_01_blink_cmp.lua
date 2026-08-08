@@ -54,6 +54,9 @@ blink_cmp.setup({
 		["<C-f>"] = { "scroll_documentation_down", "fallback" },
 		["<TAB>"] = { "select_next", "snippet_forward", "fallback" },
 		["<S-TAB>"] = { "select_prev", "snippet_backward", "fallback" },
+		["<C-u>"] = { "scroll_signature_up", "fallback" },
+		["<C-d>"] = { "scroll_signature_down", "fallback" },
+		["<C-k>"] = { "show_signature", "hide_signature", "fallback" },
 	},
 	completion = {
 		menu = {
