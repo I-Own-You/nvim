@@ -163,7 +163,7 @@ blink_cmp.setup({
 		},
 	},
 	cmdline = {
-		completion = { menu = { auto_show = true } },
+		completion = { menu = { auto_show = false } },
 	}, -- will disable cmdline completions
 	snippets = {
 		-- preset = "luasnip",
