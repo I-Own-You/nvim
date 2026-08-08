@@ -123,7 +123,7 @@ blink_cmp.setup({
 				-- border = { "┏", "━", "┓", "┃", "┛", "━", "┗", "┃" },
 				border = "rounded",
 			},
-			auto_show = true,
+			auto_show = false,
 			auto_show_delay_ms = 200,
 		},
 		ghost_text = { enabled = true },
