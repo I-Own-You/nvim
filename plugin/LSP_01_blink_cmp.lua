@@ -116,6 +116,13 @@ blink_cmp.setup({
 			-- border = { "◤", "∿", "◥", "⌇", "◢", "∿", "◣", "⌇" },
 			border = "rounded",
 			scrollbar = false,
+			auto_show = false,
+		},
+		list = {
+			selection = {
+				preselect = false,
+				auto_insert = false,
+			},
 		},
 		documentation = {
 			window = {
