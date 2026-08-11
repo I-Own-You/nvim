@@ -47,13 +47,13 @@ local on_attach = function(client, bufnr)
 	)
 	vim.keymap.set(
 		"n",
-		"<leader>D",
+		"gD",
 		vim.lsp.buf.type_definition,
 		{ buffer = bufnr, remap = false, silent = true, desc = "show type definition" }
 	)
 	vim.keymap.set(
 		"n",
-		"gD",
+		"<leader>D",
 		vim.lsp.buf.declaration,
 		{ buffer = bufnr, remap = false, silent = true, desc = "show type declaration" }
 	)
