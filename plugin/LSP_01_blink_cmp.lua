@@ -161,6 +161,11 @@ blink_cmp.setup({
 					return items
 				end,
 			},
+            path = {
+                opts = {
+                    show_hidden_files_by_default = true,
+                }
+            }
 		},
 	},
 	cmdline = {
