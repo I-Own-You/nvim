@@ -3,6 +3,7 @@ require("treewalker").setup({
 	highlight_duration = 250,
 	highlight = true,
 	highlight_group = "CursorLine",
+    scope_confined = true,
 })
 
 -- movement
