@@ -10,18 +10,18 @@ vim.pack.add({
 })
 
 require("fidget").setup()
-require("tiny-inline-diagnostic").setup({
-	preset = "powerline",
-	options = {
-		use_icons_from_diagnostic = true,
-		show_all_diags_on_cursorline = true,
-		multilines = {
-			enabled = true,
-			always_show = true,
-		},
-		multiple_diag_under_cursor = true,
-	},
-})
+-- require("tiny-inline-diagnostic").setup({
+-- 	preset = "powerline",
+-- 	options = {
+-- 		use_icons_from_diagnostic = true,
+-- 		show_all_diags_on_cursorline = true,
+-- 		multilines = {
+-- 			enabled = true,
+-- 			always_show = true,
+-- 		},
+-- 		multiple_diag_under_cursor = true,
+-- 	},
+-- })
 
 local on_attach = function(client, bufnr)
 	vim.keymap.set(
@@ -146,7 +146,7 @@ vim.lsp.enable("rust_analyzer")
 
 vim.diagnostic.config({
 	virtual_text = false,
-	virtual_lines = false,
+	virtual_lines = true,
 	signs = {
 		active = true,
 		text = {
