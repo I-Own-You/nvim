@@ -146,7 +146,7 @@ vim.lsp.enable("rust_analyzer")
 
 vim.diagnostic.config({
 	virtual_text = false,
-	virtual_lines = true,
+	virtual_lines = false,
 	signs = {
 		active = true,
 		text = {
