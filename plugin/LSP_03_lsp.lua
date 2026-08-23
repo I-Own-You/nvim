@@ -129,7 +129,7 @@ local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require("blink.cmp").get_lsp_capabilities(capabilities)
 
 require("mason-lspconfig").setup({
-	ensure_installed = { "lua_ls", "clangd", "gopls", "rust_analyzer" }, -- pyright, jsonls, gopls
+	ensure_installed = { "lua_ls", "clangd", "gopls", "rust_analyzer", "tsc" }, -- pyright, jsonls, gopls
 	automatic_installation = true,
 	automatic_enable = false,
 })
@@ -138,11 +138,13 @@ vim.lsp.config("lua_ls", require("lsp.lua")(on_attach, capabilities))
 -- vim.lsp.config("clangd", require("lsp.clangd")(on_attach, capabilities))
 vim.lsp.config("gopls", require("lsp.gopls")(on_attach, capabilities))
 -- vim.lsp.config("rust_analyzer", require("lsp.rust_analyzer")(on_attach, capabilities))
+vim.lsp.config("tsc", require("lsp.tsc")(on_attach, capabilities))
 
 vim.lsp.enable("lua_ls")
 -- vim.lsp.enable("clangd")
 vim.lsp.enable("gopls")
 -- vim.lsp.enable("rust_analyzer")
+vim.lsp.enable("tsc")
 
 vim.diagnostic.config({
 	virtual_text = false,
