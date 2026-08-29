@@ -135,6 +135,7 @@ vim.keymap.del("v", "gra")
 vim.keymap.del("n", "grr")
 vim.keymap.del("n", "gri")
 vim.keymap.del("n", "grt")
+vim.keymap.del("n", "grx")
 vim.keymap.del("n", "gO")
 vim.keymap.del("i", "<C-s>")
 
