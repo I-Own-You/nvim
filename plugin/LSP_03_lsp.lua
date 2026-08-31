@@ -129,7 +129,14 @@ local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require("blink.cmp").get_lsp_capabilities(capabilities)
 
 require("mason-lspconfig").setup({
-	ensure_installed = { "lua_ls", "clangd", "gopls", "rust_analyzer", "tsc" }, -- pyright, jsonls, gopls
+	ensure_installed = {
+		-- "clangd",
+		"lua_ls",
+		"gopls",
+		-- "rust_analyzer",
+		"tsc",
+		"biome",
+	},
 	automatic_installation = true,
 	automatic_enable = false,
 })
