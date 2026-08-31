@@ -9,6 +9,7 @@ require("tree-sitter-manager").setup({
 		"kdl",
 		"python",
 		"html",
+        "svelte",
 		"css",
 		"javascript",
 		"typescript",
