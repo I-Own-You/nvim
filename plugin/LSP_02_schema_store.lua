@@ -1,1 +1,3 @@
-vim.pack.add({ "https://github.com/b0o/schemastore.nvim" })
+if false then
+	vim.pack.add({ "https://github.com/b0o/schemastore.nvim" })
+end

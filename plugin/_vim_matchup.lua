@@ -1,2 +1,4 @@
-vim.pack.add({ "https://github.com/andymass/vim-matchup" })
-vim.g.matchup_matchparen_enabled = 0
+if true then
+	vim.pack.add({ "https://github.com/andymass/vim-matchup" })
+	vim.g.matchup_matchparen_enabled = 0
+end

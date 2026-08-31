@@ -1,197 +1,199 @@
-vim.pack.add({
-	"https://github.com/williamboman/mason.nvim",
-	"https://github.com/williamboman/mason-lspconfig.nvim",
-	"https://github.com/WhoIsSethDaniel/mason-tool-installer.nvim",
-	"https://github.com/nvim-lua/plenary.nvim",
-	"https://github.com/nvimtools/none-ls.nvim",
-	"https://github.com/j-hui/fidget.nvim",
-	"https://github.com/rachartier/tiny-inline-diagnostic.nvim",
-	"https://github.com/neovim/nvim-lspconfig",
-})
+if false then
+	vim.pack.add({
+		"https://github.com/williamboman/mason.nvim",
+		"https://github.com/williamboman/mason-lspconfig.nvim",
+		"https://github.com/WhoIsSethDaniel/mason-tool-installer.nvim",
+		"https://github.com/nvim-lua/plenary.nvim",
+		"https://github.com/nvimtools/none-ls.nvim",
+		"https://github.com/j-hui/fidget.nvim",
+		"https://github.com/rachartier/tiny-inline-diagnostic.nvim",
+		"https://github.com/neovim/nvim-lspconfig",
+	})
 
-require("fidget").setup()
-require("tiny-inline-diagnostic").setup({
-	preset = "powerline",
-	options = {
-		use_icons_from_diagnostic = true,
-		show_all_diags_on_cursorline = true,
-		multilines = {
-			enabled = true,
-			always_show = true,
+	require("fidget").setup()
+	require("tiny-inline-diagnostic").setup({
+		preset = "powerline",
+		options = {
+			use_icons_from_diagnostic = true,
+			show_all_diags_on_cursorline = true,
+			multilines = {
+				enabled = true,
+				always_show = true,
+			},
+			multiple_diag_under_cursor = true,
 		},
-		multiple_diag_under_cursor = true,
-	},
-})
+	})
 
-local on_attach = function(client, bufnr)
-	vim.keymap.set(
-		"n",
-		"gd",
-		vim.lsp.buf.definition,
-		{ buffer = bufnr, remap = false, silent = true, desc = "go to defintion" }
-	)
-	-- vim.keymap.set("i", "<C-s>", function()
-	-- 	vim.lsp.buf.signature_help({ border = "rounded" })
-	-- end, { buffer = bufnr, remap = false, silent = true, desc = "signature help" })
-	vim.keymap.set(
-		"n",
-		"gr",
-		vim.lsp.buf.references,
-		{ buffer = bufnr, remap = false, silent = true, desc = "show references" }
-	)
-	vim.keymap.set(
-		"n",
-		"gi",
-		vim.lsp.buf.implementation,
-		{ buffer = bufnr, remap = false, silent = true, desc = "show implementations" }
-	)
-	vim.keymap.set(
-		"n",
-		"gD",
-		vim.lsp.buf.type_definition,
-		{ buffer = bufnr, remap = false, silent = true, desc = "show type definition" }
-	)
-	vim.keymap.set(
-		"n",
-		"<leader>D",
-		vim.lsp.buf.declaration,
-		{ buffer = bufnr, remap = false, silent = true, desc = "show type declaration" }
-	)
-	-- vim.keymap.set(
-	-- 	"n",
-	-- 	"<leader>re",
-	-- 	vim.lsp.buf.rename,
-	-- 	{ buffer = bufnr, remap = false, silent = true, desc = "lsp rename" }
-	-- )
-	vim.keymap.set(
-		"n",
-		"<leader>ca",
-		vim.lsp.buf.code_action,
-		{ buffer = bufnr, remap = false, silent = true, desc = "code actions" }
-	)
-	vim.keymap.set(
-		"n",
-		"<leader>lq",
-		vim.diagnostic.setloclist,
-		{ buffer = bufnr, remap = false, silent = true, desc = "show loc list" }
-	)
-	vim.keymap.set("n", "<leader>rr", function()
-		vim.lsp.buf.format({ async = true })
-	end, { buffer = bufnr, remap = false, silent = true, desc = "lsp format file" })
-	vim.keymap.set("n", "K", function()
-		vim.lsp.buf.hover({
+	local on_attach = function(client, bufnr)
+		vim.keymap.set(
+			"n",
+			"gd",
+			vim.lsp.buf.definition,
+			{ buffer = bufnr, remap = false, silent = true, desc = "go to defintion" }
+		)
+		-- vim.keymap.set("i", "<C-s>", function()
+		-- 	vim.lsp.buf.signature_help({ border = "rounded" })
+		-- end, { buffer = bufnr, remap = false, silent = true, desc = "signature help" })
+		vim.keymap.set(
+			"n",
+			"gr",
+			vim.lsp.buf.references,
+			{ buffer = bufnr, remap = false, silent = true, desc = "show references" }
+		)
+		vim.keymap.set(
+			"n",
+			"gi",
+			vim.lsp.buf.implementation,
+			{ buffer = bufnr, remap = false, silent = true, desc = "show implementations" }
+		)
+		vim.keymap.set(
+			"n",
+			"gD",
+			vim.lsp.buf.type_definition,
+			{ buffer = bufnr, remap = false, silent = true, desc = "show type definition" }
+		)
+		vim.keymap.set(
+			"n",
+			"<leader>D",
+			vim.lsp.buf.declaration,
+			{ buffer = bufnr, remap = false, silent = true, desc = "show type declaration" }
+		)
+		-- vim.keymap.set(
+		-- 	"n",
+		-- 	"<leader>re",
+		-- 	vim.lsp.buf.rename,
+		-- 	{ buffer = bufnr, remap = false, silent = true, desc = "lsp rename" }
+		-- )
+		vim.keymap.set(
+			"n",
+			"<leader>ca",
+			vim.lsp.buf.code_action,
+			{ buffer = bufnr, remap = false, silent = true, desc = "code actions" }
+		)
+		vim.keymap.set(
+			"n",
+			"<leader>lq",
+			vim.diagnostic.setloclist,
+			{ buffer = bufnr, remap = false, silent = true, desc = "show loc list" }
+		)
+		vim.keymap.set("n", "<leader>rr", function()
+			vim.lsp.buf.format({ async = true })
+		end, { buffer = bufnr, remap = false, silent = true, desc = "lsp format file" })
+		vim.keymap.set("n", "K", function()
+			vim.lsp.buf.hover({
+				border = "rounded",
+			})
+		end, { buffer = bufnr, remap = false, silent = true, desc = "hover" })
+		vim.keymap.set(
+			"n",
+			"<leader>fl",
+			vim.diagnostic.open_float,
+			{ buffer = bufnr, remap = false, silent = true, desc = "show diagnostic window" }
+		)
+		vim.keymap.set("n", "<leader>ls", function()
+			vim.lsp.buf.signature_help({ border = "rounded" })
+		end, { buffer = bufnr, remap = false, silent = true, desc = "show signature help" })
+
+		if client.name == "tsc" then
+			client.server_capabilities.documentFormattingProvider = false
+		end
+
+		if client.name == "lua_ls" then
+			client.server_capabilities.documentFormattingProvider = false
+		end
+
+		if client.name == "pyright" then
+			client.server_capabilities.documentFormattingProvider = false
+		end
+
+		if client.name == "jsonls" then
+			client.server_capabilities.documentFormattingProvider = false
+		end
+	end
+
+	require("mason").setup()
+	require("mason-tool-installer").setup({
+		ensure_installed = {
+			"stylua",
+
+			"golangci-lint",
+			"goimports",
+
+			-- "ruff",
+			-- "mypy",
+
+			-- "biome",
+		},
+	})
+
+	local capabilities = vim.lsp.protocol.make_client_capabilities()
+	capabilities = require("blink.cmp").get_lsp_capabilities(capabilities)
+
+	require("mason-lspconfig").setup({
+		ensure_installed = {
+			-- "clangd",
+			"lua_ls",
+			"gopls",
+			-- "rust_analyzer",
+			"tsc",
+			"biome",
+		},
+		automatic_installation = true,
+		automatic_enable = false,
+	})
+
+	-- vim.lsp.config("clangd", require("lsp.clangd")(on_attach, capabilities))
+	-- vim.lsp.config("rust_analyzer", require("lsp.rust_analyzer")(on_attach, capabilities))
+	vim.lsp.config("lua_ls", require("lsp.lua")(on_attach, capabilities))
+	vim.lsp.config("gopls", require("lsp.gopls")(on_attach, capabilities))
+	vim.lsp.config("tsc", require("lsp.tsc")(on_attach, capabilities))
+	vim.lsp.config("biome", require("lsp.biome")(on_attach, capabilities))
+
+	-- vim.lsp.enable("clangd")
+	-- vim.lsp.enable("rust_analyzer")
+	vim.lsp.enable("lua_ls")
+	vim.lsp.enable("gopls")
+	vim.lsp.enable("tsc")
+	vim.lsp.enable("biome") -- TODO: replace with oxlint/oxfmt when its ready for svelte
+
+	vim.diagnostic.config({
+		virtual_text = false,
+		virtual_lines = false,
+		signs = {
+			active = true,
+			text = {
+				[vim.diagnostic.severity.ERROR] = " ",
+				[vim.diagnostic.severity.WARN] = " ",
+				[vim.diagnostic.severity.INFO] = "󱩏 ",
+				[vim.diagnostic.severity.HINT] = " ",
+			},
+			-- highlight = {
+			--    [vim.diagnostic.severity.ERROR] = 'DiagnosticSignError',
+			--    [vim.diagnostic.severity.WARN] = 'DiagnosticSignWarn',
+			--    [vim.diagnostic.severity.INFO] = 'DiagnosticSignInfo',
+			--    [vim.diagnostic.severity.HINT] = 'DiagnosticSignHint',
+			-- }
+		},
+		underline = false,
+		update_in_insert = false, -- Don’t update diagnostics while typing
+		severity_sort = true,
+		float = {
 			border = "rounded",
-		})
-	end, { buffer = bufnr, remap = false, silent = true, desc = "hover" })
-	vim.keymap.set(
-		"n",
-		"<leader>fl",
-		vim.diagnostic.open_float,
-		{ buffer = bufnr, remap = false, silent = true, desc = "show diagnostic window" }
-	)
-	vim.keymap.set("n", "<leader>ls", function()
-		vim.lsp.buf.signature_help({ border = "rounded" })
-	end, { buffer = bufnr, remap = false, silent = true, desc = "show signature help" })
-
-	if client.name == "tsc" then
-		client.server_capabilities.documentFormattingProvider = false
-	end
-
-	if client.name == "lua_ls" then
-		client.server_capabilities.documentFormattingProvider = false
-	end
-
-	if client.name == "pyright" then
-		client.server_capabilities.documentFormattingProvider = false
-	end
-
-	if client.name == "jsonls" then
-		client.server_capabilities.documentFormattingProvider = false
-	end
-end
-
-require("mason").setup()
-require("mason-tool-installer").setup({
-	ensure_installed = {
-		"stylua",
-
-		"golangci-lint",
-		"goimports",
-
-		-- "ruff",
-		-- "mypy",
-
-		-- "biome",
-	},
-})
-
-local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities = require("blink.cmp").get_lsp_capabilities(capabilities)
-
-require("mason-lspconfig").setup({
-	ensure_installed = {
-		-- "clangd",
-		"lua_ls",
-		"gopls",
-		-- "rust_analyzer",
-		"tsc",
-		"biome",
-	},
-	automatic_installation = true,
-	automatic_enable = false,
-})
-
--- vim.lsp.config("clangd", require("lsp.clangd")(on_attach, capabilities))
--- vim.lsp.config("rust_analyzer", require("lsp.rust_analyzer")(on_attach, capabilities))
-vim.lsp.config("lua_ls", require("lsp.lua")(on_attach, capabilities))
-vim.lsp.config("gopls", require("lsp.gopls")(on_attach, capabilities))
-vim.lsp.config("tsc", require("lsp.tsc")(on_attach, capabilities))
-vim.lsp.config("biome", require("lsp.biome")(on_attach, capabilities))
-
--- vim.lsp.enable("clangd")
--- vim.lsp.enable("rust_analyzer")
-vim.lsp.enable("lua_ls")
-vim.lsp.enable("gopls")
-vim.lsp.enable("tsc")
-vim.lsp.enable("biome")  -- TODO: replace with oxlint/oxfmt when its ready for svelte
-
-vim.diagnostic.config({
-	virtual_text = false,
-	virtual_lines = false,
-	signs = {
-		active = true,
-		text = {
-			[vim.diagnostic.severity.ERROR] = " ",
-			[vim.diagnostic.severity.WARN] = " ",
-			[vim.diagnostic.severity.INFO] = "󱩏 ",
-			[vim.diagnostic.severity.HINT] = " ",
+			source = true,
+			header = "",
+			prefix = "",
+			focusable = true,
+			style = "minimal",
 		},
-		-- highlight = {
-		--    [vim.diagnostic.severity.ERROR] = 'DiagnosticSignError',
-		--    [vim.diagnostic.severity.WARN] = 'DiagnosticSignWarn',
-		--    [vim.diagnostic.severity.INFO] = 'DiagnosticSignInfo',
-		--    [vim.diagnostic.severity.HINT] = 'DiagnosticSignHint',
-		-- }
-	},
-	underline = false,
-	update_in_insert = false, -- Don’t update diagnostics while typing
-	severity_sort = true,
-	float = {
-		border = "rounded",
-		source = true,
-		header = "",
-		prefix = "",
-		focusable = true,
-		style = "minimal",
-	},
-})
+	})
 
-local null_ls = require("null-ls")
-null_ls.setup({
-	sources = {
-		null_ls.builtins.formatting.stylua,
+	local null_ls = require("null-ls")
+	null_ls.setup({
+		sources = {
+			null_ls.builtins.formatting.stylua,
 
-		null_ls.builtins.formatting.goimports,
-		null_ls.builtins.diagnostics.golangci_lint,
-	},
-})
+			null_ls.builtins.formatting.goimports,
+			null_ls.builtins.diagnostics.golangci_lint,
+		},
+	})
+end

@@ -1,26 +1,27 @@
-vim.pack.add({
-	"https://github.com/nvim-lua/plenary.nvim", -- dep
-	"https://github.com/sindrets/diffview.nvim", -- dep
-    -- use codediff when diffview stops working
-	-- "https://github.com/esmuellert/codediff.nvim", -- dep
-	"https://github.com/m00qek/baleia.nvim", -- dep
-	"https://github.com/ibhagwan/fzf-lua", -- dep
-	"https://github.com/NeogitOrg/neogit",
-})
+if false then
+	vim.pack.add({
+		"https://github.com/nvim-lua/plenary.nvim", -- dep
+		"https://github.com/sindrets/diffview.nvim", -- dep
+		-- use codediff when diffview stops working
+		-- "https://github.com/esmuellert/codediff.nvim", -- dep
+		"https://github.com/m00qek/baleia.nvim", -- dep
+		"https://github.com/ibhagwan/fzf-lua", -- dep
+		"https://github.com/NeogitOrg/neogit",
+	})
 
-require("neogit").setup({
-	opts = {
-		integrations = {
-			fzf_lua = true,
-			-- codediff = true,
-			-- diffview = false,
+	require("neogit").setup({
+		opts = {
+			integrations = {
+				fzf_lua = true,
+				-- codediff = true,
+				-- diffview = false,
+			},
+			-- diff_viewer = "codediff", -- diffview
 		},
-		-- diff_viewer = "codediff", -- diffview
-	},
-})
+	})
 
-vim.keymap.set("n", "<leader>neo", ":Neogit<CR>", { desc = "open neogit", silent = true })
-
+	vim.keymap.set("n", "<leader>neo", ":Neogit<CR>", { desc = "open neogit", silent = true })
+end
 -- mappings = {
 --     commit_editor = {
 --       ["q"] = "Close",

@@ -1,9 +1,11 @@
-vim.pack.add({ "https://github.com/kevinhwang91/nvim-bqf" })
-require("bqf").setup({
-	preview = {
-		winblend = 0,
-	},
-})
+if false then
+	vim.pack.add({ "https://github.com/kevinhwang91/nvim-bqf" })
+	require("bqf").setup({
+		preview = {
+			winblend = 0,
+		},
+	})
+end
 -- open	                open the item under the cursor	                                <CR>
 -- openc	            open the item, and close quickfix window	                    o
 -- drop	                use drop to open the item, and close quickfix window	        O
@@ -31,6 +33,5 @@ require("bqf").setup({
 -- filter	            create new list for signed items	                            zn
 -- filterr	            create new list for non-signed items	                        zN
 -- fzffilter	        enter fzf mode	zf
-
 
 -- tabdrop	            use tab drop to open the item, and close quickfix window	 ????

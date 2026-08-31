@@ -1,7 +1,9 @@
-vim.pack.add({
-	{
-		src = "https://github.com/nstefan002/screenkey.nvim",
-		version = vim.version.range("*"),
-	},
-})
-require("screenkey").setup({})
+if false then
+	vim.pack.add({
+		{
+			src = "https://github.com/nstefan002/screenkey.nvim",
+			version = vim.version.range("*"),
+		},
+	})
+	require("screenkey").setup({})
+end
