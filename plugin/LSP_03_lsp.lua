@@ -93,7 +93,7 @@ local on_attach = function(client, bufnr)
 		vim.lsp.buf.signature_help({ border = "rounded" })
 	end, { buffer = bufnr, remap = false, silent = true, desc = "show signature help" })
 
-	if client.name == "tsserver" then
+	if client.name == "tsc" then
 		client.server_capabilities.documentFormattingProvider = false
 	end
 
