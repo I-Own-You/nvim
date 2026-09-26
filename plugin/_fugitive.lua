@@ -1,4 +1,4 @@
-if false then
+if true then
 	vim.pack.add({ "https://github.com/tpope/vim-fugitive" })
 	vim.keymap.set("n", "<leader>gg", ":Git ", { desc = "open git", noremap = true, silent = true })
 	vim.keymap.set("n", "<leader>gc", ":Git commit<CR>", { desc = "git commit", noremap = true, silent = true })
