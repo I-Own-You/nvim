@@ -1,5 +1,5 @@
 if vim.g.neovide then
-	vim.o.guifont = "CommitMono Nerd Font Mono:h18"
+	vim.o.guifont = "CommitMono Nerd Font Mono:h17"
 	vim.opt.linespace = 0
 
 	vim.g.neovide_padding_top = 0
