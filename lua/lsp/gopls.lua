@@ -99,5 +99,10 @@ return function(on_attach, capabilities)
 			-- see: https://github.com/neovim/nvim-lspconfig/issues/804
 			on_dir(get_root_dir(fname))
 		end,
+        settings = {
+            gopls = {
+                semanticTokens = true,
+            },
+        },
 	}
 end
