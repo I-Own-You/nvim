@@ -33,8 +33,8 @@ if true then
 	})
 
 	-- vim.keymap.set("n", "<leader>bl", ":Gitsigns blame_line<cr>", {desc = "blame line", silent = true })
-	vim.keymap.set("n", "[c", ":Gitsigns next_hunk<cr>", { desc = "next git change", silent = true })
-	vim.keymap.set("n", "]c", ":Gitsigns prev_hunk<cr>", { desc = "previous git change", silent = true })
+	vim.keymap.set("n", "]c", ":Gitsigns next_hunk<cr>", { desc = "next git change", silent = true })
+	vim.keymap.set("n", "[c", ":Gitsigns prev_hunk<cr>", { desc = "previous git change", silent = true })
 	vim.keymap.set(
 		"n",
 		"<leader>ph",
