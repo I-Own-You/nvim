@@ -7,7 +7,7 @@ if true then
 
 	local actions = require("fzf-lua.actions")
 	require("fzf-lua").setup({
-		"telescope",
+		-- "telescope",
 		winopts = {
 			width = 0.90,
 			preview = {
