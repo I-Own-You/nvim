@@ -11,8 +11,25 @@ if false then
 	})
 
 	require("fidget").setup()
+    
+    -- tiny-inline-diagnostic -----------------------------------------------------------------
+    local function apply_tiny_hl()
+        local fg = { Error = "#f75464", Warn = "#e0bb65", Info = "#56a8f5", Hint = "#6f737a" }
+        local bg = { Error = "#2f282d", Warn  = "#282725", Info  = "#21262d", Hint  = "#222326" }
+        local sev = { "Error", "Warn", "Info", "Hint" }
+
+        for _, a in ipairs(sev) do
+            vim.api.nvim_set_hl(0, "TinyInlineDiagnosticVirtualText" .. a, { fg = fg[a], bg = bg[a] })
+            vim.api.nvim_set_hl(0, "TinyInlineDiagnosticVirtualText" .. a .. "CursorLine", { fg = fg[a] })
+            for _, b in ipairs(sev) do
+                vim.api.nvim_set_hl(0, "TinyInlineDiagnosticVirtualText" .. a .. "Mix" .. b, { fg = fg[a], bg = bg[b] })
+            end
+        end
+        vim.api.nvim_set_hl(0, "TinyInlineDiagnosticVirtualTextArrow", { fg = "#4e5157", bg = "#1e1f22" })
+    end
+    
 	require("tiny-inline-diagnostic").setup({
-		preset = "powerline",
+		preset = "simple",
 		options = {
 			use_icons_from_diagnostic = true,
 			show_all_diags_on_cursorline = true,
@@ -22,7 +39,23 @@ if false then
 			},
 			multiple_diag_under_cursor = true,
 		},
+        hi = {
+            error = "DiagnosticError", warn = "DiagnosticWarn",
+            info = "DiagnosticInfo",   hint = "DiagnosticHint",
+            arrow = "NonText",
+            background = "Normal",
+            mixing_color = "Normal",
+        },
 	})
+    
+    apply_tiny_hl()
+    vim.schedule(apply_tiny_hl)
+    vim.api.nvim_create_autocmd("ColorScheme", {
+        callback = function()
+            vim.schedule(apply_tiny_hl)
+        end,
+    })
+    -- tiny-inline-diagnostic -----------------------------------------------------------------
 
 	local on_attach = function(client, bufnr)
 		vim.keymap.set(
@@ -162,10 +195,14 @@ if false then
 		signs = {
 			active = true,
 			text = {
-				[vim.diagnostic.severity.ERROR] = " ",
-				[vim.diagnostic.severity.WARN] = " ",
-				[vim.diagnostic.severity.INFO] = "󱩏 ",
-				[vim.diagnostic.severity.HINT] = " ",
+				-- [vim.diagnostic.severity.ERROR] = " ",
+				-- [vim.diagnostic.severity.WARN] = " ",
+				-- [vim.diagnostic.severity.INFO] = "󱩏 ",
+				-- [vim.diagnostic.severity.HINT] = " ",
+				[vim.diagnostic.severity.ERROR] = " ",
+				[vim.diagnostic.severity.WARN] = " ",
+				[vim.diagnostic.severity.INFO] = " ",
+				[vim.diagnostic.severity.HINT] = " ",
 			},
 			-- highlight = {
 			--    [vim.diagnostic.severity.ERROR] = 'DiagnosticSignError',
