@@ -1,4 +1,4 @@
-if false then
+if true then
 	vim.g.nvim_surround_no_mappings = true
 
 	vim.pack.add({ "https://github.com/kylechui/nvim-surround" })
