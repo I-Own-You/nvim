@@ -914,7 +914,38 @@ end
 -- set("TreesitterContextSeparator", { fg = P.border })
 -- set("TreesitterContextBottom", { sp = P.border, underline = true })
 
--- rainbow-delimiters (в Zed нет; берутся цвета из палитры темы) ------------
+-- nvim-bqf -----------------------------------------------------------------
+set("BqfPreviewFloat", { fg = P.fg, bg = P.elevated })
+set("BqfPreviewBorder", { fg = P.border, bg = P.elevated })
+set("BqfPreviewTitle", { fg = P.blue, bg = P.elevated, bold = true })
+set("BqfPreviewBufLabel", { fg = P.muted, bg = P.elevated })
+set("BqfPreviewCursor", { bg = B.cursorline })
+set("BqfPreviewRange", { bg = B.search_cur }) -- search.active_match_background
+set("BqfPreviewSbar", { bg = P.elevated })
+set("BqfPreviewThumb", { bg = B.thumb })
+set("BqfSign", { fg = P.blue })
+
+-- tiny-inline-diagnostic
+local tiny_bg = {
+  Error = over("#f7546420", P.bg),
+  Warn  = over("#e0bb6520", P.bg),
+  Info  = over("#56a8f520", P.bg),
+  Hint  = over("#6f737a20", P.bg),
+}
+local tiny_fg = { Error = P.red, Warn = P.yellow, Info = P.blue, Hint = P.muted }
+local tiny_sev = { "Error", "Warn", "Info", "Hint" }
+
+for _, a in ipairs(tiny_sev) do
+  set("TinyInlineDiagnosticVirtualText" .. a, { fg = tiny_fg[a], bg = tiny_bg[a] })
+  set("TinyInlineDiagnosticVirtualText" .. a .. "CursorLine", { fg = tiny_fg[a] })
+  for _, b in ipairs(tiny_sev) do
+    -- text for first diagnostic on bg of second
+    set("TinyInlineDiagnosticVirtualText" .. a .. "Mix" .. b, { fg = tiny_fg[a], bg = tiny_bg[b] })
+  end
+end
+set("TinyInlineDiagnosticVirtualTextArrow", { fg = P.disabled })
+
+-- rainbow-delimiters
 local rainbow = {
     RainbowDelimiterRed = P.red, RainbowDelimiterYellow = P.yellow, RainbowDelimiterBlue = P.blue,
     RainbowDelimiterOrange = P.orange, RainbowDelimiterGreen = P.green, RainbowDelimiterViolet = P.magenta,
