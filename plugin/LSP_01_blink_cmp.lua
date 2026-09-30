@@ -2,37 +2,12 @@ if true then
 	vim.pack.add({
 		"https://github.com/rafamadriz/friendly-snippets", -- dep
 		"https://github.com/mikavilpas/blink-ripgrep.nvim", -- dep
-		-- "https://github.com/xzbdmw/colorful-menu.nvim", -- dep
+		"https://github.com/xzbdmw/colorful-menu.nvim", -- dep
 		"https://github.com/saghen/blink.lib",
 		"https://github.com/saghen/blink.cmp",
 	})
 
-	local kinds = {
-		Function = "Function",
-		Method = "Function",
-		Constructor = "Structure",
-		Field = "Identifier",
-		Variable = "Identifier",
-		Property = "Identifier",
-		Class = "Type",
-		Interface = "Type",
-		Struct = "Structure",
-		Enum = "Type",
-		EnumMember = "Constant",
-		Constant = "Constant",
-		Keyword = "Keyword",
-		Text = "String",
-		Module = "Include",
-		File = "Directory",
-		Folder = "Directory",
-		Snippet = "Macro",
-	}
-
-	for blink_kind, nvim_hl in pairs(kinds) do
-		vim.api.nvim_set_hl(0, "BlinkCmpKind" .. blink_kind, { link = nvim_hl, default = true })
-	end
-
-	-- require("colorful-menu").setup()
+	require("colorful-menu").setup()
 	local blink_cmp = require("blink.cmp")
 	blink_cmp.build():pwait()
 	blink_cmp.setup({
@@ -60,7 +35,7 @@ if true then
 		},
 		completion = {
 			menu = {
-				min_width = 40,
+				-- min_width = 20,
 				max_height = 15,
 				draw = {
 					columns = {
@@ -69,49 +44,49 @@ if true then
 					},
 					-- uncomment this when you will remove colorful-menu plugin and below function
 					-- treesitter = { "lsp" },
-					-- components = {
-					-- 	label = {
-					-- 		width = { fill = true, max = 60 },
-					-- 		text = function(ctx)
-					-- 			local highlights_info = require("colorful-menu").blink_highlights(ctx)
-					-- 			if highlights_info ~= nil then
-					-- 				-- Or you want to add more item to label
-					-- 				return highlights_info.label
-					-- 			else
-					-- 				return ctx.label
-					-- 			end
-					-- 		end,
-					-- 		highlight = function(ctx)
-					-- 			local highlights = {}
-					-- 			local highlights_info = require("colorful-menu").blink_highlights(ctx)
-					-- 			if highlights_info ~= nil then
-					-- 				highlights = highlights_info.highlights
-					-- 			end
-					-- 			for _, idx in ipairs(ctx.label_matched_indices) do
-					-- 				table.insert(highlights, { idx, idx + 1, group = "BlinkCmpLabelMatch" })
-					-- 			end
-					-- 			return highlights
-					-- 		end,
-					-- 	},
-					-- 	kind_icon = {
-					-- 		ellipsis = false,
-					-- 		text = function(ctx)
-					-- 			return ctx.kind_icon .. ctx.icon_gap
-					-- 		end,
-					-- 		highlight = function(ctx)
-					-- 			return "BlinkCmpKind" .. ctx.kind
-					-- 		end,
-					-- 	},
-					-- 	kind = {
-					-- 		ellipsis = false,
-					-- 		text = function(ctx)
-					-- 			return ctx.kind
-					-- 		end,
-					-- 		highlight = function(ctx)
-					-- 			return "BlinkCmpKind" .. ctx.kind
-					-- 		end,
-					-- 	},
-					-- },
+					components = {
+						label = {
+							width = { fill = true, max = 60 },
+							text = function(ctx)
+								local highlights_info = require("colorful-menu").blink_highlights(ctx)
+								if highlights_info ~= nil then
+									-- Or you want to add more item to label
+									return highlights_info.label
+								else
+									return ctx.label
+								end
+							end,
+							highlight = function(ctx)
+								local highlights = {}
+								local highlights_info = require("colorful-menu").blink_highlights(ctx)
+								if highlights_info ~= nil then
+									highlights = highlights_info.highlights
+								end
+								for _, idx in ipairs(ctx.label_matched_indices) do
+									table.insert(highlights, { idx, idx + 1, group = "BlinkCmpLabelMatch" })
+								end
+								return highlights
+							end,
+						},
+						kind_icon = {
+							ellipsis = false,
+							text = function(ctx)
+								return ctx.kind_icon .. ctx.icon_gap
+							end,
+							highlight = function(ctx)
+								return "BlinkCmpKind" .. ctx.kind
+							end,
+						},
+						kind = {
+							ellipsis = false,
+							text = function(ctx)
+								return ctx.kind
+							end,
+							highlight = function(ctx)
+								return "BlinkCmpKind" .. ctx.kind
+							end,
+						},
+					},
 				},
 				-- border = { "┏", "━", "┓", "┃", "┛", "━", "┗", "┃" },
 				-- border = { "◤", "∿", "◥", "⌇", "◢", "∿", "◣", "⌇" },
