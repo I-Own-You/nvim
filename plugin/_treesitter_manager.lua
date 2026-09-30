@@ -4,8 +4,8 @@ if false then
 	require("tree-sitter-manager").setup({
 		ensure_installed = {
 			"lua",
-			"c",
-			"cpp",
+			-- "c",
+			-- "cpp",
 			"toml",
 			"kdl",
 			"python",
@@ -14,8 +14,8 @@ if false then
 			"css",
 			"javascript",
 			"typescript",
-			"commonlisp",
-			"rust",
+			-- "commonlisp",
+			-- "rust",
 			"go",
 			"goctl",
 			"godot_resource",
