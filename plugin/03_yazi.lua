@@ -1,3 +1,4 @@
+-- if you return, seek for neotree/oil file managers instead of yazi or try to change yazi highlights
 if true then
 	vim.pack.add({
 		"https://github.com/nvim-lua/plenary.nvim", -- dep
