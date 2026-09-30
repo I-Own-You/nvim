@@ -1,4 +1,4 @@
-if false then
+if true then
 	vim.pack.add({ "https://github.com/aaronik/treewalker.nvim" })
 	require("treewalker").setup({
 		highlight_duration = 250,
