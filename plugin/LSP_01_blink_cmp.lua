@@ -53,16 +53,15 @@ if true then
 				"fallback",
 			},
 			["<C-f>"] = { "scroll_documentation_down", "fallback" },
-			["<TAB>"] = { "select_next", "snippet_forward", "fallback" },
-			["<S-TAB>"] = { "select_prev", "snippet_backward", "fallback" },
+			["<TAB>"] = { "accept", "fallback" },
 			["<C-u>"] = { "scroll_signature_up", "fallback" },
 			["<C-d>"] = { "scroll_signature_down", "fallback" },
 			["<C-k>"] = { "show_signature", "hide_signature", "fallback" },
 		},
 		completion = {
 			menu = {
-				-- min_width = 100,
-				max_height = 9999,
+				min_width = 40,
+				max_height = 15,
 				draw = {
 					columns = {
 						{ "label", "label_description", gap = 1 },
@@ -118,11 +117,11 @@ if true then
 				-- border = { "◤", "∿", "◥", "⌇", "◢", "∿", "◣", "⌇" },
 				border = "rounded",
 				scrollbar = false,
-				auto_show = false,
+				auto_show = true,
 			},
 			list = {
 				selection = {
-					preselect = false,
+					preselect = true,
 					auto_insert = false,
 				},
 			},
@@ -132,7 +131,7 @@ if true then
 					-- border = { "┏", "━", "┓", "┃", "┛", "━", "┗", "┃" },
 					border = "rounded",
 				},
-				auto_show = false,
+				auto_show = true,
 				auto_show_delay_ms = 200,
 			},
 			ghost_text = { enabled = true },
@@ -191,16 +190,4 @@ if true then
 	vim.keymap.set("i", "<C-g>", function()
 		require("blink-cmp").show({ providers = { "ripgrep" } })
 	end, { desc = "", silent = true })
-
-	vim.api.nvim_set_hl(0, "BlinkCmpLabelDeprecated", { fg = "#2f3639", strikethrough = true })
-	--
-	vim.api.nvim_set_hl(0, "BlinkCmpMenu", { bg = "#111111", fg = "NONE", force = true })
-	vim.api.nvim_set_hl(0, "BlinkCmpMenuSelection", { bg = "#2e251e", fg = "NONE", force = true, blend = 50 })
-	vim.api.nvim_set_hl(0, "BlinkCmpMenuBorder", { fg = "#2e251e", force = true })
-	--
-	vim.api.nvim_set_hl(0, "BlinkCmpDoc", { bg = "#111111", fg = "NONE", force = true })
-	vim.api.nvim_set_hl(0, "BlinkCmpDocSeparator", { fg = "#2e251e", force = true })
-	vim.api.nvim_set_hl(0, "BlinkCmpDocBorder", { fg = "#2e251e", force = true })
-	--
-	vim.api.nvim_set_hl(0, "BlinkCmpSignatureHelpBorder", { fg = "#2e251e", force = true })
 end
