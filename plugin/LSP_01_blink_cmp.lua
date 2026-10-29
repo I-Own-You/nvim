@@ -12,6 +12,7 @@ if true then
 	blink_cmp.build():pwait()
 	blink_cmp.setup({
 		keymap = {
+            preset = 'none',
 			["<C-space>"] = { "show", "show_documentation", "hide_documentation" },
 			["<C-e>"] = { "hide" },
 			["<CR>"] = { "accept", "fallback" },
@@ -31,7 +32,7 @@ if true then
 			["<TAB>"] = { "accept", "fallback" },
 			["<C-u>"] = { "scroll_signature_up", "fallback" },
 			["<C-d>"] = { "scroll_signature_down", "fallback" },
-			["<C-k>"] = { "show_signature", "hide_signature", "fallback" },
+			["<C-s>"] = { "show_signature", "hide_signature", "fallback" },
 		},
 		completion = {
 			menu = {
