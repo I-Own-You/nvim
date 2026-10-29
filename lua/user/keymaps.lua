@@ -98,10 +98,18 @@ vim.keymap.set(
 )
 vim.keymap.set("n", "<leader>to", ":tabonly<CR>", { silent = true, desc = "remove all tabs but not current" })
 
+-- c-w del left word (builtin)
+-- c-u del all left  (builtin)
+-- c-h del left char (builtin)
+-- c-l del right char
+-- c-k del right word 
+-- c-; del everything to right
 vim.keymap.set("i", "<C-l>", "<Del>", { silent = true })
+vim.keymap.set("i", "<C-k>", "<C-o>dw", { silent = true })
+vim.keymap.set("i", "<C-;>", "<C-o>D", { silent = true })
 
 vim.keymap.set("n", "<C-e>", "5<C-e>", { silent = true, desc = "" })
-vim.keymap.set("n", "<C-y>", "5<C-y>", { silent = true, desc = "" })
+vim.keymap.set("n", "<C-y>", "5<C-y>", { silent = true, desc = "" })         
 vim.keymap.set("v", "<C-e>", "5<C-e>", { silent = true, desc = "" })
 vim.keymap.set("v", "<C-y>", "5<C-y>", { silent = true, desc = "" })
 
@@ -118,12 +126,13 @@ vim.keymap.set(
 	"n",
 	"<Leader>xt",
 	':let @+=expand("%:p")<CR>',
-	{ silent = true, desc = "copy current buffers location" }
+    { silent = true, desc = "copy current buffers location" }
 )
 
-vim.keymap.set("n", "q", function()
-	require("user.utility_functions").close_file_type_buffers()
-end, { silent = true })
+-- vim.keymap.set("n", "q", function()
+-- 	require("user.utility_functions").close_file_type_buffers()
+-- end, { silent = true })
+vim.keymap.set("n", "q", ":nohl<CR>", { desc = "", silent = true })
 
 vim.keymap.set("n", "<C-Space>", "<C-^>", { desc = "cycle between prev/current file", silent = true })
 
