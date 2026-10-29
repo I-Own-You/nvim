@@ -1,4 +1,4 @@
-if false then
+if true then
 	vim.pack.add({
 		"https://github.com/romus204/tree-sitter-manager.nvim",
 		"https://github.com/wansmer/treesj",

@@ -1,4 +1,4 @@
-if false then
+if true then
 	vim.pack.add({
 		"https://github.com/smjonas/inc-rename.nvim",
 	})
@@ -6,7 +6,7 @@ if false then
 
 	-- vim.keymap.set("n", "<leader>re", ":IncRename ")
 
-	vim.keymap.set("n", "<leader>re", function()
+	vim.keymap.set("n", "grn", function()
 		return ":IncRename " .. vim.fn.expand("<cword>")
 	end, { expr = true })
 end

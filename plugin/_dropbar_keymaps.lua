@@ -1,4 +1,4 @@
-if false then
+if true then
 	vim.pack.add({ "https://github.com/Bekaboo/dropbar.nvim" })
 	require("dropbar").setup({
 		menu = {

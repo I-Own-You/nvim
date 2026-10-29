@@ -1,4 +1,4 @@
-if false then
+if true then
 	vim.pack.add({
 		"https://github.com/nvim-lua/plenary.nvim", -- dep
 		"https://github.com/sindrets/diffview.nvim", -- dep

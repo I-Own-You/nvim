@@ -1,4 +1,4 @@
-if false then
+if true then
 	vim.pack.add({
 		"https://github.com/tpope/vim-fugitive", -- dep
 		"https://github.com/rbong/vim-flog",
