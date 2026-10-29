@@ -88,7 +88,6 @@ vim.keymap.set("n", "ZR", function()
 	vim.cmd(":restart")
 end, {})
 
-vim.keymap.set("n", "<leader>nh", ":nohlsearch<CR>", { silent = true, desc = "toggle search results" })
 vim.keymap.set("n", "<leader>bo", ":only<CR>", { silent = true, desc = "clear buffer windows" })
 vim.keymap.set("n", "<leader>bda", ":%bdelete<CR>", { silent = true, desc = "delete all buffers" })
 vim.keymap.set(
