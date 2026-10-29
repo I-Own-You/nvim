@@ -1,4 +1,4 @@
-if false then
+if true then
 	vim.pack.add({
 		"https://github.com/williamboman/mason.nvim",
 		"https://github.com/williamboman/mason-lspconfig.nvim",
@@ -69,25 +69,25 @@ if false then
 		-- end, { buffer = bufnr, remap = false, silent = true, desc = "signature help" })
 		vim.keymap.set(
 			"n",
-			"gr",
+			"grr",
 			vim.lsp.buf.references,
 			{ buffer = bufnr, remap = false, silent = true, desc = "show references" }
 		)
 		vim.keymap.set(
 			"n",
-			"gi",
+			"gri",
 			vim.lsp.buf.implementation,
 			{ buffer = bufnr, remap = false, silent = true, desc = "show implementations" }
 		)
 		vim.keymap.set(
 			"n",
-			"gD",
+			"gy",
 			vim.lsp.buf.type_definition,
 			{ buffer = bufnr, remap = false, silent = true, desc = "show type definition" }
 		)
 		vim.keymap.set(
 			"n",
-			"<leader>D",
+			"gD",
 			vim.lsp.buf.declaration,
 			{ buffer = bufnr, remap = false, silent = true, desc = "show type declaration" }
 		)
@@ -97,12 +97,12 @@ if false then
 		-- 	vim.lsp.buf.rename,
 		-- 	{ buffer = bufnr, remap = false, silent = true, desc = "lsp rename" }
 		-- )
-		vim.keymap.set(
-			"n",
-			"<leader>ca",
-			vim.lsp.buf.code_action,
-			{ buffer = bufnr, remap = false, silent = true, desc = "code actions" }
-		)
+		-- vim.keymap.set(
+		-- 	"n",
+		-- 	"<leader>ca",
+		-- 	vim.lsp.buf.code_action,
+		-- 	{ buffer = bufnr, remap = false, silent = true, desc = "code actions" }
+		-- )
 		vim.keymap.set(
 			"n",
 			"<leader>lq",
