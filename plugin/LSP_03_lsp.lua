@@ -179,15 +179,15 @@ if true then
 	-- vim.lsp.config("rust_analyzer", require("lsp.rust_analyzer")(on_attach, capabilities))
 	-- vim.lsp.config("lua_ls", require("lsp.lua")(on_attach, capabilities))
 	vim.lsp.config("gopls", require("lsp.gopls")(on_attach, capabilities))
-	vim.lsp.config("tsc", require("lsp.tsc")(on_attach, capabilities))
-	vim.lsp.config("biome", require("lsp.biome")(on_attach, capabilities))
+	-- vim.lsp.config("tsc", require("lsp.tsc")(on_attach, capabilities))
+	-- vim.lsp.config("biome", require("lsp.biome")(on_attach, capabilities))
 
 	-- vim.lsp.enable("clangd")
 	-- vim.lsp.enable("rust_analyzer")
 	-- vim.lsp.enable("lua_ls")
 	vim.lsp.enable("gopls")
-	vim.lsp.enable("tsc")
-	vim.lsp.enable("biome") -- TODO: replace with oxlint/oxfmt when its ready for svelte
+	-- vim.lsp.enable("tsc")
+	-- vim.lsp.enable("biome") -- TODO: replace with oxlint/oxfmt when its ready for svelte
 
 	vim.diagnostic.config({
 		virtual_text = false,
