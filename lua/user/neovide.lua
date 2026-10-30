@@ -17,6 +17,23 @@ if vim.g.neovide then
         vim.api.nvim_feedkeys(vim.keycode("<C-R>+"), "n", false)
         vim.cmd("redraw")
     end, { noremap = true, silent = true })
+
+   
+    local function set_cursor_hl()
+        local cursorColor = "#83bfd4"
+        vim.api.nvim_set_hl(0, "Cursor", {  bg = cursorColor })
+        vim.api.nvim_set_hl(0, "CursorIM", {  bg = cursorColor })
+        vim.api.nvim_set_hl(0, "lCursor", {  bg = cursorColor })
+        vim.api.nvim_set_hl(0, "TermCursor", {  bg = cursorColor })
+        vim.api.nvim_set_hl(0, "FzfLuaCursor", {  bg = cursorColor })
+
+    end
+
+    vim.api.nvim_create_autocmd("ColorScheme", {
+        group = vim.api.nvim_create_augroup("CustomCursorHl", { clear = true }),
+        callback = set_cursor_hl,
+    })
+
 end
 
 
