@@ -1,14 +1,18 @@
 if true then
-	vim.pack.add({ "https://github.com/mrjones2014/smart-splits.nvim" })
-	require("smart-splits").setup({
-		cursor_follows_swapped_bufs = true,
-		-- at_edge = 'stop',
-	})
+    vim.pack.add({ "https://github.com/mrjones2014/smart-splits.nvim" })
+    require("smart-splits").setup({
+        swap = {
+            move_cursor = {
+                cursor_follows_swapped_bufs = true,
+            }
+        }
+        -- at_edge = 'stop',
+    })
 
-	vim.keymap.set("n", "<A-S-l>", '<cmd>lua require("smart-splits").resize_right()<CR>', { silent = true })
-	vim.keymap.set("n", "<A-S-h>", '<cmd>lua require("smart-splits").resize_left()<CR>', { silent = true })
-	vim.keymap.set("n", "<A-S-j>", '<cmd>lua require("smart-splits").resize_down()<CR>', { silent = true })
-	vim.keymap.set("n", "<A-S-k>", '<cmd>lua require("smart-splits").resize_up()<CR>', { silent = true })
+    vim.keymap.set("n", "<A-S-l>", '<cmd>lua require("smart-splits").resize_right()<CR>', { silent = true })
+    vim.keymap.set("n", "<A-S-h>", '<cmd>lua require("smart-splits").resize_left()<CR>', { silent = true })
+    vim.keymap.set("n", "<A-S-j>", '<cmd>lua require("smart-splits").resize_down()<CR>', { silent = true })
+    vim.keymap.set("n", "<A-S-k>", '<cmd>lua require("smart-splits").resize_up()<CR>', { silent = true })
 end
 
 -- move between buffers
