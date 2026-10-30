@@ -115,6 +115,11 @@ for i, c in ipairs(ansi) do
 end
 
 -- ---------------------------------------------------------------------------
+-- my custom colors in use
+local cursorColor = "#83bfd4"
+-- ---------------------------------------------------------------------------
+
+-- ---------------------------------------------------------------------------
 -- editor UI
 -- ---------------------------------------------------------------------------
 local ui = {
@@ -127,10 +132,10 @@ local ui = {
     MsgArea = { fg = P.fg, bg = P.bg },
     MsgSeparator = { fg = P.border, bg = P.chrome },
 
-    Cursor = { fg = P.bg, bg = P.blue },
-    lCursor = { fg = P.bg, bg = P.blue },
-    CursorIM = { fg = P.bg, bg = P.blue },
-    TermCursor = { fg = P.bg, bg = P.blue },
+    Cursor = {fg = P.bg, bg = cursorColor }, --{ fg = P.bg, bg = P.blue },
+    lCursor = {fg = P.bg, bg = cursorColor },--{ fg = P.bg, bg = P.blue },
+    CursorIM = {fg = P.bg, bg = cursorColor },--{ fg = P.bg, bg = P.blue },
+    TermCursor = {fg = P.bg, bg = cursorColor },--{ fg = P.bg, bg = P.blue },
     TermCursorNC = { fg = P.bg, bg = P.muted },
 
     CursorLine = { bg = B.cursorline },
@@ -574,7 +579,7 @@ local fzf = {
     FzfLuaPreviewNormal = { fg = P.fg, bg = P.elevated },
     FzfLuaPreviewBorder = { fg = P.border, bg = P.elevated },
     FzfLuaPreviewTitle = { fg = P.blue },
-    FzfLuaCursor = { fg = P.bg, bg = P.blue },
+    FzfLuaCursor = {fg = P.bg, bg = cursorColor },--{ fg = P.bg, bg = P.blue },
     FzfLuaCursorLine = { bg = P.sel },
     FzfLuaCursorLineNr = { fg = P.ln_active, bg = P.sel },
     FzfLuaSearch = { bg = B.search_cur },
