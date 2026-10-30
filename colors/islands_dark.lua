@@ -780,17 +780,6 @@ for name, opts in pairs(oil) do
     set(name, opts)
 end
 
--- indent-blankline.nvim (ibl) / mini.indentscope / snacks.indent -----------
--- set("IblIndent", { fg = P.guide, nocombine = true }) -- editor.indent_guide
--- set("IblWhitespace", { fg = P.disabled, nocombine = true }) -- editor.invisible
--- set("IblScope", { fg = P.guide_active, nocombine = true }) -- editor.indent_guide_active
--- set("IndentBlanklineChar", { fg = P.guide, nocombine = true })
--- set("IndentBlanklineContextChar", { fg = P.guide_active, nocombine = true })
--- set("MiniIndentscopeSymbol", { fg = P.guide_active })
--- set("SnacksIndent", { fg = P.guide, nocombine = true })
--- set("SnacksIndentScope", { fg = P.guide_active, nocombine = true })
--- set("SnacksIndentChunk", { fg = P.guide_active, nocombine = true })
-
 -- which-key.nvim -----------------------------------------------------------
 local wk = {
     WhichKey = { fg = P.blue },
@@ -815,6 +804,272 @@ local wk = {
 for name, opts in pairs(wk) do
     set(name, opts)
 end
+
+-- nvim-bqf -----------------------------------------------------------------
+set("BqfPreviewFloat", { fg = P.fg, bg = P.elevated })
+set("BqfPreviewBorder", { fg = P.border, bg = P.elevated })
+set("BqfPreviewTitle", { fg = P.blue, bg = P.elevated, bold = true })
+set("BqfPreviewBufLabel", { fg = P.muted, bg = P.elevated })
+set("BqfPreviewCursor", { bg = B.cursorline })
+set("BqfPreviewRange", { bg = B.search_cur }) -- search.active_match_background
+set("BqfPreviewSbar", { bg = P.elevated })
+set("BqfPreviewThumb", { bg = B.thumb })
+set("BqfSign", { fg = P.blue })
+
+-- tiny-inline-diagnostic
+local tiny_bg = {
+    Error = over("#f7546420", P.bg),
+    Warn  = over("#e0bb6520", P.bg),
+    Info  = over("#56a8f520", P.bg),
+    Hint  = over("#6f737a20", P.bg),
+}
+local tiny_fg = { Error = P.red, Warn = P.yellow, Info = P.blue, Hint = P.muted }
+local tiny_sev = { "Error", "Warn", "Info", "Hint" }
+
+for _, a in ipairs(tiny_sev) do
+    set("TinyInlineDiagnosticVirtualText" .. a, { fg = tiny_fg[a], bg = tiny_bg[a] })
+    set("TinyInlineDiagnosticVirtualText" .. a .. "CursorLine", { fg = tiny_fg[a] })
+    for _, b in ipairs(tiny_sev) do
+        -- text for first diagnostic on bg of second
+        set("TinyInlineDiagnosticVirtualText" .. a .. "Mix" .. b, { fg = tiny_fg[a], bg = tiny_bg[b] })
+    end
+end
+set("TinyInlineDiagnosticVirtualTextArrow", { fg = P.disabled })
+
+-- rainbow-delimiters
+local rainbow = {
+    RainbowDelimiterRed = P.red, RainbowDelimiterYellow = P.yellow, RainbowDelimiterBlue = P.blue,
+    RainbowDelimiterOrange = P.orange, RainbowDelimiterGreen = P.green, RainbowDelimiterViolet = P.magenta,
+    RainbowDelimiterCyan = P.cyan,
+}
+for name, color in pairs(rainbow) do
+    set(name, { fg = color })
+end
+
+
+-- mason.nvim ---------------------------------------------------
+local mgr = {
+    MasonNormal = { fg = P.fg, bg = P.elevated },
+    MasonHeader = { fg = P.bg, bg = P.blue, bold = true },
+    MasonHeaderSecondary = { fg = P.bg, bg = P.magenta, bold = true },
+    MasonHighlight = { fg = P.blue },
+    MasonHighlightBlock = { fg = P.bg, bg = P.blue },
+    MasonHighlightBlockBold = { fg = P.bg, bg = P.blue, bold = true },
+    MasonHighlightSecondary = { fg = P.magenta },
+    MasonHighlightBlockSecondary = { fg = P.bg, bg = P.magenta },
+    MasonHighlightBlockBoldSecondary = { fg = P.bg, bg = P.magenta, bold = true },
+    MasonMuted = { fg = P.muted },
+    MasonMutedBlock = { fg = P.fg, bg = P.hover },
+    MasonMutedBlockBold = { fg = P.fg, bg = P.hover, bold = true },
+    MasonError = { fg = P.red },
+    MasonWarning = { fg = P.yellow },
+    MasonHeading = { fg = P.blue, bold = true },
+}
+for name, opts in pairs(mgr) do
+    set(name, opts)
+end
+
+-- nvim-dap / dap-ui ---------------------------------------------------------
+set("DapBreakpoint", { fg = P.red })
+set("DapBreakpointCondition", { fg = P.yellow })
+set("DapBreakpointRejected", { fg = P.muted })
+set("DapLogPoint", { fg = P.blue })
+set("DapStopped", { fg = P.green })
+set("DapStoppedLine", { bg = B.ok_bg })
+set("DapUIScope", { fg = P.blue })
+set("DapUIType", { fg = P.fg })
+set("DapUIValue", { fg = P.cyan })
+set("DapUIVariable", { fg = P.fg })
+set("DapUIModifiedValue", { fg = P.blue, bold = true })
+set("DapUIDecoration", { fg = P.blue })
+set("DapUIThread", { fg = P.green })
+set("DapUIStoppedThread", { fg = P.blue })
+set("DapUISource", { fg = P.magenta })
+set("DapUILineNumber", { fg = P.blue })
+set("DapUIFloatBorder", { fg = P.border })
+set("DapUIWatchesEmpty", { fg = P.red })
+set("DapUIWatchesValue", { fg = P.green })
+set("DapUIWatchesError", { fg = P.red })
+set("DapUIBreakpointsPath", { fg = P.blue })
+set("DapUIBreakpointsInfo", { fg = P.green })
+set("DapUIBreakpointsCurrentLine", { fg = P.green, bold = true })
+set("DapUIStepOver", { fg = P.blue })
+set("DapUIStepInto", { fg = P.blue })
+set("DapUIStepBack", { fg = P.blue })
+set("DapUIStepOut", { fg = P.blue })
+set("DapUIStop", { fg = P.red })
+set("DapUIPlayPause", { fg = P.green })
+set("DapUIRestart", { fg = P.green })
+set("DapUIUnavailable", { fg = P.disabled })
+
+-- diffview.nvim / neogit ---------------------------------------------------
+local vcs = {
+    DiffviewFilePanelTitle = { fg = P.blue, bold = true },
+    DiffviewFilePanelCounter = { fg = P.magenta },
+    DiffviewFilePanelFileName = { fg = P.fg },
+    DiffviewFilePanelPath = { fg = P.muted },
+    DiffviewFilePanelInsertions = { fg = P.green },
+    DiffviewFilePanelDeletions = { fg = P.red },
+    DiffviewStatusAdded = { fg = P.green },
+    DiffviewStatusModified = { fg = P.blue },
+    DiffviewStatusRenamed = { fg = P.cyan },
+    DiffviewStatusDeleted = { fg = P.red },
+    DiffviewStatusUntracked = { fg = P.green },
+    DiffviewStatusConflict = { fg = P.magenta },
+    DiffviewStatusIgnored = { fg = P.disabled },
+    DiffviewDiffAddAsDelete = { bg = B.diff_del },
+    DiffviewDiffDelete = { fg = P.disabled },
+    DiffviewNormal = { fg = P.fg, bg = P.bg },
+    DiffviewCursorLine = { bg = P.sel },
+    DiffviewEndOfBuffer = { fg = P.bg },
+    DiffviewVertSplit = { fg = P.border, bg = P.bg },
+    NeogitDiffAdd = { fg = P.green, bg = B.diff_add },
+    NeogitDiffAddHighlight = { fg = P.green, bg = B.diff_add },
+    NeogitDiffAddCursor = { fg = P.green, bg = B.cursorline },
+    NeogitDiffDelete = { fg = P.red, bg = B.diff_del },
+    NeogitDiffDeleteHighlight = { fg = P.red, bg = B.diff_del },
+    NeogitDiffDeleteCursor = { fg = P.red, bg = B.cursorline },
+    NeogitDiffContext = { fg = P.fg },
+    NeogitDiffContextHighlight = { fg = P.fg, bg = B.cursorline },
+    NeogitDiffContextCursor = { fg = P.fg, bg = B.cursorline },
+    NeogitHunkHeader = { fg = P.blue, bg = P.elevated },
+    NeogitHunkHeaderHighlight = { fg = P.blue, bg = P.elevated, bold = true },
+    NeogitHunkHeaderCursor = { fg = P.blue, bg = P.sel },
+    NeogitBranch = { fg = P.blue },
+    NeogitRemote = { fg = P.green },
+    NeogitSectionHeader = { fg = P.blue, bold = true },
+    NeogitChangeAdded = { fg = P.green },
+    NeogitChangeModified = { fg = P.blue },
+    NeogitChangeDeleted = { fg = P.red },
+    NeogitChangeRenamed = { fg = P.cyan },
+    NeogitChangeNewFile = { fg = P.green },
+    NeogitCursorLine = { bg = B.cursorline },
+    NeogitPopupSwitchKey = { fg = P.magenta },
+    NeogitPopupOptionKey = { fg = P.magenta },
+    NeogitPopupActionKey = { fg = P.magenta },
+    NeogitPopupConfigKey = { fg = P.magenta },
+}
+for name, opts in pairs(vcs) do
+    set(name, opts)
+end
+
+-- hlslens
+set("HlSearchNear", { bg = B.search_cur })
+set("HlSearchLens", { fg = P.muted, bg = P.elevated })
+set("HlSearchLensNear", { fg = P.blue, bg = P.elevated })
+set("HlSearchFloat", { bg = B.search_cur })
+
+-- dropbar
+set("DropBarMenuNormalFloat", { fg = P.fg, bg = P.elevated })
+set("DropBarMenuCurrentContext", { bg = P.sel })
+set("DropBarMenuHoverEntry", { bg = P.hover })
+set("DropBarCurrentContext", { bg = P.sel })
+set("DropBarIconUISeparator", { fg = P.muted })
+
+-- ---------------------------------------------------------------------------
+-- terminal buffers: terminal.background (#191a1c) вместо editor.background
+-- ---------------------------------------------------------------------------
+set("IslandsTerminal", { fg = P.fg, bg = P.chrome })
+local aug = vim.api.nvim_create_augroup("IslandsDarkTerminal", { clear = true })
+vim.api.nvim_create_autocmd({ "TermOpen", "BufWinEnter" }, {
+    group = aug,
+    callback = function()
+        if vim.g.colors_name ~= "islands-dark" then
+            return
+        end
+        if vim.bo.buftype == "terminal" then
+            pcall(function()
+                vim.opt_local.winhighlight:append({ Normal = "IslandsTerminal", NormalNC = "IslandsTerminal" })
+            end)
+        end
+    end,
+})
+
+-- ---------------------------------------------------------------------------
+--   require("islands-dark").lualine       -- theme = require("islands-dark").lualine
+--   require("islands-dark").bufferline    -- highlights = require("islands-dark").bufferline
+--   
+--   works only after :colorscheme islands-dark
+-- ---------------------------------------------------------------------------
+local function lualine_theme()
+    local function mode(color)
+        return {
+            a = { fg = P.bg, bg = color, gui = "bold" },
+            b = { fg = P.fg, bg = P.elevated },
+            c = { fg = P.fg, bg = P.chrome },
+        }
+    end
+    return {
+        normal = mode(P.blue),
+        insert = mode(P.green),
+        visual = mode(P.magenta),
+        replace = mode(P.red),
+        command = mode(P.yellow),
+        terminal = mode(P.cyan),
+        inactive = {
+            a = { fg = P.muted, bg = P.chrome },
+            b = { fg = P.muted, bg = P.chrome },
+            c = { fg = P.muted, bg = P.chrome },
+        },
+    }
+end
+
+local function bufferline_hl()
+    local bl = {
+        fill = { bg = P.chrome },
+        background = { fg = P.muted, bg = P.chrome },
+        tab = { fg = P.muted, bg = P.chrome },
+        tab_selected = { fg = P.fg, bg = P.bg },
+        tab_separator = { fg = P.chrome, bg = P.chrome },
+        tab_separator_selected = { fg = P.chrome, bg = P.bg },
+        tab_close = { fg = P.muted, bg = P.chrome },
+        close_button = { fg = P.muted, bg = P.chrome },
+        close_button_visible = { fg = P.muted, bg = P.chrome },
+        close_button_selected = { fg = P.fg, bg = P.bg },
+        buffer_visible = { fg = P.muted, bg = P.chrome },
+        buffer_selected = { fg = P.fg, bg = P.bg, bold = true, italic = false },
+        numbers = { fg = P.muted, bg = P.chrome },
+        numbers_visible = { fg = P.muted, bg = P.chrome },
+        numbers_selected = { fg = P.fg, bg = P.bg, bold = true, italic = false },
+        modified = { fg = P.blue, bg = P.chrome },
+        modified_visible = { fg = P.blue, bg = P.chrome },
+        modified_selected = { fg = P.blue, bg = P.bg },
+        duplicate = { fg = P.disabled, bg = P.chrome, italic = true },
+        duplicate_visible = { fg = P.disabled, bg = P.chrome, italic = true },
+        duplicate_selected = { fg = P.muted, bg = P.bg, italic = true },
+        separator = { fg = P.chrome, bg = P.chrome },
+        separator_visible = { fg = P.chrome, bg = P.chrome },
+        separator_selected = { fg = P.chrome, bg = P.bg },
+        indicator_visible = { fg = P.chrome, bg = P.chrome },
+        indicator_selected = { fg = P.blue, bg = P.bg },
+        pick = { fg = P.red, bg = P.chrome, bold = true },
+        pick_visible = { fg = P.red, bg = P.chrome, bold = true },
+        pick_selected = { fg = P.red, bg = P.bg, bold = true },
+        offset_separator = { fg = P.border, bg = P.bg },
+        trunc_marker = { fg = P.muted, bg = P.chrome },
+        group_label = { fg = P.bg, bg = P.blue },
+        group_separator = { fg = P.blue, bg = P.chrome },
+        diagnostic = { fg = P.muted, bg = P.chrome },
+        diagnostic_visible = { fg = P.muted, bg = P.chrome },
+        diagnostic_selected = { fg = P.muted, bg = P.bg },
+    }
+    local fams = { error = P.red, warning = P.yellow, info = P.blue, hint = P.muted }
+    for name, color in pairs(fams) do
+        bl[name] = { fg = color, bg = P.chrome }
+        bl[name .. "_visible"] = { fg = color, bg = P.chrome }
+        bl[name .. "_selected"] = { fg = color, bg = P.bg, bold = true, italic = false }
+        bl[name .. "_diagnostic"] = { fg = color, bg = P.chrome }
+        bl[name .. "_diagnostic_visible"] = { fg = color, bg = P.chrome }
+        bl[name .. "_diagnostic_selected"] = { fg = color, bg = P.bg }
+    end
+    return bl
+end
+
+package.loaded["islands-dark"] = {
+    palette = P,
+    lualine = lualine_theme(),
+    bufferline = bufferline_hl(),
+}
 
 -- noice.nvim / nvim-notify -------------------------------------------------
 -- local noice = {
@@ -918,47 +1173,6 @@ end
         -- set("TreesitterContextLineNumber", { fg = P.ln_active, bg = P.elevated })
         -- set("TreesitterContextSeparator", { fg = P.border })
         -- set("TreesitterContextBottom", { sp = P.border, underline = true })
-
-        -- nvim-bqf -----------------------------------------------------------------
-        set("BqfPreviewFloat", { fg = P.fg, bg = P.elevated })
-        set("BqfPreviewBorder", { fg = P.border, bg = P.elevated })
-        set("BqfPreviewTitle", { fg = P.blue, bg = P.elevated, bold = true })
-        set("BqfPreviewBufLabel", { fg = P.muted, bg = P.elevated })
-        set("BqfPreviewCursor", { bg = B.cursorline })
-        set("BqfPreviewRange", { bg = B.search_cur }) -- search.active_match_background
-        set("BqfPreviewSbar", { bg = P.elevated })
-        set("BqfPreviewThumb", { bg = B.thumb })
-        set("BqfSign", { fg = P.blue })
-
-        -- tiny-inline-diagnostic
-        local tiny_bg = {
-            Error = over("#f7546420", P.bg),
-            Warn  = over("#e0bb6520", P.bg),
-            Info  = over("#56a8f520", P.bg),
-            Hint  = over("#6f737a20", P.bg),
-        }
-        local tiny_fg = { Error = P.red, Warn = P.yellow, Info = P.blue, Hint = P.muted }
-        local tiny_sev = { "Error", "Warn", "Info", "Hint" }
-
-        for _, a in ipairs(tiny_sev) do
-            set("TinyInlineDiagnosticVirtualText" .. a, { fg = tiny_fg[a], bg = tiny_bg[a] })
-            set("TinyInlineDiagnosticVirtualText" .. a .. "CursorLine", { fg = tiny_fg[a] })
-            for _, b in ipairs(tiny_sev) do
-                -- text for first diagnostic on bg of second
-                set("TinyInlineDiagnosticVirtualText" .. a .. "Mix" .. b, { fg = tiny_fg[a], bg = tiny_bg[b] })
-            end
-        end
-        set("TinyInlineDiagnosticVirtualTextArrow", { fg = P.disabled })
-
-        -- rainbow-delimiters
-        local rainbow = {
-            RainbowDelimiterRed = P.red, RainbowDelimiterYellow = P.yellow, RainbowDelimiterBlue = P.blue,
-            RainbowDelimiterOrange = P.orange, RainbowDelimiterGreen = P.green, RainbowDelimiterViolet = P.magenta,
-            RainbowDelimiterCyan = P.cyan,
-        }
-        for name, color in pairs(rainbow) do
-            set(name, { fg = color })
-        end
 
         -- mini.nvim ----------------------------------------------------------------
         -- local mini = {
@@ -1074,142 +1288,6 @@ end
             -- set("AlphaShortcut", { fg = P.magenta })
             -- set("AlphaFooter", { fg = P.muted })
 
-            -- lazy.nvim / mason.nvim ---------------------------------------------------
-            local mgr = {
-                -- LazyNormal = { fg = P.fg, bg = P.elevated },
-                -- LazyBorder = { fg = P.border, bg = P.elevated },
-                -- LazyButton = { fg = P.fg, bg = P.hover },
-                -- LazyButtonActive = { fg = P.fg, bg = P.sel },
-                -- LazyH1 = { fg = P.bg, bg = P.blue, bold = true },
-                -- LazyH2 = { fg = P.blue, bold = true },
-                -- LazySpecial = { fg = P.blue },
-                -- LazyProgressDone = { fg = P.green },
-                -- LazyProgressTodo = { fg = P.disabled },
-                -- LazyReasonPlugin = { fg = P.blue },
-                -- LazyReasonEvent = { fg = P.yellow },
-                -- LazyReasonKeys = { fg = P.magenta },
-                -- LazyReasonCmd = { fg = P.orange },
-                -- LazyReasonFt = { fg = P.cyan },
-                -- LazyReasonRuntime = { fg = P.green },
-                -- LazyReasonSource = { fg = P.cyan },
-                -- LazyReasonStart = { fg = P.fg },
-                -- LazyReasonImport = { fg = P.fg },
-                -- LazyCommit = { fg = P.green },
-                -- LazyCommitType = { fg = P.blue },
-                -- LazyCommitScope = { fg = P.magenta },
-                -- LazyUrl = { fg = P.blue },
-                -- LazyDir = { fg = P.muted },
-                -- LazyProp = { fg = P.muted },
-                -- LazyValue = { fg = P.cyan },
-                -- LazyLocal = { fg = P.yellow },
-                -- LazyNoCond = { fg = P.red },
-                -- LazyDimmed = { fg = P.muted },
-                -- LazyTaskOutput = { fg = P.fg },
-                -- LazyTaskError = { fg = P.red },
-                MasonNormal = { fg = P.fg, bg = P.elevated },
-                MasonHeader = { fg = P.bg, bg = P.blue, bold = true },
-                MasonHeaderSecondary = { fg = P.bg, bg = P.magenta, bold = true },
-                MasonHighlight = { fg = P.blue },
-                MasonHighlightBlock = { fg = P.bg, bg = P.blue },
-                MasonHighlightBlockBold = { fg = P.bg, bg = P.blue, bold = true },
-                MasonHighlightSecondary = { fg = P.magenta },
-                MasonHighlightBlockSecondary = { fg = P.bg, bg = P.magenta },
-                MasonHighlightBlockBoldSecondary = { fg = P.bg, bg = P.magenta, bold = true },
-                MasonMuted = { fg = P.muted },
-                MasonMutedBlock = { fg = P.fg, bg = P.hover },
-                MasonMutedBlockBold = { fg = P.fg, bg = P.hover, bold = true },
-                MasonError = { fg = P.red },
-                MasonWarning = { fg = P.yellow },
-                MasonHeading = { fg = P.blue, bold = true },
-            }
-            for name, opts in pairs(mgr) do
-                set(name, opts)
-            end
-
-            -- nvim-dap / dap-ui ---------------------------------------------------------
-            set("DapBreakpoint", { fg = P.red })
-            set("DapBreakpointCondition", { fg = P.yellow })
-            set("DapBreakpointRejected", { fg = P.muted })
-            set("DapLogPoint", { fg = P.blue })
-            set("DapStopped", { fg = P.green })
-            set("DapStoppedLine", { bg = B.ok_bg })
-            set("DapUIScope", { fg = P.blue })
-            set("DapUIType", { fg = P.fg })
-            set("DapUIValue", { fg = P.cyan })
-            set("DapUIVariable", { fg = P.fg })
-            set("DapUIModifiedValue", { fg = P.blue, bold = true })
-            set("DapUIDecoration", { fg = P.blue })
-            set("DapUIThread", { fg = P.green })
-            set("DapUIStoppedThread", { fg = P.blue })
-            set("DapUISource", { fg = P.magenta })
-            set("DapUILineNumber", { fg = P.blue })
-            set("DapUIFloatBorder", { fg = P.border })
-            set("DapUIWatchesEmpty", { fg = P.red })
-            set("DapUIWatchesValue", { fg = P.green })
-            set("DapUIWatchesError", { fg = P.red })
-            set("DapUIBreakpointsPath", { fg = P.blue })
-            set("DapUIBreakpointsInfo", { fg = P.green })
-            set("DapUIBreakpointsCurrentLine", { fg = P.green, bold = true })
-            set("DapUIStepOver", { fg = P.blue })
-            set("DapUIStepInto", { fg = P.blue })
-            set("DapUIStepBack", { fg = P.blue })
-            set("DapUIStepOut", { fg = P.blue })
-            set("DapUIStop", { fg = P.red })
-            set("DapUIPlayPause", { fg = P.green })
-            set("DapUIRestart", { fg = P.green })
-            set("DapUIUnavailable", { fg = P.disabled })
-
-            -- diffview.nvim / neogit ---------------------------------------------------
-            local vcs = {
-                DiffviewFilePanelTitle = { fg = P.blue, bold = true },
-                DiffviewFilePanelCounter = { fg = P.magenta },
-                DiffviewFilePanelFileName = { fg = P.fg },
-                DiffviewFilePanelPath = { fg = P.muted },
-                DiffviewFilePanelInsertions = { fg = P.green },
-                DiffviewFilePanelDeletions = { fg = P.red },
-                DiffviewStatusAdded = { fg = P.green },
-                DiffviewStatusModified = { fg = P.blue },
-                DiffviewStatusRenamed = { fg = P.cyan },
-                DiffviewStatusDeleted = { fg = P.red },
-                DiffviewStatusUntracked = { fg = P.green },
-                DiffviewStatusConflict = { fg = P.magenta },
-                DiffviewStatusIgnored = { fg = P.disabled },
-                DiffviewDiffAddAsDelete = { bg = B.diff_del },
-                DiffviewDiffDelete = { fg = P.disabled },
-                DiffviewNormal = { fg = P.fg, bg = P.bg },
-                DiffviewCursorLine = { bg = P.sel },
-                DiffviewEndOfBuffer = { fg = P.bg },
-                DiffviewVertSplit = { fg = P.border, bg = P.bg },
-                NeogitDiffAdd = { fg = P.green, bg = B.diff_add },
-                NeogitDiffAddHighlight = { fg = P.green, bg = B.diff_add },
-                NeogitDiffAddCursor = { fg = P.green, bg = B.cursorline },
-                NeogitDiffDelete = { fg = P.red, bg = B.diff_del },
-                NeogitDiffDeleteHighlight = { fg = P.red, bg = B.diff_del },
-                NeogitDiffDeleteCursor = { fg = P.red, bg = B.cursorline },
-                NeogitDiffContext = { fg = P.fg },
-                NeogitDiffContextHighlight = { fg = P.fg, bg = B.cursorline },
-                NeogitDiffContextCursor = { fg = P.fg, bg = B.cursorline },
-                NeogitHunkHeader = { fg = P.blue, bg = P.elevated },
-                NeogitHunkHeaderHighlight = { fg = P.blue, bg = P.elevated, bold = true },
-                NeogitHunkHeaderCursor = { fg = P.blue, bg = P.sel },
-                NeogitBranch = { fg = P.blue },
-                NeogitRemote = { fg = P.green },
-                NeogitSectionHeader = { fg = P.blue, bold = true },
-                NeogitChangeAdded = { fg = P.green },
-                NeogitChangeModified = { fg = P.blue },
-                NeogitChangeDeleted = { fg = P.red },
-                NeogitChangeRenamed = { fg = P.cyan },
-                NeogitChangeNewFile = { fg = P.green },
-                NeogitCursorLine = { bg = B.cursorline },
-                NeogitPopupSwitchKey = { fg = P.magenta },
-                NeogitPopupOptionKey = { fg = P.magenta },
-                NeogitPopupActionKey = { fg = P.magenta },
-                NeogitPopupConfigKey = { fg = P.magenta },
-            }
-            for name, opts in pairs(vcs) do
-                set(name, opts)
-            end
-
             -- render-markdown.nvim / markview -----------------------------------------
             -- set("RenderMarkdownH1", { fg = P.blue, bold = true })
             -- set("RenderMarkdownH2", { fg = P.blue, bold = true })
@@ -1233,34 +1311,6 @@ end
             -- set("RenderMarkdownWarn", { fg = P.yellow })
             -- set("RenderMarkdownError", { fg = P.red })
 
-            -- nvim-ufo / hlslens / todo-comments / navic / dropbar --------------------
-            -- set("UfoFoldedBg", { bg = P.elevated })
-            -- set("UfoFoldedFg", { fg = P.muted })
-            -- set("UfoPreviewSbar", { bg = P.elevated })
-            -- set("UfoPreviewThumb", { bg = B.thumb })
-            -- set("UfoFoldedEllipsis", { fg = P.muted })
-            set("HlSearchNear", { bg = B.search_cur })
-            set("HlSearchLens", { fg = P.muted, bg = P.elevated })
-            set("HlSearchLensNear", { fg = P.blue, bg = P.elevated })
-            set("HlSearchFloat", { bg = B.search_cur })
-            -- set("NavicText", { fg = P.fg })
-            -- set("NavicSeparator", { fg = P.muted })
-            -- set("NavicIconsFunction", { fg = P.blue })
-            -- set("NavicIconsMethod", { fg = P.blue })
-            -- set("NavicIconsVariable", { fg = P.fg })
-            -- set("NavicIconsField", { fg = P.magenta })
-            -- set("NavicIconsProperty", { fg = P.magenta })
-            -- set("NavicIconsClass", { fg = P.fg })
-            -- set("NavicIconsInterface", { fg = P.fg })
-            -- set("NavicIconsEnum", { fg = P.teal })
-            -- set("NavicIconsKeyword", { fg = P.orange })
-            -- set("NavicIconsConstant", { fg = P.magenta })
-            -- set("DropBarMenuNormalFloat", { fg = P.fg, bg = P.elevated })
-            -- set("DropBarMenuCurrentContext", { bg = P.sel })
-            -- set("DropBarMenuHoverEntry", { bg = P.hover })
-            -- set("DropBarCurrentContext", { bg = P.sel })
-            -- set("DropBarIconUISeparator", { fg = P.muted })
-
             -- statuscol / scrollbar / nvim-scrollbar / satellite -----------------------
             -- set("ScrollbarHandle", { bg = B.thumb })
             -- set("ScrollbarCursorHandle", { bg = B.thumb })
@@ -1282,107 +1332,66 @@ end
             -- set("SatelliteGitSignsChange", { fg = P.blue })
             -- set("SatelliteGitSignsDelete", { fg = P.red })
 
-            -- ---------------------------------------------------------------------------
-            -- terminal buffers: terminal.background (#191a1c) вместо editor.background
-            -- ---------------------------------------------------------------------------
-            set("IslandsTerminal", { fg = P.fg, bg = P.chrome })
-            local aug = vim.api.nvim_create_augroup("IslandsDarkTerminal", { clear = true })
-            vim.api.nvim_create_autocmd({ "TermOpen", "BufWinEnter" }, {
-                group = aug,
-                callback = function()
-                    if vim.g.colors_name ~= "islands-dark" then
-                        return
-                    end
-                    if vim.bo.buftype == "terminal" then
-                        pcall(function()
-                            vim.opt_local.winhighlight:append({ Normal = "IslandsTerminal", NormalNC = "IslandsTerminal" })
-                        end)
-                    end
-                end,
-            })
+            -- indent-blankline.nvim (ibl) / mini.indentscope / snacks.indent -----------
+            -- set("IblIndent", { fg = P.guide, nocombine = true }) -- editor.indent_guide
+            -- set("IblWhitespace", { fg = P.disabled, nocombine = true }) -- editor.invisible
+            -- set("IblScope", { fg = P.guide_active, nocombine = true }) -- editor.indent_guide_active
+            -- set("IndentBlanklineChar", { fg = P.guide, nocombine = true })
+            -- set("IndentBlanklineContextChar", { fg = P.guide_active, nocombine = true })
+            -- set("MiniIndentscopeSymbol", { fg = P.guide_active })
+            -- set("SnacksIndent", { fg = P.guide, nocombine = true })
+            -- set("SnacksIndentScope", { fg = P.guide_active, nocombine = true })
+            -- set("SnacksIndentChunk", { fg = P.guide_active, nocombine = true })
 
-            -- ---------------------------------------------------------------------------
-            --   require("islands-dark").lualine       -- theme = require("islands-dark").lualine
-            --   require("islands-dark").bufferline    -- highlights = require("islands-dark").bufferline
-            --   
-            --   works only after :colorscheme islands-dark
-            -- ---------------------------------------------------------------------------
-            local function lualine_theme()
-                local function mode(color)
-                    return {
-                        a = { fg = P.bg, bg = color, gui = "bold" },
-                        b = { fg = P.fg, bg = P.elevated },
-                        c = { fg = P.fg, bg = P.chrome },
-                    }
-                end
-                return {
-                    normal = mode(P.blue),
-                    insert = mode(P.green),
-                    visual = mode(P.magenta),
-                    replace = mode(P.red),
-                    command = mode(P.yellow),
-                    terminal = mode(P.cyan),
-                    inactive = {
-                        a = { fg = P.muted, bg = P.chrome },
-                        b = { fg = P.muted, bg = P.chrome },
-                        c = { fg = P.muted, bg = P.chrome },
-                    },
-                }
-            end
+            -- nvim-ufo
+            -- set("UfoFoldedBg", { bg = P.elevated })
+            -- set("UfoFoldedFg", { fg = P.muted })
+            -- set("UfoPreviewSbar", { bg = P.elevated })
+            -- set("UfoPreviewThumb", { bg = B.thumb })
+            -- set("UfoFoldedEllipsis", { fg = P.muted })
 
-            local function bufferline_hl()
-                local bl = {
-                    fill = { bg = P.chrome },
-                    background = { fg = P.muted, bg = P.chrome },
-                    tab = { fg = P.muted, bg = P.chrome },
-                    tab_selected = { fg = P.fg, bg = P.bg },
-                    tab_separator = { fg = P.chrome, bg = P.chrome },
-                    tab_separator_selected = { fg = P.chrome, bg = P.bg },
-                    tab_close = { fg = P.muted, bg = P.chrome },
-                    close_button = { fg = P.muted, bg = P.chrome },
-                    close_button_visible = { fg = P.muted, bg = P.chrome },
-                    close_button_selected = { fg = P.fg, bg = P.bg },
-                    buffer_visible = { fg = P.muted, bg = P.chrome },
-                    buffer_selected = { fg = P.fg, bg = P.bg, bold = true, italic = false },
-                    numbers = { fg = P.muted, bg = P.chrome },
-                    numbers_visible = { fg = P.muted, bg = P.chrome },
-                    numbers_selected = { fg = P.fg, bg = P.bg, bold = true, italic = false },
-                    modified = { fg = P.blue, bg = P.chrome },
-                    modified_visible = { fg = P.blue, bg = P.chrome },
-                    modified_selected = { fg = P.blue, bg = P.bg },
-                    duplicate = { fg = P.disabled, bg = P.chrome, italic = true },
-                    duplicate_visible = { fg = P.disabled, bg = P.chrome, italic = true },
-                    duplicate_selected = { fg = P.muted, bg = P.bg, italic = true },
-                    separator = { fg = P.chrome, bg = P.chrome },
-                    separator_visible = { fg = P.chrome, bg = P.chrome },
-                    separator_selected = { fg = P.chrome, bg = P.bg },
-                    indicator_visible = { fg = P.chrome, bg = P.chrome },
-                    indicator_selected = { fg = P.blue, bg = P.bg },
-                    pick = { fg = P.red, bg = P.chrome, bold = true },
-                    pick_visible = { fg = P.red, bg = P.chrome, bold = true },
-                    pick_selected = { fg = P.red, bg = P.bg, bold = true },
-                    offset_separator = { fg = P.border, bg = P.bg },
-                    trunc_marker = { fg = P.muted, bg = P.chrome },
-                    group_label = { fg = P.bg, bg = P.blue },
-                    group_separator = { fg = P.blue, bg = P.chrome },
-                    diagnostic = { fg = P.muted, bg = P.chrome },
-                    diagnostic_visible = { fg = P.muted, bg = P.chrome },
-                    diagnostic_selected = { fg = P.muted, bg = P.bg },
-                }
-                local fams = { error = P.red, warning = P.yellow, info = P.blue, hint = P.muted }
-                for name, color in pairs(fams) do
-                    bl[name] = { fg = color, bg = P.chrome }
-                    bl[name .. "_visible"] = { fg = color, bg = P.chrome }
-                    bl[name .. "_selected"] = { fg = color, bg = P.bg, bold = true, italic = false }
-                    bl[name .. "_diagnostic"] = { fg = color, bg = P.chrome }
-                    bl[name .. "_diagnostic_visible"] = { fg = color, bg = P.chrome }
-                    bl[name .. "_diagnostic_selected"] = { fg = color, bg = P.bg }
-                end
-                return bl
-            end
+            -- navic
+            -- set("NavicText", { fg = P.fg })
+            -- set("NavicSeparator", { fg = P.muted })
+            -- set("NavicIconsFunction", { fg = P.blue })
+            -- set("NavicIconsMethod", { fg = P.blue })
+            -- set("NavicIconsVariable", { fg = P.fg })
+            -- set("NavicIconsField", { fg = P.magenta })
+            -- set("NavicIconsProperty", { fg = P.magenta })
+            -- set("NavicIconsClass", { fg = P.fg })
+            -- set("NavicIconsInterface", { fg = P.fg })
+            -- set("NavicIconsEnum", { fg = P.teal })
+            -- set("NavicIconsKeyword", { fg = P.orange })
+            -- set("NavicIconsConstant", { fg = P.magenta })
 
-            package.loaded["islands-dark"] = {
-                palette = P,
-                lualine = lualine_theme(),
-                bufferline = bufferline_hl(),
-            }
+            -- lazy
+            -- LazyNormal = { fg = P.fg, bg = P.elevated },
+            -- LazyBorder = { fg = P.border, bg = P.elevated },
+            -- LazyButton = { fg = P.fg, bg = P.hover },
+            -- LazyButtonActive = { fg = P.fg, bg = P.sel },
+            -- LazyH1 = { fg = P.bg, bg = P.blue, bold = true },
+            -- LazyH2 = { fg = P.blue, bold = true },
+            -- LazySpecial = { fg = P.blue },
+            -- LazyProgressDone = { fg = P.green },
+            -- LazyProgressTodo = { fg = P.disabled },
+            -- LazyReasonPlugin = { fg = P.blue },
+            -- LazyReasonEvent = { fg = P.yellow },
+            -- LazyReasonKeys = { fg = P.magenta },
+            -- LazyReasonCmd = { fg = P.orange },
+            -- LazyReasonFt = { fg = P.cyan },
+            -- LazyReasonRuntime = { fg = P.green },
+            -- LazyReasonSource = { fg = P.cyan },
+            -- LazyReasonStart = { fg = P.fg },
+            -- LazyReasonImport = { fg = P.fg },
+            -- LazyCommit = { fg = P.green },
+            -- LazyCommitType = { fg = P.blue },
+            -- LazyCommitScope = { fg = P.magenta },
+            -- LazyUrl = { fg = P.blue },
+            -- LazyDir = { fg = P.muted },
+            -- LazyProp = { fg = P.muted },
+            -- LazyValue = { fg = P.cyan },
+            -- LazyLocal = { fg = P.yellow },
+            -- LazyNoCond = { fg = P.red },
+            -- LazyDimmed = { fg = P.muted },
+            -- LazyTaskOutput = { fg = P.fg },
+            -- LazyTaskError = { fg = P.red },
