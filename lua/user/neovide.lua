@@ -19,20 +19,24 @@ if vim.g.neovide then
     end, { noremap = true, silent = true })
 
    
-    local function set_cursor_hl()
-        local cursorColor = "#83bfd4"
-        vim.api.nvim_set_hl(0, "Cursor", {  bg = cursorColor })
-        vim.api.nvim_set_hl(0, "CursorIM", {  bg = cursorColor })
-        vim.api.nvim_set_hl(0, "lCursor", {  bg = cursorColor })
-        vim.api.nvim_set_hl(0, "TermCursor", {  bg = cursorColor })
-        vim.api.nvim_set_hl(0, "FzfLuaCursor", {  bg = cursorColor })
-
-    end
-
-    vim.api.nvim_create_autocmd("ColorScheme", {
-        group = vim.api.nvim_create_augroup("CustomCursorHl", { clear = true }),
-        callback = set_cursor_hl,
-    })
+    --- i dont really need it anymore since i changed cursor color inside the theme itself,
+    --- but i will leave it as an example of how can i change colors after i applied a color scheme 
+    --- without knowing where exactly and at what point in nvim
+    --
+    -- local function set_cursor_hl()
+    --     local cursorColor = "#83bfd4"
+    --     vim.api.nvim_set_hl(0, "Cursor", {  bg = cursorColor })
+    --     vim.api.nvim_set_hl(0, "CursorIM", {  bg = cursorColor })
+    --     vim.api.nvim_set_hl(0, "lCursor", {  bg = cursorColor })
+    --     vim.api.nvim_set_hl(0, "TermCursor", {  bg = cursorColor })
+    --     vim.api.nvim_set_hl(0, "FzfLuaCursor", {  bg = cursorColor })
+    --
+    -- end
+    --
+    -- vim.api.nvim_create_autocmd("ColorScheme", {
+    --     group = vim.api.nvim_create_augroup("CustomCursorHl", { clear = true }),
+    --     callback = set_cursor_hl,
+    -- })
 
 end
 
