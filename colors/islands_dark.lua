@@ -806,8 +806,8 @@ for name, opts in pairs(wk) do
 end
 
 -- nvim-bqf -----------------------------------------------------------------
-set("BqfPreviewFloat", { fg = P.fg, bg = P.elevated })
-set("BqfPreviewBorder", { fg = P.border, bg = P.elevated })
+set("BqfPreviewFloat", { fg = P.fg, bg = P.bg })
+set("BqfPreviewBorder", { fg = P.blue, bg = P.border })
 set("BqfPreviewTitle", { fg = P.blue, bg = P.elevated, bold = true })
 set("BqfPreviewBufLabel", { fg = P.muted, bg = P.elevated })
 set("BqfPreviewCursor", { bg = B.cursorline })
