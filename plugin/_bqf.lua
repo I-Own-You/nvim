@@ -5,13 +5,6 @@ if true then
             winblend = 0,
         },
     })
-
-    vim.api.nvim_create_autocmd("FileType", {
-        pattern = "qf",
-        callback = function(event)
-            vim.keymap.set("n", "q", ":close<cr>", { buffer = event.buf, silent = true })
-        end
-    })
 end
 -- open	                open the item under the cursor	                                <CR>
 -- openc	            open the item, and close quickfix window	                    o

@@ -1,36 +1,73 @@
-local UC = {}
+vim.api.nvim_create_user_command("TabRename", function(opts)
+	if opts.args and opts.args ~= "" then
+		local current_tab = vim.api.nvim_get_current_tabpage()
+		vim.api.nvim_tabpage_set_var(current_tab, "tab_title", opts.args)
+		vim.cmd("redrawtabline")
+	else
+		print("Error: Please provide a name. Usage: :tr <name>")
+	end
+end, {
+	nargs = 1,
+})
 
-UC.MyTabLine = function()
-	local s = ""
-	local tabpages = vim.api.nvim_list_tabpages()
-	local current_tab = vim.api.nvim_get_current_tabpage()
+vim.api.nvim_create_user_command("LspStart", function()
+	vim.api.nvim_exec_autocmds("FileType", { buffer = 0 })
+	print("lAUNCH LSP SERVER")
+end, {})
 
-	for i, tab_handle in ipairs(tabpages) do
-		if tab_handle == current_tab then
-			s = s .. "%#TabLineSel#"
-		else
-			s = s .. "%#TabLine#"
-		end
+vim.api.nvim_create_user_command("LspRestart", function()
+	local clients = vim.lsp.get_clients({ bufnr = 0 })
+	if #clients == 0 then
+		print("NO LSP SERVER TO RESTART")
+		return
+	end
 
-		s = s .. "%" .. i .. "T"
-
-		local has_custom_name, custom_name = pcall(vim.api.nvim_tabpage_get_var, tab_handle, "tab_title")
-
-		if has_custom_name then
-			s = s .. " " .. custom_name .. " "
-		else
-			local win = vim.api.nvim_tabpage_get_win(tab_handle)
-			local buf = vim.api.nvim_win_get_buf(win)
-			local bufname = vim.api.nvim_buf_get_name(buf)
-			local filename = vim.fn.fnamemodify(bufname, ":t")
-			if filename == "" then
-				filename = "[No Name]"
-			end
-			s = s .. " " .. filename .. " "
+	local restarted_any = false
+	for _, client in ipairs(clients) do
+		if client.name ~= "null-ls" and client.name ~= "none-ls" then
+			client.stop(client)
+			restarted_any = true
 		end
 	end
-	s = s .. "%#TabLineFill#%T"
-	return s
-end
 
-return UC
+	if restarted_any then
+		local original_notify = vim.notify
+		vim.notify = function() end
+
+		vim.cmd("edit!")
+
+		vim.defer_fn(function()
+			vim.notify = original_notify
+		end, 200)
+
+		print("LSP SERVER IS RESTARTED")
+	else
+		print("NULL LS ONLY ACTIVE")
+	end
+end, {})
+
+vim.api.nvim_create_user_command("LspStop", function()
+	local clients = vim.lsp.get_clients({ bufnr = 0 })
+	for _, client in ipairs(clients) do
+		client.stop(client)
+	end
+	print("LSP SERVERS TURNED OFF")
+end, {})
+
+vim.api.nvim_create_user_command("LspInfo", function()
+	local clients = vim.lsp.get_clients({ bufnr = 0 })
+	if #clients == 0 then
+		print("❌ NO ACTIVE LSP CLIENTS")
+		return
+	end
+
+	print("=== ACTIVE LSP SERVERS ===")
+	for _, client in ipairs(clients) do
+		print(string.format("🤖 Name: %s (ID: %d)", client.name, client.id))
+		print(string.format("📁 Root folder: %s", client.root_dir or "NOT DEFINED"))
+		if client.config and client.config["filetypes"] then
+			print(string.format("📄 Suppoered Fileypes: %s", table.concat(client.config["filetypes"], ", ")))
+		end
+		print("----------------------------")
+	end
+end, {})
