@@ -1,10 +1,17 @@
 if true then
-	vim.pack.add({ "https://github.com/kevinhwang91/nvim-bqf" })
-	require("bqf").setup({
-		preview = {
-			winblend = 0,
-		},
-	})
+    vim.pack.add({ "https://github.com/kevinhwang91/nvim-bqf" })
+    require("bqf").setup({
+        preview = {
+            winblend = 0,
+        },
+    })
+
+    vim.api.nvim_create_autocmd("FileType", {
+        pattern = "qf",
+        callback = function(event)
+            vim.keymap.set("n", "q", ":close<cr>", { silent = true })
+        end
+    })
 end
 -- open	                open the item under the cursor	                                <CR>
 -- openc	            open the item, and close quickfix window	                    o
