@@ -9,7 +9,7 @@ if true then
     vim.api.nvim_create_autocmd("FileType", {
         pattern = "qf",
         callback = function(event)
-            vim.keymap.set("n", "q", ":close<cr>", { silent = true })
+            vim.keymap.set("n", "q", ":close<cr>", { buffer = event.buf, silent = true })
         end
     })
 end
