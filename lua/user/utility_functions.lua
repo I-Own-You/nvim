@@ -1,20 +1,5 @@
 local M = {}
 
-function M.close_file_type_buffers()
-	local filetypes = 
-	local current_filetype = vim.bo.filetype
-
-	for _, ft in ipairs(filetypes) do
-		if current_filetype == ft then
-			vim.cmd("silent q")
-			return
-		elseif current_filetype == "" then
-			vim.cmd("silent! bd")
-			return
-		end
-	end
-end
-
 function M.my_tab_line()
 	local s = ""
 	local tabpages = vim.api.nvim_list_tabpages()
