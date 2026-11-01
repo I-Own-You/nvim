@@ -661,11 +661,6 @@ for name, opts in pairs(cmp) do
     set(name, opts)
 end
 
--- copilot / supermaven -----------------------------------------------------
--- set("CopilotSuggestion", { fg = P.comment, italic = true })
--- set("CopilotAnnotation", { fg = P.comment, italic = true })
--- set("SupermavenSuggestion", { fg = P.comment, italic = true })
-
 -- nvim-tree ----------------------------------------------------------------
 local nt = {
     NvimTreeNormal = { fg = P.fg, bg = P.bg },
