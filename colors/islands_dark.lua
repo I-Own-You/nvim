@@ -587,6 +587,7 @@ local fzf = {
     FzfLuaScrollFloatFull = { fg = P.muted },
     FzfLuaHeaderBind = { fg = P.orange },
     FzfLuaHeaderText = { fg = P.red },
+    FzfLuaBufId = { fg = P.green },
     FzfLuaBufNr = { fg = P.yellow },
     FzfLuaBufFlagCur = { fg = P.red },
     FzfLuaBufFlagAlt = { fg = P.blue },
