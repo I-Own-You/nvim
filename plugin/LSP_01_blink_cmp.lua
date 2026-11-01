@@ -9,7 +9,7 @@ if true then
 
 	require("colorful-menu").setup()
 	local blink_cmp = require("blink.cmp")
-	blink_cmp.build():pwait()
+	-- blink_cmp.build():pwait()
 	blink_cmp.setup({
 		keymap = {
             preset = 'none',
