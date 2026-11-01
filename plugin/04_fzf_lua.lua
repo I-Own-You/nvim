@@ -104,6 +104,10 @@ if true then
 	vim.keymap.set("n", "gs", function()
 		require("fzf-lua").lsp_document_symbols()
 	end, { desc = "lsp symbols", silent = true })
+    
+	vim.keymap.set("n", "gS", function()
+		require("fzf-lua").lsp_live_workspace_symbols({ file_ignore_patterns = { "^node_modules/" } })
+	end, { silent = true, desc = "live workspace symbols" })
 
 	vim.keymap.set("n", "gR", function()
 		require("fzf-lua").lsp_finder()
@@ -182,10 +186,6 @@ if true then
 	vim.keymap.set("n", "<leader>gls", function()
 		require("fzf-lua").git_files({ winopts = { preview = { hidden = "hidden" } } })
 	end, { silent = true, desc = "git files" })
-
-	vim.keymap.set("n", "gS", function()
-		require("fzf-lua").lsp_live_workspace_symbols({ file_ignore_patterns = { "^node_modules/" } })
-	end, { silent = true, desc = "live workspace symbols" })
 
 	vim.keymap.set("n", "gra", function()
 		require("fzf-lua").lsp_code_actions({ winopts = { preview = { hidden = "hidden" } } })
