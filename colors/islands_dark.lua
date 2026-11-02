@@ -68,6 +68,10 @@ local P = {
     guide_active = "#4e5157", -- editor.indent_guide_active
     wrap = "#2d2f34", -- editor.wrap_guide
     panel_guide = "#393b40", -- panel.indent_guide / editor.active_wrap_guide
+
+    -- custom colors
+    custom_blue = "#83bfd4",
+    custom_white = "#ffffff"
 }
 
 -- half transparent, blend with zed colors
@@ -115,11 +119,6 @@ for i, c in ipairs(ansi) do
 end
 
 -- ---------------------------------------------------------------------------
--- my custom colors in use
-local cursorColor = "#83bfd4"
--- ---------------------------------------------------------------------------
-
--- ---------------------------------------------------------------------------
 -- editor UI
 -- ---------------------------------------------------------------------------
 local ui = {
@@ -132,10 +131,10 @@ local ui = {
     MsgArea = { fg = P.fg, bg = P.bg },
     MsgSeparator = { fg = P.border, bg = P.chrome },
 
-    Cursor = {fg = P.bg, bg = cursorColor }, --{ fg = P.bg, bg = P.blue },
-    lCursor = {fg = P.bg, bg = cursorColor },--{ fg = P.bg, bg = P.blue },
-    CursorIM = {fg = P.bg, bg = cursorColor },--{ fg = P.bg, bg = P.blue },
-    TermCursor = {fg = P.bg, bg = cursorColor },--{ fg = P.bg, bg = P.blue },
+    Cursor = {fg = P.bg, bg = P.custom_blue }, --{ fg = P.bg, bg = P.blue },
+    lCursor = {fg = P.bg, bg = P.custom_blue },--{ fg = P.bg, bg = P.blue },
+    CursorIM = {fg = P.bg, bg = P.custom_blue },--{ fg = P.bg, bg = P.blue },
+    TermCursor = {fg = P.bg, bg = P.custom_blue },--{ fg = P.bg, bg = P.blue },
     TermCursorNC = { fg = P.bg, bg = P.muted },
 
     CursorLine = { bg = B.cursorline },
@@ -179,8 +178,8 @@ local ui = {
     StatusLineNC = { fg = P.muted, bg = P.chrome },
     StatusLineTerm = { fg = P.fg, bg = P.chrome },
     StatusLineTermNC = { fg = P.muted, bg = P.chrome },
-    TabLine = { fg = P.muted, bg = P.chrome },
-    TabLineSel = { fg = P.fg, bg = P.bg },
+    TabLine = { fg = P.coment, bg = P.muted },
+    TabLineSel = { fg = P.custom_white, bg = P.blue },
     TabLineFill = { bg = P.chrome },
     WinBar = { fg = P.fg, bg = P.bg },
     WinBarNC = { fg = P.muted, bg = P.bg },
@@ -579,7 +578,7 @@ local fzf = {
     FzfLuaPreviewNormal = { fg = P.fg, bg = P.elevated },
     FzfLuaPreviewBorder = { fg = P.border, bg = P.elevated },
     FzfLuaPreviewTitle = { fg = P.blue },
-    FzfLuaCursor = {fg = P.bg, bg = cursorColor },--{ fg = P.bg, bg = P.blue },
+    FzfLuaCursor = {fg = P.bg, bg = P.custom_blue },--{ fg = P.bg, bg = P.blue },
     FzfLuaCursorLine = { bg = P.sel },
     FzfLuaCursorLineNr = { fg = P.ln_active, bg = P.sel },
     FzfLuaSearch = { bg = B.search_cur },
