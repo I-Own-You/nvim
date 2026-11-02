@@ -144,7 +144,7 @@ if true then
 		})
 	end, { desc = "keymaps", silent = true })
 
-	vim.keymap.set("n", "<leader>ol", function()
+	vim.keymap.set("n", "<leader>tp", function()
 		require("fzf-lua").tags()
 	end, { desc = "project tags", silent = true })
 
@@ -163,6 +163,12 @@ if true then
 	vim.keymap.set("n", "<leader><leader>", function()
 		require("fzf-lua").grep_project()
 	end, { desc = "grep with rules", silent = true })
+    
+	vim.keymap.set("n", "<leader>a", function()
+		require("fzf-lua").grep_project({
+			rg_opts = "--hidden --no-ignore --column --line-number --no-heading --color=always --smart-case --max-columns=4096",
+		})
+	end, { silent = true, desc = "grep without rules(everyhting)" })
 
 	vim.keymap.set("n", "<leader>gw", function()
 		require("fzf-lua").grep_cword()
@@ -190,12 +196,6 @@ if true then
 	vim.keymap.set("n", "gra", function()
 		require("fzf-lua").lsp_code_actions({ winopts = { preview = { hidden = "hidden" } } })
 	end, { silent = true, desc = "code actions" })
-
-	vim.keymap.set("n", "<leader>a", function()
-		require("fzf-lua").grep_project({
-			rg_opts = "--hidden --no-ignore --column --line-number --no-heading --color=always --smart-case --max-columns=4096",
-		})
-	end, { silent = true, desc = "grep without rules(everyhting)" })
 
 	vim.keymap.set("n", "<leader>cd", function()
 		require("fzf-lua").zoxide()
