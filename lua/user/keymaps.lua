@@ -68,12 +68,12 @@ vim.keymap.set("v", ">", ">gv", { silent = true })
 
 vim.keymap.set("v", "p", '"_dP', { silent = true })
 
-vim.keymap.set("n", "<A-j>", ":m .+1<CR>==", { silent = true, desc = "" })
-vim.keymap.set("n", "<A-k>", ":m .-2<CR>==", { silent = true, desc = "" })
-vim.keymap.set("i", "<A-j>", "<ESC>:m .+1<CR>==gi", { silent = true, desc = "" })
-vim.keymap.set("i", "<A-k>", "<ESC>:m .-2<CR>==gi", { silent = true, desc = "" })
-vim.keymap.set("v", "<A-j>", ":m '>+1<CR>gv=gv", { silent = true, desc = "" })
-vim.keymap.set("v", "<A-k>", ":m '<-2<CR>gv=gv", { silent = true, desc = "" })
+vim.keymap.set("n", "<A-j>", "<cmd>execute 'move .+' . v:count1<CR>==", { desc = "Move line down", silent = true })
+vim.keymap.set("n", "<A-k>", "<cmd>execute 'move .-' . (v:count1 + 1)<CR>==", { desc = "Move line up", silent = true })
+vim.keymap.set("i", "<A-j>", "<C-o><cmd>m .+1<CR><C-o>==", { desc = "Move line down", silent = true })
+vim.keymap.set("i", "<A-k>", "<C-o><cmd>m .-2<CR><C-o>==", { desc = "Move line up", silent = true })
+vim.keymap.set("v", "<A-k>", ":<C-u>execute \"'<,'>move '<-\" . (v:count1 + 1)<CR>gv=gv", { desc = "Move selection up", silent = true })
+vim.keymap.set("v", "<A-j>", ":<C-u>execute \"'<,'>move '>+\" . v:count1<CR>gv=gv", { desc = "Move selection down", silent = true })
 
 vim.keymap.set("n", "<leader>ww", ":set invwrap<CR>", { silent = true, desc = "toggle wrap" })
 vim.keymap.set("n", "!", ":!", { noremap = true })
