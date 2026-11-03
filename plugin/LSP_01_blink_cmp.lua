@@ -14,7 +14,7 @@ if true then
 		keymap = {
             preset = 'none',
 			["<C-space>"] = { "show", "show_documentation", "hide_documentation" },
-			["<C-e>"] = { "hide" },
+			["<C-e>"] = { "hide", "fallback" },
 			["<CR>"] = { "accept", "fallback" },
 			["<C-p>"] = { "select_prev" },
 			["<C-n>"] = { "select_next" },

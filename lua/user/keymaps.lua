@@ -75,9 +75,6 @@ vim.keymap.set("i", "<A-k>", "<ESC>:m .-2<CR>==gi", { silent = true, desc = "" }
 vim.keymap.set("v", "<A-j>", ":m '>+1<CR>gv=gv", { silent = true, desc = "" })
 vim.keymap.set("v", "<A-k>", ":m '<-2<CR>gv=gv", { silent = true, desc = "" })
 
-vim.keymap.set("i", "<C-a>", "<C-o>A", { silent = true })
-vim.keymap.set("i", "<C-i>", "<C-o>I", { silent = true })
-
 vim.keymap.set("n", "<leader>ww", ":set invwrap<CR>", { silent = true, desc = "toggle wrap" })
 vim.keymap.set("n", "!", ":!", { noremap = true })
 
@@ -107,6 +104,12 @@ vim.keymap.set("n", "<leader>to", ":tabonly<CR>", { silent = true, desc = "remov
 vim.keymap.set("i", "<C-l>", "<Del>", { silent = true })
 vim.keymap.set("i", "<C-k>", "<C-o>dw", { silent = true })
 vim.keymap.set("i", "<C-;>", "<C-o>D", { silent = true })
+vim.keymap.set("i", "<C-a>", "<C-o>I", { silent = true })
+vim.keymap.set("i", "<C-e>", "<C-o>A", { silent = true })
+vim.keymap.set("i", "<A-b>", "<C-o>b", { silent = true })
+vim.keymap.set("i", "<A-f>", "<C-o>w", { silent = true })
+vim.keymap.set("i", "<C-b>", "<C-o>h", { silent = true })
+vim.keymap.set("i", "<C-f>", "<C-o>l", { silent = true })
 
 vim.keymap.set("n", "<C-e>", "5<C-e>", { silent = true, desc = "" })
 vim.keymap.set("n", "<C-y>", "5<C-y>", { silent = true, desc = "" })         
