@@ -1,36 +1,64 @@
 local M = {}
 
 function M.my_tab_line()
-	local s = ""
-	local tabpages = vim.api.nvim_list_tabpages()
-	local current_tab = vim.api.nvim_get_current_tabpage()
+    local tabpages = vim.api.nvim_list_tabpages()
+    local current_tab = vim.api.nvim_get_current_tabpage()
+    local total = #tabpages
+    local cur = 1
+    local labels, widths = {}, {}
 
-	for i, tab_handle in ipairs(tabpages) do
-		if tab_handle == current_tab then
-			s = s .. "%#TabLineSel#"
-		else
-			s = s .. "%#TabLine#"
-		end
+    for i, tab_handle in ipairs(tabpages) do
+        if tab_handle == current_tab then
+            cur = i
+        end
 
-		s = s .. "%" .. i .. "T"
+        local has_custom_name, name = pcall(vim.api.nvim_tabpage_get_var, tab_handle, "tab_title")
+        if not has_custom_name or name == "" then
+            local win = vim.api.nvim_tabpage_get_win(tab_handle)
+            local buf = vim.api.nvim_win_get_buf(win)
+            name = vim.fn.fnamemodify(vim.api.nvim_buf_get_name(buf), ":t")
+            if name == "" then
+                name = "[No Name]"
+            end
+        end
 
-		local has_custom_name, custom_name = pcall(vim.api.nvim_tabpage_get_var, tab_handle, "tab_title")
+        local label = " " .. name .. " "
+        widths[i] = vim.api.nvim_strwidth(label)
+        labels[i] = (label:gsub("%%", "%%%%"))
+    end
 
-		if has_custom_name then
-			s = s .. " " .. custom_name .. " "
-		else
-			local win = vim.api.nvim_tabpage_get_win(tab_handle)
-			local buf = vim.api.nvim_win_get_buf(win)
-			local bufname = vim.api.nvim_buf_get_name(buf)
-			local filename = vim.fn.fnamemodify(bufname, ":t")
-			if filename == "" then
-				filename = "[No Name]"
-			end
-			s = s .. " " .. filename .. " "
-		end
-	end
-	s = s .. "%#TabLineFill#%T"
-	return s
+    local max_width = vim.o.columns - 4
+    local first, last = cur, cur
+    local used = widths[cur]
+    while true do
+        local grew = false
+        if first > 1 and used + widths[first - 1] <= max_width then
+            first = first - 1
+            used = used + widths[first]
+            grew = true
+        end
+        if last < total and used + widths[last + 1] <= max_width then
+            last = last + 1
+            used = used + widths[last]
+            grew = true
+        end
+        if not grew then
+            break
+        end
+    end
+
+    local s = ""
+    if first > 1 then
+        s = s .. "%#TabLineFill#< "
+    end
+    for i = first, last do
+        s = s .. (i == cur and "%#TabLineSel#" or "%#TabLine#") .. "%" .. i .. "T" .. labels[i]
+    end
+    s = s .. "%#TabLineFill#%T"
+    if last < total then
+        s = s .. " >"
+    end
+    return s
 end
 
 return M
