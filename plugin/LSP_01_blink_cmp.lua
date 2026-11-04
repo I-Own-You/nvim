@@ -13,11 +13,13 @@ if true then
 	blink_cmp.setup({
 		keymap = {
             preset = 'none',
+            -- "fallback" should be removed if you have another identic keymap as below somehwere else,
+            -- and its triggering after the blink cmp fire
 			["<C-space>"] = { "show", "show_documentation", "hide_documentation" },
 			["<C-e>"] = { "hide", "fallback" },
 			["<CR>"] = { "accept", "fallback" },
-			["<C-p>"] = { "select_prev" },
-			["<C-n>"] = { "select_next" },
+			["<C-p>"] = { "select_prev", "fallback" },
+			["<C-n>"] = { "select_next", "fallback" },
 			-- ["<C-b>"] = { "scroll_documentation_up", "fallback" },
 			["<C-b>"] = {
 				function(cmp)
