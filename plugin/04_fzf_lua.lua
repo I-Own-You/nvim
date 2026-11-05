@@ -200,6 +200,10 @@ if true then
 	vim.keymap.set("n", "<leader>cd", function()
 		require("fzf-lua").zoxide()
 	end, { silent = true, desc = "code actions" })
+    
+	vim.keymap.set("n", "<leader>ii", function()
+		require("user.utility_functions").env_picker()
+	end, { silent = true, desc = "code actions" })
 
 	require("fzf-lua").register_ui_select()
 end
