@@ -38,7 +38,7 @@ if true then
 	vim.keymap.set(
 		"n",
 		"<leader>ph",
-		"<c/home/mkc/.config/nvim/lua/user/keymaps.luamd>Gitsigns preview_hunk<cr>",
+		"<cmd>Gitsigns preview_hunk<cr>",
 		{ desc = "preview float window change", silent = true }
 	)
 	vim.keymap.set(
