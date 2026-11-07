@@ -11,23 +11,23 @@ if true then
 	})
 
 	require("fidget").setup()
-    
-    -- tiny-inline-diagnostic -----------------------------------------------------------------
-    local function apply_tiny_hl()
-        local fg = { Error = "#f75464", Warn = "#e0bb65", Info = "#56a8f5", Hint = "#6f737a" }
-        local bg = { Error = "#2f282d", Warn  = "#282725", Info  = "#21262d", Hint  = "#222326" }
-        local sev = { "Error", "Warn", "Info", "Hint" }
 
-        for _, a in ipairs(sev) do
-            vim.api.nvim_set_hl(0, "TinyInlineDiagnosticVirtualText" .. a, { fg = fg[a], bg = bg[a] })
-            vim.api.nvim_set_hl(0, "TinyInlineDiagnosticVirtualText" .. a .. "CursorLine", { fg = fg[a] })
-            for _, b in ipairs(sev) do
-                vim.api.nvim_set_hl(0, "TinyInlineDiagnosticVirtualText" .. a .. "Mix" .. b, { fg = fg[a], bg = bg[b] })
-            end
-        end
-        vim.api.nvim_set_hl(0, "TinyInlineDiagnosticVirtualTextArrow", { fg = "#4e5157", bg = "#1e1f22" })
-    end
-    
+	-- tiny-inline-diagnostic -----------------------------------------------------------------
+	local function apply_tiny_hl()
+		local fg = { Error = "#f75464", Warn = "#e0bb65", Info = "#56a8f5", Hint = "#6f737a" }
+		local bg = { Error = "#2f282d", Warn = "#282725", Info = "#21262d", Hint = "#222326" }
+		local sev = { "Error", "Warn", "Info", "Hint" }
+
+		for _, a in ipairs(sev) do
+			vim.api.nvim_set_hl(0, "TinyInlineDiagnosticVirtualText" .. a, { fg = fg[a], bg = bg[a] })
+			vim.api.nvim_set_hl(0, "TinyInlineDiagnosticVirtualText" .. a .. "CursorLine", { fg = fg[a] })
+			for _, b in ipairs(sev) do
+				vim.api.nvim_set_hl(0, "TinyInlineDiagnosticVirtualText" .. a .. "Mix" .. b, { fg = fg[a], bg = bg[b] })
+			end
+		end
+		vim.api.nvim_set_hl(0, "TinyInlineDiagnosticVirtualTextArrow", { fg = "#4e5157", bg = "#1e1f22" })
+	end
+
 	require("tiny-inline-diagnostic").setup({
 		preset = "simple",
 		options = {
@@ -39,23 +39,25 @@ if true then
 			},
 			multiple_diag_under_cursor = true,
 		},
-        hi = {
-            error = "DiagnosticError", warn = "DiagnosticWarn",
-            info = "DiagnosticInfo",   hint = "DiagnosticHint",
-            arrow = "NonText",
-            background = "Normal",
-            mixing_color = "Normal",
-        },
+		hi = {
+			error = "DiagnosticError",
+			warn = "DiagnosticWarn",
+			info = "DiagnosticInfo",
+			hint = "DiagnosticHint",
+			arrow = "NonText",
+			background = "Normal",
+			mixing_color = "Normal",
+		},
 	})
-    
-    apply_tiny_hl()
-    vim.schedule(apply_tiny_hl)
-    vim.api.nvim_create_autocmd("ColorScheme", {
-        callback = function()
-            vim.schedule(apply_tiny_hl)
-        end,
-    })
-    -- tiny-inline-diagnostic -----------------------------------------------------------------
+
+	apply_tiny_hl()
+	vim.schedule(apply_tiny_hl)
+	vim.api.nvim_create_autocmd("ColorScheme", {
+		callback = function()
+			vim.schedule(apply_tiny_hl)
+		end,
+	})
+	-- tiny-inline-diagnostic -----------------------------------------------------------------
 
 	local on_attach = function(client, bufnr)
 		vim.keymap.set(
@@ -91,18 +93,6 @@ if true then
 			vim.lsp.buf.declaration,
 			{ buffer = bufnr, remap = false, silent = true, desc = "show type declaration" }
 		)
-		-- vim.keymap.set(
-		-- 	"n",
-		-- 	"<leader>re",
-		-- 	vim.lsp.buf.rename,
-		-- 	{ buffer = bufnr, remap = false, silent = true, desc = "lsp rename" }
-		-- )
-		-- vim.keymap.set(
-		-- 	"n",
-		-- 	"<leader>ca",
-		-- 	vim.lsp.buf.code_action,
-		-- 	{ buffer = bufnr, remap = false, silent = true, desc = "code actions" }
-		-- )
 		vim.keymap.set(
 			"n",
 			"<leader>lq",
@@ -123,9 +113,12 @@ if true then
 			vim.diagnostic.open_float,
 			{ buffer = bufnr, remap = false, silent = true, desc = "show diagnostic window" }
 		)
-		vim.keymap.set("n", "<leader>ls", function()
-			vim.lsp.buf.signature_help({ border = "rounded" })
-		end, { buffer = bufnr, remap = false, silent = true, desc = "show signature help" })
+		vim.keymap.set("n", "[r", function()
+			require("user.utility_functions").jump_ref(false)
+		end, { silent = true, desc = "go to previous lsp ref" })
+		vim.keymap.set("n", "]r", function()
+			require("user.utility_functions").jump_ref(true)
+		end, { silent = true, desc = "go to next lsp ref" })
 
 		if client.name == "tsc" then
 			client.server_capabilities.documentFormattingProvider = false
@@ -233,12 +226,12 @@ if true then
 			null_ls.builtins.diagnostics.golangci_lint,
 		},
 	})
-    vim.api.nvim_create_autocmd("BufWritePre", {
-        pattern = { "*.go" },
-        callback = function()
-            vim.lsp.buf.format({
-                async = false,
-            })
-        end,
-    })
+	vim.api.nvim_create_autocmd("BufWritePre", {
+		pattern = { "*.go" },
+		callback = function()
+			vim.lsp.buf.format({
+				async = false,
+			})
+		end,
+	})
 end

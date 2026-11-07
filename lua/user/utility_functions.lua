@@ -111,4 +111,46 @@ function M.env_picker()
 	})
 end
 
+function M.jump_ref(forward)
+	local client = vim.lsp.get_clients({ bufnr = 0, method = "textDocument/documentHighlight" })[1]
+	if not client then
+		return
+	end
+
+	local params = vim.lsp.util.make_position_params(0, client.offset_encoding)
+	client:request("textDocument/documentHighlight", params, function(err, result)
+		if err or not result or #result == 0 then
+			return
+		end
+
+		local key = function(line, ch)
+			return line * 1e6 + ch
+		end
+		local row, col = unpack(vim.api.nvim_win_get_cursor(0))
+		if not forward then
+			col = vim.fn.searchpos([[\<]], "bcnW")[2] - 1
+		end
+		local cur = key(row - 1, col)
+
+		local refs = vim.tbl_map(function(h)
+			return h.range.start
+		end, result)
+		table.sort(refs, function(a, b)
+			return key(a.line, a.character) < key(b.line, b.character)
+		end)
+
+		local k = function(p)
+			return key(p.line, p.character)
+		end
+		local target = forward and (vim.iter(refs):find(function(p)
+			return k(p) > cur
+		end) or refs[1]) or (vim.iter(refs):rfind(function(p)
+			return k(p) < cur
+		end) or refs[#refs])
+
+		vim.cmd("normal! m'")
+		vim.api.nvim_win_set_cursor(0, { target.line + 1, target.character })
+	end, 0)
+end
+
 return M
