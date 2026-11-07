@@ -69,6 +69,12 @@ if true then
 		-- vim.keymap.set("i", "<C-s>", function()
 		-- 	vim.lsp.buf.signature_help({ border = "rounded" })
 		-- end, { buffer = bufnr, remap = false, silent = true, desc = "signature help" })
+		-- vim.keymap.set(
+		-- 	"n",
+		-- 	"grn",
+		-- 	vim.lsp.buf.rename,
+		-- 	{ buffer = bufnr, remap = false, silent = true, desc = "lsp rename" }
+		-- )
 		vim.keymap.set(
 			"n",
 			"grr",
