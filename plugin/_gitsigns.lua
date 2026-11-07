@@ -32,44 +32,44 @@ if true then
 		},
 	})
 
-	-- vim.keymap.set("n", "<leader>bl", ":Gitsigns blame_line<cr>", {desc = "blame line", silent = true })
-	vim.keymap.set("n", "]c", ":Gitsigns next_hunk<cr>", { desc = "next git change", silent = true })
-	vim.keymap.set("n", "[c", ":Gitsigns prev_hunk<cr>", { desc = "previous git change", silent = true })
+	-- vim.keymap.set("n", "<leader>bl", "<cmd>Gitsigns blame_line<cr>", {desc = "blame line", silent = true })
+	vim.keymap.set("n", "]c", "<cmd>Gitsigns next_hunk<cr>", { desc = "next git change", silent = true })
+	vim.keymap.set("n", "[c", "<cmd>Gitsigns prev_hunk<cr>", { desc = "previous git change", silent = true })
 	vim.keymap.set(
 		"n",
 		"<leader>ph",
-		":Gitsigns preview_hunk<cr>",
+		"<c/home/mkc/.config/nvim/lua/user/keymaps.luamd>Gitsigns preview_hunk<cr>",
 		{ desc = "preview float window change", silent = true }
 	)
 	vim.keymap.set(
 		"n",
 		"<leader>pih",
-		":Gitsigns preview_hunk_inline<cr>",
+		"<cmd>Gitsigns preview_hunk_inline<cr>",
 		{ desc = "preview inline change", silent = true }
 	)
-	vim.keymap.set("n", "<leader>sh", ":Gitsigns stage_hunk<cr>", { desc = "stage inline change", silent = true })
-	vim.keymap.set("v", "<leader>sh", ":Gitsigns stage_hunk<cr>", { desc = "stage inline change", silent = true })
-	vim.keymap.set("n", "<leader>sb", ":Gitsigns stage_buffer<cr>", { desc = "stage buffer", silent = true })
+	vim.keymap.set("n", "<leader>sh", "<cmd>Gitsigns stage_hunk<cr>", { desc = "stage inline change", silent = true })
+	vim.keymap.set("v", "<leader>sh", "<cmd>Gitsigns stage_hunk<cr>", { desc = "stage inline change", silent = true })
+	vim.keymap.set("n", "<leader>sb", "<cmd>Gitsigns stage_buffer<cr>", { desc = "stage buffer", silent = true })
 	vim.keymap.set(
 		"n",
 		"<leader>ush",
-		":Gitsigns undo_stage_hunk<cr>",
+		"<cmd>Gitsigns undo_stage_hunk<cr>",
 		{ desc = "unstage inline change", silent = true }
 	)
 	vim.keymap.set(
 		"v",
 		"<leader>ush",
-		":Gitsigns undo_stage_hunk<cr>",
+		"<cmd>Gitsigns undo_stage_hunk<cr>",
 		{ desc = "unstage inline change", silent = true }
 	)
 	vim.keymap.set(
 		"n",
 		"<leader>rbb",
-		":Gitsigns reset_buffer<cr>",
+		"<cmd>Gitsigns reset_buffer<cr>",
 		{ desc = "redo git buffer changes", silent = true }
 	)
-	vim.keymap.set("n", "<leader>rbi", ":Gitsigns reset_buffer_index<cr>", { desc = "unstage buffer", silent = true })
-	vim.keymap.set("n", "<leader>rh", ":Gitsigns reset_hunk<cr>", { desc = "redo git inline change", silent = true })
-	vim.keymap.set("n", "<leader>gsw", ":Gitsigns show ", { desc = "git show", silent = true })
-	vim.keymap.set("n", "<leader>gid", ":Gitsigns diffthis ", { desc = "git diff", silent = true })
+	vim.keymap.set("n", "<leader>rbi", "<cmd>Gitsigns reset_buffer_index<cr>", { desc = "unstage buffer", silent = true })
+	vim.keymap.set("n", "<leader>rh", "<cmd>Gitsigns reset_hunk<cr>", { desc = "redo git inline change", silent = true })
+	vim.keymap.set("n", "<leader>gsw", "<cmd>Gitsigns show ", { desc = "git show", silent = true })
+	vim.keymap.set("n", "<leader>gid", "<cmd>Gitsigns diffthis ", { desc = "git diff", silent = true })
 end

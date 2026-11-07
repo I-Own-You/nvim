@@ -20,7 +20,7 @@ if true then
 		},
 	})
 
-	vim.keymap.set("n", "<leader>neo", ":Neogit<CR>", { desc = "open neogit", silent = true })
+	vim.keymap.set("n", "<leader>neo", "<cmd>Neogit<CR>", { desc = "open neogit", silent = true })
 end
 -- mappings = {
 --     commit_editor = {

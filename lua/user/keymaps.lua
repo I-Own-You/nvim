@@ -25,10 +25,10 @@ vim.keymap.set("c", "<C-l>", function()
 end, { desc = "Delete character under cursor" })
 vim.keymap.set("c", "<C-e>", "<End>", { desc = "Move to end of line" })
 
--- vim.keymap.set("n", "<A-S-k>", ":resize +2<CR>", {silent=true, desc=''})
--- vim.keymap.set("n", "<A-S-j>", ":resize -2<CR>", {silent=true, desc=''})
--- vim.keymap.set("n", "<A-S-h>", ":vertical resize +2<CR>", {silent=true, desc=''})
--- vim.keymap.set("n", "<A-S-l>", ":vertical resize -2<CR>", {silent=true, desc=''})
+-- vim.keymap.set("n", "<A-S-k>", "<cmd>resize +2<CR>", {silent=true, desc=''})
+-- vim.keymap.set("n", "<A-S-j>", "<cmd>resize -2<CR>", {silent=true, desc=''})
+-- vim.keymap.set("n", "<A-S-h>", "<cmd>vertical resize +2<CR>", {silent=true, desc=''})
+-- vim.keymap.set("n", "<A-S-l>", "<cmd>vertical resize -2<CR>", {silent=true, desc=''})
 
 vim.keymap.set("n", "q", "<Nop>", { silent = true })
 
@@ -43,20 +43,20 @@ vim.keymap.set("n", "<A-j>", "<cmd>execute 'move .+' . v:count1<CR>==", { desc =
 vim.keymap.set("n", "<A-k>", "<cmd>execute 'move .-' . (v:count1 + 1)<CR>==", { desc = "Move line up", silent = true })
 vim.keymap.set("i", "<A-j>", "<C-o><cmd>m .+1<CR><C-o>==", { desc = "Move line down", silent = true })
 vim.keymap.set("i", "<A-k>", "<C-o><cmd>m .-2<CR><C-o>==", { desc = "Move line up", silent = true })
-vim.keymap.set("v", "<A-k>", ":<C-u>execute \"'<,'>move '<-\" . (v:count1 + 1)<CR>gv=gv", { desc = "Move selection up", silent = true })
-vim.keymap.set("v", "<A-j>", ":<C-u>execute \"'<,'>move '>+\" . v:count1<CR>gv=gv", { desc = "Move selection down", silent = true })
+vim.keymap.set("v", "<A-k>", "<cmd><C-u>execute \"'<,'>move '<-\" . (v:count1 + 1)<CR>gv=gv", { desc = "Move selection up", silent = true })
+vim.keymap.set("v", "<A-j>", "<cmd><C-u>execute \"'<,'>move '>+\" . v:count1<CR>gv=gv", { desc = "Move selection down", silent = true })
 
-vim.keymap.set("n", "<leader>ww", ":set invwrap<CR>", { silent = true, desc = "toggle wrap" })
+vim.keymap.set("n", "<leader>ww", "<cmd>set invwrap<CR>", { silent = true, desc = "toggle wrap" })
 
-vim.keymap.set("n", "<leader>bo", ":only<CR>", { silent = true, desc = "clear buffer windows" })
-vim.keymap.set("n", "<leader>bda", ":%bdelete<CR>", { silent = true, desc = "delete all buffers" })
+vim.keymap.set("n", "<leader>bo", "<cmd>only<CR>", { silent = true, desc = "clear buffer windows" })
+vim.keymap.set("n", "<leader>bda", "<cmd>%bdelete<CR>", { silent = true, desc = "delete all buffers" })
 vim.keymap.set(
 	"n",
 	"<leader>bdo",
 	":%bd|e#|bd#<CR>|'\"",
 	{ silent = true, desc = "delete all buffers but not current" }
 )
-vim.keymap.set("n", "<leader>to", ":tabonly<CR>", { silent = true, desc = "remove all tabs but not current" })
+vim.keymap.set("n", "<leader>to", "<cmd>tabonly<CR>", { silent = true, desc = "remove all tabs but not current" })
 
 -- c-w del left word (builtin)
 -- c-u del all left  (builtin)
@@ -81,20 +81,20 @@ vim.keymap.set("n", "<C-y>", "5<C-y>", { silent = true, desc = "" })
 vim.keymap.set("v", "<C-e>", "5<C-e>", { silent = true, desc = "" })
 vim.keymap.set("v", "<C-y>", "5<C-y>", { silent = true, desc = "" })
 
-vim.keymap.set("n", "[t", ":tabprevious<CR>", { silent = true, desc = "" })
-vim.keymap.set("n", "]t", ":tabnext<CR>", { silent = true, desc = "" })
-vim.keymap.set("n", "[T", ":tabfirst<CR>", { silent = true, desc = "" })
-vim.keymap.set("n", "]T", ":tablast<CR>", { silent = true, desc = "" })
+vim.keymap.set("n", "[t", "<cmd>tabprevious<CR>", { silent = true, desc = "" })
+vim.keymap.set("n", "]t", "<cmd>tabnext<CR>", { silent = true, desc = "" })
+vim.keymap.set("n", "[T", "<cmd>tabfirst<CR>", { silent = true, desc = "" })
+vim.keymap.set("n", "]T", "<cmd>tablast<CR>", { silent = true, desc = "" })
 
 -- "%:p:h" without filename
 vim.keymap.set(
 	"n",
 	"<Leader>xt",
-	':let @+=expand("%:p")<CR>',
+	'<cmd>let @+=expand("%:p")<CR>',
     { silent = true, desc = "copy current buffers location" }
 )
 
-vim.keymap.set("n", "q", ":nohl<CR>", { desc = "", silent = true })
+vim.keymap.set("n", "q", "<cmd>nohl<CR>", { desc = "", silent = true })
 
 vim.keymap.set("n", "<C-Space>", "<C-^>", { desc = "cycle between prev/current file", silent = true })
 

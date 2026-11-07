@@ -4,9 +4,9 @@ if true then
 	})
 	require("inc_rename").setup()
 
-	-- vim.keymap.set("n", "<leader>re", ":IncRename ")
+	-- vim.keymap.set("n", "<leader>re", "<cmd>IncRename ")
 
 	vim.keymap.set("n", "grn", function()
-		return ":IncRename " .. vim.fn.expand("<cword>")
+		return "<cmd>IncRename " .. vim.fn.expand("<cword>")
 	end, { expr = true })
 end

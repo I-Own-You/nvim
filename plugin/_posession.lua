@@ -106,7 +106,7 @@ if true then
 		},
 	})
 
-	vim.keymap.set("n", "<leader>sl", ":Telescope possession list<CR>", { desc = "Open sessions list", silent = true })
+	vim.keymap.set("n", "<leader>sl", "<cmd>Telescope possession list<CR>", { desc = "Open sessions list", silent = true })
 	-- vim.keymap.set("n", "<leader>sl", function()
 	-- 	require("telescope").extensions.possession.list({
 	-- 		previewer = false,
@@ -114,5 +114,5 @@ if true then
 	-- 		layout_config = { width = 0.4, height = 0.4 },
 	-- 	})
 	-- end, { desc = "List sessions cleanly" })
-	vim.keymap.set("n", "<leader>ss", ":PossessionSave ", { desc = "save session" })
+	vim.keymap.set("n", "<leader>ss", "<cmd>PossessionSave ", { desc = "save session" })
 end
