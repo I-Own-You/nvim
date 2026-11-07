@@ -25,10 +25,10 @@ vim.keymap.set("c", "<C-l>", function()
 end, { desc = "Delete character under cursor" })
 vim.keymap.set("c", "<C-e>", "<End>", { desc = "Move to end of line" })
 
--- keymap("n", "<C-Up>", ":resize +2<CR>", {silent=true, desc=''})
--- keymap("n", "<C-Down>", ":resize -2<CR>", {silent=true, desc=''})
--- keymap("n", "<C-Left>", ":vertical resize +2<CR>", {silent=true, desc=''})
--- keymap("n", "<C-Right>", ":vertical resize -2<CR>", {silent=true, desc=''})
+-- vim.keymap.set("n", "<A-S-k>", ":resize +2<CR>", {silent=true, desc=''})
+-- vim.keymap.set("n", "<A-S-j>", ":resize -2<CR>", {silent=true, desc=''})
+-- vim.keymap.set("n", "<A-S-h>", ":vertical resize +2<CR>", {silent=true, desc=''})
+-- vim.keymap.set("n", "<A-S-l>", ":vertical resize -2<CR>", {silent=true, desc=''})
 
 vim.keymap.set("n", "q", "<Nop>", { silent = true })
 
