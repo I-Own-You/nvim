@@ -6,7 +6,5 @@ if true then
 
 	-- vim.keymap.set("n", "<leader>re", "<cmd>IncRename ")
 
-	vim.keymap.set("n", "grn", function()
-		return "<cmd>IncRename " .. vim.fn.expand("<cword>")
-	end, { expr = true })
+	vim.keymap.set("n", "grn", ":IncRename <C-r><C-w>")
 end

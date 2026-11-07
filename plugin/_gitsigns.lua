@@ -68,8 +68,18 @@ if true then
 		"<cmd>Gitsigns reset_buffer<cr>",
 		{ desc = "redo git buffer changes", silent = true }
 	)
-	vim.keymap.set("n", "<leader>rbi", "<cmd>Gitsigns reset_buffer_index<cr>", { desc = "unstage buffer", silent = true })
-	vim.keymap.set("n", "<leader>rh", "<cmd>Gitsigns reset_hunk<cr>", { desc = "redo git inline change", silent = true })
-	vim.keymap.set("n", "<leader>gsw", "<cmd>Gitsigns show ", { desc = "git show", silent = true })
-	vim.keymap.set("n", "<leader>gid", "<cmd>Gitsigns diffthis ", { desc = "git diff", silent = true })
+	vim.keymap.set(
+		"n",
+		"<leader>rbi",
+		"<cmd>Gitsigns reset_buffer_index<cr>",
+		{ desc = "unstage buffer", silent = true }
+	)
+	vim.keymap.set(
+		"n",
+		"<leader>rh",
+		"<cmd>Gitsigns reset_hunk<cr>",
+		{ desc = "redo git inline change", silent = true }
+	)
+	vim.keymap.set("n", "<leader>gsw", ":Gitsigns show ", { desc = "git show" })
+	vim.keymap.set("n", "<leader>gid", ":Gitsigns diffthis ", { desc = "git diff" })
 end
