@@ -119,12 +119,6 @@ if true then
 			vim.diagnostic.open_float,
 			{ buffer = bufnr, remap = false, silent = true, desc = "show diagnostic window" }
 		)
-		vim.keymap.set("n", "[r", function()
-			require("user.utility_functions").jump_ref(false)
-		end, { silent = true, desc = "go to previous lsp ref" })
-		vim.keymap.set("n", "]r", function()
-			require("user.utility_functions").jump_ref(true)
-		end, { silent = true, desc = "go to next lsp ref" })
 
 		if client.name == "tsc" then
 			client.server_capabilities.documentFormattingProvider = false
