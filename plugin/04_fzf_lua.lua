@@ -20,12 +20,15 @@ if true then
 		},
 		previewers = {
 			builtin = {
-				extensions = {
-					-- ["png"] = { "ueberzug" },
-					-- ["jpg"] = { "ueberzug" },
-					-- ["svg"] = { "ueberzug" },
-					-- ["jpeg"] = { "ueberzug" },
-				},
+                extensions = {
+                    ["png"]  = { "viu", "-b"},
+                    ["jpg"]  = { "viu", "-b"},
+                    ["jpeg"] = { "viu", "-b"},
+                    ["gif"]  = { "viu", "-b"},
+                    ["webp"] = { "viu", "-b"},
+                    ["svg"]  = { "viu", "-b"},
+                    -- alternative: ["png"] = { "viu", "-b" },
+                },
 			},
 		},
 		git = {
